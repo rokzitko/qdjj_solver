@@ -1,0 +1,24 @@
+{
+  "format_version": 1,
+  "paper_doi": "10.1103/PhysRevLett.132.126505",
+  "model": {"u": 3.0, "gamma": 1.0, "bandwidth": 2000.0, "delta": 1.0, "detuning": 0.0},
+  "relative_couplings": [0.30, 0.35, 0.35],
+  "reference": {"chi_critical": 0.721, "phase_critical_over_pi": 0.487},
+  "direct_phase_pairs_over_pi": [[0.25, -0.5], [0.6, 0.1], [0.8, 0.8], [0.5, -0.5]],
+  "direct_settings": {"levels": 2, "frequency_cutoff": 100.0},
+  "closure_settings": {"levels": 1, "frequency_cutoff": 100.0, "solver": {"method": "dense"}},
+  "profiles": {
+    "quick": {"settings": {"levels": 4, "frequency_cutoff": 100.0}, "chi_points": 5, "map_points": 11},
+    "paper": {"settings": {"levels": 8, "frequency_cutoff": 100.0}, "chi_points": 31, "map_points": 81},
+    "convergence": {
+      "settings": [
+        {"label": "L4", "levels": 4, "frequency_cutoff": 100.0},
+        {"label": "L6", "levels": 6, "frequency_cutoff": 100.0},
+        {"label": "L8", "levels": 8, "frequency_cutoff": 100.0},
+        {"label": "L10", "levels": 10, "frequency_cutoff": 100.0, "solver": {"method": "sparse"}},
+        {"label": "L8_w2000", "levels": 8, "frequency_cutoff": 2000.0},
+        {"label": "L8_q4", "levels": 8, "frequency_cutoff": 100.0, "cutoff": 4}
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "format_version": 1,
+  "backend": "dmrg",
+  "model": {"kind": "reference", "u": 1.6, "gamma": 0.3, "phi": 0.8, "compress": false},
+  "bath": {"kind": "cosh-grid", "pairs": 1, "bandwidth": 5.0},
+  "sector": {"parity": 1, "twice_sz": 1},
+  "solver": {
+    "eigenpairs": 2,
+    "chi_max": 64,
+    "max_sweeps": 80,
+    "energy_tolerance": 1e-12,
+    "residual_tolerance": 1e-9,
+    "require_convergence": true
+  }
+}

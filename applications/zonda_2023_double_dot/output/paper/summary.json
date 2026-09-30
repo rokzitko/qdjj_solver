@@ -1,0 +1,19 @@
+{
+  "crossings": [
+    {
+      "curve": "weak",
+      "phi_over_pi": 0.6508991281338572,
+      "signed_gap": -1.390532133882516e-11
+    },
+    {
+      "curve": "strong",
+      "phi_over_pi": 0.8285266206132813,
+      "signed_gap": 2.121858244663599e-12
+    }
+  ],
+  "maximum_current_finite_difference_error": 3.2196055890776343e-10,
+  "maximum_residual": 5.572035659821129e-12,
+  "points": 110,
+  "strong_maximum_nrg_current_error": 0.0008189090486239725,
+  "weak_maximum_nrg_current_error": 0.0015114444047584635
+}

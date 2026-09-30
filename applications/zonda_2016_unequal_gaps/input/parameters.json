@@ -1,0 +1,22 @@
+{
+  "format_version": 1,
+  "model": {"delta": 1.0, "detuning": 0.0, "u": 1.0, "gammas": [0.5, 0.25], "phi": 1.5707963267948966, "bandwidth": 100.0},
+  "check_detuning": 0.4,
+  "finite_difference_step": 0.0002,
+  "profiles": {
+    "quick": {"settings": {"levels": 2, "frequency_cutoff": 100.0, "cutoff": null}, "gap_ratios": [1.0, 0.25], "detunings": [-1.0, 0.0, 1.0]},
+    "paper": {"settings": {"levels": 4, "frequency_cutoff": 100.0, "cutoff": null}, "gap_ratios": [1.0, 0.5, 0.25], "detunings": [-4.0, -3.0, -2.0, -1.0, -0.6, -0.4, -0.2, 0.0, 0.2, 0.4, 0.6, 1.0, 2.0, 3.0, 4.0]},
+    "convergence": {
+      "gap_ratios": [1.0, 0.25], "detunings": [0.0, 1.0],
+      "settings": [
+        {"label": "L2", "levels": 2, "frequency_cutoff": 100.0, "cutoff": null},
+        {"label": "L3", "levels": 3, "frequency_cutoff": 100.0, "cutoff": null},
+        {"label": "L4", "levels": 4, "frequency_cutoff": 100.0, "cutoff": null},
+        {"label": "L4_q4", "levels": 4, "frequency_cutoff": 100.0, "cutoff": 4},
+        {"label": "L4_w200", "levels": 4, "frequency_cutoff": 200.0, "cutoff": null},
+        {"label": "L4_D200", "levels": 4, "bandwidth": 200.0, "frequency_cutoff": 200.0, "cutoff": null},
+        {"label": "L5", "levels": 5, "frequency_cutoff": 100.0, "cutoff": null, "solver": {"method": "sparse"}}
+      ]
+    }
+  }
+}

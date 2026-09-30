@@ -1,0 +1,247 @@
+{
+  "baths": {
+    "335b2d914cb1427de941bf47b1551cc525ea83e188aa8bcbb49e633e2bf078be": {
+      "bandwidth": 100.0,
+      "delta": 1.0,
+      "metadata": {
+        "citation": "Baran, Frost and Paaske, Phys. Rev. B 108, L220506 (2023)",
+        "cost": 0.02606605887430218,
+        "evaluations": 27,
+        "fit_optimality": 7.583195023109596e-08,
+        "frequency_cutoff": 100.0,
+        "frequency_min": 0.001,
+        "frequency_points": 1000,
+        "kind": "surrogate",
+        "levels": 4,
+        "max_relative_fit_error": 0.6858073114243606,
+        "measure_error": -0.7515736631375269,
+        "relative_weight": 0.0,
+        "seed": 1729,
+        "starts": 4
+      },
+      "weights": [
+        0.11286592161563049,
+        0.011347246815606032,
+        0.011347246815606032,
+        0.11286592161563049
+      ],
+      "xi": [
+        -8.591042771802375,
+        -0.8972550065883125,
+        0.8972550065883125,
+        8.591042771802375
+      ]
+    },
+    "df481a4fc64aafab3dcf2bb14244442dc4673ee7fb18eac436ef5f02085cd702": {
+      "bandwidth": 100.0,
+      "delta": 1.0,
+      "metadata": {
+        "citation": "Baran, Frost and Paaske, Phys. Rev. B 108, L220506 (2023)",
+        "cost": 0.9875116059393583,
+        "evaluations": 10,
+        "fit_optimality": 1.1095167791678e-06,
+        "frequency_cutoff": 100.0,
+        "frequency_min": 0.001,
+        "frequency_points": 1000,
+        "kind": "surrogate",
+        "levels": 2,
+        "max_relative_fit_error": 0.9345890070530266,
+        "measure_error": -0.948613470624824,
+        "relative_weight": 0.0,
+        "seed": 1729,
+        "starts": 4
+      },
+      "weights": [
+        0.02569326468758796,
+        0.02569326468758796
+      ],
+      "xi": [
+        -1.5234477094706809,
+        1.5234477094706809
+      ]
+    }
+  },
+  "case": "kadlecova_2017_asymmetry",
+  "elapsed_seconds": 398.39249412482604,
+  "environment": {
+    "machine": "arm64",
+    "numpy": "2.5.2",
+    "packages": {
+      "h5py": "3.16.0",
+      "numpy": "2.5.2",
+      "physics-tenpy": "1.1.1",
+      "qdjj-solver": "0.2.0",
+      "scipy": "1.18.0",
+      "threadpoolctl": "3.6.0"
+    },
+    "python": "3.14.7",
+    "qdjj_solver": "0.2.0",
+    "qpsolver": "0.2.0",
+    "release": "25.5.0",
+    "scipy": "1.18.0",
+    "system": "Darwin"
+  },
+  "format": "qdjj-application",
+  "format_version": 1,
+  "implementation": {
+    "files": {
+      "__init__.py": "37c2a898286a98933ca26fcd7eadc482fb2a3f9f35cab81349bb08146a9a474d",
+      "api.py": "a3a5b3a80ce155617899b3360a9d7dc36df4b4366ced7160ea00708642710e5a",
+      "cli.py": "d860f0b9442cf954dc38abccca1ebd6488bcf129bb1309251e8b71aaebb9e056",
+      "common/__init__.py": "394799edc56d432820af8801a38ba9c9512060d7d904360286934a87341c9c95",
+      "common/algebra.py": "072659f71e4b222578a74f472fbdbfe03ee5816e76a9a3059578327bbfb81962",
+      "common/baths.py": "dd2cdeab3680d921d0523cc307903b640976c70222a31bf5d6f134e617fa06d1",
+      "common/io.py": "d0558e83e207e238bc4542b0b3a14c6204e440536d4ea98c6f5f52338379eb12",
+      "common/models.py": "2647acbea388e3a56c6b09bdc422fcd78b13fbf53e48c2c886b3accfaf6ca890",
+      "common/problem.py": "6a74801112898d76b35213153cc9318befb1d98be99a0d639800efa3cdf98a47",
+      "compat/qpsolver/__init__.py": "1e8785ea1c09ee48c89b1d64adb9d68053bc7cf2c7438a1aa64bba6fe149a875",
+      "compat/qpsolver/cli.py": "272fbf82340c9a59e0efd74e513562f24af20a5d543fd0f13b58bfac00bcd0a9",
+      "compat/qpsolver/nrg.py": "6162ed163e5afa1bcacb1f0afabc94df0fe2fcce7e95aa879c40c1daa5fa27e0",
+      "dmrg_solver/__init__.py": "c875c9bd86be62c86e9555286a1088310886969178c13d4a700fe0b89b077bd6",
+      "dmrg_solver/convergence.py": "29ee594c6d41268d7cb51d3e3dd12e302a0e38bddb884d78a7de64f6d609d32e",
+      "dmrg_solver/io.py": "54bd752cc6ace17231c35f89f95674c522980301a4e17e601a11a54b19367748",
+      "dmrg_solver/legacy.py": "c2c98b124968c575a66616930cf79b8a75f731dbd6a5c469801db3c423dc4a6b",
+      "dmrg_solver/mpo.py": "5492d2f4e80db0e71f62f5884cb26206cef5944efd6f4f60bc55a4e2d44a9790",
+      "dmrg_solver/solver.py": "910169a6208b5710653b00382220be306e15c466174ab8708b568901a5b2e765",
+      "qp_solver/__init__.py": "508b0b0ce58511cde099aa639fcaf975edd523bfa8aaec073cec42338634f39c",
+      "qp_solver/_core.cpython-314-darwin.so": "c337e751280e81d172022b4fb1ab30e78d3926326844a16d27bffe447de24c4d",
+      "qp_solver/basis.py": "068727de5d1b960149d4e13810ca630da2e1c729ef5056eeac01d5ab623146ed",
+      "qp_solver/cli.py": "8a512a4f1c07aec98b015a6decd82282df9d1283367d12807f4e8e781edb0d4b",
+      "qp_solver/io.py": "4c208f7a597d6a32dfdde01cd7b0973b5ecc84b19fa32daddeddcf0a65f2e52e",
+      "qp_solver/nrg.py": "c71b57b9c3eeb1499a137955998a3e12a4370f710b501a928cca9d02dc51b92d",
+      "qp_solver/reference.py": "437686251373649a225e79f5ce30458c17006a2568ba260d8ead8c4260d9b650",
+      "qp_solver/solver.py": "7cc7a50bf31456ba0d6f9f5b5d732b3c2ac0b01369e775b4599e9e99f550a9d9"
+    },
+    "sha256": "6150cb4b2e7f92b4273f15ef4aa463fffb3637f355dae9f7cbb951057265bcd9",
+    "version": "0.2.0"
+  },
+  "input": {
+    "delta_meV": 0.17,
+    "format_version": 1,
+    "gamma_meV": 0.44,
+    "mapping_settings": {
+      "cutoff": null,
+      "frequency_cutoff": 100.0,
+      "levels": 2
+    },
+    "model": {
+      "bandwidth": 100.0,
+      "delta": 1.0,
+      "detuning": 0.0
+    },
+    "profiles": {
+      "convergence": {
+        "asymmetries": [
+          1.0,
+          11.0
+        ],
+        "phases_over_pi": [
+          0.5
+        ],
+        "settings": [
+          {
+            "cutoff": null,
+            "frequency_cutoff": 100.0,
+            "label": "L2",
+            "levels": 2
+          },
+          {
+            "cutoff": null,
+            "frequency_cutoff": 100.0,
+            "label": "L3",
+            "levels": 3
+          },
+          {
+            "cutoff": null,
+            "frequency_cutoff": 100.0,
+            "label": "L4",
+            "levels": 4
+          },
+          {
+            "cutoff": 4,
+            "frequency_cutoff": 100.0,
+            "label": "L4_q4",
+            "levels": 4
+          },
+          {
+            "cutoff": null,
+            "frequency_cutoff": 200.0,
+            "label": "L4_w200",
+            "levels": 4
+          },
+          {
+            "bandwidth": 200.0,
+            "cutoff": null,
+            "frequency_cutoff": 200.0,
+            "label": "L4_D200",
+            "levels": 4
+          },
+          {
+            "cutoff": null,
+            "frequency_cutoff": 100.0,
+            "label": "L5",
+            "levels": 5,
+            "solver": {
+              "method": "sparse"
+            }
+          }
+        ],
+        "u_meV": [
+          3.2
+        ]
+      },
+      "paper": {
+        "asymmetries": [
+          1.0,
+          11.0
+        ],
+        "phases_over_pi": [
+          0.0,
+          0.2,
+          0.4,
+          0.6,
+          0.8,
+          1.0
+        ],
+        "settings": {
+          "cutoff": null,
+          "frequency_cutoff": 100.0,
+          "levels": 4
+        },
+        "u_meV": [
+          2.0,
+          3.2,
+          5.0
+        ]
+      },
+      "quick": {
+        "asymmetries": [
+          1.0,
+          11.0
+        ],
+        "phases_over_pi": [
+          0.5,
+          0.9
+        ],
+        "settings": {
+          "cutoff": null,
+          "frequency_cutoff": 100.0,
+          "levels": 2
+        },
+        "u_meV": [
+          2.0,
+          3.2
+        ]
+      }
+    },
+    "root_tolerance": 2e-06
+  },
+  "profile": "paper",
+  "scripts_sha256": {
+    "../_common.py": "1709014d7dfde5f7ae809f0ca44fcd2bb669e4bb26d00a1e87e221a35d5ea210",
+    "extract_reference.py": "0e5b7a940172acafacdedb2d652ffa15b456b34e049b2d3bea8b0adfedf8efd5",
+    "plot.py": "f4e03af2fe98b144d38c2a69be25616a1c233ed0ba936a499349d1cc66f626b7",
+    "run.py": "a50344f57d20254fe53ae23cc1481a998a87bbde287c62888af147efd6992194"
+  },
+  "state_records": 538
+}

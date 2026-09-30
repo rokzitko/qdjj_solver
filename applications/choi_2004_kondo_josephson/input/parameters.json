@@ -1,0 +1,26 @@
+{
+  "format_version": 1,
+  "paper_doi": "10.1103/PhysRevB.70.020502",
+  "model": {"delta": 1.0, "detuning": 0.0},
+  "normal_state": {"u_over_D": 0.2, "gamma_total_over_D": 0.04},
+  "profiles": {
+    "quick": {"settings": {"levels": 4, "frequency_factor": 1.0}, "ratios": [0.1, 1.8, 10.0], "phase_over_pi": [0.15, 0.4, 0.8]},
+    "paper": {"settings": {"levels": 8, "frequency_factor": 1.0}, "ratios": [0.1, 1.6, 1.8, 2.0, 2.2, 10.0], "phase_points": 31, "include_reference_phases": true, "locate_crossings": true},
+    "convergence": {
+      "ratios": [0.1, 1.8, 10.0],
+      "phase_over_pi": [0.3, 0.8],
+      "settings": [
+        {"label": "L6", "levels": 6, "frequency_factor": 1.0},
+        {"label": "L8", "levels": 8, "frequency_factor": 1.0},
+        {"label": "L10", "levels": 10, "frequency_factor": 1.0, "solver": {"method": "sparse"}},
+        {"label": "L8_w2D", "levels": 8, "frequency_factor": 2.0},
+        {"label": "L8_q4", "levels": 8, "frequency_factor": 1.0, "cutoff": 4},
+        {"label": "L12_q6", "levels": 12, "frequency_factor": 1.0, "cutoff": 6, "solver": {"method": "sparse"}, "ratios": [0.1], "phase_over_pi": [0.3]},
+        {"label": "L12_q8", "levels": 12, "frequency_factor": 1.0, "cutoff": 8, "solver": {"method": "sparse"}, "ratios": [0.1], "phase_over_pi": [0.3]}
+      ]
+    }
+  },
+  "finite_difference_step": 0.0001,
+  "finite_difference_phase_over_pi": 0.2,
+  "transition_phase_tolerance": 0.000005
+}

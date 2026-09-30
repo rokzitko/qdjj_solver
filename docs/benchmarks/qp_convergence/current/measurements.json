@@ -1,0 +1,1832 @@
+[
+  {
+    "backend": "qp",
+    "bath_key": "0bf1917f74d0bedb6ac168bffbc29aadb2cbc016ce0771ba3c5f00f8b44f9d1f",
+    "chi_max": null,
+    "cutoff": 1,
+    "diagnostics": {
+      "basis_bytes": 896,
+      "estimated_solver_bytes": 7800,
+      "nnz": 73,
+      "real_arithmetic": true
+    },
+    "dimension": 25,
+    "id": "qp_N24_Q1",
+    "levels": 24,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.04708421677170052,
+      "impurity_charge": 1.0000000000000018,
+      "impurity_spin_z": 0.4529157832283002
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 25000000,
+      "max_memory_gib": 32.0,
+      "max_nnz": 250000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 12,
+      "residual_tolerance": 2e-09,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-11
+    },
+    "origin": "current",
+    "qp_weights": [
+      0.9058315664566006,
+      0.09416843354340106
+    ],
+    "residual": 6.431551061082484e-12,
+    "residual_kind": "projected",
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 8.437503129243851e-05,
+      "diagonalization": 0.0017288331873714924,
+      "hamiltonian": 0.00047850003466010094,
+      "observables_and_residuals": 0.0006532077677547932,
+      "total": 0.0033597080036997795
+    },
+    "values": {
+      "C_d_bath": -3.3306690738754696e-16,
+      "P_0": 0.047084216771698745,
+      "P_1": 0.9058315664566008,
+      "P_2": 0.04708421677170052,
+      "energy": -0.9701028967496573,
+      "q_d": 0.9058315664566003
+    }
+  },
+  {
+    "backend": "qp",
+    "bath_key": "0bf1917f74d0bedb6ac168bffbc29aadb2cbc016ce0771ba3c5f00f8b44f9d1f",
+    "chi_max": null,
+    "cutoff": 2,
+    "diagnostics": {
+      "basis_bytes": 14336,
+      "estimated_solver_bytes": 142584,
+      "nnz": 1657,
+      "real_arithmetic": true
+    },
+    "dimension": 457,
+    "id": "qp_N24_Q2",
+    "levels": 24,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.06794995578193572,
+      "impurity_charge": 1.0000000000000033,
+      "impurity_spin_z": 0.42523177890299624
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 25000000,
+      "max_memory_gib": 32.0,
+      "max_nnz": 250000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 12,
+      "residual_tolerance": 2e-09,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-11
+    },
+    "origin": "current",
+    "qp_weights": [
+      0.853287076443077,
+      0.13589991156387146,
+      0.010813011993054853
+    ],
+    "residual": 1.0424251113814347e-11,
+    "residual_kind": "projected",
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.00019133277237415314,
+      "diagonalization": 0.0049480414018034935,
+      "hamiltonian": 0.0002949591726064682,
+      "observables_and_residuals": 0.001275666058063507,
+      "total": 0.007197916973382235
+    },
+    "values": {
+      "C_d_bath": -0.010227397972604524,
+      "P_0": 0.06794995578193239,
+      "P_1": 0.8641000884361318,
+      "P_2": 0.06794995578193572,
+      "energy": -1.0776041900959978,
+      "q_d": 0.8504635578059925
+    }
+  },
+  {
+    "backend": "qp",
+    "bath_key": "0bf1917f74d0bedb6ac168bffbc29aadb2cbc016ce0771ba3c5f00f8b44f9d1f",
+    "chi_max": null,
+    "cutoff": 3,
+    "diagnostics": {
+      "basis_bytes": 229376,
+      "estimated_solver_bytes": 2209272,
+      "nnz": 28441,
+      "real_arithmetic": true
+    },
+    "dimension": 7081,
+    "id": "qp_N24_Q3",
+    "levels": 24,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.07084350431207537,
+      "impurity_charge": 1.0000000000000022,
+      "impurity_spin_z": 0.41929574251778995
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 25000000,
+      "max_memory_gib": 32.0,
+      "max_nnz": 250000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 12,
+      "residual_tolerance": 2e-09,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-11
+    },
+    "origin": "current",
+    "qp_weights": [
+      0.8427594631855438,
+      0.14100941510576404,
+      0.015553528190307206,
+      0.000677593518386739
+    ],
+    "residual": 7.008534914368987e-12,
+    "residual_kind": "projected",
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.0009906250052154064,
+      "diagonalization": 0.05022024968639016,
+      "hamiltonian": 0.0025996253825724125,
+      "observables_and_residuals": 0.01302708312869072,
+      "total": 0.06750491680577397
+    },
+    "values": {
+      "C_d_bath": -0.014791129755203691,
+      "P_0": 0.07084350431207315,
+      "P_1": 0.8583129913758515,
+      "P_2": 0.07084350431207537,
+      "energy": -1.0879935943569499,
+      "q_d": 0.8385914850355799
+    }
+  },
+  {
+    "backend": "qp",
+    "bath_key": "0bf1917f74d0bedb6ac168bffbc29aadb2cbc016ce0771ba3c5f00f8b44f9d1f",
+    "chi_max": null,
+    "cutoff": 4,
+    "diagnostics": {
+      "basis_bytes": 3670016,
+      "estimated_solver_bytes": 21693048,
+      "nnz": 389257,
+      "real_arithmetic": true
+    },
+    "dimension": 69529,
+    "id": "qp_N24_Q4",
+    "levels": 24,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.07103716111571587,
+      "impurity_charge": 1.0000000000000053,
+      "impurity_spin_z": 0.4188755903656269
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 25000000,
+      "max_memory_gib": 32.0,
+      "max_nnz": 250000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 12,
+      "residual_tolerance": 2e-09,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-11
+    },
+    "origin": "current",
+    "qp_weights": [
+      0.8420086741454942,
+      0.14126836181569918,
+      0.015894102747010294,
+      0.0008059604157326264,
+      2.2900876068883464e-05
+    ],
+    "residual": 9.784214936068504e-12,
+    "residual_kind": "projected",
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.007029249798506498,
+      "diagonalization": 0.6868360410444438,
+      "hamiltonian": 0.028327833395451307,
+      "observables_and_residuals": 0.140475916210562,
+      "total": 0.8633941253647208
+    },
+    "values": {
+      "C_d_bath": -0.015130872777989829,
+      "P_0": 0.07103716111571054,
+      "P_1": 0.8579256777685735,
+      "P_2": 0.07103716111571587,
+      "energy": -1.0885072005644147,
+      "q_d": 0.8377511807312538
+    }
+  },
+  {
+    "backend": "qp",
+    "bath_key": "56c633a1a06d42eeb0cff90e6424dbe78081f96f5756b0ef0557c053511406f9",
+    "chi_max": null,
+    "cutoff": 1,
+    "diagnostics": {
+      "basis_bytes": 2304,
+      "estimated_solver_bytes": 10560,
+      "nnz": 97,
+      "real_arithmetic": true
+    },
+    "dimension": 33,
+    "id": "qp_N32_Q1",
+    "levels": 32,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.04708421676181336,
+      "impurity_charge": 0.9999999999999966,
+      "impurity_spin_z": 0.4529157832381849
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 25000000,
+      "max_memory_gib": 32.0,
+      "max_nnz": 250000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 12,
+      "residual_tolerance": 2e-09,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-11
+    },
+    "origin": "current",
+    "qp_weights": [
+      0.90583156647637,
+      0.09416843352362675
+    ],
+    "residual": 2.18996437964767e-12,
+    "residual_kind": "projected",
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.0001000422053039074,
+      "diagonalization": 0.001870916225016117,
+      "hamiltonian": 0.00021200021728873253,
+      "observables_and_residuals": 0.0010745003819465637,
+      "total": 0.0037888330407440662
+    },
+    "values": {
+      "C_d_bath": -8.326672684688674e-17,
+      "P_0": 0.0470842167618168,
+      "P_1": 0.9058315664763699,
+      "P_2": 0.04708421676181336,
+      "energy": -0.9701028967630355,
+      "q_d": 0.9058315664763698
+    }
+  },
+  {
+    "backend": "qp",
+    "bath_key": "56c633a1a06d42eeb0cff90e6424dbe78081f96f5756b0ef0557c053511406f9",
+    "chi_max": null,
+    "cutoff": 2,
+    "diagnostics": {
+      "basis_bytes": 36864,
+      "estimated_solver_bytes": 256320,
+      "nnz": 2913,
+      "real_arithmetic": true
+    },
+    "dimension": 801,
+    "id": "qp_N32_Q2",
+    "levels": 32,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.06794995568534014,
+      "impurity_charge": 0.9999999999999981,
+      "impurity_spin_z": 0.4252317790382278
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 25000000,
+      "max_memory_gib": 32.0,
+      "max_nnz": 250000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 12,
+      "residual_tolerance": 2e-09,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-11
+    },
+    "origin": "current",
+    "qp_weights": [
+      0.8532870767097535,
+      0.13589991137068033,
+      0.010813011919564464
+    ],
+    "residual": 1.074861104786463e-11,
+    "residual_kind": "projected",
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.0003526252694427967,
+      "diagonalization": 0.006619915831834078,
+      "hamiltonian": 0.00048504071310162544,
+      "observables_and_residuals": 0.0025192908942699432,
+      "total": 0.010599624831229448
+    },
+    "values": {
+      "C_d_bath": -0.010227397914646719,
+      "P_0": 0.06794995568534203,
+      "P_1": 0.8641000886293179,
+      "P_2": 0.06794995568534014,
+      "energy": -1.0776041900734274,
+      "q_d": 0.8504635580764556
+    }
+  },
+  {
+    "backend": "qp",
+    "bath_key": "56c633a1a06d42eeb0cff90e6424dbe78081f96f5756b0ef0557c053511406f9",
+    "chi_max": null,
+    "cutoff": 3,
+    "diagnostics": {
+      "basis_bytes": 1179648,
+      "estimated_solver_bytes": 5335360,
+      "nnz": 66913,
+      "real_arithmetic": true
+    },
+    "dimension": 16673,
+    "id": "qp_N32_Q3",
+    "levels": 32,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.07084350421368106,
+      "impurity_charge": 0.9999999999999967,
+      "impurity_spin_z": 0.4192957426776199
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 25000000,
+      "max_memory_gib": 32.0,
+      "max_nnz": 250000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 12,
+      "residual_tolerance": 2e-09,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-11
+    },
+    "origin": "current",
+    "qp_weights": [
+      0.842759463467736,
+      0.14100941491453167,
+      0.015553528104898594,
+      0.000677593512830387
+    ],
+    "residual": 8.793913792351079e-12,
+    "residual_kind": "projected",
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.0021307910792529583,
+      "diagonalization": 0.13148004189133644,
+      "hamiltonian": 0.007170583121478558,
+      "observables_and_residuals": 0.03856675000861287,
+      "total": 0.18011258402839303
+    },
+    "values": {
+      "C_d_bath": -0.014791129663046076,
+      "P_0": 0.07084350421368439,
+      "P_1": 0.8583129915726345,
+      "P_2": 0.07084350421368106,
+      "energy": -1.0879935941873164,
+      "q_d": 0.8385914853552398
+    }
+  },
+  {
+    "backend": "qp",
+    "bath_key": "56c633a1a06d42eeb0cff90e6424dbe78081f96f5756b0ef0557c053511406f9",
+    "chi_max": null,
+    "cutoff": 4,
+    "diagnostics": {
+      "basis_bytes": 9437184,
+      "estimated_solver_bytes": 70134080,
+      "nnz": 1238113,
+      "real_arithmetic": true
+    },
+    "dimension": 219169,
+    "id": "qp_N32_Q4",
+    "levels": 32,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.07103716107180809,
+      "impurity_charge": 0.9999999999999879,
+      "impurity_spin_z": 0.41887559041622247
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 25000000,
+      "max_memory_gib": 32.0,
+      "max_nnz": 250000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 12,
+      "residual_tolerance": 2e-09,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-11
+    },
+    "origin": "current",
+    "qp_weights": [
+      0.8420086742043915,
+      0.14126836171948923,
+      0.01589410277521983,
+      0.000805960424127064,
+      2.290087676945115e-05
+    ],
+    "residual": 8.431017010060724e-12,
+    "residual_kind": "projected",
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.024865624960511923,
+      "diagonalization": 2.42752870824188,
+      "hamiltonian": 0.11179075017571449,
+      "observables_and_residuals": 0.7047335002571344,
+      "total": 3.2698324169032276
+    },
+    "values": {
+      "C_d_bath": -0.015130872767945114,
+      "P_0": 0.07103716107182019,
+      "P_1": 0.8579256778563717,
+      "P_2": 0.07103716107180809,
+      "energy": -1.0885072003957406,
+      "q_d": 0.8377511808324449
+    }
+  },
+  {
+    "backend": "dmrg",
+    "bath_key": "0bf1917f74d0bedb6ac168bffbc29aadb2cbc016ce0771ba3c5f00f8b44f9d1f",
+    "chi_max": 128,
+    "cutoff": null,
+    "diagnostics": {
+      "finite_problem_converged": true,
+      "gram_error": 1.332269625850124e-15,
+      "residual_method": "untruncated-(H-E)-MPS-QR",
+      "roots": [
+        {
+          "chi_actual": 128,
+          "lower_root_overlap": 0.0,
+          "norm_error": 2.152749179377677e-15,
+          "seed": {
+            "product": [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "random_seed": [
+              1729,
+              0,
+              3
+            ],
+            "randomization_steps": 4
+          },
+          "seed_trials": [
+            {
+              "energy": -1.0885207094577543,
+              "lower_root_overlap": 0.0,
+              "seed": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "sweep_converged": true
+            },
+            {
+              "energy": -1.0885207094577591,
+              "lower_root_overlap": 0.0,
+              "seed": {
+                "product": [
+                  0,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "random_seed": [
+                  1729,
+                  0,
+                  1
+                ],
+                "randomization_steps": 4
+              },
+              "sweep_converged": true
+            },
+            {
+              "energy": -1.0885207094577565,
+              "lower_root_overlap": 0.0,
+              "seed": {
+                "product": [
+                  3,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  3,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "random_seed": [
+                  1729,
+                  0,
+                  2
+                ],
+                "randomization_steps": 4
+              },
+              "sweep_converged": true
+            },
+            {
+              "energy": -1.0885207094577913,
+              "lower_root_overlap": 0.0,
+              "seed": {
+                "product": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "random_seed": [
+                  1729,
+                  0,
+                  3
+                ],
+                "randomization_steps": 4
+              },
+              "sweep_converged": true
+            }
+          ],
+          "sweep_converged": true,
+          "sweep_energy_converged": true,
+          "sweep_statistics": {
+            "Delta_E": [
+              null,
+              -5.494391608351634e-10,
+              -2.660618392269498e-10,
+              -4.5924686276066495e-10,
+              1.6360246490876307e-12,
+              -2.7755575615628914e-13,
+              -1.4204193377054253e-12,
+              2.3780977187470853e-13
+            ],
+            "Delta_S": [
+              -0.5950627158497315,
+              2.317062096357514e-07,
+              -8.017660926840087e-08,
+              -2.6036343164781428e-08,
+              6.063813340340118e-11,
+              -1.0760003998910861e-11,
+              -1.7928269979705647e-11,
+              1.466793353444018e-11
+            ],
+            "E": [
+              -2.088520706908648,
+              -2.0885207080075263,
+              -2.08852070853965,
+              -2.0885207094581437,
+              -2.0885207094548717,
+              -2.088520709455427,
+              -2.0885207094582676,
+              -2.088520709457792
+            ],
+            "N_updates": [
+              92.0,
+              184.0,
+              276.0,
+              368.0,
+              460.0,
+              552.0,
+              644.0,
+              736.0
+            ],
+            "S": [
+              0.34584219629979446,
+              0.34584265971221373,
+              0.3458424993589952,
+              0.34584244728630886,
+              0.34584244740758513,
+              0.3458424473860651,
+              0.3458424473502086,
+              0.34584244737954445
+            ],
+            "max_E_trunc": [
+              1.1926162279962682e-09,
+              6.941105468172282e-10,
+              4.931268726693361e-10,
+              8.383116423260617e-11,
+              8.461054079589303e-11,
+              8.487743841101292e-11,
+              8.40674196922464e-11,
+              8.465805834134699e-11
+            ],
+            "max_S": [
+              0.5586166145884566,
+              0.5586267763789731,
+              0.5586228978274891,
+              0.5586216059905461,
+              0.5586216062182326,
+              0.5586216061993714,
+              0.5586216062026249,
+              0.5586216062197018
+            ],
+            "max_chi": [
+              128.0,
+              128.0,
+              128.0,
+              128.0,
+              128.0,
+              128.0,
+              128.0,
+              128.0
+            ],
+            "max_trunc_err": [
+              3.4727521572835734e-11,
+              1.9514975478315346e-11,
+              1.2017330548435979e-11,
+              1.393257338357061e-12,
+              1.413813243300702e-12,
+              1.4201502984844732e-12,
+              1.415269252629005e-12,
+              1.4196678879123228e-12
+            ],
+            "norm_err": [
+              9.357880396081896e-06,
+              8.283922213767791e-09,
+              8.20610213047673e-09,
+              3.5376835422454254e-09,
+              2.2158913365603014e-09,
+              3.643317993016778e-09,
+              3.3810972673503456e-09,
+              2.12952952102708e-09
+            ],
+            "sweep": [
+              2.0,
+              4.0,
+              6.0,
+              8.0,
+              10.0,
+              12.0,
+              14.0,
+              16.0
+            ],
+            "time": [
+              20.686439990997314,
+              24.928614139556885,
+              28.866376161575317,
+              31.509352207183838,
+              33.85924005508423,
+              36.1919059753418,
+              38.57762408256531,
+              40.91309094429016
+            ]
+          },
+          "sweeps": 16
+        }
+      ],
+      "roots_energy_ordered": true
+    },
+    "dimension": null,
+    "id": "dmrg_N24_chi128",
+    "levels": 24,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.07104306443080888,
+      "impurity_charge": 1.000000000000001,
+      "impurity_spin_z": 0.41886231992694994
+    },
+    "options": {
+      "calculate_residuals": true,
+      "chi_max": 128,
+      "eigenpairs": 1,
+      "energy_tolerance": 1e-12,
+      "entropy_tolerance": 1e-08,
+      "excitation_operator": null,
+      "group_size": 2,
+      "lanczos_maxiter": 100,
+      "max_sweeps": 80,
+      "min_sweeps": 12,
+      "mixer": true,
+      "mixer_amplitude": 1e-05,
+      "mixer_sweeps": 6,
+      "mode_order": null,
+      "observables": [
+        "impurity_charge",
+        "double_occupancy_0",
+        "impurity_spin_z"
+      ],
+      "orthogonality_tolerance": 1e-08,
+      "require_convergence": true,
+      "residual_tolerance": 0.0003,
+      "seed": 1729,
+      "seed_randomization_steps": 4,
+      "seed_trials": 4,
+      "svd_min": 1e-14,
+      "threads": 1
+    },
+    "origin": "current",
+    "qp_weights": null,
+    "residual": 0.0001715714267069571,
+    "residual_kind": "full finite Hamiltonian",
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "diagonalization": 155.13947099959478,
+      "observables_and_residuals": 0.6660467498004436,
+      "preparation": 0.19295808393508196,
+      "total": 156.21211470896378
+    },
+    "values": {
+      "C_d_bath": -0.0151419234633626,
+      "P_0": 0.07104306443080777,
+      "P_1": 0.8579138711383834,
+      "P_2": 0.07104306443080888,
+      "energy": -1.0885207094577913,
+      "q_d": 0.8377246398538999
+    }
+  },
+  {
+    "backend": "dmrg",
+    "bath_key": "56c633a1a06d42eeb0cff90e6424dbe78081f96f5756b0ef0557c053511406f9",
+    "chi_max": 128,
+    "cutoff": null,
+    "diagnostics": {
+      "finite_problem_converged": true,
+      "gram_error": 3.1087199519450302e-15,
+      "residual_method": "untruncated-(H-E)-MPS-QR",
+      "roots": [
+        {
+          "chi_actual": 128,
+          "lower_root_overlap": 0.0,
+          "norm_error": 2.5628460462909785e-15,
+          "seed": {
+            "product": [
+              0,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1
+            ],
+            "random_seed": [
+              1729,
+              0,
+              1
+            ],
+            "randomization_steps": 4
+          },
+          "seed_trials": [
+            {
+              "energy": -1.0885207092716478,
+              "lower_root_overlap": 0.0,
+              "seed": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "sweep_converged": true
+            },
+            {
+              "energy": -1.088520709275507,
+              "lower_root_overlap": 0.0,
+              "seed": {
+                "product": [
+                  0,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "random_seed": [
+                  1729,
+                  0,
+                  1
+                ],
+                "randomization_steps": 4
+              },
+              "sweep_converged": true
+            },
+            {
+              "energy": -1.088520709275505,
+              "lower_root_overlap": 0.0,
+              "seed": {
+                "product": [
+                  3,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  3,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "random_seed": [
+                  1729,
+                  0,
+                  2
+                ],
+                "randomization_steps": 4
+              },
+              "sweep_converged": true
+            },
+            {
+              "energy": -1.0885207092755027,
+              "lower_root_overlap": 0.0,
+              "seed": {
+                "product": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "random_seed": [
+                  1729,
+                  0,
+                  3
+                ],
+                "randomization_steps": 4
+              },
+              "sweep_converged": true
+            }
+          ],
+          "sweep_converged": true,
+          "sweep_energy_converged": true,
+          "sweep_statistics": {
+            "Delta_E": [
+              null,
+              -6.815032982387947e-10,
+              -3.4581315588866346e-10,
+              -5.065512453938936e-10,
+              -3.3699709689472e-12,
+              1.0602629885170245e-12,
+              1.2589929099249275e-13
+            ],
+            "Delta_S": [
+              -0.6323883313742633,
+              -1.6662940774403445e-07,
+              -5.975950967407329e-08,
+              -1.91705725460789e-08,
+              9.271924894527217e-11,
+              -1.6151524562246777e-11,
+              -1.8259227463346406e-11
+            ],
+            "E": [
+              -2.0885207062034032,
+              -2.08852070756641,
+              -2.088520708258036,
+              -2.0885207092711386,
+              -2.0885207092778786,
+              -2.088520709275758,
+              -2.0885207092755063
+            ],
+            "N_updates": [
+              124.0,
+              248.0,
+              372.0,
+              496.0,
+              620.0,
+              744.0,
+              868.0
+            ],
+            "S": [
+              0.3424512382267853,
+              0.3424509049679698,
+              0.34245078544895047,
+              0.3424507471078054,
+              0.3424507472932439,
+              0.3424507472609408,
+              0.34245074722442237
+            ],
+            "max_E_trunc": [
+              1.0156200325184273e-09,
+              5.950839820911824e-10,
+              3.5925751262766425e-10,
+              4.2435832625642433e-11,
+              4.531930386519889e-11,
+              4.2879921835492496e-11,
+              4.50408599306229e-11
+            ],
+            "max_S": [
+              0.5586387480307087,
+              0.5586267751245894,
+              0.5586228970072034,
+              0.5586216056026669,
+              0.5586216057857218,
+              0.5586216058324299,
+              0.5586216057631926
+            ],
+            "max_chi": [
+              128.0,
+              128.0,
+              128.0,
+              128.0,
+              128.0,
+              128.0,
+              128.0
+            ],
+            "max_trunc_err": [
+              2.6408205851008284e-11,
+              1.425416597954223e-11,
+              8.180292793274337e-12,
+              7.302600353482772e-13,
+              7.923913422736094e-13,
+              7.750875107751015e-13,
+              7.771508738210787e-13
+            ],
+            "norm_err": [
+              1.3107181035228041e-06,
+              1.4669069398213931e-08,
+              1.547736940984717e-08,
+              1.709950414005756e-08,
+              1.4509855071345439e-08,
+              1.0162809540925853e-08,
+              1.0138927561986365e-08
+            ],
+            "sweep": [
+              2.0,
+              4.0,
+              6.0,
+              8.0,
+              10.0,
+              12.0,
+              14.0
+            ],
+            "time": [
+              24.419323205947876,
+              29.982287168502808,
+              34.9618661403656,
+              38.373324155807495,
+              41.390584230422974,
+              44.34540009498596,
+              47.26634216308594
+            ]
+          },
+          "sweeps": 14
+        }
+      ],
+      "roots_energy_ordered": true
+    },
+    "dimension": null,
+    "id": "dmrg_N32_chi128",
+    "levels": 32,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.07104306436416613,
+      "impurity_charge": 1.0000000000000029,
+      "impurity_spin_z": 0.41886232001532414
+    },
+    "options": {
+      "calculate_residuals": true,
+      "chi_max": 128,
+      "eigenpairs": 1,
+      "energy_tolerance": 1e-12,
+      "entropy_tolerance": 1e-08,
+      "excitation_operator": null,
+      "group_size": 2,
+      "lanczos_maxiter": 100,
+      "max_sweeps": 80,
+      "min_sweeps": 12,
+      "mixer": true,
+      "mixer_amplitude": 1e-05,
+      "mixer_sweeps": 6,
+      "mode_order": null,
+      "observables": [
+        "impurity_charge",
+        "double_occupancy_0",
+        "impurity_spin_z"
+      ],
+      "orthogonality_tolerance": 1e-08,
+      "require_convergence": true,
+      "residual_tolerance": 0.0003,
+      "seed": 1729,
+      "seed_randomization_steps": 4,
+      "seed_trials": 4,
+      "svd_min": 1e-14,
+      "threads": 1
+    },
+    "origin": "current",
+    "qp_weights": null,
+    "residual": 0.00017345771240378922,
+    "residual_kind": "full finite Hamiltonian",
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "diagonalization": 195.67192416731268,
+      "observables_and_residuals": 0.9154222919605672,
+      "preparation": 0.26373816607519984,
+      "total": 197.15305133303627
+    },
+    "values": {
+      "C_d_bath": -0.015141923430766757,
+      "P_0": 0.07104306436416324,
+      "P_1": 0.8579138712716706,
+      "P_2": 0.07104306436416613,
+      "energy": -1.088520709275507,
+      "q_d": 0.8377246400306483
+    }
+  },
+  {
+    "backend": "dmrg",
+    "bath_key": "0bf1917f74d0bedb6ac168bffbc29aadb2cbc016ce0771ba3c5f00f8b44f9d1f",
+    "chi_max": 192,
+    "cutoff": null,
+    "diagnostics": {
+      "finite_problem_converged": true,
+      "gram_error": 3.1087055036691806e-15,
+      "residual_method": "untruncated-(H-E)-MPS-QR",
+      "roots": [
+        {
+          "chi_actual": 192,
+          "lower_root_overlap": 0.0,
+          "norm_error": 2.6866817094963504e-15,
+          "seed": {
+            "product": [
+              3,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              3,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            "random_seed": [
+              1729,
+              0,
+              2
+            ],
+            "randomization_steps": 4
+          },
+          "seed_trials": [
+            {
+              "energy": -1.0885207097470455,
+              "lower_root_overlap": 0.0,
+              "seed": [
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                1,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "sweep_converged": true
+            },
+            {
+              "energy": -1.0885207097467469,
+              "lower_root_overlap": 0.0,
+              "seed": {
+                "product": [
+                  0,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "random_seed": [
+                  1729,
+                  0,
+                  1
+                ],
+                "randomization_steps": 4
+              },
+              "sweep_converged": true
+            },
+            {
+              "energy": -1.0885207097470464,
+              "lower_root_overlap": 0.0,
+              "seed": {
+                "product": [
+                  3,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  3,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "random_seed": [
+                  1729,
+                  0,
+                  2
+                ],
+                "randomization_steps": 4
+              },
+              "sweep_converged": true
+            },
+            {
+              "energy": -1.0885207097467473,
+              "lower_root_overlap": 0.0,
+              "seed": {
+                "product": [
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  1,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                "random_seed": [
+                  1729,
+                  0,
+                  3
+                ],
+                "randomization_steps": 4
+              },
+              "sweep_converged": true
+            }
+          ],
+          "sweep_converged": true,
+          "sweep_energy_converged": true,
+          "sweep_statistics": {
+            "Delta_E": [
+              null,
+              -3.5668579201342254e-11,
+              -2.0439427927954057e-11,
+              -2.937716736539642e-11,
+              -1.1013412404281553e-13,
+              1.3322676295501878e-15,
+              -1.5543122344752192e-15
+            ],
+            "Delta_S": [
+              -0.6189347689889274,
+              8.435965631603537e-08,
+              -8.080394675591407e-08,
+              -2.696788298228725e-08,
+              2.7706725802545407e-11,
+              -7.322809025822608e-12,
+              -1.7319479184152442e-14
+            ],
+            "E": [
+              -2.0885207095758607,
+              -2.088520709647198,
+              -2.0885207096880767,
+              -2.088520709746831,
+              -2.0885207097470513,
+              -2.0885207097470486,
+              -2.0885207097470517
+            ],
+            "N_updates": [
+              92.0,
+              184.0,
+              276.0,
+              368.0,
+              460.0,
+              552.0,
+              644.0
+            ],
+            "S": [
+              0.3458424962690309,
+              0.34584266498834354,
+              0.34584250338045003,
+              0.34584244944468406,
+              0.3458424495000975,
+              0.3458424494854519,
+              0.34584244948541726
+            ],
+            "max_E_trunc": [
+              8.651168670326115e-11,
+              5.1309179127656535e-11,
+              2.956479505655807e-11,
+              3.4914293678411923e-12,
+              3.4066083287598303e-12,
+              3.410161042438631e-12,
+              3.411493310068181e-12
+            ],
+            "max_S": [
+              0.558622786232338,
+              0.5586267810448503,
+              0.5586229006340101,
+              0.5586216071194899,
+              0.55862160715852,
+              0.5586216071658323,
+              0.5586216071644601
+            ],
+            "max_chi": [
+              192.0,
+              192.0,
+              192.0,
+              192.0,
+              192.0,
+              192.0,
+              192.0
+            ],
+            "max_trunc_err": [
+              2.242289020595147e-12,
+              1.1998762333066444e-12,
+              6.646575033723749e-13,
+              4.760836820623972e-14,
+              4.7887874175719817e-14,
+              4.796946432320282e-14,
+              4.799644222858039e-14
+            ],
+            "norm_err": [
+              7.15443628173178e-06,
+              4.076464004110193e-09,
+              4.57630055171341e-09,
+              5.223385091056056e-10,
+              5.455636577735352e-10,
+              5.340460084341704e-10,
+              5.215547718089876e-10
+            ],
+            "sweep": [
+              2.0,
+              4.0,
+              6.0,
+              8.0,
+              10.0,
+              12.0,
+              14.0
+            ],
+            "time": [
+              32.066553831100464,
+              37.65745496749878,
+              42.96358895301819,
+              46.08036208152771,
+              48.92123007774353,
+              51.72307991981506,
+              54.55654811859131
+            ]
+          },
+          "sweeps": 14
+        }
+      ],
+      "roots_energy_ordered": true
+    },
+    "dimension": null,
+    "id": "dmrg_N24_chi192",
+    "levels": 24,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.07104306452901404,
+      "impurity_charge": 1.0000000000000029,
+      "impurity_spin_z": 0.4188623197207656
+    },
+    "options": {
+      "calculate_residuals": true,
+      "chi_max": 192,
+      "eigenpairs": 1,
+      "energy_tolerance": 1e-12,
+      "entropy_tolerance": 1e-08,
+      "excitation_operator": null,
+      "group_size": 2,
+      "lanczos_maxiter": 100,
+      "max_sweeps": 80,
+      "min_sweeps": 12,
+      "mixer": true,
+      "mixer_amplitude": 1e-05,
+      "mixer_sweeps": 6,
+      "mode_order": null,
+      "observables": [
+        "impurity_charge",
+        "double_occupancy_0",
+        "impurity_spin_z"
+      ],
+      "orthogonality_tolerance": 1e-08,
+      "require_convergence": true,
+      "residual_tolerance": 0.0003,
+      "seed": 1729,
+      "seed_randomization_steps": 4,
+      "seed_trials": 4,
+      "svd_min": 1e-14,
+      "threads": 1
+    },
+    "origin": "current",
+    "qp_weights": null,
+    "residual": 3.683754399100683e-05,
+    "residual_kind": "full finite Hamiltonian",
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "diagonalization": 214.6151438751258,
+      "observables_and_residuals": 1.5807697912678123,
+      "preparation": 0.19265299988910556,
+      "total": 216.5975009156391
+    },
+    "values": {
+      "C_d_bath": -0.015141923625332704,
+      "P_0": 0.07104306452901116,
+      "P_1": 0.8579138709419748,
+      "P_2": 0.07104306452901404,
+      "energy": -1.0885207097470464,
+      "q_d": 0.8377246394415312
+    }
+  }
+]

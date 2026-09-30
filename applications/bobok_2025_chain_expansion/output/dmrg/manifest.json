@@ -1,0 +1,132 @@
+{
+  "baths": {
+    "8a75e95e97bb51f5cadc56aebb61b682f2391d1c8b0f0205a16e5474b8d4e14c": {
+      "bandwidth": 100.0,
+      "delta": 1.0,
+      "metadata": {
+        "chain_h": [
+          4.0,
+          5.0,
+          0.8,
+          0.2
+        ],
+        "citation": "Bobok, Frk, Pokorny and Zonda, Phys. Rev. B 112, 205418 (2025), 10.1103/mxsl-fc96",
+        "coefficient_quadrature_order": 0,
+        "kind": "chain-expansion",
+        "levels": 4,
+        "measure_error": -0.9371681469282042,
+        "target": "wide-band",
+        "wide_band": true
+      },
+      "weights": [
+        0.02681517061334488,
+        0.0046007559225530485,
+        0.0046007559225530485,
+        0.02681517061334488
+      ],
+      "xi": [
+        -2.414213562373094,
+        -0.4142135623730946,
+        0.4142135623730946,
+        2.414213562373094
+      ]
+    }
+  },
+  "case": "bobok_2025_chain_expansion",
+  "elapsed_seconds": 16.101241041440517,
+  "environment": {
+    "machine": "arm64",
+    "numpy": "2.5.2",
+    "packages": {
+      "h5py": "3.16.0",
+      "numpy": "2.5.2",
+      "physics-tenpy": "1.1.1",
+      "qdjj-solver": "0.2.0",
+      "scipy": "1.18.0",
+      "threadpoolctl": "3.6.0"
+    },
+    "python": "3.14.7",
+    "qdjj_solver": "0.2.0",
+    "qpsolver": "0.2.0",
+    "release": "25.5.0",
+    "scipy": "1.18.0",
+    "system": "Darwin"
+  },
+  "format": "qdjj-application",
+  "format_version": 1,
+  "implementation": {
+    "files": {
+      "__init__.py": "4cae2501ee073def232cebacabbd1090cb2448f424f68f3db79cc7be57046af8",
+      "api.py": "a3a5b3a80ce155617899b3360a9d7dc36df4b4366ced7160ea00708642710e5a",
+      "cli.py": "d860f0b9442cf954dc38abccca1ebd6488bcf129bb1309251e8b71aaebb9e056",
+      "common/__init__.py": "23ce4f4c548dd6660ef73703de3fbb2f8e285472363a3bdea5652a9c0fed9081",
+      "common/algebra.py": "072659f71e4b222578a74f472fbdbfe03ee5816e76a9a3059578327bbfb81962",
+      "common/baths.py": "416293942562ca62be30c669697224803e4953260e6c3d885425c54f8bc0a8f4",
+      "common/io.py": "92f68161a334b5d3a1b49fa46617330301311dd4a961c471cb4140fb5121f693",
+      "common/models.py": "2647acbea388e3a56c6b09bdc422fcd78b13fbf53e48c2c886b3accfaf6ca890",
+      "common/problem.py": "6a74801112898d76b35213153cc9318befb1d98be99a0d639800efa3cdf98a47",
+      "compat/qpsolver/__init__.py": "1e8785ea1c09ee48c89b1d64adb9d68053bc7cf2c7438a1aa64bba6fe149a875",
+      "compat/qpsolver/cli.py": "272fbf82340c9a59e0efd74e513562f24af20a5d543fd0f13b58bfac00bcd0a9",
+      "compat/qpsolver/nrg.py": "6162ed163e5afa1bcacb1f0afabc94df0fe2fcce7e95aa879c40c1daa5fa27e0",
+      "dmrg_solver/__init__.py": "c875c9bd86be62c86e9555286a1088310886969178c13d4a700fe0b89b077bd6",
+      "dmrg_solver/convergence.py": "29ee594c6d41268d7cb51d3e3dd12e302a0e38bddb884d78a7de64f6d609d32e",
+      "dmrg_solver/io.py": "54bd752cc6ace17231c35f89f95674c522980301a4e17e601a11a54b19367748",
+      "dmrg_solver/legacy.py": "c2c98b124968c575a66616930cf79b8a75f731dbd6a5c469801db3c423dc4a6b",
+      "dmrg_solver/mpo.py": "5492d2f4e80db0e71f62f5884cb26206cef5944efd6f4f60bc55a4e2d44a9790",
+      "dmrg_solver/solver.py": "910169a6208b5710653b00382220be306e15c466174ab8708b568901a5b2e765",
+      "qp_solver/__init__.py": "508b0b0ce58511cde099aa639fcaf975edd523bfa8aaec073cec42338634f39c",
+      "qp_solver/_core.cpython-314-darwin.so": "c337e751280e81d172022b4fb1ab30e78d3926326844a16d27bffe447de24c4d",
+      "qp_solver/basis.py": "068727de5d1b960149d4e13810ca630da2e1c729ef5056eeac01d5ab623146ed",
+      "qp_solver/cli.py": "8a512a4f1c07aec98b015a6decd82282df9d1283367d12807f4e8e781edb0d4b",
+      "qp_solver/io.py": "4c208f7a597d6a32dfdde01cd7b0973b5ecc84b19fa32daddeddcf0a65f2e52e",
+      "qp_solver/nrg.py": "c71b57b9c3eeb1499a137955998a3e12a4370f710b501a928cca9d02dc51b92d",
+      "qp_solver/reference.py": "437686251373649a225e79f5ce30458c17006a2568ba260d8ead8c4260d9b650",
+      "qp_solver/solver.py": "7cc7a50bf31456ba0d6f9f5b5d732b3c2ac0b01369e775b4599e9e99f550a9d9"
+    },
+    "sha256": "84ab9d4a17136cf6b2109fd2232e67a4238a7f52c8264ebce1c51d500f177e7a",
+    "version": "0.2.0"
+  },
+  "input": {
+    "dmrg": {
+      "backend": "dmrg",
+      "cutoff": null,
+      "solver": {
+        "chi_max": 64,
+        "energy_tolerance": 1e-11,
+        "max_sweeps": 50,
+        "min_sweeps": 8,
+        "require_convergence": true,
+        "residual_tolerance": 1e-07,
+        "seed_trials": 2
+      }
+    },
+    "format_version": 1,
+    "model": {
+      "bandwidth": 100.0,
+      "delta": 1.0,
+      "detuning": 0.0
+    },
+    "settings": [
+      {
+        "bath_kind": "chain-expansion",
+        "label": "ChE-W4",
+        "levels": 4,
+        "wide_band": true
+      }
+    ],
+    "u": [
+      1.0,
+      3.0,
+      7.0
+    ]
+  },
+  "profile": "dmrg",
+  "scripts_sha256": {
+    "../_common.py": "831ff301f2431df256121d75da66b34d449c63dbfd13a35372ca9b86518084d3",
+    "chain_check.py": "d2e1b23915be06be1e21efdf66104e46debf7b27d77326e64141d1489300d7dc",
+    "extract_reference.py": "747d4c2586519a167280ba708e8680e025a687f226c2c72e04f3f57e7861ef3e",
+    "models.py": "92a4c89e2cf5e6b90d07adee2b3948be117e7cdbefd4a2c546f46c4d5a335498",
+    "run.py": "cb8a0543179fa780e61fc1fce078769d9ffb8e0839e8d1d57356187580e7ac90"
+  },
+  "state_records": 18
+}

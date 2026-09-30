@@ -1,0 +1,4 @@
+setting,kind,delta_over_D,epsilon_over_gamma,cells,eta_ratio,max_quadrature_error_over_peak,max_broadening_band_error_over_peak,peak_offset_over_D,peak_pi_gamma_A
+N128_eta04,quadratic,0.0001,0.0,128,0.04,0.3787152367208156,0.02017838974841116,3.9810717055349696e-08,27.20071815682742
+N128_eta04,quadratic,0.0001,4.0,128,0.04,0.4592493788351051,0.02018039305173284,7.943282347242822e-11,29.516507949379346
+L2_k64,interacting,0.03,-6.122448979591836,0,0.0,,,,

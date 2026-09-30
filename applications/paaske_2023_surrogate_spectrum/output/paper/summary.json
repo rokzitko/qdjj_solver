@@ -1,0 +1,32 @@
+{
+  "L6_maximum_nrg_excitation_error": 0.038929914892330886,
+  "crossings": [
+    {
+      "gamma_critical": 3.0073210147176965,
+      "setting": "L1"
+    },
+    {
+      "gamma_critical": 2.838481686223328,
+      "setting": "L2"
+    },
+    {
+      "gamma_critical": 2.7623269728447037,
+      "setting": "L3"
+    },
+    {
+      "gamma_critical": 2.756023799519042,
+      "setting": "L4"
+    },
+    {
+      "gamma_critical": 2.753413083220652,
+      "setting": "L5"
+    },
+    {
+      "gamma_critical": 2.75314463035356,
+      "setting": "L6"
+    }
+  ],
+  "maximum_published_surrogate_error": 0.0005289045092697897,
+  "maximum_residual": 1.1046867929563921e-11,
+  "points": 409
+}

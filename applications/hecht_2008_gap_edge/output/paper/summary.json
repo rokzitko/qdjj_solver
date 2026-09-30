@@ -1,0 +1,11 @@
+{
+  "interacting_continuum_converged": false,
+  "maximum_interacting_sum_rule_error": 4.1744385725905886e-14,
+  "maximum_quadratic_NRG_relative_difference": 0.08264345346889257,
+  "maximum_quadratic_analytic_relative_difference": 0.005813513431164319,
+  "maximum_residual": 5.298812077232778e-11,
+  "maximum_wide_band_NRG_relative_difference": 0.08412661134868149,
+  "maximum_wide_band_analytic_relative_difference": 0.0019398832205553829,
+  "quadratic_fock_resolvent_error": 1.7039753472859274e-15,
+  "quadratic_fock_sum_rule_error": 1.1102230246251565e-16
+}

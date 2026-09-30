@@ -1,0 +1,1433 @@
+[
+  {
+    "backend": "qp",
+    "bath_key": "0bf1917f74d0bedb6ac168bffbc29aadb2cbc016ce0771ba3c5f00f8b44f9d1f",
+    "chi_max": null,
+    "cutoff": 1,
+    "diagnostics": {
+      "basis_bytes": 896,
+      "estimated_solver_bytes": 13000,
+      "nnz": null,
+      "real_arithmetic": true
+    },
+    "dimension": 25,
+    "environment": {
+      "machine": "arm64",
+      "numpy": "2.5.2",
+      "python": "3.14.7",
+      "qpsolver": "0.1.0",
+      "release": "25.5.0",
+      "scipy": "1.18.0",
+      "system": "Darwin"
+    },
+    "id": "qp_N24_Q1",
+    "levels": 24,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.047084216771585245,
+      "impurity_charge": 0.9999999999999991,
+      "impurity_spin_z": 0.4529157832284145
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 400000,
+      "max_memory_gib": 32.0,
+      "max_nnz": 150000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-09,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-11
+    },
+    "origin": "paper",
+    "peak_resident_bytes": 79167488,
+    "qp_weights": [
+      0.9058315664568293,
+      0.0941684335431705
+    ],
+    "repetition_spread": {
+      "C_d_bath": 0.0,
+      "P_0": 0.0,
+      "P_1": 0.0,
+      "P_2": 0.0,
+      "energy": 0.0,
+      "q_d": 0.0
+    },
+    "residual": 7.828489539738343e-15,
+    "residual_kind": "projected",
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "source": {
+      "path": "qp_solver/benchmarks/asq_reference/data/qp_ws0_N24_Q1.json",
+      "sha256": "a59ade9e917bf0f0b0b9649e161ef949b5095752dcc9c2a34c5050eaad9f7afb"
+    },
+    "timings_seconds": {
+      "basis": 8.141668513417244e-05,
+      "diagonalization": 0.003431332763284445,
+      "hamiltonian": 0.00033075036481022835,
+      "observables_and_residuals": 0.00015620794147253036,
+      "total": 0.00438712490722537
+    },
+    "total_seconds": 0.020960666239261627,
+    "values": {
+      "C_d_bath": 3.3306690738754696e-16,
+      "P_0": 0.04708421677158613,
+      "P_1": 0.9058315664568286,
+      "P_2": 0.047084216771585245,
+      "energy": -0.9701028967496529,
+      "q_d": 0.905831566456829
+    }
+  },
+  {
+    "backend": "qp",
+    "bath_key": "0bf1917f74d0bedb6ac168bffbc29aadb2cbc016ce0771ba3c5f00f8b44f9d1f",
+    "chi_max": null,
+    "cutoff": 2,
+    "diagnostics": {
+      "basis_bytes": 14336,
+      "estimated_solver_bytes": 347320,
+      "nnz": 1657,
+      "real_arithmetic": true
+    },
+    "dimension": 457,
+    "environment": {
+      "machine": "arm64",
+      "numpy": "2.5.2",
+      "python": "3.14.7",
+      "qpsolver": "0.1.0",
+      "release": "25.5.0",
+      "scipy": "1.18.0",
+      "system": "Darwin"
+    },
+    "id": "qp_N24_Q2",
+    "levels": 24,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.0679499557820043,
+      "impurity_charge": 1.0000000000000007,
+      "impurity_spin_z": 0.4252317789029118
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 400000,
+      "max_memory_gib": 32.0,
+      "max_nnz": 150000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-09,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-11
+    },
+    "origin": "paper",
+    "peak_resident_bytes": 79953920,
+    "qp_weights": [
+      0.8532870764429252,
+      0.13589991156400866,
+      0.010813011993066989
+    ],
+    "repetition_spread": {
+      "C_d_bath": 0.0,
+      "P_0": 0.0,
+      "P_1": 0.0,
+      "P_2": 0.0,
+      "energy": 0.0,
+      "q_d": 0.0
+    },
+    "residual": 9.350376995321612e-12,
+    "residual_kind": "projected",
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "source": {
+      "path": "qp_solver/benchmarks/asq_reference/data/qp_ws0_N24_Q2.json",
+      "sha256": "e7e63d509adebc1c9731e59fbf7fc2ebf1c0116539a404bc7d04e4e0685863b5"
+    },
+    "timings_seconds": {
+      "basis": 0.00017037522047758102,
+      "diagonalization": 0.008042708039283752,
+      "hamiltonian": 0.0004177079536020756,
+      "observables_and_residuals": 0.0004671667702496052,
+      "total": 0.009529790841042995
+    },
+    "total_seconds": 0.026002792175859213,
+    "values": {
+      "C_d_bath": -0.01022739797262634,
+      "P_0": 0.06794995578200363,
+      "P_1": 0.8641000884359921,
+      "P_2": 0.0679499557820043,
+      "energy": -1.0776041900959694,
+      "q_d": 0.8504635578058236
+    }
+  },
+  {
+    "backend": "qp",
+    "bath_key": "0bf1917f74d0bedb6ac168bffbc29aadb2cbc016ce0771ba3c5f00f8b44f9d1f",
+    "chi_max": null,
+    "cutoff": 3,
+    "diagnostics": {
+      "basis_bytes": 229376,
+      "estimated_solver_bytes": 5381560,
+      "nnz": 28441,
+      "real_arithmetic": true
+    },
+    "dimension": 7081,
+    "environment": {
+      "machine": "arm64",
+      "numpy": "2.5.2",
+      "python": "3.14.7",
+      "qpsolver": "0.1.0",
+      "release": "25.5.0",
+      "scipy": "1.18.0",
+      "system": "Darwin"
+    },
+    "id": "qp_N24_Q3",
+    "levels": 24,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.07084350431209761,
+      "impurity_charge": 0.9999999999999978,
+      "impurity_spin_z": 0.4192957425177488
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 400000,
+      "max_memory_gib": 32.0,
+      "max_nnz": 150000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-09,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-11
+    },
+    "origin": "paper",
+    "peak_resident_bytes": 95993856,
+    "qp_weights": [
+      0.8427594631854831,
+      0.14100941510580778,
+      0.015553528190318905,
+      0.0006775935183874463
+    ],
+    "repetition_spread": {
+      "C_d_bath": 0.0,
+      "P_0": 0.0,
+      "P_1": 0.0,
+      "P_2": 0.0,
+      "energy": 0.0,
+      "q_d": 0.0
+    },
+    "residual": 2.629333755974318e-12,
+    "residual_kind": "projected",
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "source": {
+      "path": "qp_solver/benchmarks/asq_reference/data/qp_ws0_N24_Q3.json",
+      "sha256": "88afec6b3559f56ab15d24eeba340e43bc9a5f76af0671058404f3f83b3eca31"
+    },
+    "timings_seconds": {
+      "basis": 0.0009144581854343414,
+      "diagonalization": 0.06766704190522432,
+      "hamiltonian": 0.0028158328495919704,
+      "observables_and_residuals": 0.005664499942213297,
+      "total": 0.07759441714733839
+    },
+    "total_seconds": 0.09458012459799647,
+    "values": {
+      "C_d_bath": -0.014791129755228671,
+      "P_0": 0.07084350431209983,
+      "P_1": 0.8583129913758025,
+      "P_2": 0.07084350431209761,
+      "energy": -1.0879935943569057,
+      "q_d": 0.8385914850354976
+    }
+  },
+  {
+    "backend": "qp",
+    "bath_key": "0bf1917f74d0bedb6ac168bffbc29aadb2cbc016ce0771ba3c5f00f8b44f9d1f",
+    "chi_max": null,
+    "cutoff": 4,
+    "diagnostics": {
+      "basis_bytes": 3670016,
+      "estimated_solver_bytes": 52842040,
+      "nnz": 389257,
+      "real_arithmetic": true
+    },
+    "dimension": 69529,
+    "environment": {
+      "machine": "arm64",
+      "numpy": "2.5.2",
+      "python": "3.14.7",
+      "qpsolver": "0.1.0",
+      "release": "25.5.0",
+      "scipy": "1.18.0",
+      "system": "Darwin"
+    },
+    "id": "qp_N24_Q4",
+    "levels": 24,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.0710371611157852,
+      "impurity_charge": 1.0000000000000013,
+      "impurity_spin_z": 0.4188755903655212
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 400000,
+      "max_memory_gib": 32.0,
+      "max_nnz": 150000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-09,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-11
+    },
+    "origin": "paper",
+    "peak_resident_bytes": 219791360,
+    "qp_weights": [
+      0.8420086741453253,
+      0.14126836181583724,
+      0.015894102747036235,
+      0.0008059604157332527,
+      2.290087606886431e-05
+    ],
+    "repetition_spread": {
+      "C_d_bath": 0.0,
+      "P_0": 0.0,
+      "P_1": 0.0,
+      "P_2": 0.0,
+      "energy": 0.0,
+      "q_d": 0.0
+    },
+    "residual": 5.999620278630992e-12,
+    "residual_kind": "projected",
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "source": {
+      "path": "qp_solver/benchmarks/asq_reference/data/qp_ws0_N24_Q4.json",
+      "sha256": "5a43acb796e2a45ebf43c4bd25f46a1a12b94c651ec659a4ffe23603eb80a9d7"
+    },
+    "timings_seconds": {
+      "basis": 0.006957791745662689,
+      "diagonalization": 0.8880009581334889,
+      "hamiltonian": 0.028926999773830175,
+      "observables_and_residuals": 0.05980533314868808,
+      "total": 0.9843205413781106
+    },
+    "total_seconds": 1.0011295839212835,
+    "values": {
+      "C_d_bath": -0.015130872778041454,
+      "P_0": 0.07103716111578387,
+      "P_1": 0.857925677768431,
+      "P_2": 0.0710371611157852,
+      "energy": -1.088507200564178,
+      "q_d": 0.8377511807310424
+    }
+  },
+  {
+    "backend": "qp",
+    "bath_key": "88a1730e67e13b07a754417654eb3dc31608f5b9f00cd03c2327b45bab9adf76",
+    "chi_max": null,
+    "cutoff": 5,
+    "diagnostics": {
+      "basis_bytes": 29360128,
+      "estimated_solver_bytes": 195983736,
+      "nnz": 3744169,
+      "real_arithmetic": true
+    },
+    "dimension": 628153,
+    "environment": {
+      "machine": "x86_64",
+      "numpy": "2.4.3",
+      "python": "3.14.4",
+      "qpsolver": "0.1.0",
+      "release": "21.6.0",
+      "scipy": "1.17.1",
+      "system": "Darwin"
+    },
+    "id": "qp_N24_Q5",
+    "levels": 24,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.07104297410297057,
+      "impurity_charge": 0.9999999999999698,
+      "impurity_spin_z": 0.4188625243695429
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 25000000,
+      "max_memory_gib": 24.0,
+      "max_nnz": 200000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 12,
+      "residual_tolerance": 2e-09,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-11
+    },
+    "origin": "paper",
+    "peak_resident_bytes": 413908992,
+    "qp_weights": [
+      0.8419845155313769,
+      0.14127501452904956,
+      0.015904329641990563,
+      0.0008105545289018644,
+      2.5206620686715497e-05,
+      3.79147993664633e-07
+    ],
+    "repetition_spread": {
+      "C_d_bath": 0.0,
+      "P_0": 0.0,
+      "P_1": 0.0,
+      "P_2": 0.0,
+      "energy": 0.0,
+      "q_d": 0.0
+    },
+    "residual": 1.010742655347933e-11,
+    "residual_kind": "projected",
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "source": {
+      "path": "qp_solver/benchmarks/asq_reference/data/qp-convergence_ws0_N24_Q5.json",
+      "sha256": "804c635a0107c3f4cac586ccc1c46bc5c0b1da26000e9707b83c098f88abdb11"
+    },
+    "timings_seconds": {
+      "basis": 0.3663343789958162,
+      "diagonalization": 38.453146069005015,
+      "hamiltonian": 2.303436383008375,
+      "observables_and_residuals": 11.058521302998997,
+      "total": 52.18838576400594
+    },
+    "total_seconds": 52.65327078900009,
+    "values": {
+      "C_d_bath": -0.01514175229120715,
+      "P_0": 0.07104297410300077,
+      "P_1": 0.8579140517940287,
+      "P_2": 0.07104297410297057,
+      "energy": -1.088520528187841,
+      "q_d": 0.8377250487390858
+    }
+  },
+  {
+    "backend": "qp",
+    "bath_key": "88a1730e67e13b07a754417654eb3dc31608f5b9f00cd03c2327b45bab9adf76",
+    "chi_max": null,
+    "cutoff": 6,
+    "diagnostics": {
+      "basis_bytes": 117440512,
+      "estimated_solver_bytes": 1292686200,
+      "nnz": 31283241,
+      "real_arithmetic": true
+    },
+    "dimension": 4143225,
+    "environment": {
+      "machine": "x86_64",
+      "numpy": "2.4.3",
+      "python": "3.14.4",
+      "qpsolver": "0.1.0",
+      "release": "21.6.0",
+      "scipy": "1.17.1",
+      "system": "Darwin"
+    },
+    "id": "qp_N24_Q6",
+    "levels": 24,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.07104306375301084,
+      "impurity_charge": 0.9999999999995113,
+      "impurity_spin_z": 0.41886232152020586
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 25000000,
+      "max_memory_gib": 24.0,
+      "max_nnz": 200000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 12,
+      "residual_tolerance": 2e-09,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-11
+    },
+    "origin": "paper",
+    "peak_resident_bytes": 2320265216,
+    "qp_weights": [
+      0.8419841358307623,
+      0.14127510304570803,
+      0.015904482169439092,
+      0.0008106274687421219,
+      2.525071195965672e-05,
+      3.969915749679949e-07,
+      3.781815870691485e-09
+    ],
+    "repetition_spread": {
+      "C_d_bath": 0.0,
+      "P_0": 0.0,
+      "P_1": 0.0,
+      "P_2": 0.0,
+      "energy": 0.0,
+      "q_d": 0.0
+    },
+    "residual": 9.646693546815564e-12,
+    "residual_kind": "projected",
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "source": {
+      "path": "qp_solver/benchmarks/asq_reference/data/qp-convergence_ws0_N24_Q6.json",
+      "sha256": "a22db34f75fd4c810afdd564d6fd71aced69d2a9722701cff5967cdf7543faef"
+    },
+    "timings_seconds": {
+      "basis": 2.034264162008185,
+      "diagonalization": 244.0210189500067,
+      "hamiltonian": 18.969808665991877,
+      "observables_and_residuals": 55.749257880001096,
+      "total": 320.77919665700756
+    },
+    "total_seconds": 321.2017372990085,
+    "values": {
+      "C_d_bath": -0.015141922089808413,
+      "P_0": 0.07104306375349956,
+      "P_1": 0.8579138724934896,
+      "P_2": 0.07104306375301084,
+      "energy": -1.0885207083267834,
+      "q_d": 0.8377246430404117
+    }
+  },
+  {
+    "backend": "qp",
+    "bath_key": "56c633a1a06d42eeb0cff90e6424dbe78081f96f5756b0ef0557c053511406f9",
+    "chi_max": null,
+    "cutoff": 1,
+    "diagnostics": {
+      "basis_bytes": 2304,
+      "estimated_solver_bytes": 21648,
+      "nnz": null,
+      "real_arithmetic": true
+    },
+    "dimension": 33,
+    "environment": {
+      "machine": "arm64",
+      "numpy": "2.5.2",
+      "python": "3.14.7",
+      "qpsolver": "0.1.0",
+      "release": "25.5.0",
+      "scipy": "1.18.0",
+      "system": "Darwin"
+    },
+    "id": "qp_N32_Q1",
+    "levels": 32,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.04708421676181862,
+      "impurity_charge": 1.0000000000000004,
+      "impurity_spin_z": 0.45291578323818144
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 400000,
+      "max_memory_gib": 32.0,
+      "max_nnz": 150000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-09,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-11
+    },
+    "origin": "paper",
+    "peak_resident_bytes": 78692352,
+    "qp_weights": [
+      0.9058315664763631,
+      0.09416843352363727
+    ],
+    "repetition_spread": {
+      "C_d_bath": 0.0,
+      "P_0": 0.0,
+      "P_1": 0.0,
+      "P_2": 0.0,
+      "energy": 0.0,
+      "q_d": 0.0
+    },
+    "residual": 1.3365943180434464e-14,
+    "residual_kind": "projected",
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "source": {
+      "path": "qp_solver/benchmarks/asq_reference/data/qp_ws0_N32_Q1.json",
+      "sha256": "d9bcf28f10b56017f5fb9c3248c20d4757c47a7a6efbee18b868dbaa02e5e619"
+    },
+    "timings_seconds": {
+      "basis": 0.00010545831173658371,
+      "diagonalization": 0.00348545890301466,
+      "hamiltonian": 0.00037670833989977837,
+      "observables_and_residuals": 0.00019345805048942566,
+      "total": 0.0046732076443731785
+    },
+    "total_seconds": 0.028534666169434786,
+    "values": {
+      "C_d_bath": -2.498001805406602e-16,
+      "P_0": 0.047084216761818176,
+      "P_1": 0.9058315664763632,
+      "P_2": 0.04708421676181862,
+      "energy": -0.9701028967630446,
+      "q_d": 0.9058315664763629
+    }
+  },
+  {
+    "backend": "qp",
+    "bath_key": "56c633a1a06d42eeb0cff90e6424dbe78081f96f5756b0ef0557c053511406f9",
+    "chi_max": null,
+    "cutoff": 2,
+    "diagnostics": {
+      "basis_bytes": 36864,
+      "estimated_solver_bytes": 615168,
+      "nnz": 2913,
+      "real_arithmetic": true
+    },
+    "dimension": 801,
+    "environment": {
+      "machine": "arm64",
+      "numpy": "2.5.2",
+      "python": "3.14.7",
+      "qpsolver": "0.1.0",
+      "release": "25.5.0",
+      "scipy": "1.18.0",
+      "system": "Darwin"
+    },
+    "id": "qp_N32_Q2",
+    "levels": 32,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.06794995568532695,
+      "impurity_charge": 0.9999999999999979,
+      "impurity_spin_z": 0.4252317790382496
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 400000,
+      "max_memory_gib": 32.0,
+      "max_nnz": 150000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-09,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-11
+    },
+    "origin": "paper",
+    "peak_resident_bytes": 81838080,
+    "qp_weights": [
+      0.8532870767097908,
+      0.13589991137065394,
+      0.010813011919553554
+    ],
+    "repetition_spread": {
+      "C_d_bath": 0.0,
+      "P_0": 0.0,
+      "P_1": 0.0,
+      "P_2": 0.0,
+      "energy": 0.0,
+      "q_d": 0.0
+    },
+    "residual": 2.047014142835811e-12,
+    "residual_kind": "projected",
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "source": {
+      "path": "qp_solver/benchmarks/asq_reference/data/qp_ws0_N32_Q2.json",
+      "sha256": "c89f736b4592682d30873177f818d6a5db616989eec3b7356a15507a878e748a"
+    },
+    "timings_seconds": {
+      "basis": 0.0002715419977903366,
+      "diagonalization": 0.010952875018119812,
+      "hamiltonian": 0.0006971671245992184,
+      "observables_and_residuals": 0.0008371663279831409,
+      "total": 0.013356207869946957
+    },
+    "total_seconds": 0.03754695923998952,
+    "values": {
+      "C_d_bath": -0.010227397914633563,
+      "P_0": 0.06794995568532906,
+      "P_1": 0.864100088629344,
+      "P_2": 0.06794995568532695,
+      "energy": -1.0776041900734237,
+      "q_d": 0.8504635580764992
+    }
+  },
+  {
+    "backend": "qp",
+    "bath_key": "56c633a1a06d42eeb0cff90e6424dbe78081f96f5756b0ef0557c053511406f9",
+    "chi_max": null,
+    "cutoff": 3,
+    "diagnostics": {
+      "basis_bytes": 1179648,
+      "estimated_solver_bytes": 12804864,
+      "nnz": 66913,
+      "real_arithmetic": true
+    },
+    "dimension": 16673,
+    "environment": {
+      "machine": "arm64",
+      "numpy": "2.5.2",
+      "python": "3.14.7",
+      "qpsolver": "0.1.0",
+      "release": "25.5.0",
+      "scipy": "1.18.0",
+      "system": "Darwin"
+    },
+    "id": "qp_N32_Q3",
+    "levels": 32,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.07084350421368674,
+      "impurity_charge": 0.999999999999999,
+      "impurity_spin_z": 0.4192957426776179
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 400000,
+      "max_memory_gib": 32.0,
+      "max_nnz": 150000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-09,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-11
+    },
+    "origin": "paper",
+    "peak_resident_bytes": 128188416,
+    "qp_weights": [
+      0.8427594634677263,
+      0.14100941491454308,
+      0.015553528104899322,
+      0.0006775935128303953
+    ],
+    "repetition_spread": {
+      "C_d_bath": 0.0,
+      "P_0": 0.0,
+      "P_1": 0.0,
+      "P_2": 0.0,
+      "energy": 0.0,
+      "q_d": 0.0
+    },
+    "residual": 1.261621989282525e-12,
+    "residual_kind": "projected",
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "source": {
+      "path": "qp_solver/benchmarks/asq_reference/data/qp_ws0_N32_Q3.json",
+      "sha256": "b3fb43913b4a85c1b328780970bc34f9635bb22ed57ffde0351a3d174dd7682c"
+    },
+    "timings_seconds": {
+      "basis": 0.002037291880697012,
+      "diagonalization": 0.19606962520629168,
+      "hamiltonian": 0.007698959205299616,
+      "observables_and_residuals": 0.015673540998250246,
+      "total": 0.2221793751232326
+    },
+    "total_seconds": 0.24625737499445677,
+    "values": {
+      "C_d_bath": -0.01479112966304233,
+      "P_0": 0.07084350421368774,
+      "P_1": 0.8583129915726255,
+      "P_2": 0.07084350421368674,
+      "energy": -1.0879935941874588,
+      "q_d": 0.8385914853552358
+    }
+  },
+  {
+    "backend": "qp",
+    "bath_key": "56c633a1a06d42eeb0cff90e6424dbe78081f96f5756b0ef0557c053511406f9",
+    "chi_max": null,
+    "cutoff": 4,
+    "diagnostics": {
+      "basis_bytes": 9437184,
+      "estimated_solver_bytes": 168321792,
+      "nnz": 1238113,
+      "real_arithmetic": true
+    },
+    "dimension": 219169,
+    "environment": {
+      "machine": "arm64",
+      "numpy": "2.5.2",
+      "python": "3.14.7",
+      "qpsolver": "0.1.0",
+      "release": "25.5.0",
+      "scipy": "1.18.0",
+      "system": "Darwin"
+    },
+    "id": "qp_N32_Q4",
+    "levels": 32,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.07103716107180463,
+      "impurity_charge": 0.9999999999999941,
+      "impurity_spin_z": 0.4188755904162327
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 400000,
+      "max_memory_gib": 32.0,
+      "max_nnz": 150000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-09,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-11
+    },
+    "origin": "paper",
+    "peak_resident_bytes": 466616320,
+    "qp_weights": [
+      0.8420086742044056,
+      0.14126836171948226,
+      0.015894102775218567,
+      0.0008059604241271382,
+      2.2900876769494434e-05
+    ],
+    "repetition_spread": {
+      "C_d_bath": 0.0,
+      "P_0": 0.0,
+      "P_1": 0.0,
+      "P_2": 0.0,
+      "energy": 0.0,
+      "q_d": 0.0
+    },
+    "residual": 5.6396236384562376e-12,
+    "residual_kind": "projected",
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "source": {
+      "path": "qp_solver/benchmarks/asq_reference/data/qp_ws0_N32_Q4.json",
+      "sha256": "b0a9abf8eedb995622155c0e3eb3f82c0a2b6a7401cfb2faab488cdcd0c5f5be"
+    },
+    "timings_seconds": {
+      "basis": 0.023998292163014412,
+      "diagonalization": 3.0518671250902116,
+      "hamiltonian": 0.1133290003053844,
+      "observables_and_residuals": 0.22532862471416593,
+      "total": 3.4153485419228673
+    },
+    "total_seconds": 3.440454625058919,
+    "values": {
+      "C_d_bath": -0.015130872767939618,
+      "P_0": 0.07103716107181052,
+      "P_1": 0.8579256778563848,
+      "P_2": 0.07103716107180463,
+      "energy": -1.0885072003954799,
+      "q_d": 0.8377511808324654
+    }
+  },
+  {
+    "backend": "qp",
+    "bath_key": "687056a1af737768a8f9e5acbea1c2b2b0ff5b380c72f1c4d56469ea2f06f7de",
+    "chi_max": null,
+    "cutoff": 5,
+    "diagnostics": {
+      "basis_bytes": 150994944,
+      "estimated_solver_bytes": 857385280,
+      "nnz": 16006753,
+      "real_arithmetic": true
+    },
+    "dimension": 2679329,
+    "environment": {
+      "machine": "x86_64",
+      "numpy": "2.4.3",
+      "python": "3.14.4",
+      "qpsolver": "0.1.0",
+      "release": "21.6.0",
+      "scipy": "1.17.1",
+      "system": "Darwin"
+    },
+    "id": "qp_N32_Q5",
+    "levels": 32,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.0710429740628844,
+      "impurity_charge": 0.9999999999998006,
+      "impurity_spin_z": 0.41886252441205113
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 25000000,
+      "max_memory_gib": 32.0,
+      "max_nnz": 250000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 12,
+      "residual_tolerance": 2e-09,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-11
+    },
+    "origin": "paper",
+    "peak_resident_bytes": 1313927168,
+    "qp_weights": [
+      0.8419845155739651,
+      0.14127501443901164,
+      0.015904329678548795,
+      0.000810554538747667,
+      2.5206621701911315e-05,
+      3.7914802828522595e-07
+    ],
+    "repetition_spread": {
+      "C_d_bath": 0.0,
+      "P_0": 0.0,
+      "P_1": 0.0,
+      "P_2": 0.0,
+      "energy": 0.0,
+      "q_d": 0.0
+    },
+    "residual": 9.148514829994954e-12,
+    "residual_kind": "projected",
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "source": {
+      "path": "qp_solver/benchmarks/asq_reference/data/qp-convergence_ws0_N32_Q5.json",
+      "sha256": "4ed17d0285022654695ced7cfcd05930b84ff2cb46256071d37773595b270ffc"
+    },
+    "timings_seconds": {
+      "basis": 0.5991309850069229,
+      "diagonalization": 117.5879479819996,
+      "hamiltonian": 4.2461699490086176,
+      "observables_and_residuals": 39.52091115798976,
+      "total": 161.95717852500093
+    },
+    "total_seconds": 162.23329838599602,
+    "values": {
+      "C_d_bath": -0.015141752287447158,
+      "P_0": 0.0710429740630838,
+      "P_1": 0.8579140518740318,
+      "P_2": 0.0710429740628844,
+      "energy": -1.0885205280197905,
+      "q_d": 0.8377250488241023
+    }
+  },
+  {
+    "backend": "qp",
+    "bath_key": "687056a1af737768a8f9e5acbea1c2b2b0ff5b380c72f1c4d56469ea2f06f7de",
+    "chi_max": null,
+    "cutoff": 6,
+    "diagnostics": {
+      "basis_bytes": 1207959552,
+      "estimated_solver_bytes": 7647734080,
+      "nnz": 182383713,
+      "real_arithmetic": true
+    },
+    "dimension": 23899169,
+    "environment": {
+      "machine": "x86_64",
+      "numpy": "2.4.3",
+      "python": "3.14.4",
+      "qpsolver": "0.1.0",
+      "release": "21.6.0",
+      "scipy": "1.17.1",
+      "system": "Darwin"
+    },
+    "id": "qp_N32_Q6",
+    "levels": 32,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.07104306371303289,
+      "impurity_charge": 0.9999999999974811,
+      "impurity_spin_z": 0.4188623215625029
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 25000000,
+      "max_memory_gib": 32.0,
+      "max_nnz": 250000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 12,
+      "residual_tolerance": 2e-09,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-11
+    },
+    "origin": "paper",
+    "peak_resident_bytes": 7615860736,
+    "qp_weights": [
+      0.8419841358728742,
+      0.14127510295583626,
+      0.015904482206237674,
+      0.0008106274786348729,
+      2.5250712989508932e-05,
+      3.969916141235973e-07,
+      3.781816698776489e-09
+    ],
+    "repetition_spread": {
+      "C_d_bath": 0.0,
+      "P_0": 0.0,
+      "P_1": 0.0,
+      "P_2": 0.0,
+      "energy": 0.0,
+      "q_d": 0.0
+    },
+    "residual": 9.195930814693059e-12,
+    "residual_kind": "projected",
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "source": {
+      "path": "qp_solver/benchmarks/asq_reference/data/qp-convergence_ws0_N32_Q6.json",
+      "sha256": "b17dd9315d1ad19f7e8bc91515d10186507362e14fa8dd995f7ed34f5bc7cb11"
+    },
+    "timings_seconds": {
+      "basis": 8.057534271996701,
+      "diagonalization": 1478.4435309489927,
+      "hamiltonian": 95.44817433199205,
+      "observables_and_residuals": 492.4742467060132,
+      "total": 2074.4277971350093
+    },
+    "total_seconds": 2075.1541679619986,
+    "values": {
+      "C_d_bath": -0.015141922084807163,
+      "P_0": 0.07104306371555176,
+      "P_1": 0.8579138725714154,
+      "P_2": 0.07104306371303289,
+      "energy": -1.0885207081587154,
+      "q_d": 0.8377246431250058
+    }
+  },
+  {
+    "backend": "dmrg",
+    "bath_key": "0bf1917f74d0bedb6ac168bffbc29aadb2cbc016ce0771ba3c5f00f8b44f9d1f",
+    "chi_max": 128,
+    "cutoff": null,
+    "diagnostics": {
+      "chi_actual": 128,
+      "last_discarded_weight": 1.4247835932686554e-12,
+      "last_energy_change": 2.0983215165415459e-13,
+      "norm_error": 3.130545816992138e-15,
+      "sweep_converged": true,
+      "sweep_energies": [
+        -1.0885207027341437,
+        -1.0885207054204498,
+        -1.0885207073867809,
+        -1.0885207082215513,
+        -1.0885207086901036,
+        -1.0885207089770237,
+        -1.0885207094722584,
+        -1.0885207094718388
+      ],
+      "sweeps": 16,
+      "variance": 2.7755625797709627e-08
+    },
+    "dimension": null,
+    "environment": {
+      "machine": "arm64",
+      "numpy": "2.5.2",
+      "python": "3.14.7",
+      "qpsolver": "0.1.0",
+      "release": "25.5.0",
+      "scipy": "1.18.0",
+      "system": "Darwin"
+    },
+    "id": "dmrg_N24_chi128",
+    "levels": 24,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.07104306440211627,
+      "impurity_charge": 1.0000000000000664,
+      "impurity_spin_z": 0.41886231997284246
+    },
+    "options": {
+      "chi_limit": 128,
+      "energy_tolerance": 1e-11,
+      "max_sweeps": 60,
+      "threads": 1
+    },
+    "origin": "paper",
+    "qp_weights": null,
+    "residual": null,
+    "residual_kind": "not recorded; legacy variance diagnostic only",
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "source": {
+      "path": "qp_solver/benchmarks/asq_reference/data/reference_ws0_N24_chi128.json",
+      "sha256": "aa824797630a137118266f4110cb18850bd0f078c5e09a796db2b034a6ebf22b"
+    },
+    "total_seconds": 51.02978220907971,
+    "values": {
+      "C_d_bath": -0.015141923437611698,
+      "P_0": 0.07104306440204988,
+      "P_1": 0.8579138711958338,
+      "P_2": 0.07104306440211627,
+      "energy": -1.0885207094718388,
+      "q_d": 0.8377246399456849
+    }
+  },
+  {
+    "backend": "dmrg",
+    "bath_key": "56c633a1a06d42eeb0cff90e6424dbe78081f96f5756b0ef0557c053511406f9",
+    "chi_max": 128,
+    "cutoff": null,
+    "diagnostics": {
+      "chi_actual": 128,
+      "last_discarded_weight": 7.781398641168818e-13,
+      "last_energy_change": 1.450284337067842e-12,
+      "norm_error": 3.2347547869462724e-15,
+      "sweep_converged": true,
+      "sweep_energies": [
+        -1.0885207014081937,
+        -1.0885207050599124,
+        -1.0885207068926588,
+        -1.0885207078874348,
+        -1.0885207083837622,
+        -1.0885207087150788,
+        -1.088520709282291,
+        -1.0885207092793905
+      ],
+      "sweeps": 16,
+      "variance": 2.9444969129599485e-08
+    },
+    "dimension": null,
+    "environment": {
+      "machine": "arm64",
+      "numpy": "2.5.2",
+      "python": "3.14.7",
+      "qpsolver": "0.1.0",
+      "release": "25.5.0",
+      "scipy": "1.18.0",
+      "system": "Darwin"
+    },
+    "id": "dmrg_N32_chi128",
+    "levels": 32,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.07104306435385693,
+      "impurity_charge": 1.0000000000000133,
+      "impurity_spin_z": 0.418862320035873
+    },
+    "options": {
+      "chi_limit": 128,
+      "energy_tolerance": 1e-11,
+      "max_sweeps": 60,
+      "threads": 1
+    },
+    "origin": "paper",
+    "qp_weights": null,
+    "residual": null,
+    "residual_kind": "not recorded; legacy variance diagnostic only",
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "source": {
+      "path": "qp_solver/benchmarks/asq_reference/data/reference_ws0_N32_chi128.json",
+      "sha256": "4f8ce4a845cac02bd619de6fec621cd5912c13af9271c63ec3bf6db303b84ff1"
+    },
+    "total_seconds": 72.38136166613549,
+    "values": {
+      "C_d_bath": -0.01514192341541512,
+      "P_0": 0.07104306435384361,
+      "P_1": 0.8579138712922995,
+      "P_2": 0.07104306435385693,
+      "energy": -1.0885207092793905,
+      "q_d": 0.837724640071746
+    }
+  },
+  {
+    "backend": "dmrg",
+    "bath_key": "0bf1917f74d0bedb6ac168bffbc29aadb2cbc016ce0771ba3c5f00f8b44f9d1f",
+    "chi_max": 192,
+    "cutoff": null,
+    "diagnostics": {
+      "chi_actual": 192,
+      "last_discarded_weight": 5.828122403667395e-14,
+      "last_energy_change": 3.531619441332623e-13,
+      "norm_error": 3.713697355914336e-15,
+      "sweep_converged": true,
+      "sweep_energies": [
+        -1.0885207092085152,
+        -1.0885207094959741,
+        -1.0885207095988443,
+        -1.0885207096633411,
+        -1.0885207096939347,
+        -1.0885207097129779,
+        -1.0885207097474392,
+        -1.0885207097467329
+      ],
+      "sweeps": 16,
+      "variance": 1.407915117823677e-09
+    },
+    "dimension": null,
+    "environment": {
+      "machine": "arm64",
+      "numpy": "2.5.2",
+      "python": "3.14.7",
+      "qpsolver": "0.1.0",
+      "release": "25.5.0",
+      "scipy": "1.18.0",
+      "system": "Darwin"
+    },
+    "id": "dmrg_N24_chi192",
+    "levels": 24,
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "observables": {
+      "double_occupancy_0": 0.07104306452862369,
+      "impurity_charge": 0.9999999999999329,
+      "impurity_spin_z": 0.41886231972106364
+    },
+    "options": {
+      "chi_limit": 192,
+      "energy_tolerance": 1e-11,
+      "max_sweeps": 60,
+      "threads": 1
+    },
+    "origin": "paper",
+    "qp_weights": null,
+    "residual": null,
+    "residual_kind": "not recorded; legacy variance diagnostic only",
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "source": {
+      "path": "qp_solver/benchmarks/asq_reference/data/reference_ws0_N24_chi192.json",
+      "sha256": "0b0cf0e3982d1f65aa7ee715817aded3d38958483b670c3869e467ad72136242"
+    },
+    "total_seconds": 204.09807087527588,
+    "values": {
+      "C_d_bath": -0.015141923625418718,
+      "P_0": 0.07104306452869075,
+      "P_1": 0.8579138709426856,
+      "P_2": 0.07104306452862369,
+      "energy": -1.0885207097467329,
+      "q_d": 0.8377246394421273
+    }
+  }
+]

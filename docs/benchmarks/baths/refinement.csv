@@ -1,0 +1,56 @@
+study,case,family,levels,backend,layout,cutoff,chi,observable,value,converged,max_residual,residual_scope,seconds
+knight,g1-p0.5,cosh-grid,12,qp,declared-star,4,,kappa,0.14315376938401803,True,3.6671644238261657e-13,projected,0.14081754069775343
+knight,g1-p0.5,cosh-grid,12,qp,declared-star,6,,kappa,0.14328024772960202,True,1.847320956394601e-12,projected,2.24176691705361
+knight,g1-p0.5,cosh-grid,12,dmrg,declared-star,,64,kappa,0.14328020373304684,False,0.003552572755025577,declared finite Hamiltonian,28.95996925001964
+knight,g1-p0.5,cosh-grid,12,dmrg,declared-star,,128,kappa,0.1432803021405955,False,0.00030161272274691173,declared finite Hamiltonian,41.28074850002304
+knight,g1-p0.5,cosh-grid,16,qp,declared-star,4,,kappa,0.14316419965758376,True,8.756893750175856e-13,projected,0.40233858302235603
+knight,g1-p0.5,cosh-grid,16,qp,declared-star,6,,kappa,0.1432902657417161,True,3.5529511925448506e-12,projected,17.62086912477389
+knight,g1-p0.5,cosh-grid,16,dmrg,declared-star,,64,kappa,0.1432901189022553,False,0.004408742298544185,declared finite Hamiltonian,35.29400045797229
+knight,g1-p0.5,cosh-grid,16,dmrg,declared-star,,128,kappa,0.14329031804856307,False,0.0004696965624108449,declared finite Hamiltonian,62.94179862504825
+knight,g1-p0.5,surrogate,12,qp,declared-star,4,,kappa,0.14316331663760917,True,2.849352672599635e-13,projected,0.11291245790198445
+knight,g1-p0.5,surrogate,12,qp,declared-star,6,,kappa,0.1432886818327177,True,8.683863629576054e-13,projected,1.681953125167638
+knight,g1-p0.5,surrogate,12,dmrg,declared-star,,64,kappa,0.14328864343647474,False,0.003054693734552403,declared finite Hamiltonian,20.45082041574642
+knight,g1-p0.5,surrogate,12,dmrg,declared-star,,128,kappa,0.1432887350352705,False,0.0002404014769093579,declared finite Hamiltonian,31.767889500129968
+knight,g1-p0.5,surrogate,16,qp,declared-star,4,,kappa,0.14316381946087198,True,7.177454411893467e-13,projected,0.3531318330205977
+knight,g1-p0.5,surrogate,16,qp,declared-star,6,,kappa,0.14328978336419762,True,2.8705393441051644e-12,projected,10.973828750196844
+knight,g1-p0.5,surrogate,16,dmrg,declared-star,,64,kappa,0.1432896852392933,False,0.003848064380298942,declared finite Hamiltonian,29.37228325009346
+knight,g1-p0.5,surrogate,16,dmrg,declared-star,,128,kappa,0.14328983618298752,False,0.0003902867861221348,declared finite Hamiltonian,56.48620424978435
+spectrum,g0.5,cosh-grid,12,dmrg,declared-star,,64,signed_gap,-0.919824535666034,False,0.0002155396149752987,declared finite Hamiltonian,22.38250350020826
+spectrum,g0.5,cosh-grid,12,dmrg,declared-star,,128,signed_gap,-0.9198245332276772,False,1.0519525520811643e-05,declared finite Hamiltonian,44.507713875267655
+spectrum,g0.5,cosh-grid,16,dmrg,declared-star,,64,signed_gap,-0.9197188822685121,False,0.00023905909433452813,declared finite Hamiltonian,33.33023929176852
+spectrum,g0.5,cosh-grid,16,dmrg,declared-star,,128,signed_gap,-0.91971887917377,False,1.29788699263004e-05,declared finite Hamiltonian,76.98223541676998
+spectrum,g0.5,surrogate,12,dmrg,declared-star,,64,signed_gap,-0.9227701495811833,False,0.00017817732507448915,declared finite Hamiltonian,20.82516395766288
+spectrum,g0.5,surrogate,12,dmrg,declared-star,,128,signed_gap,-0.9227701480042023,False,6.971534521405297e-06,declared finite Hamiltonian,43.435636499896646
+spectrum,g20,cosh-grid,12,dmrg,declared-star,,64,signed_gap,0.9855140103757218,False,0.04009161149372896,declared finite Hamiltonian,132.38726975023746
+spectrum,g20,cosh-grid,12,dmrg,declared-star,,128,signed_gap,0.9854629959023526,False,0.0044033072436751135,declared finite Hamiltonian,189.52650283277035
+spectrum,g20,cosh-grid,16,dmrg,declared-star,,64,signed_gap,0.9844769254362831,False,0.043734058088732736,declared finite Hamiltonian,192.80809174990281
+spectrum,g20,cosh-grid,16,dmrg,declared-star,,128,signed_gap,0.9844082544734736,False,0.005524311783883409,declared finite Hamiltonian,416.1183261247352
+spectrum,g20,surrogate,12,dmrg,declared-star,,64,signed_gap,0.9777261913984514,False,0.02792409083842397,declared finite Hamiltonian,81.20666624978185
+spectrum,g20,surrogate,12,dmrg,declared-star,,128,signed_gap,0.9777044343041226,False,0.002575402904151358,declared finite Hamiltonian,147.01984887523577
+knight,g1-p0.5,cosh-grid,12,qp,declared-star,8,,kappa,0.14328030264102443,True,4.009571333612068e-12,projected,15.490529874805361
+knight,g1-p0.5,cosh-grid,12,dmrg,centered,,128,kappa,0.14328030258471547,False,7.242618628153357e-05,declared finite Hamiltonian,33.98647949984297
+knight,g1-p0.5,cosh-grid,12,dmrg,centered,,256,kappa,0.14328030231791977,True,2.35707945448016e-06,declared finite Hamiltonian,104.35616916697472
+knight,g1-p0.5,cosh-grid,16,dmrg,centered,,128,kappa,0.14329031966292538,False,0.00010154029510073224,declared finite Hamiltonian,55.36114191589877
+knight,g1-p0.5,cosh-grid,16,dmrg,centered,,256,kappa,0.14329031972729145,True,5.603783943333251e-06,declared finite Hamiltonian,186.51414604205638
+knight,g1-p0.5,surrogate,16,dmrg,centered,,128,kappa,0.14328983725740618,False,0.00010348878180658313,declared finite Hamiltonian,53.324207541998476
+knight,g1-p0.5,surrogate,16,dmrg,centered,,256,kappa,0.14328983727355027,True,5.489426796054061e-06,declared finite Hamiltonian,173.71810904191807
+knight,g1-p0.5,cosh-grid,24,dmrg,centered,,128,kappa,0.14328996215312007,False,0.00011324993108224022,declared finite Hamiltonian,92.49261937476695
+knight,g1-p0.5,cosh-grid,24,dmrg,centered,,256,kappa,0.14328996234292413,True,7.284543679360261e-06,declared finite Hamiltonian,382.55189020885155
+spectrum,g0.5,cosh-grid,12,dmrg,electron-chain,,128,signed_gap,-0.9198325196257109,False,0.014701693742995273,declared finite Hamiltonian,121.6988026658073
+spectrum,g0.5,cosh-grid,12,dmrg,electron-chain,,256,signed_gap,-0.9198245559271676,False,0.0008488959312333305,declared finite Hamiltonian,288.54859858285636
+spectrum,g0.5,cosh-grid,16,dmrg,electron-chain,,128,signed_gap,-0.9197673648899958,False,0.03558537894703419,declared finite Hamiltonian,231.32459695776924
+spectrum,g0.5,cosh-grid,16,dmrg,electron-chain,,256,signed_gap,-0.9197193367921379,False,0.0036704452174678016,declared finite Hamiltonian,622.0266681658104
+spectrum,g0.5,cosh-grid,24,dmrg,electron-chain,,128,signed_gap,-0.9199310463519268,False,0.08012742256038255,declared finite Hamiltonian,495.0130051658489
+spectrum,g0.5,cosh-grid,24,dmrg,electron-chain,,256,signed_gap,-0.9196705749813958,False,0.01245892526146784,declared finite Hamiltonian,1950.5936345001683
+spectrum,g20,cosh-grid,12,dmrg,electron-chain,,128,signed_gap,0.9854624976258286,False,0.0010224045848634814,declared finite Hamiltonian,68.73815870890394
+spectrum,g20,cosh-grid,12,dmrg,electron-chain,,256,signed_gap,0.9854624672910663,True,2.5615331624479425e-05,declared finite Hamiltonian,230.18169158278033
+spectrum,g20,cosh-grid,16,dmrg,electron-chain,,128,signed_gap,0.984408258335332,False,0.005462386738444692,declared finite Hamiltonian,148.57869362505153
+spectrum,g20,cosh-grid,16,dmrg,electron-chain,,256,signed_gap,0.9844073198047774,False,0.0002955079846008644,declared finite Hamiltonian,514.164246042259
+spectrum,g20,cosh-grid,24,dmrg,electron-chain,,128,signed_gap,0.9842388179320736,False,0.022202391980245494,declared finite Hamiltonian,384.50431099999696
+spectrum,g20,cosh-grid,24,dmrg,electron-chain,,256,signed_gap,0.9842219715297418,False,0.0025530551335625385,declared finite Hamiltonian,1291.5304277082905
+spectrum,g0.5,cosh-grid,12,dmrg,qp-star,,128,signed_gap,-0.9198245332276772,True,1.0519525520811643e-05,declared finite Hamiltonian,45.335639709141105
+spectrum,g0.5,cosh-grid,12,dmrg,qp-star,,256,signed_gap,-0.9198245332226225,True,2.3232593232066338e-07,declared finite Hamiltonian,168.50371808372438
+spectrum,g0.5,cosh-grid,16,dmrg,qp-star,,128,signed_gap,-0.91971887917377,True,1.29788699263004e-05,declared finite Hamiltonian,77.1329108341597
+spectrum,g0.5,cosh-grid,16,dmrg,qp-star,,256,signed_gap,-0.9197188791657316,True,4.1997655558530985e-07,declared finite Hamiltonian,328.02573999995366
+spectrum,g0.5,cosh-grid,24,dmrg,qp-star,,128,signed_gap,-0.9196648504906471,True,1.651514635425761e-05,declared finite Hamiltonian,140.43355612503365
+spectrum,g0.5,cosh-grid,24,dmrg,qp-star,,256,signed_gap,-0.919664850477265,True,6.140085473529862e-07,declared finite Hamiltonian,638.7217441666871

@@ -1,0 +1,266 @@
+{
+  "crossings": [
+    {
+      "critical_parameter": 0.8933992417275206,
+      "figure": 8,
+      "parameter": "phi_over_pi",
+      "setting": "GAL",
+      "transition": "singlet-doublet",
+      "u": 2.0
+    },
+    {
+      "critical_parameter": 0.7836531040583483,
+      "figure": 8,
+      "parameter": "phi_over_pi",
+      "setting": "GAL",
+      "transition": "singlet-doublet",
+      "u": 4.0
+    },
+    {
+      "critical_parameter": 0.5354409151164035,
+      "figure": 8,
+      "parameter": "phi_over_pi",
+      "setting": "GAL",
+      "transition": "singlet-doublet",
+      "u": 8.0
+    },
+    {
+      "critical_parameter": 0.8922235821035364,
+      "figure": 8,
+      "parameter": "phi_over_pi",
+      "setting": "ChE-W2",
+      "transition": "singlet-doublet",
+      "u": 2.0
+    },
+    {
+      "critical_parameter": 0.7749243273301988,
+      "figure": 8,
+      "parameter": "phi_over_pi",
+      "setting": "ChE-W2",
+      "transition": "singlet-doublet",
+      "u": 4.0
+    },
+    {
+      "critical_parameter": 0.46537951872080613,
+      "figure": 8,
+      "parameter": "phi_over_pi",
+      "setting": "ChE-W2",
+      "transition": "singlet-doublet",
+      "u": 8.0
+    },
+    {
+      "critical_parameter": 0.8923681866723628,
+      "figure": 8,
+      "parameter": "phi_over_pi",
+      "setting": "ChE-W4",
+      "transition": "singlet-doublet",
+      "u": 2.0
+    },
+    {
+      "critical_parameter": 0.7772717875044112,
+      "figure": 8,
+      "parameter": "phi_over_pi",
+      "setting": "ChE-W4",
+      "transition": "singlet-doublet",
+      "u": 4.0
+    },
+    {
+      "critical_parameter": 0.48695622526480414,
+      "figure": 8,
+      "parameter": "phi_over_pi",
+      "setting": "ChE-W4",
+      "transition": "singlet-doublet",
+      "u": 8.0
+    },
+    {
+      "critical_parameter": 0.8900207417152779,
+      "figure": 8,
+      "parameter": "phi_over_pi",
+      "setting": "ChE-F1",
+      "transition": "singlet-doublet",
+      "u": 2.0
+    },
+    {
+      "critical_parameter": 0.7655803168334403,
+      "figure": 8,
+      "parameter": "phi_over_pi",
+      "setting": "ChE-F1",
+      "transition": "singlet-doublet",
+      "u": 4.0
+    },
+    {
+      "critical_parameter": 0.4143285919789662,
+      "figure": 8,
+      "parameter": "phi_over_pi",
+      "setting": "ChE-F1",
+      "transition": "singlet-doublet",
+      "u": 8.0
+    },
+    {
+      "critical_parameter": 0.8910799370076211,
+      "figure": 8,
+      "parameter": "phi_over_pi",
+      "setting": "ChE-F2",
+      "transition": "singlet-doublet",
+      "u": 2.0
+    },
+    {
+      "critical_parameter": 0.7724723809803747,
+      "figure": 8,
+      "parameter": "phi_over_pi",
+      "setting": "ChE-F2",
+      "transition": "singlet-doublet",
+      "u": 4.0
+    },
+    {
+      "critical_parameter": 0.45809361979085733,
+      "figure": 8,
+      "parameter": "phi_over_pi",
+      "setting": "ChE-F2",
+      "transition": "singlet-doublet",
+      "u": 8.0
+    },
+    {
+      "critical_parameter": 0.8912221975495432,
+      "figure": 8,
+      "parameter": "phi_over_pi",
+      "setting": "ChE-F4",
+      "transition": "singlet-doublet",
+      "u": 2.0
+    },
+    {
+      "critical_parameter": 0.7748094253118002,
+      "figure": 8,
+      "parameter": "phi_over_pi",
+      "setting": "ChE-F4",
+      "transition": "singlet-doublet",
+      "u": 4.0
+    },
+    {
+      "critical_parameter": 0.47973079292079535,
+      "figure": 8,
+      "parameter": "phi_over_pi",
+      "setting": "ChE-F4",
+      "transition": "singlet-doublet",
+      "u": 8.0
+    },
+    {
+      "critical_parameter": 0.8910657276118187,
+      "figure": 8,
+      "parameter": "phi_over_pi",
+      "setting": "SM8",
+      "transition": "singlet-doublet",
+      "u": 2.0
+    },
+    {
+      "critical_parameter": 0.7752561694679185,
+      "figure": 8,
+      "parameter": "phi_over_pi",
+      "setting": "SM8",
+      "transition": "singlet-doublet",
+      "u": 4.0
+    },
+    {
+      "critical_parameter": 0.4901130968856693,
+      "figure": 8,
+      "parameter": "phi_over_pi",
+      "setting": "SM8",
+      "transition": "singlet-doublet",
+      "u": 8.0
+    },
+    {
+      "critical_parameter": 2.016187386053464,
+      "figure": 17,
+      "parameter": "u",
+      "setting": "ChE-W1",
+      "transition": "doublet-singlet",
+      "u": null
+    },
+    {
+      "critical_parameter": 2.123814740729823,
+      "figure": 17,
+      "parameter": "u",
+      "setting": "ChE-W2",
+      "transition": "doublet-singlet",
+      "u": null
+    },
+    {
+      "critical_parameter": 8.52577171185724,
+      "figure": 17,
+      "parameter": "u",
+      "setting": "ChE-W2",
+      "transition": "singlet-triplet",
+      "u": null
+    },
+    {
+      "critical_parameter": 2.1396956367675783,
+      "figure": 17,
+      "parameter": "u",
+      "setting": "ChE-W4",
+      "transition": "doublet-singlet",
+      "u": null
+    },
+    {
+      "critical_parameter": 5.5405853522907025,
+      "figure": 17,
+      "parameter": "u",
+      "setting": "ChE-W4",
+      "transition": "singlet-triplet",
+      "u": null
+    },
+    {
+      "critical_parameter": 2.137856183884916,
+      "figure": 17,
+      "parameter": "u",
+      "setting": "ChE-W6",
+      "transition": "doublet-singlet",
+      "u": null
+    },
+    {
+      "critical_parameter": 5.161024325149358,
+      "figure": 17,
+      "parameter": "u",
+      "setting": "ChE-W6",
+      "transition": "singlet-triplet",
+      "u": null
+    },
+    {
+      "critical_parameter": 2.1357072801027552,
+      "figure": 17,
+      "parameter": "u",
+      "setting": "ChE-W8",
+      "transition": "doublet-singlet",
+      "u": null
+    },
+    {
+      "critical_parameter": 5.0408121464327085,
+      "figure": 17,
+      "parameter": "u",
+      "setting": "ChE-W8",
+      "transition": "singlet-triplet",
+      "u": null
+    },
+    {
+      "critical_parameter": 2.1043110263123257,
+      "figure": 17,
+      "parameter": "u",
+      "setting": "SM8",
+      "transition": "doublet-singlet",
+      "u": null
+    },
+    {
+      "critical_parameter": 4.977782651814397,
+      "figure": 17,
+      "parameter": "u",
+      "setting": "SM8",
+      "transition": "singlet-triplet",
+      "u": null
+    }
+  ],
+  "current_points": 924,
+  "maximum_current_derivative_error": 5.763906019140563e-10,
+  "maximum_residual": 5.018347127358087e-12,
+  "maximum_spin_quantization_error": 1.1124434706744069e-12,
+  "maximum_triplet_projection_error": 8.577583088253959e-13,
+  "shared_points": 258
+}

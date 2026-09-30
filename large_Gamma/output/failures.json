@@ -1,0 +1,1010 @@
+[
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 10.0,
+        "phi": 1.8849555921538759,
+        "u": 12.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 10.0,
+        "phi": 1.8849555921538759,
+        "u": 2.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "hard computation deadline",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "ed",
+      "levels": 12,
+      "point": {
+        "gamma": 1.0,
+        "phi": 0.0,
+        "u": 2.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 4.0,
+        "phi": 0.0,
+        "u": 0.5
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 10.0,
+        "phi": 1.8849555921538759,
+        "u": 8.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 10.0,
+        "phi": 0.0,
+        "u": 4.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 10.0,
+        "phi": 1.8849555921538759,
+        "u": 0.1
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 10.0,
+        "phi": 1.8849555921538759,
+        "u": 8.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 4.0,
+        "phi": 0.0,
+        "u": 0.5
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 10.0,
+        "phi": 0.0,
+        "u": 0.1
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 10.0,
+        "phi": 0.0,
+        "u": 0.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 4.0,
+        "phi": 0.0,
+        "u": 0.1
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "hard computation deadline",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "ed",
+      "levels": 12,
+      "point": {
+        "gamma": 1.0,
+        "phi": 1.8849555921538759,
+        "u": 1.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 10.0,
+        "phi": 0.0,
+        "u": 8.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 4.0,
+        "phi": 0.0,
+        "u": 2.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 4.0,
+        "phi": 1.8849555921538759,
+        "u": 8.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 4.0,
+        "phi": 1.8849555921538759,
+        "u": 8.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 4.0,
+        "phi": 1.8849555921538759,
+        "u": 12.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "hard computation deadline",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "ed",
+      "levels": 12,
+      "point": {
+        "gamma": 1.0,
+        "phi": 1.8849555921538759,
+        "u": 2.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 10.0,
+        "phi": 1.8849555921538759,
+        "u": 1.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 10.0,
+        "phi": 0.0,
+        "u": 0.5
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 10.0,
+        "phi": 1.8849555921538759,
+        "u": 0.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 4.0,
+        "phi": 0.0,
+        "u": 4.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 4.0,
+        "phi": 0.0,
+        "u": 4.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 10.0,
+        "phi": 1.8849555921538759,
+        "u": 4.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 4.0,
+        "phi": 0.0,
+        "u": 2.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 10.0,
+        "phi": 0.0,
+        "u": 1.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 4.0,
+        "phi": 1.8849555921538759,
+        "u": 0.5
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 10.0,
+        "phi": 0.0,
+        "u": 0.1
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 10.0,
+        "phi": 0.0,
+        "u": 0.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 4.0,
+        "phi": 1.8849555921538759,
+        "u": 4.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 10.0,
+        "phi": 0.0,
+        "u": 2.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 4.0,
+        "phi": 1.8849555921538759,
+        "u": 0.1
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 10.0,
+        "phi": 1.8849555921538759,
+        "u": 0.5
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 4.0,
+        "phi": 1.8849555921538759,
+        "u": 1.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 4.0,
+        "phi": 1.8849555921538759,
+        "u": 2.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 10.0,
+        "phi": 1.8849555921538759,
+        "u": 0.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 10.0,
+        "phi": 1.8849555921538759,
+        "u": 4.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 4.0,
+        "phi": 0.0,
+        "u": 0.1
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 4.0,
+        "phi": 0.0,
+        "u": 8.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 10.0,
+        "phi": 0.0,
+        "u": 2.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 4.0,
+        "phi": 0.0,
+        "u": 8.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 10.0,
+        "phi": 0.0,
+        "u": 8.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 4.0,
+        "phi": 1.8849555921538759,
+        "u": 4.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 10.0,
+        "phi": 0.0,
+        "u": 4.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 4.0,
+        "phi": 0.0,
+        "u": 12.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 10.0,
+        "phi": 1.8849555921538759,
+        "u": 2.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 10.0,
+        "phi": 1.8849555921538759,
+        "u": 0.1
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 4.0,
+        "phi": 1.8849555921538759,
+        "u": 0.5
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 10.0,
+        "phi": 0.0,
+        "u": 12.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 10.0,
+        "phi": 1.8849555921538759,
+        "u": 12.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 10.0,
+        "phi": 1.8849555921538759,
+        "u": 1.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 4.0,
+        "phi": 1.8849555921538759,
+        "u": 1.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 4.0,
+        "phi": 0.0,
+        "u": 1.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 10.0,
+        "phi": 0.0,
+        "u": 0.5
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 4.0,
+        "phi": 1.8849555921538759,
+        "u": 2.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 4.0,
+        "phi": 0.0,
+        "u": 1.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 10.0,
+        "phi": 0.0,
+        "u": 1.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 4.0,
+        "phi": 0.0,
+        "u": 12.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 10.0,
+        "phi": 0.0,
+        "u": 12.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "39e2c9db54ef0c92a6dc1f5da0a30fbdcb1d7b3326d45915c6e097e4d79eb8ae",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 12,
+      "point": {
+        "gamma": 4.0,
+        "phi": 1.8849555921538759,
+        "u": 12.0
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 10.0,
+        "phi": 1.8849555921538759,
+        "u": 0.5
+      },
+      "variant": "standard"
+    }
+  },
+  {
+    "reason": "deadline-profile task time limit",
+    "task": {
+      "bandwidth": 100.0,
+      "bath_key": "43d62f5dadd5ef81371bbd8a713ecce359d75772d1c445479691bcf877f295c2",
+      "family": "cosh-grid",
+      "kind": "dmrg",
+      "levels": 16,
+      "point": {
+        "gamma": 4.0,
+        "phi": 1.8849555921538759,
+        "u": 0.1
+      },
+      "variant": "standard"
+    }
+  }
+]

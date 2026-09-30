@@ -1,0 +1,118 @@
+{
+  "L12_q6_versus_L12_q8": {
+    "current": 0.027824840623136837,
+    "signed_gap": 0.08058331314997247
+  },
+  "L12_q8_versus_L10": {
+    "current": 0.0003946117253209036,
+    "signed_gap": 0.0029734339335192317
+  },
+  "L6_versus_L8": {
+    "current": 0.005489409641476595,
+    "signed_gap": 0.011554669317384025
+  },
+  "L8_dmrg_versus_L8": {
+    "current": 1.1069040684041909e-09,
+    "even_energy": 4.973799150320701e-14,
+    "odd_energy": 1.6342482922482304e-13,
+    "signed_gap": 1.1368683772161603e-13
+  },
+  "L8_q4_versus_L8": {
+    "current": 0.5772061016977126,
+    "signed_gap": 0.263985815059975
+  },
+  "L8_versus_L10": {
+    "current": 0.00016517455400033576,
+    "signed_gap": 0.0026046477242616106
+  },
+  "L8_w2D_versus_L8": {
+    "current": 5.957880484519507e-06,
+    "signed_gap": 2.3400580371646384e-05
+  },
+  "dmrg_maximum_residual": 6.27889804980995e-08,
+  "dmrg_runtime_seconds": 63.521085374988616,
+  "paper": {
+    "crossings": [
+      {
+        "delta_over_tk": 0.1,
+        "phi_critical_over_pi": 0.9413377693487814
+      },
+      {
+        "delta_over_tk": 1.6,
+        "phi_critical_over_pi": 0.42632695638160534
+      },
+      {
+        "delta_over_tk": 1.8,
+        "phi_critical_over_pi": 0.37418785512638764
+      },
+      {
+        "delta_over_tk": 2.0,
+        "phi_critical_over_pi": 0.32028512758039596
+      },
+      {
+        "delta_over_tk": 2.2,
+        "phi_critical_over_pi": 0.2620695155175047
+      }
+    ],
+    "maximum_current_derivative_error": 1.0852143628170552e-09,
+    "maximum_published_current_difference": 0.31883242310429843,
+    "maximum_residual": 5.320734156770171e-11,
+    "points": 280,
+    "tk_over_D": 0.008877583677243962
+  },
+  "reference_comparison_by_ratio": {
+    "0.1": {
+      "max_current_difference": 0.2677229556175007,
+      "max_difference_away_from_endpoints": 0.2677229556175007,
+      "opposite_sign_phases": []
+    },
+    "1.6": {
+      "max_current_difference": 0.31883242310429843,
+      "max_difference_away_from_endpoints": 0.31883242310429843,
+      "opposite_sign_phases": [
+        0.3801904761904762,
+        0.3900952380952383,
+        0.3999999999999999
+      ]
+    },
+    "1.8": {
+      "max_current_difference": 0.2892822563287933,
+      "max_difference_away_from_endpoints": 0.2892822563287933,
+      "opposite_sign_phases": [
+        0.3401904761904764,
+        0.350095238095238,
+        0.3600000000000001,
+        0.3699047619047622
+      ]
+    },
+    "10.0": {
+      "max_current_difference": 0.011902497359241582,
+      "max_difference_away_from_endpoints": 0.011902497359241582,
+      "opposite_sign_phases": []
+    },
+    "2.0": {
+      "max_current_difference": 0.23395656990208832,
+      "max_difference_away_from_endpoints": 0.23395656990208832,
+      "opposite_sign_phases": [
+        0.27009523809523817,
+        0.28,
+        0.2899047619047619,
+        0.30019047619047634
+      ]
+    },
+    "2.2": {
+      "max_current_difference": 0.15619941398898662,
+      "max_difference_away_from_endpoints": 0.15619941398898662,
+      "opposite_sign_phases": [
+        0.1801904761904762,
+        0.1900952380952381,
+        0.20000000000000018
+      ]
+    }
+  },
+  "runtimes_seconds": {
+    "convergence": 328.288500667084,
+    "paper": 411.88061758410186,
+    "quick": 0.33992074988782406
+  }
+}

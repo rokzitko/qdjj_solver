@@ -1,0 +1,33 @@
+{
+  "L4_versus_L8": {
+    "kappa": 0.0023385865525723526
+  },
+  "L6_versus_L8": {
+    "kappa": 0.0006963682168199536
+  },
+  "L8_q4_versus_L8": {
+    "kappa": 0.003388339390162809
+  },
+  "L8_versus_L10": {
+    "kappa": 0.00016226833539023655
+  },
+  "L8_w200_versus_L8": {
+    "kappa": 2.7644370866997114e-05
+  },
+  "cosh6_q6_versus_L10": {
+    "kappa": 0.00011673923955690668
+  },
+  "paper": {
+    "leading_kappa_over_gamma": 0.11415375251228316,
+    "maximum_coupling_scan_nrg_absolute_error": 0.001147661839066616,
+    "maximum_phase_scan_nrg_absolute_error": 0.0007325488990560514,
+    "maximum_residual": 2.6307553865575458e-12,
+    "smallest_field_identity_error": 3.0147366825161726e-09
+  },
+  "phase_modulation": 0.01670600699793956,
+  "runtimes_seconds": {
+    "convergence": 191.4405784169212,
+    "paper": 29.481729416176677,
+    "quick": 0.2800028342753649
+  }
+}

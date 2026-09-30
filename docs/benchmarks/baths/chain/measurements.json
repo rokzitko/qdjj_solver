@@ -1,0 +1,6390 @@
+[
+  {
+    "construction_seconds": {
+      "maximum": 0.00012258300557732582,
+      "median": 0.00012258300557732582,
+      "minimum": 0.00012258300557732582,
+      "q25": 0.00012258300557732582,
+      "q75": 0.00012258300557732582,
+      "samples": [
+        0.00012258300557732582
+      ]
+    },
+    "kernel": {
+      "in_max_abs": 1.3279982671310364e-05,
+      "in_max_rel": 3.123407238121533e-05,
+      "in_rms_abs": 4.018056484811292e-06,
+      "minimum_qp_energy": 1.0051287140931393,
+      "moment_0_error": -7.278944114119668e-11,
+      "moment_2_error": -2.5309687909369494e-06,
+      "moment_4_error": -0.00010741002944009148,
+      "out_max_abs": 3.1385269546602146e-06,
+      "out_max_rel": 3.3511616279416178e-06,
+      "out_rms_abs": 1.8258007284354955e-06,
+      "weak_spin_slope": 0.07785937379723269,
+      "weak_spin_slope_continuum": 0.07785935589746482,
+      "weak_spin_slope_error": 1.7899767876250472e-08
+    },
+    "peak_process_rss_bytes": 85966848,
+    "quadratic": [
+      {
+        "continuum": {
+          "charge": 1.0,
+          "charge_quadrature_error": 0.0,
+          "current": 0.03646660898081374,
+          "current_quadrature_error": 1.29429498690461e-14,
+          "excitation": 0.20568302247521383
+        },
+        "errors": {
+          "charge": 0.0,
+          "current": 4.4221743433769944e-08,
+          "excitation": 1.312139539993984e-06
+        },
+        "finite": {
+          "charge": 1.0,
+          "charge_quadrature_error": 0.0,
+          "current": 0.03646656475907031,
+          "current_quadrature_error": 1.3596665348033357e-14,
+          "excitation": 0.20568433461475383
+        },
+        "parameters": {
+          "bandwidth": 10.0,
+          "delta": 1.0,
+          "detuning": 0.0,
+          "gamma": 0.3,
+          "phi": 0.8
+        }
+      },
+      {
+        "continuum": {
+          "charge": 0.7232649312960897,
+          "charge_quadrature_error": 8.231913942409993e-15,
+          "current": 0.17421033254017804,
+          "current_quadrature_error": 1.1165138690405331e-12,
+          "excitation": 0.48971567097358437
+        },
+        "errors": {
+          "charge": 8.627821879159114e-08,
+          "current": 3.54341397335034e-08,
+          "excitation": 2.5811923863305886e-06
+        },
+        "finite": {
+          "charge": 0.7232648450178709,
+          "charge_quadrature_error": 1.476473688561041e-14,
+          "current": 0.1742102971060383,
+          "current_quadrature_error": 1.1606720731278838e-12,
+          "excitation": 0.4897182521659707
+        },
+        "parameters": {
+          "bandwidth": 10.0,
+          "delta": 1.0,
+          "detuning": 0.6,
+          "gamma": 2.0,
+          "phi": 1.7
+        }
+      },
+      {
+        "continuum": {
+          "charge": 1.0,
+          "charge_quadrature_error": 0.0,
+          "current": 0.037152728533145225,
+          "current_quadrature_error": 3.0830315915380044e-11,
+          "excitation": 0.97170073350295
+        },
+        "errors": {
+          "charge": 0.0,
+          "current": 1.427530135766908e-09,
+          "excitation": 0.0007384758899732224
+        },
+        "finite": {
+          "charge": 1.0,
+          "charge_quadrature_error": 0.0,
+          "current": 0.03715272996067536,
+          "current_quadrature_error": 3.060984046286446e-11,
+          "excitation": 0.9724392093929233
+        },
+        "parameters": {
+          "bandwidth": 10.0,
+          "delta": 1.0,
+          "detuning": 0.0,
+          "gamma": 10.0,
+          "phi": 0.2
+        }
+      }
+    ],
+    "status": "ok",
+    "task": {
+      "bath_key": "81a4955732b57cc62f3a",
+      "quadratic_points": [
+        {
+          "detuning": 0.0,
+          "gamma": 0.3,
+          "phi": 0.8
+        },
+        {
+          "detuning": 0.6,
+          "gamma": 2.0,
+          "phi": 1.7
+        },
+        {
+          "detuning": 0.0,
+          "gamma": 10.0,
+          "phi": 0.2
+        }
+      ],
+      "repetitions": 1,
+      "spec": {
+        "bandwidth": 10.0,
+        "delta": 1.0,
+        "kind": "cosh-grid",
+        "levels": 12
+      },
+      "type": "bath"
+    },
+    "worker_seconds": 0.013826875016093254
+  },
+  {
+    "construction_seconds": {
+      "maximum": 0.00013616587966680527,
+      "median": 0.00013616587966680527,
+      "minimum": 0.00013616587966680527,
+      "q25": 0.00013616587966680527,
+      "q75": 0.00013616587966680527,
+      "samples": [
+        0.00013616587966680527
+      ]
+    },
+    "kernel": {
+      "in_max_abs": 3.3569930124599523e-07,
+      "in_max_rel": 8.093080928640773e-07,
+      "in_rms_abs": 8.200671713474872e-08,
+      "minimum_qp_energy": 1.0017724297275086,
+      "moment_0_error": -2.220446049250313e-16,
+      "moment_2_error": -1.384284853411799e-09,
+      "moment_4_error": -3.9923019437559937e-07,
+      "out_max_abs": 4.096532890685012e-09,
+      "out_max_rel": 4.374072305063763e-09,
+      "out_rms_abs": 2.383036220945715e-09,
+      "weak_spin_slope": 0.07785935593284005,
+      "weak_spin_slope_continuum": 0.07785935589746482,
+      "weak_spin_slope_error": 3.537523052266067e-11
+    },
+    "peak_process_rss_bytes": 83148800,
+    "quadratic": [
+      {
+        "continuum": {
+          "charge": 1.0,
+          "charge_quadrature_error": 0.0,
+          "current": 0.03646660898081374,
+          "current_quadrature_error": 1.29429498690461e-14,
+          "excitation": 0.20568302247521383
+        },
+        "errors": {
+          "charge": 0.0,
+          "current": 3.4138435828223734e-10,
+          "excitation": 1.812983035920368e-08
+        },
+        "finite": {
+          "charge": 1.0,
+          "charge_quadrature_error": 0.0,
+          "current": 0.0364666093221981,
+          "current_quadrature_error": 1.2883448302303599e-14,
+          "excitation": 0.20568300434538347
+        },
+        "parameters": {
+          "bandwidth": 10.0,
+          "delta": 1.0,
+          "detuning": 0.0,
+          "gamma": 0.3,
+          "phi": 0.8
+        }
+      },
+      {
+        "continuum": {
+          "charge": 0.7232649312960897,
+          "charge_quadrature_error": 8.231913942409993e-15,
+          "current": 0.17421033254017804,
+          "current_quadrature_error": 1.1165138690405331e-12,
+          "excitation": 0.48971567097358437
+        },
+        "errors": {
+          "charge": 1.0484195733795332e-09,
+          "current": 2.5367763445416358e-11,
+          "excitation": 7.723344247478892e-08
+        },
+        "finite": {
+          "charge": 0.7232649323445093,
+          "charge_quadrature_error": 1.0291805163741592e-14,
+          "current": 0.17421033251481027,
+          "current_quadrature_error": 1.1115470915567494e-12,
+          "excitation": 0.4897155937401419
+        },
+        "parameters": {
+          "bandwidth": 10.0,
+          "delta": 1.0,
+          "detuning": 0.6,
+          "gamma": 2.0,
+          "phi": 1.7
+        }
+      },
+      {
+        "continuum": {
+          "charge": 1.0,
+          "charge_quadrature_error": 0.0,
+          "current": 0.037152728533145225,
+          "current_quadrature_error": 3.0830315915380044e-11,
+          "excitation": 0.97170073350295
+        },
+        "errors": {
+          "charge": 0.0,
+          "current": 1.0254297411194102e-13,
+          "excitation": 5.6567199118395806e-05
+        },
+        "finite": {
+          "charge": 1.0,
+          "charge_quadrature_error": 0.0,
+          "current": 0.03715272853324777,
+          "current_quadrature_error": 3.080609341155982e-11,
+          "excitation": 0.9716441663038317
+        },
+        "parameters": {
+          "bandwidth": 10.0,
+          "delta": 1.0,
+          "detuning": 0.0,
+          "gamma": 10.0,
+          "phi": 0.2
+        }
+      }
+    ],
+    "status": "ok",
+    "task": {
+      "bath_key": "0ccd6a7ebad9f4a5dc65",
+      "quadratic_points": [
+        {
+          "detuning": 0.0,
+          "gamma": 0.3,
+          "phi": 0.8
+        },
+        {
+          "detuning": 0.6,
+          "gamma": 2.0,
+          "phi": 1.7
+        },
+        {
+          "detuning": 0.0,
+          "gamma": 10.0,
+          "phi": 0.2
+        }
+      ],
+      "repetitions": 1,
+      "spec": {
+        "bandwidth": 10.0,
+        "delta": 1.0,
+        "kind": "cosh-grid",
+        "levels": 16
+      },
+      "type": "bath"
+    },
+    "worker_seconds": 0.013631499838083982
+  },
+  {
+    "construction_seconds": {
+      "maximum": 0.00019762525334954262,
+      "median": 0.00019762525334954262,
+      "minimum": 0.00019762525334954262,
+      "q25": 0.00019762525334954262,
+      "q75": 0.00019762525334954262,
+      "samples": [
+        0.00019762525334954262
+      ]
+    },
+    "kernel": {
+      "in_max_abs": 2.1574603215057664e-10,
+      "in_max_rel": 5.402762033718648e-10,
+      "in_rms_abs": 4.726737043779208e-11,
+      "minimum_qp_energy": 1.0003820827872207,
+      "moment_0_error": 0.0,
+      "moment_2_error": -2.220446049250313e-16,
+      "moment_4_error": -4.213018822696313e-13,
+      "out_max_abs": 1.0316747456329267e-11,
+      "out_max_rel": 1.1015711122782188e-11,
+      "out_rms_abs": 6.001512228729152e-12,
+      "weak_spin_slope": 0.0778593558974644,
+      "weak_spin_slope_continuum": 0.07785935589746482,
+      "weak_spin_slope_error": 4.163336342344337e-16
+    },
+    "peak_process_rss_bytes": 84836352,
+    "quadratic": [
+      {
+        "continuum": {
+          "charge": 1.0,
+          "charge_quadrature_error": 0.0,
+          "current": 0.03646660898081374,
+          "current_quadrature_error": 1.29429498690461e-14,
+          "excitation": 0.20568302247521383
+        },
+        "errors": {
+          "charge": 0.0,
+          "current": 8.717332411478651e-14,
+          "excitation": 1.4842294060457561e-12
+        },
+        "finite": {
+          "charge": 1.0,
+          "charge_quadrature_error": 0.0,
+          "current": 0.03646660898072657,
+          "current_quadrature_error": 1.294283906727713e-14,
+          "excitation": 0.2056830224737296
+        },
+        "parameters": {
+          "bandwidth": 10.0,
+          "delta": 1.0,
+          "detuning": 0.0,
+          "gamma": 0.3,
+          "phi": 0.8
+        }
+      },
+      {
+        "continuum": {
+          "charge": 0.7232649312960897,
+          "charge_quadrature_error": 8.231913942409993e-15,
+          "current": 0.17421033254017804,
+          "current_quadrature_error": 1.1165138690405331e-12,
+          "excitation": 0.48971567097358437
+        },
+        "errors": {
+          "charge": 9.658940314238862e-15,
+          "current": 1.1213252548714081e-14,
+          "excitation": 6.795281004556841e-11
+        },
+        "finite": {
+          "charge": 0.72326493129608,
+          "charge_quadrature_error": 8.23235574493692e-15,
+          "current": 0.17421033254016682,
+          "current_quadrature_error": 1.1165022757677573e-12,
+          "excitation": 0.48971567090563156
+        },
+        "parameters": {
+          "bandwidth": 10.0,
+          "delta": 1.0,
+          "detuning": 0.6,
+          "gamma": 2.0,
+          "phi": 1.7
+        }
+      },
+      {
+        "continuum": {
+          "charge": 1.0,
+          "charge_quadrature_error": 0.0,
+          "current": 0.037152728533145225,
+          "current_quadrature_error": 3.0830315915380044e-11,
+          "excitation": 0.97170073350295
+        },
+        "errors": {
+          "charge": 0.0,
+          "current": 2.0816681711721685e-17,
+          "excitation": 2.3354373941408824e-06
+        },
+        "finite": {
+          "charge": 1.0,
+          "charge_quadrature_error": 0.0,
+          "current": 0.037152728533145246,
+          "current_quadrature_error": 3.0830365288433727e-11,
+          "excitation": 0.9717030689403442
+        },
+        "parameters": {
+          "bandwidth": 10.0,
+          "delta": 1.0,
+          "detuning": 0.0,
+          "gamma": 10.0,
+          "phi": 0.2
+        }
+      }
+    ],
+    "status": "ok",
+    "task": {
+      "bath_key": "2479680ede57077b0426",
+      "quadratic_points": [
+        {
+          "detuning": 0.0,
+          "gamma": 0.3,
+          "phi": 0.8
+        },
+        {
+          "detuning": 0.6,
+          "gamma": 2.0,
+          "phi": 1.7
+        },
+        {
+          "detuning": 0.0,
+          "gamma": 10.0,
+          "phi": 0.2
+        }
+      ],
+      "repetitions": 1,
+      "spec": {
+        "bandwidth": 10.0,
+        "delta": 1.0,
+        "kind": "cosh-grid",
+        "levels": 24
+      },
+      "type": "bath"
+    },
+    "worker_seconds": 0.013946874998509884
+  },
+  {
+    "converged": false,
+    "peak_process_rss_bytes": 569212928,
+    "repeat_value_spread": {
+      "double_occupancy_0_0": 0.0,
+      "double_occupancy_0_1": 0.0,
+      "energy_0": 0.0,
+      "energy_1": 0.0,
+      "impurity_charge_0": 0.0,
+      "impurity_charge_1": 0.0,
+      "impurity_spin_z_0": 0.0,
+      "impurity_spin_z_1": 0.0,
+      "kappa": 0.0,
+      "signed_gap": 0.0
+    },
+    "restriction": "none",
+    "states": [
+      {
+        "bath_modes": 24,
+        "energy": 0.6502605833333952,
+        "finite_problem_converged": false,
+        "gram_error": 6.666091144168346e-16,
+        "hamiltonian_sha256": "ce6175dbcfc4e33358bd3aa3f225c8da7820928c31379bdf9e22e5dd1a2f6f22",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.02165010866971788,
+          "impurity_charge": 0.9999999999999996,
+          "impurity_spin_z": -8.205500642843866e-08
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 128,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 0.014701693742995273,
+        "roots": [
+          {
+            "chi_actual": 128,
+            "seed_trials": [
+              {
+                "energy": 0.6502605833334059,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  2,
+                  1,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": 0.6502605833333952,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    2,
+                    3,
+                    1,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 12
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 0,
+          "particle_number": null,
+          "twice_sz": 0
+        },
+        "timings_seconds": {
+          "diagonalization": 78.18621050007641,
+          "observables_and_residuals": 0.5139480410143733,
+          "preparation": 0.1149002923630178,
+          "total": 78.92468420835212
+        }
+      },
+      {
+        "bath_modes": 24,
+        "energy": -0.2695719362923157,
+        "finite_problem_converged": false,
+        "gram_error": 2.4424906541753444e-15,
+        "hamiltonian_sha256": "ce6175dbcfc4e33358bd3aa3f225c8da7820928c31379bdf9e22e5dd1a2f6f22",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.011758034587531142,
+          "impurity_charge": 0.9999999999999976,
+          "impurity_spin_z": 0.48695851799609313
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 128,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 0.0009779274891376299,
+        "roots": [
+          {
+            "chi_actual": 128,
+            "seed_trials": [
+              {
+                "energy": -0.2695719362923157,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  2,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": -0.2695719362923157,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    2,
+                    2,
+                    1,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 12
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 1,
+          "particle_number": null,
+          "twice_sz": 1
+        },
+        "timings_seconds": {
+          "diagonalization": 41.995979624800384,
+          "observables_and_residuals": 0.5462168753147125,
+          "preparation": 0.11538812518119812,
+          "total": 42.7664833329618
+        }
+      }
+    ],
+    "status": "ok",
+    "task": {
+      "bath_key": "81a4955732b57cc62f3a",
+      "case": "g0.5",
+      "dmrg_options": {
+        "chi_max": 256,
+        "energy_tolerance": 1e-11,
+        "max_sweeps": 40,
+        "min_sweeps": 10,
+        "require_convergence": false,
+        "residual_tolerance": 0.0001,
+        "seed": 1729,
+        "seed_trials": 2,
+        "threads": 1
+      },
+      "model": {
+        "compress": false,
+        "gamma": 0.5,
+        "geometry": "single",
+        "u": 15.0
+      },
+      "qp_options": {},
+      "repetitions": 1,
+      "sectors": [
+        0,
+        1
+      ],
+      "solver": {
+        "backend": "dmrg",
+        "layout": "electron-chain",
+        "options": {
+          "chi_max": 128
+        }
+      },
+      "study": "spectrum-refinement",
+      "type": "solve"
+    },
+    "timings_seconds": {
+      "model": {
+        "maximum": 0.004296707920730114,
+        "median": 0.004296707920730114,
+        "minimum": 0.004296707920730114,
+        "q25": 0.004296707920730114,
+        "q75": 0.004296707920730114,
+        "samples": [
+          0.004296707920730114
+        ]
+      },
+      "reused_bath_total": {
+        "maximum": 121.6988026658073,
+        "median": 121.6988026658073,
+        "minimum": 121.6988026658073,
+        "q25": 121.6988026658073,
+        "q75": 121.6988026658073,
+        "samples": [
+          121.6988026658073
+        ]
+      },
+      "solve": {
+        "maximum": 121.69450595788658,
+        "median": 121.69450595788658,
+        "minimum": 121.69450595788658,
+        "q25": 121.69450595788658,
+        "q75": 121.69450595788658,
+        "samples": [
+          121.69450595788658
+        ]
+      },
+      "solver_diagonalization": {
+        "maximum": 120.1821901248768,
+        "median": 120.1821901248768,
+        "minimum": 120.1821901248768,
+        "q25": 120.1821901248768,
+        "q75": 120.1821901248768,
+        "samples": [
+          120.1821901248768
+        ]
+      },
+      "solver_observables_and_residuals": {
+        "maximum": 1.0601649163290858,
+        "median": 1.0601649163290858,
+        "minimum": 1.0601649163290858,
+        "q25": 1.0601649163290858,
+        "q75": 1.0601649163290858,
+        "samples": [
+          1.0601649163290858
+        ]
+      },
+      "solver_preparation": {
+        "maximum": 0.23028841754421592,
+        "median": 0.23028841754421592,
+        "minimum": 0.23028841754421592,
+        "q25": 0.23028841754421592,
+        "q75": 0.23028841754421592,
+        "samples": [
+          0.23028841754421592
+        ]
+      },
+      "solver_total": {
+        "maximum": 121.69116754131392,
+        "median": 121.69116754131392,
+        "minimum": 121.69116754131392,
+        "q25": 121.69116754131392,
+        "q75": 121.69116754131392,
+        "samples": [
+          121.69116754131392
+        ]
+      }
+    },
+    "values": {
+      "double_occupancy_0_0": 0.02165010866971788,
+      "double_occupancy_0_1": 0.011758034587531142,
+      "energy_0": 0.6502605833333952,
+      "energy_1": -0.2695719362923157,
+      "impurity_charge_0": 0.9999999999999996,
+      "impurity_charge_1": 0.9999999999999976,
+      "impurity_spin_z_0": -8.205500642843866e-08,
+      "impurity_spin_z_1": 0.48695851799609313,
+      "kappa": 0.026082964007813736,
+      "signed_gap": -0.9198325196257109
+    },
+    "worker_seconds": 241.4105658326298
+  },
+  {
+    "converged": false,
+    "peak_process_rss_bytes": 1484390400,
+    "repeat_value_spread": {
+      "double_occupancy_0_0": 0.0,
+      "double_occupancy_0_1": 0.0,
+      "energy_0": 0.0,
+      "energy_1": 0.0,
+      "impurity_charge_0": 0.0,
+      "impurity_charge_1": 0.0,
+      "impurity_spin_z_0": 0.0,
+      "impurity_spin_z_1": 0.0,
+      "kappa": 0.0,
+      "signed_gap": 0.0
+    },
+    "restriction": "none",
+    "states": [
+      {
+        "bath_modes": 24,
+        "energy": 0.650252586602587,
+        "finite_problem_converged": false,
+        "gram_error": 8.882528108198317e-16,
+        "hamiltonian_sha256": "ce6175dbcfc4e33358bd3aa3f225c8da7820928c31379bdf9e22e5dd1a2f6f22",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.02165005192498661,
+          "impurity_charge": 0.9999999999940965,
+          "impurity_spin_z": 1.988966130683778e-09
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 256,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 0.0008488959312333305,
+        "roots": [
+          {
+            "chi_actual": 256,
+            "seed_trials": [
+              {
+                "energy": 0.650252586603056,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  2,
+                  1,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": 0.650252586602587,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    2,
+                    3,
+                    1,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 12
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 0,
+          "particle_number": null,
+          "twice_sz": 0
+        },
+        "timings_seconds": {
+          "diagonalization": 166.34512449987233,
+          "observables_and_residuals": 2.3079259172081947,
+          "preparation": 0.1158334999345243,
+          "total": 168.8819001656957
+        }
+      },
+      {
+        "bath_modes": 24,
+        "energy": -0.2695719693245806,
+        "finite_problem_converged": true,
+        "gram_error": 2.220446049250313e-16,
+        "hamiltonian_sha256": "ce6175dbcfc4e33358bd3aa3f225c8da7820928c31379bdf9e22e5dd1a2f6f22",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.011758036897372856,
+          "impurity_charge": 1.0,
+          "impurity_spin_z": 0.486958505019346
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 256,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 3.5137024691087844e-05,
+        "roots": [
+          {
+            "chi_actual": 256,
+            "seed_trials": [
+              {
+                "energy": -0.2695719693245806,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  2,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": -0.2695719693245522,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    2,
+                    2,
+                    1,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 12
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 1,
+          "particle_number": null,
+          "twice_sz": 1
+        },
+        "timings_seconds": {
+          "diagonalization": 117.07050795806572,
+          "observables_and_residuals": 2.359135791659355,
+          "preparation": 0.114739750046283,
+          "total": 119.65440366696566
+        }
+      }
+    ],
+    "status": "ok",
+    "task": {
+      "bath_key": "81a4955732b57cc62f3a",
+      "case": "g0.5",
+      "dmrg_options": {
+        "chi_max": 256,
+        "energy_tolerance": 1e-11,
+        "max_sweeps": 40,
+        "min_sweeps": 10,
+        "require_convergence": false,
+        "residual_tolerance": 0.0001,
+        "seed": 1729,
+        "seed_trials": 2,
+        "threads": 1
+      },
+      "model": {
+        "compress": false,
+        "gamma": 0.5,
+        "geometry": "single",
+        "u": 15.0
+      },
+      "qp_options": {},
+      "repetitions": 1,
+      "sectors": [
+        0,
+        1
+      ],
+      "solver": {
+        "backend": "dmrg",
+        "layout": "electron-chain",
+        "options": {
+          "chi_max": 256
+        }
+      },
+      "study": "spectrum-refinement",
+      "type": "solve"
+    },
+    "timings_seconds": {
+      "model": {
+        "maximum": 0.004188832826912403,
+        "median": 0.004188832826912403,
+        "minimum": 0.004188832826912403,
+        "q25": 0.004188832826912403,
+        "q75": 0.004188832826912403,
+        "samples": [
+          0.004188832826912403
+        ]
+      },
+      "reused_bath_total": {
+        "maximum": 288.54859858285636,
+        "median": 288.54859858285636,
+        "minimum": 288.54859858285636,
+        "q25": 288.54859858285636,
+        "q75": 288.54859858285636,
+        "samples": [
+          288.54859858285636
+        ]
+      },
+      "solve": {
+        "maximum": 288.54440975002944,
+        "median": 288.54440975002944,
+        "minimum": 288.54440975002944,
+        "q25": 288.54440975002944,
+        "q75": 288.54440975002944,
+        "samples": [
+          288.54440975002944
+        ]
+      },
+      "solver_diagonalization": {
+        "maximum": 283.41563245793805,
+        "median": 283.41563245793805,
+        "minimum": 283.41563245793805,
+        "q25": 283.41563245793805,
+        "q75": 283.41563245793805,
+        "samples": [
+          283.41563245793805
+        ]
+      },
+      "solver_observables_and_residuals": {
+        "maximum": 4.66706170886755,
+        "median": 4.66706170886755,
+        "minimum": 4.66706170886755,
+        "q25": 4.66706170886755,
+        "q75": 4.66706170886755,
+        "samples": [
+          4.66706170886755
+        ]
+      },
+      "solver_preparation": {
+        "maximum": 0.2305732499808073,
+        "median": 0.2305732499808073,
+        "minimum": 0.2305732499808073,
+        "q25": 0.2305732499808073,
+        "q75": 0.2305732499808073,
+        "samples": [
+          0.2305732499808073
+        ]
+      },
+      "solver_total": {
+        "maximum": 288.53630383266136,
+        "median": 288.53630383266136,
+        "minimum": 288.53630383266136,
+        "q25": 288.53630383266136,
+        "q75": 288.53630383266136,
+        "samples": [
+          288.53630383266136
+        ]
+      }
+    },
+    "values": {
+      "double_occupancy_0_0": 0.02165005192498661,
+      "double_occupancy_0_1": 0.011758036897372856,
+      "energy_0": 0.650252586602587,
+      "energy_1": -0.2695719693245806,
+      "impurity_charge_0": 0.9999999999940965,
+      "impurity_charge_1": 1.0,
+      "impurity_spin_z_0": 1.988966130683778e-09,
+      "impurity_spin_z_1": 0.486958505019346,
+      "kappa": 0.02608298996130798,
+      "signed_gap": -0.9198245559271676
+    },
+    "worker_seconds": 575.2059700828977
+  },
+  {
+    "converged": false,
+    "peak_process_rss_bytes": 617938944,
+    "repeat_value_spread": {
+      "double_occupancy_0_0": 0.0,
+      "double_occupancy_0_1": 0.0,
+      "energy_0": 0.0,
+      "energy_1": 0.0,
+      "impurity_charge_0": 0.0,
+      "impurity_charge_1": 0.0,
+      "impurity_spin_z_0": 0.0,
+      "impurity_spin_z_1": 0.0,
+      "kappa": 0.0,
+      "signed_gap": 0.0
+    },
+    "restriction": "none",
+    "states": [
+      {
+        "bath_modes": 32,
+        "energy": 0.650195863891998,
+        "finite_problem_converged": false,
+        "gram_error": 4.440892098500626e-16,
+        "hamiltonian_sha256": "b57e281f4f0d08f1565a561ba61af68f88b512190d3cb2be1ca6c4d74521392d",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.021770124935351527,
+          "impurity_charge": 1.0000000000000124,
+          "impurity_spin_z": -7.828962248795923e-06
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 128,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 0.03558537894703419,
+        "roots": [
+          {
+            "chi_actual": 128,
+            "seed_trials": [
+              {
+                "energy": 0.650195863891998,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  2,
+                  2,
+                  1,
+                  1,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": 0.6501958638920371,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    2,
+                    2,
+                    1,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 12
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 0,
+          "particle_number": null,
+          "twice_sz": 0
+        },
+        "timings_seconds": {
+          "diagonalization": 147.5349763748236,
+          "observables_and_residuals": 0.879187666811049,
+          "preparation": 0.14884783327579498,
+          "total": 148.70759775023907
+        }
+      },
+      {
+        "bath_modes": 32,
+        "energy": -0.26957150099799776,
+        "finite_problem_converged": false,
+        "gram_error": 6.661449717026239e-16,
+        "hamiltonian_sha256": "b57e281f4f0d08f1565a561ba61af68f88b512190d3cb2be1ca6c4d74521392d",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.011758013787078912,
+          "impurity_charge": 0.9999999999999993,
+          "impurity_spin_z": 0.48695868702739326
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 128,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 0.003565670487441827,
+        "roots": [
+          {
+            "chi_actual": 128,
+            "seed_trials": [
+              {
+                "energy": -0.2695715009978912,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  2,
+                  2,
+                  1,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": -0.26957150099799776,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    1,
+                    2,
+                    2,
+                    1,
+                    1,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 12
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 1,
+          "particle_number": null,
+          "twice_sz": 1
+        },
+        "timings_seconds": {
+          "diagonalization": 81.35268758330494,
+          "observables_and_residuals": 0.9664414580911398,
+          "preparation": 0.14626424992457032,
+          "total": 82.60648087505251
+        }
+      }
+    ],
+    "status": "ok",
+    "task": {
+      "bath_key": "0ccd6a7ebad9f4a5dc65",
+      "case": "g0.5",
+      "dmrg_options": {
+        "chi_max": 256,
+        "energy_tolerance": 1e-11,
+        "max_sweeps": 40,
+        "min_sweeps": 10,
+        "require_convergence": false,
+        "residual_tolerance": 0.0001,
+        "seed": 1729,
+        "seed_trials": 2,
+        "threads": 1
+      },
+      "model": {
+        "compress": false,
+        "gamma": 0.5,
+        "geometry": "single",
+        "u": 15.0
+      },
+      "qp_options": {},
+      "repetitions": 1,
+      "sectors": [
+        0,
+        1
+      ],
+      "solver": {
+        "backend": "dmrg",
+        "layout": "electron-chain",
+        "options": {
+          "chi_max": 128
+        }
+      },
+      "study": "spectrum-refinement",
+      "type": "solve"
+    },
+    "timings_seconds": {
+      "model": {
+        "maximum": 0.006622083019465208,
+        "median": 0.006622083019465208,
+        "minimum": 0.006622083019465208,
+        "q25": 0.006622083019465208,
+        "q75": 0.006622083019465208,
+        "samples": [
+          0.006622083019465208
+        ]
+      },
+      "reused_bath_total": {
+        "maximum": 231.32459695776924,
+        "median": 231.32459695776924,
+        "minimum": 231.32459695776924,
+        "q25": 231.32459695776924,
+        "q75": 231.32459695776924,
+        "samples": [
+          231.32459695776924
+        ]
+      },
+      "solve": {
+        "maximum": 231.31797487474978,
+        "median": 231.31797487474978,
+        "minimum": 231.31797487474978,
+        "q25": 231.31797487474978,
+        "q75": 231.31797487474978,
+        "samples": [
+          231.31797487474978
+        ]
+      },
+      "solver_diagonalization": {
+        "maximum": 228.88766395812854,
+        "median": 228.88766395812854,
+        "minimum": 228.88766395812854,
+        "q25": 228.88766395812854,
+        "q75": 228.88766395812854,
+        "samples": [
+          228.88766395812854
+        ]
+      },
+      "solver_observables_and_residuals": {
+        "maximum": 1.8456291249021888,
+        "median": 1.8456291249021888,
+        "minimum": 1.8456291249021888,
+        "q25": 1.8456291249021888,
+        "q75": 1.8456291249021888,
+        "samples": [
+          1.8456291249021888
+        ]
+      },
+      "solver_preparation": {
+        "maximum": 0.2951120832003653,
+        "median": 0.2951120832003653,
+        "minimum": 0.2951120832003653,
+        "q25": 0.2951120832003653,
+        "q75": 0.2951120832003653,
+        "samples": [
+          0.2951120832003653
+        ]
+      },
+      "solver_total": {
+        "maximum": 231.3140786252916,
+        "median": 231.3140786252916,
+        "minimum": 231.3140786252916,
+        "q25": 231.3140786252916,
+        "q75": 231.3140786252916,
+        "samples": [
+          231.3140786252916
+        ]
+      }
+    },
+    "values": {
+      "double_occupancy_0_0": 0.021770124935351527,
+      "double_occupancy_0_1": 0.011758013787078912,
+      "energy_0": 0.650195863891998,
+      "energy_1": -0.26957150099799776,
+      "impurity_charge_0": 1.0000000000000124,
+      "impurity_charge_1": 0.9999999999999993,
+      "impurity_spin_z_0": -7.828962248795923e-06,
+      "impurity_spin_z_1": 0.48695868702739326,
+      "kappa": 0.02608262594521349,
+      "signed_gap": -0.9197673648899958
+    },
+    "worker_seconds": 457.9315975829959
+  },
+  {
+    "converged": false,
+    "peak_process_rss_bytes": 1620656128,
+    "repeat_value_spread": {
+      "double_occupancy_0_0": 0.0,
+      "double_occupancy_0_1": 0.0,
+      "energy_0": 0.0,
+      "energy_1": 0.0,
+      "impurity_charge_0": 0.0,
+      "impurity_charge_1": 0.0,
+      "impurity_spin_z_0": 0.0,
+      "impurity_spin_z_1": 0.0,
+      "kappa": 0.0,
+      "signed_gap": 0.0
+    },
+    "restriction": "none",
+    "states": [
+      {
+        "bath_modes": 32,
+        "energy": 0.6501473665434467,
+        "finite_problem_converged": false,
+        "gram_error": 4.440892098500626e-16,
+        "hamiltonian_sha256": "b57e281f4f0d08f1565a561ba61af68f88b512190d3cb2be1ca6c4d74521392d",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.021769269241376905,
+          "impurity_charge": 0.9999999999993541,
+          "impurity_spin_z": -2.8949173697112585e-08
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 256,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 0.0036704452174678016,
+        "roots": [
+          {
+            "chi_actual": 256,
+            "seed_trials": [
+              {
+                "energy": 0.6501473665434467,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  2,
+                  2,
+                  1,
+                  1,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": 0.6501473665434716,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    2,
+                    2,
+                    1,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 12
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 0,
+          "particle_number": null,
+          "twice_sz": 0
+        },
+        "timings_seconds": {
+          "diagonalization": 353.3191146249883,
+          "observables_and_residuals": 4.531792874913663,
+          "preparation": 0.1497409581206739,
+          "total": 358.14715629071
+        }
+      },
+      {
+        "bath_modes": 32,
+        "energy": -0.2695719702486912,
+        "finite_problem_converged": false,
+        "gram_error": 6.662189304734373e-16,
+        "hamiltonian_sha256": "b57e281f4f0d08f1565a561ba61af68f88b512190d3cb2be1ca6c4d74521392d",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.011758036275749957,
+          "impurity_charge": 1.0000000000000007,
+          "impurity_spin_z": 0.4869585115563806
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 256,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 0.00027751783657057303,
+        "roots": [
+          {
+            "chi_actual": 256,
+            "seed_trials": [
+              {
+                "energy": -0.26957197024863433,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  2,
+                  2,
+                  1,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": -0.2695719702486912,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    1,
+                    2,
+                    2,
+                    1,
+                    1,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 12
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 1,
+          "particle_number": null,
+          "twice_sz": 1
+        },
+        "timings_seconds": {
+          "diagonalization": 259.0127284168266,
+          "observables_and_residuals": 4.548919042106718,
+          "preparation": 0.15122424997389317,
+          "total": 263.8563007921912
+        }
+      }
+    ],
+    "status": "ok",
+    "task": {
+      "bath_key": "0ccd6a7ebad9f4a5dc65",
+      "case": "g0.5",
+      "dmrg_options": {
+        "chi_max": 256,
+        "energy_tolerance": 1e-11,
+        "max_sweeps": 40,
+        "min_sweeps": 10,
+        "require_convergence": false,
+        "residual_tolerance": 0.0001,
+        "seed": 1729,
+        "seed_trials": 2,
+        "threads": 1
+      },
+      "model": {
+        "compress": false,
+        "gamma": 0.5,
+        "geometry": "single",
+        "u": 15.0
+      },
+      "qp_options": {},
+      "repetitions": 1,
+      "sectors": [
+        0,
+        1
+      ],
+      "solver": {
+        "backend": "dmrg",
+        "layout": "electron-chain",
+        "options": {
+          "chi_max": 256
+        }
+      },
+      "study": "spectrum-refinement",
+      "type": "solve"
+    },
+    "timings_seconds": {
+      "model": {
+        "maximum": 0.006567415781319141,
+        "median": 0.006567415781319141,
+        "minimum": 0.006567415781319141,
+        "q25": 0.006567415781319141,
+        "q75": 0.006567415781319141,
+        "samples": [
+          0.006567415781319141
+        ]
+      },
+      "reused_bath_total": {
+        "maximum": 622.0266681658104,
+        "median": 622.0266681658104,
+        "minimum": 622.0266681658104,
+        "q25": 622.0266681658104,
+        "q75": 622.0266681658104,
+        "samples": [
+          622.0266681658104
+        ]
+      },
+      "solve": {
+        "maximum": 622.0201007500291,
+        "median": 622.0201007500291,
+        "minimum": 622.0201007500291,
+        "q25": 622.0201007500291,
+        "q75": 622.0201007500291,
+        "samples": [
+          622.0201007500291
+        ]
+      },
+      "solver_diagonalization": {
+        "maximum": 612.3318430418149,
+        "median": 612.3318430418149,
+        "minimum": 612.3318430418149,
+        "q25": 612.3318430418149,
+        "q75": 612.3318430418149,
+        "samples": [
+          612.3318430418149
+        ]
+      },
+      "solver_observables_and_residuals": {
+        "maximum": 9.08071191702038,
+        "median": 9.08071191702038,
+        "minimum": 9.08071191702038,
+        "q25": 9.08071191702038,
+        "q75": 9.08071191702038,
+        "samples": [
+          9.08071191702038
+        ]
+      },
+      "solver_preparation": {
+        "maximum": 0.30096520809456706,
+        "median": 0.30096520809456706,
+        "minimum": 0.30096520809456706,
+        "q25": 0.30096520809456706,
+        "q75": 0.30096520809456706,
+        "samples": [
+          0.30096520809456706
+        ]
+      },
+      "solver_total": {
+        "maximum": 622.0034570829011,
+        "median": 622.0034570829011,
+        "minimum": 622.0034570829011,
+        "q25": 622.0034570829011,
+        "q75": 622.0034570829011,
+        "samples": [
+          622.0034570829011
+        ]
+      }
+    },
+    "values": {
+      "double_occupancy_0_0": 0.021769269241376905,
+      "double_occupancy_0_1": 0.011758036275749957,
+      "energy_0": 0.6501473665434467,
+      "energy_1": -0.2695719702486912,
+      "impurity_charge_0": 0.9999999999993541,
+      "impurity_charge_1": 1.0000000000000007,
+      "impurity_spin_z_0": -2.8949173697112585e-08,
+      "impurity_spin_z_1": 0.4869585115563806,
+      "kappa": 0.026082976887238818,
+      "signed_gap": -0.9197193367921379
+    },
+    "worker_seconds": 1272.8421314996667
+  },
+  {
+    "converged": false,
+    "peak_process_rss_bytes": 1101053952,
+    "repeat_value_spread": {
+      "double_occupancy_0_0": 0.0,
+      "double_occupancy_0_1": 0.0,
+      "energy_0": 0.0,
+      "energy_1": 0.0,
+      "impurity_charge_0": 0.0,
+      "impurity_charge_1": 0.0,
+      "impurity_spin_z_0": 0.0,
+      "impurity_spin_z_1": 0.0,
+      "kappa": 0.0,
+      "signed_gap": 0.0
+    },
+    "restriction": "none",
+    "states": [
+      {
+        "bath_modes": 48,
+        "energy": 0.6503627533909011,
+        "finite_problem_converged": false,
+        "gram_error": 2.6645352591003757e-15,
+        "hamiltonian_sha256": "1c3372a0f4deb500c9b585cca9de6334b9582024384854c519d620b151f3b455",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.021755470367277135,
+          "impurity_charge": 1.0000000000000029,
+          "impurity_spin_z": -7.211093177356132e-05
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 128,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 0.08012742256038255,
+        "roots": [
+          {
+            "chi_actual": 128,
+            "seed_trials": [
+              {
+                "energy": 0.6503627533909011,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  1,
+                  2,
+                  2,
+                  1,
+                  0,
+                  0,
+                  1,
+                  2,
+                  0,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": 0.6503627533909864,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    1,
+                    2,
+                    2,
+                    1,
+                    0,
+                    0,
+                    1,
+                    2,
+                    1,
+                    1,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 16
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 0,
+          "particle_number": null,
+          "twice_sz": 0
+        },
+        "timings_seconds": {
+          "diagonalization": 326.2273287498392,
+          "observables_and_residuals": 1.6019615000113845,
+          "preparation": 0.2108235419727862,
+          "total": 328.25856558419764
+        }
+      },
+      {
+        "bath_modes": 48,
+        "energy": -0.2695682929610257,
+        "finite_problem_converged": false,
+        "gram_error": 4.218847493575595e-15,
+        "hamiltonian_sha256": "1c3372a0f4deb500c9b585cca9de6334b9582024384854c519d620b151f3b455",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.011757946835379117,
+          "impurity_charge": 1.0000000000000042,
+          "impurity_spin_z": 0.48695930014214894
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 128,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 0.00984079642547539,
+        "roots": [
+          {
+            "chi_actual": 128,
+            "seed_trials": [
+              {
+                "energy": -0.2695682929610257,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  1,
+                  2,
+                  2,
+                  1,
+                  0,
+                  0,
+                  1,
+                  2,
+                  1,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": -0.26956829296059936,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    1,
+                    2,
+                    2,
+                    1,
+                    0,
+                    0,
+                    1,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 12
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 1,
+          "particle_number": null,
+          "twice_sz": 1
+        },
+        "timings_seconds": {
+          "diagonalization": 164.6016481248662,
+          "observables_and_residuals": 1.7219365411438048,
+          "preparation": 0.20258475001901388,
+          "total": 166.73561308300123
+        }
+      }
+    ],
+    "status": "ok",
+    "task": {
+      "bath_key": "2479680ede57077b0426",
+      "case": "g0.5",
+      "dmrg_options": {
+        "chi_max": 256,
+        "energy_tolerance": 1e-11,
+        "max_sweeps": 40,
+        "min_sweeps": 10,
+        "require_convergence": false,
+        "residual_tolerance": 0.0001,
+        "seed": 1729,
+        "seed_trials": 2,
+        "threads": 1
+      },
+      "model": {
+        "compress": false,
+        "gamma": 0.5,
+        "geometry": "single",
+        "u": 15.0
+      },
+      "qp_options": {},
+      "repetitions": 1,
+      "sectors": [
+        0,
+        1
+      ],
+      "solver": {
+        "backend": "dmrg",
+        "layout": "electron-chain",
+        "options": {
+          "chi_max": 128
+        }
+      },
+      "study": "spectrum-refinement",
+      "type": "solve"
+    },
+    "timings_seconds": {
+      "model": {
+        "maximum": 0.0127464160323143,
+        "median": 0.0127464160323143,
+        "minimum": 0.0127464160323143,
+        "q25": 0.0127464160323143,
+        "q75": 0.0127464160323143,
+        "samples": [
+          0.0127464160323143
+        ]
+      },
+      "reused_bath_total": {
+        "maximum": 495.0130051658489,
+        "median": 495.0130051658489,
+        "minimum": 495.0130051658489,
+        "q25": 495.0130051658489,
+        "q75": 495.0130051658489,
+        "samples": [
+          495.0130051658489
+        ]
+      },
+      "solve": {
+        "maximum": 495.00025874981657,
+        "median": 495.00025874981657,
+        "minimum": 495.00025874981657,
+        "q25": 495.00025874981657,
+        "q75": 495.00025874981657,
+        "samples": [
+          495.00025874981657
+        ]
+      },
+      "solver_diagonalization": {
+        "maximum": 490.8289768747054,
+        "median": 490.8289768747054,
+        "minimum": 490.8289768747054,
+        "q25": 490.8289768747054,
+        "q75": 490.8289768747054,
+        "samples": [
+          490.8289768747054
+        ]
+      },
+      "solver_observables_and_residuals": {
+        "maximum": 3.3238980411551893,
+        "median": 3.3238980411551893,
+        "minimum": 3.3238980411551893,
+        "q25": 3.3238980411551893,
+        "q75": 3.3238980411551893,
+        "samples": [
+          3.3238980411551893
+        ]
+      },
+      "solver_preparation": {
+        "maximum": 0.41340829199180007,
+        "median": 0.41340829199180007,
+        "minimum": 0.41340829199180007,
+        "q25": 0.41340829199180007,
+        "q75": 0.41340829199180007,
+        "samples": [
+          0.41340829199180007
+        ]
+      },
+      "solver_total": {
+        "maximum": 494.99417866719887,
+        "median": 494.99417866719887,
+        "minimum": 494.99417866719887,
+        "q25": 494.99417866719887,
+        "q75": 494.99417866719887,
+        "samples": [
+          494.99417866719887
+        ]
+      }
+    },
+    "values": {
+      "double_occupancy_0_0": 0.021755470367277135,
+      "double_occupancy_0_1": 0.011757946835379117,
+      "energy_0": 0.6503627533909011,
+      "energy_1": -0.2695682929610257,
+      "impurity_charge_0": 1.0000000000000029,
+      "impurity_charge_1": 1.0000000000000042,
+      "impurity_spin_z_0": -7.211093177356132e-05,
+      "impurity_spin_z_1": 0.48695930014214894,
+      "kappa": 0.026081399715702114,
+      "signed_gap": -0.9199310463519268
+    },
+    "worker_seconds": 996.7989845830016
+  },
+  {
+    "converged": false,
+    "peak_process_rss_bytes": 1779269632,
+    "repeat_value_spread": {
+      "double_occupancy_0_0": 0.0,
+      "double_occupancy_0_1": 0.0,
+      "energy_0": 0.0,
+      "energy_1": 0.0,
+      "impurity_charge_0": 0.0,
+      "impurity_charge_1": 0.0,
+      "impurity_spin_z_0": 0.0,
+      "impurity_spin_z_1": 0.0,
+      "kappa": 0.0,
+      "signed_gap": 0.0
+    },
+    "restriction": "none",
+    "states": [
+      {
+        "bath_modes": 48,
+        "energy": 0.6500986500740282,
+        "finite_problem_converged": false,
+        "gram_error": 1.77657549272019e-15,
+        "hamiltonian_sha256": "1c3372a0f4deb500c9b585cca9de6334b9582024384854c519d620b151f3b455",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.021746885434099274,
+          "impurity_charge": 1.0000000000000013,
+          "impurity_spin_z": -4.02390043618972e-07
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 256,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 0.01245892526146784,
+        "roots": [
+          {
+            "chi_actual": 256,
+            "seed_trials": [
+              {
+                "energy": 0.6500986500741988,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  1,
+                  2,
+                  2,
+                  1,
+                  0,
+                  0,
+                  1,
+                  2,
+                  0,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": 0.6500986500740282,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    1,
+                    2,
+                    2,
+                    1,
+                    0,
+                    0,
+                    1,
+                    2,
+                    1,
+                    1,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 16
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 0,
+          "particle_number": null,
+          "twice_sz": 0
+        },
+        "timings_seconds": {
+          "diagonalization": 1244.299989250023,
+          "observables_and_residuals": 8.904735375195742,
+          "preparation": 0.21281908312812448,
+          "total": 1253.62987504201
+        }
+      },
+      {
+        "bath_modes": 48,
+        "energy": -0.2695719249073676,
+        "finite_problem_converged": false,
+        "gram_error": 2.220446049250313e-16,
+        "hamiltonian_sha256": "1c3372a0f4deb500c9b585cca9de6334b9582024384854c519d620b151f3b455",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.011758034902905466,
+          "impurity_charge": 0.9999999999999998,
+          "impurity_spin_z": 0.48695852624996666
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 256,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 0.0011948988213939579,
+        "roots": [
+          {
+            "chi_actual": 256,
+            "seed_trials": [
+              {
+                "energy": -0.2695719249073676,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  1,
+                  2,
+                  2,
+                  1,
+                  0,
+                  0,
+                  1,
+                  2,
+                  1,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": -0.2695719249073534,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    1,
+                    2,
+                    2,
+                    1,
+                    0,
+                    0,
+                    1,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 12
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 1,
+          "particle_number": null,
+          "twice_sz": 1
+        },
+        "timings_seconds": {
+          "diagonalization": 687.7141922083683,
+          "observables_and_residuals": 8.778469915967435,
+          "preparation": 0.21452912501990795,
+          "total": 696.9318524170667
+        }
+      }
+    ],
+    "status": "ok",
+    "task": {
+      "bath_key": "2479680ede57077b0426",
+      "case": "g0.5",
+      "dmrg_options": {
+        "chi_max": 256,
+        "energy_tolerance": 1e-11,
+        "max_sweeps": 40,
+        "min_sweeps": 10,
+        "require_convergence": false,
+        "residual_tolerance": 0.0001,
+        "seed": 1729,
+        "seed_trials": 2,
+        "threads": 1
+      },
+      "model": {
+        "compress": false,
+        "gamma": 0.5,
+        "geometry": "single",
+        "u": 15.0
+      },
+      "qp_options": {},
+      "repetitions": 1,
+      "sectors": [
+        0,
+        1
+      ],
+      "solver": {
+        "backend": "dmrg",
+        "layout": "electron-chain",
+        "options": {
+          "chi_max": 256
+        }
+      },
+      "study": "spectrum-refinement",
+      "type": "solve"
+    },
+    "timings_seconds": {
+      "model": {
+        "maximum": 0.012589583173394203,
+        "median": 0.012589583173394203,
+        "minimum": 0.012589583173394203,
+        "q25": 0.012589583173394203,
+        "q75": 0.012589583173394203,
+        "samples": [
+          0.012589583173394203
+        ]
+      },
+      "reused_bath_total": {
+        "maximum": 1950.5936345001683,
+        "median": 1950.5936345001683,
+        "minimum": 1950.5936345001683,
+        "q25": 1950.5936345001683,
+        "q75": 1950.5936345001683,
+        "samples": [
+          1950.5936345001683
+        ]
+      },
+      "solve": {
+        "maximum": 1950.5810449169949,
+        "median": 1950.5810449169949,
+        "minimum": 1950.5810449169949,
+        "q25": 1950.5810449169949,
+        "q75": 1950.5810449169949,
+        "samples": [
+          1950.5810449169949
+        ]
+      },
+      "solver_diagonalization": {
+        "maximum": 1932.0141814583912,
+        "median": 1932.0141814583912,
+        "minimum": 1932.0141814583912,
+        "q25": 1932.0141814583912,
+        "q75": 1932.0141814583912,
+        "samples": [
+          1932.0141814583912
+        ]
+      },
+      "solver_observables_and_residuals": {
+        "maximum": 17.683205291163176,
+        "median": 17.683205291163176,
+        "minimum": 17.683205291163176,
+        "q25": 17.683205291163176,
+        "q75": 17.683205291163176,
+        "samples": [
+          17.683205291163176
+        ]
+      },
+      "solver_preparation": {
+        "maximum": 0.4273482081480324,
+        "median": 0.4273482081480324,
+        "minimum": 0.4273482081480324,
+        "q25": 0.4273482081480324,
+        "q75": 0.4273482081480324,
+        "samples": [
+          0.4273482081480324
+        ]
+      },
+      "solver_total": {
+        "maximum": 1950.5617274590768,
+        "median": 1950.5617274590768,
+        "minimum": 1950.5617274590768,
+        "q25": 1950.5617274590768,
+        "q75": 1950.5617274590768,
+        "samples": [
+          1950.5617274590768
+        ]
+      }
+    },
+    "values": {
+      "double_occupancy_0_0": 0.021746885434099274,
+      "double_occupancy_0_1": 0.011758034902905466,
+      "energy_0": 0.6500986500740282,
+      "energy_1": -0.2695719249073676,
+      "impurity_charge_0": 1.0000000000000013,
+      "impurity_charge_1": 0.9999999999999998,
+      "impurity_spin_z_0": -4.02390043618972e-07,
+      "impurity_spin_z_1": 0.48695852624996666,
+      "kappa": 0.026082947500066678,
+      "signed_gap": -0.9196705749813958
+    },
+    "worker_seconds": 3894.006815874949
+  },
+  {
+    "converged": false,
+    "peak_process_rss_bytes": 525615104,
+    "repeat_value_spread": {
+      "double_occupancy_0_0": 0.0,
+      "double_occupancy_0_1": 0.0,
+      "energy_0": 0.0,
+      "energy_1": 0.0,
+      "impurity_charge_0": 0.0,
+      "impurity_charge_1": 0.0,
+      "impurity_spin_z_0": 0.0,
+      "impurity_spin_z_1": 0.0,
+      "kappa": 0.0,
+      "signed_gap": 0.0
+    },
+    "restriction": "none",
+    "states": [
+      {
+        "bath_modes": 24,
+        "energy": -13.54044794395486,
+        "finite_problem_converged": false,
+        "gram_error": 9.992477733451162e-16,
+        "hamiltonian_sha256": "737ac62588f7210132160e6097599b75336801720ee23b0109d90e5f62aaa454",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.2061310177542737,
+          "impurity_charge": 0.9999999999999986,
+          "impurity_spin_z": 1.0311723697142838e-11
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 128,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 0.00042212288802001856,
+        "roots": [
+          {
+            "chi_actual": 128,
+            "seed_trials": [
+              {
+                "energy": -13.540447943954844,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  2,
+                  1,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": -13.54044794395486,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    2,
+                    3,
+                    1,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 12
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 0,
+          "particle_number": null,
+          "twice_sz": 0
+        },
+        "timings_seconds": {
+          "diagonalization": 29.10068462509662,
+          "observables_and_residuals": 0.5488185840658844,
+          "preparation": 0.11392304208129644,
+          "total": 29.87156349979341
+        }
+      },
+      {
+        "bath_modes": 24,
+        "energy": -12.554985446329031,
+        "finite_problem_converged": false,
+        "gram_error": 9.992008105666968e-16,
+        "hamiltonian_sha256": "737ac62588f7210132160e6097599b75336801720ee23b0109d90e5f62aaa454",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.20514884522880095,
+          "impurity_charge": 1.0000000000024598,
+          "impurity_spin_z": 0.012718283183854345
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 128,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 0.0010224045848634814,
+        "roots": [
+          {
+            "chi_actual": 128,
+            "seed_trials": [
+              {
+                "energy": -12.554985446328956,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  2,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": -12.554985446329031,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    2,
+                    2,
+                    1,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 12
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 1,
+          "particle_number": null,
+          "twice_sz": 1
+        },
+        "timings_seconds": {
+          "diagonalization": 38.06883366731927,
+          "observables_and_residuals": 0.5706543326377869,
+          "preparation": 0.11311204126104712,
+          "total": 38.860384833067656
+        }
+      }
+    ],
+    "status": "ok",
+    "task": {
+      "bath_key": "81a4955732b57cc62f3a",
+      "case": "g20",
+      "dmrg_options": {
+        "chi_max": 256,
+        "energy_tolerance": 1e-11,
+        "max_sweeps": 40,
+        "min_sweeps": 10,
+        "require_convergence": false,
+        "residual_tolerance": 0.0001,
+        "seed": 1729,
+        "seed_trials": 2,
+        "threads": 1
+      },
+      "model": {
+        "compress": false,
+        "gamma": 20.0,
+        "geometry": "single",
+        "u": 15.0
+      },
+      "qp_options": {},
+      "repetitions": 1,
+      "sectors": [
+        0,
+        1
+      ],
+      "solver": {
+        "backend": "dmrg",
+        "layout": "electron-chain",
+        "options": {
+          "chi_max": 128
+        }
+      },
+      "study": "spectrum-refinement",
+      "type": "solve"
+    },
+    "timings_seconds": {
+      "model": {
+        "maximum": 0.0041992091573774815,
+        "median": 0.0041992091573774815,
+        "minimum": 0.0041992091573774815,
+        "q25": 0.0041992091573774815,
+        "q75": 0.0041992091573774815,
+        "samples": [
+          0.0041992091573774815
+        ]
+      },
+      "reused_bath_total": {
+        "maximum": 68.73815870890394,
+        "median": 68.73815870890394,
+        "minimum": 68.73815870890394,
+        "q25": 68.73815870890394,
+        "q75": 68.73815870890394,
+        "samples": [
+          68.73815870890394
+        ]
+      },
+      "solve": {
+        "maximum": 68.73395949974656,
+        "median": 68.73395949974656,
+        "minimum": 68.73395949974656,
+        "q25": 68.73395949974656,
+        "q75": 68.73395949974656,
+        "samples": [
+          68.73395949974656
+        ]
+      },
+      "solver_diagonalization": {
+        "maximum": 67.16951829241589,
+        "median": 67.16951829241589,
+        "minimum": 67.16951829241589,
+        "q25": 67.16951829241589,
+        "q75": 67.16951829241589,
+        "samples": [
+          67.16951829241589
+        ]
+      },
+      "solver_observables_and_residuals": {
+        "maximum": 1.1194729167036712,
+        "median": 1.1194729167036712,
+        "minimum": 1.1194729167036712,
+        "q25": 1.1194729167036712,
+        "q75": 1.1194729167036712,
+        "samples": [
+          1.1194729167036712
+        ]
+      },
+      "solver_preparation": {
+        "maximum": 0.22703508334234357,
+        "median": 0.22703508334234357,
+        "minimum": 0.22703508334234357,
+        "q25": 0.22703508334234357,
+        "q75": 0.22703508334234357,
+        "samples": [
+          0.22703508334234357
+        ]
+      },
+      "solver_total": {
+        "maximum": 68.73194833286107,
+        "median": 68.73194833286107,
+        "minimum": 68.73194833286107,
+        "q25": 68.73194833286107,
+        "q75": 68.73194833286107,
+        "samples": [
+          68.73194833286107
+        ]
+      }
+    },
+    "values": {
+      "double_occupancy_0_0": 0.2061310177542737,
+      "double_occupancy_0_1": 0.20514884522880095,
+      "energy_0": -13.54044794395486,
+      "energy_1": -12.554985446329031,
+      "impurity_charge_0": 0.9999999999999986,
+      "impurity_charge_1": 1.0000000000024598,
+      "impurity_spin_z_0": 1.0311723697142838e-11,
+      "impurity_spin_z_1": 0.012718283183854345,
+      "kappa": 0.9745634336322913,
+      "signed_gap": 0.9854624976258286
+    },
+    "worker_seconds": 136.7949112500064
+  },
+  {
+    "converged": true,
+    "peak_process_rss_bytes": 1225031680,
+    "repeat_value_spread": {
+      "double_occupancy_0_0": 0.0,
+      "double_occupancy_0_1": 0.0,
+      "energy_0": 0.0,
+      "energy_1": 0.0,
+      "impurity_charge_0": 0.0,
+      "impurity_charge_1": 0.0,
+      "impurity_spin_z_0": 0.0,
+      "impurity_spin_z_1": 0.0,
+      "kappa": 0.0,
+      "signed_gap": 0.0
+    },
+    "restriction": "none",
+    "states": [
+      {
+        "bath_modes": 24,
+        "energy": -13.540447949415308,
+        "finite_problem_converged": true,
+        "gram_error": 1.7766425120161004e-15,
+        "hamiltonian_sha256": "737ac62588f7210132160e6097599b75336801720ee23b0109d90e5f62aaa454",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.20613101766299474,
+          "impurity_charge": 1.0000000000000018,
+          "impurity_spin_z": 3.4139358007223564e-15
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 256,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 7.181467527853803e-06,
+        "roots": [
+          {
+            "chi_actual": 256,
+            "seed_trials": [
+              {
+                "energy": -13.540447949415254,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  2,
+                  1,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": -13.540447949415308,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    2,
+                    3,
+                    1,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 12
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 0,
+          "particle_number": null,
+          "twice_sz": 0
+        },
+        "timings_seconds": {
+          "diagonalization": 97.5311977500096,
+          "observables_and_residuals": 2.308551583904773,
+          "preparation": 0.11393479164689779,
+          "total": 100.06394408363849
+        }
+      },
+      {
+        "bath_modes": 24,
+        "energy": -12.554985482124241,
+        "finite_problem_converged": true,
+        "gram_error": 1.776408119043479e-15,
+        "hamiltonian_sha256": "737ac62588f7210132160e6097599b75336801720ee23b0109d90e5f62aaa454",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.20514884457316793,
+          "impurity_charge": 0.9999999999997552,
+          "impurity_spin_z": 0.01271828347818929
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 256,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 2.5615331624479425e-05,
+        "roots": [
+          {
+            "chi_actual": 256,
+            "seed_trials": [
+              {
+                "energy": -12.554985482124234,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  2,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": -12.554985482124241,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    2,
+                    2,
+                    1,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 12
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 1,
+          "particle_number": null,
+          "twice_sz": 1
+        },
+        "timings_seconds": {
+          "diagonalization": 127.45220800023526,
+          "observables_and_residuals": 2.431750957854092,
+          "preparation": 0.11537645803764462,
+          "total": 130.1078530419618
+        }
+      }
+    ],
+    "status": "ok",
+    "task": {
+      "bath_key": "81a4955732b57cc62f3a",
+      "case": "g20",
+      "dmrg_options": {
+        "chi_max": 256,
+        "energy_tolerance": 1e-11,
+        "max_sweeps": 40,
+        "min_sweeps": 10,
+        "require_convergence": false,
+        "residual_tolerance": 0.0001,
+        "seed": 1729,
+        "seed_trials": 2,
+        "threads": 1
+      },
+      "model": {
+        "compress": false,
+        "gamma": 20.0,
+        "geometry": "single",
+        "u": 15.0
+      },
+      "qp_options": {},
+      "repetitions": 1,
+      "sectors": [
+        0,
+        1
+      ],
+      "solver": {
+        "backend": "dmrg",
+        "layout": "electron-chain",
+        "options": {
+          "chi_max": 256
+        }
+      },
+      "study": "spectrum-refinement",
+      "type": "solve"
+    },
+    "timings_seconds": {
+      "model": {
+        "maximum": 0.004199957940727472,
+        "median": 0.004199957940727472,
+        "minimum": 0.004199957940727472,
+        "q25": 0.004199957940727472,
+        "q75": 0.004199957940727472,
+        "samples": [
+          0.004199957940727472
+        ]
+      },
+      "reused_bath_total": {
+        "maximum": 230.18169158278033,
+        "median": 230.18169158278033,
+        "minimum": 230.18169158278033,
+        "q25": 230.18169158278033,
+        "q75": 230.18169158278033,
+        "samples": [
+          230.18169158278033
+        ]
+      },
+      "solve": {
+        "maximum": 230.1774916248396,
+        "median": 230.1774916248396,
+        "minimum": 230.1774916248396,
+        "q25": 230.1774916248396,
+        "q75": 230.1774916248396,
+        "samples": [
+          230.1774916248396
+        ]
+      },
+      "solver_diagonalization": {
+        "maximum": 224.98340575024486,
+        "median": 224.98340575024486,
+        "minimum": 224.98340575024486,
+        "q25": 224.98340575024486,
+        "q75": 224.98340575024486,
+        "samples": [
+          224.98340575024486
+        ]
+      },
+      "solver_observables_and_residuals": {
+        "maximum": 4.740302541758865,
+        "median": 4.740302541758865,
+        "minimum": 4.740302541758865,
+        "q25": 4.740302541758865,
+        "q75": 4.740302541758865,
+        "samples": [
+          4.740302541758865
+        ]
+      },
+      "solver_preparation": {
+        "maximum": 0.22931124968454242,
+        "median": 0.22931124968454242,
+        "minimum": 0.22931124968454242,
+        "q25": 0.22931124968454242,
+        "q75": 0.22931124968454242,
+        "samples": [
+          0.22931124968454242
+        ]
+      },
+      "solver_total": {
+        "maximum": 230.17179712560028,
+        "median": 230.17179712560028,
+        "minimum": 230.17179712560028,
+        "q25": 230.17179712560028,
+        "q75": 230.17179712560028,
+        "samples": [
+          230.17179712560028
+        ]
+      }
+    },
+    "values": {
+      "double_occupancy_0_0": 0.20613101766299474,
+      "double_occupancy_0_1": 0.20514884457316793,
+      "energy_0": -13.540447949415308,
+      "energy_1": -12.554985482124241,
+      "impurity_charge_0": 1.0000000000000018,
+      "impurity_charge_1": 0.9999999999997552,
+      "impurity_spin_z_0": 3.4139358007223564e-15,
+      "impurity_spin_z_1": 0.01271828347818929,
+      "kappa": 0.9745634330436215,
+      "signed_gap": 0.9854624672910663
+    },
+    "worker_seconds": 457.96556149981916
+  },
+  {
+    "converged": false,
+    "peak_process_rss_bytes": 609746944,
+    "repeat_value_spread": {
+      "double_occupancy_0_0": 0.0,
+      "double_occupancy_0_1": 0.0,
+      "energy_0": 0.0,
+      "energy_1": 0.0,
+      "impurity_charge_0": 0.0,
+      "impurity_charge_1": 0.0,
+      "impurity_spin_z_0": 0.0,
+      "impurity_spin_z_1": 0.0,
+      "kappa": 0.0,
+      "signed_gap": 0.0
+    },
+    "restriction": "none",
+    "states": [
+      {
+        "bath_modes": 32,
+        "energy": -13.54044782163756,
+        "finite_problem_converged": false,
+        "gram_error": 6.661338147750939e-16,
+        "hamiltonian_sha256": "adb1458b03436d9f033194c6d7a28b936e2fd7a0e339bfefb2f58ab48faf8268",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.206131018886389,
+          "impurity_charge": 0.9999999999999993,
+          "impurity_spin_z": -1.3337458915074762e-10
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 128,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 0.0020889766468355064,
+        "roots": [
+          {
+            "chi_actual": 128,
+            "seed_trials": [
+              {
+                "energy": -13.54044782163756,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  2,
+                  2,
+                  1,
+                  1,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": -13.54044782163675,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    2,
+                    2,
+                    1,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 12
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 0,
+          "particle_number": null,
+          "twice_sz": 0
+        },
+        "timings_seconds": {
+          "diagonalization": 59.27853487525135,
+          "observables_and_residuals": 0.9899732917547226,
+          "preparation": 0.14397024968639016,
+          "total": 60.55750112468377
+        }
+      },
+      {
+        "bath_modes": 32,
+        "energy": -12.556039563302228,
+        "finite_problem_converged": false,
+        "gram_error": 3.1086671450414943e-15,
+        "hamiltonian_sha256": "adb1458b03436d9f033194c6d7a28b936e2fd7a0e339bfefb2f58ab48faf8268",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.20508674889415857,
+          "impurity_charge": 0.9999999999998166,
+          "impurity_spin_z": 0.013524940674495084
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 128,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 0.005462386738444692,
+        "roots": [
+          {
+            "chi_actual": 128,
+            "seed_trials": [
+              {
+                "energy": -12.556039563301518,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  2,
+                  2,
+                  1,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": -12.556039563302228,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    1,
+                    2,
+                    2,
+                    1,
+                    1,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 12
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 1,
+          "particle_number": null,
+          "twice_sz": 1
+        },
+        "timings_seconds": {
+          "diagonalization": 86.74448195891455,
+          "observables_and_residuals": 0.9716260419227183,
+          "preparation": 0.14678662503138185,
+          "total": 88.01032229186967
+        }
+      }
+    ],
+    "status": "ok",
+    "task": {
+      "bath_key": "0ccd6a7ebad9f4a5dc65",
+      "case": "g20",
+      "dmrg_options": {
+        "chi_max": 256,
+        "energy_tolerance": 1e-11,
+        "max_sweeps": 40,
+        "min_sweeps": 10,
+        "require_convergence": false,
+        "residual_tolerance": 0.0001,
+        "seed": 1729,
+        "seed_trials": 2,
+        "threads": 1
+      },
+      "model": {
+        "compress": false,
+        "gamma": 20.0,
+        "geometry": "single",
+        "u": 15.0
+      },
+      "qp_options": {},
+      "repetitions": 1,
+      "sectors": [
+        0,
+        1
+      ],
+      "solver": {
+        "backend": "dmrg",
+        "layout": "electron-chain",
+        "options": {
+          "chi_max": 128
+        }
+      },
+      "study": "spectrum-refinement",
+      "type": "solve"
+    },
+    "timings_seconds": {
+      "model": {
+        "maximum": 0.006725208833813667,
+        "median": 0.006725208833813667,
+        "minimum": 0.006725208833813667,
+        "q25": 0.006725208833813667,
+        "q75": 0.006725208833813667,
+        "samples": [
+          0.006725208833813667
+        ]
+      },
+      "reused_bath_total": {
+        "maximum": 148.57869362505153,
+        "median": 148.57869362505153,
+        "minimum": 148.57869362505153,
+        "q25": 148.57869362505153,
+        "q75": 148.57869362505153,
+        "samples": [
+          148.57869362505153
+        ]
+      },
+      "solve": {
+        "maximum": 148.57196841621771,
+        "median": 148.57196841621771,
+        "minimum": 148.57196841621771,
+        "q25": 148.57196841621771,
+        "q75": 148.57196841621771,
+        "samples": [
+          148.57196841621771
+        ]
+      },
+      "solver_diagonalization": {
+        "maximum": 146.0230168341659,
+        "median": 146.0230168341659,
+        "minimum": 146.0230168341659,
+        "q25": 146.0230168341659,
+        "q75": 146.0230168341659,
+        "samples": [
+          146.0230168341659
+        ]
+      },
+      "solver_observables_and_residuals": {
+        "maximum": 1.9615993336774409,
+        "median": 1.9615993336774409,
+        "minimum": 1.9615993336774409,
+        "q25": 1.9615993336774409,
+        "q75": 1.9615993336774409,
+        "samples": [
+          1.9615993336774409
+        ]
+      },
+      "solver_preparation": {
+        "maximum": 0.290756874717772,
+        "median": 0.290756874717772,
+        "minimum": 0.290756874717772,
+        "q25": 0.290756874717772,
+        "q75": 0.290756874717772,
+        "samples": [
+          0.290756874717772
+        ]
+      },
+      "solver_total": {
+        "maximum": 148.56782341655344,
+        "median": 148.56782341655344,
+        "minimum": 148.56782341655344,
+        "q25": 148.56782341655344,
+        "q75": 148.56782341655344,
+        "samples": [
+          148.56782341655344
+        ]
+      }
+    },
+    "values": {
+      "double_occupancy_0_0": 0.206131018886389,
+      "double_occupancy_0_1": 0.20508674889415857,
+      "energy_0": -13.54044782163756,
+      "energy_1": -12.556039563302228,
+      "impurity_charge_0": 0.9999999999999993,
+      "impurity_charge_1": 0.9999999999998166,
+      "impurity_spin_z_0": -1.3337458915074762e-10,
+      "impurity_spin_z_1": 0.013524940674495084,
+      "kappa": 0.9729501186510099,
+      "signed_gap": 0.984408258335332
+    },
+    "worker_seconds": 295.2892343751155
+  },
+  {
+    "converged": false,
+    "peak_process_rss_bytes": 1462206464,
+    "repeat_value_spread": {
+      "double_occupancy_0_0": 0.0,
+      "double_occupancy_0_1": 0.0,
+      "energy_0": 0.0,
+      "energy_1": 0.0,
+      "impurity_charge_0": 0.0,
+      "impurity_charge_1": 0.0,
+      "impurity_spin_z_0": 0.0,
+      "impurity_spin_z_1": 0.0,
+      "kappa": 0.0,
+      "signed_gap": 0.0
+    },
+    "restriction": "none",
+    "states": [
+      {
+        "bath_modes": 32,
+        "energy": -13.540447971626573,
+        "finite_problem_converged": true,
+        "gram_error": 3.996812526323921e-15,
+        "hamiltonian_sha256": "adb1458b03436d9f033194c6d7a28b936e2fd7a0e339bfefb2f58ab48faf8268",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.20613101736189487,
+          "impurity_charge": 1.0000000000000042,
+          "impurity_spin_z": 7.438494264988549e-15
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 256,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 9.358907642108403e-05,
+        "roots": [
+          {
+            "chi_actual": 256,
+            "seed_trials": [
+              {
+                "energy": -13.540447971626524,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  2,
+                  2,
+                  1,
+                  1,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": -13.540447971626573,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1,
+                    2,
+                    2,
+                    1,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 12
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 0,
+          "particle_number": null,
+          "twice_sz": 0
+        },
+        "timings_seconds": {
+          "diagonalization": 220.3508425410837,
+          "observables_and_residuals": 4.78510770900175,
+          "preparation": 0.154362749774009,
+          "total": 225.43357845768332
+        }
+      },
+      {
+        "bath_modes": 32,
+        "energy": -12.556040651821796,
+        "finite_problem_converged": false,
+        "gram_error": 1.1105164888259186e-15,
+        "hamiltonian_sha256": "adb1458b03436d9f033194c6d7a28b936e2fd7a0e339bfefb2f58ab48faf8268",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.20508673699677415,
+          "impurity_charge": 1.0000000000004192,
+          "impurity_spin_z": 0.01352496598676034
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 256,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 0.0002955079846008644,
+        "roots": [
+          {
+            "chi_actual": 256,
+            "seed_trials": [
+              {
+                "energy": -12.556040651821768,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1,
+                  2,
+                  2,
+                  1,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": -12.556040651821796,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    1,
+                    2,
+                    2,
+                    1,
+                    1,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 12
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 1,
+          "particle_number": null,
+          "twice_sz": 1
+        },
+        "timings_seconds": {
+          "diagonalization": 283.6078489581123,
+          "observables_and_residuals": 4.8127077501267195,
+          "preparation": 0.14896929170936346,
+          "total": 288.7114944588393
+        }
+      }
+    ],
+    "status": "ok",
+    "task": {
+      "bath_key": "0ccd6a7ebad9f4a5dc65",
+      "case": "g20",
+      "dmrg_options": {
+        "chi_max": 256,
+        "energy_tolerance": 1e-11,
+        "max_sweeps": 40,
+        "min_sweeps": 10,
+        "require_convergence": false,
+        "residual_tolerance": 0.0001,
+        "seed": 1729,
+        "seed_trials": 2,
+        "threads": 1
+      },
+      "model": {
+        "compress": false,
+        "gamma": 20.0,
+        "geometry": "single",
+        "u": 15.0
+      },
+      "qp_options": {},
+      "repetitions": 1,
+      "sectors": [
+        0,
+        1
+      ],
+      "solver": {
+        "backend": "dmrg",
+        "layout": "electron-chain",
+        "options": {
+          "chi_max": 256
+        }
+      },
+      "study": "spectrum-refinement",
+      "type": "solve"
+    },
+    "timings_seconds": {
+      "model": {
+        "maximum": 0.006647082976996899,
+        "median": 0.006647082976996899,
+        "minimum": 0.006647082976996899,
+        "q25": 0.006647082976996899,
+        "q75": 0.006647082976996899,
+        "samples": [
+          0.006647082976996899
+        ]
+      },
+      "reused_bath_total": {
+        "maximum": 514.164246042259,
+        "median": 514.164246042259,
+        "minimum": 514.164246042259,
+        "q25": 514.164246042259,
+        "q75": 514.164246042259,
+        "samples": [
+          514.164246042259
+        ]
+      },
+      "solve": {
+        "maximum": 514.157598959282,
+        "median": 514.157598959282,
+        "minimum": 514.157598959282,
+        "q25": 514.157598959282,
+        "q75": 514.157598959282,
+        "samples": [
+          514.157598959282
+        ]
+      },
+      "solver_diagonalization": {
+        "maximum": 503.958691499196,
+        "median": 503.958691499196,
+        "minimum": 503.958691499196,
+        "q25": 503.958691499196,
+        "q75": 503.958691499196,
+        "samples": [
+          503.958691499196
+        ]
+      },
+      "solver_observables_and_residuals": {
+        "maximum": 9.59781545912847,
+        "median": 9.59781545912847,
+        "minimum": 9.59781545912847,
+        "q25": 9.59781545912847,
+        "q75": 9.59781545912847,
+        "samples": [
+          9.59781545912847
+        ]
+      },
+      "solver_preparation": {
+        "maximum": 0.30333204148337245,
+        "median": 0.30333204148337245,
+        "minimum": 0.30333204148337245,
+        "q25": 0.30333204148337245,
+        "q75": 0.30333204148337245,
+        "samples": [
+          0.30333204148337245
+        ]
+      },
+      "solver_total": {
+        "maximum": 514.1450729165226,
+        "median": 514.1450729165226,
+        "minimum": 514.1450729165226,
+        "q25": 514.1450729165226,
+        "q75": 514.1450729165226,
+        "samples": [
+          514.1450729165226
+        ]
+      }
+    },
+    "values": {
+      "double_occupancy_0_0": 0.20613101736189487,
+      "double_occupancy_0_1": 0.20508673699677415,
+      "energy_0": -13.540447971626573,
+      "energy_1": -12.556040651821796,
+      "impurity_charge_0": 1.0000000000000042,
+      "impurity_charge_1": 1.0000000000004192,
+      "impurity_spin_z_0": 7.438494264988549e-15,
+      "impurity_spin_z_1": 0.01352496598676034,
+      "kappa": 0.9729500680264793,
+      "signed_gap": 0.9844073198047774
+    },
+    "worker_seconds": 1021.8794929999858
+  },
+  {
+    "converged": false,
+    "peak_process_rss_bytes": 698400768,
+    "repeat_value_spread": {
+      "double_occupancy_0_0": 0.0,
+      "double_occupancy_0_1": 0.0,
+      "energy_0": 0.0,
+      "energy_1": 0.0,
+      "impurity_charge_0": 0.0,
+      "impurity_charge_1": 0.0,
+      "impurity_spin_z_0": 0.0,
+      "impurity_spin_z_1": 0.0,
+      "kappa": 0.0,
+      "signed_gap": 0.0
+    },
+    "restriction": "none",
+    "states": [
+      {
+        "bath_modes": 48,
+        "energy": -13.540445275486459,
+        "finite_problem_converged": false,
+        "gram_error": 6.661338147750939e-16,
+        "hamiltonian_sha256": "d29d5a04cd025a1db36d789265c001e4c3aeaf8a9b0bb892dc9a5cba8ec4d074",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.20613103063283694,
+          "impurity_charge": 0.9999999999999989,
+          "impurity_spin_z": -1.3645647389814997e-08
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 128,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 0.008484336753401576,
+        "roots": [
+          {
+            "chi_actual": 128,
+            "seed_trials": [
+              {
+                "energy": -13.540445275486459,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  1,
+                  2,
+                  2,
+                  1,
+                  0,
+                  0,
+                  1,
+                  2,
+                  0,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": -13.540445275486391,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    1,
+                    2,
+                    2,
+                    1,
+                    0,
+                    0,
+                    1,
+                    2,
+                    1,
+                    1,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 12
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 0,
+          "particle_number": null,
+          "twice_sz": 0
+        },
+        "timings_seconds": {
+          "diagonalization": 143.42718116706237,
+          "observables_and_residuals": 1.7775315837934613,
+          "preparation": 0.21402470907196403,
+          "total": 145.64126275014132
+        }
+      },
+      {
+        "bath_modes": 48,
+        "energy": -12.556206457554385,
+        "finite_problem_converged": false,
+        "gram_error": 1.3322676295501878e-15,
+        "hamiltonian_sha256": "d29d5a04cd025a1db36d789265c001e4c3aeaf8a9b0bb892dc9a5cba8ec4d074",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.20512263198747024,
+          "impurity_charge": 0.999999999999998,
+          "impurity_spin_z": 0.013061622182630295
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 128,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 0.022202391980245494,
+        "roots": [
+          {
+            "chi_actual": 128,
+            "seed_trials": [
+              {
+                "energy": -12.556206457554385,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  1,
+                  2,
+                  2,
+                  1,
+                  0,
+                  0,
+                  1,
+                  2,
+                  1,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": -12.556206457554268,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    1,
+                    2,
+                    2,
+                    1,
+                    0,
+                    0,
+                    1,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 12
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 1,
+          "particle_number": null,
+          "twice_sz": 1
+        },
+        "timings_seconds": {
+          "diagonalization": 236.61273270798847,
+          "observables_and_residuals": 1.8018579999916255,
+          "preparation": 0.2114540422335267,
+          "total": 238.8436537082307
+        }
+      }
+    ],
+    "status": "ok",
+    "task": {
+      "bath_key": "2479680ede57077b0426",
+      "case": "g20",
+      "dmrg_options": {
+        "chi_max": 256,
+        "energy_tolerance": 1e-11,
+        "max_sweeps": 40,
+        "min_sweeps": 10,
+        "require_convergence": false,
+        "residual_tolerance": 0.0001,
+        "seed": 1729,
+        "seed_trials": 2,
+        "threads": 1
+      },
+      "model": {
+        "compress": false,
+        "gamma": 20.0,
+        "geometry": "single",
+        "u": 15.0
+      },
+      "qp_options": {},
+      "repetitions": 1,
+      "sectors": [
+        0,
+        1
+      ],
+      "solver": {
+        "backend": "dmrg",
+        "layout": "electron-chain",
+        "options": {
+          "chi_max": 128
+        }
+      },
+      "study": "spectrum-refinement",
+      "type": "solve"
+    },
+    "timings_seconds": {
+      "model": {
+        "maximum": 0.012916500214487314,
+        "median": 0.012916500214487314,
+        "minimum": 0.012916500214487314,
+        "q25": 0.012916500214487314,
+        "q75": 0.012916500214487314,
+        "samples": [
+          0.012916500214487314
+        ]
+      },
+      "reused_bath_total": {
+        "maximum": 384.50431099999696,
+        "median": 384.50431099999696,
+        "minimum": 384.50431099999696,
+        "q25": 384.50431099999696,
+        "q75": 384.50431099999696,
+        "samples": [
+          384.50431099999696
+        ]
+      },
+      "solve": {
+        "maximum": 384.4913944997825,
+        "median": 384.4913944997825,
+        "minimum": 384.4913944997825,
+        "q25": 384.4913944997825,
+        "q75": 384.4913944997825,
+        "samples": [
+          384.4913944997825
+        ]
+      },
+      "solver_diagonalization": {
+        "maximum": 380.03991387505084,
+        "median": 380.03991387505084,
+        "minimum": 380.03991387505084,
+        "q25": 380.03991387505084,
+        "q75": 380.03991387505084,
+        "samples": [
+          380.03991387505084
+        ]
+      },
+      "solver_observables_and_residuals": {
+        "maximum": 3.579389583785087,
+        "median": 3.579389583785087,
+        "minimum": 3.579389583785087,
+        "q25": 3.579389583785087,
+        "q75": 3.579389583785087,
+        "samples": [
+          3.579389583785087
+        ]
+      },
+      "solver_preparation": {
+        "maximum": 0.42547875130549073,
+        "median": 0.42547875130549073,
+        "minimum": 0.42547875130549073,
+        "q25": 0.42547875130549073,
+        "q75": 0.42547875130549073,
+        "samples": [
+          0.42547875130549073
+        ]
+      },
+      "solver_total": {
+        "maximum": 384.484916458372,
+        "median": 384.484916458372,
+        "minimum": 384.484916458372,
+        "q25": 384.484916458372,
+        "q75": 384.484916458372,
+        "samples": [
+          384.484916458372
+        ]
+      }
+    },
+    "values": {
+      "double_occupancy_0_0": 0.20613103063283694,
+      "double_occupancy_0_1": 0.20512263198747024,
+      "energy_0": -13.540445275486459,
+      "energy_1": -12.556206457554385,
+      "impurity_charge_0": 0.9999999999999989,
+      "impurity_charge_1": 0.999999999999998,
+      "impurity_spin_z_0": -1.3645647389814997e-08,
+      "impurity_spin_z_1": 0.013061622182630295,
+      "kappa": 0.9738767556347394,
+      "signed_gap": 0.9842388179320736
+    },
+    "worker_seconds": 757.7862802920863
+  },
+  {
+    "converged": false,
+    "peak_process_rss_bytes": 1635155968,
+    "repeat_value_spread": {
+      "double_occupancy_0_0": 0.0,
+      "double_occupancy_0_1": 0.0,
+      "energy_0": 0.0,
+      "energy_1": 0.0,
+      "impurity_charge_0": 0.0,
+      "impurity_charge_1": 0.0,
+      "impurity_spin_z_0": 0.0,
+      "impurity_spin_z_1": 0.0,
+      "kappa": 0.0,
+      "signed_gap": 0.0
+    },
+    "restriction": "none",
+    "states": [
+      {
+        "bath_modes": 48,
+        "energy": -13.540447947492378,
+        "finite_problem_converged": false,
+        "gram_error": 3.108662050770519e-15,
+        "hamiltonian_sha256": "d29d5a04cd025a1db36d789265c001e4c3aeaf8a9b0bb892dc9a5cba8ec4d074",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.20613101749589935,
+          "impurity_charge": 1.0000000000000047,
+          "impurity_spin_z": -2.6829705124242764e-11
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 256,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 0.0008568584724746476,
+        "roots": [
+          {
+            "chi_actual": 256,
+            "seed_trials": [
+              {
+                "energy": -13.540447947492215,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  1,
+                  2,
+                  2,
+                  1,
+                  0,
+                  0,
+                  1,
+                  2,
+                  0,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": -13.540447947492378,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    1,
+                    2,
+                    2,
+                    1,
+                    0,
+                    0,
+                    1,
+                    2,
+                    1,
+                    1,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 12
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 0,
+          "particle_number": null,
+          "twice_sz": 0
+        },
+        "timings_seconds": {
+          "diagonalization": 557.5528451250866,
+          "observables_and_residuals": 9.097951874602586,
+          "preparation": 0.21463841618970037,
+          "total": 567.0861912909895
+        }
+      },
+      {
+        "bath_modes": 48,
+        "energy": -12.556225975962636,
+        "finite_problem_converged": false,
+        "gram_error": 1.7763568394002505e-15,
+        "hamiltonian_sha256": "d29d5a04cd025a1db36d789265c001e4c3aeaf8a9b0bb892dc9a5cba8ec4d074",
+        "mode_order": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45,
+          46,
+          47,
+          48,
+          49
+        ],
+        "mpo_dimensions": [
+          2,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          6,
+          2
+        ],
+        "observables": {
+          "double_occupancy_0": 0.20512248693124183,
+          "impurity_charge": 0.9999999999990579,
+          "impurity_spin_z": 0.013062383633900998
+        },
+        "options": {
+          "calculate_residuals": true,
+          "chi_max": 256,
+          "eigenpairs": 1,
+          "energy_tolerance": 1e-11,
+          "entropy_tolerance": 1e-08,
+          "excitation_operator": null,
+          "group_size": 2,
+          "lanczos_maxiter": 100,
+          "max_sweeps": 40,
+          "min_sweeps": 10,
+          "mixer": true,
+          "mixer_amplitude": 1e-05,
+          "mixer_sweeps": 6,
+          "mode_order": null,
+          "observables": null,
+          "orthogonality_tolerance": 1e-08,
+          "require_convergence": false,
+          "residual_tolerance": 0.0001,
+          "seed": 1729,
+          "seed_randomization_steps": 4,
+          "seed_trials": 2,
+          "svd_min": 1e-14,
+          "threads": 1
+        },
+        "residual": 0.0025530551335625385,
+        "roots": [
+          {
+            "chi_actual": 256,
+            "seed_trials": [
+              {
+                "energy": -12.556225975962636,
+                "lower_root_overlap": 0.0,
+                "seed": [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2,
+                  1,
+                  2,
+                  2,
+                  1,
+                  0,
+                  0,
+                  1,
+                  2,
+                  1,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3,
+                  3
+                ],
+                "sweep_converged": true
+              },
+              {
+                "energy": -12.556225975962203,
+                "lower_root_overlap": 0.0,
+                "seed": {
+                  "product": [
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    1,
+                    2,
+                    2,
+                    1,
+                    0,
+                    0,
+                    1,
+                    2,
+                    2,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3,
+                    3
+                  ],
+                  "random_seed": [
+                    1729,
+                    0,
+                    1
+                  ],
+                  "randomization_steps": 4
+                },
+                "sweep_converged": true
+              }
+            ],
+            "sweep_energy_converged": true,
+            "sweeps": 12
+          }
+        ],
+        "sector": {
+          "eta": null,
+          "parity": 1,
+          "particle_number": null,
+          "twice_sz": 1
+        },
+        "timings_seconds": {
+          "diagonalization": 714.7196289580315,
+          "observables_and_residuals": 9.274033084046096,
+          "preparation": 0.21169629227370024,
+          "total": 724.4206162500195
+        }
+      }
+    ],
+    "status": "ok",
+    "task": {
+      "bath_key": "2479680ede57077b0426",
+      "case": "g20",
+      "dmrg_options": {
+        "chi_max": 256,
+        "energy_tolerance": 1e-11,
+        "max_sweeps": 40,
+        "min_sweeps": 10,
+        "require_convergence": false,
+        "residual_tolerance": 0.0001,
+        "seed": 1729,
+        "seed_trials": 2,
+        "threads": 1
+      },
+      "model": {
+        "compress": false,
+        "gamma": 20.0,
+        "geometry": "single",
+        "u": 15.0
+      },
+      "qp_options": {},
+      "repetitions": 1,
+      "sectors": [
+        0,
+        1
+      ],
+      "solver": {
+        "backend": "dmrg",
+        "layout": "electron-chain",
+        "options": {
+          "chi_max": 256
+        }
+      },
+      "study": "spectrum-refinement",
+      "type": "solve"
+    },
+    "timings_seconds": {
+      "model": {
+        "maximum": 0.012628416065126657,
+        "median": 0.012628416065126657,
+        "minimum": 0.012628416065126657,
+        "q25": 0.012628416065126657,
+        "q75": 0.012628416065126657,
+        "samples": [
+          0.012628416065126657
+        ]
+      },
+      "reused_bath_total": {
+        "maximum": 1291.5304277082905,
+        "median": 1291.5304277082905,
+        "minimum": 1291.5304277082905,
+        "q25": 1291.5304277082905,
+        "q75": 1291.5304277082905,
+        "samples": [
+          1291.5304277082905
+        ]
+      },
+      "solve": {
+        "maximum": 1291.5177992922254,
+        "median": 1291.5177992922254,
+        "minimum": 1291.5177992922254,
+        "q25": 1291.5177992922254,
+        "q75": 1291.5177992922254,
+        "samples": [
+          1291.5177992922254
+        ]
+      },
+      "solver_diagonalization": {
+        "maximum": 1272.2724740831181,
+        "median": 1272.2724740831181,
+        "minimum": 1272.2724740831181,
+        "q25": 1272.2724740831181,
+        "q75": 1272.2724740831181,
+        "samples": [
+          1272.2724740831181
+        ]
+      },
+      "solver_observables_and_residuals": {
+        "maximum": 18.37198495864868,
+        "median": 18.37198495864868,
+        "minimum": 18.37198495864868,
+        "q25": 18.37198495864868,
+        "q75": 18.37198495864868,
+        "samples": [
+          18.37198495864868
+        ]
+      },
+      "solver_preparation": {
+        "maximum": 0.4263347084634006,
+        "median": 0.4263347084634006,
+        "minimum": 0.4263347084634006,
+        "q25": 0.4263347084634006,
+        "q75": 0.4263347084634006,
+        "samples": [
+          0.4263347084634006
+        ]
+      },
+      "solver_total": {
+        "maximum": 1291.506807541009,
+        "median": 1291.506807541009,
+        "minimum": 1291.506807541009,
+        "q25": 1291.506807541009,
+        "q75": 1291.506807541009,
+        "samples": [
+          1291.506807541009
+        ]
+      }
+    },
+    "values": {
+      "double_occupancy_0_0": 0.20613101749589935,
+      "double_occupancy_0_1": 0.20512248693124183,
+      "energy_0": -13.540447947492378,
+      "energy_1": -12.556225975962636,
+      "impurity_charge_0": 1.0000000000000047,
+      "impurity_charge_1": 0.9999999999990579,
+      "impurity_spin_z_0": -2.6829705124242764e-11,
+      "impurity_spin_z_1": 0.013062383633900998,
+      "kappa": 0.973875232732198,
+      "signed_gap": 0.9842219715297418
+    },
+    "worker_seconds": 2581.890822874848
+  }
+]

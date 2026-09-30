@@ -1,0 +1,80 @@
+{
+  "bandwidths": [
+    10.0
+  ],
+  "bath_repetitions": 5,
+  "dmrg_options": {},
+  "fit_sensitivity": [],
+  "fitting": {
+    "frequency_cutoff": 100.0,
+    "frequency_min": 0.001,
+    "frequency_points": 1000,
+    "relative_weight": 0.0,
+    "seed": 1729,
+    "starts": 4
+  },
+  "format_version": 1,
+  "kernel_levels": {},
+  "legacy_levels": [],
+  "qp_options": {
+    "max_dimension": 3000000,
+    "max_memory_gib": 8.0,
+    "method": "sparse",
+    "residual_tolerance": 2e-08,
+    "seed": 1729,
+    "threads": 1,
+    "tolerance": 1e-12
+  },
+  "quadratic_points": [
+    {
+      "detuning": 0.0,
+      "gamma": 0.3,
+      "phi": 0.8
+    },
+    {
+      "detuning": 0.6,
+      "gamma": 2.0,
+      "phi": 1.7
+    },
+    {
+      "detuning": 0.0,
+      "gamma": 10.0,
+      "phi": 0.2
+    }
+  ],
+  "solve_repetitions": 3,
+  "studies": [
+    {
+      "bandwidth": 10.0,
+      "cases": [
+        {
+          "label": "g1",
+          "model": {
+            "compress": false,
+            "gamma": 1.0,
+            "geometry": "single",
+            "u": 10.0
+          }
+        }
+      ],
+      "families": [
+        "cosh-grid",
+        "surrogate"
+      ],
+      "levels": [
+        4,
+        8
+      ],
+      "name": "layout-control",
+      "sectors": [
+        1
+      ],
+      "solvers": [
+        {
+          "backend": "qp",
+          "cutoff": null
+        }
+      ]
+    }
+  ]
+}

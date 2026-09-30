@@ -1,0 +1,20 @@
+{
+  "archive_sha256": "8a96a31724be1b4b3917e841e18dc1a1f1f4c4c111e54661c9e6ddeac8862177",
+  "archive_url": "https://export.arxiv.org/e-print/0803.1251v3",
+  "arxiv_version": "0803.1251v3",
+  "coordinate_half_step": 5e-05,
+  "estimated_relative_coordinate_uncertainty": 0.003,
+  "members_sha256": {
+    "figure_6ab.eps": "e75985ae4948c24a4bf4b8d547766386f4aa56cf281f649a0a755e34543fa10b",
+    "figure_7cd.eps": "90bc18147ec4d2461f43b92e7617d3b7981a18f4504587a2a56bb3f5395556ee"
+  },
+  "notes": [
+    "Fig. 6(a): Gamma=0.008 D, epsilon=0; Fig. 6(b): epsilon/Gamma=0,2,4,8.",
+    "Fig. 6(b) thick NRG curve is epsilon/Gamma=4 (dotted analytic curve).",
+    "Fig. 7(c): U=0.6 D, Gamma=0.049 D, epsilon=-U/2; selected gaps 3e-5 and 0.03 D.",
+    "Eq. (30) prints an extra Gamma in the squared denominator term. Use Eq. (28), the normal-state limit and the original curves to check the correction.",
+    "NRG broadening and truncation errors are additional to vector-coordinate precision."
+  ],
+  "paper_doi": "10.1088/0953-8984/20/27/275213",
+  "reference_type": "Original log-log vector curves, every fifth vertex; not raw NRG spectra"
+}

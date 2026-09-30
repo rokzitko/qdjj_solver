@@ -1,0 +1,30 @@
+{
+  "archives": {
+    "fig10.zip": {
+      "md5": "728a54b21c9a3fecb5fd8a9d22a311f0",
+      "sha256": "2562a25f2acb0ec0fa977d2319179beab93721737bbb53ecde2d3f496cb5d754",
+      "url": "https://zenodo.org/api/records/7951006/files/fig10.zip/content"
+    },
+    "fig9.zip": {
+      "md5": "71b71aacf69ec161cf3044ec5a928f40",
+      "sha256": "3ff7ff13f3e3d3c581c93fbae6e86212b0a00941bf52816309610f60284d5691",
+      "url": "https://zenodo.org/api/records/7951006/files/fig9.zip/content"
+    }
+  },
+  "creators": [
+    "Luka Pave\u0161i\u0107",
+    "Rok \u017ditko"
+  ],
+  "doi": "10.5281/zenodo.7951006",
+  "license": "CC-BY-4.0",
+  "members": {
+    "figure10.csv": "fig10/U=0.1-Gamma=1e-2-Lambda=4/corr.dat",
+    "figure9.csv": "fig9/figphi1a.agr"
+  },
+  "notes": [
+    "Gamma is total physical hybridization.",
+    "Fig. 9 uses Lambda=8 and averages z=1,0.5; E_Z/Delta=0.01.",
+    "Fig. 10 uses Lambda=4,z=1; E_Z/Delta=0.001.",
+    "corr.dat contains nominal phases; actual phi/pi is nominal+0.0001 as in the archived sweep."
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "archive_sha256": "a8f75413e76c524b378e96e3c7f15b053e249cbdbdbe1fcb9d2c268cf2cc1a14",
+  "archive_url": "https://export.arxiv.org/e-print/cond-mat/0312271v2",
+  "arxiv_version": "cond-mat/0312271v2",
+  "calibration": {
+    "panel_a": {
+      "current_per_y": 0.1,
+      "x_pi": 0.4,
+      "x_zero": 0.275,
+      "y_zero": 1.0
+    },
+    "panel_b": {
+      "current_per_y": 10.0,
+      "x_pi": 0.675,
+      "x_zero": 0.55,
+      "y_zero": 1.0
+    },
+    "panel_c": {
+      "current_per_y": 1.0,
+      "x_pi": 0.675,
+      "x_zero": 0.4125,
+      "y_zero": 0.7
+    }
+  },
+  "coordinate_half_step": 5e-05,
+  "maximum_current_extraction_uncertainty": 0.0005,
+  "member": "fig3.eps",
+  "member_sha256": "979200a1d720325cab3e4a974bc701e128d142005a83783ccedbba52385b24bf",
+  "notes": [
+    "Panels (a,b) use circle centers; panel (c) uses colored polyline vertices.",
+    "Current is quoted in e Delta/hbar. Physical Gamma is total coupling.",
+    "Kondo scale follows paper Eq. (4), not an independently measured Kondo temperature.",
+    "Original NRG results have additional discretization/truncation errors."
+  ],
+  "paper_doi": "10.1103/PhysRevB.70.020502",
+  "phase_over_pi_uncertainty": 0.0004,
+  "reference_type": "Original vector-figure coordinates, not raw NRG output"
+}

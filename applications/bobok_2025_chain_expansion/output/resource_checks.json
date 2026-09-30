@@ -1,0 +1,16 @@
+{
+  "failed_attempt": {
+    "figure": 17,
+    "bath": "ChE-W10",
+    "u": 5.0,
+    "parity": 0,
+    "twice_sz": 0,
+    "dimension_without_exchange_reduction": 2704156,
+    "method": "sparse",
+    "max_memory_gib": 8.0,
+    "max_nnz": 100000000,
+    "exception": "ValueError: sparse matrix exceeds max_nnz; use matrix-free action"
+  },
+  "resolution": "Use an exact symmetric/antisymmetric impurity rotation and solve both dot-exchange parity blocks. Keep both interacting impurity orbitals and all bath QPs; retain the same memory/nonzero limits.",
+  "validation": "Bounded tests compare energies and physical pairing/spin observables with and without this symmetry reduction, both at finite QP cutoff and in the full finite space."
+}

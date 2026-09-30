@@ -1,0 +1,25 @@
+{
+  "archive_sha256": "ea4a52495b66a765fdae9d06834f5312035df8bab481fd2c596d52800f14a0e2",
+  "archive_url": "https://export.arxiv.org/e-print/1509.06959v2",
+  "arxiv_version": "1509.06959v2",
+  "calibration": {
+    "x_minus4": 1170,
+    "x_plus4": 6659,
+    "y_point2": 3909,
+    "y_zero": 1110
+  },
+  "coordinate_half_step": 0.5,
+  "current_uncertainty": 3.6e-05,
+  "gate_uncertainty": 0.00073,
+  "member": "J_LR.eps",
+  "member_sha256": "7fa4a06390429d4d4b0fd93b6d8a2bbb134f1767b5994de4a7d0296931327a7c",
+  "notes": [
+    "NRG circles trace the Delta_R/Delta_L=0.5 curve on both sides.",
+    "FDC is plotted for negative detuning, DC for positive detuning.",
+    "The paper sets e=hbar=1: J/Delta_L is in e Delta_L/hbar.",
+    "Paper uses Phi_L-Phi_R; exchanging the phase orientation preserves the plotted positive CPR branch.",
+    "The continuum formulas use a wide band; finite D is a separate convergence check."
+  ],
+  "paper_doi": "10.1103/PhysRevB.93.024523",
+  "reference_type": "Original vector figure, not raw solver output"
+}

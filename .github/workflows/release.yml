@@ -1,0 +1,99 @@
+name: release artifacts
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    uses: ./.github/workflows/tests.yml
+    with:
+      extended: true
+
+  sdist:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - run: python tools/check_release.py
+      - name: Match the release tag
+        if: startsWith(github.ref, 'refs/tags/')
+        env:
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: python tools/check_release.py --tag "$RELEASE_TAG"
+      - run: python -m pip install build twine
+      - run: python -m build --sdist
+      - run: python tools/check_distribution.py dist/*.tar.gz
+      - run: python -m twine check --strict dist/*
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-sdist
+          path: dist/*.tar.gz
+          if-no-files-found: error
+          retention-days: 30
+
+  wheels:
+    needs: sdist
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-15-intel, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - uses: actions/download-artifact@v4
+        with:
+          name: release-sdist
+          path: dist
+      - name: Unpack the release source
+        shell: bash
+        run: |
+          mkdir release-source
+          tar -xzf dist/*.tar.gz --strip-components=1 -C release-source
+      - uses: pypa/cibuildwheel@v3.4.0
+        with:
+          package-dir: release-source
+          output-dir: wheelhouse
+      - name: Inspect repaired wheels
+        shell: bash
+        run: |
+          python -m pip install twine
+          python tools/check_distribution.py wheelhouse/*.whl
+          python -m twine check --strict wheelhouse/*.whl
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-wheels-${{ matrix.os }}
+          path: wheelhouse/*.whl
+          if-no-files-found: error
+          retention-days: 30
+
+  github-release:
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
+    needs: [tests, sdist, wheels]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: release-*
+          path: release-assets
+          merge-multiple: true
+      - name: Publish the tested artifacts
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: gh release create "$RELEASE_TAG" --verify-tag --generate-notes release-assets/*

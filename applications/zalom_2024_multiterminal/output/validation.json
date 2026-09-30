@@ -1,0 +1,37 @@
+{
+  "L8_versus_L10": 4.0873330567126054e-05,
+  "critical_chi_by_setting": {
+    "L10": 0.7235230191442023,
+    "L4": 0.7247589398670959,
+    "L6": 0.7237789108974011,
+    "L8": 0.7235638924747694,
+    "L8_q4": 0.7249615261751371,
+    "L8_w2000": 0.723605647721248
+  },
+  "cutoff4_change": 0.0013976337003677175,
+  "fit_window_change": 4.175524647864748e-05,
+  "paper": {
+    "critical": {
+      "chi_critical": 0.7235638924747694,
+      "gap_at_published_chi": -0.0012815655535529658,
+      "phase_critical_over_pi": 0.48500542930074275,
+      "setting": "paper"
+    },
+    "high_symmetry": {
+      "chi": 0.0,
+      "even_excitation": 0.3310028736930402,
+      "even_level_splitting": 6.938893903907228e-16,
+      "phi2_over_pi": 0.640982964028624,
+      "phi3_over_pi": -0.640982964028624
+    },
+    "maximum_current_conservation_error": 5.967448757360216e-16,
+    "maximum_current_mapping_error": 6.106226635438361e-16,
+    "maximum_energy_mapping_error": 2.220446049250313e-14,
+    "maximum_residual": 3.0941894581892935e-12
+  },
+  "runtimes_seconds": {
+    "convergence": 320.3503096671775,
+    "paper": 73.2187898750417,
+    "quick": 0.537667749915272
+  }
+}

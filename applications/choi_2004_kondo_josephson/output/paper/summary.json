@@ -1,0 +1,29 @@
+{
+  "crossings": [
+    {
+      "delta_over_tk": 0.1,
+      "phi_critical_over_pi": 0.9413377693487814
+    },
+    {
+      "delta_over_tk": 1.6,
+      "phi_critical_over_pi": 0.42632695638160534
+    },
+    {
+      "delta_over_tk": 1.8,
+      "phi_critical_over_pi": 0.37418785512638764
+    },
+    {
+      "delta_over_tk": 2.0,
+      "phi_critical_over_pi": 0.32028512758039596
+    },
+    {
+      "delta_over_tk": 2.2,
+      "phi_critical_over_pi": 0.2620695155175047
+    }
+  ],
+  "maximum_current_derivative_error": 1.0852143628170552e-09,
+  "maximum_published_current_difference": 0.31883242310429843,
+  "maximum_residual": 5.320734156770171e-11,
+  "points": 280,
+  "tk_over_D": 0.008877583677243962
+}

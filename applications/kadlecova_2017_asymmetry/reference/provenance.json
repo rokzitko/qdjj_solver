@@ -1,0 +1,24 @@
+{
+  "archive_sha256": "4dc84f6163dbe3d100642609a4388e74bba45c34bbb0a7183abed06d792e2217",
+  "archive_url": "https://export.arxiv.org/e-print/1610.08366v3",
+  "arxiv_version": "1610.08366v3",
+  "calibration": {
+    "x_one": 447,
+    "x_zero": 169,
+    "y_pi": 31,
+    "y_zero": 338
+  },
+  "member": "fig_phase-boundary.eps",
+  "member_sha256": "0555c62e018bf9469111634d43421b69fb6153bf4e46e4a6b5a5b3a5e6b84843",
+  "notes": [
+    "Coordinates before the global 0.75 scale and vertical reflection.",
+    "Circle centers are exported on a half-pixel grid; endpoints clipped within rounding error.",
+    "Curves ordered by increasing U as specified in the caption.",
+    "Chi here is the squared phasor magnitude, unlike the Zalom 2024 application.",
+    "No numerical bandwidth is specified for Fig. 1; finite-band sensitivity is measured separately."
+  ],
+  "paper_doi": "10.1103/PhysRevB.95.195114",
+  "phi_over_pi_uncertainty": 0.0017,
+  "reference_type": "Original NRG marker centers, not interpolation curves or raw NRG output",
+  "tilde_epsilon_uncertainty": 0.0018
+}

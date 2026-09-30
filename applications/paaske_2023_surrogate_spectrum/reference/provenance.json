@@ -1,0 +1,48 @@
+{
+  "arxiv_version": "2307.11646v3",
+  "bath_files_sha256": {
+    "gamma_L=1_B=10_wc=10.dat": "5da4aa4c0891bf6b967e0fea4cf6bfa3f187e5b6698f2efd1e9c5d4974760fb3",
+    "gamma_L=2_B=10_wc=10.dat": "895ae91c92e898383b3c0e725744c6f05b4c55f513aa9e13d19dfb9d6c6178e2",
+    "gamma_L=3_B=10_wc=10.dat": "8cb14eb1e47c6b46507d46af1c96bddcc519255973925da696b461dc04b7c299",
+    "gamma_L=4_B=10_wc=10.dat": "59d3125bdd6a6221585f8e6dbb28c3eb478715f7062b02679e4f4ca4aef4c682",
+    "gamma_L=5_B=10_wc=10.dat": "23ff596e70693a203f253894e4d3b4bf8665d595e8f6698cc76f39faa949e0a0",
+    "gamma_L=6_B=10_wc=10.dat": "bd08c0de7fc37f3d0bc9bfb9ee1f1509d148071021004ffdec06a1889fe0e2ff",
+    "gamma_L=7_B=10_wc=10.dat": "ddc48ed900984f1281f17c3363cf5c4dbd5528f1dbfdc5b78de45cf374096b1b",
+    "gamma_L=8_B=10_wc=10.dat": "4473ae9ef2faa404ef5051bcc12bef80c76c22bfe1e2ed050f04739d48b7135b",
+    "xi_L=1_B=10_wc=10.dat": "892f6e09c02c35b5381a165395599f21770c19b4f05d2ed71ccd2a45af414b1c",
+    "xi_L=2_B=10_wc=10.dat": "32c9522daf367c34f2a4c746395ec2a17dcfdc8e868194f0de80272ef6eee4a9",
+    "xi_L=3_B=10_wc=10.dat": "0c18033f29be083ba60861315c2d60c3fe14855d459c68f79b8d381898545888",
+    "xi_L=4_B=10_wc=10.dat": "87656864a268e3bbea577b75cc232e8dc934717a059475152f4a6520f921b0e8",
+    "xi_L=5_B=10_wc=10.dat": "02daf9222c088906c9b5e0dd54d9c863bbaf82d0247cf2b03ccf5ab185f8ea32",
+    "xi_L=6_B=10_wc=10.dat": "0cc1873823391763f7e7e6488f11e95cccb8b96bce62baca8d711233250a2c22",
+    "xi_L=7_B=10_wc=10.dat": "eee7f18c5e18bdd634d2d491f8c7a5ac4ebe6cf629c2a9007c8922b4be9d3a1c",
+    "xi_L=8_B=10_wc=10.dat": "46fb79bc31d66c11ddad643180a51f21d73dc49eb158a359658eb14d3b3ed998"
+  },
+  "bath_license": "MIT",
+  "bath_repository": "https://raw.githubusercontent.com/virgilb91/surrogate_models/1ef00d1018a61be5a2b892ce3b9d2082288e81ec/",
+  "calibration": {
+    "energy0_y": 123.168,
+    "energy2_y": 20.367,
+    "gamma10_x": 219.594,
+    "gamma1_x": 89.5
+  },
+  "extraction_energy_uncertainty": 0.0005,
+  "extraction_gamma_relative_uncertainty": 0.0001,
+  "member": "fig_3.pdf",
+  "member_sha256": "8642fd4e4625d3296933e80aeae4ed4c999331110f07067fa6e55b2df666431f",
+  "notes": [
+    "Dg is the coupled gerade doublet, which can lie above the continuum edge in a small surrogate.",
+    "Colored lines are published surrogate-model calculations; black lines are independent NRG.",
+    "Interpolation between sparse source vertices introduces additional comparison error."
+  ],
+  "nrg": {
+    "Lambda": 2,
+    "half_bandwidth_over_delta": 10,
+    "kept_states": 500,
+    "z_averaging": false
+  },
+  "paper_doi": "10.1103/PhysRevB.108.L220506",
+  "reference_type": "Vector path coordinates, not the authors' raw NRG table",
+  "source_archive": "https://export.arxiv.org/e-print/2307.11646v3",
+  "source_sha256": "cab3aa556e5e6a03fb9ca211cf0a5c000795a713fe3b913fc0f8999ce54fed17"
+}

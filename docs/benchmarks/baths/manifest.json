@@ -1,0 +1,1323 @@
+{
+  "commands": [
+    [
+      "--profile",
+      "full",
+      "--dmrg",
+      "--output",
+      "results/bath-benchmarks-full"
+    ]
+  ],
+  "completed": [
+    "5516f6c113e0f24d7339",
+    "463451023060c1ac86bc",
+    "dc68d830db6a0f7b1003",
+    "47966839f9af208f6b4c",
+    "c9bdc33d5dc03c3c19bc",
+    "b633917fe78a368ae500",
+    "67fdb481d2769a4799b6",
+    "dfed2157cf30083916d8",
+    "2b5a4dc013c38bb580e4",
+    "74212d793b9dd65ab31d",
+    "2f4b8ec3ee4624ffd8b9",
+    "8370892b32cc149dfee2",
+    "0776dced1deb6589b545",
+    "a01a42ca04c2c1b68dc0",
+    "1ed3923a964369007f08",
+    "cc4ba72881b8f15f5677",
+    "b17995a28bed77a94450",
+    "6d0648702268d8abd710",
+    "01d56f17d15fde467377",
+    "2868ea6469ca70939259",
+    "93656e49f1678c144ca8",
+    "8ee07bbf70d8b445f0c2",
+    "c23909d1fc12195a0bb1",
+    "77e44f8899b4179f698b",
+    "cd60ff806b2b1ccab6f7",
+    "1c450d264d4467e3f903",
+    "13e29e005940c341f998",
+    "1457eb6934885818bcf9",
+    "b9c2a34899acb3d73829",
+    "d82a49812eab27d96cff",
+    "3d6bc63556acc287109d",
+    "4c87fa4c53d3e023c8d5",
+    "5d02f349ae9eec411ab0",
+    "fd66463fafb085ccff75",
+    "a8eaa0e72a598f7112b9",
+    "6e8de2dafd5b302d159c",
+    "ccc0d6a70ad9c3e73d59",
+    "e9392e6ef9143e237426",
+    "e8ec16c1326be3b156af",
+    "68cfafa0e14d1c749be9",
+    "467db41d7eafc7b898bf",
+    "06c7cc8b09511dd0514c",
+    "7d862987bf2eeab51206",
+    "bd8261c2cb985c70da12",
+    "cb682cb0a97e3c81c42c",
+    "bb29802814ab34241d48",
+    "3b691a76d69b1efa99e2",
+    "8f94f0ca527a50484933",
+    "13ce05bd7ff7719590e5",
+    "f98c72a759e18740df96",
+    "f9682b3cefb4eb50ac4b",
+    "0bbf163c7ccd6280cdfa",
+    "58c12cf41f1b931b9d55",
+    "44674b19915d8929b913",
+    "88a948ac3952cca47ac6",
+    "75c34263ab3c880d4750",
+    "d6561a795c9dd6198c8f",
+    "b4b40752f1af58633b74",
+    "db9ad7af640ca2ab49be",
+    "42bbca32d056755561b8",
+    "3d983f5502da823dc0ac",
+    "3f08da26d1452197396c",
+    "f75cb0d5ac585ffa2467",
+    "4daaeadc28d4229c73d1",
+    "4788c228ad519642217e",
+    "4d49cd789444e78f452f",
+    "2eb62cd66a34393d9db0",
+    "e6ada4ca94329d9326a4",
+    "582ec8d2d45096dfe23b",
+    "c0b719b2525c2f07103f",
+    "789a301399d818cbff59",
+    "a2e4251dfe1c3a5fa1a3",
+    "d01a3e3ce000b6249b49",
+    "86cb1e2bedc124d50eef",
+    "10f119e96b9bb37914fa",
+    "bb72534d0fc9a6bb3d5e",
+    "c3f5489e5e10aa2d1244",
+    "8d9dba2fa29a0d442644",
+    "fc2061bc3da554adfe64",
+    "a39db552b055dee666da",
+    "944bee2e6d8dc395931c",
+    "88ce55694200482cda4e",
+    "9b9dc3dcbbbf9dec3477",
+    "f8e41cc4f28ee7420ed9",
+    "1058d8ee848320822f3b",
+    "2dc3672a6ca3314a37ea",
+    "74376e9ddf476343721a",
+    "8a694127a1b8c45543be",
+    "a899cd4e23f07e62387a",
+    "04ee5a0fefd23fdebbff",
+    "eb808adf6474fe6c170a",
+    "7e171efaa351c7800308",
+    "9ef500bfcca5652f38b9",
+    "c24ae3a058249033da1d",
+    "c27c047b2a5401ac315c",
+    "dae3dc0943e51148ef66",
+    "1597da79137faa0d3025",
+    "befb9827ed109e7d4666",
+    "000d55ac5c1c6eff31a7",
+    "9b89a27247ba08ca7881",
+    "5120d8d379aedf8fc119",
+    "ddf54a7de39c8cd068aa",
+    "19c007f93e1124eee785",
+    "07728f82041a8953161e",
+    "ee3aa6e0afac32e7a7f8",
+    "9b7a8fa50f97f37b0cfd",
+    "77202eb77d52b537a429",
+    "828d1f7e4716197dd925",
+    "811c027887385b8bb1bd",
+    "fc82c655fd0d35f5da6d",
+    "c4ffd36a17788516b74c",
+    "8f4e0662baba061635c5",
+    "9e899ccf85964605a58b",
+    "d1cc978c6bab28253ac7",
+    "66485b839748f8a774c7",
+    "39c3d25996a449dd2541",
+    "0eb9a03f26326e046e85",
+    "2651881cd4876f0722f6",
+    "f83521afc2ef3856077d",
+    "251616eb742cbb47afa5",
+    "a37c723f46e010e9b9bc",
+    "2e2553f719edafac146b",
+    "7fa71a8966d1bda04bb0",
+    "03594968affc38cf055c",
+    "42f5c07f084b207c7b94",
+    "383b6e87518105700185",
+    "1f6f78d1114945e892cb",
+    "5a856925b4fd97205f16",
+    "8068dc2b60e540e174c8",
+    "3efb1e2da19e940bd38f",
+    "1ba241865c52790f4475",
+    "03ccc7b012faaa298127",
+    "d7d1b69ded02b72c4691",
+    "5bf6b4c5e388bfe37821",
+    "1da30281eabf9df0b4be",
+    "dc6c479fab5a856b8b63",
+    "20ef28af822fa2b0cbe9",
+    "eb89e74e541d6a60a0ac",
+    "e3c3d43d204942cf4765",
+    "12afd1bb979ea9c8aac7",
+    "aedeace93178d9cd25b3",
+    "78ead950f5d8bf23d788",
+    "a42d27e2339bd9f8c037",
+    "fd11a9f696536649bae7",
+    "0551c410c60125cca188",
+    "0ddd4ab17be6f65a8c36",
+    "32172dc027b091d11d23",
+    "020871ec92d44a15b4bf",
+    "5479074a86976c359d24",
+    "6519569b0d42e9b9dbe1",
+    "5b8d0165e230f1332759",
+    "8db88fdbc6d3caa0f8de",
+    "d0f203c67aeeacc7372b",
+    "bef07d1f99e5fb498b57",
+    "0f40584a4080a20fc0af",
+    "5220eed96d8f2bde6723",
+    "2cc251e58d82a00dce34",
+    "f887039eb48e4022a271",
+    "3be764d2252dc72d36cd",
+    "12acabc496719af0e2a3",
+    "f459d0e231a5d4b288e5",
+    "86b1a07af531cd900403",
+    "ad2674b1903c77e4b90e",
+    "59e192d3614f34cca8da",
+    "0452a55b45fa89d77b65",
+    "2ec93e77466a16b158d7",
+    "783b8aacb2b641687860",
+    "aceedb83d598780bfe56",
+    "9e39dfff6f67f17e8a7e",
+    "0d54a365f93ff89fd6a4",
+    "f5c2e907ea4b9116c314",
+    "7d93b9c0e547495378f5",
+    "a04fe7b016787de16932",
+    "ee4208c6d640b85b15e0",
+    "93b69dda3e022211e352",
+    "b7003d8cccd947470cfc",
+    "50032ffa8f12c70b3ee2",
+    "011acfba307ceb5c07c4",
+    "ffa5649562708a49f7f1",
+    "210cba45b5b99faf4c0f",
+    "0fe7231958c9e0943932",
+    "9911d7c1be279ccdbff1",
+    "eb5aedae45674bff7fe0",
+    "eca60e82ad033d2a3c85",
+    "83c33852e20054ce93c4",
+    "eb678e5837d2c7c305bc",
+    "582d183ae9ddd3f9b918",
+    "a19d6f32323ed49056e5",
+    "a971cbc330ce9b2d0e99",
+    "e910c9ed7d326a07ba1b",
+    "5330d7e629cc61a1579a",
+    "e6986edc3a90105f7b85",
+    "45d1e491eb8ea198ccfb",
+    "8dc043d999198579cdbe",
+    "526e31980e9c62eb1af4",
+    "f8188f639d724c560585",
+    "4839915430bbb362d7e4",
+    "9802fd641e1bcd6925bb",
+    "da56b5b63aa3c4bc37e3",
+    "14ef13a5c31fe524a912",
+    "e973c5566d13c608972a",
+    "915382f9825531343766",
+    "1590b69c5be7eb38fd85",
+    "ac9aeb20668b4532a613",
+    "adc3a8310881f0e6d595",
+    "d97149b494a6be1bcd80",
+    "758709b9bc0e0956985e",
+    "f6eb9a26af0929974735",
+    "f27bff3840e10e8c041a",
+    "6e94af279aacbfb3cb6a",
+    "120a617b1bbadfdb698b",
+    "f405d5ced442d4ec10d6",
+    "afe6d814ce169954c530",
+    "aa6787cc65e6e8790483",
+    "9530e0da2c7266b2218a",
+    "a0b7d0d3cba45319c012",
+    "c78a5a09130870b8dc50",
+    "5466650d2425553c75ca",
+    "e1d8831f277ad4fbd244",
+    "5c66be67ebadf8fe3052",
+    "517b544524a5b6fbde25",
+    "64699b281f1ff7b157e7",
+    "ff3168b9dc9aea381b7a",
+    "2950165245a9966a814d",
+    "63020eef378cabf0192c",
+    "a23ba658ae5af37eaa90",
+    "613a5b5009321c93635d",
+    "d31c3d926c439e56349d",
+    "5ab6a9b1146f0039244a",
+    "7dc8cb43d10cd1978b94",
+    "680634e914f56c409763",
+    "9a6ad444e98852caa8d9",
+    "9da682b118420cb2ad8b",
+    "70a75f94e7cfe96033c8",
+    "e93a39702dc1f0d6702e",
+    "7c604cd76da65ae4522d",
+    "b6294ad090483ab99609",
+    "3699139314471f431c9c",
+    "c453a104e6e0d3b2dd83",
+    "5f24ba836cfd628ea6a8",
+    "0acd77da8df5a8cc504a",
+    "050c58dfde736e43bc10",
+    "6ad5e1babc38f9d0be6f",
+    "d7ef31fbd6e2f19bb99f",
+    "15148f1fa2c7f2c31d51",
+    "baa17523fc63dd138a6c",
+    "9a80481b22388f312807",
+    "65d447b40d875d2c3998",
+    "ca3a9982e57ba4a415ee",
+    "d778a8203e1a52308147",
+    "f535d03678376991e724",
+    "cd7c051355be2ec9cf89",
+    "85f2a57b532df977b49f",
+    "92250b7c0f771dc801a9",
+    "2198f8865521c4843c90",
+    "8e49ac8e60bad56c912b",
+    "e94cb78e1e1a5f2a576a",
+    "3c555750ae4813b03dd5",
+    "3f1642f3979a4b65d68e",
+    "70141422c4f03d01db7e",
+    "395cb1f846ccc587fc35",
+    "07de46509d1b24c2477d",
+    "dbb254be6b61e0e86150",
+    "4e712da413e784beb603",
+    "182ea4670d2962c5db5f",
+    "b269444600b51c544703",
+    "c17c18c8297102cd229b",
+    "678112583e442ceac0dc",
+    "6c78c11e5f531bb14019",
+    "6f9474e52d9c39d12b66",
+    "6b0d82b4be4be419a8b4",
+    "541b12ce638bea5d7652",
+    "e66204c1d1e1b016135f",
+    "59e7523e1f65c36dee12",
+    "24767cdec9dd931571c6",
+    "7fafa38cb7bc27dd94a3",
+    "958637f49e1d120393c5",
+    "70dcc0da04c100f0e193",
+    "cce9942e199e07e7ab3f",
+    "5f40a11d46bdc79be606",
+    "2a7cb9481d8e5e2762a6",
+    "33680a8817973c5a22ec",
+    "52ece8810917013534e5",
+    "4d4fe32e395c2eaba7d4",
+    "709a3882094ed77e5e1d",
+    "c706324c5a8e871bfe31",
+    "edcc04c78c245ab6d34e",
+    "ca29d6b0fe3b91ebdf91",
+    "0a9edfda5677ee074477",
+    "69a7b201a6cff260d68e",
+    "4212a2501065734da6f6",
+    "ba15ca5513b19acf6fbd",
+    "e5ac221365eef363029c",
+    "5b0bee9fa8a0d4a432f8",
+    "f02612974d89730ae2d5",
+    "75259bab714253201673",
+    "55c66c208a9cae217fe3",
+    "ae1e83c19eafa7f00438",
+    "0360bb3ece5828bdc945",
+    "0dea8095f32822595368",
+    "49117ff6544f7696f475",
+    "b28f2318989d1d0caf7b",
+    "a5f23f736d35e769ffaa",
+    "ac96dcea3e17c533d82a",
+    "17706ccf98b8e3b00dd9",
+    "811cb3b6ba819b3f314b",
+    "5fad48736b13093c4965",
+    "a1fd98def1f871cfa233",
+    "a898f55eea1053fa2c06",
+    "aa22709a786a041e1163",
+    "91bc05fa75e166b04861",
+    "db0d41ba7ca9ba5ba125",
+    "edbc02cdf7d787aeced1",
+    "0ba887ff6b8e21dc94c1",
+    "a0375d27eb15a4c1ee7a",
+    "08804c3a7bbe49d98722",
+    "b06b600fdac9383a14f4",
+    "e20ece7e1e09166928fc",
+    "b6b697a04604f9e253cb",
+    "83cbee39737ad85559a0",
+    "076cd4612883d9087c21",
+    "917c87874cfd5124227a",
+    "dcf8c713edcca5c30ce0",
+    "caf22622547cb69a3504",
+    "9e4b5ffe3680b49388dc",
+    "d118c65be931837ba0a1",
+    "9c7bd6afff4c968b71ba",
+    "506d35f4f353589f4664",
+    "40834a373b55bd9c5b70",
+    "d5ee9f9ab803eaf2ee6c",
+    "68ff2978e22c13914751",
+    "1bd1ef7cfaf87b8456b5",
+    "a0d938117d5693d8ca44",
+    "04bd04f189072385a20a",
+    "8c6b31b7fa8f105c8752",
+    "684aa823c8a13b04ae54",
+    "fbd7cdb738b5ed0cf75b",
+    "d6cb76fafbba1ed39b32",
+    "e2197a4f2bc8a335a08b",
+    "d3508415cf5dbe354b8a",
+    "65cce4ae5f8e18605f4a",
+    "96bc882e16a4070f885f",
+    "6c16f759ecacb41a8e7d",
+    "a53484e0f721ead9c524",
+    "321bd649dc557f2c4f4c",
+    "6b4a176bafbe9882d4dd",
+    "acde680222cea66560ad",
+    "a8a7495fc7aa4f4380dc",
+    "145cdd9c514f527af7b8",
+    "c9e6382d34564608eb7b",
+    "dd934d1907f117e90f21",
+    "a629ca668a1529701aeb",
+    "9fdb1615bb7f33fe33af",
+    "122886fbee4478f3ab2b",
+    "7b61fbcb0b1c33d0f41c",
+    "6d0cb50f3e56037708af",
+    "491b40c649273668975b",
+    "791dc34c5eb28c6e1e18",
+    "22dfd2a6256d7a0e6e60",
+    "d5256df719622db954a7",
+    "d193046590341a306f5c",
+    "db1e18b356b19240e850",
+    "54367d450a6aaa45dee4",
+    "a1f7dd92d22aeeaaf386",
+    "fd9d17c705a63cb6db2c",
+    "c25d33656f53d379a68a",
+    "687213302730cb291395",
+    "7bad3f7c7842c15fc176",
+    "037d4aa1acd9957c8277",
+    "ad361fc9da4d9672ac94",
+    "ec0c19236b8084864646",
+    "d25eecfb4836d317aad2",
+    "26ced0bfaeeae1bb934c",
+    "32474194d3b7087f9691",
+    "23416cf09fba07ab7b74",
+    "b16796115354af3502b0",
+    "ba2c2879763eb0ee90f7",
+    "ccaf6a131b80164cec19",
+    "e75061342eb39d3b5906",
+    "5bc0e1767fa85320781a",
+    "606e6fa7b4d967a93433",
+    "a8bacf5800458ba813c2",
+    "bba75edc9121adfa0ff8",
+    "a663f95561b70466ed11",
+    "4da83320fe3b98980afd",
+    "77beceb47e125c0d3236",
+    "16caee372fe0cedd319c",
+    "ee7142ad4b61710ccd53",
+    "3d38c2f40566c39f6c27",
+    "173c046064721d62009e",
+    "29502dd76d5da1283b3d",
+    "4f40d8d93fda81878fe3",
+    "41e7df538c07bfd09bf3",
+    "14791b3318ae415e5e69",
+    "7146933bfbb3891e96be",
+    "7e09e6e50e666e2d4c60",
+    "6bea0aa093d7b9559e92",
+    "6ebba578fdd1d37be26c",
+    "89d04c4c25ddc137ac8d",
+    "fb1b0c2ec2552fab1875",
+    "46c716c9e36c2de2c138",
+    "fd162d5a0e73ced1fe2c",
+    "0bfaf3e44dbd02f91bf7",
+    "4074a1af28ed8a8704a2",
+    "8a85bedb26a4a7cf495a",
+    "6ff3d48f9ae0e3ec14ff",
+    "5548c101d88cf9b17d55",
+    "f72d38c4faf9cb068cec",
+    "5f0c28f16ed089230b3b",
+    "78954842588ebe38e07a",
+    "0d80e695823f8b80ed25",
+    "10a261738dec0c723979",
+    "1e027ed725e6e6416101",
+    "89321b3c70c7166e203a",
+    "4ecf60f5273a5cc2cf5c",
+    "4a4abaf46ef100469e78",
+    "11fafc5e52af428eb1ec",
+    "687bccdcac5a8c84724c",
+    "ecae75a249921b039403",
+    "b19c708d732d90c68d24",
+    "769b28e26d9ec330d2b7",
+    "ea9e876f76708fd016d9",
+    "a3c9377e1ef6afbb4d05",
+    "e4a545be70505f2763c0",
+    "8b5144b27dcde4ddd77c",
+    "6e45ca11d030bc9e21b1",
+    "c83cef7c3be9e1a5dc71",
+    "08d5fe68c1519cb2a2f1",
+    "4a466c333f744c19a9a3",
+    "84ecaa11441dc43a2b6f",
+    "9d68f001bc22ae3fba35",
+    "6e95d95b4e9881441218",
+    "2d3ff26b1ffe6f59d7c4",
+    "ee9b9dc702b491a145a3",
+    "44a22e62a998308104e9",
+    "2a2a17ab868cc598f1c3",
+    "afba84658ef6fd534637",
+    "2649f27ea8922e555986",
+    "3cb538fa80d577060732",
+    "c13b809765ee73963d4e",
+    "180c6536569eb96accfa",
+    "d499a2e8b4ea5ce4ac36",
+    "c3bbb5dd138e4369370d",
+    "212c3be194198766aba7",
+    "c6fd70a141fd78ac5e66",
+    "6eb7b4cc432a333ac3e0",
+    "4c2e2ab88ee25da7f1c2",
+    "ce0ff9c89e2a9f933a2d",
+    "05bbee4b71cad41ca100",
+    "46051a55357d1611b9be",
+    "cb47f284c3bcfe55209f",
+    "ceb8607dd0f1476cfcef",
+    "d0d0ce17d16f61bfb2c6",
+    "dccf406cad93c178b5bd",
+    "d5cfd1272b7fa5754721",
+    "48849b500d1cc982e01b",
+    "4720ab2d8917f6876e1a",
+    "ad4c116fc65d09ec8577",
+    "38e4114b06423dcd0797",
+    "168aa1e1db9a3cdf672b",
+    "2db7316e302d55bd7dec",
+    "3245a65214764df30a9a",
+    "63a2156d2ba4c6b44414",
+    "2ae3a92717cdace000e9",
+    "2935bf0414a2cccfff69",
+    "9ffbf614a211ff62134b",
+    "dbe8ab563ec3b2d7e90b",
+    "1de62ad7befb7749af32",
+    "41da6d865b39cdddae1e",
+    "6c82b9e2de99c99f77ca",
+    "faebd6f4907f3aa2bf06",
+    "e17ec826de6f33fa4f26",
+    "8fa4a609783633447bc9",
+    "fe80c12b97ec7fab6094",
+    "5b28a15767d8b3dddcc7",
+    "4f3e7a1e0fcafea42582",
+    "2e9df597b802b38dc8e4",
+    "dafc125e7be4a96acd76",
+    "15fa611f51c75f906abf",
+    "4c76e39cbdb68c528fea",
+    "ff12bd87b114d2bcf3ca",
+    "e0267e0dcae0d6d31349",
+    "6886d787e230805faf01",
+    "14f1f142783490899b7c",
+    "7745716e406963c52428",
+    "5f7c435e6f109a3f2f1d",
+    "52bd0123228c450b04c6",
+    "d13e90cf11f8942f02ac",
+    "7efcd596a3732cd62747"
+  ],
+  "environment": {
+    "cpu_brand": "Apple M1 Max",
+    "cpu_count": 10,
+    "git_revision": "aa7348e06e102fcc06c4a9c3d42f8b711bd687b9",
+    "git_status": "?? docs/benchmarks/\n?? tests/test_bath_benchmarks.py\n?? tools/benchmark_baths.py",
+    "implementation": {
+      "files": {
+        "__init__.py": "37c2a898286a98933ca26fcd7eadc482fb2a3f9f35cab81349bb08146a9a474d",
+        "api.py": "a3a5b3a80ce155617899b3360a9d7dc36df4b4366ced7160ea00708642710e5a",
+        "cli.py": "d860f0b9442cf954dc38abccca1ebd6488bcf129bb1309251e8b71aaebb9e056",
+        "common/__init__.py": "394799edc56d432820af8801a38ba9c9512060d7d904360286934a87341c9c95",
+        "common/algebra.py": "072659f71e4b222578a74f472fbdbfe03ee5816e76a9a3059578327bbfb81962",
+        "common/baths.py": "dd2cdeab3680d921d0523cc307903b640976c70222a31bf5d6f134e617fa06d1",
+        "common/io.py": "d0558e83e207e238bc4542b0b3a14c6204e440536d4ea98c6f5f52338379eb12",
+        "common/models.py": "2647acbea388e3a56c6b09bdc422fcd78b13fbf53e48c2c886b3accfaf6ca890",
+        "common/problem.py": "6a74801112898d76b35213153cc9318befb1d98be99a0d639800efa3cdf98a47",
+        "compat/qpsolver/__init__.py": "1e8785ea1c09ee48c89b1d64adb9d68053bc7cf2c7438a1aa64bba6fe149a875",
+        "compat/qpsolver/cli.py": "272fbf82340c9a59e0efd74e513562f24af20a5d543fd0f13b58bfac00bcd0a9",
+        "compat/qpsolver/nrg.py": "6162ed163e5afa1bcacb1f0afabc94df0fe2fcce7e95aa879c40c1daa5fa27e0",
+        "dmrg_solver/__init__.py": "c875c9bd86be62c86e9555286a1088310886969178c13d4a700fe0b89b077bd6",
+        "dmrg_solver/convergence.py": "29ee594c6d41268d7cb51d3e3dd12e302a0e38bddb884d78a7de64f6d609d32e",
+        "dmrg_solver/io.py": "54bd752cc6ace17231c35f89f95674c522980301a4e17e601a11a54b19367748",
+        "dmrg_solver/legacy.py": "c2c98b124968c575a66616930cf79b8a75f731dbd6a5c469801db3c423dc4a6b",
+        "dmrg_solver/mpo.py": "5492d2f4e80db0e71f62f5884cb26206cef5944efd6f4f60bc55a4e2d44a9790",
+        "dmrg_solver/solver.py": "910169a6208b5710653b00382220be306e15c466174ab8708b568901a5b2e765",
+        "qp_solver/__init__.py": "508b0b0ce58511cde099aa639fcaf975edd523bfa8aaec073cec42338634f39c",
+        "qp_solver/_core.cpython-314-darwin.so": "c337e751280e81d172022b4fb1ab30e78d3926326844a16d27bffe447de24c4d",
+        "qp_solver/basis.py": "068727de5d1b960149d4e13810ca630da2e1c729ef5056eeac01d5ab623146ed",
+        "qp_solver/cli.py": "8a512a4f1c07aec98b015a6decd82282df9d1283367d12807f4e8e781edb0d4b",
+        "qp_solver/io.py": "4c208f7a597d6a32dfdde01cd7b0973b5ecc84b19fa32daddeddcf0a65f2e52e",
+        "qp_solver/nrg.py": "c71b57b9c3eeb1499a137955998a3e12a4370f710b501a928cca9d02dc51b92d",
+        "qp_solver/reference.py": "437686251373649a225e79f5ce30458c17006a2568ba260d8ead8c4260d9b650",
+        "qp_solver/solver.py": "7cc7a50bf31456ba0d6f9f5b5d732b3c2ac0b01369e775b4599e9e99f550a9d9"
+      },
+      "sha256": "6150cb4b2e7f92b4273f15ef4aa463fffb3637f355dae9f7cbb951057265bcd9",
+      "version": "0.2.0"
+    },
+    "numerical": {
+      "machine": "arm64",
+      "numpy": "2.5.2",
+      "packages": {
+        "h5py": "3.16.0",
+        "numpy": "2.5.2",
+        "physics-tenpy": "1.1.1",
+        "qdjj-solver": "0.2.0",
+        "scipy": "1.18.0",
+        "threadpoolctl": "3.6.0"
+      },
+      "python": "3.14.7",
+      "qdjj_solver": "0.2.0",
+      "qpsolver": "0.2.0",
+      "release": "25.5.0",
+      "scipy": "1.18.0",
+      "system": "Darwin"
+    },
+    "physical_memory_bytes": "68719476736",
+    "processor": "arm",
+    "threadpools": [
+      {
+        "architecture": "VORTEX",
+        "filepath": "libopenblas.0.dylib",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libopenblas",
+        "threading_layer": "openmp",
+        "user_api": "blas",
+        "version": "0.3.34"
+      },
+      {
+        "filepath": "libomp.dylib",
+        "internal_api": "openmp",
+        "num_threads": 1,
+        "prefix": "libomp",
+        "user_api": "openmp",
+        "version": null
+      }
+    ],
+    "threads": {
+      "MKL_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    }
+  },
+  "format": "qdjj-bath-benchmark",
+  "format_version": 1,
+  "implementation_sha256": "6150cb4b2e7f92b4273f15ef4aa463fffb3637f355dae9f7cbb951057265bcd9",
+  "include_dmrg": true,
+  "input": {
+    "bandwidths": [
+      10.0,
+      100.0,
+      2000.0
+    ],
+    "bath_repetitions": 5,
+    "dmrg_options": {
+      "chi_max": 64,
+      "energy_tolerance": 1e-11,
+      "max_sweeps": 60,
+      "min_sweeps": 10,
+      "require_convergence": false,
+      "residual_tolerance": 1e-07,
+      "seed": 1729,
+      "seed_trials": 2,
+      "threads": 1
+    },
+    "fit_sensitivity": [
+      {
+        "bandwidth": 100.0,
+        "levels": 8,
+        "options": {
+          "frequency_cutoff": 10.0
+        }
+      },
+      {
+        "bandwidth": 100.0,
+        "levels": 8,
+        "options": {
+          "frequency_cutoff": 1000.0
+        }
+      },
+      {
+        "bandwidth": 100.0,
+        "levels": 8,
+        "options": {
+          "relative_weight": 0.5
+        }
+      },
+      {
+        "bandwidth": 100.0,
+        "levels": 8,
+        "options": {
+          "relative_weight": 1.0
+        }
+      },
+      {
+        "bandwidth": 100.0,
+        "levels": 8,
+        "options": {
+          "frequency_min": 1e-06
+        }
+      },
+      {
+        "bandwidth": 100.0,
+        "levels": 8,
+        "options": {
+          "frequency_points": 250
+        }
+      },
+      {
+        "bandwidth": 100.0,
+        "levels": 8,
+        "options": {
+          "frequency_points": 4000
+        }
+      },
+      {
+        "bandwidth": 100.0,
+        "levels": 8,
+        "options": {
+          "starts": 1
+        }
+      },
+      {
+        "bandwidth": 100.0,
+        "levels": 8,
+        "options": {
+          "starts": 8
+        }
+      },
+      {
+        "bandwidth": 100.0,
+        "levels": 8,
+        "options": {
+          "seed": 1730
+        }
+      },
+      {
+        "bandwidth": 100.0,
+        "levels": 8,
+        "options": {
+          "seed": 1731
+        }
+      },
+      {
+        "bandwidth": 2000.0,
+        "levels": 8,
+        "options": {
+          "frequency_cutoff": 2000.0
+        }
+      },
+      {
+        "bandwidth": 2000.0,
+        "levels": 8,
+        "options": {
+          "frequency_cutoff": 20000.0
+        }
+      },
+      {
+        "bandwidth": 2000.0,
+        "levels": 8,
+        "options": {
+          "frequency_cutoff": 2000.0,
+          "relative_weight": 1.0
+        }
+      }
+    ],
+    "fitting": {
+      "frequency_cutoff": 100.0,
+      "frequency_min": 0.001,
+      "frequency_points": 1000,
+      "relative_weight": 0.0,
+      "seed": 1729,
+      "starts": 4
+    },
+    "format_version": 1,
+    "kernel_levels": {
+      "cosh-grid": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        16,
+        24,
+        32,
+        48,
+        64
+      ],
+      "linear-gl": [
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        16,
+        24,
+        32,
+        64,
+        128,
+        256,
+        512,
+        1024,
+        2048
+      ],
+      "surrogate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        16
+      ]
+    },
+    "legacy_levels": [
+      4,
+      8
+    ],
+    "qp_options": {
+      "max_dimension": 3000000,
+      "max_memory_gib": 8.0,
+      "method": "sparse",
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "quadratic_points": [
+      {
+        "detuning": 0.0,
+        "gamma": 0.3,
+        "phi": 0.8
+      },
+      {
+        "detuning": 0.6,
+        "gamma": 2.0,
+        "phi": 1.7
+      },
+      {
+        "detuning": 0.0,
+        "gamma": 10.0,
+        "phi": 0.2
+      }
+    ],
+    "solve_repetitions": 3,
+    "studies": [
+      {
+        "bandwidth": 100.0,
+        "cases": [
+          {
+            "label": "g0.01-p0",
+            "model": {
+              "compress": true,
+              "gamma": 0.01,
+              "phi": 0.0,
+              "u": 10.0
+            }
+          },
+          {
+            "label": "g0.01-p0.5",
+            "model": {
+              "compress": true,
+              "gamma": 0.01,
+              "phi": 1.5707963267948966,
+              "u": 10.0
+            }
+          },
+          {
+            "label": "g0.01-p1",
+            "model": {
+              "compress": true,
+              "gamma": 0.01,
+              "phi": 3.141592653589793,
+              "u": 10.0
+            }
+          },
+          {
+            "label": "g1-p0",
+            "model": {
+              "compress": true,
+              "gamma": 1.0,
+              "phi": 0.0,
+              "u": 10.0
+            }
+          },
+          {
+            "label": "g1-p0.5",
+            "model": {
+              "compress": true,
+              "gamma": 1.0,
+              "phi": 1.5707963267948966,
+              "u": 10.0
+            }
+          },
+          {
+            "label": "g1-p1",
+            "model": {
+              "compress": true,
+              "gamma": 1.0,
+              "phi": 3.141592653589793,
+              "u": 10.0
+            }
+          },
+          {
+            "label": "g2-p0",
+            "model": {
+              "compress": true,
+              "gamma": 2.0,
+              "phi": 0.0,
+              "u": 10.0
+            }
+          },
+          {
+            "label": "g2-p0.5",
+            "model": {
+              "compress": true,
+              "gamma": 2.0,
+              "phi": 1.5707963267948966,
+              "u": 10.0
+            }
+          },
+          {
+            "label": "g2-p1",
+            "model": {
+              "compress": true,
+              "gamma": 2.0,
+              "phi": 3.141592653589793,
+              "u": 10.0
+            }
+          }
+        ],
+        "families": [
+          "cosh-grid",
+          "surrogate",
+          "linear-gl"
+        ],
+        "levels": [
+          2,
+          4,
+          6,
+          8,
+          10
+        ],
+        "name": "knight",
+        "sectors": [
+          1
+        ],
+        "solvers": [
+          {
+            "backend": "qp",
+            "cutoff": null
+          }
+        ]
+      },
+      {
+        "bandwidth": 100.0,
+        "cases": [
+          {
+            "label": "g1-p0.5",
+            "model": {
+              "compress": true,
+              "gamma": 1.0,
+              "phi": 1.5707963267948966,
+              "u": 10.0
+            }
+          }
+        ],
+        "families": [
+          "cosh-grid",
+          "surrogate"
+        ],
+        "levels": [
+          12,
+          16
+        ],
+        "name": "knight-refinement",
+        "sectors": [
+          1
+        ],
+        "solvers": [
+          {
+            "backend": "qp",
+            "cutoff": 4
+          },
+          {
+            "backend": "qp",
+            "cutoff": 6
+          },
+          {
+            "backend": "dmrg",
+            "options": {
+              "chi_max": 64
+            }
+          },
+          {
+            "backend": "dmrg",
+            "options": {
+              "chi_max": 128
+            }
+          }
+        ]
+      },
+      {
+        "bandwidth": 10.0,
+        "cases": [
+          {
+            "label": "g0.5",
+            "model": {
+              "compress": false,
+              "gamma": 0.5,
+              "geometry": "single",
+              "u": 15.0
+            }
+          },
+          {
+            "label": "g2",
+            "model": {
+              "compress": false,
+              "gamma": 2.0,
+              "geometry": "single",
+              "u": 15.0
+            }
+          },
+          {
+            "label": "g3",
+            "model": {
+              "compress": false,
+              "gamma": 3.0,
+              "geometry": "single",
+              "u": 15.0
+            }
+          },
+          {
+            "label": "g10",
+            "model": {
+              "compress": false,
+              "gamma": 10.0,
+              "geometry": "single",
+              "u": 15.0
+            }
+          },
+          {
+            "label": "g20",
+            "model": {
+              "compress": false,
+              "gamma": 20.0,
+              "geometry": "single",
+              "u": 15.0
+            }
+          }
+        ],
+        "families": [
+          "cosh-grid",
+          "surrogate",
+          "linear-gl"
+        ],
+        "levels": [
+          2,
+          4,
+          6,
+          8,
+          10
+        ],
+        "name": "spectrum",
+        "sectors": [
+          0,
+          1
+        ],
+        "solvers": [
+          {
+            "backend": "qp",
+            "cutoff": null
+          }
+        ]
+      },
+      {
+        "bandwidth": 10.0,
+        "cases": [
+          {
+            "label": "g0.5",
+            "model": {
+              "compress": false,
+              "gamma": 0.5,
+              "geometry": "single",
+              "u": 15.0
+            }
+          },
+          {
+            "label": "g20",
+            "model": {
+              "compress": false,
+              "gamma": 20.0,
+              "geometry": "single",
+              "u": 15.0
+            }
+          }
+        ],
+        "families": [
+          "surrogate"
+        ],
+        "levels": [
+          1,
+          3,
+          5,
+          7,
+          9
+        ],
+        "name": "spectrum-odd",
+        "sectors": [
+          0,
+          1
+        ],
+        "solvers": [
+          {
+            "backend": "qp",
+            "cutoff": null
+          }
+        ]
+      },
+      {
+        "bandwidth": 10.0,
+        "cases": [
+          {
+            "label": "g0.5",
+            "model": {
+              "compress": false,
+              "gamma": 0.5,
+              "geometry": "single",
+              "u": 15.0
+            }
+          },
+          {
+            "label": "g20",
+            "model": {
+              "compress": false,
+              "gamma": 20.0,
+              "geometry": "single",
+              "u": 15.0
+            }
+          }
+        ],
+        "families": [
+          "cosh-grid",
+          "surrogate"
+        ],
+        "levels": [
+          12,
+          16
+        ],
+        "name": "spectrum-refinement",
+        "sectors": [
+          0,
+          1
+        ],
+        "solvers": [
+          {
+            "backend": "dmrg",
+            "options": {
+              "chi_max": 64
+            }
+          },
+          {
+            "backend": "dmrg",
+            "options": {
+              "chi_max": 128
+            }
+          }
+        ]
+      },
+      {
+        "bandwidth": 2000.0,
+        "cases": [
+          {
+            "label": "p1.50",
+            "model": {
+              "compress": true,
+              "gamma": 1.0,
+              "phi": 1.5,
+              "u": 3.0
+            }
+          },
+          {
+            "label": "p1.53",
+            "model": {
+              "compress": true,
+              "gamma": 1.0,
+              "phi": 1.53,
+              "u": 3.0
+            }
+          },
+          {
+            "label": "p1.56",
+            "model": {
+              "compress": true,
+              "gamma": 1.0,
+              "phi": 1.56,
+              "u": 3.0
+            }
+          }
+        ],
+        "families": [
+          "cosh-grid",
+          "surrogate"
+        ],
+        "levels": [
+          2,
+          4,
+          6,
+          8,
+          10
+        ],
+        "name": "wide-band",
+        "sectors": [
+          0,
+          1
+        ],
+        "solvers": [
+          {
+            "backend": "qp",
+            "cutoff": null
+          }
+        ]
+      },
+      {
+        "bandwidth": 100.0,
+        "cases": [
+          {
+            "label": "weak-p0.5",
+            "model": {
+              "curve": {
+                "gamma_left": 1.0,
+                "gamma_right": 1.0,
+                "hopping": 0.1
+              },
+              "kind": "double-dot",
+              "phi": 1.5707963267948966,
+              "u": 4.0
+            }
+          },
+          {
+            "label": "weak-p0.9",
+            "model": {
+              "curve": {
+                "gamma_left": 1.0,
+                "gamma_right": 1.0,
+                "hopping": 0.1
+              },
+              "kind": "double-dot",
+              "phi": 2.827433388230814,
+              "u": 4.0
+            }
+          },
+          {
+            "label": "strong-p0.5",
+            "model": {
+              "curve": {
+                "gamma_left": 1.4,
+                "gamma_right": 1.4,
+                "hopping": 1.0
+              },
+              "kind": "double-dot",
+              "phi": 1.5707963267948966,
+              "u": 4.0
+            }
+          },
+          {
+            "label": "strong-p0.9",
+            "model": {
+              "curve": {
+                "gamma_left": 1.4,
+                "gamma_right": 1.4,
+                "hopping": 1.0
+              },
+              "kind": "double-dot",
+              "phi": 2.827433388230814,
+              "u": 4.0
+            }
+          }
+        ],
+        "families": [
+          "cosh-grid",
+          "surrogate",
+          "linear-gl"
+        ],
+        "levels": [
+          2,
+          4
+        ],
+        "name": "double-dot",
+        "sectors": [
+          0,
+          1
+        ],
+        "solvers": [
+          {
+            "backend": "qp",
+            "cutoff": null
+          }
+        ]
+      },
+      {
+        "bandwidth": 10.0,
+        "cases": [
+          {
+            "label": "isolated",
+            "model": {
+              "bath_reference": "isolated",
+              "compress": false,
+              "gamma": 0.4,
+              "phi": 0.8,
+              "rho_wn": 0.08,
+              "symmetry": false,
+              "u": 2.0
+            }
+          },
+          {
+            "label": "coupled",
+            "model": {
+              "bath_reference": "coupled",
+              "compress": false,
+              "gamma": 0.4,
+              "phi": 0.8,
+              "rho_wn": 0.08,
+              "symmetry": false,
+              "u": 2.0
+            }
+          }
+        ],
+        "families": [
+          "cosh-grid",
+          "surrogate"
+        ],
+        "levels": [
+          2,
+          4
+        ],
+        "name": "coordinates",
+        "sectors": [
+          0,
+          1
+        ],
+        "solvers": [
+          {
+            "backend": "qp",
+            "cutoff": 2
+          },
+          {
+            "backend": "qp",
+            "cutoff": 4
+          },
+          {
+            "backend": "qp",
+            "cutoff": null
+          },
+          {
+            "backend": "dmrg",
+            "options": {
+              "chi_max": 32
+            }
+          },
+          {
+            "backend": "dmrg",
+            "options": {
+              "chi_max": 64
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "profile": "full",
+  "runner_sha256": "3b653381710c60bdf86d66f07f1455e0380a34d09565bd1ccf8203c56d3dc770"
+}

@@ -1,0 +1,11 @@
+{
+  "paper_doi": "10.1103/PhysRevLett.132.126505",
+  "arxiv_version": "2310.02933v2",
+  "sources": ["https://arxiv.org/html/2310.02933v2", "https://arxiv.org/pdf/2310.02933v2"],
+  "target": "Fig. 2(d), labeled D in arXiv; main Eqs. (3), (4), (6); SM VI and Fig. 5",
+  "numerical_values": {"chi_critical": 0.721, "phase_critical_over_pi": 0.487},
+  "nrg": {"u_over_delta": 3, "gamma_total_over_delta": 1, "half_bandwidth_over_delta": 2000, "Lambda": 4, "Nz": 4, "maximum_kept_states": 2000},
+  "precision": "The critical values are rounded published NRG estimates, not exact analytical constants; no uncertainty or raw numerical array was supplied.",
+  "phase_map": "The paper colors the analytic geometric factor using its NRG critical value. Our map uses the independently calculated critical value.",
+  "analytic_reference": "Identical BCS baths: chi=abs(sum gamma_j exp(i phi_j)); phi_eff=2 arccos(chi); J_j=(2e/hbar)(dE/dchi)(dchi/dphi_j)."
+}

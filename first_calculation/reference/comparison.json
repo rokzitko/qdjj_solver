@@ -1,0 +1,36 @@
+{
+  "dmrg_exact_energy_atol": 1e-09,
+  "dmrg_exact_energy_rtol": 0,
+  "dmrg_finite_problem_converged": true,
+  "dmrg_impurity_spin_z_matrix": {
+    "imag": [
+      [
+        -6.464215346362536e-20,
+        -2.8870876927828905e-13
+      ],
+      [
+        2.887087693817246e-13,
+        -2.4488909924195227e-18
+      ]
+    ],
+    "real": [
+      [
+        0.4443612343743648,
+        -2.7467706455657417e-14
+      ],
+      [
+        -2.746770688338285e-14,
+        -1.5265566588595902e-16
+      ]
+    ]
+  },
+  "dmrg_minus_exact_energies": [
+    1.1102230246251565e-16,
+    -8.881784197001252e-16
+  ],
+  "energy_unit": "Delta=1",
+  "format_version": 1,
+  "hamiltonian_sha256": "e5f97c3f9538c47f96879b8743b585782410518a77f6c6050d7e5ceba55055f9",
+  "impurity_spin_z_unit": "hbar",
+  "qp_minus_exact_lowest_energy": 0.0012528944253074603
+}

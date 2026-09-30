@@ -1,0 +1,18 @@
+{
+  "crossings": [
+    {
+      "gamma_critical": 3.0073210147176965,
+      "setting": "L1"
+    },
+    {
+      "gamma_critical": 2.838481686223328,
+      "setting": "L2"
+    },
+    {
+      "gamma_critical": 2.7623269728447037,
+      "setting": "L3"
+    }
+  ],
+  "maximum_residual": 2.0843211293466183e-14,
+  "points": 12
+}

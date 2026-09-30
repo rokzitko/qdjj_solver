@@ -1,0 +1,6526 @@
+[
+  {
+    "backend": "qp",
+    "dimension": 252,
+    "energies": [
+      -1.9874739225730413
+    ],
+    "hamiltonian_sha256": "fde6e33cc392ba4110e532852f95f503809410e3314b35ff3dae27ffb5dad46b",
+    "label": {
+      "chi": 0.5,
+      "geometry": "effective-two-lead",
+      "setting": "L4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.23847829282847846
+      ],
+      "impurity_charge": [
+        1.000000000000001
+      ],
+      "impurity_spin_z": [
+        -2.6764915120868885e-15
+      ],
+      "phase_derivative": [
+        0.1853704337451194
+      ],
+      "rho_ws_derivative": [
+        -5.398953823738163e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 8,
+    "qp_weights": [
+      [
+        0.3600430179305105,
+        0.5070045202428479,
+        0.11596452766317722,
+        0.016003778776581653,
+        0.0009484018270826713,
+        3.510908502319876e-05,
+        6.382148625841748e-07,
+        6.238591585065533e-09,
+        2.1322014955033713e-11
+      ]
+    ],
+    "residuals": [
+      2.4606782950296934e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 8.708285167813301e-05,
+      "diagonalization": 0.006654208991676569,
+      "hamiltonian": 0.0005599581636488438,
+      "observables_and_residuals": 0.0004401658661663532,
+      "total": 0.007826625369489193
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 210,
+    "energies": [
+      -2.098756292183749
+    ],
+    "hamiltonian_sha256": "fde6e33cc392ba4110e532852f95f503809410e3314b35ff3dae27ffb5dad46b",
+    "label": {
+      "chi": 0.5,
+      "geometry": "effective-two-lead",
+      "setting": "L4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12396016067563813
+      ],
+      "impurity_charge": [
+        1.0000000000000002
+      ],
+      "impurity_spin_z": [
+        0.33551625181817457
+      ],
+      "phase_derivative": [
+        -0.027036020895262157
+      ],
+      "rho_ws_derivative": [
+        0.6759017756278934
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 8,
+    "qp_weights": [
+      [
+        0.6876536034243005,
+        0.24079888047576964,
+        0.06391134412256846,
+        0.007103787334111799,
+        0.000514365302470976,
+        1.7649937240558156e-05,
+        3.6578392256397817e-07,
+        3.604154434758696e-09,
+        1.546170750008518e-11
+      ]
+    ],
+    "residuals": [
+      1.5866596602594857e-14
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 5.487492308020592e-05,
+      "diagonalization": 0.002494540996849537,
+      "hamiltonian": 0.00020750006660819054,
+      "observables_and_residuals": 0.0003726249560713768,
+      "total": 0.0032084588892757893
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 252,
+    "energies": [
+      -2.170272508508199
+    ],
+    "hamiltonian_sha256": "1182ce150ba251f0bf05a2ea37ddaec35a0b776e5e0b939d5facb1360f1b9bc0",
+    "label": {
+      "chi": 0.95,
+      "geometry": "effective-two-lead",
+      "setting": "L4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.24233526785399556
+      ],
+      "impurity_charge": [
+        1.0000000000000029
+      ],
+      "impurity_spin_z": [
+        9.572372880180624e-16
+      ],
+      "phase_derivative": [
+        0.0603535327301014
+      ],
+      "rho_ws_derivative": [
+        -2.1846675228219292e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 8,
+    "qp_weights": [
+      [
+        0.37635452450779505,
+        0.5035684348701179,
+        0.10776290810200023,
+        0.011744885034736523,
+        0.000552869606466645,
+        1.6142661791482186e-05,
+        2.33487593707767e-07,
+        1.725366026460582e-09,
+        4.135117901972689e-12
+      ]
+    ],
+    "residuals": [
+      1.259963543217603e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 5.733314901590347e-05,
+      "diagonalization": 0.0026511671021580696,
+      "hamiltonian": 0.00021295808255672455,
+      "observables_and_residuals": 0.0003909575752913952,
+      "total": 0.0033717076294124126
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 210,
+    "energies": [
+      -2.055221016637375
+    ],
+    "hamiltonian_sha256": "1182ce150ba251f0bf05a2ea37ddaec35a0b776e5e0b939d5facb1360f1b9bc0",
+    "label": {
+      "chi": 0.95,
+      "geometry": "effective-two-lead",
+      "setting": "L4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.11758618476446343
+      ],
+      "impurity_charge": [
+        0.9999999999999998
+      ],
+      "impurity_spin_z": [
+        0.3497911581015129
+      ],
+      "phase_derivative": [
+        -0.02121260987872527
+      ],
+      "rho_ws_derivative": [
+        0.5177447114912992
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 8,
+    "qp_weights": [
+      [
+        0.7124256631305382,
+        0.22968139963617393,
+        0.052045138999769563,
+        0.005479844360028888,
+        0.00035661871050464525,
+        1.112366300074311e-05,
+        2.0962353301183678e-07,
+        1.8697233053154414e-09,
+        6.7276403367748445e-12
+      ]
+    ],
+    "residuals": [
+      2.612791206973999e-14
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 5.1416922360658646e-05,
+      "diagonalization": 0.0024413750506937504,
+      "hamiltonian": 0.00018525030463933945,
+      "observables_and_residuals": 0.00034941593185067177,
+      "total": 0.003087458200752735
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 252,
+    "energies": [
+      -2.0796799296379014
+    ],
+    "hamiltonian_sha256": "7b6461a87327552959d38a8cb317c6e212c45888deb4bacc05fda94657bdb2bf",
+    "label": {
+      "chi": 0.721253090443582,
+      "geometry": "effective-two-lead",
+      "setting": "L4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.2404764837918496
+      ],
+      "impurity_charge": [
+        1.0000000000000016
+      ],
+      "impurity_spin_z": [
+        4.2283136450350673e-16
+      ],
+      "phase_derivative": [
+        0.14061525618853954
+      ],
+      "rho_ws_derivative": [
+        -1.1283453894217539e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 8,
+    "qp_weights": [
+      [
+        0.36833531717472506,
+        0.5051432878497554,
+        0.11187466639121427,
+        0.01387886234467525,
+        0.0007425710175188471,
+        2.487859229521836e-05,
+        4.1298938021277396e-07,
+        3.629576357921355e-09,
+        1.0859937062508377e-11
+      ]
+    ],
+    "residuals": [
+      1.0332904260640793e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 5.737505853176117e-05,
+      "diagonalization": 0.002527292352169752,
+      "hamiltonian": 0.00022224988788366318,
+      "observables_and_residuals": 0.00040062516927719116,
+      "total": 0.00326708285138011
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 210,
+    "energies": [
+      -2.081436679936842
+    ],
+    "hamiltonian_sha256": "7b6461a87327552959d38a8cb317c6e212c45888deb4bacc05fda94657bdb2bf",
+    "label": {
+      "chi": 0.721253090443582,
+      "geometry": "effective-two-lead",
+      "setting": "L4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12156227260138329
+      ],
+      "impurity_charge": [
+        0.999999999999998
+      ],
+      "impurity_spin_z": [
+        0.3408689744541499
+      ],
+      "phase_derivative": [
+        -0.03288929497624948
+      ],
+      "rho_ws_derivative": [
+        0.8144253676941392
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 8,
+    "qp_weights": [
+      [
+        0.6968802365323047,
+        0.23659121550412643,
+        0.05954167350625633,
+        0.006518321048183072,
+        0.0004532442801683076,
+        1.5005788604719203e-05,
+        3.0046689084519397e-07,
+        2.861853587879128e-09,
+        1.1611423299543094e-11
+      ]
+    ],
+    "residuals": [
+      2.1191230778969396e-14
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 5.187513306736946e-05,
+      "diagonalization": 0.0024031251668930054,
+      "hamiltonian": 0.00018445774912834167,
+      "observables_and_residuals": 0.0003505419008433819,
+      "total": 0.0030509158968925476
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 252,
+    "energies": [
+      -2.0810985488667555
+    ],
+    "hamiltonian_sha256": "6d32f45ee51e991da7d9bffe03f882810ed74ae930d8dc4d8d438a5a8c5a3cb2",
+    "label": {
+      "chi": 0.7247485351001138,
+      "geometry": "effective-two-lead",
+      "setting": "L4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.24050635431216527
+      ],
+      "impurity_charge": [
+        1.0000000000000027
+      ],
+      "impurity_spin_z": [
+        8.998267450915787e-17
+      ],
+      "phase_derivative": [
+        0.13976215036447512
+      ],
+      "rho_ws_derivative": [
+        -8.118798938633555e-15
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 8,
+    "qp_weights": [
+      [
+        0.3684618328065612,
+        0.5051167942879103,
+        0.11181096634275217,
+        0.013845762139899192,
+        0.0007394996134276014,
+        2.4731353176467368e-05,
+        4.098508570294495e-07,
+        3.5946863281593243e-09,
+        1.0728074038667598e-11
+      ]
+    ],
+    "residuals": [
+      9.866941204853882e-14
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 5.945935845375061e-05,
+      "diagonalization": 0.002547125332057476,
+      "hamiltonian": 0.00022120820358395576,
+      "observables_and_residuals": 0.0004024580121040344,
+      "total": 0.0032903747633099556
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 210,
+    "energies": [
+      -2.0811037640892365
+    ],
+    "hamiltonian_sha256": "6d32f45ee51e991da7d9bffe03f882810ed74ae930d8dc4d8d438a5a8c5a3cb2",
+    "label": {
+      "chi": 0.7247485351001138,
+      "geometry": "effective-two-lead",
+      "setting": "L4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.1215144880437189
+      ],
+      "impurity_charge": [
+        1.0000000000000009
+      ],
+      "impurity_spin_z": [
+        0.3409758673756875
+      ],
+      "phase_derivative": [
+        -0.032908051457993
+      ],
+      "rho_ws_derivative": [
+        0.8147403500640673
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 8,
+    "qp_weights": [
+      [
+        0.6970653038673785,
+        0.23650769325500348,
+        0.059453370360395295,
+        0.0065063243707029865,
+        0.0004520504209097641,
+        1.4955613486765991e-05,
+        2.992523377232064e-07,
+        2.848244428677057e-09,
+        1.154214983032639e-11
+      ]
+    ],
+    "residuals": [
+      2.1631367184190655e-14
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 5.04576601088047e-05,
+      "diagonalization": 0.0024025412276387215,
+      "hamiltonian": 0.00018337508663535118,
+      "observables_and_residuals": 0.00034341588616371155,
+      "total": 0.003041540738195181
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 252,
+    "energies": [
+      -2.081102769947943
+    ],
+    "hamiltonian_sha256": "7a9f7057f1891c38dc30dff75b9cde4fad863fde33d08ed1e6025799eeda90c3",
+    "label": {
+      "chi": 0.7247589398670959,
+      "geometry": "effective-two-lead",
+      "setting": "L4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.24050644315376313
+      ],
+      "impurity_charge": [
+        1.0000000000000029
+      ],
+      "impurity_spin_z": [
+        1.116682935389896e-16
+      ],
+      "phase_derivative": [
+        0.13975960186666117
+      ],
+      "rho_ws_derivative": [
+        -8.508161472721914e-15
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 8,
+    "qp_weights": [
+      [
+        0.3684622092058533,
+        0.5051167155482454,
+        0.11181077677033009,
+        0.013845663634100992,
+        0.0007394904790797438,
+        2.4730915547462112e-05,
+        4.0984153359506973e-07,
+        3.5945827529848038e-09,
+        1.0727682974440043e-11
+      ]
+    ],
+    "residuals": [
+      1.0114820253735929e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 5.754223093390465e-05,
+      "diagonalization": 0.0025992500595748425,
+      "hamiltonian": 0.00022429181262850761,
+      "observables_and_residuals": 0.0004071248695254326,
+      "total": 0.003347332589328289
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 210,
+    "energies": [
+      -2.0811027701940357
+    ],
+    "hamiltonian_sha256": "7a9f7057f1891c38dc30dff75b9cde4fad863fde33d08ed1e6025799eeda90c3",
+    "label": {
+      "chi": 0.7247589398670959,
+      "geometry": "effective-two-lead",
+      "setting": "L4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12151434528758209
+      ],
+      "impurity_charge": [
+        1.0000000000000002
+      ],
+      "impurity_spin_z": [
+        0.34097618673054647
+      ],
+      "phase_derivative": [
+        -0.032908102451931154
+      ],
+      "rho_ws_derivative": [
+        0.8147411663617723
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 8,
+    "qp_weights": [
+      [
+        0.697065856822922,
+        0.2365074437511661,
+        0.059453106486077156,
+        0.006506288512065655,
+        0.0004520468555809331,
+        1.4955463728306753e-05,
+        2.9924871409215827e-07,
+        2.8482038374290018e-09,
+        1.1541943291529044e-11
+      ]
+    ],
+    "residuals": [
+      1.8674375962625463e-14
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 4.987465217709541e-05,
+      "diagonalization": 0.0024103750474750996,
+      "hamiltonian": 0.0001797908917069435,
+      "observables_and_residuals": 0.0003566252999007702,
+      "total": 0.0030577913857996464
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 252,
+    "energies": [
+      -2.081102810516617
+    ],
+    "hamiltonian_sha256": "b25aef5634fbcda4509276bf18e3eb13227a27475f15bb09e9712ae7e90f16df",
+    "label": {
+      "chi": 0.7247590398670962,
+      "geometry": "effective-two-lead",
+      "setting": "L4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.24050644400761473
+      ],
+      "impurity_charge": [
+        1.0000000000000002
+      ],
+      "impurity_spin_z": [
+        3.5691161583215514e-16
+      ],
+      "phase_derivative": [
+        0.1397595773728379
+      ],
+      "rho_ws_derivative": [
+        -9.21525090881588e-15
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 8,
+    "qp_weights": [
+      [
+        0.3684622128234137,
+        0.5051167147914833,
+        0.11181077494835462,
+        0.013845662687364448,
+        0.0007394903912899596,
+        2.473091134143732e-05,
+        4.098414439881842e-07,
+        3.5945817575400503e-09,
+        1.0727679215737214e-11
+      ]
+    ],
+    "residuals": [
+      9.756568245668941e-14
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 5.837529897689819e-05,
+      "diagonalization": 0.0025119585916399956,
+      "hamiltonian": 0.00022337492555379868,
+      "observables_and_residuals": 0.0004175412468612194,
+      "total": 0.0032720412127673626
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 210,
+    "energies": [
+      -2.08110276064164
+    ],
+    "hamiltonian_sha256": "b25aef5634fbcda4509276bf18e3eb13227a27475f15bb09e9712ae7e90f16df",
+    "label": {
+      "chi": 0.7247590398670962,
+      "geometry": "effective-two-lead",
+      "setting": "L4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12151434391554038
+      ],
+      "impurity_charge": [
+        0.999999999999999
+      ],
+      "impurity_spin_z": [
+        0.34097618979989336
+      ],
+      "phase_derivative": [
+        -0.032908102941892566
+      ],
+      "rho_ws_derivative": [
+        0.8147411742036654
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 8,
+    "qp_weights": [
+      [
+        0.697065862137426,
+        0.23650744135316368,
+        0.05945310394995671,
+        0.0065062881674246955,
+        0.00045204682131429755,
+        1.4955462288969009e-05,
+        2.992486792652803e-07,
+        2.848203447302245e-09,
+        1.1541941307096697e-11
+      ]
+    ],
+    "residuals": [
+      2.4777816202029267e-14
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 5.1165930926799774e-05,
+      "diagonalization": 0.002381458878517151,
+      "hamiltonian": 0.00018787477165460587,
+      "observables_and_residuals": 0.00036012521013617516,
+      "total": 0.003042208030819893
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 252,
+    "energies": [
+      -2.079577169844278
+    ],
+    "hamiltonian_sha256": "beb7117c453df53cf03e011a4de27767f4ab2fb4db0d3f19a3ddfd1cd12305de",
+    "label": {
+      "chi": 0.721,
+      "geometry": "effective-two-lead",
+      "setting": "L4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.24047431909407263
+      ],
+      "impurity_charge": [
+        1.0
+      ],
+      "impurity_spin_z": [
+        4.937391942142338e-16
+      ],
+      "phase_derivative": [
+        0.1406767911260874
+      ],
+      "rho_ws_derivative": [
+        -1.1810461736709463e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 8,
+    "qp_weights": [
+      [
+        0.36832615162449023,
+        0.5051452093354556,
+        0.11187927971753842,
+        0.013881259574051752,
+        0.0007427936181253649,
+        2.4889270237446985e-05,
+        4.1321711920338317e-07,
+        3.6321099058707346e-09,
+        1.0869522358527958e-11
+      ]
+    ],
+    "residuals": [
+      1.0590517133160498e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 5.9042125940322876e-05,
+      "diagonalization": 0.0026469998992979527,
+      "hamiltonian": 0.00023787515237927437,
+      "observables_and_residuals": 0.00041062477976083755,
+      "total": 0.003418208099901676
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 210,
+    "energies": [
+      -2.081460709205577
+    ],
+    "hamiltonian_sha256": "beb7117c453df53cf03e011a4de27767f4ab2fb4db0d3f19a3ddfd1cd12305de",
+    "label": {
+      "chi": 0.721,
+      "geometry": "effective-two-lead",
+      "setting": "L4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12156571904987087
+      ],
+      "impurity_charge": [
+        1.0000000000000024
+      ],
+      "impurity_spin_z": [
+        0.34086126516039844
+      ],
+      "phase_derivative": [
+        -0.03288781195173314
+      ],
+      "rho_ws_derivative": [
+        0.814399427509724
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 8,
+    "qp_weights": [
+      [
+        0.6968668903502647,
+        0.2365972400013691,
+        0.05954804056270313,
+        0.0065191858244608965,
+        0.00045333042106151893,
+        1.5009411074851433e-05,
+        3.0055461521444507e-07,
+        2.8628368510437487e-09,
+        1.1616430360861677e-11
+      ]
+    ],
+    "residuals": [
+      1.8734584463459355e-14
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 5.170796066522598e-05,
+      "diagonalization": 0.0023785834200680256,
+      "hamiltonian": 0.00018812529742717743,
+      "observables_and_residuals": 0.00035299966111779213,
+      "total": 0.0030349157750606537
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 3432,
+    "energies": [
+      -2.724453154311928
+    ],
+    "hamiltonian_sha256": "f8ab13dcf9bfb5be9e7750993b4531ad8dddeafc0c1a159d088043a1a50a199f",
+    "label": {
+      "chi": 0.5,
+      "geometry": "effective-two-lead",
+      "setting": "L6"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.2376984444057387
+      ],
+      "impurity_charge": [
+        1.0000000000000024
+      ],
+      "impurity_spin_z": [
+        3.236289638007835e-16
+      ],
+      "phase_derivative": [
+        0.18407656836568018
+      ],
+      "rho_ws_derivative": [
+        2.5810148785867143e-13
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 12,
+    "qp_weights": [
+      [
+        0.35676883414019034,
+        0.5079627948809522,
+        0.1175719568376018,
+        0.01659773001542329,
+        0.0010551325474504503,
+        4.257219735821331e-05,
+        9.651629199421233e-07,
+        1.4094106057033719e-08,
+        1.2330835280632704e-10,
+        6.853586611225718e-13,
+        2.2016286269015935e-15,
+        3.881588431842891e-18,
+        2.665797670677287e-21
+      ]
+    ],
+    "residuals": [
+      1.862313441552441e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.00019849976524710655,
+      "diagonalization": 0.024121541064232588,
+      "hamiltonian": 0.0018887906335294247,
+      "observables_and_residuals": 0.006113000214099884,
+      "total": 0.03244333295151591
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 3003,
+    "energies": [
+      -2.8348710332774485
+    ],
+    "hamiltonian_sha256": "f8ab13dcf9bfb5be9e7750993b4531ad8dddeafc0c1a159d088043a1a50a199f",
+    "label": {
+      "chi": 0.5,
+      "geometry": "effective-two-lead",
+      "setting": "L6"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12402028591653644
+      ],
+      "impurity_charge": [
+        0.999999999999999
+      ],
+      "impurity_spin_z": [
+        0.3358895597472501
+      ],
+      "phase_derivative": [
+        -0.027342238600282242
+      ],
+      "rho_ws_derivative": [
+        0.6769939232119653
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 12,
+    "qp_weights": [
+      [
+        0.6880412633294076,
+        0.24093878325796056,
+        0.06340705594580737,
+        0.007082858730418541,
+        0.0005106590161977224,
+        1.8923493046987008e-05,
+        4.4981699090284673e-07,
+        6.351321582477615e-09,
+        5.852147181024555e-11,
+        3.2593671462001276e-13,
+        1.118427400252296e-15,
+        2.051731020318278e-18,
+        1.6398501983381837e-21
+      ]
+    ],
+    "residuals": [
+      9.963524934054712e-14
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.0001704581081867218,
+      "diagonalization": 0.022622999735176563,
+      "hamiltonian": 0.001583792269229889,
+      "observables_and_residuals": 0.0068716248497366905,
+      "total": 0.03137533273547888
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 3432,
+    "energies": [
+      -2.906104052616198
+    ],
+    "hamiltonian_sha256": "0e1c014157fc4dfa2887cc63a1948fc2b9af1c06b6ab7b5baaa681bd7647a5c2",
+    "label": {
+      "chi": 0.95,
+      "geometry": "effective-two-lead",
+      "setting": "L6"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.2421210872733539
+      ],
+      "impurity_charge": [
+        0.9999999999999949
+      ],
+      "impurity_spin_z": [
+        -5.4468990802937e-15
+      ],
+      "phase_derivative": [
+        0.06002732517295259
+      ],
+      "rho_ws_derivative": [
+        1.7640266275511598e-15
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 12,
+    "qp_weights": [
+      [
+        0.37489132883377546,
+        0.5036416047019335,
+        0.10873066084850537,
+        0.012096034228245374,
+        0.0006198067903628704,
+        2.0181985403996135e-05,
+        3.7804136508355153e-07,
+        4.5375556647045164e-09,
+        3.27007263795648e-11,
+        1.487677975442292e-13,
+        3.859247499733448e-16,
+        5.30537025347142e-19,
+        2.6732208850214516e-22
+      ]
+    ],
+    "residuals": [
+      3.955476154513909e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.0001771249808371067,
+      "diagonalization": 0.023368125315755606,
+      "hamiltonian": 0.001657374668866396,
+      "observables_and_residuals": 0.006152250338345766,
+      "total": 0.03147120866924524
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 3003,
+    "energies": [
+      -2.7905129066360628
+    ],
+    "hamiltonian_sha256": "0e1c014157fc4dfa2887cc63a1948fc2b9af1c06b6ab7b5baaa681bd7647a5c2",
+    "label": {
+      "chi": 0.95,
+      "geometry": "effective-two-lead",
+      "setting": "L6"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.11709815642365246
+      ],
+      "impurity_charge": [
+        0.999999999999996
+      ],
+      "impurity_spin_z": [
+        0.35155494023731293
+      ],
+      "phase_derivative": [
+        -0.021795538646891283
+      ],
+      "rho_ws_derivative": [
+        0.5229312677313316
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 12,
+    "qp_weights": [
+      [
+        0.7154631145318501,
+        0.2290522668816331,
+        0.05001755697740446,
+        0.005133361770514203,
+        0.0003227863690780137,
+        1.0681225565820928e-05,
+        2.2924924004407815e-07,
+        2.9694662139004183e-09,
+        2.51184947773651e-11,
+        1.2873560788132896e-13,
+        4.0525767856525077e-16,
+        6.725378878446183e-19,
+        4.629346712435612e-22
+      ]
+    ],
+    "residuals": [
+      8.541690897196235e-14
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.00017191702499985695,
+      "diagonalization": 0.02137783309444785,
+      "hamiltonian": 0.0013735000975430012,
+      "observables_and_residuals": 0.005181584041565657,
+      "total": 0.028235208243131638
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 3432,
+    "energies": [
+      -2.8154775250736095
+    ],
+    "hamiltonian_sha256": "5f87bb00d24c8d5bc0de8b1e8a87fccb90aecc4ce0beb878c253b056e29c7df9",
+    "label": {
+      "chi": 0.7198498292111642,
+      "geometry": "effective-two-lead",
+      "setting": "L6"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.23999006672393686
+      ],
+      "impurity_charge": [
+        0.9999999999999888
+      ],
+      "impurity_spin_z": [
+        -5.731086623732987e-15
+      ],
+      "phase_derivative": [
+        0.1400653384971936
+      ],
+      "rho_ws_derivative": [
+        8.49376779509122e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 12,
+    "qp_weights": [
+      [
+        0.36599019400679095,
+        0.5056361980547461,
+        0.113159955718458,
+        0.014353099663282687,
+        0.0008293420671981214,
+        3.0560153114776634e-05,
+        6.415848495690755e-07,
+        8.68060640775481e-09,
+        7.058591770005262e-11,
+        3.6466807418874463e-13,
+        1.0863832782789409e-15,
+        1.7589634693774637e-18,
+        1.0884391521542733e-21
+      ]
+    ],
+    "residuals": [
+      8.083710513880905e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.0001809578388929367,
+      "diagonalization": 0.023136625066399574,
+      "hamiltonian": 0.001810166984796524,
+      "observables_and_residuals": 0.005918041802942753,
+      "total": 0.03116445802152157
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 3003,
+    "energies": [
+      -2.8174423392461927
+    ],
+    "hamiltonian_sha256": "5f87bb00d24c8d5bc0de8b1e8a87fccb90aecc4ce0beb878c253b056e29c7df9",
+    "label": {
+      "chi": 0.7198498292111642,
+      "geometry": "effective-two-lead",
+      "setting": "L6"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12147635170021881
+      ],
+      "impurity_charge": [
+        0.9999999999999992
+      ],
+      "impurity_spin_z": [
+        0.34162261948632366
+      ],
+      "phase_derivative": [
+        -0.03343964724390607
+      ],
+      "rho_ws_derivative": [
+        0.817840065629957
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 12,
+    "qp_weights": [
+      [
+        0.6979997231587357,
+        0.23653789373719492,
+        0.05860738858680992,
+        0.006399130589208259,
+        0.00043982484863609104,
+        1.5674133708462623e-05,
+        3.5996111214426857e-07,
+        4.94008701940924e-09,
+        4.4267485315647425e-11,
+        2.4013649804622244e-13,
+        8.025927678204144e-16,
+        1.429997253372445e-18,
+        1.0965269654152016e-21
+      ]
+    ],
+    "residuals": [
+      9.990635913298909e-14
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.00015449989587068558,
+      "diagonalization": 0.021368167363107204,
+      "hamiltonian": 0.0014301249757409096,
+      "observables_and_residuals": 0.00538312504068017,
+      "total": 0.028457915876060724
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 3432,
+    "energies": [
+      -2.817057376801757
+    ],
+    "hamiltonian_sha256": "8ade1873e511e01c8dad8bf420769d01de23633b615e21b073233665530867f9",
+    "label": {
+      "chi": 0.7237662171261444,
+      "geometry": "effective-two-lead",
+      "setting": "L6"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.24002845027253478
+      ],
+      "impurity_charge": [
+        0.9999999999999878
+      ],
+      "impurity_spin_z": [
+        -9.741774432727506e-15
+      ],
+      "phase_derivative": [
+        0.13911981020047193
+      ],
+      "rho_ws_derivative": [
+        9.952840793005085e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 12,
+    "qp_weights": [
+      [
+        0.36614768734769965,
+        0.5055988255125794,
+        0.11308302318661681,
+        0.014313900057889857,
+        0.0008255534629390112,
+        3.0365286464068725e-05,
+        6.364780218851639e-07,
+        8.597624813777973e-09,
+        6.980137936977192e-11,
+        3.6003980463342684e-13,
+        1.0708040666429908e-15,
+        1.7304332186835698e-18,
+        1.0682683327516134e-21
+      ]
+    ],
+    "residuals": [
+      8.221291940131361e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.00019020913168787956,
+      "diagonalization": 0.02592916740104556,
+      "hamiltonian": 0.0016227923333644867,
+      "observables_and_residuals": 0.006047584116458893,
+      "total": 0.0339128328487277
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 3003,
+    "energies": [
+      -2.817063726826311
+    ],
+    "hamiltonian_sha256": "8ade1873e511e01c8dad8bf420769d01de23633b615e21b073233665530867f9",
+    "label": {
+      "chi": 0.7237662171261444,
+      "geometry": "effective-two-lead",
+      "setting": "L6"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12141871550770048
+      ],
+      "impurity_charge": [
+        0.9999999999999986
+      ],
+      "impurity_spin_z": [
+        0.34175285410875356
+      ],
+      "phase_derivative": [
+        -0.03346661922712304
+      ],
+      "rho_ws_derivative": [
+        0.8182801824312326
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 12,
+    "qp_weights": [
+      [
+        0.6982270639277645,
+        0.2364386534696336,
+        0.058496899649574496,
+        0.006383168841014749,
+        0.0004382473075104595,
+        1.5603793909005553e-05,
+        3.580557745477404e-07,
+        4.910604217344688e-09,
+        4.397377785678608e-11,
+        2.383895413773458e-13,
+        7.962319385222601e-16,
+        1.417613354146122e-18,
+        1.0858713192373893e-21
+      ]
+    ],
+    "residuals": [
+      9.01016044793082e-14
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.00016316678375005722,
+      "diagonalization": 0.020824083127081394,
+      "hamiltonian": 0.001393957994878292,
+      "observables_and_residuals": 0.005270917434245348,
+      "total": 0.0277791665866971
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 3432,
+    "energies": [
+      -2.817062495169114
+    ],
+    "hamiltonian_sha256": "f11a7de4a1d8d32c758f2329727e36d30ae2f06b9e4bade2d1b73fec644e9950",
+    "label": {
+      "chi": 0.7237789108974011,
+      "geometry": "effective-two-lead",
+      "setting": "L6"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.24002857455274607
+      ],
+      "impurity_charge": [
+        0.9999999999999916
+      ],
+      "impurity_spin_z": [
+        -6.674783350213514e-15
+      ],
+      "phase_derivative": [
+        0.1391167332536094
+      ],
+      "rho_ws_derivative": [
+        8.537303607062461e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 12,
+    "qp_weights": [
+      [
+        0.366148197453481,
+        0.5055987045916706,
+        0.11308277392444344,
+        0.014313773049190726,
+        0.0008255411962708762,
+        3.0364655921759354e-05,
+        6.364615058801035e-07,
+        8.597356588047677e-09,
+        6.979884485577114e-11,
+        3.6002486112936924e-13,
+        1.0707537961294581e-15,
+        1.7303412111091135e-18,
+        1.068198066038077e-21
+      ]
+    ],
+    "residuals": [
+      8.082855122750669e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.0001871669664978981,
+      "diagonalization": 0.02494774991646409,
+      "hamiltonian": 0.0017962921410799026,
+      "observables_and_residuals": 0.006051000207662582,
+      "total": 0.0331110842525959
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 3003,
+    "energies": [
+      -2.81706249553834
+    ],
+    "hamiltonian_sha256": "f11a7de4a1d8d32c758f2329727e36d30ae2f06b9e4bade2d1b73fec644e9950",
+    "label": {
+      "chi": 0.7237789108974011,
+      "geometry": "effective-two-lead",
+      "setting": "L6"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12141852789735638
+      ],
+      "impurity_charge": [
+        0.9999999999999998
+      ],
+      "impurity_spin_z": [
+        0.3417532780566861
+      ],
+      "phase_derivative": [
+        -0.03346670004126118
+      ],
+      "rho_ws_derivative": [
+        0.8182814444539975
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 12,
+    "qp_weights": [
+      [
+        0.6982278040589283,
+        0.2364383304671838,
+        0.05849653987849276,
+        0.006383116851613769,
+        0.00043824217431137294,
+        1.5603565169700698e-05,
+        3.580495813878777e-07,
+        4.910508418017651e-09,
+        4.397282380666663e-11,
+        2.3838386833861856e-13,
+        7.962112874229154e-16,
+        1.4175730495565294e-18,
+        1.0858515755029641e-21
+      ]
+    ],
+    "residuals": [
+      8.987892353418346e-14
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.00016254093497991562,
+      "diagonalization": 0.021974958013743162,
+      "hamiltonian": 0.0018062088638544083,
+      "observables_and_residuals": 0.005059042014181614,
+      "total": 0.02912775008007884
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 3432,
+    "energies": [
+      -2.817062535490922
+    ],
+    "hamiltonian_sha256": "08fa500304c96ac525e2f5fb3d98ec924ebf98fbfb2e702ab2a57d3b1a8e6a0e",
+    "label": {
+      "chi": 0.7237790108974014,
+      "geometry": "effective-two-lead",
+      "setting": "L6"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.24002857553180598
+      ],
+      "impurity_charge": [
+        0.9999999999999887
+      ],
+      "impurity_spin_z": [
+        -7.077239196827666e-15
+      ],
+      "phase_derivative": [
+        0.13911670901347467
+      ],
+      "rho_ws_derivative": [
+        9.031352830995836e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 12,
+    "qp_weights": [
+      [
+        0.36614820147202215,
+        0.505598703639075,
+        0.11308277196078798,
+        0.014313772048632607,
+        0.0008255410996358724,
+        3.036465095444941e-05,
+        6.364613757698823e-07,
+        8.59735447503793e-09,
+        6.979882489033064e-11,
+        3.6002474347335294e-13,
+        1.0707534017040069e-15,
+        1.730340379833538e-18,
+        1.068179806703473e-21
+      ]
+    ],
+    "residuals": [
+      8.167308176788817e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.0001848330721259117,
+      "diagonalization": 0.02643074980005622,
+      "hamiltonian": 0.0018192087300121784,
+      "observables_and_residuals": 0.006118458230048418,
+      "total": 0.03468758426606655
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 3003,
+    "energies": [
+      -2.8170624858382984
+    ],
+    "hamiltonian_sha256": "08fa500304c96ac525e2f5fb3d98ec924ebf98fbfb2e702ab2a57d3b1a8e6a0e",
+    "label": {
+      "chi": 0.7237790108974014,
+      "geometry": "effective-two-lead",
+      "setting": "L6"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12141852641936393
+      ],
+      "impurity_charge": [
+        0.999999999999999
+      ],
+      "impurity_spin_z": [
+        0.3417532813965438
+      ],
+      "phase_derivative": [
+        -0.03346670067773418
+      ],
+      "rho_ws_derivative": [
+        0.818281454391838
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 12,
+    "qp_weights": [
+      [
+        0.698227809889676,
+        0.2364383279225743,
+        0.05849653704421729,
+        0.006383116442041103,
+        0.0004382421338721241,
+        1.56035633676986e-05,
+        3.580495325983047e-07,
+        4.910507663310656e-09,
+        4.39728162906945e-11,
+        2.383838236246777e-13,
+        7.962111261435579e-16,
+        1.417572868265568e-18,
+        1.0858414905274174e-21
+      ]
+    ],
+    "residuals": [
+      9.698323510282048e-14
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.00016129203140735626,
+      "diagonalization": 0.022456541191786528,
+      "hamiltonian": 0.0013862503692507744,
+      "observables_and_residuals": 0.0053864168003201485,
+      "total": 0.029515833128243685
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 3432,
+    "energies": [
+      -2.8159416412030445
+    ],
+    "hamiltonian_sha256": "b26bcfb5e970dbf9cb084a535c4f044798fcac0bafd34e1c28659b0215b2e83e",
+    "label": {
+      "chi": 0.721,
+      "geometry": "effective-two-lead",
+      "setting": "L6"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.24000134745532145
+      ],
+      "impurity_charge": [
+        0.99999999999999
+      ],
+      "impurity_spin_z": [
+        -1.0286472573940506e-14
+      ],
+      "phase_derivative": [
+        0.13978843570928187
+      ],
+      "rho_ws_derivative": [
+        1.1013718919844269e-13
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 12,
+    "qp_weights": [
+      [
+        0.36603646991483163,
+        0.5056252089712376,
+        0.11313735624382448,
+        0.014341584604707578,
+        0.0008282285988832236,
+        3.050285684915478e-05,
+        6.400827576406653e-07,
+        8.65618941791512e-09,
+        7.035498174209619e-11,
+        3.633051593560577e-13,
+        1.0817936283530646e-15,
+        1.7505542877043444e-18,
+        1.0824975841209306e-21
+      ]
+    ],
+    "residuals": [
+      8.155595074576994e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.00018137507140636444,
+      "diagonalization": 0.02552704093977809,
+      "hamiltonian": 0.0017681252211332321,
+      "observables_and_residuals": 0.006093250121921301,
+      "total": 0.03369049960747361
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 3003,
+    "energies": [
+      -2.817331411119165
+    ],
+    "hamiltonian_sha256": "b26bcfb5e970dbf9cb084a535c4f044798fcac0bafd34e1c28659b0215b2e83e",
+    "label": {
+      "chi": 0.721,
+      "geometry": "effective-two-lead",
+      "setting": "L6"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.1214594759732368
+      ],
+      "impurity_charge": [
+        1.000000000000004
+      ],
+      "impurity_spin_z": [
+        0.3416607503227345
+      ],
+      "phase_derivative": [
+        -0.03344798768648076
+      ],
+      "rho_ws_derivative": [
+        0.8179797597847148
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 12,
+    "qp_weights": [
+      [
+        0.6980662803889875,
+        0.23650883438770354,
+        0.05857504538462136,
+        0.006394459102793928,
+        0.0004393628330681623,
+        1.5653524290354862e-05,
+        3.594026716808967e-07,
+        4.931443773331836e-09,
+        4.4181362196923264e-11,
+        2.3962414262930953e-13,
+        8.007269023782e-16,
+        1.4263637870088188e-18,
+        1.0934150586433574e-21
+      ]
+    ],
+    "residuals": [
+      1.0111333078818017e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.00016533304005861282,
+      "diagonalization": 0.022474791388958693,
+      "hamiltonian": 0.0015108338557183743,
+      "observables_and_residuals": 0.005261625163257122,
+      "total": 0.029546292033046484
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 48620,
+    "energies": [
+      -3.0802232894908963
+    ],
+    "hamiltonian_sha256": "2df3479e071066cac67cbdeee5ec50ca2f18da4760612c33cdb855067f1f66ed",
+    "label": {
+      "chi": 0.5,
+      "geometry": "effective-two-lead",
+      "setting": "L8"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.2374269242725106
+      ],
+      "impurity_charge": [
+        1.0000000000000178
+      ],
+      "impurity_spin_z": [
+        4.253541963095133e-15
+      ],
+      "phase_derivative": [
+        0.18368757649239442
+      ],
+      "rho_ws_derivative": [
+        -2.2426505097436073e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.35583650781581017,
+        0.5083722763735331,
+        0.11794182039511246,
+        0.01672971818536024,
+        0.0010744858180116884,
+        4.4141068612361096e-05,
+        1.0343647118451265e-06,
+        1.5826518186039953e-08,
+        1.5135225113446078e-10,
+        9.738651585898427e-13,
+        4.075340934348028e-15,
+        1.1476147915763557e-17,
+        2.0929913750019442e-20,
+        2.4770531346134404e-23,
+        1.7593995798382314e-26,
+        7.055524427650379e-30,
+        1.5587643041327247e-31
+      ]
+    ],
+    "residuals": [
+      7.156988203766528e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.0013439576141536236,
+      "diagonalization": 0.7184551670216024,
+      "hamiltonian": 0.03599279094487429,
+      "observables_and_residuals": 0.11998629197478294,
+      "total": 0.8760098749771714
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 43758,
+    "energies": [
+      -3.1904174857144576
+    ],
+    "hamiltonian_sha256": "2df3479e071066cac67cbdeee5ec50ca2f18da4760612c33cdb855067f1f66ed",
+    "label": {
+      "chi": 0.5,
+      "geometry": "effective-two-lead",
+      "setting": "L8"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.1240022748238507
+      ],
+      "impurity_charge": [
+        0.9999999999999987
+      ],
+      "impurity_spin_z": [
+        0.33599137961454595
+      ],
+      "phase_derivative": [
+        -0.02740495473815109
+      ],
+      "rho_ws_derivative": [
+        0.67714034797787
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.6882076648164357,
+        0.24092355305703034,
+        0.06327949991068232,
+        0.0070621553244427735,
+        0.0005078362378933793,
+        1.8834745297390033e-05,
+        4.493240384269989e-07,
+        6.520538125017844e-09,
+        6.324824682738487e-11,
+        3.945757848607851e-13,
+        1.6699288098407786e-15,
+        4.645480041065101e-18,
+        8.667219575636151e-21,
+        1.032535986309724e-23,
+        7.713645296655166e-27,
+        3.446694908378502e-30,
+        1.4932560550315011e-34
+      ]
+    ],
+    "residuals": [
+      7.2756419239989e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.0012558340094983578,
+      "diagonalization": 0.6072297496721148,
+      "hamiltonian": 0.023590749595314264,
+      "observables_and_residuals": 0.14955125004053116,
+      "total": 0.7819370841607451
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 48620,
+    "energies": [
+      -3.261575953905132
+    ],
+    "hamiltonian_sha256": "60a11a5f6ff8bed3546b3ac8cdafd95d286ac595322f97690c75983ffdbbf472",
+    "label": {
+      "chi": 0.95,
+      "geometry": "effective-two-lead",
+      "setting": "L8"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.24204656980669542
+      ],
+      "impurity_charge": [
+        0.9999999999999867
+      ],
+      "impurity_spin_z": [
+        -2.0171364578658313e-14
+      ],
+      "phase_derivative": [
+        0.059956720562602775
+      ],
+      "rho_ws_derivative": [
+        6.439293542825855e-15
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.37458484073870385,
+        0.5037399469488484,
+        0.10888000582644587,
+        0.012146127570334033,
+        0.0006278897055998704,
+        2.0780762729920023e-05,
+        4.0330193915465314e-07,
+        5.1044654159736766e-09,
+        4.07149605592091e-11,
+        2.1923512986723992e-13,
+        7.717658988532668e-16,
+        1.8244698152172576e-18,
+        2.7848486506100837e-21,
+        2.734423913817149e-24,
+        1.5712701880155843e-27,
+        1.6924605261772942e-30,
+        1.0170772794916956e-30
+      ]
+    ],
+    "residuals": [
+      2.5538712136354486e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.0013968339189887047,
+      "diagonalization": 0.7546989168040454,
+      "hamiltonian": 0.033810915891081095,
+      "observables_and_residuals": 0.17267666617408395,
+      "total": 0.9628130830824375
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 43758,
+    "energies": [
+      -3.145843512667597
+    ],
+    "hamiltonian_sha256": "60a11a5f6ff8bed3546b3ac8cdafd95d286ac595322f97690c75983ffdbbf472",
+    "label": {
+      "chi": 0.95,
+      "geometry": "effective-two-lead",
+      "setting": "L8"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.11690060467883055
+      ],
+      "impurity_charge": [
+        0.9999999999999996
+      ],
+      "impurity_spin_z": [
+        0.35212465842616847
+      ],
+      "phase_derivative": [
+        -0.02196827548531596
+      ],
+      "rho_ws_derivative": [
+        0.5243962842670478
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.7165337115962759,
+        0.22879132618504947,
+        0.0493558382778038,
+        0.004999800055434657,
+        0.0003090278825798708,
+        1.0080339321070177e-05,
+        2.1286136012473222e-07,
+        2.7777179713919626e-09,
+        2.4319570174706077e-11,
+        1.3813750318979305e-13,
+        5.356232536650039e-16,
+        1.3734753297682974e-18,
+        2.367031492968566e-21,
+        2.608366642565052e-24,
+        1.7976812576151405e-27,
+        9.228451240875877e-31,
+        2.4662091883652875e-32
+      ]
+    ],
+    "residuals": [
+      7.420056588430281e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.001174124889075756,
+      "diagonalization": 0.7778427498415112,
+      "hamiltonian": 0.0324409999884665,
+      "observables_and_residuals": 0.14613020792603493,
+      "total": 0.957818791270256
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 48620,
+    "energies": [
+      -3.1709295629510312
+    ],
+    "hamiltonian_sha256": "4cc70937255c8edcb4a3d3d7a24d87379b2a86e1df3fd4669f4f330816c43be7",
+    "label": {
+      "chi": 0.7194844700822025,
+      "geometry": "effective-two-lead",
+      "setting": "L8"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.23982715641027486
+      ],
+      "impurity_charge": [
+        0.9999999999999887
+      ],
+      "impurity_spin_z": [
+        -5.898059818321137e-16
+      ],
+      "phase_derivative": [
+        0.13992333037775134
+      ],
+      "rho_ws_derivative": [
+        8.215650382221881e-15
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.36540095700033987,
+        0.50587309943394,
+        0.11341011343277731,
+        0.014440991105530218,
+        0.0008425563520734833,
+        3.158689519398286e-05,
+        6.859483967848392e-07,
+        9.744252710379168e-09,
+        8.697117712597177e-11,
+        5.24024708798531e-13,
+        2.061146919759565e-15,
+        5.4590052599236615e-18,
+        9.36593351321704e-21,
+        1.0410472823340253e-23,
+        6.906547302941938e-27,
+        2.4324027805735402e-30,
+        1.1647602353795283e-31
+      ]
+    ],
+    "residuals": [
+      6.659328593506608e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.0014782501384615898,
+      "diagonalization": 0.8347485410049558,
+      "hamiltonian": 0.03635537484660745,
+      "observables_and_residuals": 0.16079483414068818,
+      "total": 1.0337082911282778
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 43758,
+    "energies": [
+      -3.172968425528718
+    ],
+    "hamiltonian_sha256": "4cc70937255c8edcb4a3d3d7a24d87379b2a86e1df3fd4669f4f330816c43be7",
+    "label": {
+      "chi": 0.7194844700822025,
+      "geometry": "effective-two-lead",
+      "setting": "L8"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12141512874240787
+      ],
+      "impurity_charge": [
+        0.9999999999999931
+      ],
+      "impurity_spin_z": [
+        0.34184063714182905
+      ],
+      "phase_derivative": [
+        -0.03357600995287878
+      ],
+      "rho_ws_derivative": [
+        0.8186044547794085
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.6983932111036029,
+        0.23646721571516677,
+        0.05834243495978891,
+        0.006347617936212599,
+        0.0004337426361757808,
+        1.541886556937433e-05,
+        3.537689196648802e-07,
+        4.967585074533741e-09,
+        4.669190552209404e-11,
+        2.831588776378907e-13,
+        1.1676968987964201e-15,
+        3.1723352605223496e-18,
+        5.785826665650579e-21,
+        6.743798214096106e-24,
+        4.9147940006984866e-27,
+        2.4167509174518874e-30,
+        2.622423155629462e-32
+      ]
+    ],
+    "residuals": [
+      6.176890992802907e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.0015549580566585064,
+      "diagonalization": 0.6317012910731137,
+      "hamiltonian": 0.04209870798513293,
+      "observables_and_residuals": 0.12176475021988153,
+      "total": 0.7973657906986773
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 48620,
+    "energies": [
+      -3.1725671608060404
+    ],
+    "hamiltonian_sha256": "efa886d4b2a4a5b4fb55eaa7f95ffe26a0b146c68e5a2e03dec986615ac18a79",
+    "label": {
+      "chi": 0.723550395808504,
+      "geometry": "effective-two-lead",
+      "setting": "L8"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.23986877036700288
+      ],
+      "impurity_charge": [
+        1.0000000000000315
+      ],
+      "impurity_spin_z": [
+        2.636779683484758e-16
+      ],
+      "phase_derivative": [
+        0.1389450839252333
+      ],
+      "rho_ws_derivative": [
+        -1.9984014443308657e-15
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.36557007132669933,
+        0.5058315130083544,
+        0.11332826722942403,
+        0.014399560732827799,
+        0.000838521839920074,
+        3.1375876687631775e-05,
+        6.802519508277824e-07,
+        9.647640350115726e-09,
+        8.597698084218404e-11,
+        5.172667588976407e-13,
+        2.031684561416776e-15,
+        5.373373323184584e-18,
+        9.205960311219796e-21,
+        1.0217885801875277e-23,
+        6.754645628062284e-27,
+        3.40350758261929e-30,
+        1.1139254692376255e-31
+      ]
+    ],
+    "residuals": [
+      6.937530495372039e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.0013181669637560844,
+      "diagonalization": 0.8645681249909103,
+      "hamiltonian": 0.03467041673138738,
+      "observables_and_residuals": 0.14227375015616417,
+      "total": 1.0430647083558142
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 43758,
+    "energies": [
+      -3.1725739089086216
+    ],
+    "hamiltonian_sha256": "efa886d4b2a4a5b4fb55eaa7f95ffe26a0b146c68e5a2e03dec986615ac18a79",
+    "label": {
+      "chi": 0.723550395808504,
+      "geometry": "effective-two-lead",
+      "setting": "L8"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12135395461713935
+      ],
+      "impurity_charge": [
+        0.9999999999999927
+      ],
+      "impurity_spin_z": [
+        0.3419793609637749
+      ],
+      "phase_derivative": [
+        -0.03360600676133486
+      ],
+      "rho_ws_derivative": [
+        0.8190865054627998
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.6986360431350986,
+        0.2363623877477028,
+        0.05822367880738604,
+        0.006330174964367796,
+        0.0004320171228309106,
+        1.534158816507844e-05,
+        3.516540618467765e-07,
+        4.933770755993885e-09,
+        4.6336888495731795e-11,
+        2.8080129980918343e-13,
+        1.1571946368930787e-15,
+        3.141852221545959e-18,
+        5.726800863723665e-21,
+        6.67135094314615e-24,
+        4.866045749587426e-27,
+        1.875630778078433e-30,
+        3.6689757637795458e-34
+      ]
+    ],
+    "residuals": [
+      8.158792103681564e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.001201624982059002,
+      "diagonalization": 0.5026638749986887,
+      "hamiltonian": 0.02402920788154006,
+      "observables_and_residuals": 0.10034379083663225,
+      "total": 0.6284768339246511
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 48620,
+    "energies": [
+      -3.172572594298439
+    ],
+    "hamiltonian_sha256": "8909bf6f254e04ab9ec809168e0233d67459545cca374332de58b68a6bf429cf",
+    "label": {
+      "chi": 0.7235638924747694,
+      "geometry": "effective-two-lead",
+      "setting": "L8"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.23986890834368196
+      ],
+      "impurity_charge": [
+        1.0000000000000067
+      ],
+      "impurity_spin_z": [
+        -1.2490009027033003e-15
+      ],
+      "phase_derivative": [
+        0.13894182310184933
+      ],
+      "rho_ws_derivative": [
+        2.4091839634361006e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.36557063223950076,
+        0.5058313752229097,
+        0.1133279956659107,
+        0.014399423264413208,
+        0.0008385084628849866,
+        3.13751774836039e-05,
+        6.802330859163344e-07,
+        9.647320576997843e-09,
+        8.597369197585496e-11,
+        5.172444148716458e-13,
+        2.0315871828882806e-15,
+        5.3730903240423945e-18,
+        9.205423147784554e-21,
+        1.0217108208273903e-23,
+        6.763395879703234e-27,
+        2.5404692847127523e-30,
+        5.532458762669749e-32
+      ]
+    ],
+    "residuals": [
+      6.120751271366744e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.001265374943614006,
+      "diagonalization": 0.6695202495902777,
+      "hamiltonian": 0.03134870808571577,
+      "observables_and_residuals": 0.15743708424270153,
+      "total": 0.8597947503440082
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 43758,
+    "energies": [
+      -3.172572594717576
+    ],
+    "hamiltonian_sha256": "8909bf6f254e04ab9ec809168e0233d67459545cca374332de58b68a6bf429cf",
+    "label": {
+      "chi": 0.7235638924747694,
+      "geometry": "effective-two-lead",
+      "setting": "L8"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.1213537506306781
+      ],
+      "impurity_charge": [
+        1.0000000000000027
+      ],
+      "impurity_spin_z": [
+        0.3419798235722751
+      ],
+      "phase_derivative": [
+        -0.03360609905559576
+      ],
+      "rho_ws_derivative": [
+        0.8190879245448855
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.6986368530109424,
+        0.23636203823675342,
+        0.05822328266340388,
+        0.006330116759927486,
+        0.00043201137094448704,
+        1.5341330734189653e-05,
+        3.516470202718724e-07,
+        4.9336582119269435e-09,
+        4.633570732292615e-11,
+        2.8079345838406836e-13,
+        1.1571597093630643e-15,
+        3.1417507475270095e-18,
+        5.726607548897667e-21,
+        6.670961053481983e-24,
+        4.859934404170251e-27,
+        2.090367973548059e-30,
+        1.9301033346407896e-32
+      ]
+    ],
+    "residuals": [
+      6.459225197217178e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.0011559580452740192,
+      "diagonalization": 0.7254845830611885,
+      "hamiltonian": 0.028062791097909212,
+      "observables_and_residuals": 0.1132918749935925,
+      "total": 0.868234165944159
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 48620,
+    "energies": [
+      -3.1725726345563494
+    ],
+    "hamiltonian_sha256": "4cf8b4440fef8c9b401feef28d3e1c09e8b02d0e896988a749e95aa8a8e20a65",
+    "label": {
+      "chi": 0.7235639924747697,
+      "geometry": "effective-two-lead",
+      "setting": "L8"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.2398689093659857
+      ],
+      "impurity_charge": [
+        1.0000000000000202
+      ],
+      "impurity_spin_z": [
+        -9.367506770274748e-16
+      ],
+      "phase_derivative": [
+        0.13894179894129743
+      ],
+      "rho_ws_derivative": [
+        4.4408920984953976e-15
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.3655706363954206,
+        0.5058313742020324,
+        0.11332799365383664,
+        0.014399422245879246,
+        0.0008385083637718259,
+        3.1375172303072516e-05,
+        6.802329461428578e-07,
+        9.647318207729908e-09,
+        8.597366760801269e-11,
+        5.172442494242637e-13,
+        2.03158647211845e-15,
+        5.37308841137361e-18,
+        9.205434351572895e-21,
+        1.0217268015254547e-23,
+        6.760674277886669e-27,
+        3.0504445058079155e-30,
+        5.724495906910502e-32
+      ]
+    ],
+    "residuals": [
+      6.314364225301604e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.0013097496703267097,
+      "diagonalization": 0.7968723331578076,
+      "hamiltonian": 0.03547645779326558,
+      "observables_and_residuals": 0.13773758336901665,
+      "total": 0.9716334166005254
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 43758,
+    "energies": [
+      -3.17257258498033
+    ],
+    "hamiltonian_sha256": "4cf8b4440fef8c9b401feef28d3e1c09e8b02d0e896988a749e95aa8a8e20a65",
+    "label": {
+      "chi": 0.7235639924747697,
+      "geometry": "effective-two-lead",
+      "setting": "L8"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12135374911927127
+      ],
+      "impurity_charge": [
+        1.0000000000000036
+      ],
+      "impurity_spin_z": [
+        0.34197982699990576
+      ],
+      "phase_derivative": [
+        -0.03360609973924292
+      ],
+      "rho_ws_derivative": [
+        0.819087935054687
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.6986368590116027,
+        0.2363620356471042,
+        0.058223279728228716,
+        0.006330116328668946,
+        0.00043201132832675255,
+        1.5341328826797596e-05,
+        3.516469680984538e-07,
+        4.933657378050327e-09,
+        4.6335698570607045e-11,
+        2.8079340033095565e-13,
+        1.1571594569155656e-15,
+        3.141750081711421e-18,
+        5.726604021803478e-21,
+        6.670903202369266e-24,
+        4.863084910489056e-27,
+        2.558496985079975e-30,
+        1.295711990029199e-31
+      ]
+    ],
+    "residuals": [
+      5.740867367159955e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.001146417111158371,
+      "diagonalization": 0.7164720827713609,
+      "hamiltonian": 0.02877158299088478,
+      "observables_and_residuals": 0.11093554180115461,
+      "total": 0.8575595831498504
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 48620,
+    "energies": [
+      -3.171540131517887
+    ],
+    "hamiltonian_sha256": "6b9ebefc82159deaac3652c705d5353934acc8ce7fb81bd623729f5422d03a62",
+    "label": {
+      "chi": 0.721,
+      "geometry": "effective-two-lead",
+      "setting": "L8"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.23984267873925366
+      ],
+      "impurity_charge": [
+        0.9999999999999869
+      ],
+      "impurity_spin_z": [
+        -1.387778780781383e-17
+      ],
+      "phase_derivative": [
+        0.13955964855177455
+      ],
+      "rho_ws_derivative": [
+        -1.509903313490655e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.3654640245035045,
+        0.5058575803473873,
+        0.11337959761355346,
+        0.01442554431375998,
+        0.0008410514528569618,
+        3.1508151635218945e-05,
+        6.838220040217139e-07,
+        9.708176351073135e-09,
+        8.659980550423794e-11,
+        5.214995134488205e-13,
+        2.050134396521186e-15,
+        5.4269868732078595e-18,
+        9.306099621368533e-21,
+        1.0338397005177785e-23,
+        6.857912211120322e-27,
+        2.445901197141861e-30,
+        1.3059357831982797e-31
+      ]
+    ],
+    "residuals": [
+      7.577922775152916e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.0012235422618687153,
+      "diagonalization": 0.759868917055428,
+      "hamiltonian": 0.026761208195239305,
+      "observables_and_residuals": 0.16637512482702732,
+      "total": 0.9544543325901031
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 43758,
+    "energies": [
+      -3.17282169707144
+    ],
+    "hamiltonian_sha256": "6b9ebefc82159deaac3652c705d5353934acc8ce7fb81bd623729f5422d03a62",
+    "label": {
+      "chi": 0.721,
+      "geometry": "effective-two-lead",
+      "setting": "L8"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12139239132855505
+      ],
+      "impurity_charge": [
+        0.9999999999999967
+      ],
+      "impurity_spin_z": [
+        0.34189219634386464
+      ],
+      "phase_derivative": [
+        -0.03358769942011967
+      ],
+      "rho_ws_derivative": [
+        0.8187967859837222
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.6984834574924872,
+        0.23642825007902715,
+        0.05829830566150122,
+        0.006341137497591617,
+        0.0004331011602096452,
+        1.5390125202663636e-05,
+        3.529821307163005e-07,
+        4.955002141516428e-09,
+        4.655976714245472e-11,
+        2.822812065380535e-13,
+        1.1637864601731889e-15,
+        3.1609832267974057e-18,
+        5.763850958395635e-21,
+        6.717087795725592e-24,
+        4.917063871807868e-27,
+        2.8360481704957907e-30,
+        1.5396753913781324e-33
+      ]
+    ],
+    "residuals": [
+      8.132785973449532e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.0012160418555140495,
+      "diagonalization": 0.6482195002026856,
+      "hamiltonian": 0.03532816702499986,
+      "observables_and_residuals": 0.1301329592242837,
+      "total": 0.8151212078519166
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 705432,
+    "energies": [
+      -3.2767231993617805
+    ],
+    "hamiltonian_sha256": "50b5f893ddc4a2fad88fa518fa5b4212ae87f707212c19747b7acad9b9d89edf",
+    "label": {
+      "chi": 0.5,
+      "geometry": "effective-two-lead",
+      "setting": "L10"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.23735620318792147
+      ],
+      "impurity_charge": [
+        0.9999999999999756
+      ],
+      "impurity_spin_z": [
+        3.489049327232152e-14
+      ],
+      "phase_derivative": [
+        0.1835813911603904
+      ],
+      "rho_ws_derivative": [
+        -5.830891325331322e-13
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 20,
+    "qp_weights": [
+      [
+        0.3555943446430997,
+        0.5084796082804658,
+        0.11803757546545646,
+        0.016763448140974826,
+        0.0010794347232343997,
+        4.4520929247311505e-05,
+        1.0513851594484456e-06,
+        1.627240941899269e-08,
+        1.5889221997944652e-10,
+        1.052718606315031e-12,
+        4.6228502238100204e-15,
+        1.400135274547959e-17,
+        2.868995167689353e-20,
+        4.0658217578331384e-23,
+        3.890171369031659e-26,
+        3.1676498159661693e-29,
+        8.011337029314345e-30,
+        3.983193485729656e-30,
+        3.396669447340428e-30,
+        2.2650284423643186e-30,
+        5.30886001357394e-30
+      ]
+    ],
+    "residuals": [
+      4.503468167019295e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.01836416684091091,
+      "diagonalization": 24.078262333758175,
+      "hamiltonian": 0.8898283331654966,
+      "observables_and_residuals": 3.668078999966383,
+      "total": 28.654907791875303
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 646646,
+    "energies": [
+      -3.386864697433376
+    ],
+    "hamiltonian_sha256": "50b5f893ddc4a2fad88fa518fa5b4212ae87f707212c19747b7acad9b9d89edf",
+    "label": {
+      "chi": 0.5,
+      "geometry": "effective-two-lead",
+      "setting": "L10"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12400072012599507
+      ],
+      "impurity_charge": [
+        0.9999999999999765
+      ],
+      "impurity_spin_z": [
+        0.3360092596842764
+      ],
+      "phase_derivative": [
+        -0.027416088400878242
+      ],
+      "rho_ws_derivative": [
+        0.6771591369570313
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 20,
+    "qp_weights": [
+      [
+        0.6882355981981696,
+        0.24092382022957007,
+        0.06325517920557122,
+        0.007058784498365723,
+        0.0005073328587456256,
+        1.882897503747834e-05,
+        4.4942159888669636e-07,
+        6.548615547539043e-09,
+        6.391334681860193e-11,
+        4.0556860881485965e-13,
+        1.7661162432067092e-15,
+        5.1796557939078e-18,
+        1.0541897758164676e-20,
+        1.4592296751019028e-23,
+        1.3956903153964297e-26,
+        1.2717326231448369e-29,
+        2.3379854939287427e-30,
+        2.4712227344869694e-30,
+        1.4421990395568192e-30,
+        2.3964299962008645e-30,
+        2.1804279453815788e-31
+      ]
+    ],
+    "residuals": [
+      3.2803598105006853e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.016884666867554188,
+      "diagonalization": 17.984530000016093,
+      "hamiltonian": 0.7616786253638566,
+      "observables_and_residuals": 3.671135208103806,
+      "total": 22.434626957867295
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 705432,
+    "energies": [
+      -3.458005051633703
+    ],
+    "hamiltonian_sha256": "cd8dff6de9c493dc36a318482b358cde6bf1f96e85ec1f3c9475fc308256ad51",
+    "label": {
+      "chi": 0.95,
+      "geometry": "effective-two-lead",
+      "setting": "L10"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.24203466169020876
+      ],
+      "impurity_charge": [
+        1.0000000000000222
+      ],
+      "impurity_spin_z": [
+        5.146924553223186e-15
+      ],
+      "phase_derivative": [
+        0.059943006762805666
+      ],
+      "rho_ws_derivative": [
+        -3.758104938356155e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 20,
+    "qp_weights": [
+      [
+        0.3745283731717548,
+        0.5037536166273499,
+        0.10891090631362083,
+        0.012156157208165827,
+        0.0006296354985425342,
+        2.089755952647052e-05,
+        4.0835388269916146e-07,
+        5.224339624669487e-09,
+        4.258424035265026e-11,
+        2.36714062420738e-13,
+        8.786553332632609e-16,
+        2.2531731767723845e-18,
+        3.919748385781048e-21,
+        4.717385605956128e-24,
+        3.835663224594345e-27,
+        5.811340325873519e-30,
+        2.474607141731515e-30,
+        1.1467881370916075e-30,
+        2.3492208042924703e-30,
+        5.632086830279718e-30,
+        1.310191411433701e-29
+      ]
+    ],
+    "residuals": [
+      3.958452317026446e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.02076258370652795,
+      "diagonalization": 23.580130292102695,
+      "hamiltonian": 0.740377000067383,
+      "observables_and_residuals": 3.7978904163464904,
+      "total": 28.13955333409831
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 646646,
+    "energies": [
+      -3.3422399034264996
+    ],
+    "hamiltonian_sha256": "cd8dff6de9c493dc36a318482b358cde6bf1f96e85ec1f3c9475fc308256ad51",
+    "label": {
+      "chi": 0.95,
+      "geometry": "effective-two-lead",
+      "setting": "L10"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.11684797849901848
+      ],
+      "impurity_charge": [
+        1.0000000000000004
+      ],
+      "impurity_spin_z": [
+        0.35227770950955983
+      ],
+      "phase_derivative": [
+        -0.02201378735787276
+      ],
+      "rho_ws_derivative": [
+        0.5247748127994589
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 20,
+    "qp_weights": [
+      [
+        0.716825379722783,
+        0.22872373385714434,
+        0.0491733994537123,
+        0.004962317528821241,
+        0.00030505617556811425,
+        9.90291614166114e-06,
+        2.076264269050465e-07,
+        2.69577582587126e-09,
+        2.3485894651337782e-11,
+        1.340002525506971e-13,
+        5.273189206709001e-16,
+        1.405998797237404e-18,
+        2.610381098031096e-21,
+        3.310987645788414e-24,
+        2.9182587563048857e-27,
+        7.453142095306897e-30,
+        4.3217444286349344e-30,
+        1.0456963088911272e-29,
+        8.12190519195659e-30,
+        3.766996836941954e-30,
+        5.285399436945062e-31
+      ]
+    ],
+    "residuals": [
+      5.222659030736984e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.017716124653816223,
+      "diagonalization": 18.256610041949898,
+      "hamiltonian": 0.7209740825928748,
+      "observables_and_residuals": 3.9484234587289393,
+      "total": 22.944118667393923
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 705432,
+    "energies": [
+      -3.3673516625934594
+    ],
+    "hamiltonian_sha256": "764a1b01110280f1fdaa70baed7053f021af9eefcbbf20110e43c9ce1d34b358",
+    "label": {
+      "chi": 0.7193989196362545,
+      "geometry": "effective-two-lead",
+      "setting": "L10"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.23979097898792245
+      ],
+      "impurity_charge": [
+        0.9999999999999993
+      ],
+      "impurity_spin_z": [
+        -3.4122010772463796e-15
+      ],
+      "phase_derivative": [
+        0.1398900970803705
+      ],
+      "rho_ws_derivative": [
+        1.998401444325283e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 20,
+    "qp_weights": [
+      [
+        0.3652676274821977,
+        0.5059253375699909,
+        0.1134680075972897,
+        0.014460885452025648,
+        0.0008456270279274945,
+        3.180900856583322e-05,
+        6.957773380635047e-07,
+        9.993021019932137e-09,
+        9.107564320423486e-11,
+        5.653645407814831e-13,
+        2.3364596690631624e-15,
+        6.671918919386886e-18,
+        1.2916494739133712e-20,
+        1.7313797531783028e-23,
+        1.5686531157442924e-26,
+        1.501481838042968e-29,
+        8.314897174870685e-30,
+        4.629791237604791e-30,
+        4.708341805117812e-30,
+        2.4687270610779332e-30,
+        3.492847995109994e-30
+      ]
+    ],
+    "residuals": [
+      4.440642000675942e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.024405874777585268,
+      "diagonalization": 26.080875040963292,
+      "hamiltonian": 0.8935801251791418,
+      "observables_and_residuals": 3.8371870000846684,
+      "total": 30.83644387498498
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 646646,
+    "energies": [
+      -3.369412569573158
+    ],
+    "hamiltonian_sha256": "764a1b01110280f1fdaa70baed7053f021af9eefcbbf20110e43c9ce1d34b358",
+    "label": {
+      "chi": 0.7193989196362545,
+      "geometry": "effective-two-lead",
+      "setting": "L10"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12140248044390306
+      ],
+      "impurity_charge": [
+        1.0000000000000084
+      ],
+      "impurity_spin_z": [
+        0.3418888960493152
+      ],
+      "phase_derivative": [
+        -0.03360620649476173
+      ],
+      "rho_ws_derivative": [
+        0.8187693615057543
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 20,
+    "qp_weights": [
+      [
+        0.6984811719016933,
+        0.23645382778060087,
+        0.05828123034663493,
+        0.006335767485390843,
+        0.00043228475501847825,
+        1.5360667077898537e-05,
+        3.5206212324451873e-07,
+        4.954434669483355e-09,
+        4.674586837579799e-11,
+        2.8757768989979717e-13,
+        1.2166363733923842e-15,
+        3.474281902877905e-18,
+        6.893759574113218e-21,
+        9.317831218339959e-24,
+        8.718773256268699e-27,
+        1.833908983068936e-29,
+        6.47801969817719e-30,
+        4.254366684566197e-30,
+        2.2984833063979437e-30,
+        1.4104804432451402e-30,
+        7.022247030817736e-32
+      ]
+    ],
+    "residuals": [
+      5.34294594094415e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.017360041849315166,
+      "diagonalization": 16.300923041068017,
+      "hamiltonian": 0.6881246669217944,
+      "observables_and_residuals": 3.286058582831174,
+      "total": 20.292863917071372
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 705432,
+    "energies": [
+      -3.3690065538588962
+    ],
+    "hamiltonian_sha256": "41808f1f9cfbe1c5f4322aee54a72aaa5cd587e27633b3edfc23a887afc77bd8",
+    "label": {
+      "chi": 0.7235092966471269,
+      "geometry": "effective-two-lead",
+      "setting": "L10"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.23983357316745152
+      ],
+      "impurity_charge": [
+        0.9999999999999478
+      ],
+      "impurity_spin_z": [
+        1.1449174941446912e-16
+      ],
+      "phase_derivative": [
+        0.13890210699600042
+      ],
+      "rho_ws_derivative": [
+        -3.3084646133829665e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 20,
+    "qp_weights": [
+      [
+        0.36544024874196746,
+        0.5058824595256719,
+        0.11338468780041427,
+        0.014418790907845046,
+        0.0008415197907126918,
+        3.159333854586823e-05,
+        6.899118212723159e-07,
+        9.892442211478147e-09,
+        9.001986910494275e-11,
+        5.579839288504251e-13,
+        2.302737283858165e-15,
+        6.566647020415901e-18,
+        1.269585320433129e-20,
+        1.6995590911916516e-23,
+        1.53672765371656e-26,
+        1.1657162871304045e-29,
+        1.8316120340657366e-30,
+        8.552621975905913e-31,
+        1.1213723019300597e-30,
+        3.1782845195097734e-31,
+        7.910332375927597e-32
+      ]
+    ],
+    "residuals": [
+      3.182046514396145e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.018814667128026485,
+      "diagonalization": 19.76259358273819,
+      "hamiltonian": 0.7467117081396282,
+      "observables_and_residuals": 3.9095472497865558,
+      "total": 24.438043958041817
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 646646,
+    "energies": [
+      -3.3690134139799794
+    ],
+    "hamiltonian_sha256": "41808f1f9cfbe1c5f4322aee54a72aaa5cd587e27633b3edfc23a887afc77bd8",
+    "label": {
+      "chi": 0.7235092966471269,
+      "geometry": "effective-two-lead",
+      "setting": "L10"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12134026929168529
+      ],
+      "impurity_charge": [
+        1.000000000000003
+      ],
+      "impurity_spin_z": [
+        0.3420301209840623
+      ],
+      "phase_derivative": [
+        -0.033637084519272074
+      ],
+      "rho_ws_derivative": [
+        0.8192628945397846
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 20,
+    "qp_weights": [
+      [
+        0.6987285846669766,
+        0.23634737483818574,
+        0.05816001370676521,
+        0.006317877688315494,
+        0.0004305131178884891,
+        1.5281137288167022e-05,
+        3.498786425151996e-07,
+        4.919276127236178e-09,
+        4.6373284833352174e-11,
+        2.850531886080609e-13,
+        1.2050318874831368e-15,
+        3.4386912727374158e-18,
+        6.818488298533594e-21,
+        9.210294828433433e-24,
+        8.623439497390136e-27,
+        1.9398809148220624e-29,
+        7.103060115987599e-30,
+        5.49628965195516e-30,
+        2.1109505155182753e-30,
+        1.1299156999841942e-30,
+        1.4824080599121516e-30
+      ]
+    ],
+    "residuals": [
+      5.920493646003796e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.01602949993684888,
+      "diagonalization": 11.937246084213257,
+      "hamiltonian": 0.595921291038394,
+      "observables_and_residuals": 3.1764431251212955,
+      "total": 15.726018625311553
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 705432,
+    "energies": [
+      -3.369012076212918
+    ],
+    "hamiltonian_sha256": "71cf1a28265fae592c1876db02ac965edf11db95bda144cd110ea7eb5bcfdf3d",
+    "label": {
+      "chi": 0.7235230191442023,
+      "geometry": "effective-two-lead",
+      "setting": "L10"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.23983371519722307
+      ],
+      "impurity_charge": [
+        0.9999999999999485
+      ],
+      "impurity_spin_z": [
+        -5.016820292524926e-15
+      ],
+      "phase_derivative": [
+        0.13889879463065502
+      ],
+      "rho_ws_derivative": [
+        4.329869796038111e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 20,
+    "qp_weights": [
+      [
+        0.3654408245464018,
+        0.505882316654777,
+        0.1133844097708467,
+        0.01441865043821044,
+        0.000841506094925089,
+        3.15926198669546e-05,
+        6.898922863040607e-07,
+        9.89210742695015e-09,
+        9.001635681204165e-11,
+        5.579593886974629e-13,
+        2.3026252133944485e-15,
+        6.5662974345003844e-18,
+        1.2695115255341683e-20,
+        1.699458258607504e-23,
+        1.5374621509435703e-26,
+        1.3155486721567428e-29,
+        1.879587657270506e-30,
+        8.426689378070608e-31,
+        2.9573241833718378e-30,
+        8.256619083715323e-30,
+        1.8018187207212724e-29
+      ]
+    ],
+    "residuals": [
+      4.6127149277202425e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.020643959287554026,
+      "diagonalization": 16.31935550039634,
+      "hamiltonian": 0.7535164169967175,
+      "observables_and_residuals": 3.4264756250195205,
+      "total": 20.520381250418723
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 646646,
+    "energies": [
+      -3.369012076647095
+    ],
+    "hamiltonian_sha256": "71cf1a28265fae592c1876db02ac965edf11db95bda144cd110ea7eb5bcfdf3d",
+    "label": {
+      "chi": 0.7235230191442023,
+      "geometry": "effective-two-lead",
+      "setting": "L10"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12134006064011277
+      ],
+      "impurity_charge": [
+        1.000000000000015
+      ],
+      "impurity_spin_z": [
+        0.34203059467568026
+      ],
+      "phase_derivative": [
+        -0.03363718013114999
+      ],
+      "rho_ws_derivative": [
+        0.819264356240046
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 20,
+    "qp_weights": [
+      [
+        0.6987294146288395,
+        0.23634701784620818,
+        0.058159606995494384,
+        0.006317817643738034,
+        0.00043050717776807153,
+        1.5280870809564387e-05,
+        3.498713301660501e-07,
+        4.9191584303198365e-09,
+        4.637203805103247e-11,
+        2.8504474360390657e-13,
+        1.2049930797129664e-15,
+        3.4385725074110022e-18,
+        6.818236254522557e-21,
+        9.209796527674004e-24,
+        8.606482312166001e-27,
+        1.1369973478848837e-29,
+        4.0503727426651676e-30,
+        5.042031531319831e-30,
+        3.029355128284643e-30,
+        1.471345379770055e-30,
+        2.552607811642605e-30
+      ]
+    ],
+    "residuals": [
+      4.219600973134762e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.016453334130346775,
+      "diagonalization": 11.806321749929339,
+      "hamiltonian": 0.6521950834430754,
+      "observables_and_residuals": 3.2050159168429673,
+      "total": 15.680371332913637
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 705432,
+    "energies": [
+      -3.3690121164558713
+    ],
+    "hamiltonian_sha256": "f43da9ecb84ee3c9e48196e6ecb28cc01ad6fd61a806a89ce85fd968a7a8c256",
+    "label": {
+      "chi": 0.7235231191442025,
+      "geometry": "effective-two-lead",
+      "setting": "L10"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.23983371623223693
+      ],
+      "impurity_charge": [
+        0.9999999999999604
+      ],
+      "impurity_spin_z": [
+        -5.4001941807158005e-15
+      ],
+      "phase_derivative": [
+        0.1388987704920997
+      ],
+      "rho_ws_derivative": [
+        4.279909759929977e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 20,
+    "qp_weights": [
+      [
+        0.365440828742446,
+        0.5058823156136447,
+        0.11338440774476596,
+        0.01441864941456763,
+        0.0008415059951201806,
+        3.159261462976289e-05,
+        6.898921439481318e-07,
+        9.892104987282681e-09,
+        9.00163312170267e-11,
+        5.57959209853649e-13,
+        2.3026243977685976e-15,
+        6.5662949345218805e-18,
+        1.2695105304632921e-20,
+        1.6994798823851187e-23,
+        1.5376341056805196e-26,
+        1.4724997018994552e-29,
+        6.3082338867948836e-30,
+        3.990175182543196e-30,
+        6.35263217936584e-30,
+        2.244288498825371e-30,
+        1.935717502175479e-30
+      ]
+    ],
+    "residuals": [
+      3.958158282351537e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.02027237508445978,
+      "diagonalization": 16.01581587502733,
+      "hamiltonian": 0.633947666734457,
+      "observables_and_residuals": 3.444149584043771,
+      "total": 20.114564875140786
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 646646,
+    "energies": [
+      -3.3690120669014525
+    ],
+    "hamiltonian_sha256": "f43da9ecb84ee3c9e48196e6ecb28cc01ad6fd61a806a89ce85fd968a7a8c256",
+    "label": {
+      "chi": 0.7235231191442025,
+      "geometry": "effective-two-lead",
+      "setting": "L10"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.1213400591195822
+      ],
+      "impurity_charge": [
+        0.9999999999999994
+      ],
+      "impurity_spin_z": [
+        0.34203059812765474
+      ],
+      "phase_derivative": [
+        -0.03363718082772159
+      ],
+      "rho_ws_derivative": [
+        0.8192643668873938
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 20,
+    "qp_weights": [
+      [
+        0.6987294206770936,
+        0.23634701524466897,
+        0.05815960403162655,
+        0.006317817206168956,
+        0.00043050713448017163,
+        1.5280868867639816e-05,
+        3.498712768784101e-07,
+        4.91915757262395e-09,
+        4.637202896566168e-11,
+        2.8504468213953313e-13,
+        1.2049927962443344e-15,
+        3.43857160733301e-18,
+        6.818234679631966e-21,
+        9.209812880564583e-24,
+        8.609869016777914e-27,
+        1.3098900595893166e-29,
+        4.696024839267891e-30,
+        5.3662787091272266e-30,
+        3.3627586658987516e-30,
+        1.5226690715059988e-30,
+        1.9360548039082244e-31
+      ]
+    ],
+    "residuals": [
+      4.50414170566663e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.01641525002196431,
+      "diagonalization": 10.6085563339293,
+      "hamiltonian": 0.6275162077508867,
+      "observables_and_residuals": 2.841500415932387,
+      "total": 14.09436466684565
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 705432,
+    "energies": [
+      -3.367996456101738
+    ],
+    "hamiltonian_sha256": "3b283728fb251700012d0c18a307d0a8b06d14cb1f82a7b6dadc8b336e46d58e",
+    "label": {
+      "chi": 0.721,
+      "geometry": "effective-two-lead",
+      "setting": "L10"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.23980758248417755
+      ],
+      "impurity_charge": [
+        0.9999999999999778
+      ],
+      "impurity_spin_z": [
+        -2.437286483747414e-15
+      ],
+      "phase_derivative": [
+        0.13950624048927546
+      ],
+      "rho_ws_derivative": [
+        1.4210854715202e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 20,
+    "qp_weights": [
+      [
+        0.36533490212150016,
+        0.5059086159273105,
+        0.11343554324882671,
+        0.014444484244403085,
+        0.000844026018113538,
+        3.172490559204089e-05,
+        6.934892502217624e-07,
+        9.953772523643895e-09,
+        9.066351479163368e-11,
+        5.624825342835087e-13,
+        2.3232875438667772e-15,
+        6.63078647766517e-18,
+        1.2830260221426737e-20,
+        1.7189364100303198e-23,
+        1.5562742260791884e-26,
+        1.7677677990200143e-29,
+        6.589179350794197e-30,
+        2.170205223449006e-30,
+        5.832120268931637e-31,
+        4.748386889917985e-31,
+        1.0822109223813728e-30
+      ]
+    ],
+    "residuals": [
+      4.36321264357712e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.018069874960929155,
+      "diagonalization": 14.27387391589582,
+      "hamiltonian": 0.7162429578602314,
+      "observables_and_residuals": 3.2446995829232037,
+      "total": 18.25324545893818
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 646646,
+    "energies": [
+      -3.3692574269167674
+    ],
+    "hamiltonian_sha256": "3b283728fb251700012d0c18a307d0a8b06d14cb1f82a7b6dadc8b336e46d58e",
+    "label": {
+      "chi": 0.721,
+      "geometry": "effective-two-lead",
+      "setting": "L10"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12137831586096859
+      ],
+      "impurity_charge": [
+        0.9999999999999931
+      ],
+      "impurity_spin_z": [
+        0.34194374945548844
+      ],
+      "phase_derivative": [
+        -0.03361876219997516
+      ],
+      "rho_ws_derivative": [
+        0.8189747443904594
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 20,
+    "qp_weights": [
+      [
+        0.6985772629147486,
+        0.2364124753701948,
+        0.05823415763132989,
+        0.006328821653496366,
+        0.00043159647216271595,
+        1.5329757185417595e-05,
+        3.5121322828251613e-07,
+        4.940762392171397e-09,
+        4.660094603956105e-11,
+        2.865955396258316e-13,
+        1.2121208176156367e-15,
+        3.4604303614390867e-18,
+        6.864461219484687e-21,
+        9.275919600440473e-24,
+        8.669575516678212e-27,
+        1.1858007730225069e-29,
+        3.416421717439972e-30,
+        2.4521312374337907e-30,
+        1.6382556333268394e-30,
+        1.2128002042264323e-30,
+        9.310201591243568e-32
+      ]
+    ],
+    "residuals": [
+      4.348286154975774e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.01633820915594697,
+      "diagonalization": 9.901542542036623,
+      "hamiltonian": 0.5920996251516044,
+      "observables_and_residuals": 2.466938500292599,
+      "total": 12.97729366691783
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 48620,
+    "energies": [
+      -3.4604794127339704
+    ],
+    "hamiltonian_sha256": "5a94113b62bb2a38fba93d6a0fdfd3023a7de87b1eb2a158b38c6db8bf8de6ab",
+    "label": {
+      "chi": 0.5,
+      "geometry": "effective-two-lead",
+      "setting": "L8_w2000"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.23749198206756517
+      ],
+      "impurity_charge": [
+        0.9999999999999941
+      ],
+      "impurity_spin_z": [
+        4.666406150377614e-15
+      ],
+      "phase_derivative": [
+        0.18375756565405058
+      ],
+      "rho_ws_derivative": [
+        1.3100631690558866e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.35600284848049946,
+        0.5082574040689359,
+        0.1179060673977484,
+        0.01671451046505704,
+        0.0010740108000320697,
+        4.410539807110645e-05,
+        1.0373022667773907e-06,
+        1.5931788291282506e-08,
+        1.5458302957127531e-10,
+        1.0130436024552322e-12,
+        4.386380984451383e-15,
+        1.2922124587934956e-17,
+        2.5191968629231833e-20,
+        3.235971990621737e-23,
+        2.564148148249289e-26,
+        1.1892813422353662e-29,
+        4.92678740381753e-31
+      ]
+    ],
+    "residuals": [
+      1.1266064191447757e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.001358166802674532,
+      "diagonalization": 0.7572064171545208,
+      "hamiltonian": 0.02783620823174715,
+      "observables_and_residuals": 0.1112490831874311,
+      "total": 0.8978728749789298
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 43758,
+    "energies": [
+      -3.57071490734476
+    ],
+    "hamiltonian_sha256": "5a94113b62bb2a38fba93d6a0fdfd3023a7de87b1eb2a158b38c6db8bf8de6ab",
+    "label": {
+      "chi": 0.5,
+      "geometry": "effective-two-lead",
+      "setting": "L8_w2000"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12401985739142986
+      ],
+      "impurity_charge": [
+        1.0000000000000002
+      ],
+      "impurity_spin_z": [
+        0.3359654025207321
+      ],
+      "phase_derivative": [
+        -0.027394994517288593
+      ],
+      "rho_ws_derivative": [
+        0.6771261836651485
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.688143983698767,
+        0.24094747216018308,
+        0.06330655338815645,
+        0.0070732608146385385,
+        0.0005092926392990878,
+        1.8975103031669937e-05,
+        4.5542480024015256e-07,
+        6.70457790412898e-09,
+        6.611770517954561e-11,
+        4.252977184113051e-13,
+        1.8714317783429505e-15,
+        5.517283079770353e-18,
+        1.106314833140715e-20,
+        1.450600870142039e-23,
+        1.2043827403803791e-26,
+        5.228827816385095e-30,
+        1.57502516021246e-32
+      ]
+    ],
+    "residuals": [
+      7.952239430546258e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.0014894171617925167,
+      "diagonalization": 0.6319989576004446,
+      "hamiltonian": 0.023315582890063524,
+      "observables_and_residuals": 0.0983685408718884,
+      "total": 0.7553949998691678
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 48620,
+    "energies": [
+      -3.641881702425109
+    ],
+    "hamiltonian_sha256": "7ce432483d999d27eab48ec6f64da76cb6c81cac1d155ad4077ac55f66f23b45",
+    "label": {
+      "chi": 0.95,
+      "geometry": "effective-two-lead",
+      "setting": "L8_w2000"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.2420738466773048
+      ],
+      "impurity_charge": [
+        0.9999999999999951
+      ],
+      "impurity_spin_z": [
+        -4.767020111984266e-15
+      ],
+      "phase_derivative": [
+        0.059967154006756306
+      ],
+      "rho_ws_derivative": [
+        -1.1646239528318114e-13
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.374630085010348,
+        0.5036842304448039,
+        0.10888818466802722,
+        0.012147221911148313,
+        0.0006290163203088019,
+        2.0849096467021084e-05,
+        4.0731370187457676e-07,
+        5.192733996700036e-09,
+        4.222658581500301e-11,
+        2.331843326113197e-13,
+        8.5697735076281e-16,
+        2.143774753209079e-18,
+        3.543667886129726e-21,
+        3.83469067368737e-24,
+        2.5402240456160775e-27,
+        1.0907498059147199e-30,
+        8.590894418825752e-32
+      ]
+    ],
+    "residuals": [
+      1.2612193358970475e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.0012240828946232796,
+      "diagonalization": 0.6982176247984171,
+      "hamiltonian": 0.02791350008919835,
+      "observables_and_residuals": 0.11348404223099351,
+      "total": 0.8410607906989753
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 43758,
+    "energies": [
+      -3.526179001232632
+    ],
+    "hamiltonian_sha256": "7ce432483d999d27eab48ec6f64da76cb6c81cac1d155ad4077ac55f66f23b45",
+    "label": {
+      "chi": 0.95,
+      "geometry": "effective-two-lead",
+      "setting": "L8_w2000"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.11695207448857772
+      ],
+      "impurity_charge": [
+        0.9999999999999989
+      ],
+      "impurity_spin_z": [
+        0.3520087741279639
+      ],
+      "phase_derivative": [
+        -0.02193638546078753
+      ],
+      "rho_ws_derivative": [
+        0.5241341063765858
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.7162951725996425,
+        0.22886207451270707,
+        0.04948801025453559,
+        0.005031789445580387,
+        0.0003124484561268584,
+        1.0282089051367853e-05,
+        2.1968623523706272e-07,
+        2.9296598631110327e-09,
+        2.6304430111994184e-11,
+        1.5545981319189018e-13,
+        6.3282264848266225e-16,
+        1.7366048018474886e-18,
+        3.247529946645653e-21,
+        3.968774801782217e-24,
+        3.0580999392389315e-27,
+        1.9813638626488955e-30,
+        6.130768899975295e-32
+      ]
+    ],
+    "residuals": [
+      1.089677404876907e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.0010970411822199821,
+      "diagonalization": 0.6278105829842389,
+      "hamiltonian": 0.02399425022304058,
+      "observables_and_residuals": 0.1003752090036869,
+      "total": 0.7535022501833737
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 48620,
+    "energies": [
+      -3.551243852476937
+    ],
+    "hamiltonian_sha256": "2d7c34b73324d152521ffd12b2ad8a98e89ffb64f806b5add63b67864ccc02ad",
+    "label": {
+      "chi": 0.7195554956898446,
+      "geometry": "effective-two-lead",
+      "setting": "L8_w2000"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.2398708305022278
+      ],
+      "impurity_charge": [
+        0.9999999999999784
+      ],
+      "impurity_spin_z": [
+        -2.2724877535296157e-15
+      ],
+      "phase_derivative": [
+        0.13994430803018673
+      ],
+      "rho_ws_derivative": [
+        -9.292566716113603e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.36549919686680926,
+        0.5057919515529445,
+        0.11339876081972945,
+        0.014434761216923254,
+        0.0008430133435282925,
+        3.161637533982601e-05,
+        6.89885056533771e-07,
+        9.849767109832083e-09,
+        8.935001920598426e-11,
+        5.496150727127071e-13,
+        2.243431180183894e-15,
+        6.238949279250084e-18,
+        1.148852425598753e-20,
+        1.392394993431562e-23,
+        1.0418522112614213e-26,
+        5.015133636996426e-30,
+        4.4716270460075895e-32
+      ]
+    ],
+    "residuals": [
+      2.3727671694021588e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.001588250044733286,
+      "diagonalization": 0.7016516248695552,
+      "hamiltonian": 0.026142415590584278,
+      "observables_and_residuals": 0.11432916577905416,
+      "total": 0.843925875145942
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 43758,
+    "energies": [
+      -3.5532682628321846
+    ],
+    "hamiltonian_sha256": "2d7c34b73324d152521ffd12b2ad8a98e89ffb64f806b5add63b67864ccc02ad",
+    "label": {
+      "chi": 0.7195554956898446,
+      "geometry": "effective-two-lead",
+      "setting": "L8_w2000"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12144036813781951
+      ],
+      "impurity_charge": [
+        1.0000000000000033
+      ],
+      "impurity_spin_z": [
+        0.3417934899817534
+      ],
+      "phase_derivative": [
+        -0.03355258344561991
+      ],
+      "rho_ws_derivative": [
+        0.8184839647019285
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.6982877816069548,
+        0.23650110592035736,
+        0.0583953719336626,
+        0.006364048663035219,
+        0.0004357500928915322,
+        1.5576554024981038e-05,
+        3.600416541069137e-07,
+        5.137908283639097e-09,
+        4.920332566533996e-11,
+        3.083548050804437e-13,
+        1.3253239172425133e-15,
+        3.825353135044181e-18,
+        7.516942768241792e-21,
+        9.66168819782101e-24,
+        7.869786260977381e-27,
+        4.079374168009341e-30,
+        4.063577184091532e-33
+      ]
+    ],
+    "residuals": [
+      1.1057153182716135e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.0010736249387264252,
+      "diagonalization": 0.6345683340914547,
+      "hamiltonian": 0.025551042053848505,
+      "observables_and_residuals": 0.09916870901361108,
+      "total": 0.7605897919274867
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 48620,
+    "energies": [
+      -3.552870142736442
+    ],
+    "hamiltonian_sha256": "ef7fb745859ef860bf9380ec9fc5b2e07362366dd5739f97c73ed90bf2f807a1",
+    "label": {
+      "chi": 0.723592303964143,
+      "geometry": "effective-two-lead",
+      "setting": "L8_w2000"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.2399118119683413
+      ],
+      "impurity_charge": [
+        1.0000000000000264
+      ],
+      "impurity_spin_z": [
+        -2.8241298188902408e-15
+      ],
+      "phase_derivative": [
+        0.13897243097623752
+      ],
+      "rho_ws_derivative": [
+        -9.525713551284892e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.36566602787762115,
+        0.5057511866221629,
+        0.11331788984889513,
+        0.014393771905389664,
+        0.0008390218836309653,
+        3.140778157841058e-05,
+        6.84238160570225e-07,
+        9.753670784969829e-09,
+        8.83472111622684e-11,
+        5.426769857088269e-13,
+        2.2121511139854508e-15,
+        6.143871473221961e-18,
+        1.1298636943539953e-20,
+        1.3675471631544675e-23,
+        1.0217904812132888e-26,
+        5.660098387367737e-30,
+        4.1848968559631345e-32
+      ]
+    ],
+    "residuals": [
+      2.3922712617005184e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.001231333240866661,
+      "diagonalization": 0.7006247076205909,
+      "hamiltonian": 0.027493333909660578,
+      "observables_and_residuals": 0.11370125040411949,
+      "total": 0.8432709160260856
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 43758,
+    "energies": [
+      -3.5528768149350176
+    ],
+    "hamiltonian_sha256": "ef7fb745859ef860bf9380ec9fc5b2e07362366dd5739f97c73ed90bf2f807a1",
+    "label": {
+      "chi": 0.723592303964143,
+      "geometry": "effective-two-lead",
+      "setting": "L8_w2000"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12137987682579326
+      ],
+      "impurity_charge": [
+        1.000000000000007
+      ],
+      "impurity_spin_z": [
+        0.34193056326250215
+      ],
+      "phase_derivative": [
+        -0.03358198562085648
+      ],
+      "rho_ws_derivative": [
+        0.8189579314970591
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.6985275929126792,
+        0.23639736158674401,
+        0.05827824319535076,
+        0.006346886646084519,
+        0.00043405224402422567,
+        1.5500314396189124e-05,
+        3.5794752438640835e-07,
+        5.104048288123516e-09,
+        4.884302320545815e-11,
+        3.058943247353269e-13,
+        1.3139562170152196e-15,
+        3.790459841885238e-18,
+        7.444437686561679e-21,
+        9.563573992074161e-24,
+        7.782149484140447e-27,
+        3.6047107806876704e-30,
+        1.086632162023559e-33
+      ]
+    ],
+    "residuals": [
+      1.0607111856726814e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.0010925829410552979,
+      "diagonalization": 0.6439149999059737,
+      "hamiltonian": 0.024158542044460773,
+      "observables_and_residuals": 0.09969950001686811,
+      "total": 0.7691030828282237
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 48620,
+    "energies": [
+      -3.552875516069948
+    ],
+    "hamiltonian_sha256": "e661d2d05187144410806d81459fb52ddbc09cacfc0cfd87129d24c4fcdc5582",
+    "label": {
+      "chi": 0.723605647721248,
+      "geometry": "effective-two-lead",
+      "setting": "L8_w2000"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.23991194728124127
+      ],
+      "impurity_charge": [
+        1.0000000000000362
+      ],
+      "impurity_spin_z": [
+        -2.348815586472596e-15
+      ],
+      "phase_derivative": [
+        0.13896920508980606
+      ],
+      "rho_ws_derivative": [
+        -1.1146639167237483e-13
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.36566657890725246,
+        0.5057510521210273,
+        0.1133176226426991,
+        0.01439363646934268,
+        0.0008390087046113925,
+        3.1407093287583685e-05,
+        6.842195374056012e-07,
+        9.753354036005566e-09,
+        8.834390747295139e-11,
+        5.426541401427221e-13,
+        2.212048162475375e-15,
+        6.143558624286025e-18,
+        1.1298022408428485e-20,
+        1.36748260948903e-23,
+        1.0222730611731006e-26,
+        5.5161200857384154e-30,
+        1.2332307255731355e-31
+      ]
+    ],
+    "residuals": [
+      2.7723908425774286e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.001714083831757307,
+      "diagonalization": 0.7062337091192603,
+      "hamiltonian": 0.028158292174339294,
+      "observables_and_residuals": 0.11160295875743032,
+      "total": 0.8479331657290459
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 43758,
+    "energies": [
+      -3.552875516479463
+    ],
+    "hamiltonian_sha256": "e661d2d05187144410806d81459fb52ddbc09cacfc0cfd87129d24c4fcdc5582",
+    "label": {
+      "chi": 0.723605647721248,
+      "geometry": "effective-two-lead",
+      "setting": "L8_w2000"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.1213796759732602
+      ],
+      "impurity_charge": [
+        0.9999999999999937
+      ],
+      "impurity_spin_z": [
+        0.3419310184235173
+      ],
+      "phase_derivative": [
+        -0.03358207566171911
+      ],
+      "rho_ws_derivative": [
+        0.8189593203714837
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.6985283893118366,
+        0.2363970171573866,
+        0.05827785414377128,
+        0.006346829623392892,
+        0.0004340466084442022,
+        1.550006150061025e-05,
+        3.579405813397436e-07,
+        5.103936067114649e-09,
+        4.884182947395104e-11,
+        3.0588617520390743e-13,
+        1.313918573108568e-15,
+        3.790344151902991e-18,
+        7.44418916575628e-21,
+        9.563019164198676e-24,
+        7.758714255769077e-27,
+        3.4043712260132774e-30,
+        4.2109776274712155e-32
+      ]
+    ],
+    "residuals": [
+      9.894720265250587e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.0010776668787002563,
+      "diagonalization": 0.6374883749522269,
+      "hamiltonian": 0.024237832985818386,
+      "observables_and_residuals": 0.10103487502783537,
+      "total": 0.7640659590251744
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 48620,
+    "energies": [
+      -3.552875556338396
+    ],
+    "hamiltonian_sha256": "e27f98bcbbe6ebb007af64ce7d4a664030b0587abe242c0b6d9cc2545bdd5c5b",
+    "label": {
+      "chi": 0.7236057477212483,
+      "geometry": "effective-two-lead",
+      "setting": "L8_w2000"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.2399119482953099
+      ],
+      "impurity_charge": [
+        1.0000000000000724
+      ],
+      "impurity_spin_z": [
+        -3.073929999430901e-15
+      ],
+      "phase_derivative": [
+        0.13896918091422342
+      ],
+      "rho_ws_derivative": [
+        -7.460698725481975e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.3656665830367344,
+        0.5057510511130623,
+        0.11331762064022148,
+        0.01439363545436755,
+        0.0008390086058463882,
+        3.1407088129468884e-05,
+        6.842193978418936e-07,
+        9.75335166225694e-09,
+        8.8343882714556e-11,
+        5.426539689475187e-13,
+        2.2120473972403983e-15,
+        6.14355623504968e-18,
+        1.1298027719773581e-20,
+        1.3674871710378885e-23,
+        1.0220993575831845e-26,
+        5.554887753842878e-30,
+        5.0514391797440565e-31
+      ]
+    ],
+    "residuals": [
+      2.390183699061958e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.0013317079283297062,
+      "diagonalization": 0.7104665827937424,
+      "hamiltonian": 0.028307832777500153,
+      "observables_and_residuals": 0.10987150017172098,
+      "total": 0.850202125031501
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 43758,
+    "energies": [
+      -3.5528755067484767
+    ],
+    "hamiltonian_sha256": "e27f98bcbbe6ebb007af64ce7d4a664030b0587abe242c0b6d9cc2545bdd5c5b",
+    "label": {
+      "chi": 0.7236057477212483,
+      "geometry": "effective-two-lead",
+      "setting": "L8_w2000"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12137967446802662
+      ],
+      "impurity_charge": [
+        1.0000000000000036
+      ],
+      "impurity_spin_z": [
+        0.34193102183460344
+      ],
+      "phase_derivative": [
+        -0.033582076336323166
+      ],
+      "rho_ws_derivative": [
+        0.818959330775486
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.6985283952802465,
+        0.23639701457615203,
+        0.05827785122812455,
+        0.006346829196050905,
+        0.00043404656620995663,
+        1.550005960536081e-05,
+        3.5794052930756264e-07,
+        5.103935226140797e-09,
+        4.884182052859054e-11,
+        3.0588611428975313e-13,
+        1.3139182947500474e-15,
+        3.790343708112517e-18,
+        7.444196714396064e-21,
+        9.563087213144425e-24,
+        7.7795847313351e-27,
+        4.262526937172836e-30,
+        2.7399753873641094e-32
+      ]
+    ],
+    "residuals": [
+      8.680515805681859e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.0011108331382274628,
+      "diagonalization": 0.6269318340346217,
+      "hamiltonian": 0.023066250141710043,
+      "observables_and_residuals": 0.10510966693982482,
+      "total": 0.7564411661587656
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 48620,
+    "energies": [
+      -3.55182595992142
+    ],
+    "hamiltonian_sha256": "eb9295364685c1b3084ef7c91ee8aa186dc8f755160ba39cab0a8d3a24de794f",
+    "label": {
+      "chi": 0.721,
+      "geometry": "effective-two-lead",
+      "setting": "L8_w2000"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.239885505591227
+      ],
+      "impurity_charge": [
+        0.9999999999999759
+      ],
+      "impurity_spin_z": [
+        -1.609823385706476e-15
+      ],
+      "phase_derivative": [
+        0.1395974573658934
+      ],
+      "rho_ws_derivative": [
+        -1.1313172620931298e-13
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.3655589246391974,
+        0.5057773472871606,
+        0.11336981455490382,
+        0.014420090065531887,
+        0.000841584037937348,
+        3.154164896432527e-05,
+        6.87861444446779e-07,
+        9.815318288464547e-09,
+        8.899041052055656e-11,
+        5.471262604527848e-13,
+        2.232207018238913e-15,
+        6.2048221141967846e-18,
+        1.1420350341408399e-20,
+        1.3834676798442562e-23,
+        1.0346488957001107e-26,
+        5.3640214935548454e-30,
+        2.258446218928428e-31
+      ]
+    ],
+    "residuals": [
+      2.44932770727779e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.0017289160750806332,
+      "diagonalization": 0.7293926668353379,
+      "hamiltonian": 0.028975458350032568,
+      "observables_and_residuals": 0.10991979110985994,
+      "total": 0.8702440829947591
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 43758,
+    "energies": [
+      -3.5531285024016332
+    ],
+    "hamiltonian_sha256": "eb9295364685c1b3084ef7c91ee8aa186dc8f755160ba39cab0a8d3a24de794f",
+    "label": {
+      "chi": 0.721,
+      "geometry": "effective-two-lead",
+      "setting": "L8_w2000"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12141878438607795
+      ],
+      "impurity_charge": [
+        1.0000000000000018
+      ],
+      "impurity_spin_z": [
+        0.34184239673251005
+      ],
+      "phase_derivative": [
+        -0.03356359737001732
+      ],
+      "rho_ws_derivative": [
+        0.8186658293251416
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 16,
+    "qp_weights": [
+      [
+        0.6983733383587748,
+        0.23646408651477455,
+        0.05835358936805355,
+        0.006357927797129953,
+        0.0004351441581938872,
+        1.554933412881071e-05,
+        3.592937493704073e-07,
+        5.125812569673085e-09,
+        4.907458771187071e-11,
+        3.074754980979868e-13,
+        1.3212607486412801e-15,
+        3.81287953216607e-18,
+        7.491016357769976e-21,
+        9.62646281391429e-24,
+        7.826422696573997e-27,
+        3.9511866881754864e-30,
+        1.9491278878287493e-32
+      ]
+    ],
+    "residuals": [
+      1.1184784126252482e-12
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.0013494165614247322,
+      "diagonalization": 0.6235811659134924,
+      "hamiltonian": 0.02326029073446989,
+      "observables_and_residuals": 0.09615187486633658,
+      "total": 0.7445705831050873
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 2162,
+    "energies": [
+      -3.0784201651140353
+    ],
+    "hamiltonian_sha256": "2df3479e071066cac67cbdeee5ec50ca2f18da4760612c33cdb855067f1f66ed",
+    "label": {
+      "chi": 0.5,
+      "geometry": "effective-two-lead",
+      "setting": "L8_q4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.23758760446826963
+      ],
+      "impurity_charge": [
+        1.0000000000000007
+      ],
+      "impurity_spin_z": [
+        6.245004513516506e-17
+      ],
+      "phase_derivative": [
+        0.18454180747853322
+      ],
+      "rho_ws_derivative": [
+        -4.1744385725905905e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 4,
+    "qp_weights": [
+      [
+        0.35707070932933443,
+        0.5087877466733359,
+        0.1172793324957872,
+        0.016037044390125654,
+        0.0008251671114193663
+      ]
+    ],
+    "residuals": [
+      3.3036544982790093e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.00010908395051956177,
+      "diagonalization": 0.01822133408859372,
+      "hamiltonian": 0.0008813338354229927,
+      "observables_and_residuals": 0.002349040936678648,
+      "total": 0.021654207725077868
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 1789,
+    "energies": [
+      -3.1896037804198913
+    ],
+    "hamiltonian_sha256": "2df3479e071066cac67cbdeee5ec50ca2f18da4760612c33cdb855067f1f66ed",
+    "label": {
+      "chi": 0.5,
+      "geometry": "effective-two-lead",
+      "setting": "L8_q4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12379588685804062
+      ],
+      "impurity_charge": [
+        1.0000000000000036
+      ],
+      "impurity_spin_z": [
+        0.3365983150886517
+      ],
+      "phase_derivative": [
+        -0.02721645398161716
+      ],
+      "rho_ws_derivative": [
+        0.6729329978232204
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 4,
+    "qp_weights": [
+      [
+        0.6893179912742615,
+        0.24081130501637713,
+        0.06270872456116822,
+        0.0067804686997002955,
+        0.00038151044849286416
+      ]
+    ],
+    "residuals": [
+      5.865702014425333e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 9.925011545419693e-05,
+      "diagonalization": 0.014434542041271925,
+      "hamiltonian": 0.0005964580923318863,
+      "observables_and_residuals": 0.00202195905148983,
+      "total": 0.0172459171153605
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 2162,
+    "energies": [
+      -3.2605570048292187
+    ],
+    "hamiltonian_sha256": "60a11a5f6ff8bed3546b3ac8cdafd95d286ac595322f97690c75983ffdbbf472",
+    "label": {
+      "chi": 0.95,
+      "geometry": "effective-two-lead",
+      "setting": "L8_q4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.24212943335476222
+      ],
+      "impurity_charge": [
+        1.0000000000000013
+      ],
+      "impurity_spin_z": [
+        -2.2412627309620348e-15
+      ],
+      "phase_derivative": [
+        0.06019444073763411
+      ],
+      "rho_ws_derivative": [
+        2.3314683517128287e-15
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 4,
+    "qp_weights": [
+      [
+        0.375207995214795,
+        0.5039142960814353,
+        0.10853767346115845,
+        0.011826837209041768,
+        0.0005131980335677405
+      ]
+    ],
+    "residuals": [
+      1.891885985890171e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.0001050001010298729,
+      "diagonalization": 0.018438957631587982,
+      "hamiltonian": 0.0008715000003576279,
+      "observables_and_residuals": 0.002281416207551956,
+      "total": 0.02178708417341113
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 1789,
+    "energies": [
+      -3.1453575808487777
+    ],
+    "hamiltonian_sha256": "60a11a5f6ff8bed3546b3ac8cdafd95d286ac595322f97690c75983ffdbbf472",
+    "label": {
+      "chi": 0.95,
+      "geometry": "effective-two-lead",
+      "setting": "L8_q4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.11676636069484117
+      ],
+      "impurity_charge": [
+        1.0000000000000018
+      ],
+      "impurity_spin_z": [
+        0.35250152203301255
+      ],
+      "phase_derivative": [
+        -0.021794340559044046
+      ],
+      "rho_ws_derivative": [
+        0.5204019027871845
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 4,
+    "qp_weights": [
+      [
+        0.7172283833221625,
+        0.22869495210452007,
+        0.04899658875470782,
+        0.004837769285162219,
+        0.000242306533449356
+      ]
+    ],
+    "residuals": [
+      4.5218156456320084e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.00010108388960361481,
+      "diagonalization": 0.014424290973693132,
+      "hamiltonian": 0.0006140409968793392,
+      "observables_and_residuals": 0.0021283752284944057,
+      "total": 0.017363207880407572
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 2162,
+    "energies": [
+      -3.1701509951910634
+    ],
+    "hamiltonian_sha256": "a952bd20977c90819d382cd53ce7ef493f32a544eca875d435ba091a3c96b04c",
+    "label": {
+      "chi": 0.7210087250589523,
+      "geometry": "effective-two-lead",
+      "setting": "L8_q4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.23996192713642267
+      ],
+      "impurity_charge": [
+        0.999999999999999
+      ],
+      "impurity_spin_z": [
+        -2.1996293675385914e-15
+      ],
+      "phase_derivative": [
+        0.14016179892407138
+      ],
+      "rho_ws_derivative": [
+        6.661338147750896e-16
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 4,
+    "qp_weights": [
+      [
+        0.3663719105354782,
+        0.5061420396876658,
+        0.11288722861682043,
+        0.013934106039487797,
+        0.000664715120548976
+      ]
+    ],
+    "residuals": [
+      1.781100170355425e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.00011379225179553032,
+      "diagonalization": 0.018331584054976702,
+      "hamiltonian": 0.0007115001790225506,
+      "observables_and_residuals": 0.002686457708477974,
+      "total": 0.021939958911389112
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 1789,
+    "energies": [
+      -3.172131133916197
+    ],
+    "hamiltonian_sha256": "a952bd20977c90819d382cd53ce7ef493f32a544eca875d435ba091a3c96b04c",
+    "label": {
+      "chi": 0.7210087250589523,
+      "geometry": "effective-two-lead",
+      "setting": "L8_q4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12120920934798204
+      ],
+      "impurity_charge": [
+        1.0000000000000013
+      ],
+      "impurity_spin_z": [
+        0.3424218584559998
+      ],
+      "phase_derivative": [
+        -0.03334506268718254
+      ],
+      "rho_ws_derivative": [
+        0.8133024642059239
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 4,
+    "qp_weights": [
+      [
+        0.6994557114292276,
+        0.2363154455728573,
+        0.05779571959295993,
+        0.006102973123104868,
+        0.000330150281850299
+      ]
+    ],
+    "residuals": [
+      4.688351674906891e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.00010254187509417534,
+      "diagonalization": 0.014453124720603228,
+      "hamiltonian": 0.0005720001645386219,
+      "observables_and_residuals": 0.00213666632771492,
+      "total": 0.01736283302307129
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 2162,
+    "energies": [
+      -3.171744120628597
+    ],
+    "hamiltonian_sha256": "746c0b01c2cb10a90af660632fa76342ac98cd994190b95d72e5ab7ee8bb0819",
+    "label": {
+      "chi": 0.7249484600199233,
+      "geometry": "effective-two-lead",
+      "setting": "L8_q4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.24000153690234655
+      ],
+      "impurity_charge": [
+        0.9999999999999942
+      ],
+      "impurity_spin_z": [
+        -1.5612511283791264e-15
+      ],
+      "phase_derivative": [
+        0.13920611898353047
+      ],
+      "rho_ws_derivative": [
+        -1.2212453270876724e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 4,
+    "qp_weights": [
+      [
+        0.3665303466644514,
+        0.5060996966650115,
+        0.11281074314439501,
+        0.013897229530289766,
+        0.0006619839958518256
+      ]
+    ],
+    "residuals": [
+      1.771380393982056e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.00011724978685379028,
+      "diagonalization": 0.01851162500679493,
+      "hamiltonian": 0.0007004169747233391,
+      "observables_and_residuals": 0.002266624942421913,
+      "total": 0.0216927919536829
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 1789,
+    "energies": [
+      -3.1717506684248993
+    ],
+    "hamiltonian_sha256": "746c0b01c2cb10a90af660632fa76342ac98cd994190b95d72e5ab7ee8bb0819",
+    "label": {
+      "chi": 0.7249484600199233,
+      "geometry": "effective-two-lead",
+      "setting": "L8_q4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12115031460191081
+      ],
+      "impurity_charge": [
+        0.9999999999999981
+      ],
+      "impurity_spin_z": [
+        0.3425548624255212
+      ],
+      "phase_derivative": [
+        -0.03337212494310917
+      ],
+      "rho_ws_derivative": [
+        0.8137193125882718
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 4,
+    "qp_weights": [
+      [
+        0.6996884603103515,
+        0.23621362548219285,
+        0.057681926733295925,
+        0.006087003721630764,
+        0.0003289837525294873
+      ]
+    ],
+    "residuals": [
+      4.5019953524360853e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.00010012509301304817,
+      "diagonalization": 0.014424541965126991,
+      "hamiltonian": 0.0008987910114228725,
+      "observables_and_residuals": 0.002089624758809805,
+      "total": 0.01760516595095396
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 2162,
+    "energies": [
+      -3.171749401923363
+    ],
+    "hamiltonian_sha256": "1acb83da700458a31e61bb755d2b3ee9c5d4fb3e70829a9799547d7d3708578f",
+    "label": {
+      "chi": 0.7249615261751371,
+      "geometry": "effective-two-lead",
+      "setting": "L8_q4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.24000166812277873
+      ],
+      "impurity_charge": [
+        1.0000000000000222
+      ],
+      "impurity_spin_z": [
+        -1.609823385706477e-15
+      ],
+      "phase_derivative": [
+        0.13920293659843458
+      ],
+      "rho_ws_derivative": [
+        6.328271240363391e-15
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 4,
+    "qp_weights": [
+      [
+        0.3665308717196909,
+        0.5060995564892719,
+        0.11281048958039211,
+        0.013897107265192879,
+        0.0006619749454543254
+      ]
+    ],
+    "residuals": [
+      1.7835034700901241e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.00010645901784300804,
+      "diagonalization": 0.018111207988113165,
+      "hamiltonian": 0.0008973749354481697,
+      "observables_and_residuals": 0.0026964577846229076,
+      "total": 0.021901042200624943
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 1789,
+    "energies": [
+      -3.171749402314858
+    ],
+    "hamiltonian_sha256": "1acb83da700458a31e61bb755d2b3ee9c5d4fb3e70829a9799547d7d3708578f",
+    "label": {
+      "chi": 0.7249615261751371,
+      "geometry": "effective-two-lead",
+      "setting": "L8_q4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12115011842156097
+      ],
+      "impurity_charge": [
+        1.0000000000000036
+      ],
+      "impurity_spin_z": [
+        0.3425553054954872
+      ],
+      "phase_derivative": [
+        -0.03337220785413832
+      ],
+      "rho_ws_derivative": [
+        0.8137205248625907
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 4,
+    "qp_weights": [
+      [
+        0.6996892357417385,
+        0.23621328635476044,
+        0.057681547548199576,
+        0.006086950488359798,
+        0.00032897986694372305
+      ]
+    ],
+    "residuals": [
+      4.533977209532315e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.00010150019079446793,
+      "diagonalization": 0.0144941252656281,
+      "hamiltonian": 0.0006131245754659176,
+      "observables_and_residuals": 0.002005999907851219,
+      "total": 0.017314415890723467
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 2162,
+    "energies": [
+      -3.1717494423429353
+    ],
+    "hamiltonian_sha256": "e30df3949cff72a4ab86ced2d7f0b765f03b23f383000c4b59f7ca6b78b907f5",
+    "label": {
+      "chi": 0.7249616261751374,
+      "geometry": "effective-two-lead",
+      "setting": "L8_q4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.2400016691270395
+      ],
+      "impurity_charge": [
+        0.9999999999999971
+      ],
+      "impurity_spin_z": [
+        -1.8388068845354155e-15
+      ],
+      "phase_derivative": [
+        0.13920291224216247
+      ],
+      "rho_ws_derivative": [
+        -1.1102230246251567e-14
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 4,
+    "qp_weights": [
+      [
+        0.36653087573811416,
+        0.5060995554164629,
+        0.11281048763977922,
+        0.013897106329455431,
+        0.0006619748761885956
+      ]
+    ],
+    "residuals": [
+      1.9902246951612304e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.00010695774108171463,
+      "diagonalization": 0.018080249894410372,
+      "hamiltonian": 0.0009042075835168362,
+      "observables_and_residuals": 0.002611124888062477,
+      "total": 0.021793249994516373
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 1789,
+    "energies": [
+      -3.171749392624763
+    ],
+    "hamiltonian_sha256": "e30df3949cff72a4ab86ced2d7f0b765f03b23f383000c4b59f7ca6b78b907f5",
+    "label": {
+      "chi": 0.7249616261751374,
+      "geometry": "effective-two-lead",
+      "setting": "L8_q4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12115011692009935
+      ],
+      "impurity_charge": [
+        1.0000000000000016
+      ],
+      "impurity_spin_z": [
+        0.3425553088865125
+      ],
+      "phase_derivative": [
+        -0.03337220848850958
+      ],
+      "rho_ws_derivative": [
+        0.8137205341361816
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 4,
+    "qp_weights": [
+      [
+        0.6996892416764856,
+        0.23621328375925807,
+        0.05768154464611221,
+        0.006086950080939207,
+        0.00032897983720548703
+      ]
+    ],
+    "residuals": [
+      4.529320158925208e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 0.00010249996557831764,
+      "diagonalization": 0.014212833251804113,
+      "hamiltonian": 0.0005814582109451294,
+      "observables_and_residuals": 0.002003499772399664,
+      "total": 0.01699750032275915
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 2162,
+    "energies": [
+      -3.17014746546009
+    ],
+    "hamiltonian_sha256": "6b9ebefc82159deaac3652c705d5353934acc8ce7fb81bd623729f5422d03a62",
+    "label": {
+      "chi": 0.721,
+      "geometry": "effective-two-lead",
+      "setting": "L8_q4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.239961839318147
+      ],
+      "impurity_charge": [
+        1.0000000000000013
+      ],
+      "impurity_spin_z": [
+        -1.6306400674181987e-15
+      ],
+      "phase_derivative": [
+        0.14016390687709857
+      ],
+      "rho_ws_derivative": [
+        -2.442490654175349e-15
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 4,
+    "qp_weights": [
+      [
+        0.3663715593913452,
+        0.5061421336323023,
+        0.11288739807102999,
+        0.013934187731404733,
+        0.0006647211739162032
+      ]
+    ],
+    "residuals": [
+      2.0489560529264548e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 0,
+      "particle_number": null,
+      "twice_sz": 0
+    },
+    "timings_seconds": {
+      "basis": 0.00010583316907286644,
+      "diagonalization": 0.018737792037427425,
+      "hamiltonian": 0.0010795420967042446,
+      "observables_and_residuals": 0.002281959168612957,
+      "total": 0.02229412505403161
+    }
+  },
+  {
+    "backend": "qp",
+    "dimension": 1789,
+    "energies": [
+      -3.1721319736464304
+    ],
+    "hamiltonian_sha256": "6b9ebefc82159deaac3652c705d5353934acc8ce7fb81bd623729f5422d03a62",
+    "label": {
+      "chi": 0.721,
+      "geometry": "effective-two-lead",
+      "setting": "L8_q4"
+    },
+    "observables": {
+      "double_occupancy_0": [
+        0.12120933920898225
+      ],
+      "impurity_charge": [
+        0.9999999999999993
+      ],
+      "impurity_spin_z": [
+        0.342421565205981
+      ],
+      "phase_derivative": [
+        -0.033344998225622896
+      ],
+      "rho_ws_derivative": [
+        0.8133014283218408
+      ]
+    },
+    "options": {
+      "eigenpairs": 1,
+      "max_dimension": 5000000,
+      "max_memory_gib": 8.0,
+      "max_nnz": 100000000,
+      "maxiter": 10000,
+      "method": "auto",
+      "ncv": 40,
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "qp_cutoff": 4,
+    "qp_weights": [
+      [
+        0.6994551983162778,
+        0.2363156701084395,
+        0.05779597041163979,
+        0.006103008309525432,
+        0.0003301528541174366
+      ]
+    ],
+    "residuals": [
+      4.419528270754269e-13
+    ],
+    "sector": {
+      "eta": null,
+      "parity": 1,
+      "particle_number": null,
+      "twice_sz": 1
+    },
+    "timings_seconds": {
+      "basis": 9.979214519262314e-05,
+      "diagonalization": 0.014350791927427053,
+      "hamiltonian": 0.0008450420573353767,
+      "observables_and_residuals": 0.002024583052843809,
+      "total": 0.017413792200386524
+    }
+  }
+]

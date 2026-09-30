@@ -1,0 +1,30 @@
+{
+  "format_version": 1,
+  "anchors": [
+    {"lambda": 4.0, "nmax": 26, "keep": 4000, "keepenergy": 14, "keepmin": 1000},
+    {"lambda": 3.0, "nmax": 30, "keep": 4000, "keepenergy": 14, "keepmin": 1000},
+    {"lambda": 2.5, "nmax": 34, "keep": 4000, "keepenergy": 14, "keepmin": 1000},
+    {"lambda": 2.0, "nmax": 42, "keep": 4000, "keepenergy": 14, "keepmin": 1000},
+    {"lambda": 1.8, "nmax": 48, "keep": 4000, "keepenergy": 14, "keepmin": 1000}
+  ],
+  "stages": {
+    "gap16": {
+      "nz": [16, 16, 16, 8, 8],
+      "keep_checks": [1000, 2000, 4000],
+      "tighter_keep_lambda": [],
+      "tail_checks": true
+    },
+    "energy32": {
+      "nz": [32, 32, 32, 32, 32],
+      "keep_checks": [1000, 2000, 4000],
+      "tighter_keep_lambda": [1.8],
+      "tail_checks": true
+    },
+    "retention2": {
+      "nz": [32, 32, 32, 32, 32],
+      "keep_checks": [1000, 2000, 4000],
+      "tighter_keep_lambda": [2.0, 1.8],
+      "tail_checks": true
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "critical": {
+    "chi_critical": 0.7247589398670959,
+    "gap_at_published_chi": -0.0018835393612985918,
+    "phase_critical_over_pi": 0.4839022426007497,
+    "setting": "quick"
+  },
+  "high_symmetry": {
+    "chi": 0.0,
+    "even_excitation": 0.3310028736930402,
+    "even_level_splitting": 6.938893903907228e-16,
+    "phi2_over_pi": 0.640982964028624,
+    "phi3_over_pi": -0.640982964028624
+  },
+  "maximum_current_conservation_error": 5.967448757360216e-16,
+  "maximum_current_mapping_error": 6.106226635438361e-16,
+  "maximum_energy_mapping_error": 2.220446049250313e-14,
+  "maximum_residual": 6.721404430957479e-13
+}

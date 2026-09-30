@@ -1,0 +1,40 @@
+{
+  "format_version": 1,
+  "model": {"delta": 1.0, "detuning": 0.0, "bandwidth": 10000.0},
+  "fock_check_settings": {"levels": 2, "frequency_cutoff": 100.0, "cutoff": null},
+  "profiles": {
+    "quick": {
+      "frequency_points": 81, "quadratic_cases": [[0.0001, 0.0], [0.0001, 4.0]],
+      "quadratic_settings": [{"label": "N128_eta04", "cells": 128, "eta_ratio": 0.04}],
+      "interacting_gaps_over_D": [0.03], "log_widths": [0.4],
+      "interacting_settings": [{"label": "L2_k64", "levels": 2, "steps": 64, "cutoff": null}]
+    },
+    "paper": {
+      "frequency_points": 401,
+      "quadratic_cases": [[0.01, 0.0], [0.0001, 0.0], [0.000001, 0.0], [0.0001, 2.0], [0.0001, 4.0], [0.0001, 8.0]],
+      "quadratic_settings": [{"label": "N4096_eta01", "cells": 4096, "eta_ratio": 0.01}],
+      "interacting_gaps_over_D": [0.03, 0.00003], "log_widths": [0.2, 0.4],
+      "interacting_settings": [{"label": "L8_k240", "levels": 8, "steps": 240, "cutoff": null, "solver": {"method": "sparse"}}]
+    },
+    "convergence": {
+      "frequency_points": 401, "quadratic_cases": [[0.0001, 0.0], [0.0001, 4.0]],
+      "quadratic_settings": [
+        {"label": "N256_eta02", "cells": 256, "eta_ratio": 0.02},
+        {"label": "N512_eta02", "cells": 512, "eta_ratio": 0.02},
+        {"label": "N1024_eta02", "cells": 1024, "eta_ratio": 0.02},
+        {"label": "N2048_eta02", "cells": 2048, "eta_ratio": 0.02},
+        {"label": "N2048_eta01", "cells": 2048, "eta_ratio": 0.01},
+        {"label": "N4096_eta01", "cells": 4096, "eta_ratio": 0.01},
+        {"label": "N8192_eta01", "cells": 8192, "eta_ratio": 0.01},
+        {"label": "N8192_eta005", "cells": 8192, "eta_ratio": 0.005}
+      ],
+      "interacting_gaps_over_D": [0.03, 0.00003], "log_widths": [0.2, 0.4],
+      "interacting_settings": [
+        {"label": "L4_k240", "levels": 4, "steps": 240, "cutoff": null},
+        {"label": "L6_k240", "levels": 6, "steps": 240, "cutoff": null},
+        {"label": "L8_k240", "levels": 8, "steps": 240, "cutoff": null},
+        {"label": "L8_k480", "levels": 8, "steps": 480, "cutoff": null}
+      ]
+    }
+  }
+}

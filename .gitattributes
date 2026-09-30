@@ -1,0 +1,2 @@
+# Preserve the byte sizes and SHA-256 checksums recorded in the archive manifest.
+/large_Gamma/output/** text eol=lf

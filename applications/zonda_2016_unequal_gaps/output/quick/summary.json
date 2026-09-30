@@ -1,0 +1,9 @@
+{
+  "maximum_DC_L_current_difference": 0.004084005780541966,
+  "maximum_DC_minus_R_current_difference": 0.004084005780541966,
+  "maximum_FDC_L_current_difference": 0.004084005780541966,
+  "maximum_current_conservation_error": 2.5146551507759796e-14,
+  "maximum_current_derivative_error": 8.204581458670646e-10,
+  "maximum_residual": 1.0652534532293009e-12,
+  "points": 6
+}

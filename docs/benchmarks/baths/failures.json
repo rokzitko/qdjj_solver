@@ -1,0 +1,40 @@
+[
+  {
+    "exception": "RuntimeError",
+    "message": "surrogate fit did not converge",
+    "task": {
+      "bath_key": "655f4354d791441b47a2",
+      "quadratic_points": [
+        {
+          "detuning": 0.0,
+          "gamma": 0.3,
+          "phi": 0.8
+        },
+        {
+          "detuning": 0.6,
+          "gamma": 2.0,
+          "phi": 1.7
+        },
+        {
+          "detuning": 0.0,
+          "gamma": 10.0,
+          "phi": 0.2
+        }
+      ],
+      "repetitions": 5,
+      "spec": {
+        "bandwidth": 10.0,
+        "delta": 1.0,
+        "frequency_cutoff": 100.0,
+        "frequency_min": 0.001,
+        "frequency_points": 1000,
+        "kind": "surrogate",
+        "levels": 16,
+        "relative_weight": 0.0,
+        "seed": 1729,
+        "starts": 4
+      },
+      "type": "bath"
+    }
+  }
+]

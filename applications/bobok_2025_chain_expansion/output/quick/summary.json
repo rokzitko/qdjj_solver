@@ -1,0 +1,9 @@
+{
+  "crossings": [],
+  "current_points": 18,
+  "maximum_current_derivative_error": 3.422633565453026e-10,
+  "maximum_residual": 9.312194263383976e-14,
+  "maximum_spin_quantization_error": 3.552713678800501e-15,
+  "maximum_triplet_projection_error": 3.4416913763379853e-15,
+  "shared_points": 6
+}

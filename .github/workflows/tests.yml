@@ -1,0 +1,213 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: '23 5 * * 1'
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      extended:
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  OMP_NUM_THREADS: '1'
+  OPENBLAS_NUM_THREADS: '1'
+  MKL_NUM_THREADS: '1'
+  VECLIB_MAXIMUM_THREADS: '1'
+  PYTHONUTF8: '1'
+  PYTHONDONTWRITEBYTECODE: '1'
+  PIP_DISABLE_PIP_VERSION_CHECK: '1'
+
+jobs:
+  linux:
+    name: Linux / full suite
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+      - run: python -m pip install '.[dmrg,dev]'
+      - run: python -m ruff check src tests tools examples applications first_calculation large_Gamma NRG_comparisons
+      - run: python -B tools/check_release.py
+      - run: python -B examples/quickstart.py
+      - run: python -B first_calculation/run.py --all
+      - run: python -B examples/sector_convergence.py
+      - run: python -B examples/qp_convergence.py
+      - name: Tests and Python coverage
+        run: >-
+          python -B -m pytest --cov --cov-report=term-missing
+          --cov-report=json --cov-report=xml --cov-report=html
+          --junitxml=reports/tests.xml
+      - name: Enforce 95% Python line coverage
+        run: python tools/check_coverage.py reports/python-coverage.json
+      - name: Weekly or manual numerical stress checks
+        if: inputs.extended || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        run: python -B -m pytest -m slow --junitxml=reports/stress.xml
+      - name: Build and inspect distributions
+        run: |
+          python -m build
+          python tools/check_distribution.py dist/*.tar.gz dist/*.whl
+          python tools/check_wheel.py dist/*.whl --dmrg
+      - uses: actions/upload-artifact@v4
+        with:
+          name: linux-distributions
+          path: dist/
+          if-no-files-found: error
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: linux-reports
+          path: reports/
+          retention-days: 14
+
+  compatibility:
+    name: ${{ matrix.os }} / Python ${{ matrix.python }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-latest
+            python: '3.14'
+          - os: windows-latest
+            python: '3.11'
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 15
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - run: python -m pip install '.[test]' build
+      - name: Native, QP, persistence, and installed CLI compatibility
+        run: >-
+          python -B -m pytest tests/test_native_core.py tests/test_qp.py
+          tests/test_interfaces.py tests/test_io.py tests/test_applications.py
+          tests/test_applications_second_set.py tests/test_applications_third_set.py
+          tests/test_chain_expansion.py tests/test_application_chain_expansion.py
+          tests/test_qp_convergence.py tests/test_large_gamma.py
+          -m 'not dmrg and not slow'
+          --junitxml=reports/compatibility.xml
+      - name: Check platform wheel
+        run: |
+          python -m build --wheel
+          python tools/check_distribution.py dist/*.whl
+          python tools/check_wheel.py dist/*.whl
+      - uses: actions/upload-artifact@v4
+        with:
+          name: compatibility-wheel-${{ matrix.os }}
+          path: dist/*.whl
+          if-no-files-found: error
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: compatibility-${{ matrix.os }}
+          path: reports/
+          retention-days: 14
+
+  minimum-dependencies:
+    name: Linux / Python 3.11 / minimum runtime dependencies
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: python -m pip install -c tools/minimum-runtime.txt '.[dmrg,test]'
+      - run: python -m pip check
+      - name: Require both backends and HDF5 persistence with constrained dependencies
+        run: python -B tools/check_wheel.py --installed --dmrg
+      - run: python -B -m pytest --junitxml=reports/minimum-dependencies.xml
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: minimum-dependency-reports
+          path: reports/
+          retention-days: 14
+
+  sanitizers:
+    name: Linux / native sanitizers
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      CC: gcc
+      CXX: g++
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+      - name: Build instrumented extension
+        run: >-
+          python -m pip install '.[test]' -Cbuild-dir=build/sanitizers
+          -Ccmake.build-type=Debug -Ccmake.define.QDJJ_SANITIZERS=ON
+      - name: Exercise native safety and solver regressions
+        run: |
+          mkdir -p reports
+          LD_PRELOAD="$(g++ -print-file-name=libasan.so):$(g++ -print-file-name=libstdc++.so)"
+          export LD_PRELOAD
+          export ASAN_OPTIONS="detect_leaks=0:halt_on_error=1:log_path=$PWD/reports/asan"
+          export UBSAN_OPTIONS="halt_on_error=1:print_stacktrace=1:log_path=$PWD/reports/ubsan"
+          python -B -m pytest tests/test_native_core.py tests/test_qp.py --junitxml=reports/sanitizers.xml
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: native-sanitizer-reports
+          path: reports/
+          retention-days: 14
+
+  native-coverage:
+    name: Weekly / native coverage diagnostic
+    if: inputs.extended || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      CC: gcc
+      CXX: g++
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+      - name: Build coverage-instrumented extension
+        # Keep pybind11 headers available when gcov reads the compiled paths.
+        run: |
+          python -m pip install 'scikit-build-core>=0.11' 'pybind11>=3.0' cmake ninja 'gcovr>=8.4'
+          python -m pip install --no-build-isolation '.[test]' -Cbuild-dir=build/native-coverage -Ccmake.build-type=Debug -Ccmake.define.QDJJ_COVERAGE=ON
+      - run: python -B -m pytest tests/test_native_core.py tests/test_qp.py --junitxml=reports/native-tests.xml
+      - name: Report first-party C++ coverage
+        run: >-
+          python -m gcovr --root . --filter 'cpp/core.cpp'
+          --gcov-object-directory build/native-coverage
+          --exclude-throw-branches --exclude-unreachable-branches
+          --html-details reports/native.html --xml reports/native-coverage.xml
+          --json-summary reports/native-summary.json --print-summary
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: native-coverage-reports
+          path: reports/
+          retention-days: 14

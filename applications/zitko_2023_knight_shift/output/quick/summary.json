@@ -1,0 +1,7 @@
+{
+  "leading_kappa_over_gamma": 0.11415375251228316,
+  "maximum_coupling_scan_nrg_absolute_error": 0.0019990845633690857,
+  "maximum_phase_scan_nrg_absolute_error": 0.0019415884626133306,
+  "maximum_residual": 2.4859531780096213e-14,
+  "smallest_field_identity_error": 3.208160848089392e-09
+}

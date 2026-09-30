@@ -1,0 +1,1369 @@
+{
+  "format_version": 1,
+  "model": {
+    "bandwidth": 100.0,
+    "detuning": 0.0,
+    "field": 0.0,
+    "gamma": 0.4,
+    "gap": 1.0,
+    "geometry": "single",
+    "u": 2.0
+  },
+  "conventions": {
+    "energy_unit": "Delta; gap=Delta=1; bandwidth is the normal-state half-bandwidth D",
+    "energy_reference": "Isolated BCS vacuum subtracted; H_d=U/2*(n_d-1)^2+detuning*(n_d-1)+field*S_z",
+    "detuning": "detuning=epsilon_d+U/2=0; conventional epsilon_d=-1",
+    "hybridization": "gamma=Gamma=pi*rho*|V|^2 for the single reservoir; rho=1/(2D) per spin",
+    "spin": "S_z=(n_up-n_down)/2 in units of hbar; singlet total S_z=0, doublet total S_z=+1/2",
+    "normal_weights": "Normal-state measure dxi/(2D), retained without renormalization",
+    "bath_levels": "Total signed normal-state levels per reservoir; two Bogoliubov modes per level",
+    "compress": false,
+    "frequency_window": "Surrogate imaginary-frequency upper limit W/Delta; lower limit 0.001, 1000 log-spaced points, relative weight 1",
+    "values": "Lowest root in each sector; all ten observable values are dimensionless",
+    "residuals": "norm((H-E)*psi)/Delta for two energy-ordered roots per sector; array indices 0 and 1",
+    "finite_problem_qualified": "All four residuals pass residual_tolerance within residual_scope; not a cutoff, bond, bath, or continuum error bound",
+    "requested_observable_target": "tau(X)=absolute+relative*abs(X); finite comparisons use the new endpoint backend and value",
+    "comparison_difference": "new_value-old_value; NRG comparisons are NRG minus finite",
+    "comparison_ratio": "abs(difference)/scale; denominator_type identifies scale, not statistical significance"
+  },
+  "targets": {
+    "dmrg": {
+      "absolute": 1e-09,
+      "relative": 1e-06
+    },
+    "nrg": {
+      "absolute": 1e-06,
+      "relative": 0.001
+    },
+    "qp": {
+      "absolute": 1e-09,
+      "relative": 1e-06
+    }
+  },
+  "observables": {
+    "signed_gap": "g=(E_D-E_S)/Delta; negative means doublet ground state",
+    "singlet.energy": "E_S/Delta, lowest singlet energy in the stated reference",
+    "doublet.energy": "E_D/Delta, lowest doublet energy in the stated reference",
+    "singlet.P0": "Singlet impurity empty-state probability",
+    "singlet.P1": "Singlet impurity single-occupation probability (both spins)",
+    "singlet.P2": "Singlet impurity double-occupation probability",
+    "doublet.P0": "Doublet impurity empty-state probability",
+    "doublet.P1": "Doublet impurity single-occupation probability (both spins)",
+    "doublet.P2": "Doublet impurity double-occupation probability",
+    "doublet.moment": "Impurity <(n_up-n_down)/2> in the total S_z=+1/2 doublet"
+  },
+  "nrg_reference": {
+    "values": {
+      "signed_gap": -0.1743860241065591,
+      "singlet.energy": -0.9012116864072952,
+      "doublet.energy": -1.0755977105138543,
+      "singlet.P0": 0.2763372210646214,
+      "singlet.P1": 0.44732555787062306,
+      "singlet.P2": 0.27633722106475456,
+      "doublet.P0": 0.06730100608857911,
+      "doublet.P1": 0.8653979878228152,
+      "doublet.P2": 0.0673010060886047,
+      "doublet.moment": 0.4255010816343156
+    },
+    "empirical_uncertainties": {
+      "signed_gap": 2.207892617184063e-05,
+      "singlet.energy": 0.0007518918545076057,
+      "doublet.energy": 0.0007369262776122851,
+      "singlet.P0": 9.307904087223149e-06,
+      "singlet.P1": 1.8615808371082946e-05,
+      "singlet.P2": 9.307904326154855e-06,
+      "doublet.P0": 8.603721123942453e-06,
+      "doublet.P1": 1.720744216224592e-05,
+      "doublet.P2": 8.603721041345004e-06,
+      "doublet.moment": 1.0088202125504067e-05
+    },
+    "settings": {
+      "lambdas": [
+        1.8,
+        2.0,
+        2.5,
+        3.0,
+        4.0
+      ],
+      "nz": 32,
+      "reference_keep": 4000,
+      "central_estimate": "Lambda->1 extrapolation linear in log(Lambda)"
+    },
+    "uncertainty_kind": "conditional_empirical_not_statistical",
+    "status": "all_10_observables_pass_requested_nrg_target",
+    "uncertainty_description": "Empirical axis differences (truncation, chain length, and twist) are propagated through absolute extrapolation weights; the maximum across fit trials is added to the full model/range spread. The signed-gap uncertainty is estimated directly, not by summing branch-energy estimates. Nonstatistical."
+  },
+  "finite_results": {
+    "cosh12-qp-q6": {
+      "settings": {
+        "backend": "qp",
+        "bath_family": "cosh",
+        "bath_levels": 12,
+        "qp_cutoff": 6,
+        "bond_dimension": null,
+        "frequency_window": null
+      },
+      "values": {
+        "signed_gap": -0.17443577932249266,
+        "singlet.energy": -0.901164581648646,
+        "doublet.energy": -1.0756003609711386,
+        "singlet.P0": 0.27645723750101076,
+        "singlet.P1": 0.44708552499801135,
+        "singlet.P2": 0.2764572375009779,
+        "doublet.P0": 0.06730454866791624,
+        "doublet.P1": 0.8653909026642187,
+        "doublet.P2": 0.06730454866786506,
+        "doublet.moment": 0.4254922480471563
+      },
+      "residuals": {
+        "singlet": [
+          1.2923273015232472e-13,
+          3.6660953530815386e-13
+        ],
+        "doublet": [
+          1.467508047597612e-13,
+          2.1642909109082448e-13
+        ]
+      },
+      "residual_tolerance": 1e-08,
+      "residual_scope": "projected_cutoff_hamiltonian",
+      "finite_problem_qualified": true,
+      "continuum_target_established": false
+    },
+    "cosh12-qp-q7": {
+      "settings": {
+        "backend": "qp",
+        "bath_family": "cosh",
+        "bath_levels": 12,
+        "qp_cutoff": 7,
+        "bond_dimension": null,
+        "frequency_window": null
+      },
+      "values": {
+        "signed_gap": -0.17443577667041232,
+        "singlet.energy": -0.9011645847618135,
+        "doublet.energy": -1.0756003614322258,
+        "singlet.P0": 0.2764572365466126,
+        "singlet.P1": 0.4470855269070194,
+        "singlet.P2": 0.276457236546368,
+        "doublet.P0": 0.06730454890592075,
+        "doublet.P1": 0.8653909021882842,
+        "doublet.P2": 0.06730454890579507,
+        "doublet.moment": 0.4254922475091347
+      },
+      "residuals": {
+        "singlet": [
+          1.3364530526355272e-13,
+          2.6031992428458525e-13
+        ],
+        "doublet": [
+          1.8915245312958997e-13,
+          2.1127013783503707e-13
+        ]
+      },
+      "residual_tolerance": 1e-08,
+      "residual_scope": "projected_cutoff_hamiltonian",
+      "finite_problem_qualified": true,
+      "continuum_target_established": false
+    },
+    "cosh12-qp-q8": {
+      "settings": {
+        "backend": "qp",
+        "bath_family": "cosh",
+        "bath_levels": 12,
+        "qp_cutoff": 8,
+        "bond_dimension": null,
+        "frequency_window": null
+      },
+      "values": {
+        "signed_gap": -0.17443577665920684,
+        "singlet.energy": -0.9011645847748586,
+        "doublet.energy": -1.0756003614340655,
+        "singlet.P0": 0.2764572365423119,
+        "singlet.P1": 0.44708552691569925,
+        "singlet.P2": 0.27645723654198884,
+        "doublet.P0": 0.06730454890696976,
+        "doublet.P1": 0.865390902186202,
+        "doublet.P2": 0.06730454890682831,
+        "doublet.moment": 0.4254922475067776
+      },
+      "residuals": {
+        "singlet": [
+          1.2131191603801459e-13,
+          2.729805420159338e-13
+        ],
+        "doublet": [
+          2.29298723681802e-13,
+          2.97750130572267e-13
+        ]
+      },
+      "residual_tolerance": 1e-08,
+      "residual_scope": "projected_cutoff_hamiltonian",
+      "finite_problem_qualified": true,
+      "continuum_target_established": false
+    },
+    "cosh12-dmrg-chi384": {
+      "settings": {
+        "backend": "dmrg",
+        "bath_family": "cosh",
+        "bath_levels": 12,
+        "qp_cutoff": null,
+        "bond_dimension": 384,
+        "frequency_window": null
+      },
+      "values": {
+        "signed_gap": -0.17443577665918708,
+        "singlet.energy": -0.901164584774883,
+        "doublet.energy": -1.0756003614340701,
+        "singlet.P0": 0.2764572365420196,
+        "singlet.P1": 0.44708552691596803,
+        "singlet.P2": 0.2764572365420124,
+        "doublet.P0": 0.06730454890683933,
+        "doublet.P1": 0.8653909021863211,
+        "doublet.P2": 0.06730454890683955,
+        "doublet.moment": 0.42549224750677317
+      },
+      "residuals": {
+        "singlet": [
+          1.4126789124458805e-06,
+          2.2146125772639623e-06
+        ],
+        "doublet": [
+          3.7669658029798255e-07,
+          9.608012306336546e-06
+        ]
+      },
+      "residual_tolerance": 1e-07,
+      "residual_scope": "untruncated_finite_hamiltonian",
+      "finite_problem_qualified": false,
+      "continuum_target_established": false
+    },
+    "cosh12-dmrg-chi512": {
+      "settings": {
+        "backend": "dmrg",
+        "bath_family": "cosh",
+        "bath_levels": 12,
+        "qp_cutoff": null,
+        "bond_dimension": 512,
+        "frequency_window": null
+      },
+      "values": {
+        "signed_gap": -0.1744357766591743,
+        "singlet.energy": -0.9011645847748954,
+        "doublet.energy": -1.0756003614340697,
+        "singlet.P0": 0.27645723654201315,
+        "singlet.P1": 0.4470855269159746,
+        "singlet.P2": 0.27645723654201226,
+        "doublet.P0": 0.0673045489068399,
+        "doublet.P1": 0.86539090218632,
+        "doublet.P2": 0.06730454890684012,
+        "doublet.moment": 0.42549224750677256
+      },
+      "residuals": {
+        "singlet": [
+          2.4293410201138055e-07,
+          4.0008464447436225e-07
+        ],
+        "doublet": [
+          6.629789077524753e-08,
+          1.8262815946363768e-06
+        ]
+      },
+      "residual_tolerance": 1e-07,
+      "residual_scope": "untruncated_finite_hamiltonian",
+      "finite_problem_qualified": false,
+      "continuum_target_established": false
+    },
+    "cosh20-qp-q6": {
+      "settings": {
+        "backend": "qp",
+        "bath_family": "cosh",
+        "bath_levels": 20,
+        "qp_cutoff": 6,
+        "bond_dimension": null,
+        "frequency_window": null
+      },
+      "values": {
+        "signed_gap": -0.17438697842364137,
+        "singlet.energy": -0.9012213806402603,
+        "doublet.energy": -1.0756083590639016,
+        "singlet.P0": 0.2763383707489885,
+        "singlet.P1": 0.44732325850324384,
+        "singlet.P2": 0.2763383707477677,
+        "doublet.P0": 0.06730105216770581,
+        "doublet.P1": 0.8653978956662145,
+        "doublet.P2": 0.06730105216607966,
+        "doublet.moment": 0.42550095447806446
+      },
+      "residuals": {
+        "singlet": [
+          2.617908029140278e-13,
+          3.066344927462034e-13
+        ],
+        "doublet": [
+          3.169702857208635e-13,
+          3.620886577092778e-13
+        ]
+      },
+      "residual_tolerance": 1e-08,
+      "residual_scope": "projected_cutoff_hamiltonian",
+      "finite_problem_qualified": true,
+      "continuum_target_established": false
+    },
+    "cosh24-qp-q6": {
+      "settings": {
+        "backend": "qp",
+        "bath_family": "cosh",
+        "bath_levels": 24,
+        "qp_cutoff": 6,
+        "bond_dimension": null,
+        "frequency_window": null
+      },
+      "values": {
+        "signed_gap": -0.17438667370785066,
+        "singlet.energy": -0.9012216915738721,
+        "doublet.energy": -1.0756083652817228,
+        "singlet.P0": 0.27633784302800474,
+        "singlet.P1": 0.44732431394800287,
+        "singlet.P2": 0.2763378430239924,
+        "doublet.P0": 0.06730104122114472,
+        "doublet.P1": 0.8653979175625391,
+        "doublet.P2": 0.06730104121631614,
+        "doublet.moment": 0.42550097798882575
+      },
+      "residuals": {
+        "singlet": [
+          1.7001505090983606e-13,
+          2.7389317951081255e-13
+        ],
+        "doublet": [
+          2.3645599700098974e-13,
+          5.142869904676222e-13
+        ]
+      },
+      "residual_tolerance": 1e-08,
+      "residual_scope": "projected_cutoff_hamiltonian",
+      "finite_problem_qualified": true,
+      "continuum_target_established": false
+    },
+    "cosh26-qp-q5": {
+      "settings": {
+        "backend": "qp",
+        "bath_family": "cosh",
+        "bath_levels": 26,
+        "qp_cutoff": 5,
+        "bond_dimension": null,
+        "frequency_window": null
+      },
+      "values": {
+        "signed_gap": -0.17438707429317057,
+        "singlet.energy": -0.9012212227818621,
+        "doublet.energy": -1.0756082970750327,
+        "singlet.P0": 0.27633799208628923,
+        "singlet.P1": 0.44732401582831016,
+        "singlet.P2": 0.2763379920854006,
+        "doublet.P0": 0.06730101021399565,
+        "doublet.P1": 0.8653979795724439,
+        "doublet.P2": 0.06730101021356044,
+        "doublet.moment": 0.4255010460968176
+      },
+      "residuals": {
+        "singlet": [
+          1.8171368140975233e-13,
+          3.3693314880666233e-13
+        ],
+        "doublet": [
+          1.9799193169928199e-13,
+          2.153117335500829e-13
+        ]
+      },
+      "residual_tolerance": 1e-08,
+      "residual_scope": "projected_cutoff_hamiltonian",
+      "finite_problem_qualified": true,
+      "continuum_target_established": false
+    },
+    "cosh26-qp-q6": {
+      "settings": {
+        "backend": "qp",
+        "bath_family": "cosh",
+        "bath_levels": 26,
+        "qp_cutoff": 6,
+        "bond_dimension": null,
+        "frequency_window": null
+      },
+      "values": {
+        "signed_gap": -0.17438668854536343,
+        "singlet.energy": -0.9012216767258935,
+        "doublet.energy": -1.075608365271257,
+        "singlet.P0": 0.27633786177577185,
+        "singlet.P1": 0.4473242764549349,
+        "singlet.P2": 0.27633786176929326,
+        "doublet.P0": 0.06730104194455148,
+        "doublet.P1": 0.8653979161184923,
+        "doublet.P2": 0.06730104193695623,
+        "doublet.moment": 0.4255009765190497
+      },
+      "residuals": {
+        "singlet": [
+          2.9104839841800526e-13,
+          3.7469071887398607e-13
+        ],
+        "doublet": [
+          2.8041287626441656e-13,
+          3.0989293594456454e-13
+        ]
+      },
+      "residual_tolerance": 1e-08,
+      "residual_scope": "projected_cutoff_hamiltonian",
+      "finite_problem_qualified": true,
+      "continuum_target_established": false
+    },
+    "surrogate24-window100-qp-q6": {
+      "settings": {
+        "backend": "qp",
+        "bath_family": "surrogate",
+        "bath_levels": 24,
+        "qp_cutoff": 6,
+        "bond_dimension": null,
+        "frequency_window": 100.0
+      },
+      "values": {
+        "signed_gap": -0.17438669258533257,
+        "singlet.energy": -0.9012187491480594,
+        "doublet.energy": -1.075605441733392,
+        "singlet.P0": 0.27633787964431905,
+        "singlet.P1": 0.4473242407153336,
+        "singlet.P2": 0.27633787964034734,
+        "doublet.P0": 0.06730104170669622,
+        "doublet.P1": 0.8653979165917415,
+        "doublet.P2": 0.06730104170156233,
+        "doublet.moment": 0.42550097694535943
+      },
+      "residuals": {
+        "singlet": [
+          2.1190839934652907e-13,
+          5.210697096762072e-13
+        ],
+        "doublet": [
+          2.1430865389603815e-13,
+          2.373990166565274e-13
+        ]
+      },
+      "residual_tolerance": 1e-08,
+      "residual_scope": "projected_cutoff_hamiltonian",
+      "finite_problem_qualified": true,
+      "continuum_target_established": false
+    },
+    "surrogate24-window200-qp-q6": {
+      "settings": {
+        "backend": "qp",
+        "bath_family": "surrogate",
+        "bath_levels": 24,
+        "qp_cutoff": 6,
+        "bond_dimension": null,
+        "frequency_window": 200.0
+      },
+      "values": {
+        "signed_gap": -0.17438669662396222,
+        "singlet.energy": -0.9012216160860642,
+        "doublet.energy": -1.0756083127100264,
+        "singlet.P0": 0.2763378932213119,
+        "singlet.P1": 0.44732421356135244,
+        "singlet.P2": 0.27633789321733565,
+        "doublet.P0": 0.06730104172156619,
+        "doublet.P1": 0.8653979165615842,
+        "doublet.P2": 0.06730104171684963,
+        "doublet.moment": 0.42550097693335026
+      },
+      "residuals": {
+        "singlet": [
+          2.2403055729068583e-13,
+          3.4746609921443485e-13
+        ],
+        "doublet": [
+          2.853315008418682e-13,
+          2.7689289849153296e-13
+        ]
+      },
+      "residual_tolerance": 1e-08,
+      "residual_scope": "projected_cutoff_hamiltonian",
+      "finite_problem_qualified": true,
+      "continuum_target_established": false
+    },
+    "surrogate24-window400-qp-q6": {
+      "settings": {
+        "backend": "qp",
+        "bath_family": "surrogate",
+        "bath_levels": 24,
+        "qp_cutoff": 6,
+        "bond_dimension": null,
+        "frequency_window": 400.0
+      },
+      "values": {
+        "signed_gap": -0.17438669899620274,
+        "singlet.energy": -0.9012216636323059,
+        "doublet.energy": -1.0756083626285087,
+        "singlet.P0": 0.2763379010407136,
+        "singlet.P1": 0.4473241979224636,
+        "singlet.P2": 0.2763379010368228,
+        "doublet.P0": 0.06730104171974405,
+        "doublet.P1": 0.8653979165651509,
+        "doublet.P2": 0.06730104171510509,
+        "doublet.moment": 0.4255009769340983
+      },
+      "residuals": {
+        "singlet": [
+          2.212945528364095e-13,
+          3.182401104464174e-13
+        ],
+        "doublet": [
+          1.8087551953402348e-13,
+          2.5495527681681927e-13
+        ]
+      },
+      "residual_tolerance": 1e-08,
+      "residual_scope": "projected_cutoff_hamiltonian",
+      "finite_problem_qualified": true,
+      "continuum_target_established": false
+    }
+  },
+  "final_result_ids": [
+    "cosh26-qp-q6",
+    "surrogate24-window400-qp-q6",
+    "cosh12-dmrg-chi512",
+    "cosh12-qp-q8"
+  ],
+  "comparisons": [
+    {
+      "id": "cosh26-qp-q6-minus-cosh26-qp-q5",
+      "kind": "qp_cutoff_refinement",
+      "new_id": "cosh26-qp-q6",
+      "old_id": "cosh26-qp-q5",
+      "denominator_type": "requested_observable_target",
+      "observables": {
+        "signed_gap": {
+          "difference": 3.8574780714117907e-07,
+          "scale": 1.7538668854536342e-07,
+          "ratio": 2.1994132527418473
+        },
+        "singlet.energy": {
+          "difference": -4.539440313644505e-07,
+          "scale": 9.022216767258935e-07,
+          "ratio": 0.5031402404470986
+        },
+        "doublet.energy": {
+          "difference": -6.819622422327143e-08,
+          "scale": 1.076608365271257e-06,
+          "ratio": 0.06334357638591173
+        },
+        "singlet.P0": {
+          "difference": -1.3031051737666388e-07,
+          "scale": 2.7733786177577184e-07,
+          "ratio": 0.4698619818523739
+        },
+        "singlet.P1": {
+          "difference": 2.6062662472625675e-07,
+          "scale": 4.4832427645493486e-07,
+          "ratio": 0.5813350702021479
+        },
+        "singlet.P2": {
+          "difference": -1.3031610734959287e-07,
+          "scale": 2.7733786176929326e-07,
+          "ratio": 0.46988213768662374
+        },
+        "doublet.P0": {
+          "difference": 3.1730555835607355e-08,
+          "scale": 6.830104194455148e-08,
+          "ratio": 0.46456913294773783
+        },
+        "doublet.P1": {
+          "difference": -6.345395164863987e-08,
+          "scale": 8.663979161184922e-07,
+          "ratio": 0.07323880917548473
+        },
+        "doublet.P2": {
+          "difference": 3.172339578527694e-08,
+          "scale": 6.830104193695622e-08,
+          "ratio": 0.4644643022365388
+        },
+        "doublet.moment": {
+          "difference": -6.957776788052428e-08,
+          "scale": 4.2650097651904973e-07,
+          "ratio": 0.1631362451931375
+        }
+      }
+    },
+    {
+      "id": "cosh24-qp-q6-minus-cosh20-qp-q6",
+      "kind": "bath_level_refinement",
+      "new_id": "cosh24-qp-q6",
+      "old_id": "cosh20-qp-q6",
+      "denominator_type": "requested_observable_target",
+      "observables": {
+        "signed_gap": {
+          "difference": 3.0471579071100763e-07,
+          "scale": 1.7538667370785065e-07,
+          "ratio": 1.737394206007842
+        },
+        "singlet.energy": {
+          "difference": -3.109336118578554e-07,
+          "scale": 9.022216915738721e-07,
+          "ratio": 0.34463105327854643
+        },
+        "doublet.energy": {
+          "difference": -6.2178211468477684e-09,
+          "scale": 1.076608365281723e-06,
+          "ratio": 0.005775378816809316
+        },
+        "singlet.P0": {
+          "difference": -5.277209837450947e-07,
+          "scale": 2.7733784302800474e-07,
+          "ratio": 1.9028091441953237
+        },
+        "singlet.P1": {
+          "difference": 1.0554447590349625e-06,
+          "scale": 4.483243139480029e-07,
+          "ratio": 2.354199239698996
+        },
+        "singlet.P2": {
+          "difference": -5.277237752898678e-07,
+          "scale": 2.773378430239924e-07,
+          "ratio": 1.9028192097254273
+        },
+        "doublet.P0": {
+          "difference": -1.0946561088132079e-08,
+          "scale": 6.830104122114471e-08,
+          "ratio": 0.1602693149682648
+        },
+        "doublet.P1": {
+          "difference": 2.1896324642334264e-08,
+          "scale": 8.663979175625391e-07,
+          "ratio": 0.025272826952234363
+        },
+        "doublet.P2": {
+          "difference": -1.094976352644661e-08,
+          "scale": 6.830104121631613e-08,
+          "ratio": 0.1603162020878661
+        },
+        "doublet.moment": {
+          "difference": 2.3510761282263815e-08,
+          "scale": 4.2650097798882574e-07,
+          "ratio": 0.05512475350731738
+        }
+      }
+    },
+    {
+      "id": "cosh26-qp-q6-minus-cosh24-qp-q6",
+      "kind": "bath_level_refinement",
+      "new_id": "cosh26-qp-q6",
+      "old_id": "cosh24-qp-q6",
+      "denominator_type": "requested_observable_target",
+      "observables": {
+        "signed_gap": {
+          "difference": -1.483751277397971e-08,
+          "scale": 1.7538668854536342e-07,
+          "ratio": 0.08459885352212473
+        },
+        "singlet.energy": {
+          "difference": 1.4847978624388247e-08,
+          "scale": 9.022216767258935e-07,
+          "ratio": 0.0164571291151756
+        },
+        "doublet.energy": {
+          "difference": 1.0465850408536426e-11,
+          "scale": 1.076608365271257e-06,
+          "ratio": 9.721130492887728e-06
+        },
+        "singlet.P0": {
+          "difference": 1.8747767116522596e-08,
+          "scale": 2.7733786177577184e-07,
+          "ratio": 0.0675990180225742
+        },
+        "singlet.P1": {
+          "difference": -3.749306798361829e-08,
+          "scale": 4.4832427645493486e-07,
+          "ratio": 0.08362935034455368
+        },
+        "singlet.P2": {
+          "difference": 1.8745300867095693e-08,
+          "scale": 2.7733786176929326e-07,
+          "ratio": 0.06759012544305686
+        },
+        "doublet.P0": {
+          "difference": 7.234067650463416e-10,
+          "scale": 6.830104194455148e-08,
+          "ratio": 0.0105914455248519
+        },
+        "doublet.P1": {
+          "difference": -1.444046882070893e-09,
+          "scale": 8.663979161184922e-07,
+          "ratio": 0.0016667247868511713
+        },
+        "doublet.P2": {
+          "difference": 7.206400892689757e-10,
+          "scale": 6.830104193695622e-08,
+          "ratio": 0.01055093844591927
+        },
+        "doublet.moment": {
+          "difference": -1.4697760231108248e-09,
+          "scale": 4.2650097651904973e-07,
+          "ratio": 0.0034461258098553898
+        }
+      }
+    },
+    {
+      "id": "surrogate24-window200-qp-q6-minus-surrogate24-window100-qp-q6",
+      "kind": "window_refinement",
+      "new_id": "surrogate24-window200-qp-q6",
+      "old_id": "surrogate24-window100-qp-q6",
+      "denominator_type": "requested_observable_target",
+      "observables": {
+        "signed_gap": {
+          "difference": -4.038629652924897e-09,
+          "scale": 1.753866966239622e-07,
+          "ratio": 0.02302700108198012
+        },
+        "singlet.energy": {
+          "difference": -2.8669380047752213e-06,
+          "scale": 9.022216160860641e-07,
+          "ratio": 3.177642780509196
+        },
+        "doublet.energy": {
+          "difference": -2.8709766344281462e-06,
+          "scale": 1.0766083127100265e-06,
+          "ratio": 2.6666862967102265
+        },
+        "singlet.P0": {
+          "difference": 1.3576992863306714e-08,
+          "scale": 2.773378932213119e-07,
+          "ratio": 0.04895469820444787
+        },
+        "singlet.P1": {
+          "difference": -2.7153981174699027e-08,
+          "scale": 4.483242135613524e-07,
+          "ratio": 0.060567732799877094
+        },
+        "singlet.P2": {
+          "difference": 1.3576988311392313e-08,
+          "scale": 2.773378932173357e-07,
+          "ratio": 0.04895468179226671
+        },
+        "doublet.P0": {
+          "difference": 1.4869966369346344e-11,
+          "scale": 6.830104172156618e-08,
+          "ratio": 0.00021771214603087268
+        },
+        "doublet.P1": {
+          "difference": -3.0157321084800515e-11,
+          "scale": 8.66397916561584e-07,
+          "ratio": 3.48077026829472e-05
+        },
+        "doublet.P2": {
+          "difference": 1.528729920430294e-11,
+          "scale": 6.830104171684962e-08,
+          "ratio": 0.0002238223432620299
+        },
+        "doublet.moment": {
+          "difference": -1.2009171435067856e-11,
+          "scale": 4.2650097693335027e-07,
+          "ratio": 2.8157430075346675e-05
+        }
+      }
+    },
+    {
+      "id": "surrogate24-window400-qp-q6-minus-surrogate24-window200-qp-q6",
+      "kind": "window_refinement",
+      "new_id": "surrogate24-window400-qp-q6",
+      "old_id": "surrogate24-window200-qp-q6",
+      "denominator_type": "requested_observable_target",
+      "observables": {
+        "signed_gap": {
+          "difference": -2.3722405151360704e-09,
+          "scale": 1.7538669899620273e-07,
+          "ratio": 0.013525772072301968
+        },
+        "singlet.energy": {
+          "difference": -4.7546241721541094e-08,
+          "scale": 9.022216636323059e-07,
+          "ratio": 0.05269906901827424
+        },
+        "doublet.energy": {
+          "difference": -4.9918482236677164e-08,
+          "scale": 1.0766083626285087e-06,
+          "ratio": 0.04636642624138885
+        },
+        "singlet.P0": {
+          "difference": 7.819401681707916e-09,
+          "scale": 2.773379010407136e-07,
+          "ratio": 0.02819449362083409
+        },
+        "singlet.P1": {
+          "difference": -1.5638888850588728e-08,
+          "scale": 4.4832419792246357e-07,
+          "ratio": 0.03488299075325269
+        },
+        "singlet.P2": {
+          "difference": 7.819487168880812e-09,
+          "scale": 2.7733790103682283e-07,
+          "ratio": 0.028194801863170516
+        },
+        "doublet.P0": {
+          "difference": -1.8221396613782304e-12,
+          "scale": 6.830104171974404e-08,
+          "ratio": 2.6678065451108598e-05
+        },
+        "doublet.P1": {
+          "difference": 3.566702488910778e-12,
+          "scale": 8.663979165651508e-07,
+          "ratio": 4.116702522844273e-06
+        },
+        "doublet.P2": {
+          "difference": -1.744535071956932e-12,
+          "scale": 6.830104171510509e-08,
+          "ratio": 2.5541851605041038e-05
+        },
+        "doublet.moment": {
+          "difference": 7.480127628411992e-13,
+          "scale": 4.2650097693409825e-07,
+          "ratio": 1.7538359893529155e-06
+        }
+      }
+    },
+    {
+      "id": "cosh12-dmrg-chi512-minus-cosh12-dmrg-chi384",
+      "kind": "bond_refinement",
+      "new_id": "cosh12-dmrg-chi512",
+      "old_id": "cosh12-dmrg-chi384",
+      "denominator_type": "requested_observable_target",
+      "observables": {
+        "signed_gap": {
+          "difference": 1.27675647831893e-14,
+          "scale": 1.754357766591743e-07,
+          "ratio": 7.277628900058014e-08
+        },
+        "singlet.energy": {
+          "difference": -1.2323475573339238e-14,
+          "scale": 9.021645847748953e-07,
+          "ratio": 1.3659897297358602e-08
+        },
+        "doublet.energy": {
+          "difference": 4.440892098500626e-16,
+          "scale": 1.0766003614340698e-06,
+          "ratio": 4.1249216121246707e-10
+        },
+        "singlet.P0": {
+          "difference": -6.439293542825908e-15,
+          "scale": 2.774572365420132e-07,
+          "ratio": 2.3208237864255004e-08
+        },
+        "singlet.P1": {
+          "difference": 6.5503158452884236e-15,
+          "scale": 4.480855269159746e-07,
+          "ratio": 1.461844994274217e-08
+        },
+        "singlet.P2": {
+          "difference": -1.1102230246251565e-16,
+          "scale": 2.774572365420123e-07,
+          "ratio": 4.00142032142329e-10
+        },
+        "doublet.P0": {
+          "difference": 5.689893001203927e-16,
+          "scale": 6.83045489068399e-08,
+          "ratio": 8.330181653002838e-09
+        },
+        "doublet.P1": {
+          "difference": -1.1102230246251565e-15,
+          "scale": 8.663909021863199e-07,
+          "ratio": 1.281434306181576e-09
+        },
+        "doublet.P2": {
+          "difference": 5.689893001203927e-16,
+          "scale": 6.830454890684012e-08,
+          "ratio": 8.33018165300281e-09
+        },
+        "doublet.moment": {
+          "difference": -6.106226635438361e-16,
+          "scale": 4.2649224750677256e-07,
+          "ratio": 1.4317321524915634e-09
+        }
+      }
+    },
+    {
+      "id": "cosh12-qp-q7-minus-cosh12-qp-q6",
+      "kind": "qp_cutoff_refinement",
+      "new_id": "cosh12-qp-q7",
+      "old_id": "cosh12-qp-q6",
+      "denominator_type": "requested_observable_target",
+      "observables": {
+        "signed_gap": {
+          "difference": 2.652080333120921e-09,
+          "scale": 1.754357766704123e-07,
+          "ratio": 0.015117100875628871
+        },
+        "singlet.energy": {
+          "difference": -3.1131675015672045e-09,
+          "scale": 9.021645847618135e-07,
+          "ratio": 0.0034507755615225495
+        },
+        "doublet.energy": {
+          "difference": -4.610871684462836e-10,
+          "scale": 1.0766003614322258e-06,
+          "ratio": 0.000428280711175769
+        },
+        "singlet.P0": {
+          "difference": -9.543981716042538e-10,
+          "scale": 2.7745723654661257e-07,
+          "ratio": 0.003439802772792036
+        },
+        "singlet.P1": {
+          "difference": 1.9090080627393036e-09,
+          "scale": 4.480855269070194e-07,
+          "ratio": 0.004260365372469249
+        },
+        "singlet.P2": {
+          "difference": -9.546098911350498e-10,
+          "scale": 2.77457236546368e-07,
+          "ratio": 0.003440565843650352
+        },
+        "doublet.P0": {
+          "difference": 2.380045049932278e-10,
+          "scale": 6.830454890592075e-08,
+          "ratio": 0.0034844605345544883
+        },
+        "doublet.P1": {
+          "difference": -4.759345140215032e-10,
+          "scale": 8.663909021882841e-07,
+          "ratio": 0.0005493299996796055
+        },
+        "doublet.P2": {
+          "difference": 2.3793000902827544e-10,
+          "scale": 6.830454890579507e-08,
+          "ratio": 0.0034833698902898263
+        },
+        "doublet.moment": {
+          "difference": -5.380215717387671e-10,
+          "scale": 4.264922475091347e-07,
+          "ratio": 0.0012615037550647238
+        }
+      }
+    },
+    {
+      "id": "cosh12-qp-q8-minus-cosh12-qp-q7",
+      "kind": "qp_cutoff_refinement",
+      "new_id": "cosh12-qp-q8",
+      "old_id": "cosh12-qp-q7",
+      "denominator_type": "requested_observable_target",
+      "observables": {
+        "signed_gap": {
+          "difference": 1.1205480987541705e-11,
+          "scale": 1.7543577665920682e-07,
+          "ratio": 6.387226825067123e-05
+        },
+        "singlet.energy": {
+          "difference": -1.304512053934559e-11,
+          "scale": 9.021645847748585e-07,
+          "ratio": 1.445980119315046e-05
+        },
+        "doublet.energy": {
+          "difference": -1.8396395518038844e-12,
+          "scale": 1.0766003614340656e-06,
+          "ratio": 1.7087487778226516e-06
+        },
+        "singlet.P0": {
+          "difference": -4.300670930490469e-12,
+          "scale": 2.774572365423119e-07,
+          "ratio": 1.550030189908066e-05
+        },
+        "singlet.P1": {
+          "difference": 8.679834628821936e-12,
+          "scale": 4.4808552691569927e-07,
+          "ratio": 1.937093279617335e-05
+        },
+        "singlet.P2": {
+          "difference": -4.3791636983314675e-12,
+          "scale": 2.7745723654198883e-07,
+          "ratio": 1.578320231582336e-05
+        },
+        "doublet.P0": {
+          "difference": 1.049008102604887e-12,
+          "scale": 6.830454890696974e-08,
+          "ratio": 1.5357807340674012e-05
+        },
+        "doublet.P1": {
+          "difference": -2.082223282684481e-12,
+          "scale": 8.663909021862019e-07,
+          "ratio": 2.403330041243873e-06
+        },
+        "doublet.P2": {
+          "difference": 1.0332429356552097e-12,
+          "scale": 6.83045489068283e-08,
+          "ratio": 1.5127000356368915e-05
+        },
+        "doublet.moment": {
+          "difference": -2.35711450358167e-12,
+          "scale": 4.264922475067776e-07,
+          "ratio": 5.526746423554186e-06
+        }
+      }
+    },
+    {
+      "id": "cosh12-dmrg-chi512-minus-cosh12-qp-q8",
+      "kind": "same_bath_backend",
+      "new_id": "cosh12-dmrg-chi512",
+      "old_id": "cosh12-qp-q8",
+      "denominator_type": "requested_observable_target",
+      "observables": {
+        "signed_gap": {
+          "difference": 3.2529534621517087e-14,
+          "scale": 1.754357766591743e-07,
+          "ratio": 1.8542132762756504e-07
+        },
+        "singlet.energy": {
+          "difference": -3.674838211509268e-14,
+          "scale": 9.021645847748953e-07,
+          "ratio": 4.0733567616447726e-08
+        },
+        "doublet.energy": {
+          "difference": -4.218847493575595e-15,
+          "scale": 1.0766003614340698e-06,
+          "ratio": 3.918675531518437e-09
+        },
+        "singlet.P0": {
+          "difference": -2.987610159266296e-13,
+          "scale": 2.774572365420132e-07,
+          "ratio": 1.0767822084950038e-06
+        },
+        "singlet.P1": {
+          "difference": 2.753353101070388e-13,
+          "scale": 4.480855269159746e-07,
+          "ratio": 6.144704382711963e-07
+        },
+        "singlet.P2": {
+          "difference": 2.3425705819590803e-14,
+          "scale": 2.774572365420123e-07,
+          "ratio": 8.442996878203141e-08
+        },
+        "doublet.P0": {
+          "difference": -1.2985446051771987e-13,
+          "scale": 6.83045489068399e-08,
+          "ratio": 1.9011099933450622e-06
+        },
+        "doublet.P1": {
+          "difference": 1.1801670751765414e-13,
+          "scale": 8.663909021863199e-07,
+          "ratio": 1.3621646674710154e-07
+        },
+        "doublet.P2": {
+          "difference": 1.1809997424450103e-14,
+          "scale": 6.830454890684012e-08,
+          "ratio": 1.729020630903754e-07
+        },
+        "doublet.moment": {
+          "difference": -5.051514762044462e-15,
+          "scale": 4.2649224750677256e-07,
+          "ratio": 1.184432962515748e-08
+        }
+      }
+    },
+    {
+      "id": "surrogate24-window400-qp-q6-minus-cosh26-qp-q6",
+      "kind": "cross_family_and_levels",
+      "new_id": "surrogate24-window400-qp-q6",
+      "old_id": "cosh26-qp-q6",
+      "denominator_type": "requested_observable_target",
+      "observables": {
+        "signed_gap": {
+          "difference": -1.0450839305065074e-08,
+          "scale": 1.7538669899620273e-07,
+          "ratio": 0.05958741093183665
+        },
+        "singlet.energy": {
+          "difference": 1.3093587547530205e-08,
+          "scale": 9.022216636323059e-07,
+          "ratio": 0.014512606020582549
+        },
+        "doublet.energy": {
+          "difference": 2.6427482424651316e-09,
+          "scale": 1.0766083626285087e-06,
+          "ratio": 0.0024546978587579767
+        },
+        "singlet.P0": {
+          "difference": 3.92649417424451e-08,
+          "scale": 2.773379010407136e-07,
+          "ratio": 0.14157798697943183
+        },
+        "singlet.P1": {
+          "difference": -7.85324713037383e-08,
+          "scale": 4.4832419792246357e-07,
+          "ratio": 0.17516893281169774
+        },
+        "singlet.P2": {
+          "difference": 3.92675295612932e-08,
+          "scale": 2.7733790103682283e-07,
+          "ratio": 0.1415873179053142
+        },
+        "doublet.P0": {
+          "difference": -2.2480743655517443e-10,
+          "scale": 6.830104171974404e-08,
+          "ratio": 0.0032914203194383857
+        },
+        "doublet.P1": {
+          "difference": 4.466585989959526e-10,
+          "scale": 8.663979165651508e-07,
+          "ratio": 0.0005155351720682088
+        },
+        "doublet.P2": {
+          "difference": -2.2185113468520257e-10,
+          "scale": 6.830104171510509e-08,
+          "ratio": 0.0032481369114482944
+        },
+        "doublet.moment": {
+          "difference": 4.150485510834301e-10,
+          "scale": 4.2650097693409825e-07,
+          "ratio": 0.0009731479493130499
+        }
+      }
+    },
+    {
+      "id": "nrg_reference-minus-cosh26-qp-q6",
+      "kind": "nrg_minus_finite",
+      "new_id": "nrg_reference",
+      "old_id": "cosh26-qp-q6",
+      "denominator_type": "nrg_empirical_uncertainty",
+      "observables": {
+        "signed_gap": {
+          "difference": 6.644388043375304e-07,
+          "scale": 2.207892617184063e-05,
+          "ratio": 0.030093800720478556
+        },
+        "singlet.energy": {
+          "difference": 9.99031859827415e-06,
+          "scale": 0.0007518918545076057,
+          "ratio": 0.013286908932956254
+        },
+        "doublet.energy": {
+          "difference": 1.0654757402583925e-05,
+          "scale": 0.0007369262776122851,
+          "ratio": 0.014458376266763625
+        },
+        "singlet.P0": {
+          "difference": -6.407111504680429e-07,
+          "scale": 9.307904087223149e-06,
+          "ratio": 0.06883516895576305
+        },
+        "singlet.P1": {
+          "difference": 1.2814156881701955e-06,
+          "scale": 1.8615808371082946e-05,
+          "ratio": 0.06883481300552574
+        },
+        "singlet.P2": {
+          "difference": -6.407045387013532e-07,
+          "scale": 9.307904326154855e-06,
+          "ratio": 0.06883445684986234
+        },
+        "doublet.P0": {
+          "difference": -3.585597237176774e-08,
+          "scale": 8.603721123942453e-06,
+          "ratio": 0.00416749588407598
+        },
+        "doublet.P1": {
+          "difference": 7.170432292369355e-08,
+          "scale": 1.720744216224592e-05,
+          "ratio": 0.004167052967408299
+        },
+        "doublet.P2": {
+          "difference": -3.584835152337096e-08,
+          "scale": 8.603721041345004e-06,
+          "ratio": 0.004166610162173139
+        },
+        "doublet.moment": {
+          "difference": 1.0511526588041775e-07,
+          "scale": 1.0088202125504067e-05,
+          "ratio": 0.010419623295876972
+        }
+      }
+    },
+    {
+      "id": "nrg_reference-minus-surrogate24-window400-qp-q6",
+      "kind": "nrg_minus_finite",
+      "new_id": "nrg_reference",
+      "old_id": "surrogate24-window400-qp-q6",
+      "denominator_type": "nrg_empirical_uncertainty",
+      "observables": {
+        "signed_gap": {
+          "difference": 6.748896436425955e-07,
+          "scale": 2.207892617184063e-05,
+          "ratio": 0.03056714073818259
+        },
+        "singlet.energy": {
+          "difference": 9.97722501072662e-06,
+          "scale": 0.0007518918545076057,
+          "ratio": 0.013269494743044456
+        },
+        "doublet.energy": {
+          "difference": 1.065211465434146e-05,
+          "scale": 0.0007369262776122851,
+          "ratio": 0.014454790089526158
+        },
+        "singlet.P0": {
+          "difference": -6.79976092210488e-07,
+          "scale": 9.307904087223149e-06,
+          "ratio": 0.07305362043254005
+        },
+        "singlet.P1": {
+          "difference": 1.3599481594739338e-06,
+          "scale": 1.8615808371082946e-05,
+          "ratio": 0.07305340344964138
+        },
+        "singlet.P2": {
+          "difference": -6.799720682626464e-07,
+          "scale": 9.307904326154855e-06,
+          "ratio": 0.07305318624214378
+        },
+        "doublet.P0": {
+          "difference": -3.563116493521257e-08,
+          "scale": 8.603721123942453e-06,
+          "ratio": 0.004141366790243594
+        },
+        "doublet.P1": {
+          "difference": 7.12576643246976e-08,
+          "scale": 1.720744216224592e-05,
+          "ratio": 0.004141095675511893
+        },
+        "doublet.P2": {
+          "difference": -3.5626500388685756e-08,
+          "scale": 8.603721041345004e-06,
+          "ratio": 0.004140824675449534
+        },
+        "doublet.moment": {
+          "difference": 1.0470021732933432e-07,
+          "scale": 1.0088202125504067e-05,
+          "ratio": 0.010378481321725388
+        }
+      }
+    },
+    {
+      "id": "nrg_reference-minus-cosh12-dmrg-chi512",
+      "kind": "nrg_minus_finite",
+      "new_id": "nrg_reference",
+      "old_id": "cosh12-dmrg-chi512",
+      "denominator_type": "nrg_empirical_uncertainty",
+      "observables": {
+        "signed_gap": {
+          "difference": 4.9752552615217605e-05,
+          "scale": 2.207892617184063e-05,
+          "ratio": 2.253395487986721
+        },
+        "singlet.energy": {
+          "difference": -4.710163239984855e-05,
+          "scale": 0.0007518918545076057,
+          "ratio": 0.0626441583553185
+        },
+        "doublet.energy": {
+          "difference": 2.6509202153413014e-06,
+          "scale": 0.0007369262776122851,
+          "ratio": 0.003597266505315224
+        },
+        "singlet.P0": {
+          "difference": -0.0001200154773917661,
+          "scale": 9.307904087223149e-06,
+          "ratio": 12.893931465893589
+        },
+        "singlet.P1": {
+          "difference": 0.00024003095464847357,
+          "scale": 1.8615808371082946e-05,
+          "ratio": 12.89393132244142
+        },
+        "singlet.P2": {
+          "difference": -0.00012001547725770667,
+          "scale": 9.307904326154855e-06,
+          "ratio": 12.893931120506663
+        },
+        "doublet.P0": {
+          "difference": -3.542818260787728e-06,
+          "scale": 8.603721123942453e-06,
+          "ratio": 0.41177744022046064
+        },
+        "doublet.P1": {
+          "difference": 7.085636495207659e-06,
+          "scale": 1.720744216224592e-05,
+          "ratio": 0.4117774407374698
+        },
+        "doublet.P2": {
+          "difference": -3.5428182354191318e-06,
+          "scale": 8.603721041345004e-06,
+          "ratio": 0.4117774412250457
+        },
+        "doublet.moment": {
+          "difference": 8.8341275430448e-06,
+          "scale": 1.0088202125504067e-05,
+          "ratio": 0.8756889912733975
+        }
+      }
+    },
+    {
+      "id": "nrg_reference-minus-cosh12-qp-q8",
+      "kind": "nrg_minus_finite",
+      "new_id": "nrg_reference",
+      "old_id": "cosh12-qp-q8",
+      "denominator_type": "nrg_empirical_uncertainty",
+      "observables": {
+        "signed_gap": {
+          "difference": 4.975255264774714e-05,
+          "scale": 2.207892617184063e-05,
+          "ratio": 2.2533954894600505
+        },
+        "singlet.energy": {
+          "difference": -4.710163243659693e-05,
+          "scale": 0.0007518918545076057,
+          "ratio": 0.06264415840419306
+        },
+        "doublet.energy": {
+          "difference": 2.650920211122454e-06,
+          "scale": 0.0007369262776122851,
+          "ratio": 0.0035972664995902993
+        },
+        "singlet.P0": {
+          "difference": -0.00012001547769052712,
+          "scale": 9.307904087223149e-06,
+          "ratio": 12.893931497991149
+        },
+        "singlet.P1": {
+          "difference": 0.00024003095492380888,
+          "scale": 1.8615808371082946e-05,
+          "ratio": 12.893931337231821
+        },
+        "singlet.P2": {
+          "difference": -0.00012001547723428097,
+          "scale": 9.307904326154855e-06,
+          "ratio": 12.893931117989908
+        },
+        "doublet.P0": {
+          "difference": -3.5428183906421884e-06,
+          "scale": 8.603721123942453e-06,
+          "ratio": 0.411777455313286
+        },
+        "doublet.P1": {
+          "difference": 7.0856366132243664e-06,
+          "scale": 1.720744216224592e-05,
+          "ratio": 0.41177744759593876
+        },
+        "doublet.P2": {
+          "difference": -3.5428182236091343e-06,
+          "scale": 8.603721041345004e-06,
+          "ratio": 0.41177743985238413
+        },
+        "doublet.moment": {
+          "difference": 8.834127537993286e-06,
+          "scale": 1.0088202125504067e-05,
+          "ratio": 0.8756889907726626
+        }
+      }
+    }
+  ],
+  "assessment": {
+    "nrg": "All ten requested NRG targets pass conditionally; empirical uncertainties are not rigorous continuum bounds.",
+    "qp_dmrg": "Continuum targets are not established. QP residual qualification applies only to the projected cutoff Hamiltonian; both DMRG endpoints fail the all-root criterion.",
+    "comparisons": "Finite differences are diagnostics, not error bounds; cross-family agreement does not certify continuum accuracy."
+  }
+}

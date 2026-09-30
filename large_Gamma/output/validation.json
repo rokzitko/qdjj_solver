@@ -1,0 +1,26 @@
+[
+  {
+    "absolute_changes": {
+      "C_d_bath": 3.473632492756451e-11,
+      "P_0": 1.2539969063141143e-12,
+      "P_1": 2.5064395003937534e-12,
+      "P_2": 1.252442594079639e-12,
+      "current_even": 5.60484991751764e-12,
+      "current_odd": 7.067842838770488e-11,
+      "energy_even": 1.0658141036401503e-14,
+      "energy_odd": 3.197442310920451e-14,
+      "even_P_2": 2.575717417130363e-13,
+      "q_d": 4.882161341868141e-11,
+      "signed_gap": 2.1316282072803006e-14
+    },
+    "bath_key": "2854eeaecd1a9c2eb43945571c0fa36dfddf9b296eb68eec79d912dbce5e697b",
+    "both_finite_accepted": true,
+    "check": "centered",
+    "method": "DMRG",
+    "point": {
+      "gamma": 10.0,
+      "phi": 1.8849555921538759,
+      "u": 0.0
+    }
+  }
+]

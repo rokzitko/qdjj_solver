@@ -1,0 +1,716 @@
+{
+  "baths": {
+    "0ddfd358f181aa5e121403fbbcd8c3c2201c2d38cb2b3e2df8d6037741749a5b": {
+      "bandwidth": 62.57959099609719,
+      "delta": 1.0,
+      "metadata": {
+        "citation": "Baran, Frost and Paaske, Phys. Rev. B 108, L220506 (2023)",
+        "cost": 1.1830470108892446e-05,
+        "evaluations": 41,
+        "fit_optimality": 5.1937507881202046e-11,
+        "frequency_cutoff": 62.57959099609719,
+        "frequency_min": 0.001,
+        "frequency_points": 1000,
+        "kind": "surrogate",
+        "levels": 8,
+        "max_relative_fit_error": 0.039100965247255925,
+        "measure_error": -0.12324889888115553,
+        "relative_weight": 0.0,
+        "seed": 1729,
+        "starts": 4
+      },
+      "weights": [
+        0.33117517772286736,
+        0.07677814390248561,
+        0.021447070136340576,
+        0.008975158797728703,
+        0.008975158797728703,
+        0.021447070136340576,
+        0.07677814390248561,
+        0.33117517772286736
+      ],
+      "xi": [
+        -29.40712617745039,
+        -7.532503243276796,
+        -2.221772991782777,
+        -0.5143803275293933,
+        0.5143803275293933,
+        2.221772991782777,
+        7.532503243276796,
+        29.40712617745039
+      ]
+    },
+    "14ee83893c1a421dacdd40a751c91283caa218402196d97933894d443ed8962c": {
+      "bandwidth": 11.264326379297492,
+      "delta": 1.0,
+      "metadata": {
+        "citation": "Baran, Frost and Paaske, Phys. Rev. B 108, L220506 (2023)",
+        "cost": 8.332141526754237e-11,
+        "evaluations": 1083,
+        "fit_optimality": 3.2555494569893793e-13,
+        "frequency_cutoff": 11.264326379297492,
+        "frequency_min": 0.001,
+        "frequency_points": 1000,
+        "kind": "surrogate",
+        "levels": 10,
+        "max_relative_fit_error": 3.255354251274767e-05,
+        "measure_error": -0.002825622853401377,
+        "relative_weight": 0.0,
+        "seed": 1729,
+        "starts": 4
+      },
+      "weights": [
+        0.20634927249572999,
+        0.1455585709669639,
+        0.07561788675949574,
+        0.042027001114713865,
+        0.02903445723639582,
+        0.02903445723639582,
+        0.042027001114713865,
+        0.07561788675949574,
+        0.1455585709669639,
+        0.20634927249572999
+      ],
+      "xi": [
+        -8.978295841506519,
+        -4.770912488378691,
+        -2.361809378228873,
+        -1.0879229625256261,
+        -0.3160511935057475,
+        0.3160511935057475,
+        1.0879229625256261,
+        2.361809378228873,
+        4.770912488378691,
+        8.978295841506519
+      ]
+    },
+    "20e08143aff784ef40a573a8f6ac55a7926e8ea5a578ce03900980d198051119": {
+      "bandwidth": 11.264326379297492,
+      "delta": 1.0,
+      "metadata": {
+        "citation": "Baran, Frost and Paaske, Phys. Rev. B 108, L220506 (2023)",
+        "cost": 7.1408024668278575e-06,
+        "evaluations": 28,
+        "fit_optimality": 1.850429426964692e-11,
+        "frequency_cutoff": 11.264326379297492,
+        "frequency_min": 0.001,
+        "frequency_points": 1000,
+        "kind": "surrogate",
+        "levels": 6,
+        "max_relative_fit_error": 0.00713551950139979,
+        "measure_error": -0.04798903009761424,
+        "relative_weight": 0.0,
+        "seed": 1729,
+        "starts": 4
+      },
+      "weights": [
+        0.3154950714994616,
+        0.11183110902435998,
+        0.048679304427371325,
+        0.048679304427371325,
+        0.11183110902435998,
+        0.3154950714994616
+      ],
+      "xi": [
+        -6.6791463012190695,
+        -2.1391464213728195,
+        -0.5039651596007384,
+        0.5039651596007384,
+        2.1391464213728195,
+        6.6791463012190695
+      ]
+    },
+    "4c4726615e309b5b7ba5136a34fcb346826c0829066b4f896cdecdbce405d9dc": {
+      "bandwidth": 1126.4326379297493,
+      "delta": 1.0,
+      "metadata": {
+        "citation": "Baran, Frost and Paaske, Phys. Rev. B 108, L220506 (2023)",
+        "cost": 1.6604935799389084e-06,
+        "evaluations": 86,
+        "fit_optimality": 7.792293109116842e-12,
+        "frequency_cutoff": 1126.4326379297493,
+        "frequency_min": 0.001,
+        "frequency_points": 1000,
+        "kind": "surrogate",
+        "levels": 12,
+        "max_relative_fit_error": 0.17356429174738197,
+        "measure_error": -0.2989154010964725,
+        "relative_weight": 0.0,
+        "seed": 1729,
+        "starts": 4
+      },
+      "weights": [
+        0.2941224165137145,
+        0.043036579072200064,
+        0.00940558407041989,
+        0.0026346248761747863,
+        0.0009039795047249516,
+        0.00043911541452956927,
+        0.00043911541452956927,
+        0.0009039795047249516,
+        0.0026346248761747863,
+        0.00940558407041989,
+        0.043036579072200064,
+        0.2941224165137145
+      ],
+      "xi": [
+        -349.6840285311579,
+        -65.80908212798865,
+        -17.22061641459623,
+        -5.43025958492126,
+        -1.8511385512167613,
+        -0.46057257643774574,
+        0.46057257643774574,
+        1.8511385512167613,
+        5.43025958492126,
+        17.22061641459623,
+        65.80908212798865,
+        349.6840285311579
+      ]
+    },
+    "7567c18b67b6c56a91bf7bac7198f356590679bbb7c68703956ad280eca8fbbf": {
+      "bandwidth": 1126.4326379297493,
+      "delta": 1.0,
+      "metadata": {
+        "citation": "Baran, Frost and Paaske, Phys. Rev. B 108, L220506 (2023)",
+        "cost": 0.002345098284200939,
+        "evaluations": 32,
+        "fit_optimality": 1.0156629114668326e-08,
+        "frequency_cutoff": 1126.4326379297493,
+        "frequency_min": 0.001,
+        "frequency_points": 1000,
+        "kind": "surrogate",
+        "levels": 6,
+        "max_relative_fit_error": 0.8733826790963832,
+        "measure_error": -0.9004569732602429,
+        "relative_weight": 0.0,
+        "seed": 1729,
+        "starts": 4
+      },
+      "weights": [
+        0.045577063337648584,
+        0.0034458789705829372,
+        0.0007485710616470141,
+        0.0007485710616470141,
+        0.0034458789705829372,
+        0.045577063337648584
+      ],
+      "xi": [
+        -36.934460483796364,
+        -4.400476590063324,
+        -0.7177782291887311,
+        0.7177782291887311,
+        4.400476590063324,
+        36.934460483796364
+      ]
+    },
+    "80284801670fe1a1c5edd06a91359746ed06bc4350b06520caca832d641a35c6": {
+      "bandwidth": 1126.4326379297493,
+      "delta": 1.0,
+      "metadata": {
+        "citation": "Baran, Frost and Paaske, Phys. Rev. B 108, L220506 (2023)",
+        "cost": 0.00020186551955330415,
+        "evaluations": 46,
+        "fit_optimality": 8.591718150735281e-10,
+        "frequency_cutoff": 1126.4326379297493,
+        "frequency_min": 0.001,
+        "frequency_points": 1000,
+        "kind": "surrogate",
+        "levels": 8,
+        "max_relative_fit_error": 0.6678578542238502,
+        "measure_error": -0.7371512710664259,
+        "relative_weight": 0.0,
+        "seed": 1729,
+        "starts": 4
+      },
+      "weights": [
+        0.11886848011155159,
+        0.010095201460024458,
+        0.0018607313502142244,
+        0.0005999515449968162,
+        0.0005999515449968162,
+        0.0018607313502142244,
+        0.010095201460024458,
+        0.11886848011155159
+      ],
+      "xi": [
+        -103.28071362410911,
+        -13.507163031273029,
+        -2.9665055191231087,
+        -0.6010037312488432,
+        0.6010037312488432,
+        2.9665055191231087,
+        13.507163031273029,
+        103.28071362410911
+      ]
+    },
+    "83ddb14b107d2bf5b889a52dbf1e59c6a6236d3df74779f0e5268b4eea4442e6": {
+      "bandwidth": 62.57959099609719,
+      "delta": 1.0,
+      "metadata": {
+        "citation": "Baran, Frost and Paaske, Phys. Rev. B 108, L220506 (2023)",
+        "cost": 0.0005103700530317475,
+        "evaluations": 25,
+        "fit_optimality": 1.6868467061222578e-09,
+        "frequency_cutoff": 62.57959099609719,
+        "frequency_min": 0.001,
+        "frequency_points": 1000,
+        "kind": "surrogate",
+        "levels": 6,
+        "max_relative_fit_error": 0.18252131276500771,
+        "measure_error": -0.3084808198642103,
+        "relative_weight": 0.0,
+        "seed": 1729,
+        "starts": 4
+      },
+      "weights": [
+        0.2912513041962891,
+        0.04266970956430143,
+        0.011838576307304343,
+        0.011838576307304343,
+        0.04266970956430143,
+        0.2912513041962891
+      ],
+      "xi": [
+        -19.005759534016452,
+        -3.466946490602718,
+        -0.6477515681186986,
+        0.6477515681186986,
+        3.466946490602718,
+        19.005759534016452
+      ]
+    },
+    "8e8ccf4df2080b470ca1dc58e794c8c4f44c34fe83baff391f4d3274ae2b366d": {
+      "bandwidth": 11.264326379297492,
+      "delta": 1.0,
+      "metadata": {
+        "citation": "Baran, Frost and Paaske, Phys. Rev. B 108, L220506 (2023)",
+        "cost": 6.392943862861379e-08,
+        "evaluations": 122,
+        "fit_optimality": 6.916928366366138e-13,
+        "frequency_cutoff": 22.528652758594983,
+        "frequency_min": 0.001,
+        "frequency_points": 1000,
+        "kind": "surrogate",
+        "levels": 8,
+        "max_relative_fit_error": 0.0015184550738274183,
+        "measure_error": -0.004610463169965273,
+        "relative_weight": 0.0,
+        "seed": 1729,
+        "starts": 4
+      },
+      "weights": [
+        0.2454554469238452,
+        0.14796710865072177,
+        0.06645994377950357,
+        0.037812269060946854,
+        0.037812269060946854,
+        0.06645994377950357,
+        0.14796710865072177,
+        0.2454554469238452
+      ],
+      "xi": [
+        -8.464168904288886,
+        -3.792974482861095,
+        -1.5093649457080553,
+        -0.40318602835891604,
+        0.40318602835891604,
+        1.5093649457080553,
+        3.792974482861095,
+        8.464168904288886
+      ]
+    },
+    "d7945473ad3365000c0e94d2d3c3b83cecdac2304641bcc5d1a07385d7206103": {
+      "bandwidth": 62.57959099609719,
+      "delta": 1.0,
+      "metadata": {
+        "citation": "Baran, Frost and Paaske, Phys. Rev. B 108, L220506 (2023)",
+        "cost": 2.670634860701198e-07,
+        "evaluations": 114,
+        "fit_optimality": 5.065519481824471e-13,
+        "frequency_cutoff": 62.57959099609719,
+        "frequency_min": 0.001,
+        "frequency_points": 1000,
+        "kind": "surrogate",
+        "levels": 10,
+        "max_relative_fit_error": 0.007108941682107628,
+        "measure_error": -0.04788820194218579,
+        "relative_weight": 0.0,
+        "seed": 1729,
+        "starts": 4
+      },
+      "weights": [
+        0.31325277174887284,
+        0.10652056530994106,
+        0.035339984046033376,
+        0.013682913298332945,
+        0.007259664625726888,
+        0.007259664625726888,
+        0.013682913298332945,
+        0.035339984046033376,
+        0.10652056530994106,
+        0.31325277174887284
+      ],
+      "xi": [
+        -37.23402026540772,
+        -12.45362507174392,
+        -4.459196466935346,
+        -1.6478793433148207,
+        -0.42710807631741465,
+        0.42710807631741465,
+        1.6478793433148207,
+        4.459196466935346,
+        12.45362507174392,
+        37.23402026540772
+      ]
+    },
+    "dabfa57844c9b5bdc3155cc000ea68c11ec0fca40e814a4a9f457c192075b55f": {
+      "bandwidth": 11.264326379297492,
+      "delta": 1.0,
+      "metadata": {
+        "citation": "Baran, Frost and Paaske, Phys. Rev. B 108, L220506 (2023)",
+        "cost": 2.4506583751093372e-08,
+        "evaluations": 193,
+        "fit_optimality": 3.551744375083558e-13,
+        "frequency_cutoff": 11.264326379297492,
+        "frequency_min": 0.001,
+        "frequency_points": 1000,
+        "kind": "surrogate",
+        "levels": 8,
+        "max_relative_fit_error": 0.0004991326955997577,
+        "measure_error": -0.011665386976163705,
+        "relative_weight": 0.0,
+        "seed": 1729,
+        "starts": 4
+      },
+      "weights": [
+        0.25954018608743495,
+        0.13657243893013882,
+        0.06179548479581537,
+        0.03625919669852901,
+        0.03625919669852901,
+        0.06179548479581537,
+        0.13657243893013882,
+        0.25954018608743495
+      ],
+      "xi": [
+        -8.094875610412826,
+        -3.534916571365697,
+        -1.4318516309752256,
+        -0.3880613318645629,
+        0.3880613318645629,
+        1.4318516309752256,
+        3.534916571365697,
+        8.094875610412826
+      ]
+    },
+    "ddea9c43b19a73bbd564e4b1ccb0b34838393acacd2e535f7cf1d6df0c613065": {
+      "bandwidth": 1126.4326379297493,
+      "delta": 1.0,
+      "metadata": {
+        "citation": "Baran, Frost and Paaske, Phys. Rev. B 108, L220506 (2023)",
+        "cost": 0.0001939550627768272,
+        "evaluations": 42,
+        "fit_optimality": 7.820241850954422e-10,
+        "frequency_cutoff": 2252.8652758594985,
+        "frequency_min": 0.001,
+        "frequency_points": 1000,
+        "kind": "surrogate",
+        "levels": 8,
+        "max_relative_fit_error": 0.7166064766145973,
+        "measure_error": -0.7367088368279977,
+        "relative_weight": 0.0,
+        "seed": 1729,
+        "starts": 4
+      },
+      "weights": [
+        0.1190780840979891,
+        0.010105737430430252,
+        0.0018616880633325274,
+        0.0006000719942492117,
+        0.0006000719942492117,
+        0.0018616880633325274,
+        0.010105737430430252,
+        0.1190780840979891
+      ],
+      "xi": [
+        -103.43462247307002,
+        -13.516843448719056,
+        -2.9674880071514638,
+        -0.6011031018766759,
+        0.6011031018766759,
+        2.9674880071514638,
+        13.516843448719056,
+        103.43462247307002
+      ]
+    },
+    "f0864d56153bd67045aad0789ad91e2eda1d4b21e9acbb5e4cca2cdf2cd674d8": {
+      "bandwidth": 1126.4326379297493,
+      "delta": 1.0,
+      "metadata": {
+        "citation": "Baran, Frost and Paaske, Phys. Rev. B 108, L220506 (2023)",
+        "cost": 1.841120291819015e-05,
+        "evaluations": 50,
+        "fit_optimality": 8.97190057717287e-11,
+        "frequency_cutoff": 1126.4326379297493,
+        "frequency_min": 0.001,
+        "frequency_points": 1000,
+        "kind": "surrogate",
+        "levels": 10,
+        "max_relative_fit_error": 0.38912528787808953,
+        "measure_error": -0.5047123893524933,
+        "relative_weight": 0.0,
+        "seed": 1729,
+        "starts": 4
+      },
+      "weights": [
+        0.21792736868587245,
+        0.023410734126320065,
+        0.004565615706732529,
+        0.0012338298317980413,
+        0.0005062569730302658,
+        0.0005062569730302658,
+        0.0012338298317980413,
+        0.004565615706732529,
+        0.023410734126320065,
+        0.21792736868587245
+      ],
+      "xi": [
+        -216.06428330456384,
+        -33.03634720265562,
+        -7.873020207179806,
+        -2.2728297532179735,
+        -0.5211208219627557,
+        0.5211208219627557,
+        2.2728297532179735,
+        7.873020207179806,
+        33.03634720265562,
+        216.06428330456384
+      ]
+    },
+    "f904a08a3fcde94f8276a58da1174e0748d710327b34c0ad80f0c1e84799ac7f": {
+      "bandwidth": 62.57959099609719,
+      "delta": 1.0,
+      "metadata": {
+        "citation": "Baran, Frost and Paaske, Phys. Rev. B 108, L220506 (2023)",
+        "cost": 1.4764504953018565e-05,
+        "evaluations": 33,
+        "fit_optimality": 1.0655428576063019e-10,
+        "frequency_cutoff": 125.15918199219438,
+        "frequency_min": 0.001,
+        "frequency_points": 1000,
+        "kind": "surrogate",
+        "levels": 8,
+        "max_relative_fit_error": 0.06923804979181725,
+        "measure_error": -0.09754748145704983,
+        "relative_weight": 0.0,
+        "seed": 1729,
+        "starts": 4
+      },
+      "weights": [
+        0.33871040913563044,
+        0.08121879537348797,
+        0.022185624933275173,
+        0.009111429829081513,
+        0.009111429829081513,
+        0.022185624933275173,
+        0.08121879537348797,
+        0.33871040913563044
+      ],
+      "xi": [
+        -30.81210901475299,
+        -7.841948165073849,
+        -2.271908826857704,
+        -0.5210711350051878,
+        0.5210711350051878,
+        2.271908826857704,
+        7.841948165073849,
+        30.81210901475299
+      ]
+    }
+  },
+  "case": "choi_2004_kondo_josephson",
+  "elapsed_seconds": 328.288500667084,
+  "environment": {
+    "machine": "arm64",
+    "numpy": "2.5.2",
+    "packages": {
+      "h5py": "3.16.0",
+      "numpy": "2.5.2",
+      "physics-tenpy": "1.1.1",
+      "qdjj-solver": "0.2.0",
+      "scipy": "1.18.0",
+      "threadpoolctl": "3.6.0"
+    },
+    "python": "3.14.7",
+    "qdjj_solver": "0.2.0",
+    "qpsolver": "0.2.0",
+    "release": "25.5.0",
+    "scipy": "1.18.0",
+    "system": "Darwin"
+  },
+  "format": "qdjj-application",
+  "format_version": 1,
+  "implementation": {
+    "files": {
+      "__init__.py": "37c2a898286a98933ca26fcd7eadc482fb2a3f9f35cab81349bb08146a9a474d",
+      "api.py": "a3a5b3a80ce155617899b3360a9d7dc36df4b4366ced7160ea00708642710e5a",
+      "cli.py": "d860f0b9442cf954dc38abccca1ebd6488bcf129bb1309251e8b71aaebb9e056",
+      "common/__init__.py": "394799edc56d432820af8801a38ba9c9512060d7d904360286934a87341c9c95",
+      "common/algebra.py": "072659f71e4b222578a74f472fbdbfe03ee5816e76a9a3059578327bbfb81962",
+      "common/baths.py": "dd2cdeab3680d921d0523cc307903b640976c70222a31bf5d6f134e617fa06d1",
+      "common/io.py": "d0558e83e207e238bc4542b0b3a14c6204e440536d4ea98c6f5f52338379eb12",
+      "common/models.py": "2647acbea388e3a56c6b09bdc422fcd78b13fbf53e48c2c886b3accfaf6ca890",
+      "common/problem.py": "6a74801112898d76b35213153cc9318befb1d98be99a0d639800efa3cdf98a47",
+      "compat/qpsolver/__init__.py": "1e8785ea1c09ee48c89b1d64adb9d68053bc7cf2c7438a1aa64bba6fe149a875",
+      "compat/qpsolver/cli.py": "272fbf82340c9a59e0efd74e513562f24af20a5d543fd0f13b58bfac00bcd0a9",
+      "compat/qpsolver/nrg.py": "6162ed163e5afa1bcacb1f0afabc94df0fe2fcce7e95aa879c40c1daa5fa27e0",
+      "dmrg_solver/__init__.py": "c875c9bd86be62c86e9555286a1088310886969178c13d4a700fe0b89b077bd6",
+      "dmrg_solver/convergence.py": "29ee594c6d41268d7cb51d3e3dd12e302a0e38bddb884d78a7de64f6d609d32e",
+      "dmrg_solver/io.py": "54bd752cc6ace17231c35f89f95674c522980301a4e17e601a11a54b19367748",
+      "dmrg_solver/legacy.py": "c2c98b124968c575a66616930cf79b8a75f731dbd6a5c469801db3c423dc4a6b",
+      "dmrg_solver/mpo.py": "5492d2f4e80db0e71f62f5884cb26206cef5944efd6f4f60bc55a4e2d44a9790",
+      "dmrg_solver/solver.py": "910169a6208b5710653b00382220be306e15c466174ab8708b568901a5b2e765",
+      "qp_solver/__init__.py": "508b0b0ce58511cde099aa639fcaf975edd523bfa8aaec073cec42338634f39c",
+      "qp_solver/_core.cpython-314-darwin.so": "c337e751280e81d172022b4fb1ab30e78d3926326844a16d27bffe447de24c4d",
+      "qp_solver/basis.py": "068727de5d1b960149d4e13810ca630da2e1c729ef5056eeac01d5ab623146ed",
+      "qp_solver/cli.py": "8a512a4f1c07aec98b015a6decd82282df9d1283367d12807f4e8e781edb0d4b",
+      "qp_solver/io.py": "4c208f7a597d6a32dfdde01cd7b0973b5ecc84b19fa32daddeddcf0a65f2e52e",
+      "qp_solver/nrg.py": "c71b57b9c3eeb1499a137955998a3e12a4370f710b501a928cca9d02dc51b92d",
+      "qp_solver/reference.py": "437686251373649a225e79f5ce30458c17006a2568ba260d8ead8c4260d9b650",
+      "qp_solver/solver.py": "7cc7a50bf31456ba0d6f9f5b5d732b3c2ac0b01369e775b4599e9e99f550a9d9"
+    },
+    "sha256": "6150cb4b2e7f92b4273f15ef4aa463fffb3637f355dae9f7cbb951057265bcd9",
+    "version": "0.2.0"
+  },
+  "input": {
+    "finite_difference_phase_over_pi": 0.2,
+    "finite_difference_step": 0.0001,
+    "format_version": 1,
+    "model": {
+      "delta": 1.0,
+      "detuning": 0.0
+    },
+    "normal_state": {
+      "gamma_total_over_D": 0.04,
+      "u_over_D": 0.2
+    },
+    "paper_doi": "10.1103/PhysRevB.70.020502",
+    "profiles": {
+      "convergence": {
+        "phase_over_pi": [
+          0.3,
+          0.8
+        ],
+        "ratios": [
+          0.1,
+          1.8,
+          10.0
+        ],
+        "settings": [
+          {
+            "frequency_factor": 1.0,
+            "label": "L6",
+            "levels": 6
+          },
+          {
+            "frequency_factor": 1.0,
+            "label": "L8",
+            "levels": 8
+          },
+          {
+            "frequency_factor": 1.0,
+            "label": "L10",
+            "levels": 10,
+            "solver": {
+              "method": "sparse"
+            }
+          },
+          {
+            "frequency_factor": 2.0,
+            "label": "L8_w2D",
+            "levels": 8
+          },
+          {
+            "cutoff": 4,
+            "frequency_factor": 1.0,
+            "label": "L8_q4",
+            "levels": 8
+          },
+          {
+            "cutoff": 6,
+            "frequency_factor": 1.0,
+            "label": "L12_q6",
+            "levels": 12,
+            "phase_over_pi": [
+              0.3
+            ],
+            "ratios": [
+              0.1
+            ],
+            "solver": {
+              "method": "sparse"
+            }
+          },
+          {
+            "cutoff": 8,
+            "frequency_factor": 1.0,
+            "label": "L12_q8",
+            "levels": 12,
+            "phase_over_pi": [
+              0.3
+            ],
+            "ratios": [
+              0.1
+            ],
+            "solver": {
+              "method": "sparse"
+            }
+          }
+        ]
+      },
+      "paper": {
+        "include_reference_phases": true,
+        "locate_crossings": true,
+        "phase_points": 31,
+        "ratios": [
+          0.1,
+          1.6,
+          1.8,
+          2.0,
+          2.2,
+          10.0
+        ],
+        "settings": {
+          "frequency_factor": 1.0,
+          "levels": 8
+        }
+      },
+      "quick": {
+        "phase_over_pi": [
+          0.15,
+          0.4,
+          0.8
+        ],
+        "ratios": [
+          0.1,
+          1.8,
+          10.0
+        ],
+        "settings": {
+          "frequency_factor": 1.0,
+          "levels": 4
+        }
+      }
+    },
+    "transition_phase_tolerance": 5e-06
+  },
+  "profile": "convergence",
+  "scripts_sha256": {
+    "../_common.py": "85bbb010e27e0fb97bbfc1af43fd34d43aefb644ef7339d9150fea7b3663da1d",
+    "extract_reference.py": "46da1b1815a40dd9daeb7b5e01c07c35e812058f209bbe9113de53a20f21364e",
+    "plot.py": "145945cdcd6f4adcd596b2aa791dc15418451d779f7798095740c85472da8d14",
+    "run.py": "ba6ba5f22c1c7ce4b1b8b46be7fc5e317757106718d11c5ba62f2fab03546700"
+  },
+  "state_records": 64
+}

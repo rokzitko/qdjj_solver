@@ -1,0 +1,45 @@
+{
+  "L2_versus_L4": {
+    "detuning_critical_over_u": 0.006227371135710091
+  },
+  "L3_versus_L4": {
+    "detuning_critical_over_u": 0.0009393109129569588
+  },
+  "L4_q4_versus_L4": {
+    "detuning_critical_over_u": 3.559285912929644e-05
+  },
+  "L4_versus_L5": {
+    "detuning_critical_over_u": 0.00023944145806703565
+  },
+  "L4_w20_versus_L4": {
+    "detuning_critical_over_u": 0.00011551428153605547
+  },
+  "boundary_at_phase_endpoints": [
+    {
+      "detuning_critical_over_u": "0.24207458213222827",
+      "nrg_detuning_critical_over_u": "",
+      "phi_over_pi": "0.0",
+      "setting": "paper",
+      "signed_gap_at_root": "2.3432367157738554e-11"
+    },
+    {
+      "detuning_critical_over_u": "0.38023975434228136",
+      "nrg_detuning_critical_over_u": "",
+      "phi_over_pi": "1.0",
+      "setting": "paper",
+      "signed_gap_at_root": "-1.603741694999883e-08"
+    }
+  ],
+  "paper": {
+    "boundary_points": 27,
+    "maximum_charge_derivative_error": 1.4513523716175314e-10,
+    "maximum_nrg_boundary_difference": 0.005173745262532559,
+    "maximum_particle_hole_energy_error": 7.993605777301127e-15,
+    "maximum_residual": 9.372627053283517e-13
+  },
+  "runtimes_seconds": {
+    "convergence": 1013.0262660840526,
+    "paper": 558.0444685830735,
+    "quick": 0.7444655830040574
+  }
+}

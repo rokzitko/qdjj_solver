@@ -1,0 +1,7 @@
+{
+  "boundary_points": 3,
+  "maximum_charge_derivative_error": 1.1452794268507205e-10,
+  "maximum_nrg_boundary_difference": 0.009970766078857995,
+  "maximum_particle_hole_energy_error": 2.1094237467877974e-15,
+  "maximum_residual": 5.774233116124703e-13
+}

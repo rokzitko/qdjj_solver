@@ -1,0 +1,7 @@
+{
+  "crossings": [],
+  "maximum_current_derivative_error": 1.5539791675678316e-10,
+  "maximum_residual": 4.085866622944098e-12,
+  "points": 9,
+  "tk_over_D": 0.008877583677243962
+}

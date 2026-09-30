@@ -1,0 +1,2 @@
+# Keep reference and generated CSV tables consistent across platforms.
+*.csv text eol=lf

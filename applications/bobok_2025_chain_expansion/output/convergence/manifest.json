@@ -1,0 +1,781 @@
+{
+  "baths": {
+    "243fd3e3e1eb8c270787db0bc468fb4c9234bea1fe730bafabab15a0774dab22": {
+      "bandwidth": 100.0,
+      "delta": 1.0,
+      "metadata": {
+        "chain_h": [
+          7.599653306811501,
+          19.935262762813807,
+          3.996826785232304,
+          1.5712185718483758,
+          0.7618677618503393,
+          0.3939301978182994,
+          0.19580163628793765,
+          0.07692245588548917
+        ],
+        "citation": "Bobok, Frk, Pokorny and Zonda, Phys. Rev. B 112, 205418 (2025), 10.1103/mxsl-fc96",
+        "coefficient_quadrature_order": 64,
+        "kind": "chain-expansion",
+        "levels": 8,
+        "measure_error": -0.880624925007458,
+        "target": "finite-band",
+        "wide_band": false
+      },
+      "weights": [
+        0.04849306976471409,
+        0.0063206151798593764,
+        0.0028345777592302065,
+        0.002039274792467303,
+        0.002039274792467303,
+        0.0028345777592302065,
+        0.0063206151798593764,
+        0.04849306976471409
+      ],
+      "xi": [
+        -4.921299738976685,
+        -1.492567327561343,
+        -0.6673712819855765,
+        -0.1987395168603626,
+        0.1987395168603626,
+        0.6673712819855765,
+        1.492567327561343,
+        4.921299738976685
+      ]
+    },
+    "4949809009d58d5c5a2ee48274c39ac122e3142eef95fbaceea27c2e2fbff8d0": {
+      "bandwidth": 100.0,
+      "delta": 1.0,
+      "metadata": {
+        "chain_h": [
+          10.0,
+          33.0,
+          6.4,
+          2.6,
+          1.3333333333333333,
+          0.7575757575757576,
+          0.44755244755244755,
+          0.26153846153846155,
+          0.1411764705882353,
+          0.058823529411764705
+        ],
+        "citation": "Bobok, Frk, Pokorny and Zonda, Phys. Rev. B 112, 205418 (2025), 10.1103/mxsl-fc96",
+        "coefficient_quadrature_order": 0,
+        "kind": "chain-expansion",
+        "levels": 10,
+        "measure_error": -0.8429203673205103,
+        "target": "wide-band",
+        "wide_band": true
+      },
+      "weights": [
+        0.0641881700235145,
+        0.007621252444414745,
+        0.0031415926535897838,
+        0.001978600474499873,
+        0.0016102007437259233,
+        0.0016102007437259233,
+        0.001978600474499873,
+        0.0031415926535897838,
+        0.007621252444414745,
+        0.0641881700235145
+      ],
+      "xi": [
+        -6.313751514675046,
+        -1.962610505505153,
+        -1.0000000000000007,
+        -0.5095254494944298,
+        -0.15838444032453716,
+        0.15838444032453716,
+        0.5095254494944298,
+        1.0000000000000007,
+        1.962610505505153,
+        6.313751514675046
+      ]
+    },
+    "699f61ddf22c6b6281d1b26c636ba448c60bf6e5dc3a27976400115c9749a834": {
+      "bandwidth": 100.0,
+      "delta": 1.0,
+      "metadata": {
+        "chain_h": [
+          3.8989712263164575,
+          4.872881597004207,
+          0.7998437322397453,
+          0.1999934569510336
+        ],
+        "citation": "Bobok, Frk, Pokorny and Zonda, Phys. Rev. B 112, 205418 (2025), 10.1103/mxsl-fc96",
+        "coefficient_quadrature_order": 64,
+        "kind": "chain-expansion",
+        "levels": 4,
+        "measure_error": -0.9387551031942312,
+        "target": "finite-band",
+        "wide_band": false
+      },
+      "weights": [
+        0.02603303286405246,
+        0.004589415538831966,
+        0.004589415538831966,
+        0.02603303286405246
+      ],
+      "xi": [
+        -2.387844227352663,
+        -0.41342318765829855,
+        0.41342318765829855,
+        2.387844227352663
+      ]
+    },
+    "8a75e95e97bb51f5cadc56aebb61b682f2391d1c8b0f0205a16e5474b8d4e14c": {
+      "bandwidth": 100.0,
+      "delta": 1.0,
+      "metadata": {
+        "chain_h": [
+          4.0,
+          5.0,
+          0.8,
+          0.2
+        ],
+        "citation": "Bobok, Frk, Pokorny and Zonda, Phys. Rev. B 112, 205418 (2025), 10.1103/mxsl-fc96",
+        "coefficient_quadrature_order": 0,
+        "kind": "chain-expansion",
+        "levels": 4,
+        "measure_error": -0.9371681469282042,
+        "target": "wide-band",
+        "wide_band": true
+      },
+      "weights": [
+        0.02681517061334488,
+        0.0046007559225530485,
+        0.0046007559225530485,
+        0.02681517061334488
+      ],
+      "xi": [
+        -2.414213562373094,
+        -0.4142135623730946,
+        0.4142135623730946,
+        2.414213562373094
+      ]
+    },
+    "a9e77981d968c4a674d7ef8528876ee9aa6f8af254463066d637bd8efaeb827e": {
+      "bandwidth": 100.0,
+      "delta": 1.0,
+      "metadata": {
+        "chain_h": [
+          6.0,
+          11.666666666666666,
+          2.1333333333333333,
+          0.7714285714285715,
+          0.31746031746031744,
+          0.1111111111111111
+        ],
+        "citation": "Bobok, Frk, Pokorny and Zonda, Phys. Rev. B 112, 205418 (2025), 10.1103/mxsl-fc96",
+        "coefficient_quadrature_order": 0,
+        "kind": "chain-expansion",
+        "levels": 6,
+        "measure_error": -0.9057522203923063,
+        "target": "wide-band",
+        "wide_band": true
+      },
+      "weights": [
+        0.03908194466627413,
+        0.005235987755982974,
+        0.002805957381589777,
+        0.002805957381589777,
+        0.005235987755982974,
+        0.03908194466627413
+      ],
+      "xi": [
+        -3.732050807568876,
+        -0.9999999999999996,
+        -0.2679491924311226,
+        0.2679491924311226,
+        0.9999999999999996,
+        3.732050807568876
+      ]
+    },
+    "b914667bc51177b9f9a305d03ad6eb968b8d5ac91a3b124eaa02f33cf7a541e1": {
+      "bandwidth": 100.0,
+      "delta": 1.0,
+      "metadata": {
+        "chain_h": [
+          8.0,
+          21.0,
+          4.0,
+          1.5714285714285714,
+          0.7619047619047619,
+          0.3939393939393939,
+          0.1958041958041958,
+          0.07692307692307693
+        ],
+        "citation": "Bobok, Frk, Pokorny and Zonda, Phys. Rev. B 112, 205418 (2025), 10.1103/mxsl-fc96",
+        "coefficient_quadrature_order": 0,
+        "kind": "chain-expansion",
+        "levels": 8,
+        "measure_error": -0.8743362938564082,
+        "target": "wide-band",
+        "wide_band": true
+      },
+      "weights": [
+        0.05158915790381235,
+        0.0063613889904696784,
+        0.0028401228546364402,
+        0.0020411833228774117,
+        0.0020411833228774117,
+        0.0028401228546364402,
+        0.0063613889904696784,
+        0.05158915790381235
+      ],
+      "xi": [
+        -5.027339492125847,
+        -1.49660576266549,
+        -0.6681786379192995,
+        -0.19891236737965837,
+        0.19891236737965837,
+        0.6681786379192995,
+        1.49660576266549,
+        5.027339492125847
+      ]
+    },
+    "bc6891a3d0ed3a131063b2d9dac749d2d60b69f56b3d51594f2241bd80e7db15": {
+      "bandwidth": 100.0,
+      "delta": 1.0,
+      "metadata": {
+        "chain_h": [
+          5.7737464539171715,
+          11.222370948658906,
+          2.1323858374663165,
+          0.7713710242492466,
+          0.3174517090047739,
+          0.11110966268894584
+        ],
+        "citation": "Bobok, Frk, Pokorny and Zonda, Phys. Rev. B 112, 205418 (2025), 10.1103/mxsl-fc96",
+        "coefficient_quadrature_order": 64,
+        "kind": "chain-expansion",
+        "levels": 6,
+        "measure_error": -0.9093062027834184,
+        "target": "finite-band",
+        "wide_band": false
+      },
+      "weights": [
+        0.03733165650868153,
+        0.005213036566166568,
+        0.002802205533442658,
+        0.002802205533442658,
+        0.005213036566166568,
+        0.03733165650868153
+      ],
+      "xi": [
+        -3.672526344114195,
+        -0.99780355086203,
+        -0.26763315889953115,
+        0.26763315889953115,
+        0.99780355086203,
+        3.672526344114195
+      ]
+    },
+    "d068c8763701ddf6f2a2aa0773c832496e049c167fe61e5f71ad367d4ddc4976": {
+      "bandwidth": 100.0,
+      "delta": 1.0,
+      "metadata": {
+        "citation": "Baran, Frost and Paaske, Phys. Rev. B 108, L220506 (2023)",
+        "cost": 8.738742955924997e-07,
+        "evaluations": 49,
+        "fit_optimality": 4.252246152183601e-12,
+        "frequency_cutoff": 100.0,
+        "frequency_min": 0.001,
+        "frequency_points": 1000,
+        "kind": "surrogate",
+        "levels": 10,
+        "max_relative_fit_error": 0.018359710300492216,
+        "measure_error": -0.08056008457226782,
+        "relative_weight": 0.0,
+        "seed": 1729,
+        "starts": 4
+      },
+      "weights": [
+        0.32716121754542143,
+        0.09103825871900018,
+        0.027052292331934593,
+        0.009648590922293603,
+        0.004819598195216259,
+        0.004819598195216259,
+        0.009648590922293603,
+        0.027052292331934593,
+        0.09103825871900018,
+        0.32716121754542143
+      ],
+      "xi": [
+        -53.128617057965975,
+        -15.50821345151625,
+        -5.103720860236708,
+        -1.785730865318532,
+        -0.4501452297846082,
+        0.4501452297846082,
+        1.785730865318532,
+        5.103720860236708,
+        15.50821345151625,
+        53.128617057965975
+      ]
+    },
+    "d6c48fe7f95a7108c72057a7ed8d850c00c133f3acc326d1784693ffd0fd9fc8": {
+      "bandwidth": 100.0,
+      "delta": 1.0,
+      "metadata": {
+        "citation": "Baran, Frost and Paaske, Phys. Rev. B 108, L220506 (2023)",
+        "cost": 2.8065184683127742e-05,
+        "evaluations": 34,
+        "fit_optimality": 1.557884085376703e-10,
+        "frequency_cutoff": 100.0,
+        "frequency_min": 0.001,
+        "frequency_points": 1000,
+        "kind": "surrogate",
+        "levels": 8,
+        "max_relative_fit_error": 0.08286140521773344,
+        "measure_error": -0.1906997516130332,
+        "relative_weight": 0.0,
+        "seed": 1729,
+        "starts": 4
+      },
+      "weights": [
+        0.3230699080388903,
+        0.06046036040675275,
+        0.015193140328580467,
+        0.005926715419259914,
+        0.005926715419259914,
+        0.015193140328580467,
+        0.06046036040675275,
+        0.3230699080388903
+      ],
+      "xi": [
+        -39.71495508697651,
+        -8.796255156849748,
+        -2.4089669502260342,
+        -0.5385204864417933,
+        0.5385204864417933,
+        2.4089669502260342,
+        8.796255156849748,
+        39.71495508697651
+      ]
+    }
+  },
+  "case": "bobok_2025_chain_expansion",
+  "elapsed_seconds": 1696.4313049581833,
+  "environment": {
+    "machine": "arm64",
+    "numpy": "2.5.2",
+    "packages": {
+      "h5py": "3.16.0",
+      "numpy": "2.5.2",
+      "physics-tenpy": "1.1.1",
+      "qdjj-solver": "0.2.0",
+      "scipy": "1.18.0",
+      "threadpoolctl": "3.6.0"
+    },
+    "python": "3.14.7",
+    "qdjj_solver": "0.2.0",
+    "qpsolver": "0.2.0",
+    "release": "25.5.0",
+    "scipy": "1.18.0",
+    "system": "Darwin"
+  },
+  "format": "qdjj-application",
+  "format_version": 1,
+  "implementation": {
+    "files": {
+      "__init__.py": "4cae2501ee073def232cebacabbd1090cb2448f424f68f3db79cc7be57046af8",
+      "api.py": "a3a5b3a80ce155617899b3360a9d7dc36df4b4366ced7160ea00708642710e5a",
+      "cli.py": "d860f0b9442cf954dc38abccca1ebd6488bcf129bb1309251e8b71aaebb9e056",
+      "common/__init__.py": "23ce4f4c548dd6660ef73703de3fbb2f8e285472363a3bdea5652a9c0fed9081",
+      "common/algebra.py": "072659f71e4b222578a74f472fbdbfe03ee5816e76a9a3059578327bbfb81962",
+      "common/baths.py": "416293942562ca62be30c669697224803e4953260e6c3d885425c54f8bc0a8f4",
+      "common/io.py": "92f68161a334b5d3a1b49fa46617330301311dd4a961c471cb4140fb5121f693",
+      "common/models.py": "2647acbea388e3a56c6b09bdc422fcd78b13fbf53e48c2c886b3accfaf6ca890",
+      "common/problem.py": "6a74801112898d76b35213153cc9318befb1d98be99a0d639800efa3cdf98a47",
+      "compat/qpsolver/__init__.py": "1e8785ea1c09ee48c89b1d64adb9d68053bc7cf2c7438a1aa64bba6fe149a875",
+      "compat/qpsolver/cli.py": "272fbf82340c9a59e0efd74e513562f24af20a5d543fd0f13b58bfac00bcd0a9",
+      "compat/qpsolver/nrg.py": "6162ed163e5afa1bcacb1f0afabc94df0fe2fcce7e95aa879c40c1daa5fa27e0",
+      "dmrg_solver/__init__.py": "c875c9bd86be62c86e9555286a1088310886969178c13d4a700fe0b89b077bd6",
+      "dmrg_solver/convergence.py": "29ee594c6d41268d7cb51d3e3dd12e302a0e38bddb884d78a7de64f6d609d32e",
+      "dmrg_solver/io.py": "54bd752cc6ace17231c35f89f95674c522980301a4e17e601a11a54b19367748",
+      "dmrg_solver/legacy.py": "c2c98b124968c575a66616930cf79b8a75f731dbd6a5c469801db3c423dc4a6b",
+      "dmrg_solver/mpo.py": "5492d2f4e80db0e71f62f5884cb26206cef5944efd6f4f60bc55a4e2d44a9790",
+      "dmrg_solver/solver.py": "910169a6208b5710653b00382220be306e15c466174ab8708b568901a5b2e765",
+      "qp_solver/__init__.py": "508b0b0ce58511cde099aa639fcaf975edd523bfa8aaec073cec42338634f39c",
+      "qp_solver/_core.cpython-314-darwin.so": "c337e751280e81d172022b4fb1ab30e78d3926326844a16d27bffe447de24c4d",
+      "qp_solver/basis.py": "068727de5d1b960149d4e13810ca630da2e1c729ef5056eeac01d5ab623146ed",
+      "qp_solver/cli.py": "8a512a4f1c07aec98b015a6decd82282df9d1283367d12807f4e8e781edb0d4b",
+      "qp_solver/io.py": "4c208f7a597d6a32dfdde01cd7b0973b5ecc84b19fa32daddeddcf0a65f2e52e",
+      "qp_solver/nrg.py": "c71b57b9c3eeb1499a137955998a3e12a4370f710b501a928cca9d02dc51b92d",
+      "qp_solver/reference.py": "437686251373649a225e79f5ce30458c17006a2568ba260d8ead8c4260d9b650",
+      "qp_solver/solver.py": "7cc7a50bf31456ba0d6f9f5b5d732b3c2ac0b01369e775b4599e9e99f550a9d9"
+    },
+    "sha256": "84ab9d4a17136cf6b2109fd2232e67a4238a7f52c8264ebce1c51d500f177e7a",
+    "version": "0.2.0"
+  },
+  "input": {
+    "format_version": 1,
+    "model": {
+      "bandwidth": 100.0,
+      "delta": 1.0,
+      "detuning": 0.0
+    },
+    "profiles": {
+      "convergence": {
+        "current_settings": [
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-W4",
+            "levels": 4,
+            "wide_band": true
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-W6",
+            "levels": 6,
+            "wide_band": true
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-W8",
+            "levels": 8,
+            "wide_band": true
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-F4",
+            "levels": 4
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-F6",
+            "levels": 6
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-F8",
+            "levels": 8
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "cutoff": 4,
+            "label": "ChE-F8-q4",
+            "levels": 8
+          },
+          {
+            "frequency_cutoff": 100.0,
+            "label": "SM8",
+            "levels": 8
+          },
+          {
+            "frequency_cutoff": 100.0,
+            "label": "SM10",
+            "levels": 10,
+            "solver": {
+              "method": "sparse"
+            }
+          }
+        ],
+        "current_u": [
+          2.0,
+          4.0,
+          8.0
+        ],
+        "phases_over_pi": [
+          0.25,
+          0.6,
+          0.9
+        ],
+        "shared_settings": [
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-W4",
+            "levels": 4,
+            "roots": 2,
+            "wide_band": true
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-W6",
+            "levels": 6,
+            "roots": 2,
+            "wide_band": true
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-W8",
+            "levels": 8,
+            "roots": 2,
+            "wide_band": true
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "cutoff": 4,
+            "label": "ChE-W8-q4",
+            "levels": 8,
+            "roots": 2,
+            "wide_band": true
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "cutoff": 6,
+            "label": "ChE-W8-q6",
+            "levels": 8,
+            "roots": 2,
+            "wide_band": true
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-F8",
+            "levels": 8,
+            "roots": 2
+          },
+          {
+            "frequency_cutoff": 100.0,
+            "label": "SM8",
+            "levels": 8,
+            "roots": 2
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "exchange_basis": true,
+            "label": "ChE-W10",
+            "levels": 10,
+            "roots": 2,
+            "solver": {
+              "method": "sparse"
+            },
+            "u": [
+              5.0,
+              5.3
+            ],
+            "wide_band": true
+          },
+          {
+            "exchange_basis": true,
+            "frequency_cutoff": 100.0,
+            "label": "SM10",
+            "levels": 10,
+            "roots": 2,
+            "solver": {
+              "method": "sparse"
+            },
+            "u": [
+              5.0,
+              5.3
+            ]
+          }
+        ],
+        "shared_u": [
+          1.0,
+          3.0,
+          5.0,
+          5.3,
+          7.0
+        ]
+      },
+      "paper": {
+        "current_settings": [
+          {
+            "label": "GAL"
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-W2",
+            "levels": 2,
+            "wide_band": true
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-W4",
+            "levels": 4,
+            "wide_band": true
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-F1",
+            "levels": 1
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-F2",
+            "levels": 2
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-F4",
+            "levels": 4
+          },
+          {
+            "frequency_cutoff": 100.0,
+            "label": "SM8",
+            "levels": 8
+          }
+        ],
+        "current_u": [
+          2.0,
+          4.0,
+          8.0
+        ],
+        "include_reference": true,
+        "locate_crossings": true,
+        "phases_over_pi": [
+          0.0,
+          0.025,
+          0.05,
+          0.075,
+          0.1,
+          0.125,
+          0.15,
+          0.175,
+          0.2,
+          0.225,
+          0.25,
+          0.275,
+          0.3,
+          0.325,
+          0.35,
+          0.375,
+          0.4,
+          0.425,
+          0.45,
+          0.475,
+          0.5,
+          0.525,
+          0.55,
+          0.575,
+          0.6,
+          0.625,
+          0.65,
+          0.675,
+          0.7,
+          0.725,
+          0.75,
+          0.775,
+          0.8,
+          0.825,
+          0.85,
+          0.875,
+          0.9,
+          0.925,
+          0.95,
+          0.975,
+          1.0
+        ],
+        "shared_settings": [
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-W1",
+            "levels": 1,
+            "wide_band": true
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-W2",
+            "levels": 2,
+            "wide_band": true
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-W4",
+            "levels": 4,
+            "wide_band": true
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-W6",
+            "levels": 6,
+            "wide_band": true
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-W8",
+            "levels": 8,
+            "wide_band": true
+          },
+          {
+            "frequency_cutoff": 100.0,
+            "label": "SM8",
+            "levels": 8
+          }
+        ],
+        "shared_u": [
+          0.1,
+          1.0,
+          2.0,
+          2.1,
+          2.2,
+          3.0,
+          4.0,
+          4.9,
+          5.0,
+          5.1,
+          5.2,
+          5.5,
+          6.0,
+          7.0,
+          8.0,
+          8.5,
+          9.0,
+          10.0
+        ]
+      },
+      "quick": {
+        "current_settings": [
+          {
+            "label": "GAL"
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-W2",
+            "levels": 2,
+            "wide_band": true
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-F2",
+            "levels": 2
+          }
+        ],
+        "current_u": [
+          2.0,
+          8.0
+        ],
+        "phases_over_pi": [
+          0.25,
+          0.6,
+          0.9
+        ],
+        "shared_settings": [
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-W1",
+            "levels": 1,
+            "roots": 4,
+            "wide_band": true
+          },
+          {
+            "bath_kind": "chain-expansion",
+            "label": "ChE-W2",
+            "levels": 2,
+            "roots": 4,
+            "wide_band": true
+          }
+        ],
+        "shared_u": [
+          1.0,
+          3.0,
+          10.0
+        ]
+      }
+    }
+  },
+  "profile": "convergence",
+  "scripts_sha256": {
+    "../_common.py": "831ff301f2431df256121d75da66b34d449c63dbfd13a35372ca9b86518084d3",
+    "analyze.py": "5afb5d0256933d701ee8cfd6574bdbea75c20b8da9d482d835ab52b2a2933207",
+    "chain_check.py": "d2e1b23915be06be1e21efdf66104e46debf7b27d77326e64141d1489300d7dc",
+    "extract_reference.py": "747d4c2586519a167280ba708e8680e025a687f226c2c72e04f3f57e7861ef3e",
+    "models.py": "79ea85695eba80b132af253145adfc925b10768cceba3384b0395ea3f2e40756",
+    "plot.py": "b192a8343d3cecff5c9283690ffbce89868be77036621365e22a1c1b3a7b6d55",
+    "run.py": "b214e9a64a069ed27cb2288beaa7e066994b9fb38456cb8b2357ef66bba333b4"
+  },
+  "state_records": 291
+}

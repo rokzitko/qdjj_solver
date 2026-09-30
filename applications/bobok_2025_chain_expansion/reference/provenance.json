@@ -1,0 +1,131 @@
+{
+  "paper_doi": "10.1103/mxsl-fc96",
+  "arxiv_version": "2508.18465v2",
+  "archive_url": "https://export.arxiv.org/e-print/2508.18465v2",
+  "archive_sha256": "296dbda0d6e00427a695935e5dc47a1291da1524f2cfa60fcbd85ef93a669772",
+  "members_sha256": {
+    "fig_08.pdf": "2500f4d5d47033a755bae846716d8eef5759db41be6232bd31f039320e9e0bf0",
+    "fig_17.pdf": "95033cf17f7c8b70a5f751e81fd1f06fed90ddd9af13e79ac479c5d7ba0bfe61"
+  },
+  "calibration": {
+    "fig_08.pdf": {
+      "pdf_frames": [
+        [
+          77.31839752197266,
+          7.20001220703125,
+          376.7330322265625,
+          257.57421875
+        ],
+        [
+          391.7037658691406,
+          7.20001220703125,
+          691.118408203125,
+          257.57421875
+        ],
+        [
+          77.31839752197266,
+          270.09295654296875,
+          376.7330322265625,
+          520.4671630859375
+        ],
+        [
+          391.7037658691406,
+          270.09295654296875,
+          691.118408203125,
+          520.4671630859375
+        ],
+        [
+          77.31839752197266,
+          532.98583984375,
+          376.7330322265625,
+          783.3600463867188
+        ],
+        [
+          391.7037658691406,
+          532.98583984375,
+          691.118408203125,
+          783.3600463867188
+        ]
+      ],
+      "x_bounds": [
+        0.0,
+        1.0
+      ],
+      "y_bounds": [
+        -0.2,
+        0.7
+      ],
+      "panel_order": [
+        "GAL",
+        "ChE-F1",
+        "ChE-W2",
+        "ChE-F2",
+        "ChE-W4",
+        "ChE-F4"
+      ]
+    },
+    "fig_17.pdf": {
+      "pdf_frames": [
+        [
+          83.14208221435547,
+          41.97747802734375,
+          641.14208984375,
+          197.9024658203125
+        ],
+        [
+          83.14208221435547,
+          213.49496459960938,
+          641.14208984375,
+          369.41998291015625
+        ],
+        [
+          83.14208221435547,
+          385.0124816894531,
+          641.14208984375,
+          540.9375
+        ]
+      ],
+      "x_bounds": [
+        0.0,
+        10.0
+      ],
+      "y_zero_tick_value": [
+        [
+          196.37380981445312,
+          43.50616455078125,
+          1.0
+        ],
+        [
+          308.9130554199219,
+          234.24652099609375,
+          0.1
+        ],
+        [
+          427.9520568847656,
+          503.26849365234375,
+          -0.5
+        ]
+      ],
+      "panel_order": [
+        "excitation",
+        "pairing",
+        "spin_correlation"
+      ]
+    }
+  },
+  "license": "CC BY 4.0 (arXiv version)",
+  "reference_type": "Original PDF marker centers and polyline vertices, not raw NRG output",
+  "coordinate_precision_points": 0.001,
+  "figure8_phase_uncertainty": 4e-06,
+  "figure8_current_uncertainty": 4e-06,
+  "figure17_u_uncertainty": 2e-05,
+  "figure17_value_uncertainty": 1e-05,
+  "notes": [
+    "Fig. 8 figure legend assigns black U=2, red U=4, blue U=8; the prose reverses the last two colors.",
+    "Fig. 8 NRG markers are taken from panel (a), with duplicate marker layers and legends removed.",
+    "Fig. 17 NRG multiplets have no spin labels in the figure; comparison uses one-to-one matching of displayed energy levels.",
+    "Curve simplification/interpolation error exceeds marker-coordinate rounding and is reported separately.",
+    "ChE-W denotes wide-band coefficients; ChE-F uses D/Delta=100.",
+    "NRG used D/Delta=100, Lambda=4 for two channels and Lambda=2 for one; kept-state and z-averaging settings not specified."
+  ]
+}

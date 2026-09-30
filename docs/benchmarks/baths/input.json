@@ -1,0 +1,731 @@
+{
+  "bandwidths": [
+    10.0,
+    100.0,
+    2000.0
+  ],
+  "bath_repetitions": 5,
+  "dmrg_options": {
+    "chi_max": 64,
+    "energy_tolerance": 1e-11,
+    "max_sweeps": 60,
+    "min_sweeps": 10,
+    "require_convergence": false,
+    "residual_tolerance": 1e-07,
+    "seed": 1729,
+    "seed_trials": 2,
+    "threads": 1
+  },
+  "fit_sensitivity": [
+    {
+      "bandwidth": 100.0,
+      "levels": 8,
+      "options": {
+        "frequency_cutoff": 10.0
+      }
+    },
+    {
+      "bandwidth": 100.0,
+      "levels": 8,
+      "options": {
+        "frequency_cutoff": 1000.0
+      }
+    },
+    {
+      "bandwidth": 100.0,
+      "levels": 8,
+      "options": {
+        "relative_weight": 0.5
+      }
+    },
+    {
+      "bandwidth": 100.0,
+      "levels": 8,
+      "options": {
+        "relative_weight": 1.0
+      }
+    },
+    {
+      "bandwidth": 100.0,
+      "levels": 8,
+      "options": {
+        "frequency_min": 1e-06
+      }
+    },
+    {
+      "bandwidth": 100.0,
+      "levels": 8,
+      "options": {
+        "frequency_points": 250
+      }
+    },
+    {
+      "bandwidth": 100.0,
+      "levels": 8,
+      "options": {
+        "frequency_points": 4000
+      }
+    },
+    {
+      "bandwidth": 100.0,
+      "levels": 8,
+      "options": {
+        "starts": 1
+      }
+    },
+    {
+      "bandwidth": 100.0,
+      "levels": 8,
+      "options": {
+        "starts": 8
+      }
+    },
+    {
+      "bandwidth": 100.0,
+      "levels": 8,
+      "options": {
+        "seed": 1730
+      }
+    },
+    {
+      "bandwidth": 100.0,
+      "levels": 8,
+      "options": {
+        "seed": 1731
+      }
+    },
+    {
+      "bandwidth": 2000.0,
+      "levels": 8,
+      "options": {
+        "frequency_cutoff": 2000.0
+      }
+    },
+    {
+      "bandwidth": 2000.0,
+      "levels": 8,
+      "options": {
+        "frequency_cutoff": 20000.0
+      }
+    },
+    {
+      "bandwidth": 2000.0,
+      "levels": 8,
+      "options": {
+        "frequency_cutoff": 2000.0,
+        "relative_weight": 1.0
+      }
+    }
+  ],
+  "fitting": {
+    "frequency_cutoff": 100.0,
+    "frequency_min": 0.001,
+    "frequency_points": 1000,
+    "relative_weight": 0.0,
+    "seed": 1729,
+    "starts": 4
+  },
+  "format_version": 1,
+  "kernel_levels": {
+    "cosh-grid": [
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      16,
+      24,
+      32,
+      48,
+      64
+    ],
+    "linear-gl": [
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      16,
+      24,
+      32,
+      64,
+      128,
+      256,
+      512,
+      1024,
+      2048
+    ],
+    "surrogate": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      16
+    ]
+  },
+  "legacy_levels": [
+    4,
+    8
+  ],
+  "qp_options": {
+    "max_dimension": 3000000,
+    "max_memory_gib": 8.0,
+    "method": "sparse",
+    "residual_tolerance": 2e-08,
+    "seed": 1729,
+    "threads": 1,
+    "tolerance": 1e-12
+  },
+  "quadratic_points": [
+    {
+      "detuning": 0.0,
+      "gamma": 0.3,
+      "phi": 0.8
+    },
+    {
+      "detuning": 0.6,
+      "gamma": 2.0,
+      "phi": 1.7
+    },
+    {
+      "detuning": 0.0,
+      "gamma": 10.0,
+      "phi": 0.2
+    }
+  ],
+  "solve_repetitions": 3,
+  "studies": [
+    {
+      "bandwidth": 100.0,
+      "cases": [
+        {
+          "label": "g0.01-p0",
+          "model": {
+            "compress": true,
+            "gamma": 0.01,
+            "phi": 0.0,
+            "u": 10.0
+          }
+        },
+        {
+          "label": "g0.01-p0.5",
+          "model": {
+            "compress": true,
+            "gamma": 0.01,
+            "phi": 1.5707963267948966,
+            "u": 10.0
+          }
+        },
+        {
+          "label": "g0.01-p1",
+          "model": {
+            "compress": true,
+            "gamma": 0.01,
+            "phi": 3.141592653589793,
+            "u": 10.0
+          }
+        },
+        {
+          "label": "g1-p0",
+          "model": {
+            "compress": true,
+            "gamma": 1.0,
+            "phi": 0.0,
+            "u": 10.0
+          }
+        },
+        {
+          "label": "g1-p0.5",
+          "model": {
+            "compress": true,
+            "gamma": 1.0,
+            "phi": 1.5707963267948966,
+            "u": 10.0
+          }
+        },
+        {
+          "label": "g1-p1",
+          "model": {
+            "compress": true,
+            "gamma": 1.0,
+            "phi": 3.141592653589793,
+            "u": 10.0
+          }
+        },
+        {
+          "label": "g2-p0",
+          "model": {
+            "compress": true,
+            "gamma": 2.0,
+            "phi": 0.0,
+            "u": 10.0
+          }
+        },
+        {
+          "label": "g2-p0.5",
+          "model": {
+            "compress": true,
+            "gamma": 2.0,
+            "phi": 1.5707963267948966,
+            "u": 10.0
+          }
+        },
+        {
+          "label": "g2-p1",
+          "model": {
+            "compress": true,
+            "gamma": 2.0,
+            "phi": 3.141592653589793,
+            "u": 10.0
+          }
+        }
+      ],
+      "families": [
+        "cosh-grid",
+        "surrogate",
+        "linear-gl"
+      ],
+      "levels": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "name": "knight",
+      "sectors": [
+        1
+      ],
+      "solvers": [
+        {
+          "backend": "qp",
+          "cutoff": null
+        }
+      ]
+    },
+    {
+      "bandwidth": 100.0,
+      "cases": [
+        {
+          "label": "g1-p0.5",
+          "model": {
+            "compress": true,
+            "gamma": 1.0,
+            "phi": 1.5707963267948966,
+            "u": 10.0
+          }
+        }
+      ],
+      "families": [
+        "cosh-grid",
+        "surrogate"
+      ],
+      "levels": [
+        12,
+        16
+      ],
+      "name": "knight-refinement",
+      "sectors": [
+        1
+      ],
+      "solvers": [
+        {
+          "backend": "qp",
+          "cutoff": 4
+        },
+        {
+          "backend": "qp",
+          "cutoff": 6
+        },
+        {
+          "backend": "dmrg",
+          "options": {
+            "chi_max": 64
+          }
+        },
+        {
+          "backend": "dmrg",
+          "options": {
+            "chi_max": 128
+          }
+        }
+      ]
+    },
+    {
+      "bandwidth": 10.0,
+      "cases": [
+        {
+          "label": "g0.5",
+          "model": {
+            "compress": false,
+            "gamma": 0.5,
+            "geometry": "single",
+            "u": 15.0
+          }
+        },
+        {
+          "label": "g2",
+          "model": {
+            "compress": false,
+            "gamma": 2.0,
+            "geometry": "single",
+            "u": 15.0
+          }
+        },
+        {
+          "label": "g3",
+          "model": {
+            "compress": false,
+            "gamma": 3.0,
+            "geometry": "single",
+            "u": 15.0
+          }
+        },
+        {
+          "label": "g10",
+          "model": {
+            "compress": false,
+            "gamma": 10.0,
+            "geometry": "single",
+            "u": 15.0
+          }
+        },
+        {
+          "label": "g20",
+          "model": {
+            "compress": false,
+            "gamma": 20.0,
+            "geometry": "single",
+            "u": 15.0
+          }
+        }
+      ],
+      "families": [
+        "cosh-grid",
+        "surrogate",
+        "linear-gl"
+      ],
+      "levels": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "name": "spectrum",
+      "sectors": [
+        0,
+        1
+      ],
+      "solvers": [
+        {
+          "backend": "qp",
+          "cutoff": null
+        }
+      ]
+    },
+    {
+      "bandwidth": 10.0,
+      "cases": [
+        {
+          "label": "g0.5",
+          "model": {
+            "compress": false,
+            "gamma": 0.5,
+            "geometry": "single",
+            "u": 15.0
+          }
+        },
+        {
+          "label": "g20",
+          "model": {
+            "compress": false,
+            "gamma": 20.0,
+            "geometry": "single",
+            "u": 15.0
+          }
+        }
+      ],
+      "families": [
+        "surrogate"
+      ],
+      "levels": [
+        1,
+        3,
+        5,
+        7,
+        9
+      ],
+      "name": "spectrum-odd",
+      "sectors": [
+        0,
+        1
+      ],
+      "solvers": [
+        {
+          "backend": "qp",
+          "cutoff": null
+        }
+      ]
+    },
+    {
+      "bandwidth": 10.0,
+      "cases": [
+        {
+          "label": "g0.5",
+          "model": {
+            "compress": false,
+            "gamma": 0.5,
+            "geometry": "single",
+            "u": 15.0
+          }
+        },
+        {
+          "label": "g20",
+          "model": {
+            "compress": false,
+            "gamma": 20.0,
+            "geometry": "single",
+            "u": 15.0
+          }
+        }
+      ],
+      "families": [
+        "cosh-grid",
+        "surrogate"
+      ],
+      "levels": [
+        12,
+        16
+      ],
+      "name": "spectrum-refinement",
+      "sectors": [
+        0,
+        1
+      ],
+      "solvers": [
+        {
+          "backend": "dmrg",
+          "options": {
+            "chi_max": 64
+          }
+        },
+        {
+          "backend": "dmrg",
+          "options": {
+            "chi_max": 128
+          }
+        }
+      ]
+    },
+    {
+      "bandwidth": 2000.0,
+      "cases": [
+        {
+          "label": "p1.50",
+          "model": {
+            "compress": true,
+            "gamma": 1.0,
+            "phi": 1.5,
+            "u": 3.0
+          }
+        },
+        {
+          "label": "p1.53",
+          "model": {
+            "compress": true,
+            "gamma": 1.0,
+            "phi": 1.53,
+            "u": 3.0
+          }
+        },
+        {
+          "label": "p1.56",
+          "model": {
+            "compress": true,
+            "gamma": 1.0,
+            "phi": 1.56,
+            "u": 3.0
+          }
+        }
+      ],
+      "families": [
+        "cosh-grid",
+        "surrogate"
+      ],
+      "levels": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "name": "wide-band",
+      "sectors": [
+        0,
+        1
+      ],
+      "solvers": [
+        {
+          "backend": "qp",
+          "cutoff": null
+        }
+      ]
+    },
+    {
+      "bandwidth": 100.0,
+      "cases": [
+        {
+          "label": "weak-p0.5",
+          "model": {
+            "curve": {
+              "gamma_left": 1.0,
+              "gamma_right": 1.0,
+              "hopping": 0.1
+            },
+            "kind": "double-dot",
+            "phi": 1.5707963267948966,
+            "u": 4.0
+          }
+        },
+        {
+          "label": "weak-p0.9",
+          "model": {
+            "curve": {
+              "gamma_left": 1.0,
+              "gamma_right": 1.0,
+              "hopping": 0.1
+            },
+            "kind": "double-dot",
+            "phi": 2.827433388230814,
+            "u": 4.0
+          }
+        },
+        {
+          "label": "strong-p0.5",
+          "model": {
+            "curve": {
+              "gamma_left": 1.4,
+              "gamma_right": 1.4,
+              "hopping": 1.0
+            },
+            "kind": "double-dot",
+            "phi": 1.5707963267948966,
+            "u": 4.0
+          }
+        },
+        {
+          "label": "strong-p0.9",
+          "model": {
+            "curve": {
+              "gamma_left": 1.4,
+              "gamma_right": 1.4,
+              "hopping": 1.0
+            },
+            "kind": "double-dot",
+            "phi": 2.827433388230814,
+            "u": 4.0
+          }
+        }
+      ],
+      "families": [
+        "cosh-grid",
+        "surrogate",
+        "linear-gl"
+      ],
+      "levels": [
+        2,
+        4
+      ],
+      "name": "double-dot",
+      "sectors": [
+        0,
+        1
+      ],
+      "solvers": [
+        {
+          "backend": "qp",
+          "cutoff": null
+        }
+      ]
+    },
+    {
+      "bandwidth": 10.0,
+      "cases": [
+        {
+          "label": "isolated",
+          "model": {
+            "bath_reference": "isolated",
+            "compress": false,
+            "gamma": 0.4,
+            "phi": 0.8,
+            "rho_wn": 0.08,
+            "symmetry": false,
+            "u": 2.0
+          }
+        },
+        {
+          "label": "coupled",
+          "model": {
+            "bath_reference": "coupled",
+            "compress": false,
+            "gamma": 0.4,
+            "phi": 0.8,
+            "rho_wn": 0.08,
+            "symmetry": false,
+            "u": 2.0
+          }
+        }
+      ],
+      "families": [
+        "cosh-grid",
+        "surrogate"
+      ],
+      "levels": [
+        2,
+        4
+      ],
+      "name": "coordinates",
+      "sectors": [
+        0,
+        1
+      ],
+      "solvers": [
+        {
+          "backend": "qp",
+          "cutoff": 2
+        },
+        {
+          "backend": "qp",
+          "cutoff": 4
+        },
+        {
+          "backend": "qp",
+          "cutoff": null
+        },
+        {
+          "backend": "dmrg",
+          "options": {
+            "chi_max": 32
+          }
+        },
+        {
+          "backend": "dmrg",
+          "options": {
+            "chi_max": 64
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "crossings": [],
+  "maximum_current_finite_difference_error": 1.7378271044421467e-10,
+  "maximum_residual": 2.0872938807558073e-12,
+  "points": 6,
+  "strong_maximum_nrg_current_error": 0.002604764013884875,
+  "weak_maximum_nrg_current_error": 0.002139854083090101
+}

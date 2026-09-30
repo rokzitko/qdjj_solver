@@ -1,0 +1,8 @@
+{
+  "maximum_mapping_charge_error": 9.992007221626409e-16,
+  "maximum_mapping_current_error": 6.106226635438361e-16,
+  "maximum_mapping_energy_error": 7.327471962526033e-15,
+  "maximum_reference_gate_difference": 0.14996699544430006,
+  "maximum_residual": 2.962411168818285e-14,
+  "points": 8
+}

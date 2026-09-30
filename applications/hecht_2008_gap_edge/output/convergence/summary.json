@@ -1,0 +1,7 @@
+{
+  "interacting_continuum_converged": false,
+  "maximum_interacting_sum_rule_error": 4.218847493575595e-14,
+  "maximum_residual": 5.298812077232778e-11,
+  "quadratic_fock_resolvent_error": 1.7039753472859274e-15,
+  "quadratic_fock_sum_rule_error": 1.1102230246251565e-16
+}

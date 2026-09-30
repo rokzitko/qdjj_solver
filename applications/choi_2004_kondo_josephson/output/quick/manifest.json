@@ -1,0 +1,284 @@
+{
+  "baths": {
+    "048f3f59e6a21b6dd3d90b1b85e8ff1abf6371d7ca3d431d869a8b0f49863e4b": {
+      "bandwidth": 1126.4326379297493,
+      "delta": 1.0,
+      "metadata": {
+        "citation": "Baran, Frost and Paaske, Phys. Rev. B 108, L220506 (2023)",
+        "cost": 0.03439426591072891,
+        "evaluations": 33,
+        "fit_optimality": 1.2583909114472803e-07,
+        "frequency_cutoff": 1126.4326379297493,
+        "frequency_min": 0.001,
+        "frequency_points": 1000,
+        "kind": "surrogate",
+        "levels": 4,
+        "max_relative_fit_error": 0.965648336775602,
+        "measure_error": -0.9730183917367979,
+        "relative_weight": 0.0,
+        "seed": 1729,
+        "starts": 4
+      },
+      "weights": [
+        0.012436952756905593,
+        0.0010538513746954565,
+        0.0010538513746954565,
+        0.012436952756905593
+      ],
+      "xi": [
+        -9.766601428900895,
+        -0.9268263876245784,
+        0.9268263876245784,
+        9.766601428900895
+      ]
+    },
+    "165fab4dee94993883437ed676e78401cbda5c24525a7f944e2d7a06ce78bf4f": {
+      "bandwidth": 11.264326379297492,
+      "delta": 1.0,
+      "metadata": {
+        "citation": "Baran, Frost and Paaske, Phys. Rev. B 108, L220506 (2023)",
+        "cost": 0.0020150588790269685,
+        "evaluations": 17,
+        "fit_optimality": 2.207308266240845e-09,
+        "frequency_cutoff": 11.264326379297492,
+        "frequency_min": 0.001,
+        "frequency_points": 1000,
+        "kind": "surrogate",
+        "levels": 4,
+        "max_relative_fit_error": 0.08593846275768069,
+        "measure_error": -0.19494323568820215,
+        "relative_weight": 0.0,
+        "seed": 1729,
+        "starts": 4
+      },
+      "weights": [
+        0.32689574640158037,
+        0.07563263575431858,
+        0.07563263575431858,
+        0.32689574640158037
+      ],
+      "xi": [
+        -4.386823931446227,
+        -0.7239603774570033,
+        0.7239603774570033,
+        4.386823931446227
+      ]
+    },
+    "b6b3d21c5daa653ee3e346db509211d45006e6353a3eec8680f8b2e6ebf33909": {
+      "bandwidth": 62.57959099609719,
+      "delta": 1.0,
+      "metadata": {
+        "citation": "Baran, Frost and Paaske, Phys. Rev. B 108, L220506 (2023)",
+        "cost": 0.020769650456365477,
+        "evaluations": 23,
+        "fit_optimality": 6.412315980577756e-08,
+        "frequency_cutoff": 62.57959099609719,
+        "frequency_min": 0.001,
+        "frequency_points": 1000,
+        "kind": "surrogate",
+        "levels": 4,
+        "max_relative_fit_error": 0.5569383901365714,
+        "measure_error": -0.6469308960575952,
+        "relative_weight": 0.0,
+        "seed": 1729,
+        "starts": 4
+      },
+      "weights": [
+        0.1589013863466907,
+        0.017633165624511643,
+        0.017633165624511643,
+        0.1589013863466907
+      ],
+      "xi": [
+        -7.966017378519672,
+        -0.8792675756976605,
+        0.8792675756976605,
+        7.966017378519672
+      ]
+    }
+  },
+  "case": "choi_2004_kondo_josephson",
+  "elapsed_seconds": 0.33992074988782406,
+  "environment": {
+    "machine": "arm64",
+    "numpy": "2.5.2",
+    "packages": {
+      "h5py": "3.16.0",
+      "numpy": "2.5.2",
+      "physics-tenpy": "1.1.1",
+      "qdjj-solver": "0.2.0",
+      "scipy": "1.18.0",
+      "threadpoolctl": "3.6.0"
+    },
+    "python": "3.14.7",
+    "qdjj_solver": "0.2.0",
+    "qpsolver": "0.2.0",
+    "release": "25.5.0",
+    "scipy": "1.18.0",
+    "system": "Darwin"
+  },
+  "format": "qdjj-application",
+  "format_version": 1,
+  "implementation": {
+    "files": {
+      "__init__.py": "37c2a898286a98933ca26fcd7eadc482fb2a3f9f35cab81349bb08146a9a474d",
+      "api.py": "a3a5b3a80ce155617899b3360a9d7dc36df4b4366ced7160ea00708642710e5a",
+      "cli.py": "d860f0b9442cf954dc38abccca1ebd6488bcf129bb1309251e8b71aaebb9e056",
+      "common/__init__.py": "394799edc56d432820af8801a38ba9c9512060d7d904360286934a87341c9c95",
+      "common/algebra.py": "072659f71e4b222578a74f472fbdbfe03ee5816e76a9a3059578327bbfb81962",
+      "common/baths.py": "dd2cdeab3680d921d0523cc307903b640976c70222a31bf5d6f134e617fa06d1",
+      "common/io.py": "d0558e83e207e238bc4542b0b3a14c6204e440536d4ea98c6f5f52338379eb12",
+      "common/models.py": "2647acbea388e3a56c6b09bdc422fcd78b13fbf53e48c2c886b3accfaf6ca890",
+      "common/problem.py": "6a74801112898d76b35213153cc9318befb1d98be99a0d639800efa3cdf98a47",
+      "compat/qpsolver/__init__.py": "1e8785ea1c09ee48c89b1d64adb9d68053bc7cf2c7438a1aa64bba6fe149a875",
+      "compat/qpsolver/cli.py": "272fbf82340c9a59e0efd74e513562f24af20a5d543fd0f13b58bfac00bcd0a9",
+      "compat/qpsolver/nrg.py": "6162ed163e5afa1bcacb1f0afabc94df0fe2fcce7e95aa879c40c1daa5fa27e0",
+      "dmrg_solver/__init__.py": "c875c9bd86be62c86e9555286a1088310886969178c13d4a700fe0b89b077bd6",
+      "dmrg_solver/convergence.py": "29ee594c6d41268d7cb51d3e3dd12e302a0e38bddb884d78a7de64f6d609d32e",
+      "dmrg_solver/io.py": "54bd752cc6ace17231c35f89f95674c522980301a4e17e601a11a54b19367748",
+      "dmrg_solver/legacy.py": "c2c98b124968c575a66616930cf79b8a75f731dbd6a5c469801db3c423dc4a6b",
+      "dmrg_solver/mpo.py": "5492d2f4e80db0e71f62f5884cb26206cef5944efd6f4f60bc55a4e2d44a9790",
+      "dmrg_solver/solver.py": "910169a6208b5710653b00382220be306e15c466174ab8708b568901a5b2e765",
+      "qp_solver/__init__.py": "508b0b0ce58511cde099aa639fcaf975edd523bfa8aaec073cec42338634f39c",
+      "qp_solver/_core.cpython-314-darwin.so": "c337e751280e81d172022b4fb1ab30e78d3926326844a16d27bffe447de24c4d",
+      "qp_solver/basis.py": "068727de5d1b960149d4e13810ca630da2e1c729ef5056eeac01d5ab623146ed",
+      "qp_solver/cli.py": "8a512a4f1c07aec98b015a6decd82282df9d1283367d12807f4e8e781edb0d4b",
+      "qp_solver/io.py": "4c208f7a597d6a32dfdde01cd7b0973b5ecc84b19fa32daddeddcf0a65f2e52e",
+      "qp_solver/nrg.py": "c71b57b9c3eeb1499a137955998a3e12a4370f710b501a928cca9d02dc51b92d",
+      "qp_solver/reference.py": "437686251373649a225e79f5ce30458c17006a2568ba260d8ead8c4260d9b650",
+      "qp_solver/solver.py": "7cc7a50bf31456ba0d6f9f5b5d732b3c2ac0b01369e775b4599e9e99f550a9d9"
+    },
+    "sha256": "6150cb4b2e7f92b4273f15ef4aa463fffb3637f355dae9f7cbb951057265bcd9",
+    "version": "0.2.0"
+  },
+  "input": {
+    "finite_difference_phase_over_pi": 0.2,
+    "finite_difference_step": 0.0001,
+    "format_version": 1,
+    "model": {
+      "delta": 1.0,
+      "detuning": 0.0
+    },
+    "normal_state": {
+      "gamma_total_over_D": 0.04,
+      "u_over_D": 0.2
+    },
+    "paper_doi": "10.1103/PhysRevB.70.020502",
+    "profiles": {
+      "convergence": {
+        "phase_over_pi": [
+          0.3,
+          0.8
+        ],
+        "ratios": [
+          0.1,
+          1.8,
+          10.0
+        ],
+        "settings": [
+          {
+            "frequency_factor": 1.0,
+            "label": "L6",
+            "levels": 6
+          },
+          {
+            "frequency_factor": 1.0,
+            "label": "L8",
+            "levels": 8
+          },
+          {
+            "frequency_factor": 1.0,
+            "label": "L10",
+            "levels": 10,
+            "solver": {
+              "method": "sparse"
+            }
+          },
+          {
+            "frequency_factor": 2.0,
+            "label": "L8_w2D",
+            "levels": 8
+          },
+          {
+            "cutoff": 4,
+            "frequency_factor": 1.0,
+            "label": "L8_q4",
+            "levels": 8
+          },
+          {
+            "cutoff": 6,
+            "frequency_factor": 1.0,
+            "label": "L12_q6",
+            "levels": 12,
+            "phase_over_pi": [
+              0.3
+            ],
+            "ratios": [
+              0.1
+            ],
+            "solver": {
+              "method": "sparse"
+            }
+          },
+          {
+            "cutoff": 8,
+            "frequency_factor": 1.0,
+            "label": "L12_q8",
+            "levels": 12,
+            "phase_over_pi": [
+              0.3
+            ],
+            "ratios": [
+              0.1
+            ],
+            "solver": {
+              "method": "sparse"
+            }
+          }
+        ]
+      },
+      "paper": {
+        "include_reference_phases": true,
+        "locate_crossings": true,
+        "phase_points": 31,
+        "ratios": [
+          0.1,
+          1.6,
+          1.8,
+          2.0,
+          2.2,
+          10.0
+        ],
+        "settings": {
+          "frequency_factor": 1.0,
+          "levels": 8
+        }
+      },
+      "quick": {
+        "phase_over_pi": [
+          0.15,
+          0.4,
+          0.8
+        ],
+        "ratios": [
+          0.1,
+          1.8,
+          10.0
+        ],
+        "settings": {
+          "frequency_factor": 1.0,
+          "levels": 4
+        }
+      }
+    },
+    "transition_phase_tolerance": 5e-06
+  },
+  "profile": "quick",
+  "scripts_sha256": {
+    "../_common.py": "85bbb010e27e0fb97bbfc1af43fd34d43aefb644ef7339d9150fea7b3663da1d",
+    "extract_reference.py": "46da1b1815a40dd9daeb7b5e01c07c35e812058f209bbe9113de53a20f21364e",
+    "plot.py": "145945cdcd6f4adcd596b2aa791dc15418451d779f7798095740c85472da8d14",
+    "run.py": "ba6ba5f22c1c7ce4b1b8b46be7fc5e317757106718d11c5ba62f2fab03546700"
+  },
+  "state_records": 36
+}

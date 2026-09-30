@@ -1,0 +1,34 @@
+{
+  "calibration": {
+    "current": [
+      -0.1,
+      0.4
+    ],
+    "phase_over_pi": [
+      0,
+      1
+    ],
+    "x": [
+      588,
+      5039
+    ],
+    "y": [
+      5188,
+      6854.5
+    ]
+  },
+  "coordinate_rounding_half_step": 0.25,
+  "current_extraction_uncertainty": 0.00015,
+  "figure": "9(a)",
+  "kind": "NRG marker centers extracted from vector figure",
+  "notes": [
+    "The plot quantizes coordinates; these are not raw NRG outputs.",
+    "Identical duplicate marker removed; the two legend markers at x=902 excluded.",
+    "Nominal phase grid recovered to 0.001 pi; SVG coordinates are retained.",
+    "NRG calculation uncertainty is additional to graphical extraction uncertainty."
+  ],
+  "paper_doi": "10.1103/PhysRevB.107.115407",
+  "phase_over_pi_extraction_uncertainty": 0.0001,
+  "source": "https://arxiv.org/html/2211.10312v2/fig_09.svg",
+  "source_sha256": "3adf34c9f6df27511930c92281a1d867b4f576bf206997d409a31999dfc33b0b"
+}

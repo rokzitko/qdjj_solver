@@ -1,0 +1,9 @@
+{
+  "format_version": 1,
+  "model": {"delta": 1.0, "detuning": 0.0, "bandwidth": 100.0},
+  "settings": [{"label": "ChE-W4", "bath_kind": "chain-expansion", "levels": 4, "wide_band": true}],
+  "u": [1.0, 3.0, 7.0],
+  "dmrg": {"backend": "dmrg", "cutoff": null,
+           "solver": {"chi_max": 64, "min_sweeps": 8, "max_sweeps": 50, "seed_trials": 2,
+                      "energy_tolerance": 1e-11, "residual_tolerance": 1e-7, "require_convergence": true}}
+}

@@ -1,0 +1,18 @@
+{
+  "format_version": 1,
+  "group_hours": {"window": 4.0, "bath": 4.0, "dmrg": 4.0},
+  "tasks": [
+    {"id": "cosh12-qp-q6", "bath_input": "cosh12", "group": "bath", "calculation": {"backend": "qp", "cutoff": 6, "max_dimension": 16000000, "bath": {"kind": "cosh", "levels": 12}}},
+    {"id": "cosh12-qp-q7", "bath_input": "cosh12", "group": "bath", "calculation": {"backend": "qp", "cutoff": 7, "max_dimension": 16000000, "bath": {"kind": "cosh", "levels": 12}}},
+    {"id": "cosh12-qp-q8", "bath_input": "cosh12", "group": "bath", "calculation": {"backend": "qp", "cutoff": 8, "max_dimension": 16000000, "bath": {"kind": "cosh", "levels": 12}}},
+    {"id": "cosh12-dmrg-chi384", "bath_input": "cosh12", "group": "dmrg", "calculation": {"backend": "dmrg", "chi": 384, "lanczos_probability_tolerance": 1e-22, "save_states": true, "bath": {"kind": "cosh", "levels": 12}}},
+    {"id": "cosh12-dmrg-chi512", "bath_input": "cosh12", "group": "dmrg", "calculation": {"backend": "dmrg", "chi": 512, "lanczos_probability_tolerance": 1e-22, "save_states": true, "bath": {"kind": "cosh", "levels": 12}}},
+    {"id": "cosh20-qp-q6", "bath_input": "cosh20", "group": "bath", "calculation": {"backend": "qp", "cutoff": 6, "max_dimension": 16000000, "bath": {"kind": "cosh", "levels": 20}}},
+    {"id": "cosh24-qp-q6", "bath_input": "cosh24", "group": "bath", "calculation": {"backend": "qp", "cutoff": 6, "max_dimension": 16000000, "bath": {"kind": "cosh", "levels": 24}}},
+    {"id": "cosh26-qp-q5", "bath_input": "cosh26", "group": "bath", "calculation": {"backend": "qp", "cutoff": 5, "max_dimension": 16000000, "bath": {"kind": "cosh", "levels": 26}}},
+    {"id": "cosh26-qp-q6", "bath_input": "cosh26", "group": "bath", "calculation": {"backend": "qp", "cutoff": 6, "max_dimension": 16000000, "bath": {"kind": "cosh", "levels": 26}}},
+    {"id": "surrogate24-window100-qp-q6", "bath_input": "surrogate24-window100", "group": "window", "calculation": {"backend": "qp", "cutoff": 6, "max_dimension": 16000000, "bath": {"kind": "surrogate", "levels": 24, "frequency_cutoff": 100.0, "relative_weight": 1.0, "max_nfev": 50000}}},
+    {"id": "surrogate24-window200-qp-q6", "bath_input": "surrogate24-window200", "group": "window", "calculation": {"backend": "qp", "cutoff": 6, "max_dimension": 16000000, "bath": {"kind": "surrogate", "levels": 24, "frequency_cutoff": 200.0, "relative_weight": 1.0, "max_nfev": 50000}}},
+    {"id": "surrogate24-window400-qp-q6", "bath_input": "surrogate24-window400", "group": "window", "calculation": {"backend": "qp", "cutoff": 6, "max_dimension": 16000000, "bath": {"kind": "surrogate", "levels": 24, "frequency_cutoff": 400.0, "relative_weight": 1.0, "max_nfev": 50000}}}
+  ]
+}

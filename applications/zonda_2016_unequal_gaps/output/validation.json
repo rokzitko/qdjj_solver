@@ -1,0 +1,47 @@
+{
+  "L2_versus_L4": {
+    "charge": 0.016579876741962207,
+    "current": 0.0042204176806618365,
+    "signed_gap": 0.02098390866128841
+  },
+  "L3_versus_L4": {
+    "charge": 0.0040025584758953126,
+    "current": 0.002163801621360706,
+    "signed_gap": 0.030871744687104075
+  },
+  "L4_D200_versus_L4": {
+    "charge": 0.0014955977196596804,
+    "current": 0.0004641636688184625,
+    "signed_gap": 0.000895925335749892
+  },
+  "L4_q4_versus_L4": {
+    "charge": 0.00041454632775506095,
+    "current": 0.0007912648653743137,
+    "signed_gap": 0.0017701875660254274
+  },
+  "L4_versus_L5": {
+    "charge": 0.0005535442924756162,
+    "current": 0.0008722705634903183,
+    "signed_gap": 0.02838350807396739
+  },
+  "L4_w200_versus_L4": {
+    "charge": 1.7151491317202172e-06,
+    "current": 8.90934386765796e-07,
+    "signed_gap": 1.0755088148961534e-06
+  },
+  "paper": {
+    "maximum_DC_L_current_difference": 0.0006203160248691858,
+    "maximum_DC_minus_R_current_difference": 0.0006203160248691858,
+    "maximum_FDC_L_current_difference": 0.0006203160248808848,
+    "maximum_NRG_current_difference": 0.000403615655838796,
+    "maximum_current_conservation_error": 1.4108159085424177e-13,
+    "maximum_current_derivative_error": 7.34935917678925e-10,
+    "maximum_residual": 2.542785285361002e-12,
+    "points": 45
+  },
+  "runtimes_seconds": {
+    "convergence": 228.65288050007075,
+    "paper": 107.79285170836374,
+    "quick": 0.27399966726079583
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "baths_sha256": "a19079eefe5f0edb5308d091ea1fd17bdcf09c7c41539abb70f2807e0947e4ad",
+  "completed": [
+    "qp_N24_Q1",
+    "qp_N24_Q2",
+    "qp_N24_Q3",
+    "qp_N24_Q4",
+    "qp_N24_Q5",
+    "qp_N24_Q6",
+    "qp_N32_Q1",
+    "qp_N32_Q2",
+    "qp_N32_Q3",
+    "qp_N32_Q4",
+    "qp_N32_Q5",
+    "qp_N32_Q6",
+    "dmrg_N24_chi128",
+    "dmrg_N32_chi128",
+    "dmrg_N24_chi192"
+  ],
+  "example_sha256": "e2e8f81246d255fdb196fe94b63697939f77ecab3c1df0733c5fb0a6f28ffa71",
+  "format": "qdjj-qp-convergence",
+  "format_version": 1,
+  "importer_sha256": "4d85e42655701e2a7e7b15aa33019928ccf70c9a9a5b90ab3a81e32b4471b5b9",
+  "input": {
+    "bath": {
+      "bandwidth": 100.0,
+      "delta": 1.0
+    },
+    "cutoffs": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "dmrg_options": {
+      "calculate_residuals": true,
+      "eigenpairs": 1,
+      "energy_tolerance": 1e-12,
+      "max_sweeps": 80,
+      "min_sweeps": 12,
+      "observables": [
+        "impurity_charge",
+        "double_occupancy_0",
+        "impurity_spin_z"
+      ],
+      "require_convergence": true,
+      "residual_tolerance": 0.0003,
+      "seed": 1729,
+      "seed_trials": 4,
+      "threads": 1
+    },
+    "format_version": 1,
+    "levels": [
+      24,
+      32
+    ],
+    "model": {
+      "bath_reference": "isolated",
+      "compress": true,
+      "detuning": 0.0,
+      "field": 0.0,
+      "gamma": 0.4,
+      "phi": 1.8849555921538759,
+      "rho_wn": 0.0,
+      "rho_ws": 0.0,
+      "symmetry": true,
+      "u": 2.0
+    },
+    "qp_options": {
+      "eigenpairs": 1,
+      "max_dimension": 25000000,
+      "max_memory_gib": 32.0,
+      "max_nnz": 250000000,
+      "maxiter": 10000,
+      "method": "sparse",
+      "ncv": 12,
+      "residual_tolerance": 2e-09,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-11
+    },
+    "reference_stability_floors": {
+      "C_d_bath": 1e-08,
+      "P_0": 1e-08,
+      "P_1": 1e-08,
+      "P_2": 1e-08,
+      "energy": 1e-08,
+      "q_d": 1e-08
+    },
+    "references": [
+      {
+        "chi_max": 128,
+        "levels": 24
+      },
+      {
+        "chi_max": 128,
+        "levels": 32
+      },
+      {
+        "chi_max": 192,
+        "levels": 24
+      }
+    ],
+    "sector": {
+      "eta": 1,
+      "parity": 1,
+      "twice_sz": 1
+    }
+  },
+  "measurements_sha256": "a5f4ad5df3dc4f5350cd8260ea32cd13aca9d287dce465b86afe29001b133391",
+  "origin": "paper",
+  "provenance_note": "File checksums identify imported working-tree contents; revision is context.",
+  "source_repository": "ASQ_variational",
+  "source_revision_context": "3d238b9cb8007ec22d1bf228ccd1d92d86fff7a5"
+}

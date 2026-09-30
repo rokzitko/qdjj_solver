@@ -1,0 +1,26 @@
+{
+  "format_version": 1,
+  "energy_unit": "Delta",
+  "physical": {
+    "geometry": "single",
+    "gap": 1.0,
+    "bandwidth": 100.0,
+    "u": 2.0,
+    "gamma": 0.4,
+    "detuning": 0.0,
+    "field": 0.0
+  },
+  "targets": {
+    "qp": {"relative": 0.000001, "absolute": 0.000000001},
+    "dmrg": {"relative": 0.000001, "absolute": 0.000000001},
+    "nrg": {"relative": 0.001, "absolute": 0.000001}
+  },
+  "limits": {
+    "cpus": 16,
+    "memory_gib": 128,
+    "campaign_hours": 48,
+    "task_hours": 4,
+    "mathematica_instances": 1,
+    "minimum_lambda": 1.8
+  }
+}

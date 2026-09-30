@@ -1,0 +1,14 @@
+{
+  "description": "Representative resource/accuracy pilot; numerical settings come from study.json.",
+  "levels": [8, 12, 16],
+  "points": [
+    {"u": 0.0, "gamma": 0.1, "phi": 0.0},
+    {"u": 0.0, "gamma": 10.0, "phi": 0.0},
+    {"u": 0.0, "gamma": 10.0, "phi": 1.8849555921538759},
+    {"u": 0.1, "gamma": 0.05, "phi": 0.0},
+    {"u": 2.0, "gamma": 0.4, "phi": 1.8849555921538759},
+    {"u": 12.0, "gamma": 0.1, "phi": 0.0},
+    {"u": 12.0, "gamma": 10.0, "phi": 0.0},
+    {"u": 12.0, "gamma": 10.0, "phi": 1.8849555921538759}
+  ]
+}

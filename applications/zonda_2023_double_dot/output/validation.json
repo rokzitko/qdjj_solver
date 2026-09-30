@@ -1,0 +1,78 @@
+{
+  "L2_versus_L4": {
+    "current": 0.0023699279416589114,
+    "even_current": 0.007893564650048986,
+    "odd_current": 0.003813900850111407,
+    "signed_gap": 0.0026990473924810576
+  },
+  "L3_dmrg_versus_L3": {
+    "current": 1.4712178003639664e-10,
+    "even_current": 3.6810077000404284e-09,
+    "odd_current": 1.1810800254474785e-10,
+    "signed_gap": 1.509903313490213e-14
+  },
+  "L3_versus_L4": {
+    "current": 0.0012450608575893252,
+    "even_current": 0.00683534400311029,
+    "odd_current": 0.004721197245484532,
+    "signed_gap": 0.0029530363077059363
+  },
+  "L4_q4_versus_L4": {
+    "current": 0.004997357473463637,
+    "even_current": 0.06252924966047368,
+    "odd_current": 0.010475997980826518,
+    "signed_gap": 0.011380526287728898
+  },
+  "L4_w200_versus_L4": {
+    "current": 6.149187130877198e-07,
+    "even_current": 4.5872569150590126e-06,
+    "odd_current": 1.7658412773957632e-06,
+    "signed_gap": 1.6885206526318086e-06
+  },
+  "L5_full_versus_L4": {
+    "current": 0.0002166804267970529,
+    "even_current": 0.002639295006937603,
+    "odd_current": 0.0002166804267970529,
+    "signed_gap": 7.926138619662737e-05
+  },
+  "L5_full_versus_L5_q6": {
+    "current": 3.864784238673952e-05,
+    "even_current": 0.0002807268719715039,
+    "odd_current": 3.864784238673952e-05,
+    "signed_gap": 0.0002899843660211232
+  },
+  "L5_q6_versus_L4": {
+    "current": 0.0003502507389033793,
+    "even_current": 0.002358568134966099,
+    "odd_current": 0.002388813305043924,
+    "signed_gap": 0.0005712944491893523
+  },
+  "paper": {
+    "crossings": [
+      {
+        "curve": "weak",
+        "phi_over_pi": 0.6508991281338572,
+        "signed_gap": -1.390532133882516e-11
+      },
+      {
+        "curve": "strong",
+        "phi_over_pi": 0.8285266206132813,
+        "signed_gap": 2.121858244663599e-12
+      }
+    ],
+    "maximum_current_finite_difference_error": 3.2196055890776343e-10,
+    "maximum_residual": 5.572035659821129e-12,
+    "points": 110,
+    "strong_maximum_nrg_current_error": 0.0008189090486239725,
+    "weak_maximum_nrg_current_error": 0.0015114444047584635
+  },
+  "runtimes_seconds": {
+    "convergence": 362.4371649590321,
+    "paper": 1075.6664179163054,
+    "quick": 1.5844962080009282
+  },
+  "strong_opposite_sign_reference_phases": [],
+  "strong_same_sign_max_current_error": 0.0008189090486239725,
+  "weak_opposite_sign_reference_phases": [],
+  "weak_same_sign_max_current_error": 0.0015114444047584635
+}

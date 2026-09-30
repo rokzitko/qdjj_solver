@@ -1,0 +1,28 @@
+{
+  "format_version": 1,
+  "paper_doi": "10.1103/PhysRevB.107.115407",
+  "model": {"u": 4.0, "bandwidth": 100.0, "delta": 1.0, "detuning": 0.0},
+  "curves": [
+    {"label": "weak", "gamma_left": 1.0, "gamma_right": 1.0, "hopping": 0.1},
+    {"label": "strong", "gamma_left": 1.4, "gamma_right": 1.4, "hopping": 1.0}
+  ],
+  "profiles": {
+    "quick": {"settings": {"levels": 2, "frequency_cutoff": 100.0}, "phase_over_pi": [0.1, 0.5, 0.9]},
+    "paper": {"settings": {"levels": 4, "frequency_cutoff": 100.0}, "phase_points": 31, "include_reference_phases": true, "locate_crossings": true},
+    "convergence": {
+      "phase_over_pi": [0.5, 0.9],
+      "settings": [
+        {"label": "L2", "levels": 2, "frequency_cutoff": 100.0},
+        {"label": "L3", "levels": 3, "frequency_cutoff": 100.0},
+        {"label": "L4", "levels": 4, "frequency_cutoff": 100.0},
+        {"label": "L4_q4", "levels": 4, "frequency_cutoff": 100.0, "cutoff": 4},
+        {"label": "L5_q6", "levels": 5, "frequency_cutoff": 100.0, "cutoff": 6},
+        {"label": "L5_full", "levels": 5, "frequency_cutoff": 100.0, "solver": {"method": "sparse"}, "curves": ["strong"], "phase_over_pi": [0.9]},
+        {"label": "L4_w200", "levels": 4, "frequency_cutoff": 200.0},
+        {"label": "L3_dmrg", "levels": 3, "frequency_cutoff": 100.0, "backend": "dmrg", "solver": {"chi_max": 256, "residual_tolerance": 0.000001}}
+      ]
+    }
+  },
+  "finite_difference_step": 0.0001,
+  "finite_difference_phi_over_pi": 0.5
+}

@@ -1,0 +1,67 @@
+{
+  "controls": {"wilson_nmax": [2, 4]},
+  "nrg-refinement": {
+    "policy": "fulltest1-v1",
+    "wilson_nmax": [2, 4],
+    "lambdas": [4.0, 3.0, 2.5, 2.0, 1.8],
+    "z_values": [0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1.0],
+    "keeps": [1000, 2000, 4000],
+    "keepmins": [300, 500, 1000],
+    "energy_cutoffs": [10, 12, 14],
+    "chain_extensions": [0, 4, 8],
+    "terminal_scale_over_gap": 0.002
+  },
+  "fulltest1": {
+    "policy": "fulltest1-v1",
+    "lanczos_probability_tolerance": 1e-22,
+    "qp_max_dimension": 16000000,
+    "bath_ladders": [
+      {"kind": "cosh", "levels": 8, "cutoffs": [5, 6, null], "bonds": [256]},
+      {"kind": "cosh", "levels": 12, "cutoffs": [5, 6, 7, 8], "bonds": [256, 384, 512, 768]},
+      {"kind": "cosh", "levels": 16, "cutoffs": [5, 6, 7, 8], "bonds": [256, 384, 512, 768]},
+      {"kind": "cosh", "levels": 20, "cutoffs": [5, 6, 7], "bonds": [256, 384, 512, 768]},
+      {"kind": "cosh", "levels": 24, "cutoffs": [4, 5, 6], "bonds": [256, 384, 512, 768]},
+      {"kind": "surrogate", "levels": 12, "cutoffs": [5, 6, 7, 8], "bonds": [256, 384, 512, 768]},
+      {"kind": "surrogate", "levels": 16, "cutoffs": [5, 6, 7, 8], "bonds": [256, 384, 512, 768]},
+      {"kind": "surrogate", "levels": 20, "cutoffs": [5, 6, 7], "bonds": [256, 384, 512, 768]},
+      {"kind": "surrogate", "levels": 24, "cutoffs": [4, 5, 6], "bonds": [256, 384, 512, 768]}
+    ],
+    "window_levels": [20, 24],
+    "window_cutoffs_over_gap": [50, 200],
+    "window_bonds": [384, 512, 768],
+    "lambdas": [4.0, 3.0, 2.5, 2.0, 1.8],
+    "z_values": [0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1.0],
+    "keeps": [1000, 2000, 4000],
+    "keepmins": [300, 500, 1000],
+    "energy_cutoffs": [10, 12, 14],
+    "chain_extensions": [0, 4, 8],
+    "terminal_scale_over_gap": 0.002
+  },
+  "pilot": {
+    "cosh_levels": [8, 12],
+    "surrogate_levels": [8],
+    "cutoffs": [1, 2, 3, 4, 5, 6],
+    "bonds": [32, 64, 128],
+    "lambdas": [4.0],
+    "z_values": [1.0],
+    "keeps": [500, 1000, 2000],
+    "keepmin": 300,
+    "energy_cutoffs": [10, 12, 14],
+    "chain_extensions": [0, 4, 8],
+    "terminal_scale_over_gap": 0.002
+  },
+  "convergence": {
+    "lanczos_probability_tolerance": 1e-22,
+    "cosh_levels": [8, 12, 16, 24, 32],
+    "surrogate_levels": [8, 12, 16, 20, 24],
+    "cutoffs": [1, 2, 3, 4, 5, 6, 7, 8],
+    "bonds": [32, 64, 128, 192, 256, 384],
+    "lambdas": [4.0, 3.0, 2.5, 2.0, 1.8],
+    "z_values": [0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1.0],
+    "keeps": [1000, 2000, 4000],
+    "keepmin": 500,
+    "energy_cutoffs": [10, 12, 14],
+    "chain_extensions": [0, 4, 8],
+    "terminal_scale_over_gap": 0.002
+  }
+}

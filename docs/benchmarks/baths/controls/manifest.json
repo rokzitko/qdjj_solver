@@ -1,0 +1,192 @@
+{
+  "commands": [
+    [
+      "--input",
+      "docs/benchmarks/baths/finite-controls-input.json",
+      "--profile",
+      "full",
+      "--output",
+      "results/bath-benchmarks-controls"
+    ]
+  ],
+  "completed": [
+    "463451023060c1ac86bc",
+    "47966839f9af208f6b4c",
+    "1ed3923a964369007f08",
+    "01d56f17d15fde467377",
+    "771d5196e426e1f20e48",
+    "db78355ecc835937c33f",
+    "7009d959a59d784bf54c",
+    "58e5acedaa3dce589183"
+  ],
+  "environment": {
+    "cpu_brand": "Apple M1 Max",
+    "cpu_count": 10,
+    "git_revision": "aa7348e06e102fcc06c4a9c3d42f8b711bd687b9",
+    "git_status": "M .github/workflows/tests.yml\n M README.md\n M applications/README.md\n M applications/_common.py\n M applications/analyze.py\n M docs/interfaces.md\n M docs/models.md\n M docs/numerics.md\n M tools/check_distribution.py\n?? applications/hecht_2008_gap_edge/\n?? applications/kadlecova_2017_asymmetry/\n?? applications/zonda_2016_unequal_gaps/\n?? docs/bath_representations.md\n?? docs/benchmarks/\n?? tests/test_applications_third_set.py\n?? tests/test_bath_benchmarks.py\n?? tools/benchmark_baths.py\n?? tools/plot_bath_benchmarks.py\n?? tools/refine_bath_chain.py",
+    "implementation": {
+      "files": {
+        "__init__.py": "37c2a898286a98933ca26fcd7eadc482fb2a3f9f35cab81349bb08146a9a474d",
+        "api.py": "a3a5b3a80ce155617899b3360a9d7dc36df4b4366ced7160ea00708642710e5a",
+        "cli.py": "d860f0b9442cf954dc38abccca1ebd6488bcf129bb1309251e8b71aaebb9e056",
+        "common/__init__.py": "394799edc56d432820af8801a38ba9c9512060d7d904360286934a87341c9c95",
+        "common/algebra.py": "072659f71e4b222578a74f472fbdbfe03ee5816e76a9a3059578327bbfb81962",
+        "common/baths.py": "dd2cdeab3680d921d0523cc307903b640976c70222a31bf5d6f134e617fa06d1",
+        "common/io.py": "d0558e83e207e238bc4542b0b3a14c6204e440536d4ea98c6f5f52338379eb12",
+        "common/models.py": "2647acbea388e3a56c6b09bdc422fcd78b13fbf53e48c2c886b3accfaf6ca890",
+        "common/problem.py": "6a74801112898d76b35213153cc9318befb1d98be99a0d639800efa3cdf98a47",
+        "compat/qpsolver/__init__.py": "1e8785ea1c09ee48c89b1d64adb9d68053bc7cf2c7438a1aa64bba6fe149a875",
+        "compat/qpsolver/cli.py": "272fbf82340c9a59e0efd74e513562f24af20a5d543fd0f13b58bfac00bcd0a9",
+        "compat/qpsolver/nrg.py": "6162ed163e5afa1bcacb1f0afabc94df0fe2fcce7e95aa879c40c1daa5fa27e0",
+        "dmrg_solver/__init__.py": "c875c9bd86be62c86e9555286a1088310886969178c13d4a700fe0b89b077bd6",
+        "dmrg_solver/convergence.py": "29ee594c6d41268d7cb51d3e3dd12e302a0e38bddb884d78a7de64f6d609d32e",
+        "dmrg_solver/io.py": "54bd752cc6ace17231c35f89f95674c522980301a4e17e601a11a54b19367748",
+        "dmrg_solver/legacy.py": "c2c98b124968c575a66616930cf79b8a75f731dbd6a5c469801db3c423dc4a6b",
+        "dmrg_solver/mpo.py": "5492d2f4e80db0e71f62f5884cb26206cef5944efd6f4f60bc55a4e2d44a9790",
+        "dmrg_solver/solver.py": "910169a6208b5710653b00382220be306e15c466174ab8708b568901a5b2e765",
+        "qp_solver/__init__.py": "508b0b0ce58511cde099aa639fcaf975edd523bfa8aaec073cec42338634f39c",
+        "qp_solver/_core.cpython-314-darwin.so": "c337e751280e81d172022b4fb1ab30e78d3926326844a16d27bffe447de24c4d",
+        "qp_solver/basis.py": "068727de5d1b960149d4e13810ca630da2e1c729ef5056eeac01d5ab623146ed",
+        "qp_solver/cli.py": "8a512a4f1c07aec98b015a6decd82282df9d1283367d12807f4e8e781edb0d4b",
+        "qp_solver/io.py": "4c208f7a597d6a32dfdde01cd7b0973b5ecc84b19fa32daddeddcf0a65f2e52e",
+        "qp_solver/nrg.py": "c71b57b9c3eeb1499a137955998a3e12a4370f710b501a928cca9d02dc51b92d",
+        "qp_solver/reference.py": "437686251373649a225e79f5ce30458c17006a2568ba260d8ead8c4260d9b650",
+        "qp_solver/solver.py": "7cc7a50bf31456ba0d6f9f5b5d732b3c2ac0b01369e775b4599e9e99f550a9d9"
+      },
+      "sha256": "6150cb4b2e7f92b4273f15ef4aa463fffb3637f355dae9f7cbb951057265bcd9",
+      "version": "0.2.0"
+    },
+    "numerical": {
+      "machine": "arm64",
+      "numpy": "2.5.2",
+      "packages": {
+        "h5py": "3.16.0",
+        "numpy": "2.5.2",
+        "physics-tenpy": "1.1.1",
+        "qdjj-solver": "0.2.0",
+        "scipy": "1.18.0",
+        "threadpoolctl": "3.6.0"
+      },
+      "python": "3.14.7",
+      "qdjj_solver": "0.2.0",
+      "qpsolver": "0.2.0",
+      "release": "25.5.0",
+      "scipy": "1.18.0",
+      "system": "Darwin"
+    },
+    "physical_memory_bytes": "68719476736",
+    "processor": "arm",
+    "threadpools": [
+      {
+        "architecture": "VORTEX",
+        "filepath": "libopenblas.0.dylib",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libopenblas",
+        "threading_layer": "openmp",
+        "user_api": "blas",
+        "version": "0.3.34"
+      },
+      {
+        "filepath": "libomp.dylib",
+        "internal_api": "openmp",
+        "num_threads": 1,
+        "prefix": "libomp",
+        "user_api": "openmp",
+        "version": null
+      }
+    ],
+    "threads": {
+      "MKL_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "VECLIB_MAXIMUM_THREADS": "1"
+    }
+  },
+  "format": "qdjj-bath-benchmark",
+  "format_version": 1,
+  "implementation_sha256": "6150cb4b2e7f92b4273f15ef4aa463fffb3637f355dae9f7cbb951057265bcd9",
+  "include_dmrg": false,
+  "input": {
+    "bandwidths": [
+      10.0
+    ],
+    "bath_repetitions": 5,
+    "dmrg_options": {},
+    "fit_sensitivity": [],
+    "fitting": {
+      "frequency_cutoff": 100.0,
+      "frequency_min": 0.001,
+      "frequency_points": 1000,
+      "relative_weight": 0.0,
+      "seed": 1729,
+      "starts": 4
+    },
+    "format_version": 1,
+    "kernel_levels": {},
+    "legacy_levels": [],
+    "qp_options": {
+      "max_dimension": 3000000,
+      "max_memory_gib": 8.0,
+      "method": "sparse",
+      "residual_tolerance": 2e-08,
+      "seed": 1729,
+      "threads": 1,
+      "tolerance": 1e-12
+    },
+    "quadratic_points": [
+      {
+        "detuning": 0.0,
+        "gamma": 0.3,
+        "phi": 0.8
+      },
+      {
+        "detuning": 0.6,
+        "gamma": 2.0,
+        "phi": 1.7
+      },
+      {
+        "detuning": 0.0,
+        "gamma": 10.0,
+        "phi": 0.2
+      }
+    ],
+    "solve_repetitions": 3,
+    "studies": [
+      {
+        "bandwidth": 10.0,
+        "cases": [
+          {
+            "label": "g1",
+            "model": {
+              "compress": false,
+              "gamma": 1.0,
+              "geometry": "single",
+              "u": 10.0
+            }
+          }
+        ],
+        "families": [
+          "cosh-grid",
+          "surrogate"
+        ],
+        "levels": [
+          4,
+          8
+        ],
+        "name": "layout-control",
+        "sectors": [
+          1
+        ],
+        "solvers": [
+          {
+            "backend": "qp",
+            "cutoff": null
+          }
+        ]
+      }
+    ]
+  },
+  "profile": "full",
+  "runner_sha256": "3b653381710c60bdf86d66f07f1455e0380a34d09565bd1ccf8203c56d3dc770"
+}

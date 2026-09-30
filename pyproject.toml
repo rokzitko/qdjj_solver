@@ -1,0 +1,116 @@
+[build-system]
+requires = ["scikit-build-core>=0.11", "pybind11>=3.0"]
+build-backend = "scikit_build_core.build"
+
+[project]
+name = "qdjj-solver"
+version = "0.2.0"
+description = "QP-expansion and DMRG solvers for superconducting quantum impurities"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "BSD-3-Clause"
+authors = [{name = "Teodor Iličin"}, {name = "Rok Žitko"}]
+dependencies = ["numpy>=1.26", "scipy>=1.12", "threadpoolctl>=3.2"]
+
+[project.optional-dependencies]
+dmrg = ["physics-tenpy>=1.1.1,<2", "h5py>=3.10"]
+plots = ["matplotlib>=3.8"]
+test = ["pytest>=8", "hypothesis>=6.130", "pytest-timeout>=2.3"]
+coverage = ["coverage[toml]>=7.10.6", "pytest-cov>=7"]
+dev = [
+  "pytest>=8", "hypothesis>=6.130", "pytest-timeout>=2.3",
+  "coverage[toml]>=7.10.6", "pytest-cov>=7", "ruff>=0.9", "build>=1.2",
+]
+reference = ["physics-tenpy>=1.1.1,<2", "h5py>=3.10"]
+
+[project.scripts]
+qdjj-solver = "qdjj_solver.cli:main"
+qpsolver = "qdjj_solver.qp_solver.cli:main"
+
+[project.urls]
+Repository = "https://github.com/rokzitko/qdjj_solver"
+Documentation = "https://github.com/rokzitko/qdjj_solver#documentation"
+Issues = "https://github.com/rokzitko/qdjj_solver/issues"
+
+[tool.scikit-build]
+cmake.build-type = "Release"
+wheel.packages = ["src/qdjj_solver", "src/qpsolver"]
+# Only explicitly reviewed assets override the research-root exclusion.
+sdist.include = [
+  "NRG_comparisons/README.md", "NRG_comparisons/test1/README.md",
+  "NRG_comparisons/test1/run.py",
+  "NRG_comparisons/test1/nrg.py",
+  "NRG_comparisons/test1/control.py",
+  "NRG_comparisons/test1/analysis.py",
+  "NRG_comparisons/test1/full_analysis.py",
+  "NRG_comparisons/test1/targeted_nrg.py",
+  "NRG_comparisons/test1/nrg_dataset.py",
+  "NRG_comparisons/test1/twist_analysis.py",
+  "NRG_comparisons/test1/focused_internal.py",
+  "NRG_comparisons/test1/generate.py",
+  "NRG_comparisons/test1/input/physical.json",
+  "NRG_comparisons/test1/input/profiles.json",
+  "NRG_comparisons/test1/input/nrg-targeted.json",
+  "NRG_comparisons/test1/input/qp-dmrg-focused.json",
+  "NRG_comparisons/test1/input/final-baths.json",
+  "NRG_comparisons/test1/output/results.json",
+  "NRG_comparisons/test1/output/observables.csv",
+  "NRG_comparisons/test1/output/comparisons.csv",
+  "NRG_comparisons/test1/output/comparison.svg",
+  "NRG_comparisons/test1/output/convergence.svg",
+]
+sdist.exclude = ["build", "dist", ".venv", ".pytest_cache", ".ruff_cache", ".hypothesis", ".coverage*", "reports", "runs", "results", "APPLICATIONS.md", "session-*.md", "applications/*/runs", "large_Gamma/runs", "NRG_comparisons", "**/__pycache__"]
+
+[tool.cibuildwheel]
+build = "cp311-* cp312-* cp313-* cp314-*"
+skip = "*-musllinux*"
+archs = "native"
+test-extras = ["dmrg"]
+test-command = 'python -B "{project}/tools/check_wheel.py" --installed --dmrg'
+environment = { OMP_NUM_THREADS = "1", OPENBLAS_NUM_THREADS = "1", PYTHONDONTWRITEBYTECODE = "1" }
+
+[tool.cibuildwheel.linux]
+manylinux-x86_64-image = "manylinux_2_28"
+
+[tool.cibuildwheel.macos]
+environment = { MACOSX_DEPLOYMENT_TARGET = "11.0", OMP_NUM_THREADS = "1", OPENBLAS_NUM_THREADS = "1", PYTHONDONTWRITEBYTECODE = "1" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-config --strict-markers -m 'not slow'"
+timeout = 180
+markers = [
+  "convergence: extended numerical convergence validation",
+  "slow: weekly or manually requested numerical stress tests",
+  "native: direct native extension and instrumented integration tests",
+  "dmrg: requires the optional TeNPy backend",
+]
+
+[tool.coverage.run]
+branch = true
+source = ["qdjj_solver", "qpsolver"]
+parallel = true
+patch = ["subprocess"]
+
+[tool.coverage.paths]
+canonical = ["src/qdjj_solver", "*/site-packages/qdjj_solver", "*/src/qdjj_solver"]
+compatibility = ["src/qpsolver", "*/site-packages/qpsolver", "*/src/qpsolver"]
+
+[tool.coverage.report]
+show_missing = true
+precision = 2
+skip_empty = true
+
+[tool.coverage.html]
+directory = "reports/python-html"
+
+[tool.coverage.xml]
+output = "reports/python-coverage.xml"
+
+[tool.coverage.json]
+output = "reports/python-coverage.json"
+
+[tool.ruff]
+target-version = "py311"
+[tool.ruff.lint]
+select = ["F", "E9", "B"]

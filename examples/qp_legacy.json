@@ -1,0 +1,8 @@
+{
+  "format_version": 1,
+  "model": {"geometry": "single", "u": 1.6, "gamma": 0.3},
+  "bath": {"pairs": 2, "bandwidth": 5.0},
+  "cutoff": 2,
+  "sector": {"parity": 1, "twice_sz": 1},
+  "solver": {"eigenpairs": 2}
+}

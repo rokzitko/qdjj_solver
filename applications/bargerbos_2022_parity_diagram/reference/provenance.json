@@ -1,0 +1,33 @@
+{
+  "archive_published_md5_and_verified_etag": "487aa316f331ebc600694e01259c249a",
+  "archive_url": "https://data.4tu.nl/file/bd5acfda-aaee-49e8-8d92-9dc670c7374d/40b032ed-f590-4cac-849d-1b7c2eaae095",
+  "creators": [
+    "Arno Bargerbos",
+    "Marta Pita Vidal"
+  ],
+  "dataset_doi": "10.4121/19102769.v1",
+  "gate_spacing_over_u": 0.01,
+  "license": "CC-BY-4.0",
+  "member": "Processed_data/ABS_map_xi_vs_phi_Gamma_0.20_xi_01_U05_Asym1",
+  "member_sha256": "cb7aa7091d905b41e5d4e1cd601eb7b761446d45de1ed847f0c97b6aa8baee66",
+  "model": {
+    "gamma_total_over_delta": 1,
+    "half_bandwidth_over_delta": 10,
+    "u_over_delta": 5
+  },
+  "notes": [
+    "Each member's ZIP CRC is verified; the entire archive is not downloaded or independently hashed.",
+    "Zero crossings use the stored A1-A2 difference without assuming its sector order.",
+    "Grid interpolation and NRG discretization errors exceed floating-point precision."
+  ],
+  "nrg": {
+    "Lambda": 8,
+    "maximum_spin_multiplets": 3000,
+    "z_averaging": false
+  },
+  "operation": "Linear zero crossing between adjacent positive xi/U grid points",
+  "paper_doi": "10.1103/PRXQuantum.3.030311",
+  "phase_spacing_over_pi": 0.04,
+  "retrieval_bytes": 291813,
+  "source": "Processed/interpolated NRG grid used for supplementary Fig. S1(c)"
+}
