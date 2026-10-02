@@ -5,25 +5,35 @@
 Please identify the software version used. A ready-to-copy citation for the
 current version is:
 
-> Teodor Iličin and Rok Žitko. *qdjj_solver: QP and DMRG solvers for superconducting
-> quantum impurities*, version 0.2.0. https://github.com/rokzitko/qdjj_solver.
+> Teodor Iličin and Rok Žitko (2026). *qdjj_solver: QP and DMRG solvers for
+> superconducting quantum impurities*, version 0.2.0. Zenodo.
+> https://doi.org/10.5281/zenodo.23104979.
 
 For BibLaTeX:
 
 ```bibtex
 @software{qdjj_solver_020,
-  author  = {Iličin, Teodor and Žitko, Rok},
-  title   = {{qdjj\_solver}: {QP} and {DMRG} solvers for superconducting quantum impurities},
-  version = {0.2.0},
-  url     = {https://github.com/rokzitko/qdjj_solver}
+  author    = {Iličin, Teodor and Žitko, Rok},
+  title     = {{qdjj\_solver}: {QP} and {DMRG} solvers for superconducting quantum impurities},
+  version   = {0.2.0},
+  date      = {2026-10-02},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.23104979},
+  url       = {https://doi.org/10.5281/zenodo.23104979}
 }
 ```
+
+Zenodo's [BibTeX export](qdjj_solver.bib) is also available for import into a
+paper's bibliography. Its citation key is `ilicin_2026_23104979`.
 
 [CITATION.cff](../CITATION.cff) contains the citation information in a format
 readable by reference-management tools. For modified or unreleased source code,
 also record its Git revision identifier (`git rev-parse HEAD`). Saved results
-include file checksums identifying the solver code actually used. No
-archival DOI is currently assigned to this software.
+include file checksums identifying the solver code actually used.
+
+For reproducibility, cite the DOI of the version used in your calculation.
+The [all-versions DOI](https://doi.org/10.5281/zenodo.23104978) identifies
+the software project across releases.
 
 ## Which methods to cite
 

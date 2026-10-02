@@ -3,6 +3,8 @@ message: "Please cite the authors and software version used in your calculation.
 type: software
 title: "qdjj_solver: QP and DMRG solvers for superconducting quantum impurities"
 version: 0.2.0
+doi: "10.5281/zenodo.23104979"
+date-released: "2026-10-02"
 authors:
   - family-names: Iličin
     given-names: Teodor
