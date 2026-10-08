@@ -19,6 +19,24 @@ using Word = std::uint64_t;
 using Complex = std::complex<double>;
 using Index = std::int64_t;
 
+// Pyodide delivers SIGINT cooperatively. Releasing the GIL is insufficient:
+// long native loops must enter CPython's signal machinery themselves. This also
+// makes ordinary native calls responsive to Ctrl-C. Acquire the GIL here because
+// operator actions/assembly deliberately release it around their numeric work.
+static void check_python_signals() {
+    py::gil_scoped_acquire acquire;
+    if (PyErr_CheckSignals() != 0) throw py::error_already_set();
+}
+
+class SignalCheckpoint {
+    std::size_t calls = 0;
+public:
+    SignalCheckpoint() { check_python_signals(); }
+    void poll() {
+        if ((++calls & 1023) == 0) check_python_signals();
+    }
+};
+
 static int popcount(Word x) {
     int count = 0;
     while (x) { x &= x - 1; ++count; }
@@ -61,9 +79,11 @@ public:
         std::vector<int> counts(4);
         std::function<void(int)> choose_group;
         std::function<void(int,int,int)> choose;
+        SignalCheckpoint signals;
         int current_qp = 0;
         choose_group = [&](int g) {
             if (g == 4) {
+                signals.poll();
                 if (target_eta) {
                     int e = 1;
                     for (int i = 0; i < nmodes; ++i)
@@ -111,6 +131,7 @@ public:
         }
         table.assign(capacity, -1);
         for (std::size_t i = 0; i < size(); ++i) {
+            signals.poll();
             const Word* s = data(i);
             auto pos = hash(s) & (table.size() - 1);
             while (table[pos] != -1) pos = (pos + 1) & (table.size() - 1);
@@ -177,7 +198,9 @@ public:
         std::vector<Term> diagonal_terms;
         Complex constant = 0;
         std::vector<Complex> onebody(basis->nmodes, 0);
+        SignalCheckpoint signals;
         for (std::size_t k = 0; k < strings.size(); ++k) {
+            signals.poll();
             Term term{coefficients[k], strings[k], 0};
             if (!std::isfinite(term.coefficient.real()) || !std::isfinite(term.coefficient.imag()))
                 throw std::invalid_argument("non-finite operator coefficient");
@@ -211,6 +234,7 @@ public:
         }
         diagonal.assign(basis->size(), constant);
         for (std::size_t col = 0; col < basis->size(); ++col) {
+            signals.poll();
             const Word* s = basis->data(col);
             for (int i = 0; i < basis->nmodes; ++i)
                 if ((s[i / 64] >> (i % 64)) & 1) diagonal[col] += onebody[i];
@@ -277,7 +301,9 @@ public:
         py::gil_scoped_release release;
         std::fill(y, y + basis->size(), T(0));
         std::vector<Word> target(basis->nwords);
+        SignalCheckpoint signals;
         for (std::size_t col = 0; col < basis->size(); ++col) {
+            signals.poll();
             if (x[col] == T(0)) continue;
             if constexpr (std::is_same_v<T, double>) y[col] += diagonal[col].real() * x[col];
             else y[col] += diagonal[col] * x[col];
@@ -307,7 +333,9 @@ public:
         py::gil_scoped_release release;
         std::fill(y, y + destination->size(), Complex(0));
         std::vector<Word> target(basis->nwords);
+        SignalCheckpoint signals;
         for (std::size_t col = 0; col < basis->size(); ++col) {
+            signals.poll();
             if (x[col] == Complex(0)) continue;
             Index row = destination->lookup(basis->data(col));
             if (row >= 0) y[row] += diagonal[col] * x[col];
@@ -323,7 +351,9 @@ public:
             py::gil_scoped_release release;
             std::vector<Word> target(basis->nwords);
             std::vector<std::pair<Index,Complex>> column;
+            SignalCheckpoint signals;
             for (std::size_t col = 0; col < basis->size(); ++col) {
+                signals.poll();
                 column.clear();
                 if (diagonal[col] != Complex(0)) column.emplace_back(col, diagonal[col]);
                 connections(col, target, [&](Index row, Complex v) { column.emplace_back(row, v); });
