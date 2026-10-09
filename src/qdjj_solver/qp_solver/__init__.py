@@ -4,5 +4,8 @@ from ..common import *  # noqa: F403
 from ..common import __all__ as _common_all
 from .basis import FockBasis, dimension
 from .solver import Eigenstates, ProjectedOperator, SolverOptions, solve
+from .execution import CalculationCancelled, ExecutionContext
+from .workspace import QPWorkspace
 
-__all__ = _common_all + ["FockBasis", "dimension", "Eigenstates", "ProjectedOperator", "SolverOptions", "solve"]
+__all__ = _common_all + ["FockBasis", "dimension", "Eigenstates", "ProjectedOperator", "SolverOptions", "solve",
+                       "QPWorkspace", "ExecutionContext", "CalculationCancelled"]

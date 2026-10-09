@@ -5,17 +5,19 @@ from __future__ import annotations
 from dataclasses import asdict, dataclass
 from time import perf_counter
 from typing import ClassVar
+import warnings
 
 import numpy as np
 from scipy.linalg import eigh, qr
 from scipy.optimize import brentq
 from scipy.sparse import csc_matrix, diags
-from scipy.sparse.linalg import ArpackNoConvergence, LinearOperator, eigsh
+from scipy.sparse.linalg import ArpackNoConvergence, LinearOperator, eigsh, lobpcg
 from threadpoolctl import threadpool_limits
 
 from . import _core
 from ..common.problem import Hamiltonian
 from .basis import DEFAULT_SECTOR, FockBasis, dimension
+from .execution import ExecutionContext
 
 
 class ProjectedOperator:
@@ -33,6 +35,10 @@ class ProjectedOperator:
         if self.core.real and not np.iscomplexobj(vector):
             return self.core.matvec_real(vector)
         return self.core.matvec_complex(vector)
+
+    @property
+    def bytes(self):
+        return self.core.bytes
 
     def linear_operator(self, dtype=None):
         return LinearOperator(self.shape, matvec=lambda x: self.action(np.asarray(x).reshape(-1)),
@@ -86,8 +92,8 @@ class SolverOptions:
     seed: int = 1729
 
     def __post_init__(self):
-        if self.method not in ("auto", "dense", "sparse", "matrix-free", "schur"):
-            raise ValueError("method must be auto, dense, sparse, matrix-free or schur")
+        if self.method not in ("auto", "dense", "sparse", "matrix-free", "schur", "block"):
+            raise ValueError("method must be auto, dense, sparse, matrix-free, schur or block")
         for name in ("eigenpairs", "maxiter", "ncv", "max_dimension", "max_nnz", "threads"):
             value = getattr(self, name)
             if not isinstance(value, int) or value <= 0:
@@ -179,14 +185,8 @@ def _two_qp_schur(matrix, basis, tolerance):
     return np.array([energy+pole]), vector[:, None], dict(schur_dimension=len(low), schur_evaluations=calls)
 
 
-def solve(hamiltonian: Hamiltonian, cutoff: int | None = None, sector=DEFAULT_SECTOR,
-          options=DEFAULT_OPTIONS, initial=None) -> Eigenstates:
-    """Lowest Ritz states. ``cutoff=None`` retains the complete finite bath.
-
-    Tolerances and residuals use the same energy units as the Hamiltonian.
-    The Hamiltonian is never shifted or rescaled silently.
-    """
-    total_start = perf_counter()
+def preflight(hamiltonian, cutoff=None, sector=DEFAULT_SECTOR, options=DEFAULT_OPTIONS, initial=None):
+    """Exact dimension and conservative working-storage estimate, without a basis."""
     hamiltonian.check_sector(sector)
     cutoff = hamiltonian.bath_modes if cutoff is None else cutoff
     dim = dimension(hamiltonian.nimp, hamiltonian.spins, cutoff, sector, hamiltonian.eta_labels)
@@ -204,45 +204,140 @@ def solve(hamiltonian: Hamiltonian, cutoff: int | None = None, sector=DEFAULT_SE
     itemsize = 8 if is_real else 16
     ncv = min(dim, max(options.ncv, 2*k + 2))
     estimate = dim * (8*((len(hamiltonian.spins)+63)//64) + 40 + itemsize*(2*ncv + k + 8))
+    if options.method == "block":
+        estimate += dim * itemsize * 12*k + 12*(3*k)**2*itemsize
     if options.method == "schur":
         low_dim = dimension(hamiltonian.nimp, hamiltonian.spins, 1, sector, hamiltonian.eta_labels)
         # Reserve the dense low-QP block and elimination/eigensolver workspaces.
         estimate += 4 * low_dim * low_dim * itemsize
     if estimate > options.max_memory_gib * 1024**3:
         raise MemoryError(f"estimated basis/eigensolver storage {estimate/1024**3:.2f} GiB exceeds limit")
-    times = {}
-    start = perf_counter()
-    basis = FockBasis(hamiltonian.nimp, hamiltonian.spins, cutoff, sector,
-                      hamiltonian.eta_labels, options.max_dimension)
-    times["basis"] = perf_counter() - start
-    start = perf_counter()
-    projected = ProjectedOperator(hamiltonian.operator, basis)
     method = options.method
     if method == "auto":
         method = "dense" if dim <= 128 else ("sparse" if dim <= 400_000 else "matrix-free")
     if dim <= k + 1:
         method = "dense"
-    if method == "dense" and dim*dim*itemsize*4 > options.max_memory_gib*1024**3:
+    if method == "block" and dim < 5*k:
+        raise ValueError("block eigensolver requires dimension >= 5*eigenpairs; use dense explicitly")
+    dense_bytes = dim*dim*itemsize*4 if method == "dense" else 0
+    if dense_bytes > options.max_memory_gib*1024**3:
         raise MemoryError("dense eigensolution exceeds the memory limit")
-    matrix = None
-    if method in ("dense", "sparse", "schur"):
-        allowed_nnz = min(options.max_nnz, int(max(0, options.max_memory_gib*1024**3 - estimate)//64))
-        matrix = projected.sparse_matrix(allowed_nnz)
-        if not is_real:
-            matrix = matrix.astype(complex, copy=False)
-        if method == "dense":
-            matrix = matrix.toarray()
+    return dict(dimension=dim, cutoff=cutoff, eigenpairs=k, ncv=ncv, real=is_real,
+                itemsize=itemsize, method=method, estimated_solver_bytes=estimate,
+                estimated_peak_bytes=estimate+dense_bytes)
+
+
+def solve(hamiltonian: Hamiltonian, cutoff: int | None = None, sector=DEFAULT_SECTOR,
+          options=DEFAULT_OPTIONS, initial=None, *, context=None, observables=None,
+          _prepared=None) -> Eigenstates:
+    """Lowest Ritz states; optional execution hooks do not change the Hamiltonian.
+
+    Use ``QPWorkspace.solve`` for prepared execution. Existing fresh calls retain
+    their numerical defaults. ``observables=None`` measures all named operators.
+    """
+    total_start = perf_counter()
+    context = context or ExecutionContext()
+    context.checkpoint("preflight")
+    plan = preflight(hamiltonian, cutoff, sector, options, initial)
+    dim, cutoff, k = plan["dimension"], plan["cutoff"], plan["eigenpairs"]
+    is_real, ncv, method = plan["real"], plan["ncv"], plan["method"]
+    estimate = plan["estimated_solver_bytes"]
+    names = list(hamiltonian.observables) if observables is None else list(observables)
+    if any(name not in hamiltonian.observables for name in names):
+        raise ValueError("unknown requested observable")
+    reuse = dict(basis=False, projected=False, matrix=False, eigensystem=False)
+    times = {}
+    start = perf_counter()
+    context.checkpoint("basis", dimension=dim)
+    if _prepared is None:
+        basis = FockBasis(hamiltonian.nimp, hamiltonian.spins, cutoff, sector,
+                          hamiltonian.eta_labels, options.max_dimension)
     else:
-        matrix = projected.linear_operator(float if is_real else complex)
+        basis = _prepared.basis
+        reuse["basis"] = True
+    times["basis"] = perf_counter() - start
+    start = perf_counter()
+    context.checkpoint("operator")
+    projected = None if _prepared is None else _prepared.projected
+    if projected is None:
+        projected = ProjectedOperator(hamiltonian.operator, basis)
+        context.checkpoint("operator-ready")
+        if _prepared is not None:
+            _prepared.projected = projected
+    else:
+        reuse["projected"] = True
+    matrix = None
+    context.checkpoint("hamiltonian", method=method)
+    if method in ("dense", "sparse", "schur"):
+        matrix_key = (method, is_real)
+        matrix = None if _prepared is None else _prepared.matrices.get(matrix_key)
+        if matrix is None:
+            # Native vector growth, exported arrays, and CSC/CSR conversion can
+            # coexist. Reserve more than the final matrix's bytes per entry.
+            allowed_nnz = min(options.max_nnz, int(max(0, options.max_memory_gib*1024**3 - estimate)//96))
+            matrix = projected.sparse_matrix(allowed_nnz)
+            if not is_real:
+                matrix = matrix.astype(complex, copy=False)
+            if method == "dense":
+                matrix = matrix.toarray()
+            context.checkpoint("hamiltonian-ready")
+            if _prepared is not None:
+                _prepared.matrices[matrix_key] = matrix
+        else:
+            reuse["matrix"] = True
+    else:
+        actions = 0
+
+        def action(vector):
+            nonlocal actions
+            actions += 1
+            context.checkpoint("iteration", matvecs=actions)
+            return projected.action(np.asarray(vector).reshape(-1))
+
+        matrix = LinearOperator((dim, dim), matvec=action, dtype=float if is_real else complex)
     times["hamiltonian"] = perf_counter() - start
     start = perf_counter()
     extra = {}
+    full_eigenpairs = None
+    context.checkpoint("diagonalization", method=method, eigenpairs=k)
     with threadpool_limits(limits=options.threads):
         if method == "dense":
-            energies, vectors = np.linalg.eigh(matrix)
+            full_eigenpairs = None if _prepared is None else _prepared.dense_eigenpairs
+            if full_eigenpairs is None:
+                full_eigenpairs = np.linalg.eigh(matrix)
+            else:
+                reuse["eigensystem"] = True
+            energies, vectors = full_eigenpairs
             energies, vectors = energies[:k], vectors[:, :k]
         elif method == "schur":
             energies, vectors, extra = _two_qp_schur(matrix, basis, options.tolerance)
+        elif method == "block":
+            rng = np.random.default_rng(options.seed)
+            block = rng.normal(size=(dim, k))
+            if not is_real:
+                block = block + 1j*rng.normal(size=(dim, k))
+            if initial is not None:
+                supplied = np.asarray(initial)
+                if supplied.ndim == 1:
+                    supplied = supplied[:, None]
+                if (supplied.ndim != 2 or supplied.shape[0] != dim or
+                        not np.all(np.isfinite(supplied)) or np.linalg.norm(supplied) == 0):
+                    raise ValueError("invalid starting block")
+                columns = min(k, supplied.shape[1])
+                block[:, :columns] = supplied[:, :columns]
+            block, _ = qr(block, mode="economic")
+            diagonal = np.maximum(abs(projected.diagonal()), 1.)
+            preconditioner = LinearOperator((dim, dim), dtype=matrix.dtype,
+                matvec=lambda x: np.asarray(x).reshape(-1)/diagonal,
+                matmat=lambda x: x/diagonal[:, None])
+            with warnings.catch_warnings(record=True) as caught:
+                energies, vectors, history = lobpcg(matrix, block, M=preconditioner,
+                    largest=False, tol=min(options.tolerance, options.residual_tolerance/10),
+                    maxiter=options.maxiter, retResidualNormsHistory=True)
+            extra.update(block_iterations=max(0, len(history)-2),
+                         block_warnings=[str(w.message) for w in caught])
+            order = np.argsort(energies)
+            energies, vectors = energies[order], vectors[:, order]
         else:
             if initial is None:
                 rng = np.random.default_rng(options.seed)
@@ -263,23 +358,31 @@ def solve(hamiltonian: Hamiltonian, cutoff: int | None = None, sector=DEFAULT_SE
             raise RuntimeError("eigensolution has invalid dimensions")
         if not np.all(np.isfinite(energies)) or not np.all(np.isfinite(vectors)):
             raise RuntimeError("eigensolution contains non-finite energies or amplitudes")
-        if method in ("sparse", "matrix-free") and k > 1:
+        if method in ("sparse", "matrix-free", "block") and k > 1:
             energies, vectors = _refine_ritz_subspace(projected, vectors)
             extra["ritz_refinement"] = "pivoted-qr-rayleigh-ritz"
     times["diagonalization"] = perf_counter() - start
     start = perf_counter()
+    context.checkpoint("residuals")
     residuals = np.array([np.linalg.norm(projected.action(v) - e*v) for e, v in zip(energies, vectors.T, strict=True)])
     if not np.all(np.isfinite(residuals)) or np.max(residuals) > options.residual_tolerance:
         raise RuntimeError(f"Ritz residual {np.max(residuals):.3e} exceeds {options.residual_tolerance:.3e}")
     if np.linalg.norm(vectors.conj().T @ vectors - np.eye(k)) > 1e-8:
         raise RuntimeError("eigenstates are not orthonormal")
-    counts = basis.qp_counts()
+    counts = basis.qp_counts() if _prepared is None else _prepared.counts
     qp_weights = np.array([np.bincount(counts, weights=abs(v)**2, minlength=cutoff+1) for v in vectors.T])
-    observables = {}
-    for name, operator in hamiltonian.observables.items():
-        obs = ProjectedOperator(operator, basis)
+    measured = {}
+    for index, name in enumerate(names):
+        context.checkpoint("observables", completed=index, total=len(names))
+        operator = hamiltonian.observables[name]
+        obs = None if _prepared is None else _prepared.observables.get(name)
+        if obs is None:
+            obs = ProjectedOperator(operator, basis)
+            context.checkpoint("observable-ready", name=name)
+            if _prepared is not None:
+                _prepared.observables[name] = obs
         values = np.array([obs.expectation(v) for v in vectors.T])
-        observables[name] = np.real_if_close(values)
+        measured[name] = np.real_if_close(values)
     times["observables_and_residuals"] = perf_counter() - start
     times["total"] = perf_counter() - total_start
     metadata = dict(hamiltonian.metadata)
@@ -289,4 +392,8 @@ def solve(hamiltonian: Hamiltonian, cutoff: int | None = None, sector=DEFAULT_SE
                     estimated_solver_bytes=estimate, real_arithmetic=is_real,
                     nnz=int(matrix.nnz) if hasattr(matrix, "nnz") else None)
     metadata.update(extra)
-    return Eigenstates(energies, vectors, residuals, basis, qp_weights, observables, times, metadata, hamiltonian)
+    metadata["reuse"] = reuse
+    context.checkpoint("validated")
+    if _prepared is not None and full_eigenpairs is not None:
+        _prepared.dense_eigenpairs = full_eigenpairs
+    return Eigenstates(energies, vectors, residuals, basis, qp_weights, measured, times, metadata, hamiltonian)

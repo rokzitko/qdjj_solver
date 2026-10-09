@@ -321,6 +321,18 @@ public:
         return a;
     }
 
+    std::size_t bytes() const {
+        std::size_t total = diagonal.capacity() * sizeof(Complex)
+                          + anchored.capacity() * sizeof(std::vector<Term>)
+                          + creation.capacity() * sizeof(Term);
+        for (const auto& term : creation) total += term.ops.capacity() * sizeof(int);
+        for (const auto& group : anchored) {
+            total += group.capacity() * sizeof(Term);
+            for (const auto& term : group) total += term.ops.capacity() * sizeof(int);
+        }
+        return total;
+    }
+
     py::array_t<Complex> between(py::array_t<Complex, py::array::c_style | py::array::forcecast> input,
                                 std::shared_ptr<Basis> destination) const {
         if (!destination) throw std::invalid_argument("transition requires a non-null destination basis");
@@ -390,6 +402,7 @@ PYBIND11_MODULE(_core, m) {
         .def(py::init<std::shared_ptr<Basis>,const std::vector<Complex>&,const std::vector<std::vector<int>>&>(),
              "Construct from canonical strings: ascending creators followed by descending annihilators (no repetitions).")
         .def_readonly("real", &Operator::real)
+        .def_property_readonly("bytes", &Operator::bytes)
         .def("matvec_real", &Operator::matvec<double>)
         .def("matvec_complex", &Operator::matvec<Complex>)
         .def("between", &Operator::between)
