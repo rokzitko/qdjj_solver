@@ -22,6 +22,9 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
+      - name: Check source publication privacy
+        id: publication-source
+        run: python -B tools/check_publication.py
       - run: python tools/check_release.py
       - name: Match the release tag
         if: startsWith(github.ref, 'refs/tags/')
@@ -31,6 +34,7 @@ jobs:
       - run: python -m pip install build twine
       - run: python -m build --sdist
       - run: python tools/check_distribution.py dist/*.tar.gz
+      - run: python -B tools/check_publication.py dist/*.tar.gz
       - run: python -m twine check --strict dist/*
       - uses: actions/upload-artifact@v4
         with:
@@ -52,10 +56,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
+      - name: Check source publication privacy
+        id: publication-source
+        run: python -B tools/check_publication.py
       - uses: actions/download-artifact@v4
         with:
           name: release-sdist
           path: dist
+      - name: Check downloaded release source
+        shell: bash
+        run: |
+          python tools/check_distribution.py dist/*.tar.gz
+          python -B tools/check_publication.py dist/*.tar.gz
       - name: Unpack the release source
         shell: bash
         run: |
@@ -70,6 +82,7 @@ jobs:
         run: |
           python -m pip install twine
           python tools/check_distribution.py wheelhouse/*.whl
+          python -B tools/check_publication.py wheelhouse/*.whl
           python -m twine check --strict wheelhouse/*.whl
       - uses: actions/upload-artifact@v4
         with:

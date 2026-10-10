@@ -1,2 +1,21 @@
 # Preserve the byte sizes and SHA-256 checksums recorded in the archive manifest.
 /large_Gamma/output/** text eol=lf
+
+# Scientific publication assets have exact byte checksums; never translate them.
+/NRG_comparisons/test2/input/** -text
+/NRG_comparisons/test2/output/** -text
+/NRG_comparisons/test2/reference/** -text
+/NRG_comparisons/test3/input/** -text
+/NRG_comparisons/test3/output/** -text
+/NRG_comparisons/test3/reference/** -text
+/NRG_comparisons/test4/input/** -text
+/NRG_comparisons/test4/output/** -text
+/NRG_comparisons/test4/reference/** -text
+/NRG_comparisons/test2/*.py text eol=lf
+/NRG_comparisons/test3/*.py text eol=lf
+/NRG_comparisons/test4/*.py text eol=lf
+
+# Preserve the intentional RFC 4180 CRLF terminators in generated CSV tables.
+/NRG_comparisons/test2/output/*.csv whitespace=cr-at-eol
+/NRG_comparisons/test3/output/*.csv whitespace=cr-at-eol
+/NRG_comparisons/test4/output/*.csv whitespace=cr-at-eol

@@ -18,12 +18,33 @@ NRG_SOURCE_FILES = {"NRG_comparisons/README.md"} | {
         "input/physical.json", "input/profiles.json", "input/nrg-targeted.json",
         "input/qp-dmrg-focused.json", "input/final-baths.json",
         "output/results.json", "output/observables.csv", "output/comparisons.csv",
-        "output/comparison.svg", "output/convergence.svg")}
+         "output/comparison.svg", "output/convergence.svg")}
+NRG_SOURCE_FILES.update(f"NRG_comparisons/test2/{asset}" for asset in (
+    "README.md", "generate.py", "input/physical.json", "input/baths.json", "reference/provenance.json",
+    "output/results.json", "output/observables.csv", "output/comparisons.csv",
+    "output/comparison.svg", "output/convergence.svg"))
+NRG_SOURCE_FILES.update(f"NRG_comparisons/test2/manual_run/{asset}" for asset in (
+    "README.md", ".gitignore", "param.loop", "1_run", "run_one", "2_proc",
+    "process.py", "extract.py", "reference.json"))
+NRG_SOURCE_FILES.update(f"NRG_comparisons/test3/{asset}" for asset in (
+    "README.md", "run.py", "finite.py", "analyze.py", "generate.py",
+    "input/physical.json", "input/baths.json", "reference/provenance.json",
+    "output/report.md", "output/results.json", "output/observables.csv", "output/comparisons.csv"))
+NRG_SOURCE_FILES.update(f"NRG_comparisons/test3/manual_run/{asset}" for asset in (
+    "README.md", ".gitignore", "nrg.py", "physics.py", "process.py", "param.loop",
+    "1_run", "2_proc", "run_one"))
+NRG_SOURCE_FILES.update(f"NRG_comparisons/test4/{asset}" for asset in (
+    "model.m", "modeloperators.m", "nrg.py", "physics.py", "finite.py", "run.py", "manual.py", "generate.py",
+    "retention_diagnostics.py", "dmrg_states.py", "continuum_finite.py",
+    "README.md", "FINAL_REPORT.md", "README.model_and_parameters.md", ".gitignore",
+    "input/physical.json", "input/baths.json",
+    "output/results.json", "output/report.md", "output/observables.csv", "output/comparisons.csv",
+    "output/z_averages.csv"))
 REQUIRED = {".gitattributes", "CMakeLists.txt", "cpp/core.cpp", "pyproject.toml", "LICENSE", "README.md",
             "src/qdjj_solver/common/problem.py", "src/qdjj_solver/qp_solver/solver.py",
             "src/qdjj_solver/dmrg_solver/solver.py", "src/qpsolver/__init__.py",
             "docs/numerics.md", "tests/test_physics.py", "applications/README.md",
-            "docs/bath_representations.md", "tools/benchmark_baths.py",
+            "docs/bath_representations.md", "tools/benchmark_baths.py", "tools/check_publication.py",
             "tools/plot_bath_benchmarks.py", "tools/refine_bath_chain.py",
             "docs/benchmarks/baths/input.json", "docs/benchmarks/baths/refinement-input.json",
             "docs/benchmarks/baths/chain-input.json",
@@ -130,6 +151,8 @@ def inspect(path):
                 raise ValueError(f"wheel is missing {name}")
     else:
         raise ValueError("expected an sdist .tar.gz or wheel .whl")
+    if any(name.endswith(".session.json") for name in names):
+        raise ValueError("local runtime session files leaked into distribution")
     if any("__pycache__" in PurePosixPath(name).parts for name in names):
         raise ValueError("unexpected generated or non-relative member")
     if any("APPLICATIONS.md" in PurePosixPath(name).parts or
