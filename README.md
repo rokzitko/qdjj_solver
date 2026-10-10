@@ -1,5 +1,7 @@
 # qdjj_solver
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23104978.svg)](https://doi.org/10.5281/zenodo.23104978)
+
 **Quasiparticle (QP) expansion and density-matrix renormalization group (DMRG)
 solvers for superconducting quantum impurities.**
 

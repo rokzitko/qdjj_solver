@@ -1,0 +1,40 @@
+{
+  "source": "../output/results.json",
+  "physical": {"gap": 1, "bandwidth": 100, "u": 2, "gamma": 0.4, "detuning": 0.5, "field": 0, "geometry": "single"},
+  "requested_tolerance": {"absolute": 0.000001, "relative": 0.001},
+  "uncertainty_kind": "not_established",
+  "empirical_uncertainties": null,
+  "continuum_target_established": false,
+  "nrg_means": {
+    "NRG-L2.0-K8000-Nz4": {
+      "settings": {"backend": "nrg", "keep": 8000, "keepenergy": 14, "keepmin": 1000, "lambda": 2.0, "nmax": 42, "nz": 4},
+      "values": {
+        "signed_gap": -0.06299362019350951,
+        "singlet.energy": -1.0228073267696516,
+        "doublet.energy": -1.085800946963161,
+        "singlet.P0": 0.5408689600635135,
+        "singlet.P1": 0.36819853031043587,
+        "singlet.P2": 0.09093250962605062,
+        "doublet.P0": 0.0918756205502923,
+        "doublet.P1": 0.8566957478421902,
+        "doublet.P2": 0.05142863160751754,
+        "doublet.moment": 0.42072964713450356
+      }
+    },
+    "NRG-L2.0-K8000-Nz8": {
+      "settings": {"backend": "nrg", "keep": 8000, "keepenergy": 14, "keepmin": 1000, "lambda": 2.0, "nmax": 42, "nz": 8},
+      "values": {
+        "signed_gap": -0.06299887642800428,
+        "singlet.energy": -1.022548453165136,
+        "doublet.energy": -1.0855473295931404,
+        "singlet.P0": 0.5408695465333069,
+        "singlet.P1": 0.3681995582285731,
+        "singlet.P2": 0.09093089523811998,
+        "doublet.P0": 0.0918736948022773,
+        "doublet.P1": 0.8566997853447442,
+        "doublet.P2": 0.0514265198529785,
+        "doublet.moment": 0.4207320290762411
+      }
+    }
+  }
+}

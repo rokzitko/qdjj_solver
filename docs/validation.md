@@ -3,12 +3,14 @@
 ## Local checks
 
 ```sh
+python -B tools/check_publication.py
 python -m pip install -e '.[dmrg,dev]'
 python -B -m pytest --cov --cov-report=term-missing --cov-report=json
 python tools/check_coverage.py reports/python-coverage.json
 python -m ruff check src tests tools examples applications first_calculation large_Gamma NRG_comparisons
 python -m build
 python tools/check_distribution.py dist/*.tar.gz dist/*.whl
+python -B tools/check_publication.py dist/*.tar.gz dist/*.whl
 python tools/check_wheel.py dist/*.whl --dmrg
 ```
 
@@ -29,6 +31,67 @@ the reviewed results and an explicit allowlist of reproduction scripts and
 parameter inputs, including the seven final finite baths. Raw NRG outputs,
 checkpoints and historical run directories remain excluded. These study assets
 are not included in wheels.
+
+## Publication boundary
+
+`pyproject.toml` and `tools/check_distribution.py` contain matching explicit NRG
+asset allowlists, checked by `tests/test_ci_tools.py`. Test2's asset list is
+unchanged. Test3 includes its standard-library generator and
+`reference/provenance.json`. Test4 ships exactly 22 reviewed files: model sources,
+generic numerical/reproduction helpers, two physical/bath inputs, documentation,
+and the five top-level scientific outputs. `FINAL_REPORT.md` is only a pointer
+to the current report. Deleted operational controllers, old run profiles and
+intermediate output subdirectories remain negative packaging fixtures even
+though they no longer exist in the public tree.
+
+Public Test2/3/4 JSON uses an explicit scientific-field whitelist, not a recursive
+dump of execution records. Retain model and bath definitions, numerical settings,
+state observables, convergence qualifications, failed or unavailable comparisons,
+and appropriately scoped checksums. Test4's normalized snapshot retains 157
+records in approximately 4.65 MiB, including the accumulated negative scientific
+findings. Repeated scientific definitions are referenced rather than duplicated.
+Private operational archives, controllers and execution identities are not part
+of this schema. Original-artifact hashes identify private originals; they do not
+claim that those originals were revalidated from the public snapshot. Removing
+historical public copies does not remove or replace privately retained raw runs.
+
+Regenerate the public tables and reports into fresh directories using only the
+standard library, without solver imports, raw runs, network access or private
+archives:
+
+```sh
+python -B -S NRG_comparisons/test2/generate.py --tables-only --output-dir results/test2-presentation
+python -B -S NRG_comparisons/test3/generate.py --output-dir results/test3-presentation
+python -B -S NRG_comparisons/test4/generate.py --tables-only --output-dir results/test4-presentation
+```
+
+These commands replay published data, not expensive numerical calculations or a
+new continuum-accuracy certification. Test2's optional PNG output still requires
+the plotting extra. Test1's assets and existing dataset policy are unchanged;
+Test1 is exempt from the new semantic-metadata and dataset-size policies.
+
+The read-only, offline `tools/check_publication.py` complements the filename
+boundary with semantic privacy checks. With no arguments it checks tracked and
+unignored untracked files under Test2/3/4, including their reviewed manual code;
+it does not traverse ignored raw runs. Explicit source paths work without Git.
+The gate rejects private paths, site/account literals, operational JSON metadata,
+credential patterns and oversized public data. Default limits are **8 MiB per
+JSON file** and **16 MiB per case**. Schema validation remains the generators' and
+case tests' responsibility; a successful privacy scan alone is not scientific
+validation.
+
+Archive targets are inspected without extraction or ignore exclusions. Private
+members are rejected, and all archive text is checked for credential patterns,
+including files outside Test2/3/4. Semantic metadata and dataset-size checks
+remain scoped to Test2/3/4. Binary files are counted as skipped, not certified
+secret-free. Findings produce a failing exit status with redacted diagnostics;
+no external SaaS secret scanner or upload is involved.
+
+The source-root allowlist is deliberately broader outside `NRG_comparisons`, so
+filename acceptance alone is not a privacy guarantee. Keep private archives,
+worktrees, Git bundles, virtual environments, credentials and raw `runs/` out of
+public assets. Both the distribution boundary and publication gate must pass
+on the actual archives before upload, not just on the checkout.
 
 The NRG adapter/control and reproduction tests are bounded and offline: literal
 input decks, synthetic HDF5, small electron-ED/QP problems, task/input consistency,
@@ -57,6 +120,14 @@ defaults, and 14-day diagnostic artifact retention. Superseded PR runs are cance
 Routine wheel/sdist artifacts are retained for 14 days as well. The release
 workflow calls the same checks with stress and native coverage enabled; see
 [the release procedure](releases.md).
+
+Every test job runs the default source privacy gate before installation, lint,
+examples or tests can print dataset contents. Diagnostic report uploads are
+disabled if that gate fails. Built distributions pass archive privacy checks
+after the distribution-boundary check and before artifact upload. Release jobs
+also check their source checkout, recheck the downloaded sdist before unpacking,
+and check repaired wheels before upload. These are mandatory local checks in CI,
+not external scanning services.
 
 The lower-bound job constrains all five numerical/runtime dependencies together,
 runs `pip check`, requires the installed-package smoke check (including DMRG and

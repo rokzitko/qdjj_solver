@@ -1,0 +1,58 @@
+#!/usr/bin/env looper
+# Edit Nz here; all other settings are below. Preparation only, no solver launch.
+#PRELUDE: $Nz = 8;
+#AUTOLOOP: true
+@ $i=1; $i<=$Nz; $i++
+!($z=$i/$Nz)
+[param]
+Nz=$Nz
+model=SIAM
+variant=
+symtype=SPSU2
+band=flat
+bandrescale=100
+bcsgap=0.01
+U=2
+Gamma=0.4
+delta=0.5
+Lambda=2
+z=$z
+Ninit=0
+Nmax=42
+keep=8000
+keepenergy=14
+keepmin=1000
+keepall=
+lastall=true
+discretization=Z
+tri=old
+options=SCHUR
+diagratio=1
+diag_mode=serial
+diagth=1
+strategy=kept
+ops=n_d n_d_ud sigma_d
+spect=sigma_d-sigma_d
+finite=true
+T=1e-5
+dm=false
+fdm=false
+broaden=false
+savebins=false
+bins=50
+calc0=true
+dumpannotated=160
+dumpscaled=false
+dumpabs=false
+dumpEscale=1
+dumpprecision=16
+dumpgroups=false
+grouptol=1e-10
+h5raw=true
+h5all=false
+h5last=true
+h5ops=true
+h5vectors=false
+h5U=false
+removefiles=true
+silent=true

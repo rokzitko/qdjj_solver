@@ -4,6 +4,12 @@
 /runs/
 /results/
 /APPLICATIONS.md
+/publication-private/
+/*.bundle
+/.env
+/.env.*
+!/.env.example
+!/.env.sample
 /applications/*/runs/
 /NRG_comparisons/**/runs/
 /NRG_comparisons/**/.DS_Store

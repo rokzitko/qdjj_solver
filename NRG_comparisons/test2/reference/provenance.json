@@ -1,0 +1,1184 @@
+{
+  "build_versions": {
+    "GCC": "14.2.0",
+    "MKL": "2024.0",
+    "sneg": "2.1"
+  },
+  "completion_accepted_receipts": {
+    "cosh16-doublet-chi0512": {
+      "receipt": "runs/completion-v1/tasks/cosh16-doublet-chi0512/attempt-001/acceptance.json",
+      "request_digest": "9cb9c9343526a6a7637d561f4dcb85fc5b94be1f22cbac54918730b9e10334d9",
+      "result": "runs/completion-v1/tasks/cosh16-doublet-chi0512/attempt-001/result.json",
+      "result_sha256": "8c66ea33cb2a10e389f2fb0abac1f9cdb13a012323c1af86f37e119efbb09766",
+      "verified": true
+    },
+    "cosh16-doublet-chi0768": {
+      "receipt": "runs/completion-v1/tasks/cosh16-doublet-chi0768/attempt-001/acceptance.json",
+      "request_digest": "d4fdbfd47b9a1fd7416de0283ee37750b915d8e9bcae86384629c03028aaa5b3",
+      "result": "runs/completion-v1/tasks/cosh16-doublet-chi0768/attempt-001/result.json",
+      "result_sha256": "0ba67e2560f1a6f9532cce6531c930c3b3cd659df775874e4981a611911f8241",
+      "verified": true
+    },
+    "cosh16-singlet-chi0768": {
+      "receipt": "runs/completion-v1/tasks/cosh16-singlet-chi0768/attempt-001/acceptance.json",
+      "request_digest": "8388c1c62c00405a6b95128671b67aa94087b7535dda202544b44150f7a06471",
+      "result": "runs/completion-v1/tasks/cosh16-singlet-chi0768/attempt-001/result.json",
+      "result_sha256": "afee125aa29bdb188832e9eab179574260e9b870c9b845e55481dd78a2dbec5c",
+      "verified": true
+    },
+    "cosh16-singlet-chi1024": {
+      "receipt": "runs/completion-v1/tasks/cosh16-singlet-chi1024/attempt-001/acceptance.json",
+      "request_digest": "7cfb2f190ac182d2544208c71b6dc518e2d482ce121a90b0064a23e2417178ca",
+      "result": "runs/completion-v1/tasks/cosh16-singlet-chi1024/attempt-001/result.json",
+      "result_sha256": "eb9052c61655e23c6d07f99dd2077187b2e7b30477a8894bc4c44d6a6fe0e0e3",
+      "verified": true
+    },
+    "nrg-l25-z1of4-k4000": {
+      "receipt": "runs/completion-v1/tasks/nrg-l25-z1of4-k4000/attempt-001/acceptance.json",
+      "request_digest": "882b35db82ece8dac9b3afa00159808bf16272c818cfdd7985345adb8eb15c7a",
+      "result": "runs/completion-v1/tasks/nrg-l25-z1of4-k4000/attempt-001/result.json",
+      "result_sha256": "8b46fa44387dd3ccac0cbe64d943f54577b16c4ec1a5587f16e275c272ec99a6",
+      "verified": true
+    },
+    "nrg-l25-z2of4-k4000": {
+      "receipt": "runs/completion-v1/tasks/nrg-l25-z2of4-k4000/attempt-001/acceptance.json",
+      "request_digest": "edc255e5e408342367f6d185485ce222716d9d29823b9a918cd6534209fe6a5d",
+      "result": "runs/completion-v1/tasks/nrg-l25-z2of4-k4000/attempt-001/result.json",
+      "result_sha256": "f49a7fca56e88a85dceaf5b5d86ea2b2d1da51565300390136de8699c3f61f74",
+      "verified": true
+    },
+    "nrg-l25-z3of4-k4000": {
+      "receipt": "runs/completion-v1/tasks/nrg-l25-z3of4-k4000/attempt-001/acceptance.json",
+      "request_digest": "d4d508fd4808e15450f119e1553f4f399e227ccafae40b167899535ce3896bfb",
+      "result": "runs/completion-v1/tasks/nrg-l25-z3of4-k4000/attempt-001/result.json",
+      "result_sha256": "18f2f6eb6f695da991c6dce5139280c2104905236eb691e383ee99b86cb43b67",
+      "verified": true
+    },
+    "nrg-l25-z4of4-k4000": {
+      "receipt": "runs/completion-v1/tasks/nrg-l25-z4of4-k4000/attempt-001/acceptance.json",
+      "request_digest": "a5fc2a5f5beac3b4aec1aeea76f59c6943e83f78b153231e382363cbc250faef",
+      "result": "runs/completion-v1/tasks/nrg-l25-z4of4-k4000/attempt-001/result.json",
+      "result_sha256": "e3d91e8ec71c97a296b78cc069801d73209f0903ace0d280bb9d2c4647df6e4e",
+      "verified": true
+    }
+  },
+  "completion_runner_files_repository_relative": {
+    "NRG_comparisons/test1/control.py": "d269970bf6da6db9689c7eb27b07e41a01ee616765677ac2c2233b3be46035ee",
+    "NRG_comparisons/test1/nrg.py": "93a2c954283a79c51313695bc5a1e73624e5507789cebe5bd110dfcf37835654",
+    "NRG_comparisons/test1/run.py": "da3a70f31c12f7fe496a2692d9e42f93df9f006f83a350a255affce8ca680bd4",
+    "NRG_comparisons/test2/input/physical.json": "8b9af17c7fd90b141a546fc77a00d1195411f5d465a60a6e21cf8002c9528fcb",
+    "NRG_comparisons/test2/run.py": "4b80aae4b93ac57445a2d67615f5737326b3550ea30647927c656a42dd0d380d",
+    "NRG_comparisons/test2/supervisor.py": "6a010f5f702ac443298721f6a0bb86662433c72de4b8740d86f6bf071b64bc24",
+    "NRG_comparisons/test2/worker.py": "8baec58eceabe66d1b866757ad82cf079e8efa3cb8ac5b0ef7c20c6346b33cfc"
+  },
+  "dmrg_branch_sources": {
+    "cosh16-dmrg-chi256": {
+      "doublet": {
+        "evidence": "original accepted two-branch result",
+        "result": "runs/main-v2/tasks/cosh16-chi256/attempt-001/result.json"
+      },
+      "singlet": {
+        "evidence": "original accepted two-branch result",
+        "result": "runs/main-v2/tasks/cosh16-chi256/attempt-001/result.json"
+      }
+    },
+    "cosh16-dmrg-chi512": {
+      "doublet": {
+        "checkpoint": "runs/completion-v1/tasks/cosh16-doublet-chi0512/attempt-001/state.json",
+        "evidence": "accepted one-root, one-warm-trial continuation; no new independent-seed/root-separation claim",
+        "result": "runs/completion-v1/tasks/cosh16-doublet-chi0512/attempt-001/result.json"
+      },
+      "singlet": {
+        "checkpoint": "runs/main-v2/tasks/cosh16-chi512/attempt-001/singlet-state.json",
+        "evidence": "preserved scalar/MPS checkpoint pinned by completion manifest; original worker timed out, not an accepted two-branch result"
+      }
+    },
+    "cosh16-dmrg-chi768": {
+      "doublet": {
+        "checkpoint": "runs/completion-v1/tasks/cosh16-doublet-chi0768/attempt-001/state.json",
+        "evidence": "accepted one-root, one-warm-trial continuation; no new independent-seed/root-separation claim",
+        "result": "runs/completion-v1/tasks/cosh16-doublet-chi0768/attempt-001/result.json"
+      },
+      "singlet": {
+        "checkpoint": "runs/completion-v1/tasks/cosh16-singlet-chi0768/attempt-001/state.json",
+        "evidence": "accepted one-root, one-warm-trial continuation; no new independent-seed/root-separation claim",
+        "result": "runs/completion-v1/tasks/cosh16-singlet-chi0768/attempt-001/result.json"
+      }
+    },
+    "cosh16-dmrg-final": {
+      "doublet": {
+        "checkpoint": "runs/completion-v1/tasks/cosh16-doublet-chi0768/attempt-001/state.json",
+        "evidence": "accepted one-root, one-warm-trial continuation; no new independent-seed/root-separation claim",
+        "result": "runs/completion-v1/tasks/cosh16-doublet-chi0768/attempt-001/result.json"
+      },
+      "singlet": {
+        "checkpoint": "runs/completion-v1/tasks/cosh16-singlet-chi1024/attempt-001/state.json",
+        "evidence": "accepted one-root, one-warm-trial continuation; no new independent-seed/root-separation claim",
+        "result": "runs/completion-v1/tasks/cosh16-singlet-chi1024/attempt-001/result.json"
+      }
+    }
+  },
+  "dmrg_partial_chi512": "Singlet values are derived from its preserved scalar checkpoint, whose JSON and MPS hashes match the continuation pin; the original chi512 worker timed out before completing both branches. Doublet chi512 is a separately accepted continuation from chi256. No success receipt is fabricated for the failed task.",
+  "external_executables": {
+    "math": {
+      "sha256": "9ae2e0f3dd0a6f5a0a2d7d2257417d96a96502e2d115390f0bb2c07665f895db",
+      "version": "Mathematica 13.3.0 for Linux x86 (64-bit)"
+    },
+    "nrg": {
+      "sha256": "c6d269f62aab8ee28424b0d2fca386c834b901790ca06c324d447dcb48a8fc1a",
+      "version": "NRG Ljubljana 2026.09"
+    },
+    "nrginit": {
+      "sha256": "ce3774fe8bfa75abd123f5b6ee8418588a151c17c34de51b60c3cc64267f4df4",
+      "version": "NRG Ljubljana 2026.09"
+    }
+  },
+  "external_initializer_source_hashes": {
+    "basis.m": "76876153f9ae26cbffcde21eb57a14a65757372d48475911ce4fa861bb5fcc7a",
+    "dmft.m": "ef97ee217ebec88fa0beded29b79cca236a3bbf2a5b5cc18001de1a86178ca07",
+    "floquet.m": "ca7466bfee640d575a606eaa5689a9e9013843ffe56d5b4a08e77ed3940295d1",
+    "hamiltonian.m": "fcc2faf6e4dd15978c17dcea2f34dfc5fce95b71001ea3b1cb19a07b15f2c9a2",
+    "initial.m": "45722342cacf7df72ef1a16b02ae84eec17838a25de6cabeab78ea07590cd388",
+    "initialparse.m": "a222fb9b87602ab4a3025cf5d471563ad022c8d8087f802b9b6599d16cadc98e",
+    "misc.m": "4fff063d293717941f89ca25d56cf37462910557870834993ad50be1cb57268d",
+    "models.m": "4db77142489b686b42066a5f89cbe5e3c03e2363794cdfb8e1a878b5feeb8a8c",
+    "nrginit.m": "3f383efef49aa20c8990c26e494b4104881187192ed2df78d065a8e47af30fde",
+    "operators.m": "979fe26d53e8366808ebab00c587de98674b88917c7b1cd3c1a7f39abe362084",
+    "sneg.m": "2d69864c1195db79ccbf54b5383094dce5da9b42116445dde15f1eff4216888f",
+    "sym.m": "dfaa4ed36e60e6cadf0e8649a77fd420ae0a28eed93840bfecd71efffe9eebd1",
+    "wilson.m": "caa9437a1dd17d879972c991e79db081a044522fe626599b85b7b68705918339"
+  },
+  "finite_endpoint_sources": {
+    "cosh12-q6": {
+      "bath_key": "cosh12",
+      "result": "runs/main-v2/tasks/cosh12-q6/attempt-001/result.json"
+    },
+    "cosh12-q7": {
+      "bath_key": "cosh12",
+      "result": "runs/main-v2/tasks/cosh12-q7/attempt-001/result.json"
+    },
+    "cosh12-q8": {
+      "bath_key": "cosh12",
+      "result": "runs/main-v2/tasks/cosh12-q8/attempt-001/result.json"
+    },
+    "cosh16-q6": {
+      "bath_key": "cosh16",
+      "result": "runs/main-v2/tasks/cosh16-q6/attempt-001/result.json"
+    },
+    "cosh16-q7": {
+      "bath_key": "cosh16",
+      "result": "runs/main-v2/tasks/cosh16-q7/attempt-001/result.json"
+    },
+    "cosh16-q8": {
+      "bath_key": "cosh16",
+      "result": "runs/main-v2/tasks/cosh16-q8/attempt-001/result.json"
+    },
+    "cosh20-q6": {
+      "bath_key": "cosh20",
+      "result": "runs/main-v2/tasks/cosh20-q6/attempt-001/result.json"
+    },
+    "cosh20-q7": {
+      "bath_key": "cosh20",
+      "result": "runs/main-v2/tasks/cosh20-q7/attempt-001/result.json"
+    },
+    "surrogate24-w200-q6": {
+      "bath_key": "surrogate24-window200",
+      "result": "runs/main-v2/tasks/surrogate24-w200-q6/attempt-001/result.json"
+    },
+    "surrogate24-w400-q6": {
+      "bath_key": "surrogate24-window400",
+      "result": "runs/main-v2/tasks/surrogate24-w400-q6/attempt-001/result.json"
+    }
+  },
+  "format_version": 1,
+  "hash_scope": "source_file_sha256 and recorded_original_file_sha256 identify originals, not current publication files. published_file_sha256 hashes current file bytes.",
+  "native_sha256": "bc4af58840a197a65d509493af7433e3cd75e0cf241c4696be0a663d6ac8e1f0",
+  "nrg_mean_sources": {
+    "NRG-L1.8-K8000-Nz4": {
+      "contains_recovered_flow": true,
+      "mean": "arithmetic mean in increasing z order",
+      "twist_records": [
+        "nrg-l18-z1of4-k8000",
+        "nrg-l18-z2of4-k8000",
+        "nrg-l18-z3of4-k8000",
+        "nrg-l18-z4of4-k8000"
+      ]
+    },
+    "NRG-L2.0-K4000-Nz4": {
+      "contains_recovered_flow": false,
+      "mean": "arithmetic mean in increasing z order",
+      "twist_records": [
+        "nrg-l2-z2of8-k4000",
+        "nrg-l2-z4of8-k4000",
+        "nrg-l2-z6of8-k4000",
+        "nrg-l2-z8of8-k4000"
+      ]
+    },
+    "NRG-L2.0-K4000-Nz8": {
+      "contains_recovered_flow": false,
+      "mean": "arithmetic mean in increasing z order",
+      "twist_records": [
+        "nrg-l2-z1of8-k4000",
+        "nrg-l2-z2of8-k4000",
+        "nrg-l2-z3of8-k4000",
+        "nrg-l2-z4of8-k4000",
+        "nrg-l2-z5of8-k4000",
+        "nrg-l2-z6of8-k4000",
+        "nrg-l2-z7of8-k4000",
+        "nrg-l2-z8of8-k4000"
+      ]
+    },
+    "NRG-L2.0-K8000-Nz4": {
+      "contains_recovered_flow": false,
+      "mean": "arithmetic mean in increasing z order",
+      "twist_records": [
+        "nrg-l2-z2of8-k8000",
+        "nrg-l2-z4of8-k8000",
+        "nrg-l2-z6of8-k8000",
+        "nrg-l2-z8of8-k8000"
+      ]
+    },
+    "NRG-L2.0-K8000-Nz8": {
+      "contains_recovered_flow": false,
+      "mean": "arithmetic mean in increasing z order",
+      "twist_records": [
+        "nrg-l2-z1of8-k8000",
+        "nrg-l2-z2of8-k8000",
+        "nrg-l2-z3of8-k8000",
+        "nrg-l2-z4of8-k8000",
+        "nrg-l2-z5of8-k8000",
+        "nrg-l2-z6of8-k8000",
+        "nrg-l2-z7of8-k8000",
+        "nrg-l2-z8of8-k8000"
+      ]
+    },
+    "NRG-L2.5-K4000-Nz4": {
+      "contains_recovered_flow": false,
+      "mean": "arithmetic mean in increasing z order",
+      "twist_records": [
+        "nrg-l25-z1of4-k4000",
+        "nrg-l25-z2of4-k4000",
+        "nrg-l25-z3of4-k4000",
+        "nrg-l25-z4of4-k4000"
+      ]
+    },
+    "NRG-L2.5-K8000-Nz4": {
+      "contains_recovered_flow": false,
+      "mean": "arithmetic mean in increasing z order",
+      "twist_records": [
+        "nrg-l25-z1of4-k8000",
+        "nrg-l25-z2of4-k8000",
+        "nrg-l25-z3of4-k8000",
+        "nrg-l25-z4of4-k8000"
+      ]
+    }
+  },
+  "numerical_environment": {
+    "machine": "x86_64",
+    "numpy": "2.3.1",
+    "packages": {
+      "h5py": "3.16.0",
+      "numpy": "2.3.1",
+      "physics-tenpy": "1.1.1",
+      "qdjj-solver": "0.2.0",
+      "scipy": "1.16.0",
+      "threadpoolctl": "3.6.0"
+    },
+    "python": "3.13.1",
+    "qdjj_solver": "0.2.0",
+    "qpsolver": "0.2.0",
+    "scipy": "1.16.0",
+    "system": "Linux"
+  },
+  "original_accepted_receipts": {
+    "control-atomic": {
+      "receipt": "runs/main-v2/tasks/control-atomic/attempt-001/acceptance.json",
+      "request_digest": "7aec028ac8167ce8897d8808c3148c931c273ed62dd06bd4fe5934db3a26fa9b",
+      "result": "runs/main-v2/tasks/control-atomic/attempt-001/result.json",
+      "result_sha256": "d17a7feba529f820bc3c6d283566ad801633d283213c20b16fe4a246d591e5c2",
+      "verified": true
+    },
+    "control-cosh8-dmrg": {
+      "receipt": "runs/main-v2/tasks/control-cosh8-dmrg/attempt-001/acceptance.json",
+      "request_digest": "f3e209427b1c068c1f9e4341ab88e20b2b03a7de30b9a361a51addee476be908",
+      "result": "runs/main-v2/tasks/control-cosh8-dmrg/attempt-001/result.json",
+      "result_sha256": "4275f38eb120af155631ee4255a9a31a6a20a86ac4972159aad8d4297885e62d",
+      "verified": true
+    },
+    "control-cosh8-qp": {
+      "receipt": "runs/main-v2/tasks/control-cosh8-qp/attempt-001/acceptance.json",
+      "request_digest": "97f1c043a491972603f18c26aba1288ec7e9b73fb52c308dda98edf4b759892e",
+      "result": "runs/main-v2/tasks/control-cosh8-qp/attempt-001/result.json",
+      "result_sha256": "b37404e2b89d107c67907461cbd9a799b35d6e41df79fcdc5654994b602ebe4c",
+      "verified": true
+    },
+    "control-dmrg": {
+      "receipt": "runs/main-v2/tasks/control-dmrg/attempt-001/acceptance.json",
+      "request_digest": "1ad2aef9ae1c7a46c907ac70f8c9337d3c1de342893e0401ef76bcea37b0d3a4",
+      "result": "runs/main-v2/tasks/control-dmrg/attempt-001/result.json",
+      "result_sha256": "40a5086903c07bd9e63a291f0e92c92468ed34fde65ca725ed406b874aed165f",
+      "verified": true
+    },
+    "control-ed": {
+      "receipt": "runs/main-v2/tasks/control-ed/attempt-001/acceptance.json",
+      "request_digest": "f440e15e2f50602b87f68f0e93d27672ed87437932ebd456bc6b6e854103521a",
+      "result": "runs/main-v2/tasks/control-ed/attempt-001/result.json",
+      "result_sha256": "2031e30c19811a3f3bfc3981aba1df9ecd6ac0519ccad4c639ed19eb433d5bfc",
+      "verified": true
+    },
+    "control-nrg-bandwidth-clean": {
+      "receipt": "runs/main-v2/tasks/control-nrg-bandwidth-clean/attempt-001/acceptance.json",
+      "request_digest": "36d4612c138458ee2533142f7768d2908a81332dd8c796394b6d81dadcff0420",
+      "result": "runs/main-v2/tasks/control-nrg-bandwidth-clean/attempt-001/result.json",
+      "result_sha256": "8ba86bcfa784865b8030373976772813729ae106420032c5ca0f78866b76175e",
+      "verified": true
+    },
+    "control-nrg-bandwidth-siam": {
+      "receipt": "runs/main-v2/tasks/control-nrg-bandwidth-siam/attempt-001/acceptance.json",
+      "request_digest": "fc9112483763857c43fc39dfb7b26da95ddde7a4fdb2141ebc591606be9ec94d",
+      "result": "runs/main-v2/tasks/control-nrg-bandwidth-siam/attempt-001/result.json",
+      "result_sha256": "ba7d7d3d63f6c33608bd218be9caf14c32d41cc67782f4232d60010a03077381",
+      "verified": true
+    },
+    "control-nrg-gap-clean": {
+      "receipt": "runs/main-v2/tasks/control-nrg-gap-clean/attempt-001/acceptance.json",
+      "request_digest": "179ac0334829f84f06bd79eeb8a6dab56a6ab3581e3c794c34439713ac51321e",
+      "result": "runs/main-v2/tasks/control-nrg-gap-clean/attempt-001/result.json",
+      "result_sha256": "2db0b4bd5a786b94784f41cbc1b1217dd21e63b9dec435e424a86edf1d541b93",
+      "verified": true
+    },
+    "control-nrg-gap-siam": {
+      "receipt": "runs/main-v2/tasks/control-nrg-gap-siam/attempt-001/acceptance.json",
+      "request_digest": "903bf006b32666f13867c634cd6f1601e9105bf0263b1e0e7d5646fdf73f73c1",
+      "result": "runs/main-v2/tasks/control-nrg-gap-siam/attempt-001/result.json",
+      "result_sha256": "735b61843ec046ebd1d2d4df664c88b8b5309ca56e19735e91de1123b377ba73",
+      "verified": true
+    },
+    "control-ph": {
+      "receipt": "runs/main-v2/tasks/control-ph/attempt-001/acceptance.json",
+      "request_digest": "468223fe1a2f8c0db81bd3971b1339261f19ac475765589fdd772e795b402004",
+      "result": "runs/main-v2/tasks/control-ph/attempt-001/result.json",
+      "result_sha256": "c4f28fe849bb4ed305afc8fa710b715c616f53434a1029cb6c7e9ef08b558798",
+      "verified": true
+    },
+    "control-qp": {
+      "receipt": "runs/main-v2/tasks/control-qp/attempt-001/acceptance.json",
+      "request_digest": "bfff47dc531ebc3e4b8ac0bd1b3ef8f41062dac2928966a6b28038f64d273360",
+      "result": "runs/main-v2/tasks/control-qp/attempt-001/result.json",
+      "result_sha256": "6f434883900d9bcb4da506932a1d6e3c6e157ba7b3aa3e5c5af370d09993c554",
+      "verified": true
+    },
+    "cosh12-q6": {
+      "receipt": "runs/main-v2/tasks/cosh12-q6/attempt-001/acceptance.json",
+      "request_digest": "93614665be6b17fa483928c2f0d44ad83a05f28999e9b267078a1607f8e57d8c",
+      "result": "runs/main-v2/tasks/cosh12-q6/attempt-001/result.json",
+      "result_sha256": "c6328fa572931eb44644c52afb4b72272db0833088f5a21c6840f0c320e72ae0",
+      "verified": true
+    },
+    "cosh12-q7": {
+      "receipt": "runs/main-v2/tasks/cosh12-q7/attempt-001/acceptance.json",
+      "request_digest": "2e71b79b93f6228b60b36fb901af0f4193d9706271278b8c555179e90090e0e7",
+      "result": "runs/main-v2/tasks/cosh12-q7/attempt-001/result.json",
+      "result_sha256": "3520e0de681825be45df34a3d78e92f309f9090193646dfd28e55a76fda2bbae",
+      "verified": true
+    },
+    "cosh12-q8": {
+      "receipt": "runs/main-v2/tasks/cosh12-q8/attempt-001/acceptance.json",
+      "request_digest": "ea739a163deeca2bed16a709171e1699143439d44d49b3a3301bdc200c180cc6",
+      "result": "runs/main-v2/tasks/cosh12-q8/attempt-001/result.json",
+      "result_sha256": "d10f2bcac9bd02d68e8de65722d33c763551a76f8b62f33f1372e09f48d11bb7",
+      "verified": true
+    },
+    "cosh16-chi256": {
+      "receipt": "runs/main-v2/tasks/cosh16-chi256/attempt-001/acceptance.json",
+      "request_digest": "4d34d55d9b6583776fa1cf26e688fe8d75683967f6ce34f746c211c4bcfb1a66",
+      "result": "runs/main-v2/tasks/cosh16-chi256/attempt-001/result.json",
+      "result_sha256": "0383df3b77a4ef371b7a447c33eec9ab28637292e1757d92252b5325696c2032",
+      "verified": true
+    },
+    "cosh16-q6": {
+      "receipt": "runs/main-v2/tasks/cosh16-q6/attempt-001/acceptance.json",
+      "request_digest": "a59640886e86bab3ad3e4a233df8b2b0fd48c9b253c4a479fbd666698fb22264",
+      "result": "runs/main-v2/tasks/cosh16-q6/attempt-001/result.json",
+      "result_sha256": "b575d5339bbae04295d45386b33e756eb7e72e442d35c486a121daabe9b622d8",
+      "verified": true
+    },
+    "cosh16-q7": {
+      "receipt": "runs/main-v2/tasks/cosh16-q7/attempt-001/acceptance.json",
+      "request_digest": "56180b6d45b391f4e88000215fa62051050e4bc47c124d988563c3a7129082e7",
+      "result": "runs/main-v2/tasks/cosh16-q7/attempt-001/result.json",
+      "result_sha256": "8edf00a45ae3a36ad892a65cf3353f4f1f8c7aef161f2858f2f58325f3df6771",
+      "verified": true
+    },
+    "cosh16-q8": {
+      "receipt": "runs/main-v2/tasks/cosh16-q8/attempt-001/acceptance.json",
+      "request_digest": "584b40614abd89cbc20f7e4271ef9741201ca8832062383eab810d98afb92183",
+      "result": "runs/main-v2/tasks/cosh16-q8/attempt-001/result.json",
+      "result_sha256": "4466ccccb7f6d730bfc6713383e6f2bad9b71fc2682ab23b058d6eff1fcc0ee1",
+      "verified": true
+    },
+    "cosh20-q6": {
+      "receipt": "runs/main-v2/tasks/cosh20-q6/attempt-001/acceptance.json",
+      "request_digest": "64645c9767bdb71dfd9fe54c0b0be98594f4ad0738c3db81297d15c36866cf6b",
+      "result": "runs/main-v2/tasks/cosh20-q6/attempt-001/result.json",
+      "result_sha256": "22a7233c54a9415002c6b40b49ec780316a3d9bbc6db07fb447495a1cbfb7a24",
+      "verified": true
+    },
+    "cosh20-q7": {
+      "receipt": "runs/main-v2/tasks/cosh20-q7/attempt-001/acceptance.json",
+      "request_digest": "d9fb95ff381ee72f6ec3d5676ec36df9dd231d664d8f918e2881bed7e71cb7f6",
+      "result": "runs/main-v2/tasks/cosh20-q7/attempt-001/result.json",
+      "result_sha256": "7bb4acc24df17ef4d651c159548735011fd1ef2ddf5376020fb0c09f45b90fa9",
+      "verified": true
+    },
+    "nrg-l18-z1of4-k8000": {
+      "receipt": "runs/main-v2/tasks/nrg-l18-z1of4-k8000/attempt-001/acceptance.json",
+      "request_digest": "7c6e7f2a3d659416247d84ab92ff2b1372e332ee15759d39a630386508594540",
+      "result": "runs/main-v2/tasks/nrg-l18-z1of4-k8000/attempt-001/result.json",
+      "result_sha256": "9693906ee63c2dc59a9c0b65971a4f6abf8fa2934069cf03285c6f55b9e28ccc",
+      "verified": true
+    },
+    "nrg-l18-z2of4-k8000": {
+      "receipt": "runs/main-v2/tasks/nrg-l18-z2of4-k8000/attempt-001/acceptance.json",
+      "request_digest": "469580dbd788a25a0b104673e84f4f0110927dad32797f141cd3bd1fa3015a1b",
+      "result": "runs/main-v2/tasks/nrg-l18-z2of4-k8000/attempt-001/result.json",
+      "result_sha256": "2b234ec21d5de7b63f5ba66d93f821ca8ec05f5a5032481e22a4ed842b999d6d",
+      "verified": true
+    },
+    "nrg-l18-z3of4-k8000": {
+      "receipt": "runs/main-v2/tasks/nrg-l18-z3of4-k8000/attempt-001/acceptance.json",
+      "request_digest": "a5de627615349987154b89395ebb019781a2d4b755237f3c53a068e264e3f577",
+      "result": "runs/main-v2/tasks/nrg-l18-z3of4-k8000/attempt-001/result.json",
+      "result_sha256": "8081ec3a85a1d4c5f55ee721186910d329b73730ee80124dace74433567d8c5f",
+      "verified": true
+    },
+    "nrg-l2-z0.125-keepenergy": {
+      "receipt": "runs/main-v2/tasks/nrg-l2-z0.125-keepenergy/attempt-001/acceptance.json",
+      "request_digest": "5dc3c418ec7660a470932629b4794f30f37115e5f9ee70ff4014f3abb675e984",
+      "result": "runs/main-v2/tasks/nrg-l2-z0.125-keepenergy/attempt-001/result.json",
+      "result_sha256": "f3904c91f5dd20d573b56770c48c794583106876dfd708ed548ac16ff3e8b9dd",
+      "verified": true
+    },
+    "nrg-l2-z0.125-keepmin": {
+      "receipt": "runs/main-v2/tasks/nrg-l2-z0.125-keepmin/attempt-001/acceptance.json",
+      "request_digest": "e9a8b7d4a1ebd77ec45f6bea390b3ad2930e461b6c573025257087ab8910403d",
+      "result": "runs/main-v2/tasks/nrg-l2-z0.125-keepmin/attempt-001/result.json",
+      "result_sha256": "f99459451dd8d155389f9d75835f5482abb8e7380917dfabcf5e0991bfcd3a76",
+      "verified": true
+    },
+    "nrg-l2-z0.125-nmax": {
+      "receipt": "runs/main-v2/tasks/nrg-l2-z0.125-nmax/attempt-001/acceptance.json",
+      "request_digest": "2b8fdf58e4ca4f3fac5a91c76dc83eca36a5dc66315159b2866864780b873f11",
+      "result": "runs/main-v2/tasks/nrg-l2-z0.125-nmax/attempt-001/result.json",
+      "result_sha256": "4aa1e0486fccac4b3b9fef765f0e796929d2146c3738827966d1aa4c9ea94f62",
+      "verified": true
+    },
+    "nrg-l2-z1.0-keepenergy": {
+      "receipt": "runs/main-v2/tasks/nrg-l2-z1.0-keepenergy/attempt-001/acceptance.json",
+      "request_digest": "d5f5bec5e4c002834199cbb04bcf9fc02a22f1c2630fb290716d0f761cf31dbc",
+      "result": "runs/main-v2/tasks/nrg-l2-z1.0-keepenergy/attempt-001/result.json",
+      "result_sha256": "5ab9ec8851a007fd68503ac10018c06ed5875de452c7180a74d5b2381dfcffe3",
+      "verified": true
+    },
+    "nrg-l2-z1.0-keepmin": {
+      "receipt": "runs/main-v2/tasks/nrg-l2-z1.0-keepmin/attempt-001/acceptance.json",
+      "request_digest": "8f54b58fdf6a31edf2a6949f60d9cfffef3b449bf205bf1f94099ed828d55c5a",
+      "result": "runs/main-v2/tasks/nrg-l2-z1.0-keepmin/attempt-001/result.json",
+      "result_sha256": "b9d76458eebbb2404c2afcde3393123d071bb27c7f8ff08ac597ea252fd70820",
+      "verified": true
+    },
+    "nrg-l2-z1.0-nmax": {
+      "receipt": "runs/main-v2/tasks/nrg-l2-z1.0-nmax/attempt-001/acceptance.json",
+      "request_digest": "b491e992fb5fa278c11617aee038b46cbe6119df4df9b0ab34553854cdb7db62",
+      "result": "runs/main-v2/tasks/nrg-l2-z1.0-nmax/attempt-001/result.json",
+      "result_sha256": "1d158f4b6d338c762223ba85ba6d31fafa77cf6532f5ef779e6a5d30dba30a2f",
+      "verified": true
+    },
+    "nrg-l2-z1of8-k4000": {
+      "receipt": "runs/main-v2/tasks/nrg-l2-z1of8-k4000/attempt-001/acceptance.json",
+      "request_digest": "1f92d261cc2006dafc3fccfae870894f9a9feb07ec8a335e43cfaf423f13f317",
+      "result": "runs/main-v2/tasks/nrg-l2-z1of8-k4000/attempt-001/result.json",
+      "result_sha256": "9c5f2960ead47f4eef7ecf8f35a872aeaf93fb468c0b0f47821e97f576191d2e",
+      "verified": true
+    },
+    "nrg-l2-z1of8-k8000": {
+      "receipt": "runs/main-v2/tasks/nrg-l2-z1of8-k8000/attempt-001/acceptance.json",
+      "request_digest": "18c75d5108d889b262877b2cf30e3eb7e4474724d92c89dba38f5a3e097932d8",
+      "result": "runs/main-v2/tasks/nrg-l2-z1of8-k8000/attempt-001/result.json",
+      "result_sha256": "b00f53bd77bceecd8ad009c130e34a7d3fce280192a8208441c3f23bffba4ee8",
+      "verified": true
+    },
+    "nrg-l2-z2of8-k4000": {
+      "receipt": "runs/main-v2/tasks/nrg-l2-z2of8-k4000/attempt-001/acceptance.json",
+      "request_digest": "304747df8b390c12e44dc811755c3a5b20af3d65874001f21ca756e0d01b3629",
+      "result": "runs/main-v2/tasks/nrg-l2-z2of8-k4000/attempt-001/result.json",
+      "result_sha256": "d0eea09a2946942ce7d434865621ac6f10323301dd57c941e8182fa65ac05578",
+      "verified": true
+    },
+    "nrg-l2-z2of8-k8000": {
+      "receipt": "runs/main-v2/tasks/nrg-l2-z2of8-k8000/attempt-001/acceptance.json",
+      "request_digest": "4accdfcba5dda3f9a47296efd37079908749efe0103a2aae2b54ef24b77160dc",
+      "result": "runs/main-v2/tasks/nrg-l2-z2of8-k8000/attempt-001/result.json",
+      "result_sha256": "7dde5ae3750c7de86d1826df2c3e305d6914ec78e6ef612b3feef94d431a4860",
+      "verified": true
+    },
+    "nrg-l2-z3of8-k4000": {
+      "receipt": "runs/main-v2/tasks/nrg-l2-z3of8-k4000/attempt-001/acceptance.json",
+      "request_digest": "1885cc7a0f1f0a37c03e120b5a6ce0ef819470fa7459540743e09109965c912e",
+      "result": "runs/main-v2/tasks/nrg-l2-z3of8-k4000/attempt-001/result.json",
+      "result_sha256": "6dea46d4ec26450d87e5a3017292895e29fa0e3667b7514229b33e70cc889230",
+      "verified": true
+    },
+    "nrg-l2-z3of8-k8000": {
+      "receipt": "runs/main-v2/tasks/nrg-l2-z3of8-k8000/attempt-001/acceptance.json",
+      "request_digest": "ca5715c6208bfb4953b3dddb1aedbcce627349394a7a0b8a832204fdae607ea1",
+      "result": "runs/main-v2/tasks/nrg-l2-z3of8-k8000/attempt-001/result.json",
+      "result_sha256": "51b8753e81e25a4b96826f601b6fef51fbdadb367a53f367720556284838c31a",
+      "verified": true
+    },
+    "nrg-l2-z4of8-k4000": {
+      "receipt": "runs/main-v2/tasks/nrg-l2-z4of8-k4000/attempt-001/acceptance.json",
+      "request_digest": "bd92bcf8d3e3a61e3adec1bfb7753f0be543ab5e13666c415a2b3db0cb3429a3",
+      "result": "runs/main-v2/tasks/nrg-l2-z4of8-k4000/attempt-001/result.json",
+      "result_sha256": "253faed259ab9721507990f331c15a04f7a054d734ec77254c211a1bb1ea0b1a",
+      "verified": true
+    },
+    "nrg-l2-z4of8-k8000": {
+      "receipt": "runs/main-v2/tasks/nrg-l2-z4of8-k8000/attempt-001/acceptance.json",
+      "request_digest": "a076ccf28ebab99daef15b71cb56a4e3ec538a012446f8bc882744f5d019dd4a",
+      "result": "runs/main-v2/tasks/nrg-l2-z4of8-k8000/attempt-001/result.json",
+      "result_sha256": "e0487c2198a8a2375bc40dd12335dea97a20fcbbdde68ee794dcf225f0c05be6",
+      "verified": true
+    },
+    "nrg-l2-z5of8-k4000": {
+      "receipt": "runs/main-v2/tasks/nrg-l2-z5of8-k4000/attempt-001/acceptance.json",
+      "request_digest": "32a80245d8b855bd302821de310232e0570e0dcb97ef625887a32f0705562d1b",
+      "result": "runs/main-v2/tasks/nrg-l2-z5of8-k4000/attempt-001/result.json",
+      "result_sha256": "15fed743cd404130bfcfc83edc506c9302daded6929cda99c8c3c3740c24cedf",
+      "verified": true
+    },
+    "nrg-l2-z5of8-k8000": {
+      "receipt": "runs/main-v2/tasks/nrg-l2-z5of8-k8000/attempt-001/acceptance.json",
+      "request_digest": "38ffc3b140d3883d308b4f93a2ea014ebef14bc263f6915f0bafc7018867342b",
+      "result": "runs/main-v2/tasks/nrg-l2-z5of8-k8000/attempt-001/result.json",
+      "result_sha256": "3832cf6b2b6611d2804534cd54f427e324a995ed55e9e9a945b2c06e10e093d1",
+      "verified": true
+    },
+    "nrg-l2-z6of8-k4000": {
+      "receipt": "runs/main-v2/tasks/nrg-l2-z6of8-k4000/attempt-001/acceptance.json",
+      "request_digest": "f6560f34af0a991cbecd54e439dacdbbe0b7b9d7bfa957d59228ffedc5790b2f",
+      "result": "runs/main-v2/tasks/nrg-l2-z6of8-k4000/attempt-001/result.json",
+      "result_sha256": "0a3af20f72ecdf0aec2206e8628c9b6ad422e301b99bb4f6f01f41e7b272d597",
+      "verified": true
+    },
+    "nrg-l2-z6of8-k8000": {
+      "receipt": "runs/main-v2/tasks/nrg-l2-z6of8-k8000/attempt-001/acceptance.json",
+      "request_digest": "ea54950b7e7d118c43920adf25d1d1813bc4d1f9fca0c849e4055808440a3621",
+      "result": "runs/main-v2/tasks/nrg-l2-z6of8-k8000/attempt-001/result.json",
+      "result_sha256": "e64b094f4b7b4d5d0a77cf4bbeee6d0620c008b5b85835cf3de463bfb5702fce",
+      "verified": true
+    },
+    "nrg-l2-z7of8-k4000": {
+      "receipt": "runs/main-v2/tasks/nrg-l2-z7of8-k4000/attempt-001/acceptance.json",
+      "request_digest": "56bf0f7c8057de9caaa3ce9853cac6186061d9b3b4bb1a98ad91fe53e65b8a49",
+      "result": "runs/main-v2/tasks/nrg-l2-z7of8-k4000/attempt-001/result.json",
+      "result_sha256": "04867dc9e32565bc587b8513d0d454fd10dcc7a8553605bc35edb2f73e0e2b79",
+      "verified": true
+    },
+    "nrg-l2-z7of8-k8000": {
+      "receipt": "runs/main-v2/tasks/nrg-l2-z7of8-k8000/attempt-001/acceptance.json",
+      "request_digest": "f972fe27898bc3125501f1aa5013de2f8bcbfdf825d18778582101eb97213f31",
+      "result": "runs/main-v2/tasks/nrg-l2-z7of8-k8000/attempt-001/result.json",
+      "result_sha256": "a24f4e5a11b98490b8d7301916f86bf1fe7f9fb73f31c740acb8ebd5512fa165",
+      "verified": true
+    },
+    "nrg-l2-z8of8-k4000": {
+      "receipt": "runs/main-v2/tasks/nrg-l2-z8of8-k4000/attempt-001/acceptance.json",
+      "request_digest": "409c6e8add4843b5fb1c1df4ef1fc9ba0a6d85e5347e956dde69e4f278bd7dee",
+      "result": "runs/main-v2/tasks/nrg-l2-z8of8-k4000/attempt-001/result.json",
+      "result_sha256": "fb9b5bb7e765ab2ff478690f1bd915bd4e04d4eab8faef29a54d441051288144",
+      "verified": true
+    },
+    "nrg-l2-z8of8-k8000": {
+      "receipt": "runs/main-v2/tasks/nrg-l2-z8of8-k8000/attempt-001/acceptance.json",
+      "request_digest": "3dfd307f670b2f2499ea6c7d2670c35bbcf9d5816698a3d8caaad74c7d54878c",
+      "result": "runs/main-v2/tasks/nrg-l2-z8of8-k8000/attempt-001/result.json",
+      "result_sha256": "85376dfdc6ae1c3e370f0de236230698ee105934cc7dbac08ba25be5d814e480",
+      "verified": true
+    },
+    "nrg-l25-z1of4-k8000": {
+      "receipt": "runs/main-v2/tasks/nrg-l25-z1of4-k8000/attempt-001/acceptance.json",
+      "request_digest": "6d1d61fee2926f6351b724fe3e64dc03f36b7665325f76f4b806e7a2903a3d79",
+      "result": "runs/main-v2/tasks/nrg-l25-z1of4-k8000/attempt-001/result.json",
+      "result_sha256": "0d9f9f9b4fd94add55c5b2a15fd3b714a7620dffa0051510ac015149b89fd9a2",
+      "verified": true
+    },
+    "nrg-l25-z2of4-k8000": {
+      "receipt": "runs/main-v2/tasks/nrg-l25-z2of4-k8000/attempt-001/acceptance.json",
+      "request_digest": "8310b2ae0db65a32ee16c82b2ba88bef6517407d55dcc9b239411c31ff9ab052",
+      "result": "runs/main-v2/tasks/nrg-l25-z2of4-k8000/attempt-001/result.json",
+      "result_sha256": "6223257755a186feb05973eb0b8a31d6eda5514a29be53db59e9d60076f051fc",
+      "verified": true
+    },
+    "nrg-l25-z3of4-k8000": {
+      "receipt": "runs/main-v2/tasks/nrg-l25-z3of4-k8000/attempt-001/acceptance.json",
+      "request_digest": "b286f63e15cca73f737513cabacb369c094f370b66f67557e44d57afc29e3b6e",
+      "result": "runs/main-v2/tasks/nrg-l25-z3of4-k8000/attempt-001/result.json",
+      "result_sha256": "b4f96af95151b3002f1ca3730083f9e7b2d7ce903a95e6311a5712bba7d05f29",
+      "verified": true
+    },
+    "nrg-l25-z4of4-k8000": {
+      "receipt": "runs/main-v2/tasks/nrg-l25-z4of4-k8000/attempt-001/acceptance.json",
+      "request_digest": "2054aa7677bc540f545a58dedea5857147087f62250739ceb621311f85d83cc2",
+      "result": "runs/main-v2/tasks/nrg-l25-z4of4-k8000/attempt-001/result.json",
+      "result_sha256": "1f1137f747b54a6ebf300db345162dbe0f5ca83fc958b8cd591c29c4257048fa",
+      "verified": true
+    },
+    "surrogate24-w200-q6": {
+      "receipt": "runs/main-v2/tasks/surrogate24-w200-q6/attempt-001/acceptance.json",
+      "request_digest": "b793f4353205ada838fce8f231287cf61144a35e39cd9ffa02be62a537d6b140",
+      "result": "runs/main-v2/tasks/surrogate24-w200-q6/attempt-001/result.json",
+      "result_sha256": "3269758a4a4d9b81ad612a481d76ac02a4cc699dd8b6d81350e6fc0b898c6380",
+      "verified": true
+    },
+    "surrogate24-w400-q6": {
+      "receipt": "runs/main-v2/tasks/surrogate24-w400-q6/attempt-001/acceptance.json",
+      "request_digest": "9747c19ee927ed2091173afec54ccf80a0f852d3ccd7e62186b3317c11dfc665",
+      "result": "runs/main-v2/tasks/surrogate24-w400-q6/attempt-001/result.json",
+      "result_sha256": "8ae248b6952c1329be70674c5c840456ba3fdcd2572ffbebdaea514e18e4a14c",
+      "verified": true
+    }
+  },
+  "original_runner_files_repository_relative": {
+    "NRG_comparisons/test1/control.py": "d269970bf6da6db9689c7eb27b07e41a01ee616765677ac2c2233b3be46035ee",
+    "NRG_comparisons/test1/nrg.py": "93a2c954283a79c51313695bc5a1e73624e5507789cebe5bd110dfcf37835654",
+    "NRG_comparisons/test1/run.py": "da3a70f31c12f7fe496a2692d9e42f93df9f006f83a350a255affce8ca680bd4",
+    "NRG_comparisons/test2/input/physical.json": "8b9af17c7fd90b141a546fc77a00d1195411f5d465a60a6e21cf8002c9528fcb",
+    "NRG_comparisons/test2/run.py": "4b80aae4b93ac57445a2d67615f5737326b3550ea30647927c656a42dd0d380d",
+    "NRG_comparisons/test2/supervisor.py": "57fd6ba627d261b7913107f3428dc43f2a4d599aea49f514704823bbdec2d187",
+    "NRG_comparisons/test2/worker.py": "8baec58eceabe66d1b866757ad82cf079e8efa3cb8ac5b0ef7c20c6346b33cfc"
+  },
+  "original_solver": {
+    "files": {
+      "__init__.py": "4cae2501ee073def232cebacabbd1090cb2448f424f68f3db79cc7be57046af8",
+      "api.py": "a3a5b3a80ce155617899b3360a9d7dc36df4b4366ced7160ea00708642710e5a",
+      "cli.py": "d860f0b9442cf954dc38abccca1ebd6488bcf129bb1309251e8b71aaebb9e056",
+      "common/__init__.py": "23ce4f4c548dd6660ef73703de3fbb2f8e285472363a3bdea5652a9c0fed9081",
+      "common/algebra.py": "072659f71e4b222578a74f472fbdbfe03ee5816e76a9a3059578327bbfb81962",
+      "common/baths.py": "79775cc96c4c5329e20949447a6ae90177526291bcbaae80596a9ec678e6e6b5",
+      "common/io.py": "92f68161a334b5d3a1b49fa46617330301311dd4a961c471cb4140fb5121f693",
+      "common/models.py": "9ad064e4f43644913a3261ad686a857d9084f5422cea497b8b3020a64bb8e9eb",
+      "common/problem.py": "6a74801112898d76b35213153cc9318befb1d98be99a0d639800efa3cdf98a47",
+      "compat/qpsolver/__init__.py": "1e8785ea1c09ee48c89b1d64adb9d68053bc7cf2c7438a1aa64bba6fe149a875",
+      "compat/qpsolver/cli.py": "272fbf82340c9a59e0efd74e513562f24af20a5d543fd0f13b58bfac00bcd0a9",
+      "compat/qpsolver/nrg.py": "6162ed163e5afa1bcacb1f0afabc94df0fe2fcce7e95aa879c40c1daa5fa27e0",
+      "dmrg_solver/__init__.py": "c875c9bd86be62c86e9555286a1088310886969178c13d4a700fe0b89b077bd6",
+      "dmrg_solver/convergence.py": "29ee594c6d41268d7cb51d3e3dd12e302a0e38bddb884d78a7de64f6d609d32e",
+      "dmrg_solver/io.py": "500ad887d8caa46e5f9dd402fb9d83c646353ab39f5dbefcd9108b9574468221",
+      "dmrg_solver/legacy.py": "c2c98b124968c575a66616930cf79b8a75f731dbd6a5c469801db3c423dc4a6b",
+      "dmrg_solver/mpo.py": "5492d2f4e80db0e71f62f5884cb26206cef5944efd6f4f60bc55a4e2d44a9790",
+      "dmrg_solver/solver.py": "ad1b8e3345d03261cce25751b194e8fb0caa6d26ce48539534277c18734065d5",
+      "qp_solver/__init__.py": "508b0b0ce58511cde099aa639fcaf975edd523bfa8aaec073cec42338634f39c",
+      "qp_solver/_core.cpython-313-x86_64-linux-gnu.so": "bc4af58840a197a65d509493af7433e3cd75e0cf241c4696be0a663d6ac8e1f0",
+      "qp_solver/basis.py": "068727de5d1b960149d4e13810ca630da2e1c729ef5056eeac01d5ab623146ed",
+      "qp_solver/cli.py": "8a512a4f1c07aec98b015a6decd82282df9d1283367d12807f4e8e781edb0d4b",
+      "qp_solver/io.py": "4c208f7a597d6a32dfdde01cd7b0973b5ecc84b19fa32daddeddcf0a65f2e52e",
+      "qp_solver/nrg.py": "c71b57b9c3eeb1499a137955998a3e12a4370f710b501a928cca9d02dc51b92d",
+      "qp_solver/reference.py": "437686251373649a225e79f5ce30458c17006a2568ba260d8ead8c4260d9b650",
+      "qp_solver/solver.py": "232ec0570219c295656de2d60335631ee3de6b6342174c74146dd606cdf895a6"
+    },
+    "sha256": "23b14f09b12ea9b022751ac56618181d3069fb1828064919b7c7f496622c43ff",
+    "version": "0.2.0"
+  },
+  "published_file_sha256": {
+    "input/baths.json": "93734fff19d7e659b6e61da123e56d215117e03069ce27e46befe1f93ff66f40",
+    "input/physical.json": "2400e9c937a58fce1e2aaef5db21d100d8a8ce480143517e590d832ddd61f38c",
+    "manual_run/reference.json": "dc0db018ae96c07025065b78806bb57c16758dfe734d0a532caa7fcc63a56ef5",
+    "output/comparison.svg": "bdd5ab1bd9552ecc49bca01d9fa888118c167f49ff458b853a7c8238acf61442",
+    "output/comparisons.csv": "14587f760b953feb269ba4f460d0f98752630f54b134efa97068ff54f8f5036f",
+    "output/convergence.svg": "59dc89530d20c5bb072cd35bf707ece3794ccf9f4f443c825e789085a8f9f757",
+    "output/observables.csv": "f0d3899cb1772d51b9ec48ab4b8117f2073456797f0b79b9e28004bd86e3110e",
+    "output/results.json": "1753bd313b75cc125007e0ff30c90c7105587867522a59a527f81251a1089873"
+  },
+  "recorded_original_file_sha256": {
+    "manual_run/reference.json": "babefe2ebed52845d7e6f250483da9a3423a490824651c82ae08c5ca51a4f413",
+    "reference/provenance.json": "4a800bccdb0a753d5995946d8e43a598088d744c67f78e224d2202da5979308b"
+  },
+  "recovery": {
+    "artifact_hashes_verified": {
+      "DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "annotated.dat": "9f930a191c820f6502679c11c95ac746da4026af47f5b0813c103d293295dbca",
+      "data": "c199e0ee525c083f90e5d00ec419c12768c35fc77ae984ce61123edf388c76d3",
+      "launch.json": "97d3fcc7e90a530b4488ddd12bc99fbb33988e2e6802f8735a53428ab5d39a46",
+      "nrg.log": "29581e7eb4a948438dcca2f5f94133cadb54879d3e9ff786f751c141cd105685",
+      "nrginit.log": "3dc38d11b1b501d3e8e15370541e5c5d638b0ab4d9acca305a5ff8a2e2d429e0",
+      "param": "1d8735382ce8e4386ca089887ce58594eec177340b66a14c08f8e9bac660e75d",
+      "raw.h5": "d025c11ac6244222a2595b4d071eb3121922bea8884c64444c11fbcc8b962bba",
+      "request.json": "ca29f668a0459bda2d29e827538e528493de687cb7c3946309ff9c9ec69021f1",
+      "worker.log": "05db6313259a09755f36181ee4e40d9ef84d4cd926ecaf2b1911423c5e6d9f5b"
+    },
+    "disclosure": "The original worker failed after the NRG flow completed. The later continuation postprocessed the existing raw data, did not rerun the flow, and did not invent successful monitoring. This import only checks that recovered record and evidence.",
+    "monitored_seconds": null,
+    "receipt": "runs/completion-v1/recovery-acceptance.json",
+    "receipt_verified": true,
+    "recovered_result": "runs/completion-v1/recovered-nrg.json",
+    "source": "runs/main-v2/tasks/nrg-l18-z4of4-k8000/attempt-001",
+    "worker_exit": "failed after NRG completed"
+  },
+  "seed_evidence": "Original chi256 branches and preserved chi512 singlet have three recorded trials. Later branches each use one warm trial, not new independent-seed tests. Root separation flags and exact residual-array lengths are preserved.",
+  "source_context": "Relative file identifiers and hashes identify archived numerical sources; the original archive is not a runtime dependency.",
+  "source_file_sha256": {
+    "completion.py": "400680b09e447e3ab75cf29979d2928ec4c406dc3f45744a78dbd91aa9cbe23b",
+    "completion_worker.py": "ed66affbdf5dc917474516a41e2a55b242faff85b9af81690542564e31eff3a6",
+    "input/physical.json": "8b9af17c7fd90b141a546fc77a00d1195411f5d465a60a6e21cf8002c9528fcb",
+    "output/results.json": "e8123d987e95dcab1b108669fb0e6e800ef98368e78c9e592430ca865326e58e",
+    "runs/completion-v1/manifest.json": "d845794008eecc7b37e3c9a463c88232f02a0a41ea0ad6bf3d58bbbfebe6b9a8",
+    "runs/completion-v1/recovered-nrg.json": "5a70db6504faf6fba2e8ffb3a3bbeb3147dca6f96351417d0226fdd5ed8474f7",
+    "runs/completion-v1/recovery-acceptance.json": "ed1b3d097fe52a0eedfaee4c2eb2106c717ee3340d1859ac435be9024419d6a6",
+    "runs/completion-v1/tasks/cosh16-doublet-chi0512/attempt-001/acceptance.json": "aa662db07e54fa22a432d9b6e460a085e24c21e3b4bdb2dde1ca5d2c02545eaa",
+    "runs/completion-v1/tasks/cosh16-doublet-chi0512/attempt-001/request.json": "28b3da6bd4385adf206d771a697c899c79636d028900d104e455feaabf36d6e0",
+    "runs/completion-v1/tasks/cosh16-doublet-chi0512/attempt-001/result.json": "8c66ea33cb2a10e389f2fb0abac1f9cdb13a012323c1af86f37e119efbb09766",
+    "runs/completion-v1/tasks/cosh16-doublet-chi0512/attempt-001/state.json": "9940338e4d24456c52ee1ad1511306c4f6d49ad5ebd7e06d20263fbe2f0caba2",
+    "runs/completion-v1/tasks/cosh16-doublet-chi0512/attempt-001/state.zpxd0clq.mps.h5": "c538ba8b4539a658670daf468f2fb2e61eef9459b4d634985ebaa9587a6be1a6",
+    "runs/completion-v1/tasks/cosh16-doublet-chi0768/attempt-001/acceptance.json": "4228152d67344d62e077bbc079310524d451e99870c7cba896d9720b3de779a6",
+    "runs/completion-v1/tasks/cosh16-doublet-chi0768/attempt-001/request.json": "0379ae430d51c8f21fa193e369004db8b02d0e2b7b26157e15fa376a60796e16",
+    "runs/completion-v1/tasks/cosh16-doublet-chi0768/attempt-001/result.json": "0ba67e2560f1a6f9532cce6531c930c3b3cd659df775874e4981a611911f8241",
+    "runs/completion-v1/tasks/cosh16-doublet-chi0768/attempt-001/state.json": "16b6681bb9d95fc235ffe03fb08b659b446938c82743b9da5d6ff3f5146047ed",
+    "runs/completion-v1/tasks/cosh16-doublet-chi0768/attempt-001/state.kqlnip2f.mps.h5": "0fda02956faa0449b0fe7ee112f8749eba2925178606d4b0c45e6cac282a76ba",
+    "runs/completion-v1/tasks/cosh16-singlet-chi0768/attempt-001/acceptance.json": "6774e52939574878975eb13adc863e2649b4d66621197af12273704f3a09f24e",
+    "runs/completion-v1/tasks/cosh16-singlet-chi0768/attempt-001/request.json": "02c3b042321d20fb64e5a813455b16a9d5a0077604fbaa6f37071a7c84a44995",
+    "runs/completion-v1/tasks/cosh16-singlet-chi0768/attempt-001/result.json": "afee125aa29bdb188832e9eab179574260e9b870c9b845e55481dd78a2dbec5c",
+    "runs/completion-v1/tasks/cosh16-singlet-chi0768/attempt-001/state.json": "503d753eec7eebd9a0b583d70cef98b838590c2478bb67da64a5e4028c78bb52",
+    "runs/completion-v1/tasks/cosh16-singlet-chi0768/attempt-001/state.xt4j_vz1.mps.h5": "c515f84f29779005fbfc6af737ac65cfec0f97062d0a93d9190a923964e30c33",
+    "runs/completion-v1/tasks/cosh16-singlet-chi1024/attempt-001/acceptance.json": "2eac653d5daea47c4b42a529c6098ac72aefa79a3b87e6ee7fbbf7604d779b1e",
+    "runs/completion-v1/tasks/cosh16-singlet-chi1024/attempt-001/request.json": "79f4e9aaeffe029a9b0fb84b69c131434f2a910c66331a2df971960ecb8b537d",
+    "runs/completion-v1/tasks/cosh16-singlet-chi1024/attempt-001/result.json": "eb9052c61655e23c6d07f99dd2077187b2e7b30477a8894bc4c44d6a6fe0e0e3",
+    "runs/completion-v1/tasks/cosh16-singlet-chi1024/attempt-001/state.json": "80f044c52fd3220a071b1ab80398ff29fe3359d6648f46beb04a901334f21208",
+    "runs/completion-v1/tasks/cosh16-singlet-chi1024/attempt-001/state.xi6xzh46.mps.h5": "5cd8a9951afbac55dd9b3c4ee30a2e458962820f99189fc5ca79778199d6097f",
+    "runs/completion-v1/tasks/nrg-l25-z1of4-k4000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/completion-v1/tasks/nrg-l25-z1of4-k4000/attempt-001/acceptance.json": "b64b8d69808e2ec5af38e9f58c66ae652be7a0cbb5387c1eeaab0b9fc275aebf",
+    "runs/completion-v1/tasks/nrg-l25-z1of4-k4000/attempt-001/data": "1ed0d78acf6e94d9ef0b9bd442cbdaa1997d1de7bfb8af8c4a0c6010bc3b1808",
+    "runs/completion-v1/tasks/nrg-l25-z1of4-k4000/attempt-001/nrg.log": "b12d5868096684cd70392e48f29ff7e777c6ef20c4a9be1ace831b4e138ce2e3",
+    "runs/completion-v1/tasks/nrg-l25-z1of4-k4000/attempt-001/nrginit.log": "002d1c69f71ef2bd634608c82551cba69c86d90e5f80bd7e5ba4430bd5703191",
+    "runs/completion-v1/tasks/nrg-l25-z1of4-k4000/attempt-001/param": "8ebb2c4aa58bba936dce8a02ecf4df3f1550ee7d646926464d2fa2a43795932b",
+    "runs/completion-v1/tasks/nrg-l25-z1of4-k4000/attempt-001/raw.h5": "641d20752f780d048299abeddb6fb71503d32ac1e2d46cf86b7b6398cc7c5ad0",
+    "runs/completion-v1/tasks/nrg-l25-z1of4-k4000/attempt-001/request.json": "f6e10fd11b999864e27d87d3d91e071f28bc93c96c35f3e9ec2e516718c59ccb",
+    "runs/completion-v1/tasks/nrg-l25-z1of4-k4000/attempt-001/result.json": "8b46fa44387dd3ccac0cbe64d943f54577b16c4ec1a5587f16e275c272ec99a6",
+    "runs/completion-v1/tasks/nrg-l25-z2of4-k4000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/completion-v1/tasks/nrg-l25-z2of4-k4000/attempt-001/acceptance.json": "f939071b9d07e655aaa21b66a7515143f754237512b1403a43f2732e1477e675",
+    "runs/completion-v1/tasks/nrg-l25-z2of4-k4000/attempt-001/data": "4403903c226ebb620f0cbddf936aa3eab34e4daed2afc3f9575bdeacd6604cc4",
+    "runs/completion-v1/tasks/nrg-l25-z2of4-k4000/attempt-001/nrg.log": "54595c25231172e79c0490d4eb2990b055cd1e9979f9d3a28bda99d11c6d20ab",
+    "runs/completion-v1/tasks/nrg-l25-z2of4-k4000/attempt-001/nrginit.log": "08cbbca0a65e64d5b58ef7f2d72dfcfdfe09ac8687197ae959accf9f42b312af",
+    "runs/completion-v1/tasks/nrg-l25-z2of4-k4000/attempt-001/param": "5bc375239ebacd4e0a04e7c8fc686318143a55065af85cc0e93d2f398793f27d",
+    "runs/completion-v1/tasks/nrg-l25-z2of4-k4000/attempt-001/raw.h5": "3b0d7a4698406b47cbf2f166cde843630f1f04a27771de2deae2302d37a2ad2b",
+    "runs/completion-v1/tasks/nrg-l25-z2of4-k4000/attempt-001/request.json": "b2693010a5af386255a001348121492ac23ffa8b61d5ef7e0cbd3616ce22e8bc",
+    "runs/completion-v1/tasks/nrg-l25-z2of4-k4000/attempt-001/result.json": "f49a7fca56e88a85dceaf5b5d86ea2b2d1da51565300390136de8699c3f61f74",
+    "runs/completion-v1/tasks/nrg-l25-z3of4-k4000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/completion-v1/tasks/nrg-l25-z3of4-k4000/attempt-001/acceptance.json": "28839f9c836601c93217710535d0113980b937b72b5e369ed82444176ed8820b",
+    "runs/completion-v1/tasks/nrg-l25-z3of4-k4000/attempt-001/data": "0c374ecd166252643b6d31c6f97d61b7aaf6ec307b4fc6f3b0060d351032b216",
+    "runs/completion-v1/tasks/nrg-l25-z3of4-k4000/attempt-001/nrg.log": "62e3bbddd6ee7b8ee6d9a1276dd1a4de9dfe4d1ee84d34d4e80966e02d0bc9b9",
+    "runs/completion-v1/tasks/nrg-l25-z3of4-k4000/attempt-001/nrginit.log": "0951abfa779c173bc9a8179ba9c6ee17b1d24740d49984d884b1bbd0f4df091a",
+    "runs/completion-v1/tasks/nrg-l25-z3of4-k4000/attempt-001/param": "8837f58cae40d91ac06b791f0d77af7f4cc34d26e48cd80bf3e8c16f4cbffefc",
+    "runs/completion-v1/tasks/nrg-l25-z3of4-k4000/attempt-001/raw.h5": "de210ce6e415f2b1d9962ac36c6ab532c7632c7788494c60999b3f3427979fc0",
+    "runs/completion-v1/tasks/nrg-l25-z3of4-k4000/attempt-001/request.json": "eba32e1c0c571a2c869e20deeaa0f3b8ee63a1e5ce50f2b127e417e24b0f32e2",
+    "runs/completion-v1/tasks/nrg-l25-z3of4-k4000/attempt-001/result.json": "18f2f6eb6f695da991c6dce5139280c2104905236eb691e383ee99b86cb43b67",
+    "runs/completion-v1/tasks/nrg-l25-z4of4-k4000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/completion-v1/tasks/nrg-l25-z4of4-k4000/attempt-001/acceptance.json": "ebd62fdb9aca684c7a691e4c44b5b3a24130896b32e9be3095bff368d7bb79c3",
+    "runs/completion-v1/tasks/nrg-l25-z4of4-k4000/attempt-001/data": "1920a428da010b1387a517e0b775d9e8a83622eab1e349ca5a060cc718e98ea8",
+    "runs/completion-v1/tasks/nrg-l25-z4of4-k4000/attempt-001/nrg.log": "3146d60658b8c6230f9d223e6f9936496ecfc9d137b2ffc115c6f23f9a9ebc04",
+    "runs/completion-v1/tasks/nrg-l25-z4of4-k4000/attempt-001/nrginit.log": "d35ddb9f642d7d7f90a08064726e5649156e2c36fc24085f7f20c9b9041e5f88",
+    "runs/completion-v1/tasks/nrg-l25-z4of4-k4000/attempt-001/param": "98809f0bb62e50365c4ab84a959da901aef878c8de6b438e57e44a0356bd8ced",
+    "runs/completion-v1/tasks/nrg-l25-z4of4-k4000/attempt-001/raw.h5": "ab737039e07c59fd28569d70e14417300f58b401d38d598ef4c6785429c65237",
+    "runs/completion-v1/tasks/nrg-l25-z4of4-k4000/attempt-001/request.json": "aba1ee55bb818823f021b0c074a06aeef4b0d68151a53e77c1476118cf302a6c",
+    "runs/completion-v1/tasks/nrg-l25-z4of4-k4000/attempt-001/result.json": "e3d91e8ec71c97a296b78cc069801d73209f0903ace0d280bb9d2c4647df6e4e",
+    "runs/main-v2/baths.json": "93734fff19d7e659b6e61da123e56d215117e03069ce27e46befe1f93ff66f40",
+    "runs/main-v2/manifest.json": "6736f005d57748c92ab4c6ca1671d23fd6f5fc2d3fbfff280f3e1a3cefc721e8",
+    "runs/main-v2/tasks/control-atomic/attempt-001/acceptance.json": "fb9e8812e2b005d2f320ebd5e2e256acece55cc30e0fa8326acaf29d9dec302a",
+    "runs/main-v2/tasks/control-atomic/attempt-001/request.json": "7568540f44d7a8b1eefe18af171de381d9661ebc79939b54be76c4c096a97b84",
+    "runs/main-v2/tasks/control-atomic/attempt-001/result.json": "d17a7feba529f820bc3c6d283566ad801633d283213c20b16fe4a246d591e5c2",
+    "runs/main-v2/tasks/control-cosh8-dmrg/attempt-001/acceptance.json": "258366ae53c854d934a65ff0c0debeabb4a7148ebc1b7eb1f323140db73e6084",
+    "runs/main-v2/tasks/control-cosh8-dmrg/attempt-001/doublet-state.json": "222b9e993c1e3fdf8c29d8805df02dbc23543c938a48136f1b19fdab005a515b",
+    "runs/main-v2/tasks/control-cosh8-dmrg/attempt-001/doublet-state.yr5s586c.mps.h5": "1f6ff3a94be8f6999d0da7012e9148c6264139e0c6a0f65f18c94aab5f8389eb",
+    "runs/main-v2/tasks/control-cosh8-dmrg/attempt-001/request.json": "e7ba44a5e01e992c4056178c32c89f7eec5bd70e3f5dc08935ad8ba824954be2",
+    "runs/main-v2/tasks/control-cosh8-dmrg/attempt-001/result.json": "4275f38eb120af155631ee4255a9a31a6a20a86ac4972159aad8d4297885e62d",
+    "runs/main-v2/tasks/control-cosh8-dmrg/attempt-001/singlet-state.g5gxwu17.mps.h5": "8f3c6ccbe86dbc298f2179ba3e9b849b0a52116f3c41c95aae233d94080c5a7a",
+    "runs/main-v2/tasks/control-cosh8-dmrg/attempt-001/singlet-state.json": "70965c4cd9466642ae2a1ef08924737b7c6fe34d28c8b8358f6f403eaf2d8630",
+    "runs/main-v2/tasks/control-cosh8-qp/attempt-001/acceptance.json": "f677508ea2643958492755c5ee8972e8d75999897c42886e4f096e04b6d452ea",
+    "runs/main-v2/tasks/control-cosh8-qp/attempt-001/request.json": "90cb31e27ed95fc9cf043275ad21d90b25753a5fa4eb350e9636fd9193764993",
+    "runs/main-v2/tasks/control-cosh8-qp/attempt-001/result.json": "b37404e2b89d107c67907461cbd9a799b35d6e41df79fcdc5654994b602ebe4c",
+    "runs/main-v2/tasks/control-dmrg/attempt-001/acceptance.json": "8d0b79472e40316e998f4b6fe26ebaf80c55372d3323db792dc74ec9582ebb18",
+    "runs/main-v2/tasks/control-dmrg/attempt-001/doublet-state.86ls25i2.mps.h5": "0254cffe44b31e3814f79f058d1655590d8979814b3651fbf9311add3e0d0973",
+    "runs/main-v2/tasks/control-dmrg/attempt-001/doublet-state.json": "5980c44ff01616c22e7d74f83289001b4e9495da380b27f2bc7e1a2ea833fe76",
+    "runs/main-v2/tasks/control-dmrg/attempt-001/request.json": "b7f62acecddd0e4f1b2fc8aeb989b699ec370f0cf11914f5eb573402794ee0c2",
+    "runs/main-v2/tasks/control-dmrg/attempt-001/result.json": "40a5086903c07bd9e63a291f0e92c92468ed34fde65ca725ed406b874aed165f",
+    "runs/main-v2/tasks/control-dmrg/attempt-001/singlet-state.json": "e406fca1fb82c63b59aa97a04b8d1be43f2cbb93fb69cf47a728912dcdf0990d",
+    "runs/main-v2/tasks/control-dmrg/attempt-001/singlet-state.trxjppxd.mps.h5": "6a52a727abe3b74e3540912fcedf2d2466ac2ad0791cd3d3656c1431c0020558",
+    "runs/main-v2/tasks/control-ed/attempt-001/acceptance.json": "27abba3f1f5df5a0535f69edc3bf646b92d704fe8dc2e3fc423d3f51b124d42c",
+    "runs/main-v2/tasks/control-ed/attempt-001/request.json": "cfce031de93ae0aee4d880af06d88a9e2b38d10c7eb81a36cca6208ddf0b6d9e",
+    "runs/main-v2/tasks/control-ed/attempt-001/result.json": "2031e30c19811a3f3bfc3981aba1df9ecd6ac0519ccad4c639ed19eb433d5bfc",
+    "runs/main-v2/tasks/control-nrg-bandwidth-clean/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/control-nrg-bandwidth-clean/attempt-001/acceptance.json": "5ebb90699ff9c5e71d9d5e3dd6da92ca1ac711748a676faed38d0d508f1ebec6",
+    "runs/main-v2/tasks/control-nrg-bandwidth-clean/attempt-001/data": "fd0a97aa35f21a8d876cc4aead8ad18605533b88735b0091436067d2542d056d",
+    "runs/main-v2/tasks/control-nrg-bandwidth-clean/attempt-001/nrg.log": "0773193028d1c460878f3ba73ee7835dceaa20b7662241348c1a4236e353e9b4",
+    "runs/main-v2/tasks/control-nrg-bandwidth-clean/attempt-001/nrginit.log": "041c6e1eea8c84953dd6c1a7e741dc8bd536f5d7804f609dd3c2219850935146",
+    "runs/main-v2/tasks/control-nrg-bandwidth-clean/attempt-001/param": "b4b354d80c1df2da7cbf07ccf1be47e21d76f47d01f5a02685ba8bf5247b9b2a",
+    "runs/main-v2/tasks/control-nrg-bandwidth-clean/attempt-001/raw.h5": "599535b030f97bf920c4960b38e5e35cfa2a0ed03e147664de2b785595103a8a",
+    "runs/main-v2/tasks/control-nrg-bandwidth-clean/attempt-001/request.json": "4a7a64f5ec67151053459505a93d3ca50193cd6f0b86210df80bb0ecaf1fb3ea",
+    "runs/main-v2/tasks/control-nrg-bandwidth-clean/attempt-001/result.json": "8ba86bcfa784865b8030373976772813729ae106420032c5ca0f78866b76175e",
+    "runs/main-v2/tasks/control-nrg-bandwidth-siam/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/control-nrg-bandwidth-siam/attempt-001/acceptance.json": "29d0ab0b9ffd8e4ff4f88e47cbbe7609b59d7c5922b6834ca2c886eaba9c9f95",
+    "runs/main-v2/tasks/control-nrg-bandwidth-siam/attempt-001/data": "38d04bfb3d49077af2e811ae81c36e867a9593ebf824de39e3d46c4290932256",
+    "runs/main-v2/tasks/control-nrg-bandwidth-siam/attempt-001/nrg.log": "50026726c1ed20fbf184bfdcd761570b3cce6fa2d8525febf2da331c8260e703",
+    "runs/main-v2/tasks/control-nrg-bandwidth-siam/attempt-001/nrginit.log": "e28318492aea3a5a7c5087eb806648be21f6577473acc6cafc82574b3db0b195",
+    "runs/main-v2/tasks/control-nrg-bandwidth-siam/attempt-001/param": "906d114fae7141f4ec528ac6a0727225e0394d23b6dbe9301ea4204923c393a3",
+    "runs/main-v2/tasks/control-nrg-bandwidth-siam/attempt-001/raw.h5": "52d2b4dd84c1d894eba8e81a63d679440df1a1a674bd066ace46cdbe0ed25220",
+    "runs/main-v2/tasks/control-nrg-bandwidth-siam/attempt-001/request.json": "1f2f429df9099dd422103cf0879236ba4d0f7cf84f01663d4e9faa10469ffb10",
+    "runs/main-v2/tasks/control-nrg-bandwidth-siam/attempt-001/result.json": "ba7d7d3d63f6c33608bd218be9caf14c32d41cc67782f4232d60010a03077381",
+    "runs/main-v2/tasks/control-nrg-gap-clean/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/control-nrg-gap-clean/attempt-001/acceptance.json": "ea62539534ea27545863b0207ebeb22c3a6fd306d2a96d2976b81bf97805265d",
+    "runs/main-v2/tasks/control-nrg-gap-clean/attempt-001/data": "c627cb3f438e4a059ab6fd1ece09c8141f0b92c4da12df2b754eee8dc8231ac5",
+    "runs/main-v2/tasks/control-nrg-gap-clean/attempt-001/nrg.log": "82e5f4ec13fe4984f7408e8894f879fb5020446a0522076b280e7a777e814510",
+    "runs/main-v2/tasks/control-nrg-gap-clean/attempt-001/nrginit.log": "21dde3e4bb2bb9ec0e4958263a36bd13b2305020289491d0e7a347c54f6dbf92",
+    "runs/main-v2/tasks/control-nrg-gap-clean/attempt-001/param": "07defc8c95997805ef02a67adfa48110c723fe0d7c41a819a310eedde2110b14",
+    "runs/main-v2/tasks/control-nrg-gap-clean/attempt-001/raw.h5": "b3030e686bcb7aa1479737735920edc7f10711b39df3b919cad94ade94563533",
+    "runs/main-v2/tasks/control-nrg-gap-clean/attempt-001/request.json": "f30ac1b2a71019e7d6dc7d4011e50b2dd6fbdddabce760396d9415c3c320d682",
+    "runs/main-v2/tasks/control-nrg-gap-clean/attempt-001/result.json": "2db0b4bd5a786b94784f41cbc1b1217dd21e63b9dec435e424a86edf1d541b93",
+    "runs/main-v2/tasks/control-nrg-gap-siam/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/control-nrg-gap-siam/attempt-001/acceptance.json": "b797230d938bde75dc28448cbe8d20dbba0bf8f0ecff53e1569bc42054353116",
+    "runs/main-v2/tasks/control-nrg-gap-siam/attempt-001/data": "f51628a281b689a1f4aea7cd001d28942f97db3551e2cff09b89b86363f44496",
+    "runs/main-v2/tasks/control-nrg-gap-siam/attempt-001/nrg.log": "c93a8bd21fc31ef6fd8898937469f32d8bd2372eb6805c30bece69d6291bcea6",
+    "runs/main-v2/tasks/control-nrg-gap-siam/attempt-001/nrginit.log": "be67e887980989fc8ffae8487b3ca8e5fe2966e7983f1d5e229a99cfa58f2946",
+    "runs/main-v2/tasks/control-nrg-gap-siam/attempt-001/param": "3ed8f5d9d71f9849318c25dfc8380c21ed5999a2ee4101ca04319c2b58b414a6",
+    "runs/main-v2/tasks/control-nrg-gap-siam/attempt-001/raw.h5": "61d93f55229c25a1f3080a59a332dc5a20ea405bb1402874180922764be60ad0",
+    "runs/main-v2/tasks/control-nrg-gap-siam/attempt-001/request.json": "d68352e7614c59a4feba079a500f9655f87b09ef97b12440d17cd383c28b1524",
+    "runs/main-v2/tasks/control-nrg-gap-siam/attempt-001/result.json": "735b61843ec046ebd1d2d4df664c88b8b5309ca56e19735e91de1123b377ba73",
+    "runs/main-v2/tasks/control-ph/attempt-001/acceptance.json": "d07cd71997d80be9d4c8e2e2d86a51b707e481663e224000f5134ece3d8f59b3",
+    "runs/main-v2/tasks/control-ph/attempt-001/request.json": "905d072bb6c71849ce17cca6dc37ee2c87bc25bbf382ebab46f5767084c54afc",
+    "runs/main-v2/tasks/control-ph/attempt-001/result.json": "c4f28fe849bb4ed305afc8fa710b715c616f53434a1029cb6c7e9ef08b558798",
+    "runs/main-v2/tasks/control-qp/attempt-001/acceptance.json": "3079d52bcb5ed80718d05225cb51c233d27ee8f85f1f6ecd2b5e3d634bc7babf",
+    "runs/main-v2/tasks/control-qp/attempt-001/request.json": "5adb5e89021e9ab6e96635ffbf5549a4847e4ef0ad272a4630892a9116807e78",
+    "runs/main-v2/tasks/control-qp/attempt-001/result.json": "6f434883900d9bcb4da506932a1d6e3c6e157ba7b3aa3e5c5af370d09993c554",
+    "runs/main-v2/tasks/cosh12-q6/attempt-001/acceptance.json": "e0d207eeba172ef9ecd85838412235d6b84c03de8f80b5f9e17145b33e50714b",
+    "runs/main-v2/tasks/cosh12-q6/attempt-001/request.json": "09a1edeb97f431431dd8c9dfd42249e91b51123251eba5d495ac453b28391e23",
+    "runs/main-v2/tasks/cosh12-q6/attempt-001/result.json": "c6328fa572931eb44644c52afb4b72272db0833088f5a21c6840f0c320e72ae0",
+    "runs/main-v2/tasks/cosh12-q7/attempt-001/acceptance.json": "091d86fe8e75c33bb3da8010258559f28d73ea7b6503d9702a8b7823f3bbad6d",
+    "runs/main-v2/tasks/cosh12-q7/attempt-001/request.json": "6dd7e89cbeaf035ab23be8b010db5338b82ee4f110f7b486c41640bd2456c35a",
+    "runs/main-v2/tasks/cosh12-q7/attempt-001/result.json": "3520e0de681825be45df34a3d78e92f309f9090193646dfd28e55a76fda2bbae",
+    "runs/main-v2/tasks/cosh12-q8/attempt-001/acceptance.json": "9dedd932d54d571b0baf4eb19b8a3627f21e055b13e59678e5c9b70f607f7c5d",
+    "runs/main-v2/tasks/cosh12-q8/attempt-001/request.json": "45b378967cf0ee36627f3f06e29cff426e9cfd577e8a7e03defabc0e11260d00",
+    "runs/main-v2/tasks/cosh12-q8/attempt-001/result.json": "d10f2bcac9bd02d68e8de65722d33c763551a76f8b62f33f1372e09f48d11bb7",
+    "runs/main-v2/tasks/cosh16-chi256/attempt-001/acceptance.json": "8881ce51e408dc0488ccce6634454d36d8147f1b8e9354c3ea492ad5cb0fb9d6",
+    "runs/main-v2/tasks/cosh16-chi256/attempt-001/doublet-state.dblx5nz9.mps.h5": "b1a4e49eb2342fa2ae6b5a302d7ff1ae2a65d5158e51f39cf7c37b020c25cd5e",
+    "runs/main-v2/tasks/cosh16-chi256/attempt-001/doublet-state.json": "77cf4e5e98d83bdaf69c89ea4b62f72f7f84679489cee1abe6834ddafcbc8212",
+    "runs/main-v2/tasks/cosh16-chi256/attempt-001/request.json": "af55ddaf5bdefd19b34955422b292655351d52186c6dc0f0942395e7125e5e44",
+    "runs/main-v2/tasks/cosh16-chi256/attempt-001/result.json": "0383df3b77a4ef371b7a447c33eec9ab28637292e1757d92252b5325696c2032",
+    "runs/main-v2/tasks/cosh16-chi256/attempt-001/singlet-state.dpamf2g2.mps.h5": "42b86b0d9a4b63721b12a10ba8aca30ebff944ac1f9f7fa75706c6d63dc388e1",
+    "runs/main-v2/tasks/cosh16-chi256/attempt-001/singlet-state.json": "380a684a3412d835401c4a0c94ef84d9a2749211df50bbfa80a6ee394e69fa78",
+    "runs/main-v2/tasks/cosh16-chi512/attempt-001/result.json": "9e2b137a2182f0c7ef6d592b84d9fd62600026ec7309328178f7734ba544267c",
+    "runs/main-v2/tasks/cosh16-chi512/attempt-001/singlet-state.json": "1ae26216658e5b3195db42a281a91c7cbb4e3787d9bd924c75bc98c5360f804b",
+    "runs/main-v2/tasks/cosh16-chi512/attempt-001/singlet-state.vchna10q.mps.h5": "914a64d80914d8a103b2ca6fa63ae7859b18beee9e267b0171aec3ffb806fde5",
+    "runs/main-v2/tasks/cosh16-q6/attempt-001/acceptance.json": "81f9d702c5a42b45854555d41fc238a1e90d131e99ba4d5060549479b63529fe",
+    "runs/main-v2/tasks/cosh16-q6/attempt-001/request.json": "b078d8004c7d1adc1f485f2cbc7f0716a0684a32812e92e6389653e271c271cd",
+    "runs/main-v2/tasks/cosh16-q6/attempt-001/result.json": "b575d5339bbae04295d45386b33e756eb7e72e442d35c486a121daabe9b622d8",
+    "runs/main-v2/tasks/cosh16-q7/attempt-001/acceptance.json": "4bad59905e392b0000c69464bfd368bdf9593c31856cd707e39fe369892551c5",
+    "runs/main-v2/tasks/cosh16-q7/attempt-001/request.json": "a06a64808ee14973130a3b9f570d6abcc5881f964c566f715b52a0dedcdde4f1",
+    "runs/main-v2/tasks/cosh16-q7/attempt-001/result.json": "8edf00a45ae3a36ad892a65cf3353f4f1f8c7aef161f2858f2f58325f3df6771",
+    "runs/main-v2/tasks/cosh16-q8/attempt-001/acceptance.json": "3c7eefde4ba3e0d39eaa79627c7151c80222f6af5146d9656609e1ebd3e350b8",
+    "runs/main-v2/tasks/cosh16-q8/attempt-001/request.json": "e7c3ef6c820cedfa3bb2090367d255f70a6884fb382782f59551bd42b9475a36",
+    "runs/main-v2/tasks/cosh16-q8/attempt-001/result.json": "4466ccccb7f6d730bfc6713383e6f2bad9b71fc2682ab23b058d6eff1fcc0ee1",
+    "runs/main-v2/tasks/cosh20-q6/attempt-001/acceptance.json": "5cec65f74d11906b8cf3abd59a9f33c7a4117a05b75f2a13adf7f8a109c26593",
+    "runs/main-v2/tasks/cosh20-q6/attempt-001/request.json": "e8c9092a0cc8b24a18388a9772bdb41bfd46dc55e5e51379d8ccfc58c28b20d6",
+    "runs/main-v2/tasks/cosh20-q6/attempt-001/result.json": "22a7233c54a9415002c6b40b49ec780316a3d9bbc6db07fb447495a1cbfb7a24",
+    "runs/main-v2/tasks/cosh20-q7/attempt-001/acceptance.json": "6b21750f5bae54f092edaa41394dd72198f1b5c7535454fef0436479ef3cc96a",
+    "runs/main-v2/tasks/cosh20-q7/attempt-001/request.json": "78e3fd465d9c0b55216f25da73eee1352caf4bf557610ae189b509745d80a4bf",
+    "runs/main-v2/tasks/cosh20-q7/attempt-001/result.json": "7bb4acc24df17ef4d651c159548735011fd1ef2ddf5376020fb0c09f45b90fa9",
+    "runs/main-v2/tasks/nrg-l18-z1of4-k8000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l18-z1of4-k8000/attempt-001/acceptance.json": "96f98020499e140cf6fde83e7baad41e5c05b856571fa0fb0efadb1475a9624a",
+    "runs/main-v2/tasks/nrg-l18-z1of4-k8000/attempt-001/data": "3246612f8683282b9da4c433c3052ecc154e6c9c0735392f7aa5b992089324f7",
+    "runs/main-v2/tasks/nrg-l18-z1of4-k8000/attempt-001/nrg.log": "b07172650086e473b9c588de973379bb55608984afad1f13567849d8722395ee",
+    "runs/main-v2/tasks/nrg-l18-z1of4-k8000/attempt-001/nrginit.log": "eef065000ced4f2644e48b07e74173073930727b7c61dd86a173f83a4d900c4a",
+    "runs/main-v2/tasks/nrg-l18-z1of4-k8000/attempt-001/param": "5d8a355f00bd873ab529216da2865afae271664cd861bfa65a9f5b7300a06cbd",
+    "runs/main-v2/tasks/nrg-l18-z1of4-k8000/attempt-001/raw.h5": "e39d2e55fcd2a2a9921bf11803b711bbf07545d78dd16742ac4678c6c2132e2e",
+    "runs/main-v2/tasks/nrg-l18-z1of4-k8000/attempt-001/request.json": "aba90f4fe2bcc2cf2775da7ecd374dc9fc38a31c82b1a8b01adec60f25e17e37",
+    "runs/main-v2/tasks/nrg-l18-z1of4-k8000/attempt-001/result.json": "9693906ee63c2dc59a9c0b65971a4f6abf8fa2934069cf03285c6f55b9e28ccc",
+    "runs/main-v2/tasks/nrg-l18-z2of4-k8000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l18-z2of4-k8000/attempt-001/acceptance.json": "6908e15d73254d3646b74d3a1fc96636a13cc16810b59703c40d146b89dc4068",
+    "runs/main-v2/tasks/nrg-l18-z2of4-k8000/attempt-001/data": "056bc8447813ae9c0a3b3b7aece6e323eeb0313356a20847c3c13126cfd6964b",
+    "runs/main-v2/tasks/nrg-l18-z2of4-k8000/attempt-001/nrg.log": "2c818b7c83e5f9614881ef913160821c120ee54738efabf4f14d40cdbc622b5f",
+    "runs/main-v2/tasks/nrg-l18-z2of4-k8000/attempt-001/nrginit.log": "99f654bc2365ce6426d523a78fd581e8fba57869c6847675dabd476351fe2aee",
+    "runs/main-v2/tasks/nrg-l18-z2of4-k8000/attempt-001/param": "6609e96fb8cab3e65af8e201a4bfd4e1809f6f1f56c7281b290e62347da5e62a",
+    "runs/main-v2/tasks/nrg-l18-z2of4-k8000/attempt-001/raw.h5": "f32382c06918f6fff99fcf478fbb1940be722ce52bfb65f87763bafc77cc1e4f",
+    "runs/main-v2/tasks/nrg-l18-z2of4-k8000/attempt-001/request.json": "906aa38479200e41dd586cfc0ce664ea76479ff7023e2aacf863553e4216b3a0",
+    "runs/main-v2/tasks/nrg-l18-z2of4-k8000/attempt-001/result.json": "2b234ec21d5de7b63f5ba66d93f821ca8ec05f5a5032481e22a4ed842b999d6d",
+    "runs/main-v2/tasks/nrg-l18-z3of4-k8000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l18-z3of4-k8000/attempt-001/acceptance.json": "3b5881b18f7155640b5d5e0330d34e084e8f46bd13e9c3e9419da5419c2053ce",
+    "runs/main-v2/tasks/nrg-l18-z3of4-k8000/attempt-001/data": "4d2009e5a1cc655e63dfd870c804f484180c98c815a742cd6af945a02fbb1147",
+    "runs/main-v2/tasks/nrg-l18-z3of4-k8000/attempt-001/nrg.log": "d5834033fab1ae079abe0176a53048d416eb3ba46147a6837f5cfe3b4214b16f",
+    "runs/main-v2/tasks/nrg-l18-z3of4-k8000/attempt-001/nrginit.log": "7d7b3e42cba07d71fc9300333f23436820e82d5a942578bde671eecc724f4551",
+    "runs/main-v2/tasks/nrg-l18-z3of4-k8000/attempt-001/param": "9b742fe221b0e5f8a52990f1e0078635cdd0ca90eadca2fd369d175f95d45389",
+    "runs/main-v2/tasks/nrg-l18-z3of4-k8000/attempt-001/raw.h5": "249fab7fac0528faeb8a5cb839f5dd48284f7d7787f6b30e494b2bed8ac17366",
+    "runs/main-v2/tasks/nrg-l18-z3of4-k8000/attempt-001/request.json": "77a1c8ac3051dfaee6def72170751e6cfc589ffc9f1ecf136e08a0164a3b351a",
+    "runs/main-v2/tasks/nrg-l18-z3of4-k8000/attempt-001/result.json": "8081ec3a85a1d4c5f55ee721186910d329b73730ee80124dace74433567d8c5f",
+    "runs/main-v2/tasks/nrg-l18-z4of4-k8000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l18-z4of4-k8000/attempt-001/annotated.dat": "9f930a191c820f6502679c11c95ac746da4026af47f5b0813c103d293295dbca",
+    "runs/main-v2/tasks/nrg-l18-z4of4-k8000/attempt-001/data": "c199e0ee525c083f90e5d00ec419c12768c35fc77ae984ce61123edf388c76d3",
+    "runs/main-v2/tasks/nrg-l18-z4of4-k8000/attempt-001/launch.json": "97d3fcc7e90a530b4488ddd12bc99fbb33988e2e6802f8735a53428ab5d39a46",
+    "runs/main-v2/tasks/nrg-l18-z4of4-k8000/attempt-001/nrg.log": "29581e7eb4a948438dcca2f5f94133cadb54879d3e9ff786f751c141cd105685",
+    "runs/main-v2/tasks/nrg-l18-z4of4-k8000/attempt-001/nrginit.log": "3dc38d11b1b501d3e8e15370541e5c5d638b0ab4d9acca305a5ff8a2e2d429e0",
+    "runs/main-v2/tasks/nrg-l18-z4of4-k8000/attempt-001/param": "1d8735382ce8e4386ca089887ce58594eec177340b66a14c08f8e9bac660e75d",
+    "runs/main-v2/tasks/nrg-l18-z4of4-k8000/attempt-001/raw.h5": "d025c11ac6244222a2595b4d071eb3121922bea8884c64444c11fbcc8b962bba",
+    "runs/main-v2/tasks/nrg-l18-z4of4-k8000/attempt-001/request.json": "ca29f668a0459bda2d29e827538e528493de687cb7c3946309ff9c9ec69021f1",
+    "runs/main-v2/tasks/nrg-l18-z4of4-k8000/attempt-001/worker.log": "05db6313259a09755f36181ee4e40d9ef84d4cd926ecaf2b1911423c5e6d9f5b",
+    "runs/main-v2/tasks/nrg-l2-z0.125-keepenergy/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l2-z0.125-keepenergy/attempt-001/acceptance.json": "eabbd197657929071108eaab23eb078dd3d40a8d9d050a981d5c84caf34ca723",
+    "runs/main-v2/tasks/nrg-l2-z0.125-keepenergy/attempt-001/data": "3febf224c8ea5412925e1ac53e3c02ff533ff1472a896a9533981307c4c49c57",
+    "runs/main-v2/tasks/nrg-l2-z0.125-keepenergy/attempt-001/nrg.log": "ad4d3a7b29abc88dbc09d38e76bdc114dce6d96a18911c40672cffa0e9aa44fb",
+    "runs/main-v2/tasks/nrg-l2-z0.125-keepenergy/attempt-001/nrginit.log": "219b2dff72fed416b8cf244d79f0897c51cc659a59fe9f9a1ddd467dd2b5efc4",
+    "runs/main-v2/tasks/nrg-l2-z0.125-keepenergy/attempt-001/param": "bb5fddf49e84d7691b99fec9d57869c4b534fa5440ad87d12c80256a28861b55",
+    "runs/main-v2/tasks/nrg-l2-z0.125-keepenergy/attempt-001/raw.h5": "f54a5d544abff52c1185a10375fe81b3e10b518766cef2456a617424885af182",
+    "runs/main-v2/tasks/nrg-l2-z0.125-keepenergy/attempt-001/request.json": "53028dd8b3f2f0b67a7ba122d512806443dec67ae8c6f73d331d0c02b0591c9d",
+    "runs/main-v2/tasks/nrg-l2-z0.125-keepenergy/attempt-001/result.json": "f3904c91f5dd20d573b56770c48c794583106876dfd708ed548ac16ff3e8b9dd",
+    "runs/main-v2/tasks/nrg-l2-z0.125-keepmin/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l2-z0.125-keepmin/attempt-001/acceptance.json": "b48eb635bf0978d668009a3a483e04f478d669d7f7ee0a3dc31d4d3f9e05a867",
+    "runs/main-v2/tasks/nrg-l2-z0.125-keepmin/attempt-001/data": "3febf224c8ea5412925e1ac53e3c02ff533ff1472a896a9533981307c4c49c57",
+    "runs/main-v2/tasks/nrg-l2-z0.125-keepmin/attempt-001/nrg.log": "aab627004a236ecf4e57fc35435a175d88f30c894d608db60434ea448ed523e5",
+    "runs/main-v2/tasks/nrg-l2-z0.125-keepmin/attempt-001/nrginit.log": "8b915b5f7c58fe80adfff2788b45c7bbd6d4ea76802d3335a9fcfaee1bf4b04a",
+    "runs/main-v2/tasks/nrg-l2-z0.125-keepmin/attempt-001/param": "252a023ebdfbe1c21addb84dacf6d1e823c6ed5e52833e1285910038855966f6",
+    "runs/main-v2/tasks/nrg-l2-z0.125-keepmin/attempt-001/raw.h5": "d221cb07665e1138125c24a9b6e1eb55dcd00c8f129838fbecd3322d7c303957",
+    "runs/main-v2/tasks/nrg-l2-z0.125-keepmin/attempt-001/request.json": "3a00383dce3ac930c3acd846f633f30b01aab53a9356120428e71df46ced6f3c",
+    "runs/main-v2/tasks/nrg-l2-z0.125-keepmin/attempt-001/result.json": "f99459451dd8d155389f9d75835f5482abb8e7380917dfabcf5e0991bfcd3a76",
+    "runs/main-v2/tasks/nrg-l2-z0.125-nmax/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l2-z0.125-nmax/attempt-001/acceptance.json": "2aa67df8a8acdffd28a6db038170fa3d0177d082ec44699f300debb35633b851",
+    "runs/main-v2/tasks/nrg-l2-z0.125-nmax/attempt-001/data": "8a71c858af2856bb949f76c10b9ca67a07ccd301929b82e32cee01725328e123",
+    "runs/main-v2/tasks/nrg-l2-z0.125-nmax/attempt-001/nrg.log": "e8302116ccd417ea51377c1cf89057e42668771d9be6fd28acef3307326cfb8c",
+    "runs/main-v2/tasks/nrg-l2-z0.125-nmax/attempt-001/nrginit.log": "51d664e2a52f57ea452b4eba207e2cca50f4423ed477b202a11ee8ec0157beaf",
+    "runs/main-v2/tasks/nrg-l2-z0.125-nmax/attempt-001/param": "28081e2be4d3168f601c6cd7703bb5fcd8c6b91abdd515ef9f36b2443a24b04d",
+    "runs/main-v2/tasks/nrg-l2-z0.125-nmax/attempt-001/raw.h5": "ddb074294a06a8b9b87098d91a306adc7918e056ce61dad0aaccb78570f5eac9",
+    "runs/main-v2/tasks/nrg-l2-z0.125-nmax/attempt-001/request.json": "9730f1c700416da537c4b58f7fdb0883f848b1c28d18a6512614facd574587a9",
+    "runs/main-v2/tasks/nrg-l2-z0.125-nmax/attempt-001/result.json": "4aa1e0486fccac4b3b9fef765f0e796929d2146c3738827966d1aa4c9ea94f62",
+    "runs/main-v2/tasks/nrg-l2-z1.0-keepenergy/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l2-z1.0-keepenergy/attempt-001/acceptance.json": "8a456cb104254e4f84443f2fae1029b4dab6d6f359fb38b95b912c1d2b045d89",
+    "runs/main-v2/tasks/nrg-l2-z1.0-keepenergy/attempt-001/data": "3edb8a06479e428f67da90151fa776ffdbd143242441efe3a9a763ecf18af346",
+    "runs/main-v2/tasks/nrg-l2-z1.0-keepenergy/attempt-001/nrg.log": "674860bd056607658e56f8ee14795a4cdc0c21aaad8e593595c1197d629e44c2",
+    "runs/main-v2/tasks/nrg-l2-z1.0-keepenergy/attempt-001/nrginit.log": "5d92ec96ec702e63fed138ca028bdd8e15af39288f0c256a6a60cd6d77acf55f",
+    "runs/main-v2/tasks/nrg-l2-z1.0-keepenergy/attempt-001/param": "787a40a142c01f1eb18820060b33f5430b5c8f5bcc731c887d1a4d89c1e9384e",
+    "runs/main-v2/tasks/nrg-l2-z1.0-keepenergy/attempt-001/raw.h5": "e8a7391546882c9513192ed3f944ad72860fa587da13da965d820554011a2e2d",
+    "runs/main-v2/tasks/nrg-l2-z1.0-keepenergy/attempt-001/request.json": "d0d9855f775e941b6dbd0c5f24abd127468c7014972a9f98ccaa2b24fd648f32",
+    "runs/main-v2/tasks/nrg-l2-z1.0-keepenergy/attempt-001/result.json": "5ab9ec8851a007fd68503ac10018c06ed5875de452c7180a74d5b2381dfcffe3",
+    "runs/main-v2/tasks/nrg-l2-z1.0-keepmin/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l2-z1.0-keepmin/attempt-001/acceptance.json": "22e42370ee0cf3c0bc26942f655120f5108fa03b2478970fe057334d3049068a",
+    "runs/main-v2/tasks/nrg-l2-z1.0-keepmin/attempt-001/data": "3edb8a06479e428f67da90151fa776ffdbd143242441efe3a9a763ecf18af346",
+    "runs/main-v2/tasks/nrg-l2-z1.0-keepmin/attempt-001/nrg.log": "7152d607086e1eefdbe18b704cab3aeea6499075188df16529f6e771b4dac39f",
+    "runs/main-v2/tasks/nrg-l2-z1.0-keepmin/attempt-001/nrginit.log": "9da001c83976c0c9f83ee1225f108f17415f404cef7c5b5e1be521ba7506e0f9",
+    "runs/main-v2/tasks/nrg-l2-z1.0-keepmin/attempt-001/param": "b04b1638aab084de860079d01f5308d8a6ef3d72919d76b0648b9666f0ba4b53",
+    "runs/main-v2/tasks/nrg-l2-z1.0-keepmin/attempt-001/raw.h5": "9e79e6ab2f9c04abccddd82047bd253b433d9498011b50047ac2d799b2c70424",
+    "runs/main-v2/tasks/nrg-l2-z1.0-keepmin/attempt-001/request.json": "c80c42274d82523e652d8db2e6940676c1b12451e40c530ba9269401ae350654",
+    "runs/main-v2/tasks/nrg-l2-z1.0-keepmin/attempt-001/result.json": "b9d76458eebbb2404c2afcde3393123d071bb27c7f8ff08ac597ea252fd70820",
+    "runs/main-v2/tasks/nrg-l2-z1.0-nmax/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l2-z1.0-nmax/attempt-001/acceptance.json": "427f226990b2def8159467e06baab36dea2cff0bfa34f21288162ea3c6175b92",
+    "runs/main-v2/tasks/nrg-l2-z1.0-nmax/attempt-001/data": "881f1ba79c0d4c30464ef6b286fb0a2e42425f8ee7ce487fbe4e909937ef6841",
+    "runs/main-v2/tasks/nrg-l2-z1.0-nmax/attempt-001/nrg.log": "dad8124278f8080902b4709e88ca72c864b4e61da7836a9c8a82245f02973479",
+    "runs/main-v2/tasks/nrg-l2-z1.0-nmax/attempt-001/nrginit.log": "d5c8363ddb093853c90140ae0abc84e8e4ae5bc88ab5d12fcb86183428e9960d",
+    "runs/main-v2/tasks/nrg-l2-z1.0-nmax/attempt-001/param": "466c199d6d58383cb75329be246a6371e2397539f0fe42d87d0afb22daff151d",
+    "runs/main-v2/tasks/nrg-l2-z1.0-nmax/attempt-001/raw.h5": "e95c095ca3d653984f64c865740ee66b35ad4399b9caf254f92c8a7951bc8ef1",
+    "runs/main-v2/tasks/nrg-l2-z1.0-nmax/attempt-001/request.json": "069e28106e44cdce1cec69df60845db620c311ea7e39ea0084606b91e2254054",
+    "runs/main-v2/tasks/nrg-l2-z1.0-nmax/attempt-001/result.json": "1d158f4b6d338c762223ba85ba6d31fafa77cf6532f5ef779e6a5d30dba30a2f",
+    "runs/main-v2/tasks/nrg-l2-z1of8-k4000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l2-z1of8-k4000/attempt-001/acceptance.json": "63ec40782b2e9abaaddaa4befd79267e0cd8508c625771a6ae56587aca227a39",
+    "runs/main-v2/tasks/nrg-l2-z1of8-k4000/attempt-001/data": "3febf224c8ea5412925e1ac53e3c02ff533ff1472a896a9533981307c4c49c57",
+    "runs/main-v2/tasks/nrg-l2-z1of8-k4000/attempt-001/nrg.log": "fd6eceeea18321cb991ab30c342827ec462130e4dc963628031f80c9bb306084",
+    "runs/main-v2/tasks/nrg-l2-z1of8-k4000/attempt-001/nrginit.log": "99374a233cbf2fabe571708f773b375c88cb43d34af60a870e3a94aef7354dd8",
+    "runs/main-v2/tasks/nrg-l2-z1of8-k4000/attempt-001/param": "3db01d2d139093b88d2903ecae18306e8d653591a618a9a57122a290884d9fe5",
+    "runs/main-v2/tasks/nrg-l2-z1of8-k4000/attempt-001/raw.h5": "002dd269244db8d54a2dc1014e54c026862b06766b66df75e48f6b623e87fe8f",
+    "runs/main-v2/tasks/nrg-l2-z1of8-k4000/attempt-001/request.json": "ea2d94cbe2d7685016ed277dc62ec94305cc2b8b198db0a79a6455478da61a27",
+    "runs/main-v2/tasks/nrg-l2-z1of8-k4000/attempt-001/result.json": "9c5f2960ead47f4eef7ecf8f35a872aeaf93fb468c0b0f47821e97f576191d2e",
+    "runs/main-v2/tasks/nrg-l2-z1of8-k8000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l2-z1of8-k8000/attempt-001/acceptance.json": "b3fa65170251ea1dcf2dc1232f7512de10fdf19d0a2d6ab8af7f475be909b694",
+    "runs/main-v2/tasks/nrg-l2-z1of8-k8000/attempt-001/data": "3febf224c8ea5412925e1ac53e3c02ff533ff1472a896a9533981307c4c49c57",
+    "runs/main-v2/tasks/nrg-l2-z1of8-k8000/attempt-001/nrg.log": "a49c45afe05f05edbe06d86549bb84770893a9b4e4d40dc410e325bd8d6af6ff",
+    "runs/main-v2/tasks/nrg-l2-z1of8-k8000/attempt-001/nrginit.log": "0db5e061ef2a3fecb3d81bd5d384d9ad7e458bc5a1030bf58cb6920ed633a80d",
+    "runs/main-v2/tasks/nrg-l2-z1of8-k8000/attempt-001/param": "bdff6a55495f232ad3fc4e0cc4f28043195846a04a97eefe1a9b2c77be922c4e",
+    "runs/main-v2/tasks/nrg-l2-z1of8-k8000/attempt-001/raw.h5": "0720ec8c08e5a29c3ecb3206e59224b23fdf17eb72782e1c36a5c04e7fabf1ea",
+    "runs/main-v2/tasks/nrg-l2-z1of8-k8000/attempt-001/request.json": "f458e9ec32b2e99aa366ca0d59e60a725fc128013d895e2ba3678bea82a60fac",
+    "runs/main-v2/tasks/nrg-l2-z1of8-k8000/attempt-001/result.json": "b00f53bd77bceecd8ad009c130e34a7d3fce280192a8208441c3f23bffba4ee8",
+    "runs/main-v2/tasks/nrg-l2-z2of8-k4000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l2-z2of8-k4000/attempt-001/acceptance.json": "da2ef5c2039a9334aae67b2e8e3f6e3b6524a3bbea5360cf2dd7563c8c27f33e",
+    "runs/main-v2/tasks/nrg-l2-z2of8-k4000/attempt-001/data": "6b86847db3bd0919f89ab9c359c5b3ead921ad20a66cfb4373bec6266e4c38ee",
+    "runs/main-v2/tasks/nrg-l2-z2of8-k4000/attempt-001/nrg.log": "18ea6dc5972f72795fe811b2e3b6a8debf269372de416c71b6524ee6bb289a9f",
+    "runs/main-v2/tasks/nrg-l2-z2of8-k4000/attempt-001/nrginit.log": "ef3e79fc92afd5d7cbe1c1d9c64e83ee8091cb118618f0bcf2a3725717433da8",
+    "runs/main-v2/tasks/nrg-l2-z2of8-k4000/attempt-001/param": "494be2977520860a7097b65abf100d197881018d2f2a113dedd92c143c5bf08b",
+    "runs/main-v2/tasks/nrg-l2-z2of8-k4000/attempt-001/raw.h5": "b2582a8af0429247ff08934807d74bc85b0c9bca8fcb08a7c5338af107713a11",
+    "runs/main-v2/tasks/nrg-l2-z2of8-k4000/attempt-001/request.json": "a473f31395cdf1a89da8fc94451e7e15b546d14914a50ef9bdddffc15bfba699",
+    "runs/main-v2/tasks/nrg-l2-z2of8-k4000/attempt-001/result.json": "d0eea09a2946942ce7d434865621ac6f10323301dd57c941e8182fa65ac05578",
+    "runs/main-v2/tasks/nrg-l2-z2of8-k8000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l2-z2of8-k8000/attempt-001/acceptance.json": "cd208c823bd2314e97eb4168757bf24e25990bb838ef5a469eff5b14f9b52bdc",
+    "runs/main-v2/tasks/nrg-l2-z2of8-k8000/attempt-001/data": "6b86847db3bd0919f89ab9c359c5b3ead921ad20a66cfb4373bec6266e4c38ee",
+    "runs/main-v2/tasks/nrg-l2-z2of8-k8000/attempt-001/nrg.log": "97971502a67827dfde5f3e1d00416223f77e73f9ae506dbbe207d2cadd9d2b94",
+    "runs/main-v2/tasks/nrg-l2-z2of8-k8000/attempt-001/nrginit.log": "40e4c1e287103509e28fbced09639fcbf7eb94b0db2476c5b74662453a583547",
+    "runs/main-v2/tasks/nrg-l2-z2of8-k8000/attempt-001/param": "c7e874c6e5c925743a13939b833767a020ed0a2cd476ae80eee76fad5ba7fa8a",
+    "runs/main-v2/tasks/nrg-l2-z2of8-k8000/attempt-001/raw.h5": "36d482332970b9474f22a8463ebcc4dad454785da87ed27b23bf98545be5d591",
+    "runs/main-v2/tasks/nrg-l2-z2of8-k8000/attempt-001/request.json": "5204b3cd4cd97a4a89ebae4e1983e5df4d69b9f613baa60a7f9469b61c106cca",
+    "runs/main-v2/tasks/nrg-l2-z2of8-k8000/attempt-001/result.json": "7dde5ae3750c7de86d1826df2c3e305d6914ec78e6ef612b3feef94d431a4860",
+    "runs/main-v2/tasks/nrg-l2-z3of8-k4000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l2-z3of8-k4000/attempt-001/acceptance.json": "9333a3b96dda51da85f207c494d016114b905567608cdcfcf42a7372e024ebc2",
+    "runs/main-v2/tasks/nrg-l2-z3of8-k4000/attempt-001/data": "742b1804a8e3ea6a37a874b67f799024375fd3886de12cdbd4aa5f408365e91d",
+    "runs/main-v2/tasks/nrg-l2-z3of8-k4000/attempt-001/nrg.log": "ef054f3881880ed8c939de168aeec4d2759990d233b354dc3f0dc26649bbf755",
+    "runs/main-v2/tasks/nrg-l2-z3of8-k4000/attempt-001/nrginit.log": "788fc37f7658031adb908525f2af624dbebc71a76c93df6edae4c9d556a79742",
+    "runs/main-v2/tasks/nrg-l2-z3of8-k4000/attempt-001/param": "f792a02f1f639cc7d9050400be929cc21f2d526e4e3f764fb03efc57c6914146",
+    "runs/main-v2/tasks/nrg-l2-z3of8-k4000/attempt-001/raw.h5": "1b42ad79fd1ac1b326ca58f9c5739ae39de809a7ecdf1af1a7d31752a3670853",
+    "runs/main-v2/tasks/nrg-l2-z3of8-k4000/attempt-001/request.json": "4e80c3d5ad7778eeb032db6e091169894d89cf0250631b17ceb0f97821e3704b",
+    "runs/main-v2/tasks/nrg-l2-z3of8-k4000/attempt-001/result.json": "6dea46d4ec26450d87e5a3017292895e29fa0e3667b7514229b33e70cc889230",
+    "runs/main-v2/tasks/nrg-l2-z3of8-k8000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l2-z3of8-k8000/attempt-001/acceptance.json": "76958a666367d11d9b840ed5f01dbac049e7681765ff402fed1b600556c99899",
+    "runs/main-v2/tasks/nrg-l2-z3of8-k8000/attempt-001/data": "742b1804a8e3ea6a37a874b67f799024375fd3886de12cdbd4aa5f408365e91d",
+    "runs/main-v2/tasks/nrg-l2-z3of8-k8000/attempt-001/nrg.log": "bb643ca1c67ef6f6523b6909a136f2ea5cbf83d7c0285f6f11c6007429877046",
+    "runs/main-v2/tasks/nrg-l2-z3of8-k8000/attempt-001/nrginit.log": "f8f2e1acde5173be37942399385b8b3efb707f3e89dd7d37b7df0029983d9aa8",
+    "runs/main-v2/tasks/nrg-l2-z3of8-k8000/attempt-001/param": "97ba573b4622c427835b62cc36747bd8abe46f7aec21a2d617113d227b105f38",
+    "runs/main-v2/tasks/nrg-l2-z3of8-k8000/attempt-001/raw.h5": "aac4fb5cc5c82f4d5ea193a36b2dbca1752efdbcef179a28724282208904839b",
+    "runs/main-v2/tasks/nrg-l2-z3of8-k8000/attempt-001/request.json": "55b5123a3bbe63b1163019017bbc3ea85b2a13dfaaf834d4c9c6ccbbe621957a",
+    "runs/main-v2/tasks/nrg-l2-z3of8-k8000/attempt-001/result.json": "51b8753e81e25a4b96826f601b6fef51fbdadb367a53f367720556284838c31a",
+    "runs/main-v2/tasks/nrg-l2-z4of8-k4000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l2-z4of8-k4000/attempt-001/acceptance.json": "d330daa8297311d804626683193592c33ed7c71658577a6820130f5e64e13549",
+    "runs/main-v2/tasks/nrg-l2-z4of8-k4000/attempt-001/data": "c6e7aecf985bdc89544c262e7c20f6a7df5871ec9b209a41865a1f1c69f95133",
+    "runs/main-v2/tasks/nrg-l2-z4of8-k4000/attempt-001/nrg.log": "6d89e42c50a7c5617526166307b573e85fb818f669f69dd1ca5ec459b45aa66f",
+    "runs/main-v2/tasks/nrg-l2-z4of8-k4000/attempt-001/nrginit.log": "f80026164e7d7b4b13744213948b74807eedbcd5d86ba24b537bcf10ed09625a",
+    "runs/main-v2/tasks/nrg-l2-z4of8-k4000/attempt-001/param": "18423725736dda871103338882b287cb8b26e2e1f3500764750774c57e775fd3",
+    "runs/main-v2/tasks/nrg-l2-z4of8-k4000/attempt-001/raw.h5": "b0a1723c7be0249e4d9451d14e6b8d53d701b8f7fac39772ef386c5e0f4be3f0",
+    "runs/main-v2/tasks/nrg-l2-z4of8-k4000/attempt-001/request.json": "4e017d4f06c4296b45399bdbc9180ee38421e495c7ab930f75de3b1027ea06fa",
+    "runs/main-v2/tasks/nrg-l2-z4of8-k4000/attempt-001/result.json": "253faed259ab9721507990f331c15a04f7a054d734ec77254c211a1bb1ea0b1a",
+    "runs/main-v2/tasks/nrg-l2-z4of8-k8000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l2-z4of8-k8000/attempt-001/acceptance.json": "5aad40fb4f2f2dbeefc3214996144ac6d44e5eae9c416ded33a567c80caf31da",
+    "runs/main-v2/tasks/nrg-l2-z4of8-k8000/attempt-001/data": "c6e7aecf985bdc89544c262e7c20f6a7df5871ec9b209a41865a1f1c69f95133",
+    "runs/main-v2/tasks/nrg-l2-z4of8-k8000/attempt-001/nrg.log": "0f9c600ca424cef369203c7300fc3a42d7682db53b4f57c65589ea286d913e79",
+    "runs/main-v2/tasks/nrg-l2-z4of8-k8000/attempt-001/nrginit.log": "25230e43814baa24caa3d9a88f81c3dee5212c8095fb58440588e2c4592248d9",
+    "runs/main-v2/tasks/nrg-l2-z4of8-k8000/attempt-001/param": "cda074045cd735ea88fab07a8e02bcd597f8570c477daf9cf4de957c6ca09686",
+    "runs/main-v2/tasks/nrg-l2-z4of8-k8000/attempt-001/raw.h5": "574ab73121b28ba442c00cc5566e02cddc444b83acc70221cd7b0b52d95f5463",
+    "runs/main-v2/tasks/nrg-l2-z4of8-k8000/attempt-001/request.json": "f742b38e3f07c65f05e70ab8699674dbf9c2369e03e5c73e3cf0f8509267dea4",
+    "runs/main-v2/tasks/nrg-l2-z4of8-k8000/attempt-001/result.json": "e0487c2198a8a2375bc40dd12335dea97a20fcbbdde68ee794dcf225f0c05be6",
+    "runs/main-v2/tasks/nrg-l2-z5of8-k4000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l2-z5of8-k4000/attempt-001/acceptance.json": "d7c4ee6b7a58badc4b3214d75ca40fee2a42256af1953d4dfb8231b95b70936b",
+    "runs/main-v2/tasks/nrg-l2-z5of8-k4000/attempt-001/data": "8dd8de5ee2e1588fd0aefc5593c6e4b57e125c4d78b95f2e79602a27dfea183e",
+    "runs/main-v2/tasks/nrg-l2-z5of8-k4000/attempt-001/nrg.log": "829059994b148be33baa5dbe5f6f5a259972a9609d36a6f40522c238f018ff45",
+    "runs/main-v2/tasks/nrg-l2-z5of8-k4000/attempt-001/nrginit.log": "8b957bb021c62790560aa574e2573b06c8668d8acea2d3eadf2b2cb38639d51c",
+    "runs/main-v2/tasks/nrg-l2-z5of8-k4000/attempt-001/param": "e8f3660d4811943910ad000d1f132e0c400720f7fb342eea549308ca5708777d",
+    "runs/main-v2/tasks/nrg-l2-z5of8-k4000/attempt-001/raw.h5": "b8cdaaaee8ecfd466827209c2c6f9e994efe17429e9dddac5e6b6da7c107cf92",
+    "runs/main-v2/tasks/nrg-l2-z5of8-k4000/attempt-001/request.json": "3bb83fda3917128f818e5d75635255142bdab60911c7ce4aed9338f1e9975eef",
+    "runs/main-v2/tasks/nrg-l2-z5of8-k4000/attempt-001/result.json": "15fed743cd404130bfcfc83edc506c9302daded6929cda99c8c3c3740c24cedf",
+    "runs/main-v2/tasks/nrg-l2-z5of8-k8000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l2-z5of8-k8000/attempt-001/acceptance.json": "23211789a10e55bf50aa5826f5a77f1d1bb8a7b061e0d5f4503838120c2a54c5",
+    "runs/main-v2/tasks/nrg-l2-z5of8-k8000/attempt-001/data": "8dd8de5ee2e1588fd0aefc5593c6e4b57e125c4d78b95f2e79602a27dfea183e",
+    "runs/main-v2/tasks/nrg-l2-z5of8-k8000/attempt-001/nrg.log": "d297eaaa14c97115465d8431d274725ec960fd75f0c99e3d7cd94c109366aeb4",
+    "runs/main-v2/tasks/nrg-l2-z5of8-k8000/attempt-001/nrginit.log": "08dc53be5729dc6b2eac213e018c8b1c625452212687d1ae050d89ea4a98f460",
+    "runs/main-v2/tasks/nrg-l2-z5of8-k8000/attempt-001/param": "d238ba99f5ad77913d31afab8e98f958aa9421b46199e0a3e0f49642ea55b57f",
+    "runs/main-v2/tasks/nrg-l2-z5of8-k8000/attempt-001/raw.h5": "edf99e819e11e0f9aeb7d9d78c4dcec8d9c6d0675c13df700f8934205d9fb593",
+    "runs/main-v2/tasks/nrg-l2-z5of8-k8000/attempt-001/request.json": "56824ba2351b574c2a560b979a26ed2d618ee5e0b09d39eda5c5e83c976e50fa",
+    "runs/main-v2/tasks/nrg-l2-z5of8-k8000/attempt-001/result.json": "3832cf6b2b6611d2804534cd54f427e324a995ed55e9e9a945b2c06e10e093d1",
+    "runs/main-v2/tasks/nrg-l2-z6of8-k4000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l2-z6of8-k4000/attempt-001/acceptance.json": "a1a4f179592bc10ea7cc00bca8364a1c32e60303f34f7710c55d046551a7321d",
+    "runs/main-v2/tasks/nrg-l2-z6of8-k4000/attempt-001/data": "b24df4de3c9f30bf09cf97c70d593cf6781e0f5c9f5431650491d571f8aaa03e",
+    "runs/main-v2/tasks/nrg-l2-z6of8-k4000/attempt-001/nrg.log": "82e4b450b5af07f9624f01a165cec40eaba788578386afc7a049ae5a7f6f3535",
+    "runs/main-v2/tasks/nrg-l2-z6of8-k4000/attempt-001/nrginit.log": "0ae5e11d34acac3bfbdc22312a6a3326342811a5e0e0df924d6e628540be5586",
+    "runs/main-v2/tasks/nrg-l2-z6of8-k4000/attempt-001/param": "ec54950b0ea62d79b94cadb9c1babfe573c6b86c86a8071e35c1680ae4ad2ff1",
+    "runs/main-v2/tasks/nrg-l2-z6of8-k4000/attempt-001/raw.h5": "9528f6be9786200f1df376099b4840732efdaf2b4ceb3915aa3f7fda710c6302",
+    "runs/main-v2/tasks/nrg-l2-z6of8-k4000/attempt-001/request.json": "681d5c75aaf62d3c7c10ed1a41d8527bbe2b12d4b7e8c420c1ef2d0e378cebb8",
+    "runs/main-v2/tasks/nrg-l2-z6of8-k4000/attempt-001/result.json": "0a3af20f72ecdf0aec2206e8628c9b6ad422e301b99bb4f6f01f41e7b272d597",
+    "runs/main-v2/tasks/nrg-l2-z6of8-k8000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l2-z6of8-k8000/attempt-001/acceptance.json": "6fe430e7ef3ea0ed46bf638b08e0e42ba88fb9137919d080ff7bd6df04d89e26",
+    "runs/main-v2/tasks/nrg-l2-z6of8-k8000/attempt-001/data": "b24df4de3c9f30bf09cf97c70d593cf6781e0f5c9f5431650491d571f8aaa03e",
+    "runs/main-v2/tasks/nrg-l2-z6of8-k8000/attempt-001/nrg.log": "ac4c0a28b40728c10dd4555eda46482c0b87b78737ec3c336d8ad82b0e694f4e",
+    "runs/main-v2/tasks/nrg-l2-z6of8-k8000/attempt-001/nrginit.log": "2913a2915d04c5121b7ca789c8a821a59ceda7ffc21ef2c67690ba01f019dd02",
+    "runs/main-v2/tasks/nrg-l2-z6of8-k8000/attempt-001/param": "9ae334b60cd2e4f60b1e7e4b11bfd2a42bd9e29632ef77b3d31c600e9694a949",
+    "runs/main-v2/tasks/nrg-l2-z6of8-k8000/attempt-001/raw.h5": "2958b4ee396450f42a90656409691ffbb9062c69a07dcd0ebba4d4e34aec2143",
+    "runs/main-v2/tasks/nrg-l2-z6of8-k8000/attempt-001/request.json": "f735085b734f5463f7203bf10cbd5f46855d4a86cf9f2cd1a542836117a7406a",
+    "runs/main-v2/tasks/nrg-l2-z6of8-k8000/attempt-001/result.json": "e64b094f4b7b4d5d0a77cf4bbeee6d0620c008b5b85835cf3de463bfb5702fce",
+    "runs/main-v2/tasks/nrg-l2-z7of8-k4000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l2-z7of8-k4000/attempt-001/acceptance.json": "966c33be0b78e083f11ea82d44e3e51e96c5c9ea1cb97d9491aecdf0509cea1f",
+    "runs/main-v2/tasks/nrg-l2-z7of8-k4000/attempt-001/data": "56a250a7afc7c9221b12fd40d3ef64c398e9fd6e2b943aa6a108469ec06590ac",
+    "runs/main-v2/tasks/nrg-l2-z7of8-k4000/attempt-001/nrg.log": "d610087d1680cb23b4e2521e50e83704e46d7351a080df803208eb344f62badb",
+    "runs/main-v2/tasks/nrg-l2-z7of8-k4000/attempt-001/nrginit.log": "756e834d5776cd9780d11845f410817da3ca8706eef4735f4ddc8dbf7d9484fc",
+    "runs/main-v2/tasks/nrg-l2-z7of8-k4000/attempt-001/param": "a60cadc23d27514f3e571ee01709663062e06129f3355231efcae4e4af8a5c60",
+    "runs/main-v2/tasks/nrg-l2-z7of8-k4000/attempt-001/raw.h5": "be23aef26b8933e34b1d0237f165b959e349588574018a15acd6000a3212eb01",
+    "runs/main-v2/tasks/nrg-l2-z7of8-k4000/attempt-001/request.json": "b07d462549764f6a7d13ce65848e725072699b0b91d4bcc21eacaa82af0aabae",
+    "runs/main-v2/tasks/nrg-l2-z7of8-k4000/attempt-001/result.json": "04867dc9e32565bc587b8513d0d454fd10dcc7a8553605bc35edb2f73e0e2b79",
+    "runs/main-v2/tasks/nrg-l2-z7of8-k8000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l2-z7of8-k8000/attempt-001/acceptance.json": "355bd0f8abf279bb61a4ba56076aaa4eacd88a5034aaafa9ea202b3766fe336c",
+    "runs/main-v2/tasks/nrg-l2-z7of8-k8000/attempt-001/data": "56a250a7afc7c9221b12fd40d3ef64c398e9fd6e2b943aa6a108469ec06590ac",
+    "runs/main-v2/tasks/nrg-l2-z7of8-k8000/attempt-001/nrg.log": "6f53563b92a72eb8fc0fe67ca289d917664f6fb752a0a2624fb3f370fba24f02",
+    "runs/main-v2/tasks/nrg-l2-z7of8-k8000/attempt-001/nrginit.log": "068406e4fc8771da171e2efa462b89a43308bf76f9cc466298c0347dab7691f1",
+    "runs/main-v2/tasks/nrg-l2-z7of8-k8000/attempt-001/param": "931e9cbf2a268f856c34940d26acc2ecda74dabfa3cd294b9236000e001ef50e",
+    "runs/main-v2/tasks/nrg-l2-z7of8-k8000/attempt-001/raw.h5": "06b6ec845a98ab134ba10e42a7b9fe8b7ff978d13d67dc1cae0904bbbc0003a2",
+    "runs/main-v2/tasks/nrg-l2-z7of8-k8000/attempt-001/request.json": "56c5ecfc88f5d127beb627124a96cdd998217daef511e9266f90051bc5b03a0c",
+    "runs/main-v2/tasks/nrg-l2-z7of8-k8000/attempt-001/result.json": "a24f4e5a11b98490b8d7301916f86bf1fe7f9fb73f31c740acb8ebd5512fa165",
+    "runs/main-v2/tasks/nrg-l2-z8of8-k4000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l2-z8of8-k4000/attempt-001/acceptance.json": "9eda9a52acfdc3ee7383f3753535cca424b20f6396402972965f091aa5e849cc",
+    "runs/main-v2/tasks/nrg-l2-z8of8-k4000/attempt-001/data": "3edb8a06479e428f67da90151fa776ffdbd143242441efe3a9a763ecf18af346",
+    "runs/main-v2/tasks/nrg-l2-z8of8-k4000/attempt-001/nrg.log": "54efb42b0c4da2c33e81324592891f60da65ce7cb2e8a41d839d9002e9b8d082",
+    "runs/main-v2/tasks/nrg-l2-z8of8-k4000/attempt-001/nrginit.log": "cf487e00472aefecc87e1e34633cf59bca14cfd18398afc7e06ba2f763dea9c1",
+    "runs/main-v2/tasks/nrg-l2-z8of8-k4000/attempt-001/param": "24473ff1ff11862f1d4c498e6bffe09c4b93ec54620ba0bd63a4da30bb6d42dd",
+    "runs/main-v2/tasks/nrg-l2-z8of8-k4000/attempt-001/raw.h5": "d592d9da79f90df177ce793debe93db3666352eb42eca3fe0f81694f488ee0b1",
+    "runs/main-v2/tasks/nrg-l2-z8of8-k4000/attempt-001/request.json": "908c835d0d781ddbc74991fcaabcde99dbc138fd4d2158f091e8982de2605972",
+    "runs/main-v2/tasks/nrg-l2-z8of8-k4000/attempt-001/result.json": "fb9b5bb7e765ab2ff478690f1bd915bd4e04d4eab8faef29a54d441051288144",
+    "runs/main-v2/tasks/nrg-l2-z8of8-k8000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l2-z8of8-k8000/attempt-001/acceptance.json": "a98375ba4ebe5b4d302f335440baa5d8482bf904d78427f6ac76baebcaa312a9",
+    "runs/main-v2/tasks/nrg-l2-z8of8-k8000/attempt-001/data": "3edb8a06479e428f67da90151fa776ffdbd143242441efe3a9a763ecf18af346",
+    "runs/main-v2/tasks/nrg-l2-z8of8-k8000/attempt-001/nrg.log": "4e1e7a18ede3d2565b476d083ba8dd04603b97a7da85be1cc562cca016a401c8",
+    "runs/main-v2/tasks/nrg-l2-z8of8-k8000/attempt-001/nrginit.log": "54a67ec35d3780e81bbe88ca836403c06e4770454098dc82946a531e26ed417d",
+    "runs/main-v2/tasks/nrg-l2-z8of8-k8000/attempt-001/param": "f12bb850c88da56737c8de4e9c05b9209ca4bb34b0cbbee56a0b8a2601c8a0f3",
+    "runs/main-v2/tasks/nrg-l2-z8of8-k8000/attempt-001/raw.h5": "f772243c4b808ea09fcf90e080df7c4ccd4b033cfa08782ece92544a1f8366f4",
+    "runs/main-v2/tasks/nrg-l2-z8of8-k8000/attempt-001/request.json": "46766dd5607ca5c18f2542fdc643a83ec87dc77dcce0db8de00f2e5a2eb152ba",
+    "runs/main-v2/tasks/nrg-l2-z8of8-k8000/attempt-001/result.json": "85376dfdc6ae1c3e370f0de236230698ee105934cc7dbac08ba25be5d814e480",
+    "runs/main-v2/tasks/nrg-l25-z1of4-k8000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l25-z1of4-k8000/attempt-001/acceptance.json": "7e95a404ce2fa751422ba5b8dbca17958eec1f515fe62c2f07a43e87e6d9a6a0",
+    "runs/main-v2/tasks/nrg-l25-z1of4-k8000/attempt-001/data": "1ed0d78acf6e94d9ef0b9bd442cbdaa1997d1de7bfb8af8c4a0c6010bc3b1808",
+    "runs/main-v2/tasks/nrg-l25-z1of4-k8000/attempt-001/nrg.log": "95d35891fadd690b459e8e361008316e484851f5beb7ed8fa2f8eb96578c16d4",
+    "runs/main-v2/tasks/nrg-l25-z1of4-k8000/attempt-001/nrginit.log": "df03a89041bb86f0e45fb5bb35604ae323fff56557797f6d4ea1fbd8dbbd4a36",
+    "runs/main-v2/tasks/nrg-l25-z1of4-k8000/attempt-001/param": "5972f7d025e654dd8c9e72001c086fb98ee47297bc6ff0042c17c23aecf64cef",
+    "runs/main-v2/tasks/nrg-l25-z1of4-k8000/attempt-001/raw.h5": "c066c3439296e487f78e00a24dae1b5caeba7cfe77e634cc874442df6639372f",
+    "runs/main-v2/tasks/nrg-l25-z1of4-k8000/attempt-001/request.json": "603306eeeab2a32bbc63f039580154edbd6bca8b2bddf09ddf46df2ecb6f497f",
+    "runs/main-v2/tasks/nrg-l25-z1of4-k8000/attempt-001/result.json": "0d9f9f9b4fd94add55c5b2a15fd3b714a7620dffa0051510ac015149b89fd9a2",
+    "runs/main-v2/tasks/nrg-l25-z2of4-k8000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l25-z2of4-k8000/attempt-001/acceptance.json": "8282fc672e90db343409bd0641b90c9b5ad0a5d9aa76ae60f2199ab06920d0f8",
+    "runs/main-v2/tasks/nrg-l25-z2of4-k8000/attempt-001/data": "4403903c226ebb620f0cbddf936aa3eab34e4daed2afc3f9575bdeacd6604cc4",
+    "runs/main-v2/tasks/nrg-l25-z2of4-k8000/attempt-001/nrg.log": "ed8aa73042f28777cae1b017b6c2ac296b0d315bf69d77856ed4d9d4ece47c48",
+    "runs/main-v2/tasks/nrg-l25-z2of4-k8000/attempt-001/nrginit.log": "b0370129e56315827ee29b6f3c4fb05b827805addf655d9d4a58a3aab2b067bf",
+    "runs/main-v2/tasks/nrg-l25-z2of4-k8000/attempt-001/param": "0184c46d8b241fa80ffb05af79ce0d518c20e30e8bc398b2aec40f8f300c82c6",
+    "runs/main-v2/tasks/nrg-l25-z2of4-k8000/attempt-001/raw.h5": "44028434f85dfc416607680ecca40bd671225e1320ab18bccf7a2f3f6eac0f2b",
+    "runs/main-v2/tasks/nrg-l25-z2of4-k8000/attempt-001/request.json": "e9faeb4b11c26eb85312ffa5ba1a692e91c96de52e1d0f05046da177d8cbb834",
+    "runs/main-v2/tasks/nrg-l25-z2of4-k8000/attempt-001/result.json": "6223257755a186feb05973eb0b8a31d6eda5514a29be53db59e9d60076f051fc",
+    "runs/main-v2/tasks/nrg-l25-z3of4-k8000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l25-z3of4-k8000/attempt-001/acceptance.json": "e8a35cb4d4cacb59e3aad65ed6b26fb02a0310900d35a034433245ccc4d1828c",
+    "runs/main-v2/tasks/nrg-l25-z3of4-k8000/attempt-001/data": "0c374ecd166252643b6d31c6f97d61b7aaf6ec307b4fc6f3b0060d351032b216",
+    "runs/main-v2/tasks/nrg-l25-z3of4-k8000/attempt-001/nrg.log": "d8aaf52e5c8ca5560278742e8791befa5c5d4072a77ef89a0f7a35d1fd43c517",
+    "runs/main-v2/tasks/nrg-l25-z3of4-k8000/attempt-001/nrginit.log": "d18bd95eda800ed427370d1c598d2278118b5c781a38b80899226bd4c37b4c7f",
+    "runs/main-v2/tasks/nrg-l25-z3of4-k8000/attempt-001/param": "1c836b787a5770cf1dbe1bdc3991fb0eb65f9b0afaed45b7751a25dda31e1d01",
+    "runs/main-v2/tasks/nrg-l25-z3of4-k8000/attempt-001/raw.h5": "80faaaadaebb12b8243bbcb091d1413f0fab8cf2c023968bedd2932de391a246",
+    "runs/main-v2/tasks/nrg-l25-z3of4-k8000/attempt-001/request.json": "ff7ed609c14ecddb95a30afee50de6caba313d744996453233b2f069c295ba06",
+    "runs/main-v2/tasks/nrg-l25-z3of4-k8000/attempt-001/result.json": "b4f96af95151b3002f1ca3730083f9e7b2d7ce903a95e6311a5712bba7d05f29",
+    "runs/main-v2/tasks/nrg-l25-z4of4-k8000/attempt-001/DONE": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "runs/main-v2/tasks/nrg-l25-z4of4-k8000/attempt-001/acceptance.json": "6dac1e985b31867d5ccf16920fd383f554e9d88149632cfaa59fbf954b1cd499",
+    "runs/main-v2/tasks/nrg-l25-z4of4-k8000/attempt-001/data": "1920a428da010b1387a517e0b775d9e8a83622eab1e349ca5a060cc718e98ea8",
+    "runs/main-v2/tasks/nrg-l25-z4of4-k8000/attempt-001/nrg.log": "a90d4a7cd5f231af6fc7a6e47e99c8de6166213be93c74274199cb4efbcda3cc",
+    "runs/main-v2/tasks/nrg-l25-z4of4-k8000/attempt-001/nrginit.log": "553385d2c7fb7f1447e6f023452fafa092866b6b9697e880aaf4b7e396291a22",
+    "runs/main-v2/tasks/nrg-l25-z4of4-k8000/attempt-001/param": "7598e115b6854ac711d0ca6b9f7f4a0d70ada4692cbd9b3f36dbfa1d9647e41d",
+    "runs/main-v2/tasks/nrg-l25-z4of4-k8000/attempt-001/raw.h5": "e281d125ca444614ed18045cee4bd67d31bd2dea861d3db67360b05b1b79f139",
+    "runs/main-v2/tasks/nrg-l25-z4of4-k8000/attempt-001/request.json": "33110016f89f6d3db74f4b8142c3a1715b554da633936986e6d89c7f08a24cee",
+    "runs/main-v2/tasks/nrg-l25-z4of4-k8000/attempt-001/result.json": "1f1137f747b54a6ebf300db345162dbe0f5ca83fc958b8cd591c29c4257048fa",
+    "runs/main-v2/tasks/surrogate24-w200-q6/attempt-001/acceptance.json": "89267da433e48bcebef0ab69433ebd5635c6222ab1c0ee6ede1eed2e42324c46",
+    "runs/main-v2/tasks/surrogate24-w200-q6/attempt-001/request.json": "fe005f02a62a9b79bf1fc5fd62599b5584efca63ab5bb2d2073b0c27c3b26dd5",
+    "runs/main-v2/tasks/surrogate24-w200-q6/attempt-001/result.json": "3269758a4a4d9b81ad612a481d76ac02a4cc699dd8b6d81350e6fc0b898c6380",
+    "runs/main-v2/tasks/surrogate24-w400-q6/attempt-001/acceptance.json": "ffe3969dfac593b0236a2d668cdbb3bce9df44efabc9febbeaa1240a12217376",
+    "runs/main-v2/tasks/surrogate24-w400-q6/attempt-001/request.json": "528c4cacc4b9f37ff5115cdf0730ecfd5aede6e96bbaccac6355f80af1092d2b",
+    "runs/main-v2/tasks/surrogate24-w400-q6/attempt-001/result.json": "8ae248b6952c1329be70674c5c840456ba3fdcd2572ffbebdaea514e18e4a14c"
+  },
+  "verification": {
+    "baths": "byte-for-byte original frozen baths.json, no normalization",
+    "completion_accepted": 8,
+    "finite_values": "exact source values; chi512 singlet probabilities derived with the original 1-n+D, n-2D, D expressions",
+    "nrg_means": "exact arithmetic reproduction from accepted/recovered twist records",
+    "original_accepted": 51,
+    "probabilities_gaps_and_comparisons": "standalone generate.verify_data and generate.verify passed",
+    "recovered": 1,
+    "result_receipts_requests_and_declared_artifacts": "verified by SHA256",
+    "solver_native_external_executable_files": "Original archived solver/native/executable files were verified against recorded hashes at import; this does not identify current installations."
+  }
+}

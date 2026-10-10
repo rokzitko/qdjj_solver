@@ -1,0 +1,25 @@
+{
+  "format_version": 1,
+  "hash_scope": "Recorded hashes identify original artifacts and sources; published hashes identify current file bytes. No original source hash is rewritten to match edited source. Numerical data are unchanged.",
+  "published_file_sha256": {
+    "analyze.py": "af4e32facb571fcf4c13651168581cd85554638843dc009517d8502494af8f70",
+    "generate.py": "b765cf7515c37a20730a238867c320caac572a81fbf7dcc6d3cc486de185d0bf",
+    "input/baths.json": "d668d29924cc73d6b097677a47d0cc874dc0315793b80a94b13ae2a53281d862",
+    "input/physical.json": "71ad4e3b4cc3cc05f6564cb99d3049afe8e9ae983f30bd8bc7e8562a465996de",
+    "output/comparisons.csv": "2c87e806d60b6ccc098bd955f97ccd97f01b5fea098876e3e02ab66ff3d31374",
+    "output/observables.csv": "03858152492435a270c37fd3b80458254b6e097ec0e9f8566291a86962e725b5",
+    "output/report.md": "5291a50f9361def7e38c45d66689d319083e2d5298724af97d2154d532fbeec6",
+    "output/results.json": "3b8a56083f0e88e647445498d3e483a321234cc80d6235b120ac751fd30fbab8"
+  },
+  "recorded_original_file_sha256": {
+    "output/results.json": "3aac7ee5ddb92818e14fc19896fcb8be57cdd7e81df7c460f3e07f14c3e2c2d3"
+  },
+  "recorded_source_hashes": {
+    "NRG_comparisons/test1/run.py": "da3a70f31c12f7fe496a2692d9e42f93df9f006f83a350a255affce8ca680bd4",
+    "NRG_comparisons/test3/analyze.py": "7e4f244b933ec7560897c1079689e6ba9be83ab6167ee9598f5074b608913be6",
+    "NRG_comparisons/test3/finite.py": "57363fb06e14ad7a6296e6f496d49ea2623d7facb2fa1559f5b714540c5f26a3",
+    "NRG_comparisons/test3/manual_run/nrg.py": "ba265dd74ae4b217f905caa76fda06792e225fa404e0ef64e6c0f2fee76d5456",
+    "NRG_comparisons/test3/manual_run/physics.py": "661683078740b10d83fe20c017724906c16b74d3a1cc96de4aa53e25284130c5",
+    "NRG_comparisons/test3/run.py": "f10aace9fb20542031e9bb772b070b16577e5dcb5078185bee8c5ad46a8a8671"
+  }
+}

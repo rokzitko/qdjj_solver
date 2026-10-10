@@ -40,6 +40,9 @@ jobs:
         with:
           python-version: '3.13'
           cache: pip
+      - name: Check source publication privacy
+        id: publication-source
+        run: python -B tools/check_publication.py
       - run: python -m pip install '.[dmrg,dev]'
       - run: python -m ruff check src tests tools examples applications first_calculation large_Gamma NRG_comparisons
       - run: python -B tools/check_release.py
@@ -61,6 +64,7 @@ jobs:
         run: |
           python -m build
           python tools/check_distribution.py dist/*.tar.gz dist/*.whl
+          python -B tools/check_publication.py dist/*.tar.gz dist/*.whl
           python tools/check_wheel.py dist/*.whl --dmrg
       - uses: actions/upload-artifact@v4
         with:
@@ -69,7 +73,7 @@ jobs:
           if-no-files-found: error
           retention-days: 14
       - uses: actions/upload-artifact@v4
-        if: always()
+        if: ${{ always() && steps.publication-source.outcome == 'success' }}
         with:
           name: linux-reports
           path: reports/
@@ -96,6 +100,9 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
           cache: pip
+      - name: Check source publication privacy
+        id: publication-source
+        run: python -B tools/check_publication.py
       - run: python -m pip install '.[test]' build
       - name: Native, QP, persistence, and installed CLI compatibility
         run: >-
@@ -110,6 +117,7 @@ jobs:
         run: |
           python -m build --wheel
           python tools/check_distribution.py dist/*.whl
+          python -B tools/check_publication.py dist/*.whl
           python tools/check_wheel.py dist/*.whl
       - uses: actions/upload-artifact@v4
         with:
@@ -118,7 +126,7 @@ jobs:
           if-no-files-found: error
           retention-days: 14
       - uses: actions/upload-artifact@v4
-        if: always()
+        if: ${{ always() && steps.publication-source.outcome == 'success' }}
         with:
           name: compatibility-${{ matrix.os }}
           path: reports/
@@ -134,13 +142,16 @@ jobs:
         with:
           python-version: '3.11'
           cache: pip
+      - name: Check source publication privacy
+        id: publication-source
+        run: python -B tools/check_publication.py
       - run: python -m pip install -c tools/minimum-runtime.txt '.[dmrg,test]'
       - run: python -m pip check
       - name: Require both backends and HDF5 persistence with constrained dependencies
         run: python -B tools/check_wheel.py --installed --dmrg
       - run: python -B -m pytest --junitxml=reports/minimum-dependencies.xml
       - uses: actions/upload-artifact@v4
-        if: always()
+        if: ${{ always() && steps.publication-source.outcome == 'success' }}
         with:
           name: minimum-dependency-reports
           path: reports/
@@ -159,6 +170,9 @@ jobs:
         with:
           python-version: '3.13'
           cache: pip
+      - name: Check source publication privacy
+        id: publication-source
+        run: python -B tools/check_publication.py
       - name: Build instrumented extension
         run: >-
           python -m pip install '.[test]' -Cbuild-dir=build/sanitizers
@@ -172,7 +186,7 @@ jobs:
           export UBSAN_OPTIONS="halt_on_error=1:print_stacktrace=1:log_path=$PWD/reports/ubsan"
           python -B -m pytest tests/test_native_core.py tests/test_qp.py --junitxml=reports/sanitizers.xml
       - uses: actions/upload-artifact@v4
-        if: always()
+        if: ${{ always() && steps.publication-source.outcome == 'success' }}
         with:
           name: native-sanitizer-reports
           path: reports/
@@ -192,6 +206,9 @@ jobs:
         with:
           python-version: '3.13'
           cache: pip
+      - name: Check source publication privacy
+        id: publication-source
+        run: python -B tools/check_publication.py
       - name: Build coverage-instrumented extension
         # Keep pybind11 headers available when gcov reads the compiled paths.
         run: |
@@ -206,7 +223,7 @@ jobs:
           --html-details reports/native.html --xml reports/native-coverage.xml
           --json-summary reports/native-summary.json --print-summary
       - uses: actions/upload-artifact@v4
-        if: always()
+        if: ${{ always() && steps.publication-source.outcome == 'success' }}
         with:
           name: native-coverage-reports
           path: reports/

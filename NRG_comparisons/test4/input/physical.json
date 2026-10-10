@@ -1,0 +1,12 @@
+{
+  "format_version": 1,
+  "physical": {"geometry": "junction", "gap": 1.0, "bandwidth": 100.0, "u": 2.0, "gamma": 0.4, "nu": 0.75, "field": 0.03, "phi": 1.8849555921538759, "wn": 0.0, "ws": 0.0},
+  "targets": {
+    "qp": {"absolute": 1e-9, "relative": 1e-6},
+    "dmrg": {"absolute": 1e-9, "relative": 1e-6},
+    "nrg": {"absolute": 1e-6, "relative": 0.001}
+  },
+  "limits": {"cpus": 4, "memory_gib": 16, "task_seconds": 1200, "campaign_seconds": 7200, "mathematica_instances": 1},
+  "minimum_lambda": 4,
+  "scope": "New independent pilot authorization; no production. Physical L/R ASQ model, longitudinal spin observables and branch current. Nonzero WN/WS points are tiny validation controls only, not test5 results."
+}

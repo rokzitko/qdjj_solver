@@ -1,0 +1,11 @@
+{
+  "format_version": 1,
+  "physical": {"geometry": "single", "gap": 1.0, "bandwidth": 100.0, "u": 2.0, "gamma": 0.4, "detuning": 0.5, "field": 0.03},
+  "targets": {
+    "qp": {"absolute": 1e-9, "relative": 1e-6},
+    "dmrg": {"absolute": 1e-9, "relative": 1e-6},
+    "nrg": {"absolute": 1e-6, "relative": 0.001}
+  },
+  "limits": {"cpus": 4, "memory_gib": 16, "task_seconds": 1200, "campaign_seconds": 7200, "mathematica_instances": 1},
+  "scope": "Pilot only. Lowest even M=0 and odd M=+/-1/2 states; extra roots and M=+/-1 are exclusion diagnostics. Longitudinal quantities only. Production requires separate approval."
+}

@@ -1,0 +1,28 @@
+{
+  "format_version": 1,
+  "energy_unit": "Delta",
+  "physical": {
+    "geometry": "single",
+    "gap": 1.0,
+    "bandwidth": 100.0,
+    "u": 2.0,
+    "gamma": 0.4,
+    "detuning": 0.5,
+    "field": 0.0
+  },
+  "targets": {
+    "qp": {
+      "absolute": 1e-09,
+      "relative": 1e-06
+    },
+    "dmrg": {
+      "absolute": 1e-09,
+      "relative": 1e-06
+    },
+    "nrg": {
+      "absolute": 1e-06,
+      "relative": 0.001
+    }
+  },
+  "scope": "Lowest singlet and spin-up doublet; independent seed and residual checks. No continuum certification assumed."
+}
