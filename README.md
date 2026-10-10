@@ -30,6 +30,16 @@ quantum-dot Josephson-junction formulations.
 The Python modules `qdjj_solver.common`, `qdjj_solver.qp_solver`, and
 `qdjj_solver.dmrg_solver` provide the common model definitions and the two solvers.
 
+## Browser applet
+
+Try the [QD Josephson Junction Explorer](https://qdjj.rok-zitko.workers.dev/)
+for interactive QP-expansion calculations of a quantum dot coupled to one or two
+superconducting leads. Explore many-body spectra, inspect state composition and
+physical observables, run parameter sweeps, and export data and plots.
+
+The numerical solver runs locally in your browser using WebAssembly, with no
+installation required.
+
 ## Install
 
 Currently, install from [source](https://github.com/rokzitko/qdjj_solver).
