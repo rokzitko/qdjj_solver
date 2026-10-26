@@ -1,0 +1,328 @@
+\chapter{Subgap spectroscopy and Andreev qubits}\label{ch:experiments}
+
+\section{From an eigenstate to a measured signal}\label{sec:measurement-picture}
+
+A calculated energy difference determines where a resonance \emph{can} occur. An
+experiment also specifies how the system is prepared, which operator couples to
+the probe, and which response is detected. The same junction can therefore give
+different tunnelling, microwave and supercurrent spectra. A useful procedure
+for interpreting a measurement is
+\begin{enumerate}
+\item identify the initial state's energy, parity, spin and population;
+\item identify the probe operator and its symmetry;
+\item find final states with nonzero matrix elements;
+\item compare their energy differences with the probe energy;
+\item include temperature, broadening and the detector response.
+\end{enumerate}
+The last step often requires physics beyond the isolated-junction Hamiltonian.
+An eigenstate calculation provides the energies and matrix elements that enter
+the response calculation; a measured line shape also depends on the probe and environment.
+
+\begin{figure}[htb]
+\centering\manualfigure{primer_probes}
+\caption{Two measurements of the same subgap system. A weak normal tunnel probe
+exchanges one electron with the junction and measures a conductance response.
+A microwave line modulates a gate or phase and is detected through absorption
+or a resonator response. The associated parity-changing and parity-preserving
+transitions have frequencies and visibility set by their respective energies, matrix elements and populations.}
+\label{fig:primer-probes}
+\end{figure}
+
+\subsection{Single-electron tunnelling}
+
+For an initial ground state $\ket g$, define excitation energies
+$\omega_m=E_m-E_g\ge0$. The zero-temperature local spectral function is
+\begin{equation}\label{eq:primer-spectral}
+ A_\sigma(E)=\sum_m\left[
+ |\matel m{d_\sigma\dg}g|^2\delta(E-\omega_m)
+ +|\matel m{d_\sigma}g|^2\delta(E+\omega_m)\right].
+\end{equation}
+The first term adds an electron and the second removes one. The negative-bias
+peak represents electron removal with the positive excitation cost $\omega_m$.
+Both operators change the parity of the probed dot--superconductor subsystem.
+The total parity including the probe remains conserved.
+
+For a sufficiently weak, featureless normal probe in equilibrium spectroscopy,
+$dI/dV$ samples a thermally broadened version of this spectral function. We use
+$eV$ as the probe electron energy relative to the junction; experimental voltage
+conventions must be translated before comparing signs. Peaks at opposite bias
+can have different intensities because the electron and hole matrix elements
+generally differ away from particle--hole symmetry.
+Spin selection rules and occupation of the initial doublet component can suppress
+one branch altogether.
+
+The probe and preparation determine how this spectral function appears experimentally. A superconducting tip supplies
+its own energy-dependent DOS and gap, shifting and reshaping thresholds. A normal
+lead with appreciable coupling adds a gapless channel and can change the impurity
+state it is meant to probe. Nonequilibrium occupation requires spectral contributions
+from the populated states. Transport in an N--QD--S device can involve a complete
+Andreev cycle transferring a pair even though its individual spectroscopic
+steps exchange single electrons.
+
+\subsection{Microwave absorption and dispersive sensing}
+
+A weak modulation $\delta\lambda\cos(2\pi ft)$ couples through
+$O=\partial H/\partial\lambda$. Gate modulation is associated with charge;
+phase modulation with the current operator. These operators are parity even.
+For a transition $i\to f$, the resonance condition is
+\begin{equation}
+ hf=E_f-E_i,
+\end{equation}
+and weak net absorption contains the factor
+$(p_i-p_f)|\matel fOi|^2$, where $p_i$ and $p_f$ are populations. Observing a net
+absorption line therefore requires both a nonzero matrix element and a population
+contrast between the initial and final states.
+
+A resonator can also detect the reactive response of a junction while being
+detuned from its transitions. Virtual transitions shift the resonator's
+frequency and change the phase of reflected or transmitted microwaves. This is
+\emph{dispersive readout}. In a low-frequency adiabatic limit, the response is
+related to the curvature of a state energy with phase, or its Josephson
+inductance. At finite frequency it generally depends on matrix elements and
+transition denominators as well~\cite{metzger2021circuitqed}. Interpret the frequency
+shift through this full junction--resonator response.
+
+\section{Superconducting quantum point contacts and atomic contacts}
+
+The normal conductance of spin-degenerate channels is
+\begin{equation}
+ G_N=\frac{2e^2}{h}\sum_n\tau_n.
+\end{equation}
+It determines the sum of transmissions. Resolving the individual channels requires
+the additional information in the nonlinear subgap current--voltage characteristic. Under voltage
+bias, repeated Andreev reflections allow an excitation to gain energy in steps
+of $eV$ until it reaches a continuum. For equal gaps, features appear near
+$e|V|=2\Delta/n$, with positive integer $n$, and their amplitudes depend on
+the channel transmissions. This \emph{multiple Andreev reflection} (MAR)
+measurement is distinct from the equilibrium phase-biased spectrum of
+\cref{eq:contact-abs}.
+
+Scheer and collaborators used superconducting transport to determine the
+transmission channels of atomic contacts and connect them to chemical
+valence~\cite{scheer1998signature}. Thus a few-channel junction
+has microscopic structure beyond its normal resistance. Once transmissions
+are known, the short-contact formula predicts the corresponding phase-dependent
+ABS branches under its assumptions.
+
+Bretheau and collaborators detected the Andreev pair excitation of a
+superconducting atomic contact using a voltage-biased Josephson junction as a
+microwave spectrometer~\cite{bretheau2013exciting}. The spectrometer's Josephson
+frequency satisfies $hf=2eV_J$, while the contact absorbs at $hf=2E_A$.
+There are two different junctions and two different roles in this relation:
+the voltage-biased source produces radiation, and the phase-biased contact
+absorbs it. Identifying which junction supplies the bias keeps the factor of two
+discussed in \cref{sec:abs-occupations} explicit.
+
+The same concepts apply to gate-defined semiconductor constrictions.
+Microwave sensing of a gate-defined superconducting QPC was demonstrated by
+Chidambaram and collaborators~\cite{chidambaram2022microwave}. Semiconductor
+junctions also permit gate-dependent channel occupation, appreciable spin--orbit
+coupling and longer dwell times. These features make them tunable, but require
+checking whether the simplest short, spin-degenerate channel formula is adequate.
+Nanowire microwave spectroscopy provides complementary
+examples~\cite{vanwoerkom2017microwave,tosi2019spinorbit}.
+
+\section{Reading a quantum-dot tunnelling spectrum}
+
+Deacon and collaborators studied a dot strongly coupled to a superconductor
+and weakly coupled to a normal probe~\cite{deacon2010tunneling}. Gate-dependent
+subgap resonances revealed the competition between singlet and doublet ground
+states. Lee and collaborators resolved the field dependence and spin splitting
+of these excitations~\cite{lee2014spinresolved}. These measurements connect the
+many-body energies of \cref{sec:subgap} to experimental lines.
+
+\begin{figure}[htb]
+\centering\manualfigure{primer_spectroscopy}
+\caption{Analytic interpretation exercise for the large-gap dot, with parameters
+specified in \cref{fig:primer-atomic}. (a) Signed energy difference $E_D-E_S$.
+(b) Positive and negative energies of the lowest single-electron transition,
+$\pm|E_D-E_S|$. The curves specify resonance positions; a conductance calculation
+would additionally require line widths, populations, transition weights and higher transitions.
+The doublet is the ground state between the crossings.}
+\label{fig:primer-spectroscopy}
+\end{figure}
+
+Start with a singlet ground state and an excited spin-degenerate doublet. A
+small field splits the final doublet, so two transition energies can emerge.
+On the doublet-ground-state side, sufficiently low temperature can populate
+only the lower Zeeman component. Tunnelling to a singlet then gives a different
+number of branches. Thermal population of the upper component can restore additional
+lines. The number of visible lines thus reflects both the spectrum and the
+preparation of the initial state.
+
+A zero-bias crossing can occur when an ordinary singlet and doublet exchange
+order. Distinguishing this ordinary parity transition from a Majorana mode
+requires additional evidence. To interpret an apparent avoided crossing as
+coherent hybridization, resolve the relevant line widths, thermal populations
+and contributing transitions, and check which levels the Hamiltonian couples.
+
+For a useful comparison with a paper, identify the lead gaps, gate-to-energy
+conversion, total versus per-lead hybridization, field direction, probe coupling
+and temperature. Match the observable as well as the Hamiltonian. Comparing a
+calculated energy branch with a bright experimental ridge is meaningful only
+after checking which transition produces that ridge.
+
+\section{The even-parity Andreev-level qubit}\label{sec:pair-qubit}
+
+The two even states of a short channel form the Andreev-level, or Andreev-pair,
+qubit: $\ket g$ and $\ket e$ of \cref{eq:andreev-occupations}. Their transition
+frequency is $2E_A/h$ in that model. A gate or phase modulation can drive it
+when the corresponding off-diagonal matrix element is nonzero. Quantitative
+control requires the wavefunctions or a suitable effective Hamiltonian together
+with the phase dependence of $E_A$.
+
+Janvier and collaborators demonstrated coherent manipulation of Andreev states
+in superconducting atomic contacts, with resonator-based readout, Rabi
+oscillations and Ramsey measurements~\cite{janvier2015coherent}. Rabi
+oscillations show controlled population transfer; Ramsey fringes measure the
+phase accumulated by a superposition. These go beyond observing an absorption
+resonance. The odd sector is outside the chosen even qubit space: trapping one
+quasiparticle can interrupt the operation and change the readout response.
+
+\begin{figure}[htb]
+\centering\manualfigure{primer_qubits}
+\caption{Two distinct Andreev-qubit encodings. The pair qubit uses the even
+ground and excited states; the spin qubit uses two states within an odd
+manifold. The vertical scales are schematic and independent. Parity switching
+leaves the selected computational space in either case. Spin labels denote
+pseudospins when spin--orbit coupling mixes physical spin.}
+\label{fig:primer-qubits}
+\end{figure}
+
+For an interacting dot, the corresponding even transition is $S\to S^*$.
+Its frequency is $(E_{S^*}-E_S)/h$ and must be calculated independently of the lowest
+parity-changing excitation. The large-gap pseudospin Hamiltonian makes the
+distinct energy differences explicit. The driven two-level example in \cref{ch:ex-tls}
+explains the associated Rabi physics; \cref{ch:ex-phase,ch:ex-gate} address
+phase and gate driving in the finite-gap junction.
+
+\section{The odd-parity Andreev spin qubit}\label{sec:spin-qubit}
+
+An Andreev spin qubit (ASQ) uses two states within an odd-parity manifold. In a
+spin-conserving model these are $D_\up$ and $D_\dn$. With spin--orbit coupling
+they are more generally pseudospin states with mixed spin and orbital character.
+The qubit splitting is the energy difference between these two odd-parity states.
+Quasiparticle addition and the pair excitation $2E_A$ involve different transitions.
+
+An odd occupation can arise in two ways. A quasiparticle can be trapped
+in an otherwise non-interacting weak link; the duration of this occupation is then
+set by the parity lifetime. Alternatively, Coulomb interaction can make the odd doublet the
+equilibrium ground manifold over a range of gates and phases. The second route
+connects the superconducting Anderson model directly to a qubit architecture.
+Both require understanding population leakage and the gap to other states.
+
+Hays and collaborators demonstrated continuous monitoring of a trapped spin
+through its spin-dependent microwave response~\cite{hays2020continuous}. Their
+subsequent coherent-control experiment used two-tone Raman transitions through
+auxiliary Andreev states~\cite{hays2021coherent}. A Raman process couples the
+two qubit states indirectly through driven transitions to higher levels. The
+energies and matrix elements of those auxiliary levels are essential to the
+control mechanism, even though the qubit itself is encoded in two states.
+
+In quantum-dot devices, Bargerbos and collaborators measured spin-split
+Andreev levels and spin-conditioned circuit spectra~\cite{bargerbos2023spectroscopy}.
+Pita-Vidal and collaborators demonstrated direct electrical spin control and
+strong coupling to a transmon~\cite{pitavidal2023direct}. Spectroscopic avoided
+crossings establish hybridization between the spin and circuit excitations;
+determining two-qubit gate fidelity additionally requires coherent-control measurements.
+
+\subsection{Why can an electric field rotate a spin?}
+
+A scalar gate modulation preserves an exactly conserved spin. Spin--orbit
+coupling mixes spin and orbital motion so that an electric perturbation can
+acquire a transverse matrix element in the qubit subspace. Assess the static
+spin splitting and the transverse electrical coupling separately. A phase-biased
+structure with suitable spin--orbit and orbital structure can produce spin splitting
+at zero Zeeman field away from time-reversal-invariant operating points.
+Spin--orbit coupling alone preserves Kramers degeneracy at those points, while
+a spin-rotation-invariant junction retains spin degeneracy under phase bias.
+
+This is a reason to distinguish a minimal single-orbital, spin-conserving model
+from a realistic all-electric ASQ Hamiltonian. Spin-dependent tunnelling,
+multiple orbitals or an additional conduction path may be essential. The
+dot-local transverse magnetic drive of \cref{ch:ex-esr} isolates spin
+renormalization and resonance physics; electrical ASQ control requires the
+appropriate microscopic operator and symmetry breaking.
+
+\section{Embedding the junction in a quantum circuit}\label{sec:circuit-picture}
+
+So far $\phi$ has been an externally prescribed parameter. In a circuit,
+capacitance introduces charging energy and makes phase a quantum variable
+conjugate to transferred Cooper-pair number, $[\hat\phi,\hat n]=\ii$. For an
+inductively shunted junction restricted to an isolated internal branch $p$, an
+illustrative Hamiltonian is
+\begin{equation}\label{eq:primer-circuit}
+ H_{\mathrm{circ}}=4E_C(\hat n-n_g)^2+E_p(\hat\phi)
+                  +\frac{E_L}{2}(\hat\phi-\phi_{\mathrm{ext}})^2,
+ \qquad E_C=\frac{e^2}{2C}.
+\end{equation}
+The dimensionless $n_g$ is an offset charge in Cooper-pair units, and
+$E_L=(\hbar/2e)^2/L$ for inductance $L$. A reference Josephson junction provides
+a cosine contribution instead of this ideal inductive term. The circuit layout
+determines which potential is appropriate.
+
+\begin{figure}[htb]
+\centering\manualfigure{primer_circuit}
+\caption{Conceptual microwave experiment. A weak link and a reference junction
+form a flux-controlled loop; a shunt capacitance and a coupled resonator supply
+collective circuit degrees of freedom and readout. The sequence separates
+preparation, coherent driving and measurement. Resonator output depends on the
+occupied junction state and the coupled circuit response. The schematic illustrates
+the general architecture and readout sequence.}
+\label{fig:primer-circuit}
+\end{figure}
+
+Near a stable minimum of the total potential $V(\phi)$, small phase oscillations
+have the approximate spacing $\hbar\omega\simeq\sqrt{8E_CV''(\phi_{\min})}$.
+This spacing follows from the circuit capacitance and potential curvature.
+The branch projection in
+\cref{eq:primer-circuit} is adiabatic: near internal-state resonances one must
+retain a matrix-valued junction Hamiltonian and its couplings. Charge offsets
+and boundary conditions must also be consistent with the chosen parity.
+Reviews in Refs.~\cite{aguado2020perspective,glazman2021bogoliubov} explain this
+connection between microscopic states and collective circuit modes.
+
+\section{Lifetimes, poisoning and the limits of a level diagram}
+
+Three distinct processes are relevant here. \emph{Relaxation} transfers population
+between levels within the chosen system. \emph{Dephasing} destroys relative
+phase coherence of a superposition. \emph{Poisoning} changes the parity of the
+bound subsystem by exchanging a quasiparticle with its environment. A spin flip
+need not change parity; a parity switch need not be a spin flip. Escape of a
+driven quasiparticle into the continuum can empty a bound state while preserving
+the total parity of bound state plus reservoirs.
+
+For a non-interacting channel, promoting an occupied bound quasiparticle to the
+continuum has threshold $\Delta-E_A$, while creating one bound and one continuum
+quasiparticle costs $\Delta+E_A$. The even pair transition costs $2E_A$.
+Identify the relevant final states and excitation threshold for each microwave
+process. Interacting thresholds use the appropriate
+many-body final energies; \cref{ch:ex-phase} gives a concrete example.
+
+Measured $T_1$, $T_2$ and line widths depend on electromagnetic noise,
+quasiparticle distributions, drive strength and couplings to external modes.
+Calculating these rates requires a model of the relevant dynamical processes.
+Numerical Lorentzian broadening specifies the plotted line shape; interpreting
+its width as a lifetime requires that physical model. The package's states and
+operator matrix elements supply ingredients for calculating those responses.
+
+\begin{physics}[Read the experiment]
+A resonator trace switches between two frequencies. Which state changes could
+produce this signal? It may resolve populations switching between spin states or
+between parities. Identify the state-dependent response and the switching
+process. To test coherent spin control, use controlled oscillations under a pulse and phase-sensitive
+Ramsey measurements. Similarly, an absorption line
+locates a transition, while its disappearance can reflect population changes,
+a selection rule or escape from the bound manifold.
+\end{physics}
+
+\paragraph{A route through the literature.}
+For devices and transport, start with De Franceschi and
+collaborators~\cite{defranceschi2010hybrid}; for dot-junction theory, use
+Mart\'in-Rodero and Levy Yeyati~\cite{martinrodero2011josephson} and
+Meden~\cite{meden2019andersonjosephson}. Read the atomic-contact spectroscopy
+and coherent-control papers together~\cite{bretheau2013exciting,janvier2015coherent}
+to see the progression from an excitation to a qubit. Then compare trapped-spin
+control~\cite{hays2021coherent} with the Coulomb-stabilized dot
+implementation~\cite{pitavidal2023direct}. This order keeps the encoding,
+measurement and microscopic model distinct while showing how they fit together.

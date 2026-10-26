@@ -1,0 +1,179 @@
+\chapter{Numerical methods for driven problems}\label{ch:drivenmethods}
+
+\section{From a drive to harmonics}\label{sec:sampling}
+
+\code{PeriodicHamiltonian.from_parameters} evaluates the model constructor at
+$N$ equally spaced times $t_j=jT/N$ and Fourier transforms every operator coefficient,
+\begin{equation}\label{eq:fft}
+  H_k=\frac1N\sum_{j=0}^{N-1}H(t_j)\,\ee^{-2\pi\ii jk/N},\qquad 0\le k\le\lceil N/2\rceil-1 .
+\end{equation}
+This is exact for Hamiltonians with no harmonics at or above $N/2$, including a
+monochromatic modulation of a parameter on which the Hamiltonian depends linearly. For the phase drive the Bessel functions decay
+faster than exponentially once $k>A_\phi/4$, so a modest $N$ suffices. The construction is
+checked at the midpoints $t_{j+1/2}$, where the model is rebuilt and compared with the
+Fourier series. The largest $\ell_1$ norm of the coefficient differences bounds the
+operator-norm error of the interpolated Hamiltonian and must stay below
+\code{sampling_tolerance}. The observables of the model, e.g.\ $\partial H/\partial\phi$,
+are sampled in the same way, since they too depend on time under a phase drive.
+
+\section{Sambe-space diagonalization}\label{sec:sambe-method}
+
+\code{solve_floquet} truncates $Q$ in \cref{eq:sambe-matrix} to $\abs m\le M$ (option
+\code{floquet_cutoff}) and diagonalizes it. The many-body space in each block is either the full
+QP Fock space of the sector (\code{basis="fock"}) or the static basis of the $K$ lowest
+eigenstates of the undriven Hamiltonian (\code{basis="eigen"}, $K$ set by
+\code{basis_states}). In the static basis the harmonics become the $K\times K$ matrices
+$\matel a{H_k}b$ between the static eigenstates. The Sambe dimension is $(2M+1)d$, where
+$d$ is the dimension of the Fock space of the sector or $d=K$. Small problems are
+diagonalized densely. Large Fock-space problems use shift-invert Arnoldi iterations
+(ARPACK)~\cite{lehoucq1998arpack}, with a sparse LU factorization of $Q-\sigma$ for each
+target quasienergy $\sigma$~\cite{li2005superlu}; by default the targets are the static
+energies of the tracked states.
+
+\paragraph{A rigorous error bound.}
+Let $v$ be a normalized eigenvector of the truncated matrix $Q_M$ with eigenvalue $\lambda$, and
+embed it in the infinite Sambe space. The residual of the embedded vector has two parts:
+the window residual $r=\norm{(Q_M-\lambda)v}$, which measures the eigensolver accuracy, and
+the \emph{leakage} $\kappa=\norm{\sum_{m'}H_{m-m'}v_{m'}}$ into the omitted blocks
+$\abs m>M$. Because the infinite Sambe operator is self-adjoint, it has an eigenvalue within
+\begin{equation}\label{eq:residual-bound}
+  \abs{\qe-\lambda}\le\sqrt{r^2+\kappa^2}
+\end{equation}
+of $\lambda$ (\cref{app:residual}). This combined residual is reported as
+\code{residuals}; the window residual must stay below \code{residual_tolerance}. The bound is
+of first order: for an isolated quasienergy the actual error is typically of second order in
+$\kappa$, and often much smaller than the bound. In the static basis, \code{fock_residuals}
+evaluates the same residual for the Fock-space Sambe operator and thus tests the
+convergence in $K$.
+
+\paragraph{Branches and tracking.}
+Each Floquet state appears in many replicas (\cref{sec:sambe}). The solver keeps one replica
+per state, the one whose harmonic centroid $\expval m$ is smallest in magnitude. It
+recognizes the other replicas by their quasienergy, shifted by a multiple of $\Omega$, and
+by their overlap after a shift of the harmonic index; for degenerate multiplets it projects
+onto all retained states with that quasienergy. With \code{selection="tracked"} (the default), the
+lowest \code{states} static eigenstates are assigned to Floquet states by maximizing the
+total static weight $s_{\alpha a}=\sum_m\abs{\braket a{u_{\alpha,m}}}^2$; each assigned weight must
+exceed \code{tracking_threshold}. Near a resonance the eigenpairs closest to one shift-invert
+target can be replicas of the state assigned at another target. The solver therefore doubles
+the number of eigenpairs requested at that target until the corresponding static state is assigned, up to
+\code{max_eigenpairs_per_target}. With
+\code{selection="all"}, every Floquet state in the window is returned. Complete sets, needed
+for the sum rule of \cref{ch:probes}, require the dense solver, because shift-invert finds
+only the states near explicit \code{targets}. The reported quasienergy is placed on a
+definite branch:
+\begin{itemize}
+\item \code{branch="label"} (default for tracked states) chooses the replica in which the
+component on the assigned static state $a$ has its harmonic centroid in $[-\tfrac12,\tfrac12)$,
+so that $\qe_\alpha\to E_a$ as the drive vanishes and $\qe_\alpha$ varies continuously
+through a one-photon resonance;
+\item \code{branch="centroid"} (default for \code{selection="all"}) uses the replica with
+total centroid in $[-\tfrac12,\tfrac12)$;
+\item \code{folded} gives every quasienergy in the zone $[c-\Omega/2,c+\Omega/2)$,
+$c=$\code{zone_center}.
+\end{itemize}
+
+\begin{caution}
+At a resonance the dressed states are equal mixtures of two static states, and the
+labels may swap from one side of the resonance to the other. Plot both branches together,
+as in the rotating frame of \cref{fig:tls-weak}, to follow the complete resonant pair.
+\end{caution}
+
+\section{The one-period propagator}\label{sec:propagator}
+
+\code{floquet_propagator} integrates the Schr\"odinger equation over one period with
+$H(t)=\sum_kH_k\ee^{\ii k\Omega t}$, without a Floquet cutoff, and diagonalizes $U(T,0)$. The
+integrator is the fourth-order commutator-free Magnus
+scheme~\cite{blanes2006fourth,alvermann2011high,blanes2009magnus} (\cref{app:cfm4}),
+\begin{equation}\label{eq:cfm4}
+  U(t+h,t)=\ee^{-\ii h(\alpha_1H_1+\alpha_2H_2)}\,\ee^{-\ii h(\alpha_2H_1+\alpha_1H_2)},\qquad
+  \alpha_{1,2}=\frac{3\mp2\sqrt3}{12},\quad H_{1,2}=H\bigl(t+(\tfrac12\mp\tfrac{\sqrt3}6)h\bigr),
+\end{equation}
+where $h$ is the time step. The exponentials are evaluated by eigendecomposition, so that
+each step is exactly unitary. The eigenphases of $U(T,0)$ give the folded quasienergies. The
+mean energies \eqref{eq:mean-energy}, accumulated along a second propagation, select the
+central replica, and the Fourier transform of $\ket{u(t)}$ on the time grid gives the
+harmonics. With \code{step_check=True} the calculation is repeated with half the time step,
+and $\abs{\qe_h-\qe_{h/2}}/15$ estimates the remaining error of the time stepping. The
+propagator approach is also used by QuTiP's Floquet
+module~\cite{johansson2012qutip,lambert2026qutip}. In \pkg{} it serves as an independent
+check of convergence with the Floquet cutoff and as an alternative method in a static basis.
+
+\section{The high-frequency expansion}\label{sec:van-vleck}
+
+For $\Omega$ large compared with the many-body spectral width, the Sambe blocks with
+$m\ne0$ are far from the $m=0$ block and can be eliminated perturbatively. The result is the
+static effective Hamiltonian $\Heff$ introduced in \cref{ch:floquet}, whose eigenvalues approximate the
+quasienergies. To second order in $1/\Omega$, the van Vleck form of this
+expansion~\cite{eckardt2015high,bukov2015universal,goldman2014periodically,mikami2016brillouin}
+reads (\cref{app:vanvleck})
+\begin{equation}\label{eq:van-vleck}
+  \Heff=H_0+\frac1\Omega\sum_{m\ge1}\frac{[H_m,H_{-m}]}m
+  +\frac1{\Omega^2}\Bigl(\sum_{m\ne0}\frac{[[H_{-m},H_0],H_m]}{2m^2}
+  +\sum_{m\ne0}\sum_{m'\ne0,m}\frac{[[H_{-m'},H_{m'-m}],H_m]}{3mm'}\Bigr).
+\end{equation}
+The first-order term vanishes when every $H_k$ commutes with $H_{-k}=H_k\dg$. This holds
+for any drive that becomes even in time after a shift of the time origin, such as a
+single-parameter cosine with any phase $\theta$, for which $H_k=\ee^{\ii k\theta}g_k$ with
+Hermitian $g_k$. A finite first-order term requires, for example, several parameters driven
+with relative phases. The commutators are evaluated with the full
+fermionic operators, before any QP truncation. The result is an ordinary
+\code{Hamiltonian} in the same coordinates (\code{periodic.van_vleck(order)}), which both the
+QP and the DMRG solver can solve. The error at order $n$ scales as $\Omega^{-(n+1)}$
+(\cref{fig:highfreq}). Because the bath bandwidth enters the many-body spectral width, the
+expansion serves as a check for small models and as a conceptual tool in the high-frequency
+regime. Treat subgap resonances at $\Omega\sim\Delta$ with Sambe diagonalization or the propagator.
+
+\section{The rotating-wave model}\label{sec:rwa}
+
+Near a resonance only a few blocks of $Q$ matter. \code{rwa_model(periodic, states, photons)}
+restricts $Q$ to the pairs $\ket{a_i,n_i}$ of a static state $a_i$ and a photon number $n_i$,
+\begin{equation}\label{eq:rwa}
+  Q^{\mathrm{RWA}}_{ij}=\bigl(H_{n_i-n_j}\bigr)_{a_ia_j}+n_i\Omega\,\delta_{ij},
+\end{equation}
+with matrix elements in the static eigenbasis. The photon numbers are chosen so that the
+diagonal entries $E_{a_i}+n_i\Omega$ are nearly degenerate. For example, absorption from $a$
+to $b$ with $E_b-E_a\approx\Omega$ uses \code{states=[a, b]} and \code{photons=[0, -1]}. At
+resonance the splitting is $2\abs{(H_{n_a-n_b})_{ab}}$. The model neglects the
+counter-rotating terms (Bloch--Siegert shift) and the AC Stark shifts from all other
+states, both of second order in the drive. It is exact for a two-level system with a
+circularly polarized drive.
+
+\section{Choosing a method}
+
+\begin{table}[htb]
+\centering\small
+\caption{Methods for Floquet quasienergies in \pkg{}.}\label{tab:methods}
+\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.1cm}>{\raggedright\arraybackslash}p{3.6cm}X}
+\toprule
+Method & Controlled by & Use for \\
+\midrule
+Sambe, Fock basis & $M$, QP cutoff, bath & reference results; moderate Fock dimensions; shift-invert for tracked states \\
+Sambe, static basis & $M$, $K$ & large Fock spaces, scans over $\Omega$ or amplitude; check \code{fock_residuals} \\
+Propagator & time steps, basis & independent check without Floquet cutoff; strong slow drives \\
+Van Vleck & order in $1/\Omega$ & $\Omega$ above the many-body width; effective Hamiltonians, DMRG \\
+RWA & chosen states & interpretation of resonances, Rabi splittings \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Convergence must be checked separately with respect to the Floquet cutoff $M$, the size
+$K$ of the static basis, the QP cutoff, the bath, the number of drive samples and, for the
+propagator, the number of time steps. \Cref{ch:ex-numerics} works through each of them.
+
+\section{Validation}\label{sec:validation-driven}
+
+The driven solvers are checked against independent results:
+\begin{itemize}
+\item propagation of the exact $H(t)$ of a phase- and gate-driven junction in the physical
+electron basis, with a different Magnus integrator and without Fourier series; it agrees with
+the QP propagator and the Fock-space Sambe results to $10^{-8}$;
+\item the exactly solvable circularly driven two-level system, for Sambe, propagator, RWA and
+the analytic van Vleck operators;
+\item Bessel-function harmonic weights of a gate-driven isolated dot
+(\cref{ch:ex-dot}) and Jacobi--Anger harmonics of the phase drive;
+\item the gauge identity \eqref{eq:phase-to-level} between a phase drive and a level drive;
+\item the $\Omega^{-(n+1)}$ error scaling of the van Vleck expansion;
+\item the Rabi splitting at an $S$--$S^*$ resonance against the RWA and the static matrix
+element.
+\end{itemize}

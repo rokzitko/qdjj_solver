@@ -1,0 +1,85 @@
+\chapter{Introduction}\label{ch:introduction}
+
+\section{Superconducting quantum impurities}
+
+A quantum dot, a molecule or a magnetic adatom coupled to superconductors is the
+simplest system in which electron--electron interaction, superconducting pairing and
+quantum coherence compete on an equal footing. The impurity level is described by the
+Anderson model~\cite{anderson1961localized}: a single orbital that can hold zero, one or
+two electrons, with charging energy $U$ for double occupancy. Coupled to a BCS
+superconductor, the impurity binds Andreev or Yu--Shiba--Rusinov (YSR) states inside the
+gap~\cite{yu1965bound,shiba1968classical,rusinov1969superconductivity,balatsky2006impurity}.
+In the simplest spin-symmetric, single-orbital junction, the low-energy competition
+is between a spin \emph{singlet} and a spin \emph{doublet}. A singlet can arise from
+proximity pairing or from screening of a local moment; a doublet retains total
+spin $1/2$ even when its dot-local polarization is reduced. Their crossing changes
+the ground-state fermion parity. In a Josephson junction it is closely associated
+with the change between 0- and $\pi$-junction behaviour, defined by the phase dependence
+of the ground-state energy and current: the 0--$\pi$
+transition~\cite{glazman1989resonant,spivak1991negative,rozhkov1999josephson,vecino2003josephson,choi2004kondo,siano2004josephson,bauer2007spectral,karrasch2008josephson,meng2009selfconsistent}.
+Reviews of the theory and of the experiments are given in
+Refs.~\cite{defranceschi2010hybrid,martinrodero2011josephson,meden2019andersonjosephson,prada2020andreev}.
+
+Quantum-dot Josephson junctions have been realized in carbon nanotubes, semiconductor
+nanowires and two-dimensional heterostructures, and the 0--$\pi$ transition, the
+singlet--doublet level crossing and the subgap spectrum have been measured by transport,
+tunnelling spectroscopy and circuit quantum electrodynamics
+techniques~\cite{vandam2006supercurrent,cleuziou2006carbon,pillet2010andreev,deacon2010tunneling,lee2014spinresolved,delagrange2015manipulating,bargerbos2022singletdoublet}.
+The same physics governs magnetic adatoms on superconducting surfaces probed by scanning
+tunnelling microscopy~\cite{yazdani1997probing,franke2011competition,ruby2015tunneling,heinrich2018single}.
+
+\section{Why drive the junction?}
+
+The subgap states of a junction are the levels of a solid-state artificial atom, and
+like the levels of an atom they are probed and controlled by oscillating fields.
+Microwave radiation applied through the phase difference excites pairs of
+quasiparticles into the Andreev levels of atomic contacts and
+nanowires~\cite{bretheau2013exciting,bretheau2013supercurrent,janvier2015coherent,vanwoerkom2017microwave,hays2018direct}.
+The even-parity pair transition is used in Andreev-level qubits; Andreev spin
+qubits instead use two states within an odd-parity manifold, with spin-dependent
+control matrix elements~\cite{desposito2001controlled,zazunov2003andreev,chtchelkatchev2003andreev,padurariu2010theoretical,hays2021coherent,pitavidal2023direct}.
+Microwave probes also resolve the excitation spectra of interacting quantum-dot
+junctions~\cite{tosi2019spinorbit,matutecanadas2022signatures,fatemi2022microwave,bargerbos2023spectroscopy,wesdorp2023dynamical}.
+Strong periodic driving creates new states, the Floquet--Andreev states
+observed in graphene junctions~\cite{park2022steady}, and microwave-assisted tunnelling
+through YSR states has been observed with a scanning tunnelling
+microscope~\cite{kot2020microwaveassisted,peters2020resonant,acerogonzalez2020photonassisted}.
+Periodic driving is, more generally, a tool to engineer effective Hamiltonians, a
+programme known as Floquet engineering~\cite{goldman2014periodically,bukov2015universal,eckardt2017colloquium,oka2019floquet,rudner2020band}.
+
+These experiments raise several common questions. How are the many-body subgap states
+dressed by the drive? Where do resonances occur and how large are the resulting
+splittings? Which transitions are allowed by symmetry? How does the interaction modify
+the answers obtained for non-interacting Andreev levels? Answering them requires the
+spectrum of the \emph{periodically driven} many-body Hamiltonian, calculated by the
+Floquet methods in \pkg{}.
+
+\section{What the package computes}
+
+\pkg{} treats a finite version of the model: each superconducting reservoir is
+represented by a finite set of levels chosen to approximate its hybridization function. The
+static solvers find low-lying many-body eigenstates in each symmetry sector, using either a
+truncated quasiparticle (QP) expansion or the density-matrix renormalization group
+(DMRG). Both solvers work with the same Hamiltonian and the same physical conventions.
+
+When parameters are driven periodically, the code computes the \emph{quasienergies}
+$\qe_\alpha$, the time-periodic \emph{Floquet modes}, their decomposition into
+harmonics (photon sidebands) and their overlaps with the static eigenstates. Four
+methods are available: diagonalization in the extended (Sambe) space, the one-period
+propagator, a high-frequency effective Hamiltonian and a few-level rotating-wave model.
+Their results agree where their regimes of validity overlap, and the manual uses these
+comparisons throughout.
+
+\section{A physics-first reading route}
+
+Begin with the device sketches, Andreev trajectories and occupation diagrams in
+\cref{ch:background}. Then use the four-state dot in \cref{ch:model} to understand
+the role of charging energy. \Cref{ch:correlations} distinguishes proximity pairing
+from Kondo screening, and \cref{ch:experiments} explains which transitions an
+experiment can detect and how the states can be used as qubits. The first executable calculation is
+in \cref{sec:first-calculation}, after the singlet and doublet states have been
+defined. \Cref{ch:static} explains the approximations needed to compute them.
+
+\section{Conventions}
+
+\input{generated/conventions}

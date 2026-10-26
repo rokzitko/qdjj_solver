@@ -19,8 +19,13 @@ test = ["pytest>=8", "hypothesis>=6.130", "pytest-timeout>=2.3"]
 coverage = ["coverage[toml]>=7.10.6", "pytest-cov>=7"]
 dev = [
   "pytest>=8", "hypothesis>=6.130", "pytest-timeout>=2.3",
-  "coverage[toml]>=7.10.6", "pytest-cov>=7", "ruff>=0.9", "build>=1.2",
+  "coverage[toml]>=7.10.6", "pytest-cov>=7", "ruff>=0.9", "build>=1.2", "markdown-it-py>=3",
 ]
+docs = [
+  "sphinx>=8,<10", "myst-parser>=5", "pydata-sphinx-theme>=0.16", "sphinx-copybutton>=0.5",
+  "markdown-it-py>=3",
+]
+docs-pdf = ["sphinxcontrib-svg2pdfconverter>=2.0", "pypdf>=5"]
 reference = ["physics-tenpy>=1.1.1,<2", "h5py>=3.10"]
 
 [project.scripts]
@@ -121,7 +126,7 @@ sdist.include = [
   "NRG_comparisons/test4/output/comparisons.csv",
   "NRG_comparisons/test4/output/z_averages.csv",
 ]
-sdist.exclude = ["build", "dist", ".venv", ".pytest_cache", ".ruff_cache", ".hypothesis", ".coverage*", "reports", "runs", "results", "APPLICATIONS.md", "session-*.md", "*.session.json", "applications/*/runs", "large_Gamma/runs", "NRG_comparisons", "**/__pycache__"]
+sdist.exclude = ["build", "dist", ".venv", ".pytest_cache", ".ruff_cache", ".hypothesis", ".coverage*", "reports", "runs", "results", "APPLICATIONS.md", "ROADMAP.md", "DEVELOPMENT_PHILOSOPHY.md", "session-*.md", "*.session.json", "applications/*/runs", "large_Gamma/runs", "NRG_comparisons", "**/__pycache__"]
 
 [tool.cibuildwheel]
 build = "cp311-* cp312-* cp313-* cp314-*"
@@ -139,13 +144,15 @@ environment = { MACOSX_DEPLOYMENT_TARGET = "11.0", OMP_NUM_THREADS = "1", OPENBL
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-addopts = "-ra --strict-config --strict-markers -m 'not slow'"
+addopts = "-ra --strict-config --strict-markers -m 'not slow and not docs and not tutorial'"
 timeout = 180
 markers = [
   "convergence: extended numerical convergence validation",
   "slow: weekly or manually requested numerical stress tests",
   "native: direct native extension and instrumented integration tests",
   "dmrg: requires the optional TeNPy backend",
+  "docs: documentation consistency checks (docs CI job; needs the docs extra)",
+  "tutorial: quick profiles of the tutorials in examples/ (docs CI job)",
 ]
 
 [tool.coverage.run]

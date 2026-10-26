@@ -1,0 +1,186 @@
+\chapter{Driving the junction}\label{ch:driving}
+
+\section{Which parameters can be driven}\label{sec:drives}
+
+In \pkg{} a drive is a periodic modulation of one or several model parameters,
+\begin{equation}\label{eq:drive}
+  p(t)=p_0+\sum_n A_n\cos(n\Omega t+\theta_n),
+\end{equation}
+and the driven Hamiltonian is $H(t)=H\bigl(p(t)\bigr)$, built by the same model
+constructor as the static one. For a monochromatic drive we write $A\equiv A_1$ and
+$\theta\equiv\theta_1$. To distinguish the driven parameters, $A_\phi$ denotes the amplitude
+of a phase drive (in radians) and $A_\eps$ that of a gate drive (an energy). The physically
+important cases are the following.
+
+\begin{description}[leftmargin=0pt]
+\item[Gate drive.] An ac voltage on a gate electrode modulates the dot level,
+$\eps(t)$. Because $\Hd$ is linear in $\eps$, $H(t)=H(\eps_0)+(n_d-1)\sum_nA_n\cos(n\Omega
+t+\theta_n)$. A monochromatic drive has only the harmonics
+$H_{\pm1}=\tfrac{A_\eps}2\ee^{\pm\ii\theta}(n_d-1)$.
+This is the setting of photon-assisted tunnelling through quantum
+dots~\cite{kouwenhoven1994photon,kouwenhoven1994observation,oosterkamp1998microwave,platero2004photon}.
+\item[Phase drive.] Microwaves applied to a superconducting loop or across the junction
+modulate the phase difference, $\phi(t)$. Since the phase enters the tunnelling through
+the factors $\ee^{\pm\ii\phi/4}$, $H(t)$ contains all harmonics, with Bessel-function
+amplitudes (\cref{sec:jacobi-anger}). This is how Andreev levels are
+excited in microwave spectroscopy~\cite{bretheau2013exciting,janvier2015coherent,hays2018direct,kos2013frequencydependent}.
+\item[Coupling drive.] A gate on a tunnel barrier modulates $\Gamma_l$, which enters the
+Hamiltonian through $t_l\propto\sqrt{\Gamma_l}$~\cite{moghaddam2012driven}.
+\item[Field drive.] An oscillating magnetic field along $z$ modulates the Zeeman energy. A
+transverse field $b(t)S^x_d$ flips the spin and breaks the conservation of $S_z$; this is
+electron spin resonance (ESR) of the impurity spin
+(\cref{ch:ex-esr})~\cite{koppens2006driven,baumann2015electron,yang2019coherent}.
+\item[Combined drives.] Several parameters may be modulated simultaneously with relative
+phase offsets, for example by a gate electrode that also couples capacitively to the junction phase.
+\end{description}
+
+\begin{incode}
+\begin{lstlisting}[frame=none,backgroundcolor={},aboveskip=0pt,belowskip=0pt]
+from qdjj_solver import Harmonic, ParameterDrive, PeriodicHamiltonian, reference_model
+from qdjj_solver.qp_solver import solve_floquet
+drives = [ParameterDrive.cosine("phi", .3),                      # phi0 + 0.3 cos(Omega t)
+          ParameterDrive("detuning", (Harmonic(1, .02, np.pi/2),  # two harmonics
+                                      Harmonic(2, .01)))]
+periodic = PeriodicHamiltonian.from_parameters(reference_model, model, drives, omega=.5)
+\end{lstlisting}
+The model constructor, here \code{reference_model}, is evaluated at equally spaced times
+over one period (\code{samples}, default 64), and every operator coefficient is Fourier
+transformed (\cref{sec:sampling}). \code{from_callable(f, omega)} accepts any function
+\code{f(t)} that returns a \code{Hamiltonian}.
+\par\smallskip\usermanual{docs/floquet.md}.
+\end{incode}
+
+\section{Phase drive, voltage and the Josephson relation}\label{sec:phase-voltage}
+
+The superconducting phase is included in the tunnelling amplitudes,
+\cref{eq:tunnelling}. With this choice a time-dependent phase is equivalent to a voltage.
+The periodic transformation $W(t)=\exp[-\ii\sum_l\phi_l(t)N_l/2]$, with $N_l$ the electron
+number of lead $l$, removes the phases from the tunnelling and moves them onto the pair
+potentials. By \cref{eq:gauge} it also adds the term $\sum_l(\hbar\dot\phi_l/2)N_l$, which
+raises the electrochemical potential $\mu_l$ of lead $l$ by $\hbar\dot\phi_l/2$. We define the
+bias voltage $V=V_L-V_R$ as the electric potential of the left lead relative to the right
+one. Since electrons carry the charge $-e$, $eV=\mu_R-\mu_L$, and the phase difference
+$\phi=\phi_R-\phi_L$ obeys the Josephson relation
+\begin{equation}\label{eq:josephson}
+  \dot\phi=\frac{2e}{\hbar}V .
+\end{equation}
+With the current $I$ of \cref{eq:current}, positive from the left to the right lead, the
+power supplied by the voltage source is $IV=\dot\phi\,\partial E/\partial\phi$. For a single
+lead, the phase can instead be moved onto the dot with $W(t)=\ee^{\ii\phi(t)n_d/2}$, which
+gives
+\begin{equation}\label{eq:phase-to-level}
+  H'(t)=H(\phi=0)-\frac{\dot\phi(t)}2\,n_d ,
+\end{equation}
+i.e.\ a level drive $\eps(t)=\eps_0-\dot\phi/2$ with identical quasienergies. The code is
+tested against this identity (\cref{sec:validation-driven}). The same gauge freedom
+underlies the description of voltage-biased junctions and multiple Andreev reflection as
+Floquet scattering problems~\cite{averin1995ac,bratus1995theory,cuevas1996hamiltonian,cuevas2002subharmonic}.
+
+\section{Harmonics of the phase drive}\label{sec:jacobi-anger}
+
+For the reference junction with $\phi(t)=\phi_0+A\cos(\Omega t+\theta)$, where $A\equiv A_\phi$
+in this section, each tunnelling factor $\ee^{\pm\ii\phi(t)/4}$ contains
+$\ee^{\pm\ii(A/4)\cos(\Omega t+\theta)}$. The Jacobi--Anger expansion
+$\ee^{\ii z\cos\vartheta}=\sum_n\ii^nJ_n(z)\ee^{\ii n\vartheta}$~\cite{olver2026nist}
+gives the harmonics in closed form (\cref{app:jacobi}):
+\begin{align}
+  H_0&=H(\phi_0)\big\vert_{\Gamma\to\Gamma J_0(A/4)^2},\label{eq:phase-h0}\\
+  H_k&=4(-1)^{(k-1)/2}J_k\!\left(\tfrac A4\right)\ee^{\ii k\theta}\,\frac{\partial H}{\partial\phi}\bigg\vert_{\phi_0}
+  &&(k\ \mathrm{odd}),\label{eq:phase-hk}\\
+  H_k&=(-1)^{k/2}J_k\!\left(\tfrac A4\right)\ee^{\ii k\theta}\,H_T(\phi_0)&&(k\ne0\ \mathrm{even}),
+\end{align}
+where $H_T$ is the tunnelling Hamiltonian. Three consequences are useful. First, for a weak drive
+$H_{\pm1}\approx\tfrac A2\ee^{\pm\ii\theta}\partial H/\partial\phi$: the phase drive
+couples through the current operator, and the one-photon Rabi splitting between two states
+is $A\abs{\matel b{\partial H/\partial\phi}a}$. Second, the time-averaged hybridization is
+reduced by the factor $J_0(A/4)^2$, which vanishes at $A\approx9.62$ (\cref{ch:ex-highfreq}).
+Third, the even harmonics are proportional to $H_T$ and the odd ones to
+$\partial H/\partial\phi$, so two-photon processes probe a different operator from
+one-photon processes.
+
+\section{From laboratory parameters to drive amplitudes}\label{sec:lab-units}
+
+The code works with energies in units of $\Delta$ and dimensionless phases. Typical
+conversions are:
+\begin{itemize}
+\item \emph{Frequency.} $\Omega/\Delta=hf/\Delta$; for an aluminium gap $\Delta\approx
+180\,\mu$eV, $\Omega=1$ corresponds to $f\approx44$\,GHz, and a typical microwave frequency
+of $10$\,GHz to $\Omega\approx0.23$.
+\item \emph{Voltage drive.} An ac voltage $V_{\mathrm{ac}}\cos\Omega t$ across the junction
+gives $\dot\phi=(2e/\hbar)V_{\mathrm{ac}}\cos\Omega t$, hence the phase amplitude
+$A_\phi=2eV_{\mathrm{ac}}/(\hbar\Omega)$, the familiar Tien--Gordon modulation index of Cooper
+pairs.
+\item \emph{Flux drive.} In a loop threaded by a flux $\Phi$, $\phi=2\pi\Phi/\Phi_0$ with
+$\Phi_0=h/2e$, so a flux modulation $\delta\Phi$ gives $A_\phi=2\pi\,\delta\Phi/\Phi_0$.
+\item \emph{Gate drive.} An ac gate voltage of amplitude $V_g$ shifts the level by
+$\alpha eV_g$, with the lever arm $\alpha$; hence $A_\eps=\alpha eV_g/\Delta$.
+\end{itemize}
+Microwave spectroscopy usually operates in the weak-drive regime, $A_\phi\ll1$ and
+$A_\eps\ll\Omega$. Floquet engineering and the strong-driving phenomena of
+\cref{ch:ex-tls,ch:ex-highfreq} require modulation indices of order one.
+
+\section{Fixed canonical coordinates}\label{sec:fixed-coordinates}
+
+The QP basis is built from the Bogoliubov quasiparticles of the isolated reservoirs, which
+depend on $\Delta_l$ and on the bath levels $\xi_{li}$ and remain fixed as $\eps$, $U$, $B$,
+$\Gamma_l$ or $\phi_l$ vary. All drives of the latter parameters therefore act on a fixed Fock
+space, and the Sambe construction applies directly. If the coordinates themselves varied
+with time, e.g.\ for a modulated gap $\Delta(t)$, the transformed Hamiltonian would acquire
+the additional term $\ii(\partial_tW)W\dg$ of \cref{eq:gauge}. The implemented methods
+use fixed coordinates: \pkg{} checks that those of every sampled Hamiltonian
+coincide with those of the undriven model, and rejects drives that change them. The eta
+representation and paired-mode compression depend on $\eps$ and $\phi$, so driven models
+are built with \code{symmetry=False, compress=False}.
+
+\section{Selection rules}\label{sec:selection}
+
+A drive conserves fermion parity, so it couples only states of the same parity.
+Parity-changing transitions require the exchange of a quasiparticle with an external
+system. Drives that conserve $S_z$ (gate, phase, coupling, longitudinal field) act within
+sectors of fixed $S_z$, and the calculation is done sector by sector. A transverse field
+requires \code{Sector(parity, None)}.
+
+At the particle--hole-symmetric point of the symmetric junction the eta parity provides a
+further, less obvious selection rule. The phase drive and the coupling drive are eta-even and
+couple only states of equal eta parity; the gate drive, proportional to $n_d-1$, is eta-odd
+and couples only states of opposite eta parity. The lowest two even states $S$ and $S^*$
+have opposite eta parity, so at $\eps=0$ the pair transition $S\to S^*$ is invisible to the
+phase drive and maximally visible to the gate drive. Away from $\eps=0$ both drives couple
+the pair. \Cref{ch:ex-gate} demonstrates these complementary rules. For a non-interacting
+resonant level the same rule reads as follows: the symmetric junction at resonance is
+reflectionless, and the current matrix element of the pair transition, proportional to
+$\sqrt{1-\tau}$ with $\tau$ the transmission, vanishes~\cite{zazunov2003andreev,kos2013frequencydependent}.
+
+\section{The driven proximitized dot}\label{sec:driven-largegap}
+
+The large-gap limit \eqref{eq:largegap} gives a transparent model of the driven even sector.
+We write the pseudospin Hamiltonian as
+\begin{equation}\label{eq:pseudospin}
+  H=\frac U2+\eps\,\tau_z-\abs{\Gamma_\phi}\,\tau_x
+   =\frac U2+R\,(\cos\vartheta\,\tau_z-\sin\vartheta\,\tau_x),\qquad
+  R=\sqrt{\eps^2+\abs{\Gamma_\phi}^2},\quad \tan\vartheta=\frac{\abs{\Gamma_\phi}}{\eps}.
+\end{equation}
+The level splitting is $\omega_0=E_{S^*}-E_S=2R$. A gate drive $A_\eps\cos\Omega t\,\tau_z$ has
+the transverse component $A_\eps\sin\vartheta$ in the eigenbasis. A phase drive modulates
+$\Gamma_\phi=\Gamma\cos(\phi/2)$ and has the transverse component
+$\tfrac{A_\phi}2\Gamma\abs{\sin(\phi_0/2)}\cos\vartheta$. The resonant Rabi splittings are
+therefore
+\begin{equation}\label{eq:largegap-rabi}
+  \delta_{\mathrm{gate}}=A_\eps\abs{\sin\vartheta}=\frac{A_\eps\abs{\Gamma_\phi}}{R},\qquad
+  \delta_{\mathrm{phase}}=\frac{A_\phi\Gamma}2\abs{\sin\frac{\phi_0}2}\abs{\cos\vartheta}
+  =\frac{A_\phi\Gamma}{2}\abs{\sin\frac{\phi_0}2}\frac{\abs\eps}{R}.
+\end{equation}
+The phase-drive splitting vanishes at $\eps=0$ and the gate-drive splitting is largest
+there: the selection rule of \cref{sec:selection} in its simplest form. For a junction with
+finite $\Delta$, these expressions provide qualitative guidance; quantitative results use
+the numerically calculated matrix elements.
+
+\begin{caution}
+The large-gap model assumes that the drive is slow compared with $\Delta$. A strong phase
+drive that is fast compared with the dot dynamics but slow compared with $\Delta$
+($\Omega\ll\Delta$) renormalizes $\Gamma_\phi$ by the time average
+$\langle\cos(\phi(t)/2)\rangle=J_0(A_\phi/2)\cos(\phi_0/2)$. A drive faster than the
+bandwidth instead renormalizes each hopping separately by $J_0(A_\phi/4)$, hence
+$\Gamma\to\Gamma J_0(A_\phi/4)^2$. The order of the large-gap and high-frequency limits
+therefore determines the effective coupling.
+\end{caution}

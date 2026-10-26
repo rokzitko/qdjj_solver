@@ -1,0 +1,100 @@
+% Packages, notation and environments of the qdjj_solver physics manual.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage{microtype}
+\usepackage{scrhack}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{graphicx}
+\usepackage{booktabs,array,tabularx,longtable}
+\usepackage{enumitem}
+\usepackage[dvipsnames,table]{xcolor}
+\usepackage{csquotes}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{listings}
+\usepackage[most]{tcolorbox}
+\usepackage[backend=biber,style=phys,biblabel=brackets,maxnames=4,minnames=3,
+            doi=true,eprint=true,url=false,isbn=false,pageranges=false]{biblatex}
+\usepackage[colorlinks=true,linkcolor=NavyBlue,citecolor=OliveGreen,urlcolor=NavyBlue]{hyperref}
+\usepackage[nameinlink,capitalise,noabbrev]{cleveref}
+\hypersetup{pdftitle={qdjj\textunderscore solver: physics manual},
+            pdfauthor={qdjj\textunderscore solver developers}}
+
+\addbibresource{references.bib}
+\graphicspath{{figures/}}
+\setlist{itemsep=2pt,topsep=4pt}
+\setcounter{tocdepth}{1}
+\setlength{\emergencystretch}{1.5em}
+\setkomafont{disposition}{\normalfont\bfseries}
+\setkomafont{chapter}{\normalfont\bfseries\LARGE}
+
+% --- notation -----------------------------------------------------------------
+\newcommand{\code}[1]{\texttt{\detokenize{#1}}}
+\newcommand{\pkg}{\textsf{qdjj\_solver}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\ee}{\mathrm{e}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\ket}[1]{\lvert #1\rangle}
+\newcommand{\bra}[1]{\langle #1\rvert}
+\newcommand{\braket}[2]{\langle #1\vert #2\rangle}
+\newcommand{\matel}[3]{\langle #1\vert #2\vert #3\rangle}
+\newcommand{\expval}[1]{\langle #1\rangle}
+\newcommand{\abs}[1]{\lvert #1\rvert}
+\newcommand{\norm}[1]{\lVert #1\rVert}
+\newcommand{\dg}{^\dagger}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\Heff}{H_{\mathrm{eff}}}
+\newcommand{\Hd}{H_{d}}
+\newcommand{\Sz}{S^z}
+\newcommand{\up}{{\uparrow}}
+\newcommand{\dn}{{\downarrow}}
+\newcommand{\eps}{\epsilon}
+\newcommand{\qe}{\varepsilon}
+\newcommand{\Om}{\Omega}
+
+% --- boxes ----------------------------------------------------------------------
+\tcbset{boxsep=1.5mm,left=1.5mm,right=1.5mm,top=1mm,bottom=1mm,arc=1mm,boxrule=.5pt,
+        fonttitle=\bfseries\small,breakable}
+\newtcolorbox{physics}[1][Physical picture]{colback=NavyBlue!4,colframe=NavyBlue!55,title=#1}
+\newtcolorbox{incode}[1][In the code]{colback=OliveGreen!4,colframe=OliveGreen!60,title=#1}
+\newtcolorbox{caution}[1][Caution]{colback=BrickRed!4,colframe=BrickRed!60,title=#1}
+
+% --- code listings ----------------------------------------------------------------
+\lstdefinestyle{python}{language=Python,basicstyle=\ttfamily\small,keywordstyle=\color{NavyBlue}\bfseries,
+  commentstyle=\color{gray}\itshape,stringstyle=\color{BrickRed},showstringspaces=false,
+  columns=fullflexible,keepspaces=true,frame=single,rulecolor=\color{gray!40},
+  backgroundcolor=\color{gray!4},xleftmargin=2mm,xrightmargin=2mm,aboveskip=6pt,belowskip=6pt,
+  breaklines=true,literate={−}{{-}}1}
+\lstset{style=python}
+
+% Figures are rendered from data/ by `make figures`; show a placeholder if one is missing.
+\newcommand{\manualfigure}[1]{\IfFileExists{figures/#1.pdf}{\includegraphics[width=\textwidth]{#1}}%
+  {\fbox{\parbox{.9\textwidth}{\centering\vspace{2em}Figure \texttt{#1} not rendered: run \texttt{make figures}.\vspace{2em}}}}}
+
+% --- generated content (tools/gen_docs.py, make quoted) ----------------------------
+% Version, pointers to the user manual and the tutorials, and numbers quoted from the figure
+% data are generated, so that the text cannot drift from the code, the docs or the data.
+% An unknown key is an error rather than a silent "??".
+\makeatletter
+\newcommand{\qdjj@define}[3]{\@ifundefined{qdjj@#1@#2}{\@namedef{qdjj@#1@#2}{#3}}%
+  {\PackageError{qdjj}{#1 key `#2' defined twice}{}}}
+\newcommand{\qdjj@use}[3]{\@ifundefined{qdjj@#1@#2}%
+  {\PackageError{qdjj}{Undefined #1 key `#2'}{#3}}{\@nameuse{qdjj@#1@#2}}}
+\newcommand{\defq}[2]{\qdjj@define{q}{#1}{#2}}
+\newcommand{\defusermanual}[2]{\qdjj@define{um}{#1}{#2}}
+\newcommand{\deftutorial}[2]{\qdjj@define{tut}{#1}{#2}}
+% \q{figure.key}: a number from docs/manual/data, formatted by the figure script's quoted().
+\DeclareRobustCommand{\q}[1]{\qdjj@use{q}{#1}{Add it to quoted() in the figure script and run make quoted}}
+% \usermanual{docs/page.md}: the page title and path in the user manual.
+\newcommand{\usermanual}[1]{User manual: \emph{\qdjj@use{um}{#1}{Run python tools/gen_docs.py}}
+  (\texttt{\detokenize{#1}})}
+% \tutorial{NN_topic}: the runnable tutorial that accompanies a worked example.
+\newcommand{\tutorial}[1]{\par\medskip{\raggedright\noindent\textbf{Tutorial:}
+  \emph{\qdjj@use{tut}{#1}{Add the tutorial to examples/catalog.toml and run python tools/gen_docs.py}}
+  (\texttt{\detokenize{examples/#1}}).\par}}
+\makeatother
+\input{generated/version}
+\input{generated/pointers}
+\InputIfFileExists{generated/quoted}{}{\PackageError{qdjj}{generated/quoted.tex missing}{Run make quoted}}

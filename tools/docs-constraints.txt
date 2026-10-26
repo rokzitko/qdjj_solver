@@ -1,0 +1,10 @@
+# Pinned documentation toolchain for the blocking CI docs job; the weekly job uses the latest releases.
+sphinx==9.1.0
+myst-parser==5.1.0
+pydata-sphinx-theme==0.22.0
+sphinx-copybutton==0.5.2
+markdown-it-py==4.2.0
+mdit-py-plugins==0.6.1
+docutils==0.22.4
+sphinxcontrib-svg2pdfconverter==2.1.0
+pypdf==6.21.2

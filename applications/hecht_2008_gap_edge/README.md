@@ -97,13 +97,13 @@ matrix elements on a small bath: maximum complex-resolvent error
 Lehmann calculation, including an interacting singlet and a degenerate doublet.
 
 At $\Delta/D=10^{-4}$ the calculated maxima are close to
-$\pi\Gamma A\simeq20$, moving toward the edge as $\epsilon_d$ increases. For
+$\pi\Gamma A\simeq20$, moving towards the edge as $\epsilon_d$ increases. For
 $\epsilon_d=0$ the sampled maximum lies near
 $(\omega-\Delta)/D=3.02\times10^{-8}$; for $\epsilon_d=4\Gamma$ it lies near
 $1.05\times10^{-10}$. Sampling is logarithmic, so peak positions have a larger
 grid uncertainty than fixed-frequency amplitudes.
 
-The maximum difference to the published Fig. 6 NRG curves on
+The maximum difference from the published Fig. 6 NRG curves on
 $10^{-10}\leq(\omega-\Delta)/\Delta\leq0.1$ is **8.27%**. Even the zero-broadening
 wide-band analytic formula differs from those digitized NRG curves by **8.41%** over
 that interval. Thus the NRG comparison is not a sub-percent benchmark everywhere;
@@ -174,10 +174,10 @@ At $b=0.2$, doubling Lanczos steps changes the sampled spectrum by at most
 it by **2.57**. These are distinct convergence questions.
 
 **The interacting near-gap peaks are not reproduced quantitatively here.**
-A dense continuum resolution, suitable dynamical many-body method, and further
+A finer representation of the continuum, a suitable dynamical many-body method, and further
 bath convergence would be needed. The archived `interacting_continuum_converged`
 flag is false. This example supplies a validated spectral calculation and a
-measured boundary of the compact-surrogate approach's applicability.
+quantified limitation of the compact surrogate baths studied here.
 
 ## Reproduce
 

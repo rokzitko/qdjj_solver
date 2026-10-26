@@ -9,8 +9,8 @@ def orbital_density_operators(orbital=0, *, hamiltonian=None, physical=True):
     """Operators O[a,b] whose expectations equal rho[a,b] in a parity sector.
 
     Return a dictionary keyed by (row, column). The local basis is
-    [|0>, |up>, |down>, |up down>], with |up down>=d_up^dagger d_down^dagger|0>.
-    Consequently O[a,b]=|b><a|, not |a><b|. Entries connecting different local
+    ``[|0>, |up>, |down>, |up down>]``, with ``|up down>=d_up^dagger d_down^dagger|0>``.
+    Consequently ``O[a,b]=|b><a|``, not ``|a><b|``. Entries connecting different local
     parities vanish in fixed-total-parity states and are omitted.
 
     Without a Hamiltonian the operators use physical electron mode indices
@@ -49,8 +49,8 @@ def orbital_density_operators(orbital=0, *, hamiltonian=None, physical=True):
 def orbital_density_properties(density):
     """Occupations and coherent pair probabilities for one normalized 4x4 RDM.
 
-    pair_amplitude=<d_down d_up>=rho[3,0]. plus/minus refer to the fixed-gauge
-    normalized states (|0> +/- |up down>)/sqrt(2). phase_optimized_plus maximizes
+    ``pair_amplitude=<d_down d_up>=rho[3,0]``. plus/minus refer to the fixed-gauge
+    normalized states ``(|0> +/- |up down>)/sqrt(2)``. phase_optimized_plus maximizes
     over the relative pair phase; it is different when pair_amplitude is complex.
     The input is validated, not renormalized or projected onto positive matrices.
     """

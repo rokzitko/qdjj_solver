@@ -1,0 +1,82 @@
+{
+ "tutorial": "01_subgap_states",
+ "profile": "full",
+ "values": {
+  "singlet_energy": {
+   "value": -0.822154271447636,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Singlet energy $E_S$ at the reference point"
+  },
+  "excited_energy": {
+   "value": 0.7159930829050957,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Excited-singlet energy $E_{S^*}-E_S$"
+  },
+  "doublet_energy": {
+   "value": 0.09578810633459256,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Doublet energy $E_D-E_S$"
+  },
+  "ground_parity": {
+   "value": 0,
+   "atol": 0,
+   "format": "d",
+   "description": "Ground-state parity at $\\phi=0.8$ (0 even, 1 odd)"
+  },
+  "doublet_sz_splitting": {
+   "max": 1e-10,
+   "description": "Difference of $E_D$ between $S_z=+1/2$ and $-1/2$ (spin symmetry)"
+  },
+  "current_singlet": {
+   "value": 0.050347732727195255,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Current of $S$, $\\langle\\partial H/\\partial\\phi\\rangle$ in units of $\\Delta$"
+  },
+  "current_doublet": {
+   "value": -0.011114338218872196,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Current of $D$, $\\langle\\partial H/\\partial\\phi\\rangle$ in units of $\\Delta$"
+  },
+  "current_deviation": {
+   "max": 1e-08,
+   "description": "Largest difference between $\\langle\\partial H/\\partial\\phi\\rangle$ and the finite difference $\\partial E/\\partial\\phi$"
+  },
+  "critical_phase": {
+   "value": 1.8425965008142526,
+   "atol": 1e-08,
+   "format": ".6f",
+   "description": "Singlet\u2013doublet transition phase $\\phi_c$ (radians)"
+  },
+  "ground_parity_pi": {
+   "value": 1,
+   "atol": 0,
+   "format": "d",
+   "description": "Ground-state parity at $\\phi=\\pi$"
+  },
+  "doublet_energy_pi": {
+   "value": -0.11509217900252877,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "$E_D-E_S$ at $\\phi=\\pi$"
+  },
+  "doublet_energy_half_filling": {
+   "value": 0.07090531810061385,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "$E_D-E_S$ at $\\epsilon=0$, $\\phi=0.8$"
+  },
+  "particle_hole_asymmetry": {
+   "max": 1e-10,
+   "description": "Largest difference between energies at $\\epsilon$ and $-\\epsilon$"
+  },
+  "atomic_deviation": {
+   "max": 1e-12,
+   "description": "Deviation from the atomic energies at $\\Gamma=0$"
+  }
+ }
+}

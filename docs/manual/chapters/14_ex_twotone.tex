@@ -1,0 +1,73 @@
+\chapter{Example: two-tone spectroscopy of the pair transition}\label{ch:ex-twotone}
+
+In two-tone spectroscopy a strong pump drives one transition while a weak probe scans
+the spectrum. For superconducting qubits and Andreev levels this is the standard way to
+reveal dressed states~\cite{janvier2015coherent,hays2018direct,cohentannoudji1998atom}. We
+pump the $S$--$S^*$ pair transition of the reference junction with the gate,
+$A_\eps=\q{twotone.pump}$, at $\Omega\approx\omega_{SS^*}=\q{twotone.omega0}$, and probe it
+with a second gate tone (probe operator $n_d$). The Rabi splitting is
+$\delta=A_\eps\abs{\matel S{n_d}{S^*}}=\q{twotone.rabi}$ (\cref{ch:ex-gate}).
+
+\section{Dressed-state lines versus pump detuning}
+
+\Cref{fig:twotone}(a) shows the probe lines from the dressed ground state as a function of
+the pump detuning $\Omega-\omega_{SS^*}$, for probe frequencies $\abs\omega$ near the pump
+frequency. Three branches appear: the elastic line at $\Omega$, and two lines that avoid each
+other and follow the rotating-wave prediction $\Omega\pm w$, with
+$w=\sqrt{(\Omega-\omega_{SS^*})^2+\delta^2}$. Far from resonance the dressed state is nearly
+the bare singlet. The strong line then returns to the bare transition $\omega_{SS^*}$, while
+the other sideband, associated with a three-photon process, loses intensity. The lighter lines represent transitions to other
+states, mostly the discretized continuum.
+
+\section{The Mollow triplet}
+
+At resonance, \cref{fig:twotone}(b), the probe spectrum of the dressed ground state shows the
+Mollow triplet of \cref{sec:mollow}. The rate spectrum has lines at $\Omega-\delta$,
+$\Omega$ and $\Omega+\delta$. The RWA predicts a strength of
+$\abs{\matel S{n_d}{S^*}}^2/4=\q{twotone.mollow_rwa}$ for each sideband and for each of the
+two elastic lines at $\pm\Omega$, which together form the central line. The computed
+strengths are $\q{twotone.mollow_lower}$ at $\Omega-\delta$, $\q{twotone.mollow_elastic}$ for
+each elastic line and $\q{twotone.mollow_upper}$ at $\Omega+\delta$; the small asymmetry
+arises from counter-rotating terms and coupling to other states. The net spectrum distinguishes
+absorption at $\Omega+\delta$ from stimulated emission at
+$\Omega-\delta$; the elastic lines make no net contribution. Experiments on pumped
+superconducting qubits show the same pattern~\cite{baur2009measurement}.
+
+\section{The Autler--Townes doublet}
+
+Panel (c) probes a spectator transition. Starting from the doublet $D$, a tunnelling
+probe removes a spin-up electron and connects $D$ with the dressed singlets. Without the
+pump the removal spectrum has a single line at $E_D-E_S$. With the pump it splits into two
+lines separated by $\delta=\q{twotone.rabi}$, each with half of the static weight
+$\abs{\matel S{d_\uparrow}D}^2$: the Autler--Townes doublet. Observing it requires the
+initial state to lie outside the pumped pair. A junction in its doublet ground state, probed
+by tunnelling or by a transmon coupled to the parity, therefore shows the dressing of the
+singlet pair directly.
+
+\begin{figure}[htb]
+\centering
+\manualfigure{twotone}
+\caption{Two-tone spectroscopy of the reference junction with a gate pump
+$A_\eps=\q{twotone.pump}$ near $\omega_{SS^*}=\q{twotone.omega0}$ (static basis
+$K=\q{twotone.basis}$, $M=\q{twotone.harmonics}$). (a) Gate-probe lines from the dressed
+ground state versus pump detuning; darker points are stronger lines, dashed lines the RWA
+$\Omega\pm w$, the dotted line the elastic line $\Omega$. (b) Rate and net
+(absorption minus emission) spectra at resonance: the Mollow triplet. (c) Removal spectrum
+of $d_\uparrow$ from the doublet with and without the pump: the Autler--Townes doublet.}
+\label{fig:twotone}
+\end{figure}
+
+\begin{caution}
+At resonance the label of the dressed ground state can switch between the two dressed states, which
+have equal weights on $S$. When spectra from one dressed state are compared across a
+resonance, include both dressed states with explicit initial weights, or use a spectator state.
+A current probe of the pair transition is weak at $\eps=\q{twotone.epsilon}$,
+$\abs{\matel S{\partial_\phi H}{S^*}}=\q{twotone.current_element}$. Its strongest lines are
+transitions into the discretized continuum near the gap edge, and a low-frequency line at
+$\delta$ between the two hybrids, with strength
+$\bigl[(\matel S{\partial_\phi H}S-\matel{S^*}{\partial_\phi H}{S^*})/2\bigr]^2
+=\q{twotone.current_rabi}$, set by the different supercurrents of $S$ and $S^*$.
+The gate probe is the better choice for the Mollow pattern.
+\end{caution}
+
+\tutorial{08_two_tone}

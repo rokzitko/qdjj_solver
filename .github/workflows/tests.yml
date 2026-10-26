@@ -44,12 +44,13 @@ jobs:
         id: publication-source
         run: python -B tools/check_publication.py
       - run: python -m pip install '.[dmrg,dev]'
-      - run: python -m ruff check src tests tools examples applications first_calculation large_Gamma NRG_comparisons
+      - run: python -m ruff check src tests tools examples applications large_Gamma NRG_comparisons docs/conf.py docs/_ext docs/manual/scripts
       - run: python -B tools/check_release.py
       - run: python -B examples/quickstart.py
-      - run: python -B first_calculation/run.py --all
+      - run: python -B examples/00_first_calculation/run.py --profile full
       - run: python -B examples/sector_convergence.py
       - run: python -B examples/qp_convergence.py
+      - run: python -B examples/floquet.py
       - name: Tests and Python coverage
         run: >-
           python -B -m pytest --cov --cov-report=term-missing
@@ -77,6 +78,114 @@ jobs:
         with:
           name: linux-reports
           path: reports/
+          retention-days: 14
+
+  docs:
+    name: Documentation / HTML, handbook PDF and sync checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+      - name: Check source publication privacy
+        id: publication-source
+        run: python -B tools/check_publication.py
+      - name: PDF toolchain
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends texlive-xetex texlive-latex-extra \
+            texlive-fonts-recommended fonts-dejavu-core latexmk librsvg2-bin
+      - run: python -m pip install '.[dmrg,dev,docs,docs-pdf,plots]' -c tools/docs-constraints.txt
+      - name: Documentation consistency checks
+        run: python tools/check_docs.py
+      - name: Documentation and tutorial tests
+        run: python -B -m pytest -m "docs or tutorial" --junitxml=reports/docs.xml
+      - name: Strict Sphinx build
+        run: python -m sphinx -W --keep-going -c docs -b html . build/docs
+      - name: User and reference PDF
+        run: python -B tools/build_manuals.py --manual user
+      - uses: actions/upload-artifact@v4
+        with:
+          name: user-manual-html
+          path: build/docs/
+          if-no-files-found: error
+          retention-days: 14
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: user-manual-pdf
+          path: build/manuals/*
+          if-no-files-found: error
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: ${{ always() && steps.publication-source.outcome == 'success' }}
+        with:
+          name: documentation-diagnostics
+          path: |
+            reports/docs.xml
+            build/manual-logs/
+            build/user-manual/*.log
+          retention-days: 14
+
+  docs-extended:
+    name: Documentation / physics manual, listings, full tutorials
+    if: inputs.extended || github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: pip
+      - name: Check source publication privacy
+        id: publication-source
+        run: python -B tools/check_publication.py
+      - name: TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-bibtex-extra \
+            texlive-science texlive-fonts-recommended texlive-xetex fonts-dejavu-core \
+            lmodern cm-super biber latexmk librsvg2-bin
+      - run: python -m pip install '.[dmrg,dev,docs,docs-pdf,plots]'
+      - name: Both PDF manuals without warnings or overfull boxes
+        run: |
+          python -B tools/build_manuals.py --manual all
+      - name: Every listing of the physics manual
+        run: python -B tools/run_manual_listings.py
+      - name: Weekly code blocks of the user manual
+        env:
+          QDJJ_DOCS_WEEKLY: '1'
+        run: python -B -m pytest -m docs tests/test_docs.py -k code_blocks
+      - name: Full tutorial profiles
+        run: python tools/check_tutorials.py --profile full
+      - name: Recompute the manual data; quoted numbers must not move
+        run: |
+          cp docs/manual/generated/quoted.json "$RUNNER_TEMP/quoted.json"
+          make -C docs/manual data
+          cd docs/manual/scripts
+          python -B quoted.py --compare "$RUNNER_TEMP/quoted.json" | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: External links (report only)
+        continue-on-error: true
+        run: python -m sphinx -b linkcheck -c docs . build/linkcheck
+      - uses: actions/upload-artifact@v4
+        with:
+          name: both-pdf-manuals
+          path: build/manuals/*
+          if-no-files-found: error
+          retention-days: 30
+      - uses: actions/upload-artifact@v4
+        if: ${{ always() && steps.publication-source.outcome == 'success' }}
+        with:
+          name: extended-documentation-diagnostics
+          path: |
+            build/manual-logs/
+            build/user-manual/*.log
+            docs/manual/build/*.log
+            docs/manual/build/*.blg
           retention-days: 14
 
   compatibility:
@@ -110,7 +219,8 @@ jobs:
           tests/test_interfaces.py tests/test_io.py tests/test_applications.py
           tests/test_applications_second_set.py tests/test_applications_third_set.py
           tests/test_chain_expansion.py tests/test_application_chain_expansion.py
-          tests/test_qp_convergence.py tests/test_large_gamma.py
+          tests/test_qp_convergence.py tests/test_large_gamma.py tests/test_floquet.py
+          tests/test_floquet_transitions.py
           -m 'not dmrg and not slow'
           --junitxml=reports/compatibility.xml
       - name: Check platform wheel

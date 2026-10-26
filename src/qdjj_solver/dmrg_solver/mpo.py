@@ -131,22 +131,34 @@ def _site(modes, hamiltonian, sector, chinfo):
 
 @dataclass
 class PreparedModel:
+    """A Hamiltonian mapped onto MPS sites: mode order, grouping, conserved charges and operators."""
+
     hamiltonian: Hamiltonian
+    """Original physical finite Hamiltonian, before MPS layout selection."""
     sector: Sector
+    """Selected total symmetry quantum numbers."""
     order: tuple[int, ...]
+    """Permutation of zero-based canonical mode indices along the MPS."""
     groups: tuple[tuple[int, ...], ...]
+    """Canonical modes grouped into each MPS site, one or two per site."""
     sites: list
+    """TeNPy local fermionic sites with the selected conserved charges."""
     lattice: TrivialLattice
+    """Finite open TeNPy lattice of the grouped sites; a computational ordering."""
     mode_operators: dict
+    """Canonical mode mapped to its site index and local annihilation/creation names."""
     target_charge: tuple[int, ...]
+    """Total TeNPy charge labels encoding the selected sector."""
     coordinate_id: str
+    """Fingerprint of physical coordinates, ordering, grouping and conserved-charge types."""
 
     def term(self, key, *, lattice=False):
+        """Map a signed one-based monomial to TeNPy operator/site pairs, preserving product order."""
         result = []
         for op in key:
             mode = abs(op)-1
             if mode not in self.mode_operators:
-                raise ValueError("operator acts on an undeclared mode")
+                raise ValueError("operator acts on an undeclared fermionic mode")
             site, annihilation, creation = self.mode_operators[mode]
             result.append((creation if op > 0 else annihilation, [0, site] if lattice else site))
         return result
@@ -181,6 +193,7 @@ class PreparedModel:
         return _merge_parallel_rows(mpo) if merge_parallel else mpo
 
     def model(self, operator):
+        """TeNPy MPOModel for an even, charge-preserving operator in this layout."""
         return MPOModel(self.lattice, self.compile(operator))
 
     def matrix_element(self, operator, bra, ket):
@@ -194,6 +207,7 @@ class PreparedModel:
         return value
 
     def conserves_charges(self, operator):
+        """Whether every term preserves the selected charges; validates declared mode indices."""
         for key in operator.terms:
             self.term(key)  # validate all mode indices
             if len(key) % 2:
@@ -209,6 +223,7 @@ class PreparedModel:
         return True
 
     def matrix_elements(self, operator, bras, kets):
+        """Complex transition array with bras as rows and kets as columns, including odd operators."""
         if self.conserves_charges(operator):
             mpo = self.compile(operator)
             if mpo is None:

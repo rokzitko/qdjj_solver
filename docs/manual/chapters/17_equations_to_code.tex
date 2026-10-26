@@ -1,0 +1,31 @@
+\chapter{From the equations to the code}\label{ch:equations-to-code}
+
+This manual describes the physics; the user and developer manual describes how to run and
+extend the code. \Cref{tab:concordance} connects the two: for each concept it identifies the equation
+or section of this manual, the corresponding code interfaces, and the user-manual page that explains
+their use. The complete lists of options, result fields, command-line arguments, observables
+and probes are generated from the code into the reference pages of the user manual, and the
+error messages with their remedies are collected on its troubleshooting page:
+\begin{itemize}
+\item \usermanual{docs/index.md};
+\item \usermanual{docs/reference/options.md}, and the neighbouring reference pages;
+\item \usermanual{docs/troubleshooting.md}.
+\end{itemize}
+
+\input{generated/concordance}
+
+\section{Reproducing the figures and this manual}\label{sec:reproduce}
+
+\begin{lstlisting}[language=bash]
+cd docs/manual
+make data      # recompute data/*.json with the solver (tens of minutes)
+make quoted    # numbers quoted in the text, from data/*.json
+make figures   # render figures/*.pdf from data/*.json (requires matplotlib)
+make pdf       # quoted values and figures, then latexmk (pdflatex + biber)
+\end{lstlisting}
+
+Each record in \code{data/} stores the script name, the code version and git commit, and
+the numerical environment. Figures and quoted numerical values are generated from the saved
+data without rerunning the solver, so the PDF can be rebuilt quickly. The figure
+scripts write the quoted values to \code{generated/quoted.tex}. Recomputing the data
+therefore updates the values in the text, and changes can be reviewed in the generated-file diff.

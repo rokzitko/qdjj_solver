@@ -1,0 +1,68 @@
+{
+ "tutorial": "02_driven_dot",
+ "profile": "full",
+ "values": {
+  "quasienergy_deviation": {
+   "max": 1e-10,
+   "description": "Largest difference between quasienergies and static energies"
+  },
+  "weight_m0": {
+   "value": 0.8317528710425728,
+   "atol": 1e-10,
+   "format": ".6f",
+   "description": "Weight of $m=0$ at $A/\\Omega=0.6$, $J_0^2(0.6)$"
+  },
+  "weight_m1": {
+   "value": 0.08219745655682352,
+   "atol": 1e-10,
+   "format": ".6f",
+   "description": "Weight of $m=1$ at $A/\\Omega=0.6$, $J_1^2(0.6)$"
+  },
+  "weight_m0_dropped": {
+   "value": 0.4504191604237962,
+   "atol": 1e-10,
+   "format": ".6f",
+   "description": "Weight of $m=0$ of $\\vert2\\rangle$ with dropped constants, $J_0^2(1.2)$"
+  },
+  "bessel_deviation_kept": {
+   "max": 1e-10,
+   "description": "Largest deviation from $J_m^2((n-1)A/\\Omega)$, constants kept"
+  },
+  "bessel_deviation_dropped": {
+   "max": 1e-10,
+   "description": "Largest deviation from $J_m^2(nA/\\Omega)$, constants dropped"
+  },
+  "folding_deviation": {
+   "max": 1e-10,
+   "description": "Largest error of a folded quasienergy: distance from $E_n$ modulo $\\Omega$, or from the first zone"
+  },
+  "sideband_0": {
+   "value": 0.5855274995136567,
+   "atol": 1e-10,
+   "format": ".6f",
+   "description": "Central tunnelling line at $A/\\Omega=1$, $J_0^2(1)$"
+  },
+  "sideband_1": {
+   "value": 0.19364451801445598,
+   "atol": 1e-10,
+   "format": ".6f",
+   "description": "First sideband at $A/\\Omega=1$, $J_1^2(1)$"
+  },
+  "central_line_at_zero": {
+   "max": 1e-12,
+   "description": "Central line at the first zero of $J_0$"
+  },
+  "sum_rule_deviation": {
+   "max": 1e-10,
+   "description": "Deviation of the summed line strengths from one"
+  },
+  "sideband_deviation": {
+   "max": 1e-10,
+   "description": "Largest deviation of a line strength from $J_q^2(A/\\Omega)$"
+  },
+  "sideband_frequency_deviation": {
+   "max": 1e-10,
+   "description": "Largest deviation of a line from $E_2-E_\\downarrow+q\\Omega$"
+  }
+ }
+}

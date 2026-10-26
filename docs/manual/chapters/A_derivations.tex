@@ -1,0 +1,75 @@
+\chapter{Derivations}\label{app:derivations}
+
+\section{Harmonics of the phase drive}\label{app:jacobi}
+
+For the reference junction the tunnelling term of lead $l$ is
+$\ee^{\ii s_l\phi(t)/4}X_l+\mathrm{h.c.}$, with $s_{L,R}=\mp1$ and $X_l=t_l\sum_\sigma
+C_{l\sigma}\dg d_\sigma$. With $\phi(t)=\phi_0+A\cos(\Omega t+\theta)$ and the Jacobi--Anger
+expansion $\ee^{\ii z\cos\vartheta}=\sum_n\ii^nJ_n(z)\ee^{\ii n\vartheta}$, together with
+$J_n(-z)=(-1)^nJ_n(z)$, we obtain
+\begin{equation}
+  \ee^{\ii s_l\phi(t)/4}=\ee^{\ii s_l\phi_0/4}\sum_k(\ii s_l)^kJ_k\!\left(\tfrac A4\right)\ee^{\ii k\theta}\ee^{\ii k\Omega t}.
+\end{equation}
+The Hermitian conjugate contributes $\ee^{-\ii s_l\phi_0/4}(-\ii s_l)^kJ_k(A/4)\ee^{\ii
+k\theta}X_l\dg$ to the same harmonic $k$. For $k=0$ both terms are multiplied by $J_0(A/4)$,
+which renormalizes $t_l\to t_lJ_0(A/4)$ and hence $\Gamma\to\Gamma J_0(A/4)^2$. For even
+$k\ne0$, $(\ii s_l)^k=(-\ii s_l)^k=(-1)^{k/2}$ and the harmonic is $(-1)^{k/2}J_k(A/4)\ee^{\ii
+k\theta}H_T(\phi_0)$. For odd $k$, $(\pm\ii s_l)^k=\pm\ii s_l(-1)^{(k-1)/2}$, which reproduces the
+derivative $\partial_\phi\bigl(\ee^{\ii s_l\phi/4}X_l+\mathrm{h.c.}\bigr)=\tfrac{\ii
+s_l}4\ee^{\ii s_l\phi/4}X_l+\mathrm{h.c.}$ up to the factor $4(-1)^{(k-1)/2}J_k(A/4)\ee^{\ii
+k\theta}$. This gives \cref{eq:phase-h0,eq:phase-hk}.
+
+\section{The residual bound}\label{app:residual}
+
+Let $\mathcal Q$ be the self-adjoint Sambe operator on the infinite extended space, $v$ a
+normalized vector supported on the window $\abs m\le M$, and $\lambda$ real. The expansion of
+$v$ in the spectral measure $\mu_v$ of $\mathcal Q$ gives
+$\norm{(\mathcal Q-\lambda)v}^2=\int\abs{\qe-\lambda}^2\dd\mu_v(\qe)\ge\operatorname{dist}(\lambda,\operatorname{spec}\mathcal Q)^2$.
+The vector $(\mathcal Q-\lambda)v$ has the components $(Q_M-\lambda)v$ inside the window and
+$\sum_{m'}H_{m-m'}v_{m'}$ outside it, which are orthogonal. Hence
+\begin{equation}
+  \operatorname{dist}(\lambda,\operatorname{spec}\mathcal Q)\le\sqrt{\norm{(Q_M-\lambda)v}^2+\sum_{\abs m>M}\Bigl\lVert\sum_{\abs{m'}\le M}H_{m-m'}v_{m'}\Bigr\rVert^2},
+\end{equation}
+which is \cref{eq:residual-bound}. Let $v$ now be an eigenvector of $Q_M$, so that $\lambda$
+equals the expectation value of $\mathcal Q$ in $v$. If the exact eigenvalue $\qe$ nearest to
+$\lambda$ is separated from the rest of the spectrum by a gap $g$, the Kato--Temple
+inequality improves the bound to $\abs{\qe-\lambda}\le\norm{(\mathcal Q-\lambda)v}^2/g$. This
+explains the quadratic relation between bound and error observed in \cref{fig:numerics}(a).
+
+\section{The high-frequency expansion}\label{app:vanvleck}
+
+In the Sambe space the diagonal blocks $m\ne0$ are shifted by $m\Omega$ relative to the
+$m=0$ block; for $\Omega$ larger than the spectral width of $H_0$ they are well separated. A
+unitary transformation $\ee^{\ii\mathcal S}$
+that removes the couplings between blocks order by order, the Schrieffer--Wolff or van Vleck
+construction~\cite{vanvleck1929sigma,shavitt1980quasidegenerate,bravyi2011schrieffer,eckardt2015high},
+leaves a block-diagonal operator whose $m=0$ block is $\Heff$. To first order the generator
+is $\mathcal S_{m0}=-\ii H_m/(m\Omega)$, and the second-order correction to the $m=0$ block
+is
+\begin{equation}
+  \sum_{m\ne0}\frac{H_{-m}H_m}{0-m\Omega}=\frac1\Omega\sum_{m\ge1}\frac{[H_m,H_{-m}]}m ,
+\end{equation}
+the first-order term of \cref{eq:van-vleck}. The next order follows in the same way,
+including the dependence of the energy denominators on $H_0$; the result is the
+$\Omega^{-2}$ term of \cref{eq:van-vleck}. Because the transformation is periodic in time,
+$\Heff$ is invariant under shifts of the time origin. The Floquet--Magnus Hamiltonian
+$H_F[t_0]$, defined by $U(t_0+T,t_0)=\ee^{-\ii H_F[t_0]T}$, depends on $t_0$: it is related to $\Heff$ by
+the $t_0$-dependent kick operator of \cref{ch:floquet}, and only its exact spectrum is
+independent of $t_0$~\cite{bukov2015universal,goldman2014periodically}.
+
+\section{The commutator-free Magnus integrator}\label{app:cfm4}
+
+The fourth-order Magnus expansion over a step $h$ uses the Gauss--Legendre nodes
+$c_{1,2}=\tfrac12\mp\tfrac{\sqrt3}6$ and $H_i=H(t+c_ih)$. It approximates
+$U(t+h,t)\approx\ee^{-\ii\mathcal M_4}$ with
+\begin{equation}
+  \mathcal M_4=\frac h2(H_1+H_2)-\ii\frac{\sqrt3h^2}{12}[H_2,H_1].
+\end{equation}
+(We write $\mathcal M_4$ for the Magnus operator, usually called $\Omega_4$, to avoid
+confusion with the drive frequency.) The commutator-free variant replaces
+$\ee^{-\ii\mathcal M_4}$ by two exponentials of linear combinations of $H_1$ and $H_2$ with
+the coefficients $\alpha_{1,2}$ of \cref{eq:cfm4}. This reproduces $\mathcal M_4$ to fourth
+order without commutators and keeps every factor unitary~\cite{blanes2006fourth,alvermann2011high}.
+The global error over one period scales as $h^4$, so halving the time step reduces it by a
+factor of 16, and the Richardson estimate $\abs{\qe_h-\qe_{h/2}}/15$ of
+\cref{sec:propagator} follows.

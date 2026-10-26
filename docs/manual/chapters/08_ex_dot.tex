@@ -1,0 +1,99 @@
+\chapter{Example: the gate-driven isolated dot}\label{ch:ex-dot}
+
+The first example is an exactly solvable, isolated normal dot. It
+introduces three concepts used throughout the following chapters: quasienergies, harmonic weights
+(photon sidebands) and the Floquet zone.
+
+\section{Exact solution}
+
+Consider the isolated impurity \eqref{eq:Hd} with a gate drive,
+\begin{equation}
+  H(t)=\Hd(\eps_0)+A\cos(\Omega t)\,(n_d-1).
+\end{equation}
+Every Fock state $\ket n$ of the dot, with charge $n\in\{0,1,2\}$, is an eigenstate at
+every time, so its time evolution consists only of a phase factor,
+\begin{equation}
+  \ket{\psi_n(t)}=\ee^{-\ii E_nt}\,\ee^{-\ii q_n(A/\Omega)\sin\Omega t}\ket n,\qquad q_n=n-1 .
+\end{equation}
+Comparing with \cref{eq:floquet-state}, the quasienergy is the static energy, $\qe_n=E_n$,
+for every drive amplitude: this purely diagonal, zero-mean modulation preserves the
+time-averaged energy. The Floquet mode is the periodic phase factor. With the generating
+function of the Bessel functions,
+$\ee^{-\ii z\sin\vartheta}=\sum_mJ_m(z)\ee^{-\ii m\vartheta}$,
+\begin{equation}\label{eq:dot-weights}
+  \ket{u_n(t)}=\sum_m \ee^{\ii m\Omega t}(-1)^mJ_m\!\left(\frac{q_nA}\Omega\right)\ket n,
+  \qquad \norm{u_{n,m}}^2=J_m^2\!\left(\frac{q_nA}{\Omega}\right).
+\end{equation}
+The harmonic weights depend only on the \emph{modulation index} $q_nA/\Omega$, the ratio
+between the amplitude of the level oscillation and the photon energy. \Cref{fig:dot}(a)
+compares them with the Sambe results.
+
+\begin{physics}
+$J_m^2(A/\Omega)$ is the probability that a driven level has exchanged $m$ photons with
+the field. An electron that tunnels from a lead into such a level can do so at any of the
+energies $E_n+m\Omega$, so the tunnelling spectrum acquires sidebands with weights
+$J_m^2$. This is the Tien--Gordon theory of photon-assisted tunnelling, first formulated for
+superconducting tunnel junctions~\cite{tien1963multiphoton,dayem1962quantum} and observed in
+quantum dots~\cite{kouwenhoven1994photon,kouwenhoven1994observation,oosterkamp1998microwave}.
+For a modulation index of $2.405$, the first zero of $J_0$, the central line disappears.
+\end{physics}
+
+\section{Gauge and the meaning of the charge}
+
+Only charge \emph{differences} enter a physical transition: tunnelling from $\ket n$ to
+$\ket{n+1}$ involves the relative modulation index $(q_{n+1}-q_n)A/\Omega=A/\Omega$. The
+absolute weights \eqref{eq:dot-weights} depend on the constant in $\Hd$. Writing the drive as
+$A\cos(\Omega t)\,n_d$ instead would assign $q_n=n$, and the empty dot would have no
+sidebands at all. The two forms differ by the c-number $A\cos\Omega t$, a gauge
+transformation (\cref{sec:gauge}) that leaves the quasienergies unchanged. \pkg{} keeps the
+constants of the model by default, so that $q_n=n-1$ is measured from half filling; this
+centres the sidebands and minimizes the Floquet cutoff needed for convergence. The option
+\code{drop_scalar_harmonics=True} removes the oscillating c-number terms, which here gives
+the second form.
+
+\section{Floquet zones and replicas}
+
+\Cref{fig:dot}(b) shows the replicas $\qe_n+m\Omega$ of the empty and doubly occupied
+states as a function of $\Omega$ at fixed amplitude, with line intensity proportional to
+$J_m^2(A/\Omega)$. All replicas are equally valid quasienergies; the shaded first zone
+$\abs\qe<\Omega/2$ is one choice of representatives. At low frequency the modulation index
+is large, many sidebands carry weight and the replicas fan out; at high frequency the
+weight concentrates in $m=0$. Replicas of different states cross freely: without a coupling
+between the states, crossings in the Floquet spectrum are exact.
+
+\begin{figure}[htb]
+\centering
+\manualfigure{dot}
+\caption{Gate-driven isolated dot, $U=\q{dot.u}$, $\eps_0=\q{dot.epsilon}$. (a) Harmonic weights
+of the doubly occupied state versus the modulation index $A/\Omega$; circles are Sambe results, lines
+the Bessel functions \eqref{eq:dot-weights}. (b) Replicas $\qe+m\Omega$ of $\ket0$ and
+$\ket2$ versus $\Omega$ for $A=\q{dot.fan_amplitude}$; line opacity and width indicate the harmonic
+weight. The shaded region is the first Floquet zone.}
+\label{fig:dot}
+\end{figure}
+
+\section{In the code}
+
+\begin{lstlisting}
+import numpy as np
+from qdjj_solver import Hamiltonian, Impurity, PeriodicHamiltonian, Sector
+from qdjj_solver.qp_solver import solve_floquet
+
+def dot(detuning):
+    impurity = Impurity.anderson(1., detuning)
+    return Hamiltonian(impurity.operator, 2, (1, -1), observables=impurity.observables)
+
+A, omega = .6, 1.
+periodic = PeriodicHamiltonian.from_callable(lambda t: dot(.2 + A*np.cos(omega*t)), omega,
+                                             assume_fixed_coordinates=True)
+states = solve_floquet(periodic, 0, Sector(0, 0), dict(floquet_cutoff=12, states=2))
+print(states.quasienergies)            # 0.3 and 0.7: the static energies of |0> and |2>
+print(states.harmonic_weights[:, states.harmonic_indices == 0])   # J_0(A/omega)^2 for both
+\end{lstlisting}
+
+The isolated dot is constructed directly in fixed physical-electron coordinates.
+The explicit assertion \code{assume_fixed_coordinates=True} (\cref{sec:fixed-coordinates})
+allows the code to compare the samples through their mode labels. Since the only harmonics of this drive
+are $H_0$ and $H_{\pm1}$, any number of samples $N\ge3$ reproduces $H(t)$ exactly.
+
+\tutorial{02_driven_dot}

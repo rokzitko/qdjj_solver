@@ -1,4 +1,4 @@
-"""Finite-bath DMRG with sequential root targeting and physical residual checks."""
+"""Finite-bath DMRG with sequential eigenstate optimization and physical residual checks."""
 
 from __future__ import annotations
 
@@ -24,30 +24,60 @@ logger = logging.getLogger(__name__)
 
 @dataclass(frozen=True)
 class SolverOptions:
+    """Numerical settings of the DMRG solver; energies and tolerances share the Hamiltonian's units."""
+
     eigenpairs: int = 1
+    """Number of eigenstates to calculate, optimized sequentially."""
     chi_max: int = 128
+    """Maximum MPS bond dimension."""
     max_sweeps: int = 60
+    """Maximum number of sweeps per initial-state trial and eigenstate."""
     min_sweeps: int = 10
+    """Minimum number of sweeps per initial-state trial and eigenstate."""
     energy_tolerance: float = 1e-11
+    """Absolute energy tolerance, in energy units: TeNPy's sweep-to-sweep energy criterion and the
+    stability test of the last sweep energies; the local Lanczos tolerance ``E_tol`` is derived from it."""
     entropy_tolerance: float = 1e-8
+    """Dimensionless entropy-change threshold of TeNPy's stopping test."""
     residual_tolerance: float = 1e-7
+    """Maximum accepted physical residual norm for convergence of the finite problem, in energy units."""
     orthogonality_tolerance: float = 1e-8
+    """Tolerance on deviations of the overlap matrix from the identity and on overlaps with earlier
+    eigenstates."""
     svd_min: float = 1e-14
+    """Smallest retained singular value during optimization; may be zero."""
     lanczos_maxiter: int = 100
+    """Maximum number of local Lanczos iterations."""
     seed_trials: int = 4
+    """Number of initial-state trials per eigenstate, including randomized states."""
     seed: int = 1729
+    """Seed of the local random transformations of initial states."""
     seed_randomization_steps: int = 4
+    """Layers of local random unitary transformations for additional initial states; zero disables
+    randomization."""
     excitation_operator: str | None = None
+    """Name of a model observable that conserves the sector's quantum numbers; its fluctuation applied to
+    the previous eigenstate supplies the first trial state for the next eigenstate."""
     mixer: bool = True
+    """Enable TeNPy's optimization mixer."""
     mixer_amplitude: float = 1e-5
+    """Initial mixer strength."""
     mixer_sweeps: int = 6
+    """Number of sweeps after which the mixer is switched off."""
     group_size: int = 2
+    """One or two canonical fermionic modes per MPS site."""
     mode_order: tuple[int, ...] | None = None
+    """Permutation of all zero-based canonical mode indices; ``None`` keeps the model order."""
     observables: tuple[str, ...] | None = None
+    """Observables to evaluate: ``None`` selects all named observables, a tuple selects specified names, and ``()`` selects none."""
     calculate_residuals: bool = True
+    """Evaluate the residual norm of (H - E) psi for each state after optimization, without MPS compression."""
     require_convergence: bool = False
+    """Raise an error when the finite-problem convergence checks fail."""
     threads: int = 1
+    """Maximum number of threads used by the numerical libraries."""
     lanczos_probability_tolerance: float = 1e-14
+    """Local Lanczos probability-error threshold, passed to TeNPy as ``P_tol``."""
 
     def __post_init__(self):
         for name in ("eigenpairs", "chi_max", "max_sweeps", "min_sweeps", "lanczos_maxiter",
@@ -80,27 +110,38 @@ class SolverOptions:
 
 @dataclass
 class Eigenstates:
+    """Lowest eigenstates of a Hamiltonian in one sector, as matrix-product states."""
+
     backend: ClassVar[str] = "dmrg"
     energies: np.ndarray
+    """Eigenenergies, shape (k,), in the units of the Hamiltonian."""
     states: list
+    """The k eigenstates as TeNPy MPS."""
     residuals: np.ndarray | None
+    """Physical residual norms, shape (k,), in energy units; ``None`` if residuals were disabled."""
     observables: dict[str, np.ndarray]
+    """Expectation values of the measured observables, each of shape (k,)."""
     timings: dict[str, float]
+    """Elapsed times of the calculation stages, in seconds."""
     metadata: dict
+    """Numerical settings, sector, convergence diagnostics and sweep statistics."""
     hamiltonian: Hamiltonian
+    """The ``Hamiltonian`` that was solved."""
     prepared: object
+    """Canonical basis, conserved quantum numbers, and MPS mode ordering and grouping."""
 
     def _check_coordinates(self, other):
         if self.prepared.coordinate_id != other.prepared.coordinate_id:
             raise ValueError("states use different coordinates, layouts, or conserved charges")
 
     def overlaps(self, other=None):
+        """Overlap matrix with this result's states as bras and ``other`` as kets; by default, return the Gram matrix of this result."""
         other = self if other is None else other
         self._check_coordinates(other)
         return np.array([[bra.overlap(ket) for ket in other.states] for bra in self.states])
 
     def matrix_elements(self, operator, ket=None):
-        """All <self_i|operator|ket_j> in common prepared coordinates."""
+        """All ``<self_i|operator|ket_j>`` in common prepared coordinates."""
         ket = self if ket is None else ket
         self._check_coordinates(ket)
         return self.prepared.matrix_elements(operator, self.states, ket.states)

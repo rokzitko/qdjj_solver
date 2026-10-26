@@ -12,7 +12,7 @@ larger fixed-parameter study, and [locally archived inputs and numerical evidenc
 It extends the general [numerical-methods guide](numerics.md). The large study
 uses calculation records from Teodor Iličin and Rok Žitko's manuscript
 [*Quasiparticle-resolved variational theory of Andreev spin qubits*](references.md#qp-variational-method),
-with new observable-resolved analysis and current-solver checks. The scripts and data
+with additional analysis of individual observables and checks using the current solver. The scripts and data
 needed to reproduce this page are supplied in this repository.
 
 ## What the cutoff controls
@@ -28,13 +28,13 @@ H_Q=P_Q H P_Q.
 
 The spaces are nested, so their lowest energies satisfy
 $E_{Q+1}\leq E_Q$ up to numerical error. Charge and spin expectations, excitation
-energies, and currents have no corresponding variational monotonicity theorem.
+energies, and currents can approach their converged values nonmonotonically.
 `cutoff=None` includes every configuration of the declared finite bath.
 
 Three different checks are needed:
 
 1. **Eigensolution:** the residual of $H_Q$ checks the solution inside the
-   retained space. It does not measure the omitted-QP contribution.
+   retained space.
 2. **QP cutoff:** increase $Q$ while holding the finite Hamiltonian and
    coordinates fixed; compare each observable with a higher-cutoff or
    unrestricted result.
@@ -45,7 +45,7 @@ Three different checks are needed:
 The reference vacuum matters. With finite direct interlead hopping, an
 isolated-BCS-vacuum expansion also has to build the dressed background-junction
 vacuum. Its convergence can differ greatly from an expansion around the coupled
-quadratic reservoirs. Keep that choice fixed along a cutoff ladder.
+quadratic reservoirs. Keep that choice fixed throughout a sequence of cutoff refinements.
 
 ## Observables and the selected state
 
@@ -80,6 +80,9 @@ $\langle\mathbf S_d^2\rangle=3P_1/4$; it differs from the spin fraction $q_d$.
 These quantities use the built-in physical observables, which include the
 constructor's coordinate transformation:
 
+<!-- docs-test: continue README.md -->
+<!-- docs-test: setup result = qp -->
+
 ```python
 obs = result.observables
 n_d = obs["impurity_charge"][0].real
@@ -89,8 +92,8 @@ P_0 = 1 - n_d + P_2
 q_d = 2*obs["impurity_spin_z"][0].real
 ```
 
-In particular, counting canonical impurity occupations in an eta-charge basis
-would not in general give the physical $P_0$ and $P_2$.
+In an eta-charge basis, evaluate the transformed physical-electron operators
+to obtain $P_0$ and $P_2$.
 
 ### Dot–bath spin correlation
 
@@ -103,8 +106,8 @@ Here “bath spin” means the total spin of **both entire leads**:
 c_{li\alpha}^\dagger\boldsymbol\sigma_{\alpha\beta}c_{li\beta}.
 ```
 
-There are no contact/quadrature weights in this total-spin sum. A contact-local
-spin density would define a different observable. We report
+Every lead orbital enters this total-spin sum with unit weight. A contact-local
+spin density is a distinct observable with contact-dependent weights. We report
 
 ```math
 C_{d,\mathrm{bath}}
@@ -172,8 +175,8 @@ fixed bath object at each $N$.
 
 The table below uses $N=32$ for every QP row. The selected reference has $N=24$
 and MPS bond dimension $\chi=192$, with separate bath and bond checks below.
-Printed digits identify numerical records; the final digits are not certified
-accuracy statements.
+The quoted digits identify the numerical records. The refinement study below
+determines the achieved physical resolution.
 
 | $Q$ | $E/\Delta$ | $q_d$ | $P_0=P_2$ | $P_1$ | $C_{d,\mathrm{bath}}$ |
 |---|---:|---:|---:|---:|---:|
@@ -229,19 +232,18 @@ The unrestricted reference is checked with $(N,\chi)=(24,128),(32,128),(24,192)$
 
 For **each observable separately**, the reporting resolution is the larger of
 a stated $10^{-8}$ floor and four times the sum of its absolute bath and bond
-changes. All six resolutions equal the stated floor here. This is an empirical
-stability convention, not a rigorous error bound or a conversion of energy
-accuracy into wavefunction accuracy.
+changes. All six resolutions equal the stated floor here. This empirical
+stability convention uses the observed changes in each quantity to assign its
+reporting resolution.
 
 The original QP residuals are below $1.1\times10^{-11}\Delta$. The original DMRG
-records contain sweep histories, discarded weights, normalization diagnostics,
-and variances, but do not contain the current solver's direct residual norm.
-Those legacy variances are preserved as diagnostics, not converted into direct
-residual certificates. The current reference workflow evaluates the full
+records contain sweep histories, discarded weights, normalization diagnostics
+and variances. These archived quantities retain their original interpretation.
+The current reference calculation additionally evaluates the direct full
 finite-Hamiltonian residual, uses a separately stated $3\times10^{-4}\Delta$
-acceptance threshold for this bond ladder, and retains the residuals alongside
-the observable-stability checks. A residual threshold is not the $10^{-8}$
-empirical resolution quoted above.
+acceptance threshold for this bond-dimension sequence, and retains the residuals alongside
+the observable-stability checks. The residual threshold controls finite-Hamiltonian
+eigenstate accuracy; the $10^{-8}$ empirical resolution above concerns observable stability.
 
 The fresh $Q=1,2,3,4$ calculations on both grids agree with the paper archive
 within $3\times10^{-13}$ in all reported quantities. Their complete settings,
@@ -289,7 +291,7 @@ in this odd-parity ladder has only 210 states. Full finite-bath results include
 | Dot–bath spin correlation | -0.01277277 |
 | $E_{\mathrm{even}}-E_{\mathrm{doublet}}$ | 0.3626425184 |
 
-The positive final gap identifies an odd ground state for this small control.
+The positive final gap identifies an odd ground state for this small reference calculation.
 The small bath is a finite-Hamiltonian demonstration, while the larger study
 above supplies the separate bath refinement.
 
@@ -332,7 +334,7 @@ python -B tools/plot_qp_convergence.py results/qp-convergence-full \
 
 The [input file](benchmarks/qp_convergence/input.json) specifies the physical
 model, bath sizes, sector, fixed seeds, tolerances, and resource limits. Repeating
-the same command resumes completed points with identical input and code.
+the same command reuses completed points and continues the calculation with identical input and code.
 Use a fresh output directory after changing settings. `--dmrg` can also be used
 with the `check` profile to repeat the reference checks without the large
 $Q=5,6$ calculations.

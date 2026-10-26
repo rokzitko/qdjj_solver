@@ -1,6 +1,6 @@
 # Large-hybridization convergence study
 
-## TL;DR
+## Summary
 
 How many quasiparticles are enough at strong dot-lead coupling? This study
 compares **2QP, 4QP and 6QP truncations with exact finite-bath solutions and DMRG**
@@ -10,7 +10,7 @@ superconducting phases. It checks excitation gaps, local observables and current
 - **Even six QPs are insufficient for high precision at strong coupling.** At
   $\Gamma/\Delta=10$, representative eight-level calculations have 6QP gap errors
   from $0.002\Delta$ to $0.006\Delta$, including in the noninteracting model.
-- **A good gap can hide a poor state.** Cancellation between sector-energy errors
+- **An accurate gap can conceal inaccurate local observables.** Cancellation between sector-energy errors
   can mask large local-observable errors; increasing the cutoff need not improve
   every observable monotonically.
 - **Finite-bath accuracy is not continuum convergence.** Accepted DMRG results

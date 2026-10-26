@@ -1,0 +1,264 @@
+\chapter{Magnetic impurities, Kondo physics and screening}\label{ch:correlations}
+
+\section{How a dot becomes a magnetic impurity}
+
+In the local-moment regime, removing the dot's electron or adding a second one
+requires much more energy than the thermal and dynamical energy scales of interest.
+Charge fluctuations are suppressed, but the orientation of the remaining spin
+can still fluctuate. This is the starting point for quantum magnetism in a
+single impurity. An odd electron occupation supplies a spin even in a dot made
+from nonmagnetic materials.
+
+Consider first normal leads. A lead electron can tunnel onto the dot, visit the
+doubly occupied configuration virtually, and tunnel back with a different spin.
+A second sequence visits the empty configuration. Eliminating these high-energy
+intermediate states gives an antiferromagnetic exchange Hamiltonian. For a single
+effective normal conduction channel with tunnelling amplitude $t$,
+\begin{equation}\label{eq:exchange-picture}
+ H_K=J\bm S_d\cdot\bm s(0)+H_{\mathrm{lead}},\qquad
+ J=2|t|^2\left(\frac1{-\epsilon_d}+\frac1{\epsilon_d+U}\right)>0.
+\end{equation}
+Here $\epsilon_d<0<\epsilon_d+U$, $\bm s(0)=
+\tfrac12\sum_{\sigma\sigma'}c_\sigma\dg\bm\sigma_{\sigma\sigma'}c_{\sigma'}$
+is the spin density of the coupled conduction orbital, and $\bm\sigma$ denotes
+the Pauli matrices. There is also potential scattering, which vanishes at the
+particle--hole-symmetric point. This low-energy reduction assumes well-separated
+charge excitations. In the mixed-valence regime, retain charge fluctuations explicitly.
+The normal-state effective channel is a coherent combination of the two physical
+leads~\cite{hewson1993kondo,bulla2008numerical}.
+
+Antiferromagnetic exchange favours antiparallel correlations. Its spin-flip part,
+$J(S_d^+s^-+S_d^-s^+)/2$, allows the bath and impurity to exchange angular
+momentum. Repeated virtual processes at progressively lower energies strengthen
+the effective coupling. At the \emph{Kondo temperature} $T_K$, a weak-exchange
+description fails and the low-energy state becomes strongly correlated. For
+a spin-$1/2$ impurity with one screening channel and a metallic bath, the
+zero-temperature ground state is a singlet. This is Kondo screening.
+
+\section{Physical mechanisms of screening}\label{sec:screening-picture}
+
+The word screening is used for several different physical processes. Ordinary
+electrostatic screening rearranges charge around a perturbing electric potential.
+Kondo screening involves quantum \emph{spin} correlations. Proximity pairing
+mixes different even-charge configurations through exchange of Cooper pairs.
+\Cref{fig:primer-screening} distinguishes these mechanisms.
+
+\begin{figure}[htb]
+\centering\manualfigure{primer_screening}
+\caption{Three distinct physical mechanisms. Electrostatic screening
+rearranges charge; proximity pairing coherently mixes the empty and doubly occupied
+dot; Kondo screening entangles a local moment with conduction electrons. The
+screening cloud schematically represents correlations with many conduction electrons.}
+\label{fig:primer-screening}
+\end{figure}
+
+The two-spin singlet
+\begin{equation}
+ \ket{\mathrm{singlet}}=\frac{\ket{\up_d\dn_b}-\ket{\dn_d\up_b}}{\sqrt2}
+\end{equation}
+is a useful illustration of entanglement. Its total spin is zero, each local
+spin has zero mean polarization, but each has $\expval{\bm S_d^2}=3/4$ and
+$\expval{\bm S_d\cdot\bm S_b}=-3/4$: the local moments remain finite and are
+antiferromagnetically correlated. This two-spin wavefunction illustrates the entanglement.
+In the full Kondo problem the bath partner is a many-electron state distributed
+across energies and positions. A normal-metal correlation length is of order
+$\xi_K\sim\hbar v_F/(k_BT_K)$, with its precise definition depending on the
+correlation being measured.
+
+A singlet in a proximitized dot can instead take the form $u\ket0+v\ket2$. In the strict
+large-gap model it contains exclusively empty and doubly occupied configurations. Both states have
+total spin zero, but only the first picture screens a pre-existing local moment.
+At finite gap and finite hybridization these descriptions can evolve smoothly
+into one another because they share the same symmetries, allowing a crossover
+between pairing-dominated and Kondo-dominated singlet regimes.
+
+\begin{physics}[Which observable establishes screening?]
+To identify the screening mechanism, examine the dot charge distribution,
+$\expval{\bm S_d^2}$, spin correlations with the bath,
+the temperature dependence of the susceptibility, and the normal-state Kondo
+scale. These distinguish a local moment, its screening and a predominantly
+empty/doubly occupied proximity singlet. Zero local magnetization,
+$\expval{S_d^z}=0$, is compatible with all of these and with an unpolarized
+ensemble of free spins; a total-spin label $S=0$ likewise leaves the mechanism to be identified.
+\end{physics}
+
+\section{Why a superconducting gap competes with Kondo screening}
+
+The Kondo effect draws on low-energy electron--hole excitations of a normal
+metal. A superconducting gap removes the gapless continuum on which this
+low-energy buildup relies. In the local-moment regime the useful comparison is
+therefore between $k_BT_K$, defined for the corresponding \emph{normal-state}
+impurity, and $\Delta$~\cite{choi2004kondo,siano2004josephson,bauer2007spectral}.
+
+When $k_BT_K\gg\Delta$, correlations have become strong before the gap cuts off
+the normal-metal flow. A screened singlet is favoured. When $k_BT_K\ll\Delta$,
+the gap interrupts that flow before screening is complete, and a doublet is
+favoured. When the two scales are comparable, locating the transition accurately
+requires an explicit solution of the superconducting impurity problem.
+
+\begin{figure}[htb]
+\centering\manualfigure{primer_scales}
+\caption{Schematic energy-scale comparison in the local-moment regime. Following
+the normal-state flow downwards, strong Kondo correlations are reached before the
+gap in the left panel, whereas the gap intervenes first in the right panel.
+Positions on these logarithmic energy scales illustrate the two limiting regimes.
+The shaded regions denote energies unavailable as bulk single-QP
+excitations.}
+\label{fig:primer-scales}
+\end{figure}
+
+The Kondo scale is exponentially sensitive to microscopic parameters. Definitions
+from susceptibility, a spectral width and transport fits differ by numerical
+factors. Total and per-lead definitions of $\Gamma$ introduce another common
+conversion. Consequently, a quoted critical value of $T_K/\Delta$ is meaningful
+only with its scale convention, phase, asymmetry and Hamiltonian specified. This
+manual writes $k_BT_K/\Delta$ when the Kondo scale is expressed as a temperature; setting $k_B=1$
+converts it to an energy. Determine the transition boundary for the specified
+junction and conventions.
+
+Phase matters even at fixed normal-state $T_K$. Contributions from the two
+condensates interfere, and their cancellation near $\phi=\pi$ can destabilize a
+singlet. Detuning can remove the local moment entirely. Thus a diagram with axes
+$T_K$ and $\Delta$ summarizes one competition, while gate--phase diagrams often
+describe experiments more directly. Emptying the dot produces a singlet through
+a change of charge configuration, with the local moment removed.
+
+\section{The classical Yu--Shiba--Rusinov limit}\label{sec:classical-ysr}
+
+A different instructive limit replaces the impurity by a prescribed classical
+spin $\bm S$, with no quantum spin flips. Magnetic scattering affects the two
+members of a Cooper pair differently and binds a localized state. In a
+particle--hole-symmetric, wide-band $s$-wave host, with no potential scattering,
+one signed YSR pole can be written~\cite{yu1965bound,shiba1968classical,rusinov1969superconductivity,balatsky2006impurity}
+\begin{equation}\label{eq:classical-ysr}
+ E_{\mathrm{YSR}}=\Delta\frac{1-\alpha^2}{1+\alpha^2},\qquad
+ \alpha=\frac{\pi\rho_0JS}{2}.
+\end{equation}
+Here $\rho_0$ is the normal density of states per spin and the exchange is
+$J\bm S\cdot c\dg\bm\sigma c/2$; these conventions fix the factor of two.
+The particle--hole partner has the opposite pole energy. Potential scattering
+changes the formula and the electron/hole weights.
+
+\begin{figure}[htb]
+\centering\manualfigure{primer_ysr}
+\caption{Classical-spin YSR poles from \cref{eq:classical-ysr}. (a) Following a
+signed branch through zero and its particle--hole partner. (b) The positive
+excitation cost $|E_{\mathrm{YSR}}|$. The change of sign changes the reference
+occupation while the excitation cost remains nonnegative. These curves describe
+scattering from a prescribed classical spin.}
+\label{fig:primer-ysr}
+\end{figure}
+
+Starting at weak exchange, the pole leaves the gap edge and moves towards zero.
+At $\alpha=1$ its sign changes, requiring a change in the occupation defining the
+many-body ground state. Excitations above that ground state cost $|E_{\mathrm{YSR}}|$.
+The binding energy below the continuum edge is the separate quantity
+$\Delta-|E_{\mathrm{YSR}}|$.
+
+The classical model explains localized impurity states and a parity-changing
+crossing within a simple analytical description based on static magnetic scattering.
+Describing the Kondo effect requires quantum impurity-spin dynamics. When a
+quantum-dot spectrum resembles the classical curve, examine its many-body
+wavefunctions and spin correlations to identify the screening mechanism.
+
+\section{Quantum YSR states and the singlet--doublet transition}
+
+For a quantum impurity, diagonalization produces many-body states of the
+\emph{dot plus superconducting leads}. In the spin-rotation-invariant,
+single-orbital problem, the relevant low states are usually an even singlet $S$
+and an odd doublet $D$. An electron probe connects them. Define the signed
+energy difference
+\begin{equation}\label{eq:sd-energy}
+ \delta_{SD}=E_D-E_S.
+\end{equation}
+The singlet is the ground state for $\delta_{SD}>0$, and the doublet for
+$\delta_{SD}<0$. The lowest transition between them costs $|\delta_{SD}|$;
+positive and negative bias probe electron addition and removal, with generally
+different weights. A branch crossing through zero in a plot of $\delta_{SD}$
+and two resonances meeting at zero bias are related representations of the
+same singlet--doublet transition.
+
+Parity conservation keeps the even and odd sectors decoupled, allowing their
+levels to cross exactly. Coupled states of the same symmetry instead form an
+avoided crossing. At zero temperature the parity crossing changes the global
+ground state. A closed, isolated system retains its initially prepared parity
+as a parameter is varied through the crossing. Relaxation to the new global ground state requires a channel for
+parity exchange with the surroundings.
+
+\begin{figure}[htb]
+\centering\manualfigure{primer_thermal}
+\caption{Ground-state competition and thermal occupation of a singlet and a
+spin-degenerate doublet. The horizontal coordinate is the actual energy difference
+$\delta_{SD}$ in units of $k_BT$. The doublet
+probability assumes equilibrium between both parities and no other thermally
+occupied states. Thermal rounding changes the populations while the
+Hamiltonian eigenvalues retain their exact crossing.}
+\label{fig:primer-thermal}
+\end{figure}
+
+At temperatures low enough that only these multiplets are appreciably populated, equilibrium gives
+\begin{equation}\label{eq:doublet-probability}
+ Z=\ee^{-\beta E_S}+2\ee^{-\beta E_D},\qquad
+ P_D=\frac{2\ee^{-\beta\delta_{SD}}}{1+2\ee^{-\beta\delta_{SD}}}.
+\end{equation}
+The factor two is the doublet degeneracy. At equal energies the doublet has
+probability $2/3$. A magnetic field splits the two Boltzmann weights;
+a parity-trapped experiment instead needs a restricted population model. The
+parity crossing remains exact as temperature changes the populations and
+spectral broadening changes the displayed line shapes.
+
+In this setting, \emph{Andreev bound state} is often used broadly for a subgap
+excitation of a superconducting weak link, while \emph{YSR state} emphasizes
+its magnetic-impurity origin. For an interacting quantum dot these names often
+refer to the same measured spectral features. We specify the state, transition
+and approximation to make the physical interpretation explicit. A useful
+short introduction to this many-body interpretation is
+Ref.~\cite{zitko2018superconducting}; the wider theory is reviewed in
+Refs.~\cite{martinrodero2011josephson,meden2019andersonjosephson}.
+
+\section{A residual doublet can have a reduced local spin}
+
+A doublet has total spin $1/2$, distributed between dot and leads.
+For its $S_z=+1/2$ component,
+\begin{equation}
+ \expval{S_d^z}+\expval{S_{\mathrm{leads}}^z}=\frac12.
+\end{equation}
+Hybridization changes the local charge fluctuations and dot--lead correlations,
+redistributing this polarization. Calling a doublet ``partially screened''
+describes this local reduction while the conserved total spin remains $1/2$.
+
+If a weak field acts only on the dot as $B S_d^z$, the Hellmann--Feynman theorem
+relates the linear splitting to the local polarization. In an SU(2)-symmetric
+zero-field doublet,
+\begin{equation}\label{eq:local-spin-slope}
+ \lim_{B\to0}\frac{|E_{D_\up}-E_{D_\dn}|}{|B|}
+ =2\bigl|\matel{D_\up}{S_d^z}{D_\up}\bigr|.
+\end{equation}
+When $B=g\mu_B B_{\mathrm{lab}}$, this slope is $|g_{\mathrm{eff}}/g|$.
+It is an impurity Knight-shift diagnostic~\cite{pavesic2023impurity}. A field
+coupled uniformly to the \emph{total} spin would instead measure the total-spin
+response. Spin--orbit coupling and different lead $g$-factors require a more
+general analysis, including directional dependence.
+
+\Cref{ch:ex-esr} demonstrates the same local-spin renormalization in the Zeeman
+splitting and in the matrix element for a transverse magnetic drive. A reduced
+$g_{\mathrm{eff}}$ is experimentally relevant to a spin qubit. Interpreting it
+quantitatively requires accounting for charge admixture and wavefunction
+delocalization alongside Kondo correlations, since each can reduce the local polarization.
+
+\begin{physics}[Read the figures]
+A gate sweep takes a tunnel resonance down to zero energy and back up. Which
+physical change could produce this trace? It can cross a singlet--doublet boundary
+as charge or induced pairing changes. Identify the normal-state regime, the field
+response and the transition weights to assess the role of Kondo correlations. Likewise,
+observing a doublet with a reduced dot-local Zeeman slope is compatible with
+total spin $1/2$; it reveals where that spin responds to the applied field.
+\end{physics}
+
+\paragraph{Reading further.}
+Hewson's book~\cite{hewson1993kondo} develops the normal-state local-moment and
+Kondo problems. Bulla, Costi and Pruschke~\cite{bulla2008numerical} explain why
+many energy scales must be retained and how NRG does so. Balatsky, Vekhter and
+Zhu~\cite{balatsky2006impurity} review impurity-induced bound states, while
+Heinrich, Pascual and Franke~\cite{heinrich2018single} connect individual
+magnetic impurities to superconducting-surface experiments.

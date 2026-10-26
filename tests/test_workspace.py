@@ -7,7 +7,7 @@ import numpy as np
 from numpy.testing import assert_allclose
 import pytest
 
-from qdjj_solver import Sector, cosh_grid, reference_model
+from qdjj_solver import Sector, cosh_grid, reference_model, orbital_density_matrix
 from qdjj_solver.common.algebra import create, annihilate
 from qdjj_solver.common.problem import Hamiltonian
 from qdjj_solver.qp_solver import CalculationCancelled, ExecutionContext, QPWorkspace, SolverOptions, solve
@@ -53,6 +53,42 @@ def test_workspace_reuse_matches_fresh_and_preserves_snapshots(method):
         assert w.stats["warm_starts"] == 2
     assert not first.vectors.flags.writeable
     assert w.live_bytes >= sum(r.vectors.nbytes for r in (first, changed))
+
+
+@pytest.mark.parametrize("method", ["sparse", "matrix-free"])
+@pytest.mark.parametrize("complex_operator", [False, True])
+def test_workspace_shifted_arpack_keeps_hidden_zero_with_warm_start(method, complex_operator):
+    # The isolated third mode has exactly zero energy between the +/-1 pair.
+    # A small residual alone does not detect omission of this state.
+    matrix = np.diag(np.r_[0., 0., 0., np.arange(1., 38.)]).astype(complex if complex_operator else float)
+    matrix[0, 1] = 1j if complex_operator else 1.
+    matrix[1, 0] = matrix[0, 1].conjugate()
+    h, sector = one_particle(matrix)
+    options = SolverOptions(method=method, eigenpairs=2)
+    workspace = QPWorkspace()
+    for _ in range(2):
+        result = workspace.solve(h, 1, sector, options)
+        assert_allclose(result.energies, [-1., 0.], rtol=0, atol=1e-12)
+        assert_allclose(result.vectors.conj().T@result.vectors, np.eye(2), rtol=0, atol=1e-12)
+        assert result.metadata["spectral_shift"] == pytest.approx(-2**-.5)
+    assert workspace.stats["warm_starts"] == 1
+    assert result.metadata["reuse"]["projected"]
+
+
+def test_workspace_snapshots_support_transitions_and_physical_density():
+    h = junction()
+    options = SolverOptions(method="dense", eigenpairs=2)
+    workspace = QPWorkspace()
+    even = workspace.solve(h, 2, Sector(0, 0), options)
+    odd = workspace.solve(h, 2, Sector(1, 1), options)
+    reference_even = solve(h, 2, Sector(0, 0), options)
+    reference_odd = solve(h, 2, Sector(1, 1), options)
+    assert_allclose(abs(odd.matrix_elements("d_up_dagger", even))**2,
+                    abs(reference_odd.matrix_elements("d_up_dagger", reference_even))**2, rtol=0, atol=1e-12)
+    assert_allclose(even.overlaps(), np.eye(2), rtol=0, atol=1e-12)
+    assert_allclose(orbital_density_matrix(even, state=None),
+                    orbital_density_matrix(reference_even, state=None), rtol=0, atol=1e-12)
+    assert not even.vectors.flags.writeable and not odd.vectors.flags.writeable
 
 
 def test_block_solver_keeps_exact_complex_multiplicity():

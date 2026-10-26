@@ -12,24 +12,30 @@ from .io import calculation_from_config, save_result, write_json
 from .solver import solve
 
 
-def main(argv=None):
+def build_parser():
+    """The legacy ``qpsolver`` argument parser (also used to generate the CLI reference)."""
     parser = argparse.ArgumentParser(description="Variational QP expansions for superconducting impurities")
-    parser.add_argument("--version", action="version", version=__version__)
+    parser.add_argument("--version", action="version", version=__version__, help="print the version and exit")
     commands = parser.add_subparsers(dest="command", required=True)
     for name in ("solve", "dimension"):
-        command = commands.add_parser(name, help="solve a Hamiltonian" if name == "solve" else "count the requested Hilbert space")
-        command.add_argument("configuration", type=Path)
+        command = commands.add_parser(name, help="solve a Hamiltonian" if name == "solve" else "report the Hilbert-space dimension of the requested sector")
+        command.add_argument("configuration", type=Path, help="JSON calculation file in the legacy QP format")
         if name == "solve":
-            command.add_argument("--output", type=Path, required=True)
-            command.add_argument("--save-vectors", action="store_true")
+            command.add_argument("--output", type=Path, required=True, help="path of the output JSON result file")
+            command.add_argument("--save-vectors", action="store_true",
+                                 help="also save the eigenvectors in a companion file next to the result")
     command = commands.add_parser("fit", help="fit a particle-hole-symmetric BCS surrogate")
-    command.add_argument("--levels", type=int, required=True)
-    command.add_argument("--delta", type=float, default=1.)
-    command.add_argument("--bandwidth", type=float, default=100.)
-    command.add_argument("--frequency-cutoff", type=float, default=100.)
-    command.add_argument("--starts", type=int, default=4)
-    command.add_argument("--output", type=Path, required=True)
-    args = parser.parse_args(argv)
+    command.add_argument("--levels", type=int, required=True, help="number of signed spinful levels in the surrogate reservoir")
+    command.add_argument("--delta", type=float, default=1., help="superconducting gap")
+    command.add_argument("--bandwidth", type=float, default=100., help="normal-state half-bandwidth")
+    command.add_argument("--frequency-cutoff", type=float, default=100., help="largest imaginary frequency of the logarithmic fitting mesh")
+    command.add_argument("--starts", type=int, default=4, help="number of optimization attempts with different initial guesses")
+    command.add_argument("--output", type=Path, required=True, help="path of the output JSON bath file")
+    return parser
+
+
+def main(argv=None):
+    args = build_parser().parse_args(argv)
     try:
         if args.command == "fit":
             bath = fit_surrogate(args.levels, args.delta, args.bandwidth, args.frequency_cutoff, starts=args.starts)

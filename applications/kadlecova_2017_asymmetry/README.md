@@ -16,8 +16,8 @@ leads: Relation between symmetric and asymmetric coupling*, Physical Review B
 [arXiv:1610.08366v3](https://arxiv.org/abs/1610.08366v3).
 
 The targets are **Fig. 1(a,b)** for $U=2,3.2,5$ meV, and the exact
-energy/on-dot/current conversion formulas **Eqs. (5)–(7)**. The application
-demonstrates disappearance of the $U=2$ meV transition under strong contact
+conversion formulas for energies, local observables and currents, **Eqs. (5)–(7)**. The application
+demonstrates the disappearance of the $U=2$ meV transition under strong contact
 asymmetry at fixed total hybridization. This exemplifies why a single
 $T_K/\Delta$ coordinate cannot describe junctions of arbitrary asymmetry.
 
@@ -48,7 +48,7 @@ All QP configurations in each selected symmetry sector of the finite model are r
 
 ## Mapping and current normalization
 
-For a single Anderson impurity with spin-independent tunneling, identical
+For a single Anderson impurity with spin-independent tunnelling, identical
 reservoir gaps and normal spectral measures, and no direct interlead hopping,
 define
 
@@ -73,7 +73,7 @@ I_A(\phi)=\frac{\sqrt{\tau}\cos(\phi/2)}{\sqrt{\chi(\phi,a)}}I_S(\phi_S),
 Currents are recorded in $e\Delta/\hbar$. For $a=1$ the Jacobian is one,
 including its limiting value at $\phi=\pi$. For $a\ne1$ it vanishes at $\pi$.
 The mapping preserves $a\leftrightarrow1/a$. The paper's reversed phase
-orientation is equivalent after relabeling leads; we consistently use
+orientation is equivalent after relabelling the leads; we consistently use
 $\phi=\phi_R-\phi_L$.
 
 The inverse mapping exists only if
@@ -107,7 +107,7 @@ the [Bargerbos example](../bargerbos_2022_parity_diagram/README.md).
 ### Independent exact-identity check
 
 A separate calculation constructs two explicit, uncompressed reservoirs with unequal
-tunneling amplitudes and independently compares them with the symmetric model.
+tunnelling amplitudes and independently compares the resulting junction with the symmetric model.
 It uses the **same finite bath** on both sides, $a=1,4,11,1/11$, two phases,
 nonzero detuning and both parity sectors. Maximal differences are:
 
@@ -137,7 +137,7 @@ bath, bandwidth and reference-coordinate errors. Refinement is checked at the
 specified two boundaries, not assumed uniformly over all experimental regimes.
 Full data and runtimes are in [output/validation.json](output/validation.json).
 
-The optional extractor reads ten-sided circle centers in the original MATLAB
+The optional extractor reads the centres of circular markers represented by ten-sided polygons in the original MATLAB
 `fig_phase-boundary.eps`, keeping **137 NRG markers** from all nine published
 $U$ curves. It excludes the plotted interpolation polylines. The half-pixel
 export gives approximate uncertainties **0.0018** in $\tilde\epsilon$ and

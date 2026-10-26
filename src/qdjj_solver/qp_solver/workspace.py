@@ -67,11 +67,16 @@ def hermitian_inertia(matrix, threshold, context=None):
 
 
 class QPWorkspace:
-    """Own completed preparation in LRUs; account for results retained by callers.
+    """Reuse QP preparation with least-recently-used eviction and bounded storage.
 
     Keys distinguish enumeration structure from physical canonical coordinates.
     Changing coefficients can reuse a basis, but only identical coordinates
     authorize a warm start. Returned arrays are read-only snapshots.
+
+    ``max_memory_gib`` bounds accounted live data plus estimated working storage;
+    ``max_entries`` limits each cache. ``count_limit`` is the largest dimension for
+    an independent LDL state count. ``retained``, when supplied, is a callable
+    returning additional numerical data to include in the memory accounting.
     """
 
     def __init__(self, max_memory_gib=0.5, max_entries=16, count_limit=512, retained=None):
@@ -94,6 +99,7 @@ class QPWorkspace:
 
     @property
     def live_bytes(self):
+        """Accounted bytes of caches and live results, including caller-retained arrays."""
         seen = set()
 
         def size(value):
@@ -163,6 +169,7 @@ class QPWorkspace:
                                                   retained_bytes=self.live_bytes, budget_bytes=self.budget_bytes)
 
     def prepare(self, h, cutoff, sector, options=DEFAULT_OPTIONS, context=None):
+        """Check resource limits and return the cache key and prepared basis entry for a problem."""
         context = context or ExecutionContext()
         plan = preflight(h, cutoff, sector, options)
         bkey = basis_key(h, cutoff, sector)
@@ -197,6 +204,13 @@ class QPWorkspace:
 
     def solve(self, h, cutoff=None, sector=DEFAULT_SECTOR, options=DEFAULT_OPTIONS,
               initial=None, *, context=None, observables=None):
+        """Return validated QP eigenstates, reusing compatible completed preparation.
+
+        Arguments follow ``qp_solver.solve``. A compatible prior result supplies
+        the starting vector or block when ``initial`` is omitted for an explicitly
+        iterative method. ``observables=None`` measures all named model operators.
+        Returned numerical arrays are read-only; reuse diagnostics are in ``metadata``.
+        """
         context = context or ExecutionContext()
         builds_before = self.stats["basis_builds"]
         key, prepared = self.prepare(h, cutoff, sector, options, context)
@@ -278,6 +292,7 @@ class QPWorkspace:
         return prepared.transitions[operator_key]
 
     def clear(self):
+        """Release cached preparation and warm starts; caller-owned results remain valid."""
         self.bases.clear()
         self.problems.clear()
         self.warm.clear()

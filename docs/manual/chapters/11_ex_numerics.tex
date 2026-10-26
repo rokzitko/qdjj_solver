@@ -1,0 +1,83 @@
+\chapter{Example: numerical convergence}\label{ch:ex-numerics}
+
+A Floquet calculation of the junction involves six independent approximations: the Floquet
+cutoff $M$, the static basis size $K$ (if used), the QP cutoff, the bath discretization, the
+number of drive samples and, for the propagator, the number of time steps. This chapter
+studies the Floquet cutoff, the static basis and the bath for the phase-driven reference
+junction at QP cutoff $\q{numerics.cutoff}$; convergence with the QP cutoff must be checked as for the
+static problem (\cref{sec:qp}).
+The sampling and the time steps are checked by the midpoint test of \cref{sec:sampling} and
+the step-doubling estimate of \cref{sec:propagator}.
+
+\section{The Floquet cutoff}
+
+\Cref{fig:numerics}(a) shows the error of the tracked $S$ and $S^*$ quasienergies for a
+strong phase drive, $A=\q{numerics.strong_amplitude}$ at $\Omega=\q{numerics.omega}$, as a
+function of $M$, together with the rigorous bound \eqref{eq:residual-bound}. The error
+decreases exponentially, by one to two orders of magnitude per harmonic, because the harmonics
+of the drive decay like Bessel functions.
+The bound always lies above the error, which is roughly the square of the bound, as expected
+for an isolated eigenvalue. The bound is conservative and can be used as a stopping criterion. The
+weight in the outermost blocks, \code{boundary_weights}, decreases at the same rate.
+
+\section{The static basis}
+
+In the static basis the many-body space is truncated to the $K$ lowest undriven eigenstates.
+\Cref{fig:numerics}(b) compares the tracked quasienergies with those of the full Fock space
+at QP cutoff $\q{numerics.cutoff}$ (dimension $\q{numerics.fock_dimension}$) for a weaker
+drive.
+The error is about $\q{numerics.small_basis_error}$ already for $K\approx10$ and then
+decreases only slowly; it falls below $\q{numerics.large_basis_error}$ when $K$ approaches the
+full dimension. The reason is physical. The phase drive couples the subgap states to
+quasiparticle excitations at all energies up to the bandwidth $D=\q{numerics.bandwidth}$, and
+each contributes a small AC Stark shift \eqref{eq:ac-stark}. The static basis treats
+couplings among the retained states exactly; recovering the accumulated virtual
+contributions requires sufficiently many off-resonant states.
+\code{fock_residuals} provides a conservative error bound. For quantitative AC Stark shifts use the
+Fock basis; for resonances, splittings and scans the static basis is efficient.
+
+\section{The discretized continuum}
+
+\Cref{fig:numerics}(c,d) follows the dressed singlet across the one-photon threshold
+$\Omega=E_D+\Delta-E_S\approx\q{numerics.threshold}$, above which its first replica lies in
+the continuum, for baths with $\q{numerics.bath_pairs}$ level pairs per lead. Below the
+threshold the AC Stark shifts obtained with the $\q{numerics.bath_count}$ baths agree within
+$\q{numerics.below_spread}\%$, and the calculation is converged in the bath. The exceptions are
+a few narrow avoided crossings at two-photon resonances, $2\Omega=E_a-E_S$, with discrete
+continuum levels $a$; like the one-photon crossings above the threshold, they move with the
+bath. Above the threshold, the dressed singlet shows a narrow avoided crossing, with a dip of
+its static weight to about one half, wherever a replica of a discrete continuum level crosses
+it. The positions of these crossings differ from bath to bath: they are discretization
+artefacts (\cref{sec:continuum}). In the continuum limit they merge into a finite lifetime of
+the dressed bound state, set by the rate at which the drive excites quasiparticles out of it.
+
+\begin{figure}[htb]
+\centering
+\manualfigure{numerics}
+\caption{Convergence for the phase-driven reference junction. (a) Error of the tracked $S$
+and $S^*$ quasienergies versus the Floquet cutoff (static basis,
+$K=\q{numerics.cutoff_basis_states}$, $A=\q{numerics.strong_amplitude}$,
+$\Omega=\q{numerics.omega}$), with the rigorous bound \eqref{eq:residual-bound}. (b) Error of
+the static-basis result versus $K$, relative to the full Fock space
+($A=\q{numerics.weak_amplitude}$), with the Fock-space residual. (c) AC Stark shift of the
+dressed singlet and (d) its static weight versus $\Omega$ across the one-photon continuum
+threshold (dotted), for $\q{numerics.bath_count}$ bath sizes ($A=\q{numerics.weak_amplitude}$);
+the legend gives the number of level pairs per lead and the Fock-space dimension.}
+\label{fig:numerics}
+\end{figure}
+
+\section{A practical workflow}
+
+\begin{enumerate}
+\item Converge the static problem first: QP cutoff and bath, for the states of interest
+(\cref{ch:static}).
+\item Choose $M$ from the modulation index: $M\gtrsim(\text{largest level modulation})/\Omega+5$;
+check that \code{residuals} and \code{boundary_weights} are small.
+\item For scans, use the static basis and check \code{fock_residuals}, or compare selected
+points with Fock-space shift-invert results.
+\item Cross-check one point with \code{floquet_propagator}, which has no Floquet cutoff.
+\item Above continuum thresholds, compare at least two bath sizes and interpret only
+features that are stable under refinement.
+\end{enumerate}
+
+\tutorial{05_convergence}

@@ -6,7 +6,7 @@ from types import SimpleNamespace
 import numpy as np
 from numpy.testing import assert_allclose
 import pytest
-from scipy.sparse import csc_matrix, issparse
+from scipy.sparse import csc_matrix
 from scipy.sparse.linalg import ArpackNoConvergence, LinearOperator
 
 from qdjj_solver.common.algebra import FermionOperator, annihilate, create, number
@@ -247,7 +247,9 @@ def test_true_solver_dispatch_and_analytic_one_particle_spectrum(monkeypatch, me
     actual_eigsh = solver_module.eigsh
     def recording_eigsh(matrix, **kwargs):
         calls.append(matrix)
-        assert (isinstance(matrix, LinearOperator) if method == "matrix-free" else issparse(matrix))
+        # Both iterative methods hand ARPACK the shifted operator H - sigma; the sparse method
+        # applies a materialized sparse matrix (see the nnz check below), matrix-free never builds one.
+        assert isinstance(matrix, LinearOperator)
         return actual_eigsh(matrix, **kwargs)
     monkeypatch.setattr(solver_module, "eigsh", recording_eigsh)
     if method == "matrix-free":
@@ -313,9 +315,9 @@ def test_solve_preallocation_errors(monkeypatch):
     monkeypatch.setattr(solver_module, "FockBasis", forbidden)
     for options, selected, error, message in [
         (SolverOptions(), Sector(0, -2), ValueError, "empty symmetry"),
-        (SolverOptions(max_dimension=5), sector, MemoryError, "permitted maximum"),
+        (SolverOptions(max_dimension=5), sector, MemoryError, "exceeds max_dimension=5"),
         (SolverOptions(eigenpairs=7), sector, ValueError, "more eigenpairs"),
-        (SolverOptions(max_memory_gib=1e-12), sector, MemoryError, "estimated basis/eigensolver"),
+        (SolverOptions(max_memory_gib=1e-12), sector, MemoryError, "the basis and eigensolver need"),
         (SolverOptions(method="schur"), sector, ValueError, "QP cutoff 2"),
     ]:
         with pytest.raises(error, match=message):
@@ -330,7 +332,7 @@ def test_dense_memory_guard_precedes_matrix_materialization(monkeypatch):
     def forbidden(*args, **kwargs):
         pytest.fail("dense guard must run before matrix allocation")
     monkeypatch.setattr(ProjectedOperator, "sparse_matrix", forbidden)
-    with pytest.raises(MemoryError, match="dense eigensolution"):
+    with pytest.raises(MemoryError, match="dense diagonalization needs"):
         solve(h, sector=Sector(0, None), options=SolverOptions(method="dense", max_memory_gib=200_000 / 1024**3))
 
 
@@ -346,7 +348,7 @@ def test_schur_memory_guard_precedes_basis_allocation(monkeypatch, nimp, limit, 
     def forbidden(*args, **kwargs):
         pytest.fail("Schur storage must be checked before allocating the basis or matrix")
     monkeypatch.setattr(solver_module, "FockBasis", forbidden)
-    with pytest.raises(MemoryError, match="estimated basis/eigensolver"):
+    with pytest.raises(MemoryError, match="the basis and eigensolver need"):
         solve(h, cutoff=2, sector=Sector(0, None),
               options=SolverOptions(method="schur", max_memory_gib=limit))
 
@@ -560,3 +562,46 @@ def test_solve_schur_true_dispatch_and_qp_probabilities(complex_operator):
     assert_allclose(result.qp_weights.sum(axis=1), 1., rtol=0, atol=1e-14)
     assert_allclose(result.qp_weights[:, 1], 0., rtol=0, atol=0)
     assert_allclose(result.observables["number"], 2 * result.qp_weights[:, 2], rtol=0, atol=1e-14)
+
+
+def hidden_zero_problem(nmodes=40):
+    """One-particle spectrum -1, 0, +1 and a degenerate band >= 1: the zero is an exact basis state."""
+    energies = np.concatenate([[0., 0., 0.], np.repeat(np.linspace(1., 2., 4), (nmodes - 3)//4 + 1)[:nmodes - 3]])
+    operator = sum(float(e)*number(i) for i, e in enumerate(energies) if e)
+    operator += create(0)*annihilate(1) + create(1)*annihilate(0)
+    return Hamiltonian(operator, 0, (1,)*nmodes), Sector(1, None, particle_number=1)
+
+
+@pytest.mark.native
+@pytest.mark.parametrize("method", ["sparse", "matrix-free"])
+def test_iterative_solvers_keep_exactly_zero_eigenvalues(method):
+    # ARPACK alone misses an exactly zero eigenvalue: here the hidden zero between -1 and +1 (k=2,
+    # which the diagonal bound cannot detect), and the decoupled doublet of a junction at Gamma=0.
+    h, sector = hidden_zero_problem()
+    result = solve(h, sector=sector, options=SolverOptions(method=method, eigenpairs=2))
+    assert_allclose(result.energies, [-1., 0.], rtol=0, atol=1e-12)
+    assert result.metadata["spectral_shift"] == pytest.approx(-2**-.5)
+    from qdjj_solver import cosh_grid, reference_model
+    junction = reference_model(cosh_grid(pairs=2, bandwidth=10.), u=1., gamma=0., phi=.8, detuning=.2,
+                               symmetry=False, compress=False)
+    exact = solve(junction, 2, Sector(1, 1), SolverOptions(method="dense", eigenpairs=3)).energies
+    assert exact[0] == 0.
+    for k in (1, 3):
+        energies = solve(junction, 2, Sector(1, 1), SolverOptions(method=method, eigenpairs=k)).energies
+        assert_allclose(energies, exact[:k], rtol=0, atol=1e-12)
+
+
+@pytest.mark.native
+def test_diagonal_bound_triggers_the_second_shift_or_an_error(monkeypatch):
+    from qdjj_solver import cosh_grid, reference_model
+    junction = reference_model(cosh_grid(pairs=2, bandwidth=10.), u=1., gamma=0., phi=.8, detuning=.2,
+                               symmetry=False, compress=False)
+    # Offset 0 is the unshifted ARPACK call, which misses the exactly zero doublet energy and returns
+    # a state above the smallest diagonal element; the diagonal bound then requests the second shift.
+    monkeypatch.setattr(solver_module, "SHIFTS", (0., 3**-.5))
+    result = solve(junction, 2, Sector(1, 1), SolverOptions(method="sparse", eigenpairs=1))
+    assert_allclose(result.energies, [0.], rtol=0, atol=1e-12)
+    assert result.metadata["spectral_shift"] == pytest.approx(-3**-.5)
+    monkeypatch.setattr(solver_module, "SHIFTS", (0., 0.))
+    with pytest.raises(RuntimeError, match="missed eigenvalues below the diagonal bound"):
+        solve(junction, 2, Sector(1, 1), SolverOptions(method="sparse", eigenpairs=1))

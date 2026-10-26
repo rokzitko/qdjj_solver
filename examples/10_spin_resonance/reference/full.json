@@ -1,0 +1,140 @@
+{
+ "tutorial": "10_spin_resonance",
+ "profile": "full",
+ "values": {
+  "zeeman": {
+   "value": 0.01730299466730123,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Zeeman splitting $Z=E_{D_\\uparrow}-E_{D_\\downarrow}$"
+  },
+  "geff": {
+   "value": 0.8661222825312138,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "$g_{\\mathrm{eff}}/g=2\\lvert\\langle S^z_d\\rangle\\rvert$ in the lower Zeeman level"
+  },
+  "geff_zeeman": {
+   "value": 0.8651497333650615,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "$g_{\\mathrm{eff}}/g$ from the Zeeman splitting, $Z/B$"
+  },
+  "geff_transverse": {
+   "value": 0.8651459041428977,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "$g_{\\mathrm{eff}}/g=2\\lvert\\langle D_\\downarrow\\vert S^x_d\\vert D_\\uparrow\\rangle\\rvert$"
+  },
+  "rabi_rwa": {
+   "value": 0.0017302918082857954,
+   "atol": 1e-10,
+   "format": ".7f",
+   "description": "RWA Rabi splitting $b\\lvert\\langle D_\\uparrow\\vert S^x_d\\vert D_\\downarrow\\rangle\\rvert$"
+  },
+  "rabi": {
+   "value": 0.0017292093655465449,
+   "atol": 1e-09,
+   "format": ".7f",
+   "description": "Floquet Rabi splitting $\\delta$ at resonance"
+  },
+  "geff_rabi": {
+   "value": 0.8646046827732724,
+   "atol": 1e-06,
+   "format": ".6f",
+   "description": "$g_{\\mathrm{eff}}/g$ from the Rabi splitting, $\\delta/(b/2)$"
+  },
+  "rabi_reduction": {
+   "value": 0.0006255839240913996,
+   "atol": 1e-06,
+   "format": ".2e",
+   "description": "Relative reduction of $\\delta$ below the RWA value"
+  },
+  "curvature": {
+   "value": 1.002497342958129,
+   "atol": 1e-05,
+   "format": ".4f",
+   "description": "Curvature of $w^2(\\Omega)$ near resonance (1 in the RWA)"
+  },
+  "bloch_siegert": {
+   "value": 4.3159684687002486e-05,
+   "atol": 1e-09,
+   "format": ".3e",
+   "description": "Bloch\u2013Siegert shift of the resonance, $\\Omega_r-Z$"
+  },
+  "bloch_siegert_estimate": {
+   "value": 4.3202998778365e-05,
+   "atol": 1e-10,
+   "format": ".3e",
+   "description": "Estimate $\\delta^2/4Z$ of the Bloch\u2013Siegert shift"
+  },
+  "sx_lower": {
+   "value": 0.049211896372859575,
+   "atol": 1e-06,
+   "format": ".5f",
+   "description": "$S^x_d$ emission sideband at $-(Z-\\delta)$, for $\\Omega=Z$"
+  },
+  "sx_elastic": {
+   "value": 0.0467006953598884,
+   "atol": 1e-06,
+   "format": ".5f",
+   "description": "$S^x_d$ elastic line at $\\pm Z$ (each), for $\\Omega=Z$"
+  },
+  "sx_upper": {
+   "value": 0.04452363818219213,
+   "atol": 1e-06,
+   "format": ".5f",
+   "description": "$S^x_d$ absorption sideband at $Z+\\delta$, for $\\Omega=Z$"
+  },
+  "sx_rwa": {
+   "value": 0.046779839715951996,
+   "atol": 1e-09,
+   "format": ".5f",
+   "description": "RWA strength of each $S^x_d$ line, $\\lvert\\langle D_\\uparrow\\vert S^x_d\\vert D_\\downarrow\\rangle\\rvert^2/4$"
+  },
+  "sx_asymmetry": {
+   "value": -0.050015804709728225,
+   "atol": 1e-06,
+   "format": ".4f",
+   "description": "$S^x_d$ sideband asymmetry, (absorption $-$ emission)/(sum), for $\\Omega=Z$"
+  },
+  "rabi_over_zeeman": {
+   "value": 0.09993699927645253,
+   "atol": 1e-07,
+   "format": ".5f",
+   "description": "Ratio $\\delta/Z$"
+  },
+  "sz_frequency": {
+   "value": 0.0017297499325255594,
+   "atol": 1e-09,
+   "format": ".7f",
+   "description": "$S^z_d$ line frequency for $\\Omega=Z$"
+  },
+  "sz_line": {
+   "value": 0.1865343247320151,
+   "atol": 1e-06,
+   "format": ".5f",
+   "description": "$S^z_d$ line strength for $\\Omega=Z$"
+  },
+  "sz_rwa": {
+   "value": 0.18711935886380798,
+   "atol": 1e-09,
+   "format": ".5f",
+   "description": "RWA strength of the $S^z_d$ line, $\\lvert\\langle D_\\uparrow\\vert S^x_d\\vert D_\\downarrow\\rangle\\rvert^2=(g_{\\mathrm{eff}}/g)^2/4$"
+  },
+  "geff_last": {
+   "value": 0.6494925174643805,
+   "atol": 1e-09,
+   "format": ".4f",
+   "description": "$g_{\\mathrm{eff}}/g=2\\lvert\\langle S^z_d\\rangle\\rvert$ at $\\Gamma=1.2$"
+  },
+  "geff_spread": {
+   "max": 0.003,
+   "description": "Largest spread of the three determinations of $g_{\\mathrm{eff}}/g$ over $\\Gamma$"
+  },
+  "fock_residual": {
+   "max": 0.001,
+   "description": "Fock-space residual of the dressed doublet in the static basis"
+  }
+ }
+}

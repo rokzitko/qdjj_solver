@@ -1,0 +1,186 @@
+# Canonical explanatory metadata for input/output formats. Constructor defaults
+# and accepted constructor keys are generated separately from implementation signatures.
+
+[[configuration]]
+title = "Calculation envelope"
+source = "src/qdjj_solver/common/io.py: validate_config; src/qdjj_solver/cli.py"
+intro = "The unified CLI reads one JSON object. Unknown keys are rejected, with their location included in the error message. Version 1 describes static calculations; use Python to construct periodic Hamiltonians and calculate spectra."
+[configuration.fields]
+format_version = "Integer 1; omitted means 1. Booleans and other versions are rejected."
+backend = "'qp' or 'dmrg'; omitted means QP in the unified CLI. --backend overrides the file. The legacy qpsolver input rejects this key."
+model = "Model object; omitted selects reference-model defaults. The kind defaults to 'reference'. See the constructor reference for every parameter."
+bath = "Reference-model reservoir object. Omitted means a cosh grid with pairs=8; an explicitly empty object lacks the required pairs argument. Other model kinds ignore this top-level field; general models specify model.reservoirs instead."
+sector = "Sector constructor keys parity, twice_sz, eta, particle_number. Omitted uses Sector(); non-null labels must be integers."
+cutoff = "Nonnegative integer or null. Omitted means 2 for QP CLI, null for DMRG. DMRG requires null, including after a backend override. Python solve instead defaults to None."
+solver = "Object containing exactly the selected backend's SolverOptions keys. Omitted fields use that backend's defaults. Unknown or backend-incompatible settings fail."
+
+[[configuration]]
+title = "Reference model"
+source = "src/qdjj_solver/common/io.py: model_from_config"
+intro = "model.kind='reference'. Remaining model keys are reference_model keywords except bath, which is supplied by the top-level bath object. The unified CLI sets compress=false when omitted; the legacy QP interface and Python constructor default to true."
+[configuration.fields]
+kind = "Literal 'reference', or omitted."
+parameters = "u, gamma, phi, rho_ws, rho_wn, geometry, detuning, field, symmetry, compress, bath_reference, coefficient_tolerance; generated names/defaults and constraints are in the constructor reference."
+
+[[configuration]]
+title = "Reservoir objects"
+source = "src/qdjj_solver/common/io.py: bath_from_config"
+intro = "Used as bath for reference models and as each model.reservoirs element for general models. All gaps and half-bandwidths are positive finite energies."
+[configuration.fields]
+kind = "'cosh-grid' (default), 'surrogate', 'chain-expansion' or 'discrete'."
+cosh-grid = "Arguments of cosh_grid: pairs is required; delta and bandwidth have constructor defaults."
+surrogate = "Arguments of fit_surrogate: levels is required; all mesh, objective, start and budget controls follow the constructor reference."
+chain-expansion = "Arguments of chain_expansion: levels is required; wide_band is boolean."
+discrete = "Arguments of DiscreteBath: xi and weights are required equal-length nonempty arrays; weights are positive. Optional delta, bandwidth and metadata follow the class reference."
+metadata = "Optional string-keyed object for constructors that accept it, notably an explicit discrete bath. Check the selected constructor's supported keywords."
+
+[[configuration]]
+title = "Multi-orbital models"
+source = "src/qdjj_solver/common/io.py: model_from_config"
+intro = "model.kind='multi-orbital'. Required fields are impurity, reservoirs and tunneling. Other fields follow make_model, with reservoirs replacing its baths argument."
+[configuration.fields]
+kind = "Literal 'multi-orbital'."
+impurity = "Object with required orbitals and terms; optional observables and metadata. orbitals is positive; terms are a list of operator records."
+reservoirs = "Nonempty array of reservoir objects, one per lead."
+tunneling = "Array of L matrices, each shape (2, 2*orbitals), real or explicit complex-array objects; amplitudes in energy units."
+phases = "Optional list of L finite phases in radians; omitted means zero."
+direct = "Optional list of contact records, each with leads and matrix; omitted means none."
+phase_velocities = "Optional L phase derivatives for the phase_derivative observable."
+eta_basis = "Optional boolean; only a verified matched single-dot symmetry permits true."
+compress_pairs = "Optional boolean dark-mode restriction; requires eligible eta coordinates."
+bath_reference = "'isolated' or 'coupled'; restrictions are those of make_model."
+coefficient_tolerance = "Nonnegative finite coefficient cleanup scale."
+direct_derivatives = "Object mapping observable names to lists of contact records; choose names distinct from impurity observables and phase_derivative."
+
+[[configuration]]
+title = "Direct Hamiltonians"
+source = "src/qdjj_solver/common/io.py: model_from_config; common/problem.py: Hamiltonian"
+intro = "model.kind='hamiltonian'. Other fields are the Hamiltonian record: operator, nimp and spins are required. This uses the specified additive constant and canonical coordinates."
+[configuration.fields]
+operator = "List of operator-term records. Must define a finite Hermitian parity-conserving operator on declared modes."
+nimp = "Number of initial canonical spin modes treated as impurity modes; between zero and the total mode count."
+spins = "Array of +1/-1 twice-spin labels, one per mode."
+eta_labels = "Optional +1/-1 labels with the same length as spins, or null."
+observables = "Optional string-keyed mapping from names to operator-term lists."
+metadata = "Optional object, including coordinate and energy-reference declarations where applicable."
+
+[[configuration]]
+title = "Nested numerical encodings"
+source = "src/qdjj_solver/common/io.py: complex_array, _operator_from_config, _contacts_from_config"
+intro = "Specify input indices and array dimensions from the physical mode ordering and contact definitions."
+[configuration.fields]
+complex-array = "Either an ordinary real array or an object with exactly real and imag arrays of identical shape. Complex scalars use the analogous real/imag encoding in records."
+operator-term = "Exactly three fields: operators (an array of signed, nonzero, one-based mode indices), real and imag (finite coefficient components). Positive indices denote creation, negative indices annihilation; the rightmost operator acts first. An empty operators array represents a scalar."
+contact = "Exactly leads and matrix. leads contains two integer indices 0<=l<m; duplicates fail. matrix is a finite complex 2-by-2 spin matrix."
+impurity-observables = "Object mapping names to lists of impurity operator terms; uses physical impurity modes."
+user-metadata = "Store user notes in the metadata dictionaries supported by the model and bath constructors."
+
+[[record]]
+title = "Common scalar result envelope"
+source = "src/qdjj_solver/common/io.py: result_record; qp_solver/io.py; dmrg_solver/io.py"
+intro = "save_result supports static QP and DMRG eigenstates. It writes JSON with format='qdjj-eigenstates', format_version=1 and backend='qp' or 'dmrg', and returns None. Scalar JSON can be analysed with ordinary JSON tools; load_result additionally requires a state artifact."
+[record.fields]
+format = "Literal 'qdjj-eigenstates'."
+format_version = "Integer 1."
+backend = "'qp' or 'dmrg'; selects the loader and backend-specific metadata."
+energies = "One real many-body energy per state in the declared Hamiltonian reference. Obtain excitation gaps by taking energy differences."
+residuals = "One residual norm per state; DMRG can use null when residual evaluation was disabled."
+observables = "Mapping from observable name to one value per state, using complex encoding where necessary."
+timings_seconds = "Named elapsed-time measurements, with method-dependent keys; use them to assess computational cost in the recorded environment."
+calculation = "The result object's metadata dictionary, stored under the key calculation: settings, sector and diagnostics."
+environment = "Package/library versions, Python, platform and machine information."
+implementation = "Imported implementation version, portable relative file hashes and their aggregate SHA256."
+hamiltonian_sha256 = "Fingerprint of the complete Hamiltonian record."
+hamiltonian = "Full Hamiltonian record in standard save_result output. The lower-level record helper can omit it; retain it for state restoration."
+qp_weights = "QP only: state-by-bath-QP-number probabilities, with shape (states, cutoff+1)."
+state_artifact = "Present only when states are saved; kind, format_version, file and sha256 identify the companion."
+state_amplitudes = "QP saves also retain the legacy file/sha256 companion descriptor."
+
+[[record]]
+title = "QP calculation metadata"
+source = "src/qdjj_solver/qp_solver/solver.py"
+intro = "The QP calculation copies the model metadata and adds the following fields. Additional method-specific diagnostics may also be present; this dictionary is extensible."
+[record.fields]
+sector = "All four Sector fields."
+qp_cutoff = "Resolved integer bath-QP cutoff."
+dimension = "Number of retained Fock basis states."
+bath_modes = "Number of declared non-impurity modes."
+impurity_modes = "Number of impurity spin modes."
+method = "Selected eigensolver method after automatic dispatch."
+options = "Resolved SolverOptions dictionary."
+basis_bytes = "Native basis storage estimate in bytes."
+estimated_solver_bytes = "Estimated solver storage in bytes; actual process memory also includes allocations outside this estimate."
+real_arithmetic = "Whether the projected calculation used real arithmetic."
+nnz = "Stored sparse entry count if available, otherwise null."
+
+[[record]]
+title = "DMRG calculation metadata"
+source = "src/qdjj_solver/dmrg_solver/solver.py"
+intro = "The finite-problem convergence flag requires satisfactory residuals, stable sweep energies, energy ordering and orthogonality. Assess bath convergence by refinement, and check the completeness of the low-energy spectrum through additional state searches or an independent reference."
+[record.fields]
+backend = "Literal 'dmrg'."
+tenpy = "TeNPy version used."
+options = "Resolved DMRG SolverOptions."
+sector = "Selected Sector fields."
+qp_cutoff = "Null: DMRG retains all QP numbers allowed by the declared model and sector."
+bath_modes = "Declared non-impurity mode count."
+impurity_modes = "Impurity spin-mode count."
+mode_order = "Canonical mode permutation along the MPS."
+groups = "Modes assigned to each MPS site."
+coordinate_id = "Physical-coordinate and layout fingerprint."
+energy_reference = "Description inherited from the Hamiltonian, or 'as specified in Hamiltonian'."
+restriction = "Any declared dark-mode restriction inherited from model construction; DMRG acts on the retained modes."
+search_energy_shift = "Scalar search shift used during excited-state optimization."
+operator_norm_bound = "Operator-coefficient norm bound used in the search."
+mpo_dimensions = "Physical MPO bond dimensions, or null for a zero operator."
+mpo_original_dimensions = "Dimensions before exact parallel-channel merging, or null."
+search_shift_bound = "Method used to choose the search bound, or null."
+roots = "Optimization diagnostics for each state, including independent trials, sweep histories, actual bond dimensions and stopping information."
+gram = "Full state overlap matrix, bra rows and ket columns."
+gram_error = "Norm of the deviation of gram from the identity."
+roots_energy_ordered = "Whether the retained eigenstates are ordered by energy."
+residual_method = "'untruncated-(H-E)-MPS-QR' when residuals are evaluated, otherwise null."
+finite_problem_converged = "Combined finite-Hamiltonian convergence assessment."
+bath_convergence_checked = "False: bath convergence requires a separate study."
+
+[[record]]
+title = "DMRG root and trial diagnostics"
+source = "src/qdjj_solver/dmrg_solver/solver.py"
+intro = "Each calculation.roots entry describes the selected candidate for one eigenstate. Iteratively obtained states include sweep and trial data; exact single-site and zero-operator solutions have shorter records."
+[record.fields]
+sweep_converged = "TeNPy's combined energy/entropy stopping flag, separate from the full finite-problem assessment."
+sweep_energy_converged = "Stability of the last three sweep energies within four times energy_tolerance."
+sweeps = "Number of optimization sweeps; zero for exact special cases."
+chi_actual = "Largest actual MPS bond dimension; one for exact single-site/zero-operator cases."
+seed = "Product-state indices, 'continuation', an excitation-operator/source-root object, or randomized-seed details. Absent for exact special cases."
+lower_root_overlap = "Largest magnitude of the overlap amplitude with a previously calculated eigenstate; absent for exact special cases."
+norm_error = "Norm of TeNPy's canonical-form diagnostic; absent for exact special cases."
+sweep_statistics = "TeNPy per-sweep arrays; non-finite diagnostics are encoded as null. Names depend on the installed TeNPy version."
+seed_trials = "List of attempted candidates, each with energy, sweep_converged, lower_root_overlap and seed; empty for exact special cases."
+method = "Present for exact special cases: 'single-site-exact' or 'zero-operator'."
+
+[[record]]
+title = "Companion wavefunctions"
+source = "src/qdjj_solver/qp_solver/io.py; src/qdjj_solver/dmrg_solver/io.py"
+intro = "Keep the JSON record and its named companion file in the same directory. Saving uses unique companion filenames and replaces the JSON record atomically. Obtain the companion filename from the JSON record's state_artifact.file field."
+[record.fields]
+kind = "'fock-amplitudes-npz' or 'tenpy-mps-hdf5'."
+format_version = "Companion descriptor version 1."
+file = "Basename of the companion file in the result directory."
+sha256 = "Checksum of the companion bytes, checked before loading."
+NPZ = "energies, vectors (basis rows, eigenstate columns), occupations (uint64 word rows), qp_counts, result_sha256. The last binds the scalar record; older four-array files remain readable."
+HDF5 = "TeNPy data containing format='qdjj-mps', format_version=1, coordinate_id, result_sha256 and states. Load trusted MPS artifacts with compatible TeNPy/HDF5 support."
+validation = "Loaders check format, checksum, Hamiltonian and coordinate/basis identities, shapes and state consistency. Editing scalar records can invalidate their binding to wavefunctions."
+legacy-QP = "format='bcs-qp-eigenstates', version 1, is also readable. It uses state_amplitudes and lacks the common backend/provenance envelope. New unified saves use the common format."
+
+[[record]]
+title = "Model and spectral records"
+source = "common/baths.py; common/problem.py; common/floquet.py; common/spectra.py"
+intro = "Each object's record() method provides the fields listed below for explicit JSON encoding of arrays and complex values. These records describe models, drives and spectral lines; save_result and load_result handle static eigenstates and their companion wavefunctions."
+[record.fields]
+DiscreteBath = "xi, weights, delta, bandwidth, metadata. from_record reconstructs and validates coefficients."
+Hamiltonian = "operator, nimp, spins, eta_labels, observables, metadata. Operators are serialized term lists; the additive constant is retained."
+Harmonic = "order, amplitude, phase."
+ParameterDrive = "parameter, index, harmonics (Harmonic records)."
+PeriodicHamiltonian = "omega, nimp, spins, eta_labels, harmonics (string nonnegative indices to operator lists), reference (Hamiltonian record), observables (signed harmonic keys), metadata."
+SpectralLines = "frequencies, strengths, final, initial, photons, elastic, metadata. Merged initial/final index lists and population-weighted strengths retain their interpretation."

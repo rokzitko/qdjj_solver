@@ -1,0 +1,68 @@
+\chapter{Example: photon-assisted tunnelling into a driven junction}\label{ch:ex-pat}
+
+A weak tunnelling contact, such as a scanning-tunnelling tip or a normal lead, adds or
+removes single electrons and thereby measures transitions between the even and odd subgap
+states. Under a microwave gate drive each tunnelling line acquires sidebands at multiples of
+the drive frequency: photon-assisted tunnelling. It was described by Tien and Gordon for
+superconducting tunnel junctions~\cite{tien1963multiphoton}, observed in quantum
+dots~\cite{kouwenhoven1994observation,oosterkamp1998microwave}, and recently used to probe
+Yu--Shiba--Rusinov states with a scanning tunnelling
+microscope~\cite{kot2020microwaveassisted,peters2020resonant,acerogonzalez2020photonassisted}.
+
+\section{Tien--Gordon and its generalization}
+
+For the decoupled dot, \cref{ch:ex-dot}, the sideband weights are Bessel functions,
+$J_q^2(\Delta n\,A/\Omega)$, with $\Delta n$ the charge difference between the final and the
+initial state. This result is exact, and the tests of \pkg{} check that the code reproduces it
+to $10^{-10}$. In the junction the subgap states have non-integer charges, $n_S=\q{pat.n_S}$
+and $n_D=\q{pat.n_D}$ for the bath used here, so the simple Tien--Gordon formula with
+$\Delta n=\q{pat.dn}$ provides a natural first approximation. It neglects two effects. The transition energy
+$E_D(\eps)-E_S(\eps)$ depends nonlinearly on the detuning, and so does the tunnelling matrix
+element $\matel D{d^\dagger_\uparrow}S$. For a slow drive both are captured by an adiabatic
+generalization, in which the sideband amplitudes are the Fourier coefficients of
+\begin{equation}\label{eq:adiabatic-tg}
+  F(t)=\mathcal M\bigl(\eps(t)\bigr)\exp\Bigl[\ii\int_0^t\bigl(\Delta E(\eps(t'))-\overline{\Delta E}\bigr)\dd t'\Bigr],
+\end{equation}
+with $\mathcal M(\eps)=\matel{D(\eps)}{d^\dagger_\uparrow}{S(\eps)}$ and $\Delta E=E_D-E_S$ from static
+calculations along the drive.
+
+\section{Results}
+
+In \cref{fig:pat} the gate of a junction with $\q{pat.pairs}$ bath level pairs per lead is
+driven at $\Omega=\q{pat.omega}$, far below the excitation gaps within each parity sector
+($\q{pat.gap_singlets}$ for the singlets, $\q{pat.gap_doublet}$ above the doublet), and the
+addition spectrum of $d^\dagger_\uparrow$ is evaluated from the dressed singlet. Panel (a)
+shows the sidebands spreading out as the amplitude grows. Panel (b) compares the weights of
+the lines into the dressed doublet with the two formulas. The Floquet results follow the
+adiabatic generalization \eqref{eq:adiabatic-tg} closely, while the simple Tien--Gordon expression reproduces
+the overall envelope with symmetric weights for $q=+1$ and $q=-1$. The adiabatic expression captures
+the asymmetry through the detuning-dependent energy and matrix element. For $A=\q{pat.range_amplitude}$, $\Delta E$ varies from $\q{pat.gap_min}$ to
+$\q{pat.gap_max}$ and $\abs{\mathcal M}$ from $\q{pat.element_min}$ to $\q{pat.element_max}$ over the
+drive period. Evaluating
+\eqref{eq:adiabatic-tg} with a constant $\mathcal M$, or with a linearized $\Delta E$, shows that the two
+dependences produce asymmetries of opposite sign; the observed asymmetry is their net
+effect. The Floquet calculation retains nonadiabatic dynamics and extends the
+treatment to frequencies $\Omega$ approaching the internal gaps, beyond the regime of \eqref{eq:adiabatic-tg}.
+
+\begin{figure}[htb]
+\centering
+\manualfigure{pat}
+\caption{Photon-assisted tunnelling: gate drive at $\Omega=\q{pat.omega}$ on a junction with
+$\q{pat.pairs}$ bath level pairs per lead ($U=\q{pat.u}$, $\Gamma=\q{pat.gamma}$,
+$\eps=\q{pat.epsilon}$, $\phi=\q{pat.phi}$). (a) Addition spectrum of $d^\dagger_\uparrow$
+from the dressed singlet for several amplitudes, offset vertically (Lorentzian half width
+$\q{pat.width}$).
+(b) Weights of the sidebands into the dressed doublet, normalized to the static
+strength. Markers: Floquet; solid ($q\ge0$) and dashed ($q<0$) lines: adiabatic generalized
+Tien--Gordon \eqref{eq:adiabatic-tg}; dotted lines: plain $J_q^2(\Delta n\,A/\Omega)$.}
+\label{fig:pat}
+\end{figure}
+
+\begin{caution}
+Microwaves applied to a tunnelling experiment also modulate the probe contact itself, which
+produces replicas of every line independently of any dressing of the junction. Separating
+the two requires the drive to act on the junction alone, or a model of the probe
+circuit~\cite{haxell2023microwaveinduced}.
+\end{caution}
+
+\tutorial{09_photon_assisted_tunnelling}

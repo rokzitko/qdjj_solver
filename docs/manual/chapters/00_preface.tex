@@ -1,0 +1,78 @@
+\chapter{Preface}
+
+This manual presents the physical models and methods implemented in \pkg{}.
+Each method is introduced through its Hamiltonian, governing equations,
+approximations and physical interpretation. Code examples connect the equations
+to the public Python interface. They are tested regularly, in the order in which
+they appear; an example may therefore use variables defined earlier.
+
+\paragraph{Three documents.}
+This physics manual is one of three documents that are kept consistent with each other:
+\begin{itemize}
+\item the \emph{physics manual} explains what is computed and what it means;
+\item the \emph{user and developer manual}, the Markdown pages in \code{docs/} (also built as a
+website), explains how to install the code and how to run, check and save calculations; it lists
+every option, result field and command-line argument, and describes how to extend the code;
+\item the \emph{tutorials} in \code{examples/} are runnable calculations with checked results
+that accompany the worked examples of \cref{part:examples}.
+\end{itemize}
+Each worked example names its tutorial, and the \enquote{In the code} boxes name the relevant
+page of the user manual.
+
+\paragraph{Who should read what.}
+The opening chapters introduce superconducting impurities starting from basic
+BCS theory and second quantisation. \Cref{ch:background} develops the
+Andreev-reflection picture and the interpretation of quasiparticle occupations; \cref{ch:model} introduces the interacting
+dot. \Cref{ch:correlations} explains YSR states, Kondo physics and screening, and
+\cref{ch:experiments} connects them to spectroscopy and qubits. Short interpretation
+exercises accompany the figures. \Cref{ch:static} compares solution methods before
+describing the two numerical backends. Readers familiar with quantum-dot Josephson junctions
+can start with the conventions and \cref{ch:practical}, which explains how to set up
+a calculation, assess its accuracy and save the results before introducing periodic driving.
+\Cref{ch:floquet} introduces the physics of periodically driven quantum systems
+and develops Floquet theory from its basic principles.
+\Cref{ch:driving,ch:drivenmethods} explain how drives enter the junction model and
+how the code computes quasienergies; \cref{ch:probes} explains how a weak probe induces
+transitions between Floquet states. \Cref{part:examples} then builds up the physics
+step by step. An isolated dot, a driven two-level system, the high-frequency limit and a
+chapter on numerical convergence come first. They are followed by the phase-driven and the
+gate-driven junction, two-tone spectroscopy of the pair transition, photon-assisted
+tunnelling, and electron spin resonance of the Zeeman-split doublet.
+\Cref{ch:equations-to-code} maps the equations onto the code, and \cref{app:derivations} contains
+the derivations that would interrupt the main text.
+
+\paragraph{Conventions in brief.}
+Energies are in units of the gap $\Delta$ and $\hbar=1$; $\Omega$ is then also an
+energy. The bandwidth parameter is the normal-state \emph{half}-bandwidth $D$. The
+hybridization $\Gamma$ is the \emph{total} hybridization summed over leads. Phases are in
+radians, and the reference junction carries the phases $\mp\phi/2$ on its left and right
+leads. Periodic Hamiltonians are expanded as $H(t)=\sum_k H_k\,\ee^{\ii k\Omega t}$.
+\Cref{tab:conventions} on page~\pageref{tab:conventions} lists all conventions.
+
+\paragraph{Boxes.}
+Three kinds of boxes appear throughout:
+
+\begin{physics}
+These boxes explain the physical interpretation of a result, using equations where needed.
+\end{physics}
+\begin{incode}
+These boxes identify the functions, options and result fields associated with a concept.
+\end{incode}
+\begin{caution}
+These boxes highlight limitations and common numerical or interpretational errors.
+\end{caution}
+
+\paragraph{Reproducibility.}
+Every figure in \cref{part:examples} is produced by a script in
+\code{docs/manual/scripts}. The scripts store the numerical results, together with the
+code version and numerical environment, in \code{docs/manual/data}; the figures are then
+rendered from these records. \Cref{sec:reproduce} explains how to rebuild the figures and
+this document.
+
+\paragraph{Scope and status.}
+The Floquet part of the code computes quasienergies, harmonic weights and Floquet modes. It
+also computes the matrix elements of probe operators between static or Floquet states,
+within one symmetry sector or between sectors, and the resulting spectral lines. Two
+extensions are planned: the populations of the Floquet states in the presence of
+dissipation, and a treatment of the continuum beyond the finite bath. The manual is
+extended together with the code.

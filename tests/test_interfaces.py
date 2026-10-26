@@ -132,7 +132,7 @@ def test_fit_command_output_matches_independent_one_pole_least_squares(tmp_path,
     (cli.main, "missing", "model.json"),
     (cli.main, "json", "Expecting"),
     (qp_cli.main, "unknown", "unknown configuration keys"),
-    (qp_cli.main, "memory", "permitted maximum"),
+    (qp_cli.main, "memory", "exceeds max_dimension"),
 ])
 def test_cli_reports_configuration_and_calculation_errors(tmp_path, capsys, main, case, message):
     config, output = tmp_path/"model.json", tmp_path/"result.json"

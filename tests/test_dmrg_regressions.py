@@ -359,7 +359,7 @@ def test_invalid_mode_and_sector_dimensions():
         solve(diagonal_problem(2), options=SolverOptions(eigenpairs=2))
     with pytest.raises(ValueError, match="more eigenpairs"):
         solve(diagonal_problem(), sector=Sector(1, 7))
-    with pytest.raises(ValueError, match="undeclared mode"):
+    with pytest.raises(ValueError, match="undeclared fermionic mode"):
         prepare(diagonal_problem()).matrix_elements(number(7), [], [])
 
 

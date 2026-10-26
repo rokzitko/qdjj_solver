@@ -38,7 +38,7 @@ H_t=-t_d\sum_\sigma(d^\dagger_{L\sigma}d_{R\sigma}+\mathrm{h.c.}).
 | `strong` | 1.4 | 1.4 | 1.0 |
 
 **$\Gamma$ in this paper denotes the per-lead coupling** for the symmetric device.
-The calculation constructs two tunneling matrices explicitly. Their nonzero
+The calculation constructs two tunnelling matrices explicitly. Their nonzero
 spin-conserving amplitudes are $V_j=\sqrt{\Gamma_j/(\pi\rho)}$, with
 $\rho=1/(2D)$ per spin. Each matrix uses its lead's coupling $\Gamma_j$ directly.
 
@@ -86,7 +86,7 @@ especially for the smaller current of the weak-hopping case.
 
 ### Source and precision of the reference data
 
-`reference/figure9a.csv` contains **69 distinct NRG marker centers** extracted
+`reference/figure9a.csv` contains **69 distinct NRG marker centres** extracted
 from the arXiv SVG, not raw NRG output. `extract_reference.py` reproduces the
 extraction and stores a checksum identifying the source file. Original figure
 coordinates are retained.

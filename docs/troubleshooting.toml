@@ -1,0 +1,168 @@
+# Source of docs/troubleshooting.md (tools/gen_docs.py). Each entry names a symptom and its remedy.
+# `message`, when given, must be a verbatim fragment of an error message raised in src/qdjj_solver or
+# cpp/core.cpp; tools/gen_docs.py refuses fragments that no longer occur, so the table follows the code.
+# Text is GitHub Markdown.
+
+intro = '''
+The `qdjj-solver solve` command returns exit status **0** after saving a result and **2** for
+recognized errors in input, required libraries, numerical calculations or file access; invalid
+command arguments also return 2. With DMRG's default `require_convergence=False`, exit 0 can
+accompany `Finite-problem checks passed: False`; set `require_convergence=true` in JSON when a
+calculation must meet those checks. For continuum calculations, also assess bath
+convergence through refinement ([numerics](numerics.md)).
+
+To report a problem, provide a small input file that reproduces it, the error message,
+the software version and any version information saved with the result on the
+[issue page](https://github.com/rokzitko/qdjj_solver/issues).
+'''
+
+[[section]]
+title = "Input files, models and static calculations"
+
+[[section.entry]]
+message = "Install qdjj-solver[dmrg] to use the DMRG backend"
+symptom = "DMRG/TeNPy or HDF5 dependency missing"
+remedy = "From the source directory, run `python -m pip install '.[dmrg]'` with the interpreter used for the calculation."
+
+[[section.entry]]
+message = "must be an object with string keys"
+symptom = "The configuration or one of its sections (`model`, `bath`, `sector`, `solver`) must be an object"
+remedy = "Use `{...}` for these objects, JSON booleans for yes/no settings and integers for sector values. Check the reported field path for typos."
+
+[[section.entry]]
+message = "Hamiltonian does not conserve S_z"
+symptom = "Hamiltonian does not conserve `S_z`"
+remedy = "For spin-mixing terms or spin-flip drives choose `Sector(parity, twice_sz=None)`, or JSON `\"twice_sz\": null`."
+
+[[section.entry]]
+message = "fermion parity and twice_sz are incompatible"
+symptom = "Fermion parity and `twice_sz` are incompatible"
+remedy = "Even parity requires an even integer `twice_sz`; odd parity an odd one."
+
+[[section.entry]]
+message = "empty symmetry sector"
+symptom = "Empty symmetry sector, or more eigenpairs requested than states"
+remedy = "Check the quantum numbers, the QP cutoff, the included modes and the number of requested eigenstates."
+
+[[section.entry]]
+message = "QP cutoff must lie between zero and the bath mode count"
+symptom = "Invalid QP cutoff"
+remedy = "Use `0 <= cutoff <= h.bath_modes` after model compression, or `None` (JSON `null`) for the full space. Set `cutoff` explicitly to 0 or `null` for impurity-only QP command-line inputs."
+
+[[section.entry]]
+message = "sector dimension"
+symptom = "Sector dimension exceeds `max_dimension`"
+remedy = "Estimate the basis size (`qpsolver dimension`) before raising `max_dimension`; consider a converged QP cutoff or DMRG."
+
+[[section.entry]]
+message = "more than max_memory_gib"
+symptom = "An array needs more memory than `max_memory_gib`"
+remedy = "The message names the array and a method or option that avoids it. Raise `max_memory_gib` only if the machine has that much free memory."
+
+[[section.entry]]
+message = "sparse matrix exceeds max_nnz"
+symptom = "Sparse matrix exceeds `max_nnz`"
+remedy = "Dense, sparse and Schur methods build this matrix. Check both `max_nnz` and the memory-derived cap from `max_memory_gib`, or use `method=\"matrix-free\"`, whose basis and Krylov-space limits still apply."
+
+[[section.entry]]
+message = "the iterative eigensolver missed eigenvalues below the diagonal bound"
+symptom = "The iterative eigensolver missed eigenvalues below the diagonal bound"
+remedy = "ARPACK missed some of the lowest eigenvalues, even after a second spectral shift. Use `method=\"dense\"` if the dimension allows it, or change `seed` or `ncv`, and report the case."
+
+[[section.entry]]
+message = "DMRG requires cutoff=null or an omitted cutoff"
+symptom = "DMRG requires `cutoff=null`"
+remedy = "Omit the JSON cutoff or set it to `null`; the MPS bond dimension `chi_max` controls the approximation."
+
+[[section.entry]]
+message = "finite-problem convergence failed"
+symptom = "Finite-problem convergence failed"
+remedy = "Inspect residuals, orthonormality, energy ordering and sweep histories; increase the bond dimension, the number of sweeps or the number of initial-state trials as appropriate."
+
+[[section.entry]]
+message = "states use different coordinates, layouts, or conserved charges"
+symptom = "Initial or compared states have incompatible coordinates or layout"
+remedy = "Reusing MPS states requires the same canonical basis, mode ordering and site grouping; start a new calculation if these change."
+
+[[section.entry]]
+message = "this result has no supported Fock state artifact"
+symptom = "No supported state artifact, or checkpoint missing"
+remedy = "Save with `save_states=True` or `--save-states`, and keep both the JSON and its named wavefunction file."
+
+[[section.entry]]
+message = "checksum mismatch"
+symptom = "Checksum or scalar-record mismatch"
+remedy = "Recover the matching JSON and wavefunction files from the same save. Editing the JSON invalidates the checksum that links it to the wavefunction file."
+
+[[section]]
+title = "Floquet calculations, matrix elements and spectra"
+
+[[section.entry]]
+message = "the canonical coordinates change during the drive period"
+symptom = "The canonical coordinates change during the drive period"
+remedy = "Keep the gap and bath grid fixed. Build the model with `symmetry=False, compress=False`, and with `bath_reference=\"isolated\"` when phases or direct hopping are driven."
+
+[[section.entry]]
+message = "increase samples"
+symptom = "Fourier interpolation error ... increase samples"
+remedy = "Increase `samples` to resolve the relevant drive harmonics."
+
+[[section.entry]]
+message = "Floquet candidates for"
+symptom = "Too few Floquet candidates for the tracked states"
+remedy = "The Floquet cutoff is too small for the spread of the sidebands; increase `floquet_cutoff` (or `eigenpairs_per_target` for shift-invert)."
+
+[[section.entry]]
+message = "two tracked states are replicas of one Floquet state"
+symptom = "Two tracked states are replicas of one Floquet state"
+remedy = "A small Floquet cutoff cuts a resonant chain of replicas; increase `floquet_cutoff` (use $M\\gtrsim5$ even for weak drives)."
+
+[[section.entry]]
+message = "below tracking_threshold"
+symptom = "Floquet weight below `tracking_threshold`"
+remedy = "A tracked state is strongly hybridized; increase `floquet_cutoff`, `eigenpairs_per_target` or `basis_states`, lower `tracking_threshold`, or use `selection=\"all\"`."
+
+[[section.entry]]
+message = "basis_states splits a degenerate static multiplet"
+symptom = "`basis_states` splits a degenerate static multiplet"
+remedy = "Choose the static basis size $K$ at a gap of the static spectrum."
+
+[[section.entry]]
+message = "Sambe dimension"
+symptom = "Sambe dimension exceeds `max_dimension`"
+remedy = "Use `basis=\"eigen\"`, a smaller static basis or fewer harmonics."
+
+[[section.entry]]
+message = "selection='all' with shift-invert returns only the states near its targets"
+symptom = "`selection='all'` with shift-invert"
+remedy = "Use `method=\"dense\"` (with `basis=\"eigen\"` for large models) or give explicit `targets`."
+
+[[section.entry]]
+message = "the Floquet states belong to different drives"
+symptom = "Floquet states of different drives or scalar gauges"
+remedy = "Build both results from one `PeriodicHamiltonian` with the same `drop_scalar_harmonics`."
+
+[[section.entry]]
+message = "no harmonic of the probe connects the ket sector to the bra sector"
+symptom = "No harmonic of the probe connects the sectors"
+remedy = "Choose a destination sector compatible with the change in parity and spin induced by the probe."
+
+[[section.entry]]
+message = "was not sampled; build the PeriodicHamiltonian with observables=True"
+symptom = "Probe observable was not sampled, or the model lacks it"
+remedy = "Build the `PeriodicHamiltonian` with `observables=True`, from a model that declares the observable."
+
+[[section.entry]]
+message = "the computed states split a degenerate static multiplet"
+symptom = "The computed states split a degenerate static multiplet"
+remedy = "Increase `states` or `basis_states`, or pass `merge_degenerate=False` to `lines`."
+
+[[section.entry]]
+message = "physical operators require an uncompressed declared electron map"
+symptom = "Physical operators require an uncompressed electron map"
+remedy = "Electron probes (`d_up`, `spin_x`, ...) and `physical_operator` need a model built with `compress=False`. A model assembled directly as a `Hamiltonian` declares no electron map: pass an operator built with `create` and `annihilate` instead of a probe name."
+
+[[section.entry]]
+message = "the probe images need"
+symptom = "The probe images need more memory than `max_memory_gib`"
+remedy = "Restrict `ket_states` or raise `max_memory_gib`."

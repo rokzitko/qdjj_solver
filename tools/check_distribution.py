@@ -4,10 +4,11 @@ import argparse
 from pathlib import Path, PurePosixPath
 import stat
 import tarfile
+import tomllib
 import zipfile
 
 
-SOURCE_ROOTS = {"src", "cpp", "docs", "examples", "first_calculation", "applications",
+SOURCE_ROOTS = {"src", "cpp", "docs", "examples", "applications",
                 "large_Gamma", "NRG_comparisons", "tests", "tools", ".github"}
 SOURCE_FILES = {"CMakeLists.txt", "pyproject.toml", "README.md", "LICENSE", "CITATION.cff",
                 "CONTRIBUTING.md", "AGENTS.md", ".gitattributes", ".gitignore", "PKG-INFO"}
@@ -51,9 +52,17 @@ REQUIRED = {".gitattributes", "CMakeLists.txt", "cpp/core.cpp", "pyproject.toml"
             "docs/benchmarks/baths/manifest.json", "docs/benchmarks/baths/baths.json",
             "docs/benchmarks/baths/measurements.json", "docs/benchmarks/baths/accuracy.svg"}
 REQUIRED.update(NRG_SOURCE_FILES)
-REQUIRED.update(f"first_calculation/{asset}" for asset in (
-    "README.md", "run.py", "input/qp.json", "input/dmrg.json", "input/exact.json",
+REQUIRED.update(f"examples/00_first_calculation/{asset}" for asset in (
+    "input/qp.json", "input/dmrg.json", "input/exact.json",
     "reference/qp.json", "reference/dmrg.json", "reference/exact.json", "reference/comparison.json"))
+# Every catalogued tutorial ships its README, runner and references.
+REQUIRED.update({"examples/catalog.toml", "examples/README.md", "tools/check_tutorials.py"})
+REQUIRED.update(f"examples/{entry['dir']}/{asset}"
+                for entry in tomllib.loads((Path(__file__).resolve().parents[1]/"examples"/"catalog.toml")
+                                           .read_text())["tutorial"]
+                for asset in ("README.md", "run.py", "reference/quick.json", "reference/full.json"))
+REQUIRED.update({"docs/conf.py", "docs/index.md", "docs/_ext/github_markdown.py", "docs/conventions.toml",
+                 "docs/concordance.toml", "docs/troubleshooting.toml", "tools/gen_docs.py", "tools/check_docs.py"})
 REQUIRED.update(f"docs/benchmarks/baths/{asset}" for asset in (
     "README.md", "finite-controls-input.json", "edge-refinement-input.json",
     "kernel.csv", "quadratic.csv", "many_body.csv", "layouts.csv", "failures.json",
@@ -95,6 +104,28 @@ REQUIRED.update(f"large_Gamma/{asset}" for asset in (
     "output/summary.json", "output/manifest.json", "output/baths.json", "output/observables.csv",
     "output/convergence.csv", "output/comparisons.csv", "output/breakdown.csv"))
 REQUIRED.add("tests/test_large_gamma.py")
+REQUIRED.update({"docs/floquet.md", "examples/floquet.py", "tests/test_floquet.py",
+                 "src/qdjj_solver/common/floquet.py", "src/qdjj_solver/qp_solver/floquet.py",
+                 "tests/test_floquet_transitions.py", "src/qdjj_solver/common/probes.py",
+                 "src/qdjj_solver/common/spectra.py", "src/qdjj_solver/qp_solver/transitions.py"})
+REQUIRED.update(f"docs/manual/{asset}" for asset in (
+    "README.md", "Makefile", "latexmkrc", "manual.tex", "preamble.tex", "references.bib",
+    "chapters/04_floquet_theory.tex", "chapters/07_probes.tex", "scripts/manual_common.py", "scripts/fig_phase.py",
+    "scripts/quoted.py", "data/phase.json", "generated/quoted.tex", "generated/concordance.tex",
+    "chapters/01a_background.tex", "chapters/02a_correlations.tex", "chapters/02b_experiments.tex",
+    "scripts/fig_primer.py", "data/primer.json"))
+REQUIRED.update(f"docs/{asset}" for asset in (
+    "handbook/index.md", "_ext/handbook.py", "parameters.toml", "formats.toml", "user_manual.md",
+    "getting_started.md", "static_calculations.md", "reservoir_workflow.md", "qp_workflow.md",
+    "dmrg.md", "workflows.md", "custom_models.md", "spectroscopy.md",
+    "reference/models.md", "reference/configuration.md", "reference/records.md",
+    "manual/chapters/03a_practical_calculations.tex", "manual/generated/practical_code.tex",
+    "manual/scripts/edition.py"))
+REQUIRED.update({"tools/build_manuals.py", "tools/check_manual.py", "tools/run_doc_examples.py",
+                 "tools/docs-constraints.txt", "examples/01_subgap_states/input/reference.json",
+                 "examples/11_dmrg_convergence/expected.png"})
+REQUIRED.update(f"examples/handbook/{asset}" for asset in (
+    "static.py", "scan.py", "custom.py", "custom.json", "reference.json"))
 
 
 def member_parts(name):
@@ -129,7 +160,9 @@ def inspect(path):
         unexpected = {name for name in names if name not in SOURCE_FILES and
                       PurePosixPath(name).parts[0] not in SOURCE_ROOTS}
         unexpected.update(name for name in names if name.startswith("NRG_comparisons/")
-                          and name not in NRG_SOURCE_FILES)
+                           and name not in NRG_SOURCE_FILES)
+        unexpected.update(name for name in names if name.startswith(("docs/manual/build/", "docs/manual/figures/"))
+                           or name.startswith("docs/") and name.endswith((".aux", ".log", ".bcf", ".fdb_latexmk", ".fls", ".dvi")))
         if unexpected or REQUIRED-names:
             raise ValueError(f"source boundary mismatch: unexpected={unexpected}, missing={REQUIRED-names}")
         names.update(directories)

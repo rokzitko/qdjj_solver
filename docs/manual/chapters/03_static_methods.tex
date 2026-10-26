@@ -1,0 +1,269 @@
+\chapter{Static solution methods}\label{ch:static}
+
+\section{Which approximation answers which question?}\label{sec:method-landscape}
+
+Representing the reservoir continuum and solving the interacting many-body
+problem require separate approximations and checks. Exact diagonalization
+solves a specified finite bath, whose continuum accuracy is assessed by bath
+refinement. Quadratic continuum methods describe hybridization and pairing;
+an interacting dot requires an additional treatment of its correlations.
+
+\begin{table}[htb]
+\centering\small
+\caption{A guide to static methods. Each row describes a physical approximation
+or representation. The QP and DMRG implementations are described below.}
+\label{tab:method-landscape}
+\begin{tabularx}{\textwidth}{p{.20\textwidth}XX}
+\toprule
+Method & Useful physical information & Validity and convergence \\
+\midrule
+Scattering / BdG & ABS, electron--hole coherence, phase-dependent current & Quadratic model; the short-contact formula also assumes short dwell time \\
+Large-gap dot & Pair mixing, parity boundary, analytic matrix elements & Infinite-gap limit with lead quasiparticles integrated out \\
+Perturbation / fRG & Virtual processes, weak-coupling corrections & Specify the expansion or truncation and its validity \\
+NRG & Kondo scales, impurity thermodynamics, subgap spectra & Logarithmic bath and retained-state convergence \\
+QMC & Equilibrium correlations and finite-temperature observables & Sampling errors; real-frequency continuation is difficult \\
+ED / QP expansion & Many-body states, energies and transitions & Finite bath; QP truncation is an additional approximation \\
+DMRG / MPS & Correlated states with entanglement-controlled compression & Bond dimension, optimization and bath convergence \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Scattering theory, BdG and effective dot models}
+
+For a short, non-interacting contact, scattering theory reduces the normal
+region to its transmission channels. The result \cref{eq:contact-abs} supplies
+a direct analytic benchmark. A more general quadratic BdG Hamiltonian can
+include spatial structure, multiple orbitals, Zeeman terms and spin--orbit
+coupling. Diagonalizing that specified quadratic problem is exact. Replacing
+the interacting dot term by a static mean field is a separate approximation,
+which can miss quantum spin correlations or produce broken-symmetry solutions
+where the finite impurity has a correlated singlet. Bulk BCS mean field describes
+the reservoir condensate; mean-field decoupling of the dot's $U$ approximates its local correlations.
+
+The large-gap model is another controlled simplification with a different
+purpose: it retains the dot interaction exactly while integrating out the lead
+quasiparticles. Its small Hilbert space exposes pair mixing and the parity
+transition. It is complementary to a short resonant-level junction. A broad
+resonance with $\Gamma\gg\Delta$ can satisfy the short-dwell-time condition,
+whereas the conventional large-gap dot assumes $\Delta$ exceeds the dot and
+hybridization scales after the wide-band limit. Choose between these approximations
+according to the hierarchy of scales at the parameter point of interest.
+
+\subsection{Perturbative and renormalization approaches}
+
+An expansion in tunnelling describes virtual charge transfer and Josephson
+cotunnelling in a weakly coupled dot. An expansion in $U$ starts instead from
+a hybridized non-interacting problem. The expansion parameters and regimes of validity differ.
+Near a charge degeneracy, denominators in a tunnelling expansion become small;
+at low normal-state energies, Kondo logarithms can invalidate a finite-order
+exchange expansion even when its bare coupling is small. Use a few virtual processes
+to interpret the mechanism, and establish their quantitative accuracy by checking
+the expansion in the relevant parameter regime.
+
+Functional renormalization group (fRG) follows the evolution of propagators and
+interaction vertices as a cutoff is removed. Practical truncations can describe
+substantial parameter ranges efficiently, but the retained frequency dependence
+and vertex hierarchy determine their range of validity. The dot-junction reviews
+\cite{martinrodero2011josephson,meden2019andersonjosephson} compare these methods
+and their limitations. Assess both perturbative and nonperturbative calculations
+through their assumptions and convergence at the parameter point of interest.
+
+\subsection{Numerical renormalization group}
+
+NRG addresses an impurity coupled to a continuum with widely separated energy
+scales~\cite{wilson1975renormalization,bulla2008numerical}. A logarithmic
+discretization is transformed to a chain with successively smaller hopping
+scales. The chain is diagonalized iteratively, retaining low-energy many-body
+states at each step. The scale separation is what permits the buildup of Kondo
+correlations to be followed without diagonalizing the entire Fock space at once.
+A superconducting gap modifies this low-energy structure and produces discrete
+subgap levels.
+
+NRG is an important reference for the superconducting Anderson impurity,
+including singlet--doublet boundaries and quantum YSR spectra. Its logarithmic
+discretization, retained-state number and spectral processing still require
+checks. More orbitals or channels increase the computational cost rapidly.
+Broadening a discrete numerical spectrum is useful for visualization; predicting
+physical lifetimes requires a dynamical calculation. For the isolated subgap poles, energies and
+weights are often the most direct comparison with other methods.
+
+\subsection{Quantum Monte Carlo}
+
+Quantum Monte Carlo (QMC) samples an interacting equilibrium problem statistically,
+often through imaginary-time correlation functions. Continuous-time impurity
+algorithms can sum an expansion to all orders by stochastic sampling. In
+``weak-coupling CT-QMC'', the name identifies the interaction expansion whose
+orders are sampled~\cite{gull2011continuous}.
+
+QMC provides a complementary route to finite-temperature occupation, current and
+correlations. Statistical uncertainty, low-temperature cost and possible
+model-dependent sign or phase problems must be assessed. Recovering a sharp
+real-frequency spectrum from noisy imaginary-time data is an ill-conditioned
+analytic-continuation problem. A method can therefore determine a thermal
+current accurately while resolving nearby subgap spectral lines less directly.
+
+\begin{figure}[htb]
+\centering\manualfigure{primer_methods}
+\caption{Reservoir representations and many-body approximations. A finite star
+couples bath orbitals directly to the dot; a unitary transformation can organize
+the same finite one-body bath as a chain. This coordinate change is exact.
+NRG combines a logarithmic discretization with iterative
+truncation; ED, QP truncation and MPS select different representations of the
+many-body state. The orbital chain is a computational representation of the
+reservoir's contact spectral measure.}
+\label{fig:primer-methods}
+\end{figure}
+
+\subsection{Choosing a comparison}
+
+For a quadratic junction, compare with an independent electron-space BdG
+calculation. For the large-gap dot, compare with its exact even and odd blocks.
+For a small finite bath, full electron-space ED tests the many-body algebra.
+For a continuum local-moment problem, a converged NRG calculation can test
+correlation physics that a few-level bath may miss. Match the Hamiltonian,
+bandwidth, hybridization convention, temperature and observable before comparing
+numbers. Use matched-bath comparisons to assess solver accuracy and independent
+bath refinements to assess continuum accuracy.
+
+\section{Canonical coordinates}\label{sec:coordinates}
+
+All solvers act on the Hamiltonian written in \emph{canonical coordinates}: the impurity
+operators $d_\sigma$ and the Bogoliubov quasiparticles $\gamma_{li\sigma}$ of the
+\emph{isolated} reservoirs, \cref{eq:bogoliubov}. In these coordinates the reservoir
+Hamiltonian is diagonal. When the QP expansion converges rapidly, the coupled
+ground state is dominated by components with few bath quasiparticles: the
+impurity is dressed by virtual quasiparticle excitations. Whether this description
+is adequate must be checked at the couplings of interest. The
+map from electron operators to canonical modes is stored with the model
+(\code{metadata["coordinates"]}); \code{h.physical_operator} applies it to any electron
+operator.
+
+Two optional reductions exploit the symmetry of the single-dot junction. The eta
+representation diagonalizes the particle--hole-type symmetry of \cref{sec:symmetries}.
+Paired-mode compression keeps only the combination of mirror-symmetric levels that couples
+to the dot and freezes the decoupled (\enquote{dark}) combinations in their vacuum. Both
+depend on the parameters: the eta representation exists only at $\eps=0$, and the
+compressed modes depend on $\phi$. They are therefore switched off for driven calculations
+(\cref{sec:fixed-coordinates}).
+
+\section{The quasiparticle expansion}\label{sec:qp}
+
+The Fock space of the finite model is spanned by occupation-number states of all impurity
+and quasiparticle modes. The QP expansion keeps every impurity configuration but at most
+$q$ occupied quasiparticle modes,
+\begin{equation}\label{eq:qp-projection}
+  H_q=P_qHP_q ,\qquad
+  P_q=\sum_{n\le q}\Pi_n ,
+\end{equation}
+where $\Pi_n$ projects onto states with exactly $n$ bath quasiparticles in the chosen
+symmetry sector. Because $P_q$ projects onto a subspace, the lowest eigenvalue of $H_q$ is
+a variational upper bound. It decreases monotonically with $q$ and reaches the exact
+finite-model energy when $q$ equals the number of bath modes
+(\code{cutoff=None})~\cite{ilicin2025variational,ilicin2026effects}. With $q=2$, the
+singlet ground state is described by the dot configurations dressed by up to two
+quasiparticles. This captures the Yu--Shiba--Rusinov binding and much of the Kondo
+screening for moderate couplings. The dimension grows as $\binom{N}{q}$ with the number $N$
+of bath modes; the code counts it exactly before building the basis. \Cref{tab:dimensions}
+gives typical values for the reference junction.
+
+The retained amplitudes are optimized together by diagonalization, summing
+tunnelling processes to all orders within the selected QP space. The amplitudes
+describe virtual QP components of a stationary state; nonequilibrium populations
+and poisoning rates require a dynamical model. Each sector's ground energy is
+an upper bound, while differences of independently truncated sector energies
+can approach their converged values from either side. Check the excitation gaps
+and transition locations themselves.
+
+\begin{table}[htb]
+\centering\small
+\caption{Fock-space dimensions of the reference junction (two leads, \code{cosh_grid}),
+even sector $S_z=0$ / odd sector $S_z=\tfrac12$.}\label{tab:dimensions}
+\begin{tabular}{rrrrr}
+\toprule
+level pairs per lead & bath modes & $q=2$ & $q=3$ & $q=4$\\
+\midrule
+2 & 16 & 146 / 109 & 594 / 557 & 2\,162 / 1\,789 \\
+4 & 32 & 546 / 409 & 4\,386 / 4\,249 & 33\,186 / 27\,609 \\
+8 & 64 & 2\,114 / 1\,585 & 33\,858 / 33\,329 & 525\,890 / 438\,065 \\
+16 & 128 & 8\,322 / 6\,241 & 266\,370 / 264\,289 & 8\,394\,882 / 6\,995\,041 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+A Floquet calculation multiplies these dimensions by the number of harmonic blocks, $2M+1$,
+where $M$ is the Floquet cutoff (\cref{sec:sambe}). For large baths the static eigenbasis of
+\cref{sec:sambe-method} is therefore useful.
+
+\begin{incode}
+\code{solve(h, cutoff, sector, options)} returns \code{Eigenstates} with \code{energies},
+\code{vectors} (columns in the order of \code{basis}), \code{residuals}, the quasiparticle
+number distribution \code{qp_weights} and the expectation values of all model
+observables. The eigensolver (dense, sparse Lanczos or matrix-free) is chosen automatically
+according to the dimension. \code{ProjectedOperator(op, basis)} applies an arbitrary operator
+in the same Fock basis, also between different sectors.
+The explicit \code{method="block"} uses locally optimal block preconditioned
+conjugate gradients (LOBPCG), evolving several trial vectors together
+to retain degenerate multiplets; compare the complete subspace with a dense or
+symmetry-resolved reference. \code{QPWorkspace} reuses compatible preparation
+without changing the finite Hamiltonian or its QP projection. For small problems,
+its independent state count uses a full dense spectrum or Hermitian LDL factorization
+to check how many states lie below a specified energy boundary.
+\par\smallskip\usermanual{docs/interfaces.md}.
+\end{incode}
+
+\section{Bath representations}\label{sec:bath}
+
+The finite bath is a quadrature of the continuous reservoir. The \code{cosh_grid}
+discretization places levels with logarithmic density near the gap edge, where the bound
+states draw their weight. Surrogate reservoirs fit a few levels to the hybridization
+function on the imaginary axis~\cite{baran2023surrogate}, and the Pad\'e chain expansion
+builds a short Wilson-like chain~\cite{bobok2025scalable}. In every case three distinct
+approximations must be checked separately: the representation of the continuum by the
+finite bath, the QP cutoff, and the eigensolver tolerance. A small residual measures only
+the last of them.
+
+\begin{caution}
+The half-bandwidth $D$ is a physical parameter of the reservoir. Refining the bath at
+fixed $D$ converges to a finite-band continuum. Approaching the wide-band limit
+also requires increasing $D$ relative to the other physical energy scales.
+\end{caution}
+
+\section{Density-matrix renormalization group}\label{sec:dmrg}
+
+The DMRG solver~\cite{white1992density,schollwock2011density} represents the many-body
+state as a matrix-product state over the impurity and bath modes, and the Hamiltonian as a
+matrix-product operator; both are built with the TeNPy library~\cite{hauschild2018efficient}.
+DMRG retains all quasiparticle numbers and therefore complements the QP expansion when many
+quasiparticles matter, for instance deep in the Kondo regime. Both solvers accept the same
+\code{Hamiltonian} object, which allows direct comparisons.
+
+An MPS controls the entanglement retained across partitions of the ordered orbital
+list while including all quasiparticle numbers allowed by the sector. Its bond dimension controls
+the number of states retained in a Schmidt decomposition. Increasing that dimension
+allows more correlations, but the optimization must also converge and the relevant
+excited states must be targeted. The orbital ordering affects the entanglement cost;
+it specifies the tensor-product representation, while the Hamiltonian defines the physical geometry.
+Schollw\"ock's review~\cite{schollwock2011density} provides the underlying
+variational picture. A finite discretized bath remains an approximation with
+either MPS or QP states.
+
+\begin{physics}[Three convergence questions]
+The eigenvector residual measures how accurately the chosen matrix problem was solved.
+Increasing the QP cutoff or MPS bond dimension tests whether the interacting state
+is represented adequately. Refining the bath tests whether that matrix problem
+represents the intended reservoirs. Vary these controls separately and inspect
+the observable of interest, especially near a parity crossing where small
+relative errors can exchange the ground-state ordering.
+\end{physics}
+
+\section{Validation}
+
+Calculations on small baths are compared with an independent exact diagonalization in the
+physical electron basis, built from tensor products of single-mode operators without the
+Bogoliubov transformation. Further checks use analytic limits, symmetry identities and
+finite differences of energies, e.g.\ the current \eqref{eq:current} against the numerical
+derivative $\partial E/\partial\phi$. The same independent diagonalization serves as the
+reference for the driven problems (\cref{sec:validation-driven}).
+
+\Cref{ch:practical} provides a complete runnable workflow using these methods,
+including the static spectrum of \cref{fig:static} and the physical current.

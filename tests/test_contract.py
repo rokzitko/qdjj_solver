@@ -34,6 +34,20 @@ def test_shared_types_and_legacy_results(tmp_path):
     assert restored.hamiltonian.fingerprint() == result.hamiltonian.fingerprint()
 
 
+def test_floquet_types_share_one_implementation():
+    import qpsolver
+    import qdjj_solver
+    from qdjj_solver.common import PeriodicHamiltonian
+    from qdjj_solver.qp_solver import FloquetStates, solve_floquet
+    assert qdjj_solver.PeriodicHamiltonian is PeriodicHamiltonian is qpsolver.PeriodicHamiltonian
+    assert qpsolver.solve_floquet is solve_floquet
+    assert qpsolver.FloquetStates is FloquetStates
+    from qdjj_solver.common import FloquetTransitions
+    from qdjj_solver.qp_solver import floquet_matrix_elements
+    assert qdjj_solver.FloquetTransitions is FloquetTransitions is qpsolver.FloquetTransitions
+    assert qpsolver.floquet_matrix_elements is floquet_matrix_elements
+
+
 def test_common_import_does_not_load_numerical_backends():
     command = [sys.executable, "-B", "-c", "import qdjj_solver, sys; "
                "assert 'tenpy' not in sys.modules; assert 'qdjj_solver.qp_solver._core' not in sys.modules; "

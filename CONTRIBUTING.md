@@ -1,41 +1,36 @@
 # Contributing
 
-First satisfy the [source-build prerequisites](https://github.com/rokzitko/qdjj_solver/blob/main/README.md#install),
-then install from the repository root with `python -m pip install -e '.[dmrg,dev]'`.
-Keep physical models, operator algebra, coordinate conventions, and codecs in
-`common`. Backends consume that contract rather than maintaining separate
-physical conventions. Preserve the installed `qpsolver` façade.
+First satisfy the [source-build prerequisites](README.md#install), then install from the
+repository root with `python -m pip install -e '.[dmrg,dev,docs]'`. The
+[architecture and extension guide](docs/developer.md) describes the layout, the design rules
+and how to add models, observables, probes, drives, reservoirs and options. In short: keep
+physical models, operator algebra, coordinate conventions, and the reading and writing of
+records in `common`; the backends use these shared definitions and keep no physical
+conventions of their own; preserve the installed `qpsolver` façade.
 
 For numerical changes, use independent comparisons appropriate to the affected
-physics: tensor-product electron ED, native projected actions, analytic limits,
-symmetry identities, or physical finite differences. Include convergence
-evidence rather than merely copying implementation outputs into fixtures.
-A residual is not a cutoff or continuum error estimate.
+physics: tensor-product electron ED, the projected operator actions of the C++
+extension, analytic limits, symmetry identities, or physical finite differences.
+Include convergence evidence; do not merely copy the code's own output into the
+reference values of a test. A residual is not an estimate of the cutoff or
+continuum error.
 
-```sh
-python -B -m pytest --cov --cov-report=term-missing --cov-report=json
-python tools/check_coverage.py reports/python-coverage.json
-python -m ruff check src tests tools examples applications first_calculation large_Gamma NRG_comparisons
-python -m build
-python tools/check_distribution.py dist/*.tar.gz dist/*.whl
-python tools/check_wheel.py dist/*.whl --dmrg
-```
+Before submitting, run the [local checks](docs/validation.md#local-checks): the test suite
+with the 95% line-coverage gate, `ruff`, the distribution checks and, when documented
+behaviour or documentation changes, the documentation checks. The regular suite excludes
+the `slow`, `docs` and `tutorial` tests; run them explicitly with `-m slow`, `-m docs` or
+`-m tutorial`. Keep `tools/minimum-runtime.txt` synchronized with the supported runtime lower
+bounds in `pyproject.toml`. Tagged builds and version agreement are described in
+[releases](docs/releases.md).
 
-The wheel checker accepts **one wheel**. If `dist/` contains multiple wheels,
-replace `dist/*.whl` in the last command with the path to one selected wheel
-compatible with your Python interpreter and platform. Keep `--dmrg` to check
-both backends and HDF5 persistence.
-
-The regular suite excludes `slow` tests. Run those explicitly with
-`python -B -m pytest -m slow`. CI requires 95% Python line coverage; branch and
-native coverage are diagnostics. Prefer independent numerical oracles and
-focused regression tests over assertions about private implementation details.
-See [validation](docs/validation.md) for the CI jobs and native instrumentation.
-Keep `tools/minimum-runtime.txt` synchronized with supported runtime lower bounds.
-Tagged builds and version agreement are described in [releases](docs/releases.md).
+**Documentation is part of every change.** A change of features or behaviour updates the
+physics manual, the user manual and a tutorial, or the pull request states why one of them
+is unaffected. Reference tables are generated from the code with `python tools/gen_docs.py`.
+The [documentation policy](docs/documentation.md) explains which topics each document covers and how
+the checks keep them in sync.
 
 Keep interface examples small. Literature reproductions belong in `applications/`,
 with explicit inputs, compact reference/output files, source-data provenance,
-and a scientific README. Add bounded regressions under `tests/`; full paper scans
+and a scientific README. Add small regression tests under `tests/`; full literature-reproduction scans
 are explicit application commands. Record bath and many-body convergence
-separately, and keep fresh runs/checkpoints in ignored `runs/` directories.
+separately, and keep fresh runs and checkpoints in ignored `runs/` directories.

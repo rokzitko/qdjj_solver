@@ -229,6 +229,11 @@ def _contacts_from_config(values, path):
 
 
 def bath_from_config(config, *, path="bath"):
+    """Construct a reservoir from a version-1 bath object; ``path`` prefixes validation errors.
+
+    Supported kinds are cosh-grid, surrogate, chain-expansion and discrete.
+    Omitted kind selects cosh-grid; required constructor arguments remain required.
+    """
     from .baths import DiscreteBath, chain_expansion, cosh_grid, fit_surrogate
     config = _config_object(config, path)
     kind = config.pop("kind", "cosh-grid")

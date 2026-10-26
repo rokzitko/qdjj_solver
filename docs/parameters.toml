@@ -1,0 +1,130 @@
+# Parameter explanations; names, order, signatures and defaults are read from code.
+# tools/gen_docs.py rejects missing or obsolete parameter descriptions.
+
+[[callable]]
+name = "qdjj_solver.reference_model"
+title = "Reference junction"
+[callable.parameters]
+bath = "Required DiscreteBath, reused for matched leads. Its weights represent the normal-state measure."
+u = "Finite charging energy U of the single orbital."
+gamma = "Nonnegative finite total hybridization, summed over the leads; energy units."
+phi = "Finite phase difference phi_R-phi_L in radians; junction phases are [-phi/2, +phi/2]."
+rho_ws = "Finite dimensionless rho W_S, the spin-dependent direct contact; zero for a single lead."
+rho_wn = "Finite dimensionless rho W_N, the normal direct contact; zero for a single lead."
+geometry = "'junction' for two leads or 'single' for one."
+detuning = "Finite epsilon_d+U/2 in energy units; zero is particle-hole symmetry."
+field = "Finite Zeeman energy acting only on the dot and multiplying S_z; positive values raise the spin-up level."
+symmetry = "Use eta coordinates when the gate, contacts and bath satisfy the required symmetries."
+compress = "Freeze eligible dark modes in their vacuum. Use False for a full finite-bath spectrum and arbitrary electron operators. The unified CLI defaults this to false."
+bath_reference = "'isolated' BCS reservoirs or a 'coupled' quadratic environment; the latter requires a gapped, unpolarized, spin-conserving reservoir vacuum."
+coefficient_tolerance = "Nonnegative finite absolute threshold for numerical coefficient truncation, in energy units."
+
+[[callable]]
+name = "qdjj_solver.make_model"
+title = "General impurity model"
+[callable.parameters]
+impurity = "Impurity defining physical electron operators on M spinful orbitals."
+baths = "Nonempty sequence of L DiscreteBath reservoirs."
+tunneling = "L finite complex matrices of shape (2, 2*M), in energy units; reservoir-spin rows and impurity-spin columns."
+phases = "L finite phases in radians; None means zero phases."
+direct = "Mapping (l,m) to a finite complex 2-by-2 contact matrix, l<m; None means no direct contacts."
+phase_velocities = "L finite derivatives of lead phase with respect to the chosen phase coordinate. None means zero; nonzero values generate phase_derivative."
+eta_basis = "Request verified eta coordinates; restricted to a matched symmetric single-dot junction."
+compress_pairs = "Freeze discarded dark modes; requires eligible eta coordinates and no finite direct W_S coupling."
+bath_reference = "'isolated' or 'coupled'. Coupled coordinates require spin-conserving direct hopping and a nonzero reservoir excitation gap."
+coefficient_tolerance = "Nonnegative finite threshold for numerical coefficient truncation, in energy units."
+direct_derivatives = "Named contact-operator mappings in the same form as direct; each name must be distinct from impurity observables and phase_derivative."
+
+[[callable]]
+name = "qdjj_solver.cosh_grid"
+title = "Cosh quadrature"
+[callable.parameters]
+pairs = "Positive integer number of mirrored pairs of signed normal levels per reservoir; each level has two spin modes."
+delta = "Positive finite superconducting gap in energy units."
+bandwidth = "Positive finite normal-state half-bandwidth in the same energy units. Coarse weights retain their quadrature values."
+
+[[callable]]
+name = "qdjj_solver.fit_surrogate"
+title = "Fitted surrogate reservoir"
+[callable.parameters]
+levels = "Positive integer number of signed spinful normal levels per reservoir. An odd number of levels includes a normal-state node at zero energy."
+delta = "Positive finite superconducting gap in energy units."
+bandwidth = "Positive finite normal-state half-bandwidth in energy units."
+frequency_cutoff = "Upper positive imaginary-frequency fit boundary; same energy units as the gap."
+frequency_min = "Positive lower fit boundary, smaller than frequency_cutoff."
+frequency_points = "Integer number of logarithmically spaced fit points, at least ten."
+starts = "Positive number of optimization attempts with different initial guesses; the successful fit with the smallest objective value is retained."
+seed = "Random-generator seed for reproducible initial guesses."
+relative_weight = "Finite real exponent controlling frequency weighting of the residual; zero uses the absolute objective."
+max_nfev = "Positive maximum number of function evaluations per optimization attempt. Assess the resulting bath accuracy through fit diagnostics and observable convergence."
+
+[[callable]]
+name = "qdjj_solver.chain_expansion"
+title = "Padé chain-expansion reservoir"
+[callable.parameters]
+levels = "Positive number of spinful sites in one reservoir, returned in mirrored star coordinates."
+delta = "Positive finite superconducting gap in energy units."
+bandwidth = "Positive finite half-bandwidth; in wide-band mode it only sets density normalization."
+wide_band = "Boolean selecting an infinite-band target; False retains the specified finite flat band."
+
+[[callable]]
+name = "qdjj_solver.Impurity.anderson"
+title = "Anderson impurity"
+[callable.parameters]
+u = "Finite coefficient U in U(n-1)^2/2, in energy units."
+detuning = "Finite epsilon_d+U/2, multiplying n-1."
+field = "Finite Zeeman energy multiplying S_z, acting on the impurity only."
+
+[[callable]]
+name = "qdjj_solver.Impurity.from_integrals"
+title = "Impurity from integrals"
+[callable.parameters]
+one_body = "Finite even-dimensional square spin-orbital matrix h_ab in sum h_ab d_a† d_b."
+interaction = "Optional finite tensor U_abcd with all four dimensions equal to one_body's dimension; enters as one quarter times U_abcd d_a† d_b† d_d d_c."
+constant = "Finite additive scalar energy retained by the Hamiltonian."
+
+[[callable]]
+name = "qdjj_solver.ParameterDrive.cosine"
+title = "Single cosine drive"
+[callable.parameters]
+parameter = "Builder keyword name; its undriven value must be present in base."
+amplitude = "Finite real amplitude in that parameter's units (radians for phases)."
+phase = "Finite real cosine phase offset, in radians."
+order = "Positive integer harmonic order relative to omega."
+index = "Optional nonnegative array-element index; None selects a scalar parameter."
+
+[[callable]]
+name = "qdjj_solver.PeriodicHamiltonian.from_parameters"
+title = "Periodic model from driven parameters"
+[callable.parameters]
+builder = "Callable returning a Hamiltonian from the keyword arguments in base."
+base = "Undriven keyword mapping; it must explicitly include every driven parameter."
+drives = "One ParameterDrive or a sequence, with each parameter/index pair driven only once."
+omega = "Positive finite drive angular frequency, in energy units with hbar=1."
+samples = "Integer number of equally spaced samples per period, at least three; refine to check Fourier resolution."
+coefficient_tolerance = "Nonnegative coefficient cleanup scale applied to harmonics."
+sampling_tolerance = "Acceptance scale for the midpoint interpolation-error bound, in energy units."
+verify = "Verify the Fourier reconstruction at sample midpoints; failures raise an error."
+observables = "Also sample model observables and store their time-dependent harmonics."
+
+[[callable]]
+name = "qdjj_solver.PeriodicHamiltonian.from_callable"
+title = "Periodic model from a time-dependent function"
+[callable.parameters]
+function = "Callable function(t) returning a Hamiltonian at time t."
+omega = "Positive finite angular frequency, defining the period 2*pi/omega."
+samples = "Integer number of samples over the period, at least three."
+reference = "Static Hamiltonian whose eigenstates define the tracked-state labels; None uses the time average."
+assume_fixed_coordinates = "Explicitly assume fixed coordinates for a model without coordinate metadata. Valid use requires a time-independent canonical basis."
+coefficient_tolerance = "Nonnegative coefficient cleanup scale applied to harmonics."
+sampling_tolerance = "Midpoint interpolation-error acceptance scale, in energy units."
+verify = "Check the reconstructed Fourier series at sample midpoints."
+observables = "Sample the function's named observables as well as the Hamiltonian."
+
+[[callable]]
+name = "qdjj_solver.PeriodicHamiltonian.van_vleck"
+title = "High-frequency effective Hamiltonian"
+[callable.parameters]
+order = "Perturbative order 0, 1 or 2 in inverse omega; requires high frequency relative to the many-body width."
+tolerance = "Absolute coefficient cleanup scale after full-operator commutators."
+max_harmonic = "Largest nonnegative Hamiltonian harmonic used; None uses every stored harmonic."

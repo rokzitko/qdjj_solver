@@ -1,0 +1,67 @@
+% qdjj_solver: physics manual.
+% Build with `make pdf` (figures from tracked data, then latexmk); see README.md.
+\documentclass[11pt,a4paper,oneside,DIV=12,parskip=half-,numbers=noenddot,bibliography=totoc]{scrbook}
+\input{preamble}
+\InputIfFileExists{build/edition.tex}{}{\newcommand{\manualedition}{Development source edition}}
+
+\begin{document}
+\frontmatter
+\begin{titlepage}
+  \centering
+  \vspace*{3cm}
+  {\Huge\bfseries \pkg\par}
+  \vspace{.6cm}
+  {\LARGE Physics manual\par}
+  \vspace{1.2cm}
+  {\large Superconducting quantum impurities and quantum-dot Josephson junctions,\\[2pt]
+   static and periodically driven\par}
+  \vspace{2.5cm}
+  {\large The \pkg{} developers\par}
+  \vspace{.4cm}
+  {\normalsize Software version \pkgversion\par}
+  {\small\manualedition\par}
+  \vfill
+  {\small Energies in units of the superconducting gap $\Delta$ and $\hbar=1$, unless stated otherwise.\\
+   This manual is updated together with the code and describes the features of the
+   version stated above.\par}
+\end{titlepage}
+
+\input{chapters/00_preface}
+\tableofcontents
+
+\mainmatter
+\part{The model and its static solution}
+\input{chapters/01_introduction}
+\input{chapters/01a_background}
+\input{chapters/02_model}
+\input{chapters/02a_correlations}
+\input{chapters/02b_experiments}
+\input{chapters/03_static_methods}
+\input{chapters/03a_practical_calculations}
+
+\part{Periodic driving}
+\input{chapters/04_floquet_theory}
+\input{chapters/05_driving}
+\input{chapters/06_driven_methods}
+\input{chapters/07_probes}
+
+\part{Worked examples}\label{part:examples}
+\input{chapters/08_ex_dot}
+\input{chapters/09_ex_tls}
+\input{chapters/10_ex_highfreq}
+\input{chapters/11_ex_numerics}
+\input{chapters/12_ex_phase}
+\input{chapters/13_ex_gate}
+\input{chapters/14_ex_twotone}
+\input{chapters/15_ex_pat}
+\input{chapters/16_ex_esr}
+
+\part{From equations to code}
+\input{chapters/17_equations_to_code}
+
+\appendix
+\input{chapters/A_derivations}
+
+\backmatter
+\printbibliography[heading=bibintoc,title={References}]
+\end{document}

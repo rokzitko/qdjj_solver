@@ -56,7 +56,7 @@ Neither establishes bath convergence. Blank CSV cutoff fields represent `null`
 The quadratic and weak-coupling references are independent continuum formulas.
 Interacting references are empirical finite-bath refinements. The report records
 their bath step, bond step, residual, and cross-family difference separately.
-These quantities are not added into a purported rigorous continuum error bar.
+These quantities do not combine into a rigorous continuum error bar.
 A same-size competing bath can be less accurate than the reference; its
 cross-family difference is therefore reported separately from the reference's
 own refinement indicators.
@@ -84,7 +84,7 @@ results to disk are excluded.
 Peak memory is the largest measured resident memory of the running program,
 including initialization and warm-up, and is reported in bytes. The QP storage
 limit instead applies to an estimate made before constructing the basis/matrix. Failed or
-unconverged cases remain in the evidence. An empty accuracy-target result means
+unconverged cases remain in the report. An empty accuracy-target result means
 no tested configuration reaches the target relative to that reference. If
 `reference_resolved=false`, no corresponding continuum-accuracy conclusion
 follows. An empty entry does not establish a limit on what the method can achieve

@@ -2,7 +2,7 @@
 
 **Result:** the gate–phase singlet/doublet boundary is reproduced with a maximum
 difference of **0.00517 in $\xi/U$** from the deposited processed NRG grid, whose
-gate spacing is 0.01. Increasing phase toward $\pi$ broadens the odd-parity region.
+gate spacing is 0.01. Increasing the phase towards $\pi$ broadens the odd-parity region.
 
 ## Paper and target
 
@@ -16,7 +16,7 @@ The experiment detects junction parity through a transmon's microwave spectrum.
 The target here is its **junction-only theoretical parity map, supplementary
 Fig. S1(c)**. It illustrates the gate- and phase-controlled transition underlying
 the experimental interpretation. Transmon transition frequencies and parity
-lifetimes require additional circuit/dynamical modeling and are not the
+lifetimes require additional circuit and dynamical modelling and are not the
 observables calculated in this example.
 
 ![Gate–phase boundary and excitation branches](output/paper/comparison.svg)
@@ -61,7 +61,7 @@ g(\xi,\phi)=E_D(\xi,\phi)-E_S(\xi,\phi).
 At each of the 25 deposited positive phases, plus $0$ and $\pi$, the positive-gate
 zero of $g$ is located with a $10^{-6}$ tolerance in $\xi/U$. Particle-hole symmetry gives
 the negative-gate boundary; time-reversal symmetry supplies negative phases.
-The colored map is built from these calculated boundaries. Separate 41-point
+The coloured map is built from these calculated boundaries. Separate 41-point
 gate cuts at $\phi=0$, $\pi/2$ and $\pi$ check the surrounding phase regions.
 
 The plot's signed gap is the separation of the lowest parity branches; its
@@ -94,8 +94,8 @@ both parity branches satisfy the independent Hellmann–Feynman identity
 \frac{\partial E}{\partial\xi}=\langle n_d\rangle-1
 ```
 
-to **1.45e-10** using a centered difference. The minus one follows from the
-package's centered impurity Hamiltonian. Particle-hole-related energies agree
+to **1.45e-10** using a centred difference. The minus one follows from the
+package's impurity Hamiltonian centred at half filling. Particle-hole-related energies agree
 to **$8.0\times10^{-15}\Delta$**, and their charges sum to two.
 
 ## Convergence
@@ -149,7 +149,7 @@ python -B -m applications.bargerbos_2022_parity_diagram.plot --output applicatio
 ```
 
 Recorded quick/paper/convergence runtimes were about **0.7 s / 9.3 min / 16.9 min**
-on the recorded single-thread arm64 environment. All use the base QP install.
+in the recorded single-thread arm64 environment. All use the base QP installation.
 The optional reference extraction is a separate network-dependent command.
 
 Set `--output applications/bargerbos_2022_parity_diagram/output/<profile>` to

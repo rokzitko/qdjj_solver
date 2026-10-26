@@ -1,0 +1,154 @@
+{
+ "tutorial": "07_gate_drive",
+ "profile": "full",
+ "values": {
+  "omega0": {
+   "value": 0.7159930829051,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Pair transition energy $E_{S^*}-E_S$"
+  },
+  "charge_element": {
+   "value": 0.6108971194777839,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Charge matrix element $\\lvert\\langle S\\vert n_d\\vert S^*\\rangle\\rvert$"
+  },
+  "current_element": {
+   "value": 0.027151909134660934,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Current matrix element $\\lvert\\langle S\\vert\\partial_\\phi H\\vert S^*\\rangle\\rvert$"
+  },
+  "element_ratio": {
+   "value": 22.4992326118954,
+   "atol": 1e-06,
+   "format": ".3f",
+   "description": "Ratio of the charge and current matrix elements"
+  },
+  "gate_resonance": {
+   "value": 0.7160072084032373,
+   "atol": 1e-06,
+   "format": ".6f",
+   "description": "Gate resonance $\\Omega_r$ at $A_\\epsilon=0.01$"
+  },
+  "gate_splitting": {
+   "value": 0.006108676600617314,
+   "atol": 1e-08,
+   "format": ".6f",
+   "description": "Gate splitting at the resonance, $A_\\epsilon=0.01$"
+  },
+  "gate_ratio": {
+   "value": 0.9999517767965943,
+   "atol": 1e-06,
+   "format": ".5f",
+   "description": "Gate splitting over $A_\\epsilon\\lvert\\langle S\\vert n_d\\vert S^*\\rangle\\rvert$"
+  },
+  "phase_resonance": {
+   "value": 0.7156208895771994,
+   "atol": 1e-06,
+   "format": ".6f",
+   "description": "Phase resonance $\\Omega_r$ at $A_\\phi=0.1$"
+  },
+  "phase_splitting": {
+   "value": 0.0027131969400745436,
+   "atol": 1e-08,
+   "format": ".6f",
+   "description": "Phase splitting at the resonance, $A_\\phi=0.1$"
+  },
+  "phase_ratio": {
+   "value": 0.9992656231347634,
+   "atol": 1e-05,
+   "format": ".5f",
+   "description": "Phase splitting over $A_\\phi\\lvert\\langle S\\vert\\partial_\\phi H\\vert S^*\\rangle\\rvert$"
+  },
+  "symmetric_charge_element": {
+   "value": 0.6515759061448405,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Charge matrix element at $\\epsilon_0=0$"
+  },
+  "symmetric_current_element": {
+   "max": 1e-12,
+   "description": "Current matrix element at $\\epsilon_0=0$ (eta selection rule)"
+  },
+  "symmetric_gate_per_amplitude": {
+   "value": 0.6514921698395624,
+   "atol": 1e-06,
+   "format": ".5f",
+   "description": "Gate splitting per amplitude at $\\epsilon_0=0$"
+  },
+  "symmetric_phase_per_amplitude": {
+   "max": 1e-05,
+   "description": "Phase splitting per amplitude at $\\epsilon_0=0$"
+  },
+  "averaged_shift": {
+   "max": 1e-12,
+   "description": "Shift of $E_S$ in the time-averaged gate-driven $H_0$"
+  },
+  "stark_sambe": {
+   "value": -0.0022641095807571787,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "AC Stark shift at $A_\\epsilon=0.05$, $\\Omega=0.6$ (Sambe)"
+  },
+  "stark_second_order": {
+   "value": -0.002299113743204413,
+   "atol": 1e-10,
+   "format": ".6f",
+   "description": "Second-order AC Stark shift, all states"
+  },
+  "stark_pair_only": {
+   "value": -0.002188110732858237,
+   "atol": 1e-10,
+   "format": ".6f",
+   "description": "Second-order AC Stark shift, $S^*$ term only"
+  },
+  "one_photon_strong": {
+   "value": 0.06080988010759601,
+   "atol": 1e-07,
+   "format": ".5f",
+   "description": "One-photon splitting at $A_\\epsilon=0.1$"
+  },
+  "two_photon_strong": {
+   "value": 0.003542515866909252,
+   "atol": 1e-08,
+   "format": ".6f",
+   "description": "Two-photon splitting at $A_\\epsilon=0.1$"
+  },
+  "two_photon_resonance": {
+   "value": 0.3609836793492219,
+   "atol": 1e-06,
+   "format": ".5f",
+   "description": "Two-photon resonance frequency at $A_\\epsilon=0.1$"
+  },
+  "gate_max_deviation": {
+   "max": 0.0002,
+   "description": "Largest deviation of the gate splitting per amplitude from the charge matrix element, over $\\epsilon_0$"
+  },
+  "phase_ratio_05": {
+   "value": 0.9449593346086481,
+   "atol": 1e-05,
+   "format": ".4f",
+   "description": "Phase splitting over the linear law at $\\epsilon_0=0.5$"
+  },
+  "phase_ratio_06": {
+   "value": 0.9930576096886204,
+   "atol": 1e-05,
+   "format": ".4f",
+   "description": "Phase splitting over the linear law at $\\epsilon_0=0.6$"
+  },
+  "one_photon_exponent": {
+   "value": 0.9974202130672604,
+   "atol": 1e-05,
+   "format": ".4f",
+   "description": "Exponent of the one-photon splitting versus $A_\\epsilon$, fitted for $A_\\epsilon\\le0.1$"
+  },
+  "two_photon_exponent": {
+   "value": 1.9918226263803491,
+   "atol": 1e-05,
+   "format": ".4f",
+   "description": "Exponent of the two-photon splitting versus $A_\\epsilon$, fitted for $A_\\epsilon\\le0.1$"
+  }
+ }
+}

@@ -7,25 +7,44 @@ python -B tools/check_publication.py
 python -m pip install -e '.[dmrg,dev]'
 python -B -m pytest --cov --cov-report=term-missing --cov-report=json
 python tools/check_coverage.py reports/python-coverage.json
-python -m ruff check src tests tools examples applications first_calculation large_Gamma NRG_comparisons
+python -m ruff check src tests tools examples applications large_Gamma NRG_comparisons docs/conf.py docs/_ext docs/manual/scripts
 python -m build
 python tools/check_distribution.py dist/*.tar.gz dist/*.whl
 python -B tools/check_publication.py dist/*.tar.gz dist/*.whl
 python tools/check_wheel.py dist/*.whl --dmrg
 ```
 
-The regular suite excludes `slow` tests. Run the bounded extended checks with
-`python -B -m pytest -m slow`. Numerical tests use fixed seeds and explicit
-tolerances; small dense electron-space matrices and analytic spectra provide
-independent references. Set `OPENBLAS_NUM_THREADS=1` and `OMP_NUM_THREADS=1` to
-reproduce CI's thread limits.
+The wheel checker accepts **one wheel**. If `dist/` contains several, replace `dist/*.whl`
+in the last command with one wheel compatible with your interpreter and platform; keep
+`--dmrg` to check both backends and HDF5 persistence.
 
-The wheel check installs the exact artifact and resolves its dependencies in a
-fresh virtual environment outside the checkout. It runs `pip check`, verifies
-package/extension origins, exercises the `qdjj-solver` command, and checks
-numerical results and serialization. It also blocks TeNPy imports during its
-QP portion.
-The archive review checks the software-only source boundary and required members.
+Documentation changes, and code changes that affect documented behaviour, also need the
+documentation checks (install `docs`, `docs-pdf` and `plots` for the PDF checks);
+see [documentation](documentation.md#checks) and [PDF build requirements](user_manual.md#build-locally):
+
+```sh
+python tools/gen_docs.py --check
+python tools/check_docs.py
+python -B -m pytest -m "docs or tutorial"
+python -m sphinx -W --keep-going -c docs -b html . build/docs
+python -B tools/build_manuals.py --manual all
+```
+
+The regular suite excludes the `slow`, `docs` and `tutorial` tests. Run the
+extended checks with `python -B -m pytest -m slow`. Numerical tests use fixed seeds and
+explicit tolerances; small dense electron-space matrices and analytic spectra provide
+independent references. Set `OPENBLAS_NUM_THREADS=1`, `OMP_NUM_THREADS=1`,
+`MKL_NUM_THREADS=1` and, on macOS, `VECLIB_MAXIMUM_THREADS=1` to reproduce the single
+numerical thread of the CI jobs (continuous integration: the checks that GitHub runs for
+every pull request).
+
+The wheel check installs the built wheel and its dependencies in a new virtual
+environment outside the repository. It runs `pip check`, verifies that the package and
+its compiled extension are imported from that installation, runs the `qdjj-solver`
+command, and checks numerical results and saved files. TeNPy imports are blocked during
+its QP part, which must work without TeNPy.
+`tools/check_distribution.py` checks that the source archive contains the required files
+and only files from its explicit lists.
 For the [NRG comparison](../NRG_comparisons/README.md), the source archive includes
 the reviewed results and an explicit allowlist of reproduction scripts and
 parameter inputs, including the seven final finite baths. Raw NRG outputs,
@@ -93,32 +112,34 @@ worktrees, Git bundles, virtual environments, credentials and raw `runs/` out of
 public assets. Both the distribution boundary and publication gate must pass
 on the actual archives before upload, not just on the checkout.
 
-The NRG adapter/control and reproduction tests are bounded and offline: literal
+The tests of NRG input preparation and reproduction use small, offline cases: literal
 input decks, synthetic HDF5, small electron-ED/QP problems, task/input consistency,
 and fresh-directory preparation. Optional plotting tests regenerate presentation
 files in temporary directories without changing the approved output. Follow the
 [case reproduction instructions](../NRG_comparisons/test1/README.md#reproduction)
 for expensive QP/DMRG and external NRG runs. Those require Linux and, for NRG,
-NRG Ljubljana, Mathematica and `h5py`; routine tests do not launch them or certify
+NRG Ljubljana, Mathematica and `h5py`; routine tests do not launch them or establish
 the published precision on a new installation.
 
 ## CI and coverage policy
 
-`.github/workflows/tests.yml` has five routine jobs:
+`.github/workflows/tests.yml` has six routine jobs:
 
 | Job | Checks |
 |---|---|
-| Linux, Python 3.13 | Both backends, lint, Python coverage, sdist-to-wheel build, fresh-wheel smoke test |
+| Linux, Python 3.13 | Both backends, `ruff`, Python coverage, source distribution and wheel build, test of the freshly installed wheel |
+| Linux, Python 3.13, documentation | `tools/check_docs.py`, the `docs` and `tutorial` tests, strict HTML and user/reference PDF builds |
 | macOS, Python 3.14 | Native/QP, persistence, command-line checks, platform wheel |
 | Windows, Python 3.11 | Native/QP, persistence, command-line checks, platform wheel |
 | Linux, Python 3.13 | Focused native ASan/UBSan regressions |
 | Linux, Python 3.11 | Both backends with the runtime lower bounds in `tools/minimum-runtime.txt` |
 
-The Monday schedule and manual `workflow_dispatch` also run the stress checks
-and a native-coverage diagnostic job. Jobs have timeouts, single-thread numerical
-defaults, and 14-day diagnostic artifact retention. Superseded PR runs are cancelled.
-Routine wheel/sdist artifacts are retained for 14 days as well. The release
-workflow calls the same checks with stress and native coverage enabled; see
+The weekly run (Mondays) and manual runs (`workflow_dispatch`) add the stress checks
+(`-m slow`), a native-coverage diagnostic job and the extended documentation job: the
+two PDF manuals, physics listings, the full tutorial profiles and the recomputed manual
+data. Jobs have time limits and use one numerical thread. Their reports and wheels are kept
+for 14 days, the PDF artifacts for 30 days. A new push to a pull request cancels its
+running checks. The release workflow runs the same checks, including the weekly ones; see
 [the release procedure](releases.md).
 
 Every test job runs the default source privacy gate before installation, lint,
@@ -130,9 +151,9 @@ and check repaired wheels before upload. These are mandatory local checks in CI,
 not external scanning services.
 
 The lower-bound job constrains all five numerical/runtime dependencies together,
-runs `pip check`, requires the installed-package smoke check (including DMRG and
+runs `pip check`, requires the installed-package check (including DMRG and
 HDF5 persistence), and executes the regular suite. Missing optional backends fail
-the smoke check rather than silently skipping their validation.
+the installed-package check rather than silently skipping their validation.
 To reproduce it in a fresh Python 3.11 environment:
 
 ```sh
@@ -148,11 +169,11 @@ unimported modules, with installed/source paths mapped for reporting. The small
 `tools/check_coverage.py` gate uses line counts rather than the combined
 line/branch percentage shown by `coverage report`. Python branch coverage and
 C++ coverage are reported for review. Test code and third-party implementations
-are outside the product coverage denominator.
+are excluded from the package's coverage totals.
 
 Add `--cov-report=html --cov-report=xml` for browsable and machine-readable
 reports under `reports/`. Coverage is evidence about executed code; the numerical
-assertions and independent oracles determine what was actually verified.
+assertions and independent reference calculations determine what was actually verified.
 
 ## Native instrumentation
 
@@ -175,7 +196,7 @@ On macOS with Apple Clang, add `--gcov-executable 'xcrun llvm-cov gcov'` to
 the reporting command. Compiler-generated exception/unreachable arcs are
 filtered; native branch percentages remain compiler-dependent diagnostics.
 
-`QDJJ_SANITIZERS=ON` enables address and undefined-behavior instrumentation in
+`QDJJ_SANITIZERS=ON` enables address and undefined-behaviour instrumentation in
 a separate build. The workflow shows the matching GCC runtime preload needed
 when importing an instrumented extension into ordinary Python. Address and UB
 failures are fatal. Process-wide leak detection is disabled because CPython and
@@ -203,6 +224,23 @@ python -m pip install -e '.[dmrg,dev]'
   finite-difference physical derivatives, QP cutoff monotonicity, and eigensolver agreement.
 - Consistency of older and current Python functions and saved results, plus
   `qdjj-solver` calculations run outside the source directory.
+- Floquet quasienergies (`tests/test_floquet.py`): Jacobi–Anger harmonics of the phase
+  drive; band-limited linear drives; the coordinate and sector checks; the undriven limit;
+  Bessel weights of a decoupled dot with both scalar gauges; the exactly solvable circularly
+  driven two-level system (Sambe, propagator, RWA and the analytic van Vleck operators);
+  van Vleck error scaling with $\Omega$; Sambe versus propagator in one basis; static-basis
+  convergence to the Fock result; the rigorous truncation bound in $M$; the phase–voltage
+  gauge identity; the RWA splitting at the resonance between $S$ and $S^*$; the eta-sector
+  decomposition; and
+  propagation of the exact $H(t)$ of a phase- and detuning-driven junction in the physical
+  electron space, with a different Magnus integrator.
+- Probe matrix elements and spectra (`tests/test_floquet_transitions.py`): static elements
+  against an independent electron-space calculation; Floquet elements against independent
+  time propagation (with a wrong-sign control); the sum rule, Hermiticity and replica invariance; Tien–Gordon
+  sidebands across parity sectors in both scalar gauges; analytic lines of the circularly
+  driven two-level system; the undriven limit with basis-invariant merging of degenerate
+  states; agreement of the Sambe, propagator and static-basis methods; and the adiabatic
+  generalized Tien–Gordon limit of a gate-driven junction.
 - Literature applications: archived finite-bath baselines, perturbative Knight
   shift, Zeeman/spin consistency, double-dot current derivatives and GAL phase
   boundaries, and direct three-lead versus effective two-lead energies/currents.
@@ -238,10 +276,10 @@ minutes or hours. Run them explicitly for a literature reproduction or a
 convergence study. The archived outputs document the achieved literature
 agreement and convergence; the small finite-bath checks alone do not establish
 continuum accuracy. The source archive includes the application scripts, inputs,
-reference data, and compact results. The precompiled package provides the solver
+reference data, and compact results; the wheels contain only the solver packages
 used to run these calculations.
 
-The [large-hybridization study](../large_Gamma/README.md) has bounded independent
+The [large-hybridization study](../large_Gamma/README.md) has small independent
 quadratic/ED and optional DMRG checks in `tests/test_large_gamma.py`. Its full
 multi-day scan is an explicit command, with compact reviewed outputs and
 working records under ignored `runs/large_Gamma/`.

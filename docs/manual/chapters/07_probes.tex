@@ -1,0 +1,158 @@
+\chapter{Probing the driven junction}\label{ch:probes}
+
+A driven junction can be probed by a second, weak perturbation: a probe tone in two-tone
+spectroscopy, a tunnelling contact, or a spin-resonance coil. This chapter describes the
+transitions that such a probe induces between Floquet states, and how \pkg{} computes
+their positions and strengths.
+
+\section{The Floquet golden rule}
+
+Add to the driven Hamiltonian a weak probe $\lambda X(t)\cos\omega_pt$, where $X(t)$ is an
+operator, possibly modulated by the drive, with harmonics $X(t)=\sum_kX_k\ee^{\ii k\Omega t}$.
+Between Floquet states the probe matrix element oscillates at a ladder of frequencies,
+\begin{equation}\label{eq:floquet-element}
+  \matel{\psi_\alpha(t)}{X(t)}{\psi_\beta(t)}=\sum_qX^{(q)}_{\alpha\beta}\,
+  \ee^{\ii(\qe_\alpha-\qe_\beta+q\Omega)t},\qquad
+  X^{(q)}_{\alpha\beta}=\sum_{m,k}\matel{u_{\alpha,m+k-q}}{X_k}{u_{\beta,m}} .
+\end{equation}
+First-order perturbation theory, averaged over many drive periods, gives the transition rate
+from $\beta$ to $\alpha$,
+\begin{equation}\label{eq:floquet-golden}
+  \Gamma_{\beta\to\alpha}(\omega_p)=\frac{\pi\lambda^2}2\sum_q\abs{X^{(q)}_{\alpha\beta}}^2
+  \Bigl[\delta\bigl(\omega_p-\omega^{(q)}_{\alpha\beta}\bigr)+\delta\bigl(\omega_p+\omega^{(q)}_{\alpha\beta}\bigr)\Bigr],
+  \qquad \omega^{(q)}_{\alpha\beta}=\qe_\alpha-\qe_\beta+q\Omega ,
+\end{equation}
+the Floquet generalization of Fermi's golden rule~\cite{grifoni1998driven,kohler2005driven}.
+Each pair of Floquet states contributes a ladder of lines separated by the drive frequency.
+In the photon picture of \cref{sec:photons}, $q$ counts the drive photons exchanged during
+the transition, and $\abs{X^{(q)}_{\alpha\beta}}^2$ is the strength of the $q$-photon line. A
+line at a positive frequency absorbs a probe quantum; a line at a negative frequency
+corresponds to stimulated emission into the probe.
+
+The set of lines is a property of the physical Floquet states. Choosing another replica for
+the final state, $(\qe_\alpha+\ell\Omega,u_{\alpha,m-\ell})$, relabels $X^{(q)}\to
+X^{(q+\ell)}$ but leaves every line frequency and strength unchanged. For a Hermitian probe,
+$\overline{X^{(q)}_{\alpha\beta}}=X^{(-q)}_{\beta\alpha}$. Without a drive only $q=0$
+survives, and $X^{(0)}$ reduces to the static matrix element.
+
+\paragraph{Sum rule.}
+Parseval's theorem and the completeness of the Floquet states give
+\begin{equation}\label{eq:sum-rule}
+  \sum_\alpha\sum_q\abs{X^{(q)}_{\alpha\beta}}^2=\frac1T\int_0^T\dd t\,
+  \matel{\psi_\beta(t)}{X(t)\dg X(t)}{\psi_\beta(t)} ,
+\end{equation}
+the time-averaged weight of the state $X(t)\ket{\psi_\beta}$. The code reports both sides,
+\code{captured} and \code{total}. Their ratio, \code{completeness}, is the fraction of the
+spectral weight accounted for by the computed final states. A complete set
+(\code{selection="all"}) in the full Fock space of the destination sector saturates the sum rule.
+
+\section{Probes}
+
+Probes are specified by name:
+\begin{itemize}
+\item \code{current}, the phase derivative $\partial H/\partial\phi$, for a flux or phase probe;
+\item \code{charge}, the dot occupation $n_d$, for a gate probe;
+\item \code{spin_x}, \code{spin_y}, \code{spin_z} and \code{spin_plus}, \code{spin_minus}, for
+spin resonance;
+\item \code{d_up}, \code{d_dn} and their adjoints \code{d_up_dagger}, \code{d_dn_dagger},
+for tunnelling spectroscopy.
+\end{itemize}
+Any other named model observable may also be used. Two physical distinctions are important.
+\begin{itemize}
+\item \emph{Time-dependent probes.} A phase drive changes the current operator itself, so the
+probe has harmonics. \pkg{} samples the observables together with the Hamiltonian and uses
+these harmonics. A probe given as an explicit operator is treated as time independent.
+\item \emph{Tunnelling probes} change the fermion parity and connect Floquet states of
+different sectors under the same drive. With $S_X(\omega)$ the line spectrum of the probe
+$X$ (defined below), the electron-addition spectrum is $A^+(\omega)=S_{d\dg}(\omega)$ and
+the electron-removal spectrum is $A^-(\omega)=S_d(-\omega)$, as for the static spectral
+function.
+\end{itemize}
+
+\section{Initial states, degeneracies and line shapes}
+
+The observed lines depend on the populations of the Floquet states. Determining these
+populations requires a model of relaxation through the environment, which is planned.
+At present, spectra are computed for explicitly specified initial states and weights. The default
+is the dressed continuation of the static ground state (\code{dressed_state(0)}).
+
+Within a degenerate multiplet the Floquet states can be unitarily rotated. Before constructing
+the line spectrum, \pkg{} therefore distributes each initial weight uniformly over its degenerate group and
+sums the strengths of degenerate final states, which makes the lines independent of the
+basis chosen inside a multiplet. Terms between states of one group at $q=0$ are expectation
+values and are omitted from the line spectrum. Terms of one group with $q\ne0$ are \emph{elastic}
+lines at $q\Omega$: the probe exchanges energy with the drive without changing the state.
+They are kept.
+
+Each line $l$, at frequency $\omega_l=\omega^{(q)}_{\alpha\beta}$, has the strength
+$s_l=p_\beta\abs{X^{(q)}_{\alpha\beta}}^2$, where $p_\beta$ is the weight of the initial state.
+The lines are broadened with Lorentzian or Gaussian shapes $L$ of half width at half maximum
+$w$, which gives the spectrum $S(\omega)=\sum_ls_l\,L(\omega-\omega_l)$
+(\code{kind="signed"}, the default). \code{kind="rate"} returns $S(\omega)+S(-\omega)$,
+which is proportional to the rate \eqref{eq:floquet-golden} at the probe frequency
+$\omega>0$. \code{kind="net"} returns $S(\omega)-S(-\omega)$, absorption minus stimulated
+emission, in which the elastic lines cancel. Lines into the discretized continuum need a
+width larger than the level spacing; a proper treatment of the continuum is planned.
+
+\begin{incode}
+%! omega = np.linspace(0., 1.5, 1501)
+\begin{lstlisting}[frame=none,backgroundcolor={},aboveskip=0pt,belowskip=0pt]
+options = dict(floquet_cutoff=6, selection="all", method="dense")
+states = solve_floquet(periodic, 2, Sector(0, 0), options)
+table = states.matrix_elements("charge")              # FloquetTransitions
+lines = table.lines(initial=states.dressed_state(0))   # SpectralLines
+rate = lines.spectrum(omega, width=.002, kind="rate")
+odd = solve_floquet(periodic, 2, Sector(1, 1), dict(floquet_cutoff=6, states=1))
+removal = states.matrix_elements("d_up", odd)         # odd state -> even states
+\end{lstlisting}
+For the junction of \cref{ch:practical}, the complete even set needs a dense Sambe
+matrix of dimension $13\times546$, which takes a few minutes of computing time;
+\code{basis="eigen"} reduces the cost. The two sets of states must belong to the same drive
+and must treat the c-number terms of \cref{sec:gauge} in the same way; their sectors, QP
+cutoffs, bases and methods may differ. Static eigenstates also provide
+\code{matrix_elements}.
+\par\smallskip\usermanual{docs/floquet.md}.
+\end{incode}
+
+\section{Computing the harmonics}
+
+Equation \eqref{eq:floquet-element} is a Fourier coefficient of the mode matrix element,
+\begin{equation}
+  X^{(q)}_{\alpha\beta}=\frac1T\int_0^T\dd t\,\ee^{-\ii q\Omega t}\,
+  \matel{u_\alpha(t)}{X(t)}{u_\beta(t)} .
+\end{equation}
+\pkg{} first forms the harmonics $\ket{v_{\beta,m}}=\sum_kX_k\ket{u_{\beta,m-k}}$ of
+$X(t)\ket{u_\beta(t)}$ in the Fock basis of the destination sector. Within one basis this is
+a sparse matrix--vector product; between different sectors or cutoffs, the operator acts
+between the two QP-truncated spaces. The norm $\sum_m\norm{v_{\beta,m}}^2$ is the
+right-hand side of the sum rule \eqref{eq:sum-rule}. The overlap
+$\braket{u_\alpha(t)}{v_\beta(t)}$ is a trigonometric polynomial with a finite number $N$ of
+harmonics, so $N$ equally spaced samples and a discrete Fourier transform give every
+$X^{(q)}$ exactly, without aliasing. The memory is dominated by the vectors $v_{\beta,m}$;
+the argument \code{max_memory_gib} limits it, and \code{ket_states} restricts the initial
+states.
+
+\section{Mollow triplet and Autler--Townes doublet}\label{sec:mollow}
+
+A resonant pump dresses two levels $a$ and $b$ into the hybrids $\ket\pm$, separated by
+the Rabi splitting $\delta$ (\cref{ch:ex-tls}). The probe response depends on whether it acts
+on the pumped transition itself or on a transition to a third level.
+\begin{itemize}
+\item \emph{Probe of the pumped transition, from a dressed state.} The probe connects
+$\ket\pm$ with their own replicas and with each other. A system in the lower dressed state
+shows lines at three probe frequencies near the pump: absorption at $\Omega+\delta$,
+stimulated emission at $\Omega-\delta$, and two elastic lines at the line frequencies
+$\pm\Omega$; in the upper dressed state, absorption and emission exchange places. At
+resonance each of these four lines carries a quarter of the static strength
+$\abs{X_{ab}}^2$, so in the rate the central line is twice as strong as the sidebands. This
+is the probe counterpart of the Mollow triplet of resonance
+fluorescence~\cite{mollow1969power,mollow1972stimulated,cohentannoudji1998atom}.
+The net absorption is negative at $\Omega-\delta$: a dressed two-level system amplifies a
+probe at this frequency~\cite{wu1977observation}.
+\item \emph{Probe of a transition from a spectator level $c$.} The single line $c\to a$
+splits into two lines at $\pm\delta/2$ around its undriven position, each with half the
+strength: the Autler--Townes doublet~\cite{autler1955stark}.
+\end{itemize}
+Both were observed together in a pumped superconducting qubit~\cite{baur2009measurement}.
+They appear in \cref{ch:ex-twotone} for the pair transition of the junction, and in
+\cref{sec:esr-probe} for the spin doublet.

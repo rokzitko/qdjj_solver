@@ -1,0 +1,133 @@
+\chapter{From a Hamiltonian to a checked calculation}\label{ch:practical}
+
+\section{State the question and the approximation}
+
+Consider the reference junction of \cref{eq:reference}. We want its ground-state
+parity, lowest electron-addition/removal excitation, even pair excitation and
+Josephson current. Determining these quantities requires comparing the relevant
+sectors and evaluating state-resolved observables. The physical input and finite-bath
+approximation are specified in
+\code{examples/01_subgap_states/input/reference.json}, shared by the tutorial,
+handbook example and figure-generation scripts.
+
+The practical sequence is
+\begin{equation*}
+ \text{bath and impurity}\ \longrightarrow\ \text{Hamiltonian}\
+ \longrightarrow\ \text{sector solves}\ \longrightarrow\ \text{observables and checks}.
+\end{equation*}
+The bath stores signed normal levels and their contact weights. The Hamiltonian
+stores the interacting operator in canonical coordinates. A sector specifies
+total quantum numbers of the dot and leads. The result contains state-resolved
+energies, vectors or MPS, observables and numerical diagnostics. Physical
+parameters, representation choices and solver tolerances have separate roles.
+
+\section{A first calculation}\label{sec:first-calculation}
+
+The following setup is generated from the shared input; it uses explicit
+parameters so that it also runs in a fresh Python session. Energies are in gap
+units and the QP cutoff is a many-body approximation to the declared finite bath.
+
+\input{generated/practical_code}
+
+The last array compares the spin projections of the doublet. Their degeneracy
+is a check at zero field; in a finite field both must be included when finding
+the global minimum. The even sector supplies the singlet $S$ and excited
+singlet $S^*$. At the reference point,
+$E_D-E_S=\q{static.doublet_energy}$ and
+$E_{S^*}-E_S=\q{static.excited_energy}$. The signed first difference identifies
+which parity lies lower. The positive excitation cost is its absolute value,
+whereas the pair excitation connects two states of the same even sector.
+
+From the source root the matching even calculation can also be run with:
+\begin{lstlisting}[language=bash]
+qdjj-solver solve examples/01_subgap_states/input/reference.json --output results/even.json --save-states
+\end{lstlisting}
+This command solves the sector named by the input. Run the other relevant sectors
+to determine the global ground state. The input contains the numerical settings as well as
+the model, which makes differences between Python and command-line defaults
+irrelevant to this explicit comparison.
+
+\section{Interpret observables and matrix elements}
+
+Each observable array has one entry per returned state. The current derivative
+is reported in energy units; multiplying it by $2e/\hbar$ gives the physical
+current. For a normalized gap-unit calculation, the corresponding dimensionless
+number is $I/(2e\Delta/\hbar)$.
+
+\begin{lstlisting}
+current = even.observables["phase_derivative"][0].real
+charge = even.observables["impurity_charge"][0].real
+addition = odd.matrix_elements("d_up_dagger", even)
+pair = even.matrix_elements("current")
+print(current, charge, abs(addition[0, 0])**2, abs(pair[1, 0])**2)
+\end{lstlisting}
+
+The rows of a transition matrix label the bra/final states and columns the
+ket/initial states. Thus the first squared amplitude adds a spin-up dot
+electron to $S$ and reaches the chosen odd state, while the second connects
+$S$ to $S^*$. The matrix element specifies the coupling strength; predicting
+the measured response also requires initial-state populations and line widths. Named electron probes are already
+transformed to the model's canonical coordinates. For arbitrary physical
+operators use the transformation described in \cref{sec:coordinates}.
+
+\section{Sweep a parameter and retain the results}
+
+The standalone script \code{examples/handbook/scan.py} scans phase, writes both
+sector results after every completed point, and retains any failed point with
+its diagnostic. Its plotting mode reads those saved results without solving
+again. Follow the smooth sector branches first, then construct their lower
+envelope and ground-state current as in \cref{fig:primer-current}.
+
+Use a dense phase grid to locate parity crossings, and refine the QP cutoff and
+bath to converge their positions. Track states through same-sector crossings
+using symmetries, observables and, in compatible coordinates, overlaps.
+At exact degeneracy compare the complete relevant subspace.
+
+\section{Ask three separate convergence questions}
+
+\begin{enumerate}
+\item Does the result solve its declared finite matrix problem? Inspect residuals
+and orthogonality; DMRG also provides sweep and independent-trial diagnostics.
+\item Is the many-body representation adequate? Refine QP cutoff or MPS bond
+dimension and compare the excitation, current or correlation actually reported.
+\item Is the bath adequate? Refine its nodes or fit at fixed physical parameters,
+with adequate many-body convergence at each size.
+\end{enumerate}
+The small DMRG tutorial deliberately begins with insufficient bond dimension,
+then approaches the result of full ED for the same finite bath, demonstrating
+the first two checks. Apply the third through bath refinement. The larger
+reference junction here illustrates a finite-bath, cutoff-two calculation;
+assess its continuum accuracy using all three checks.
+
+\tutorial{11_dmrg_convergence}
+
+\section{Save states and prepare for driving}
+
+\begin{lstlisting}
+from qdjj_solver import save_result, load_result
+save_result(even, "results/even.json", save_states=True)
+restored = load_result("results/even.json")
+assert np.max(abs(restored.energies - even.energies)) < 1e-12
+\end{lstlisting}
+
+The JSON stores scalar results, settings and provenance; the companion NPZ or
+HDF5 file stores wavefunctions. Keep both together. Scalar-only plotting can use
+ordinary JSON tools, but evaluating a new matrix element requires the states.
+Saved, completed DMRG states provide initial wavefunctions for a new compatible
+optimization.
+
+The static transition energy and its matrix element now identify a candidate
+resonance for the driven part of the manual. Retain fixed canonical coordinates
+when introducing the drive. \Cref{ch:floquet,ch:driving} develop that step before
+the numerical Floquet methods are applied.
+
+\begin{incode}[The complete software handbook]
+\usermanual{docs/static_calculations.md};
+\usermanual{docs/workflows.md};
+\usermanual{docs/dmrg.md}. The separate User's Guide and Reference Manual PDF
+also gives installation, full constructor and solver references, JSON formats,
+saved-record fields and troubleshooting. Both manuals are published with the
+matching software release.
+\end{incode}
+
+\tutorial{00_first_calculation}

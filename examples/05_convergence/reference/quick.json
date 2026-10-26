@@ -1,0 +1,130 @@
+{
+ "tutorial": "05_convergence",
+ "profile": "quick",
+ "values": {
+  "fock_dimension": {
+   "value": 146,
+   "atol": 0,
+   "format": "d",
+   "description": "Fock dimension of the even sector at QP cutoff 2"
+  },
+  "energy_S": {
+   "value": -0.8279124012824934,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Static singlet energy $E_S$"
+  },
+  "energy_Sstar": {
+   "value": -0.09692124100185062,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Static excited-singlet energy $E_{S^*}$"
+  },
+  "basis_states": {
+   "value": 20,
+   "atol": 0,
+   "format": "d",
+   "description": "Static basis size $K$ of the Floquet-cutoff study"
+  },
+  "strong_S": {
+   "value": -0.7691994890792088,
+   "atol": 1e-08,
+   "format": ".6f",
+   "description": "Quasienergy of $S$ at $A=1.5$ with the reference cutoff"
+  },
+  "strong_Sstar": {
+   "value": -0.10208042632861558,
+   "atol": 1e-08,
+   "format": ".6f",
+   "description": "Quasienergy of $S^*$ at $A=1.5$ with the reference cutoff"
+  },
+  "converged_harmonics": {
+   "value": 9,
+   "atol": 0,
+   "format": "d",
+   "description": "Smallest $M$ with both residual bounds below $10^{-6}$"
+  },
+  "decades_per_harmonic": {
+   "value": 1.5055634094135775,
+   "atol": 0.001,
+   "format": ".2f",
+   "description": "Decrease of the error per harmonic, in decades, from $M=2$ to 7"
+  },
+  "max_error_over_bound": {
+   "max": 1.0,
+   "description": "Largest ratio of the actual error to the residual bound"
+  },
+  "propagator_deviation": {
+   "max": 1e-09,
+   "description": "Distance of the propagator quasienergies from the Sambe reference"
+  },
+  "propagator_step_error": {
+   "max": 1e-09,
+   "description": "Estimated time-step error of the propagator"
+  },
+  "fock_S": {
+   "value": -0.826600346714254,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Fock-space quasienergy of $S$ at $A=0.3$"
+  },
+  "fock_Sstar": {
+   "value": -0.10108267672855697,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Fock-space quasienergy of $S^*$ at $A=0.3$"
+  },
+  "stark_shift": {
+   "value": 0.0013120545682394624,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "AC Stark shift $\\varepsilon_S-E_S$ in the Fock space"
+  },
+  "basis_error_small": {
+   "value": 0.0016345983253248653,
+   "atol": 1e-09,
+   "format": ".2e",
+   "description": "Static-basis error at $K\\approx10$"
+  },
+  "basis_error_large": {
+   "value": 6.946452959810667e-05,
+   "atol": 1e-09,
+   "format": ".2e",
+   "description": "Static-basis error at the largest $K$ below the Fock dimension"
+  },
+  "max_error_over_fock_residual": {
+   "max": 1.0,
+   "description": "Largest ratio of the static-basis error to the Fock-space residual"
+  },
+  "threshold": {
+   "value": 1.0957881063345947,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "One-photon threshold $E_D+\\Delta-E_S$, four level pairs"
+  },
+  "shift_below_2": {
+   "value": 0.0024186775836256835,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "AC Stark shift of $S$ at $\\Omega=1$, two level pairs"
+  },
+  "shift_below_4": {
+   "value": 0.002394456095806463,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "AC Stark shift of $S$ at $\\Omega=1$, four level pairs"
+  },
+  "min_weight_above_2": {
+   "value": 0.6442637280872177,
+   "atol": 0.0001,
+   "format": ".3f",
+   "description": "Smallest static weight of $S$ above the threshold, two level pairs"
+  },
+  "min_weight_above_4": {
+   "value": 0.49544614009202376,
+   "atol": 0.0001,
+   "format": ".3f",
+   "description": "Smallest static weight of $S$ above the threshold, four level pairs"
+  }
+ }
+}

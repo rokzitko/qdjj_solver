@@ -56,6 +56,7 @@ class FermionOperator:
 
     @classmethod
     def scalar(cls, value):
+        """A finite real or complex multiple of the identity (the empty monomial)."""
         return cls({(): value})
 
     def __add__(self, other):
@@ -98,6 +99,7 @@ class FermionOperator:
         return self * (1 / other)
 
     def dagger(self):
+        """Hermitian conjugate, reversing operator order and conjugating coefficients."""
         result = {}
         for key, value in self.terms.items():
             adjoint = tuple(-i for i in key[::-1])
@@ -127,33 +129,45 @@ class FermionOperator:
         return FermionOperator(result)
 
     def hermiticity_error(self):
+        """Largest coefficient magnitude in O - O.dagger(); zero for a Hermitian polynomial."""
         return max((abs(v) for v in (self - self.dagger()).terms.values()), default=0.0)
 
     def to_records(self):
+        """Sorted monomials with signed one-based indices and real/imaginary coefficients."""
         return [{"operators": list(key), "real": value.real, "imag": value.imag}
                 for key, value in sorted(self.terms.items())]
 
     @classmethod
     def from_records(cls, records):
+        """Sum and normal-order the serialized monomials; repeated terms are accumulated."""
         result = cls()
         for record in records:
             result += cls({tuple(record["operators"]): complex(record["real"], record["imag"])})
         return result
 
 
+def is_integer(value) -> bool:
+    """True for Python and NumPy integers, False for booleans and everything else."""
+    return isinstance(value, (int, np.integer)) and not isinstance(value, bool)
+
+
 def annihilate(mode: int) -> FermionOperator:
+    """Annihilation operator of a canonical fermionic mode (zero-based index)."""
     if not isinstance(mode, (int, np.integer)) or mode < 0:
         raise ValueError("mode must be a nonnegative integer")
     return FermionOperator({(-(int(mode) + 1),): 1})
 
 
 def create(mode: int) -> FermionOperator:
+    """Creation operator of a canonical fermionic mode (zero-based index)."""
     return annihilate(mode).dagger()
 
 
 def number(mode: int) -> FermionOperator:
+    """Occupation-number operator of a canonical fermionic mode."""
     return create(mode) * annihilate(mode)
 
 
 def hermitian_pair(operator: FermionOperator) -> FermionOperator:
+    """The operator plus its Hermitian conjugate."""
     return operator + operator.dagger()

@@ -1,4 +1,4 @@
-"""Explicit finite-bond ladders and state/subspace overlap diagnostics."""
+"""Bond-dimension refinement and overlap diagnostics for states and subspaces."""
 
 from dataclasses import replace
 
@@ -10,11 +10,11 @@ from .solver import DEFAULT_OPTIONS, solve
 
 
 def compare_states(previous, current):
-    """Compare roots in identical coordinates, reporting both root and subspace overlap.
+    """Compare eigenstates in identical coordinates using individual-state and subspace overlaps.
 
     The assignment maximizes individual overlaps; singular values are invariant
-    under rotations within a degenerate retained subspace. No phase-dependent
-    amplitude is used as an individual-state convergence criterion.
+    under rotations within a degenerate retained subspace. Individual-state
+    comparisons use phase-invariant squared overlap magnitudes.
     """
     overlap = previous.overlaps(current)
     rows, columns = linear_sum_assignment(-abs(overlap)**2)
@@ -30,11 +30,13 @@ def compare_states(previous, current):
 def converge_bond_dimension(hamiltonian, chi_values, *, sector=DEFAULT_SECTOR, options=DEFAULT_OPTIONS,
                             energy_tolerance=1e-8, observable_tolerance=1e-7,
                             stable_steps=2, callback=None):
-    """Run the supplied increasing chi ladder, retaining explicit evidence.
+    """Run the specified sequence of increasing bond dimensions and retain the convergence diagnostics.
 
-    Requires finite-problem residual/sweep convergence and stable successive
-    energies/observables. The returned assessment is empirical; it neither
-    establishes bath convergence nor proves that no lower root was missed.
+    Requires convergence of the finite-problem residuals and sweep energies, together
+    with stable energies and observables between successive bond dimensions.
+    The assessment gives empirical convergence evidence for the retained states at fixed bath.
+    Assess bath convergence by refinement and check low-energy completeness through
+    additional state searches or an independent reference.
     ``callback(result, entry)`` can archive each completed step immediately.
     """
     chis = tuple(chi_values)

@@ -1,0 +1,128 @@
+{
+ "tutorial": "04_high_frequency",
+ "profile": "quick",
+ "values": {
+  "energy_S": {
+   "value": -0.6295414862612492,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Undriven singlet energy $E_S$"
+  },
+  "energy_Sstar": {
+   "value": 0.15521431111662054,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Undriven excited-singlet energy $E_{S^*}$"
+  },
+  "energy_D": {
+   "value": -0.4697324279366242,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Undriven doublet energy $E_D$"
+  },
+  "max_renormalized_deviation": {
+   "value": 0.0007903763689236232,
+   "atol": 1e-09,
+   "format": ".3e",
+   "description": "Largest difference between the quasienergies and the static junction with $\\Gamma J_0(A/4)^2$ over the scan"
+  },
+  "crossing_amplitude": {
+   "value": 3.766601398554995,
+   "atol": 1e-07,
+   "format": ".4f",
+   "description": "Drive amplitude at which $D$ becomes the lowest dressed state"
+  },
+  "critical_gamma": {
+   "value": 0.4998358072359662,
+   "atol": 1e-08,
+   "format": ".6f",
+   "description": "Static critical coupling $\\Gamma_c$ of the singlet\u2013doublet transition"
+  },
+  "crossing_renormalized": {
+   "value": 3.7653715781126644,
+   "atol": 1e-07,
+   "format": ".4f",
+   "description": "Crossing predicted by $\\Gamma J_0(A/4)^2=\\Gamma_c$"
+  },
+  "decoupled_S": {
+   "value": 0.5001412536342126,
+   "atol": 1e-08,
+   "format": ".6f",
+   "description": "Quasienergy of $S$ at $J_0(A/4)=0$ (atomic value $U/2$)"
+  },
+  "decoupled_Sstar": {
+   "value": 0.5004382501360025,
+   "atol": 1e-08,
+   "format": ".6f",
+   "description": "Quasienergy of $S^*$ at $J_0(A/4)=0$ (atomic value $U/2$)"
+  },
+  "decoupled_D": {
+   "value": 0.0006656220706418026,
+   "atol": 1e-08,
+   "format": ".6f",
+   "description": "Quasienergy of $D$ at $J_0(A/4)=0$ (atomic value 0)"
+  },
+  "vv0_error": {
+   "value": 0.0007219032511894541,
+   "atol": 1e-09,
+   "format": ".3e",
+   "description": "Van Vleck error of order 0 at $A=6$, largest of $S$, $S^*$, $D$"
+  },
+  "vv2_error": {
+   "value": 3.641320342279153e-06,
+   "atol": 1e-10,
+   "format": ".3e",
+   "description": "Van Vleck error of order 2 at $A=6$"
+  },
+  "vv2_error_decoupled": {
+   "value": 1.092789868393628e-06,
+   "atol": 1e-10,
+   "format": ".3e",
+   "description": "Van Vleck error of order 2 at $J_0(A/4)=0$"
+  },
+  "vv_first_order": {
+   "max": 1e-12,
+   "description": "Order 1 minus order 0 for a cosine phase drive, where $H_{-k}=H_k$"
+  },
+  "vv0_renormalized": {
+   "max": 1e-10,
+   "description": "Order 0 minus the static junction with $\\Gamma J_0(A/4)^2$"
+  },
+  "scaling_error0": {
+   "value": 0.004555286790816959,
+   "rtol": 1e-06,
+   "format": ".3e",
+   "description": "One lead, phase and level drive: order-0 error at $\\Omega=40$"
+  },
+  "scaling_error1": {
+   "value": 0.000325002554173226,
+   "rtol": 1e-06,
+   "format": ".3e",
+   "description": "One lead, phase and level drive: order-1 error at $\\Omega=40$"
+  },
+  "scaling_error2": {
+   "value": 1.091303265177146e-05,
+   "rtol": 1e-06,
+   "format": ".3e",
+   "description": "One lead, phase and level drive: order-2 error at $\\Omega=40$"
+  },
+  "scaling_slope0": {
+   "value": -0.9246481036310533,
+   "atol": 0.0001,
+   "format": ".3f",
+   "description": "Fitted exponent of the order-0 error versus $\\Omega$ (asymptotically $-1$)"
+  },
+  "scaling_slope1": {
+   "value": -1.9726679205955562,
+   "atol": 0.0001,
+   "format": ".3f",
+   "description": "Fitted exponent of the order-1 error versus $\\Omega$ (asymptotically $-2$)"
+  },
+  "scaling_slope2": {
+   "value": -2.8271180331976695,
+   "atol": 0.0001,
+   "format": ".3f",
+   "description": "Fitted exponent of the order-2 error versus $\\Omega$ (asymptotically $-3$)"
+  }
+ }
+}

@@ -1,0 +1,84 @@
+\chapter{Example: the high-frequency limit}\label{ch:ex-highfreq}
+
+When the drive is faster than every internal process, the system responds to a
+time-averaged, renormalized Hamiltonian. This limit is the basis of Floquet
+engineering~\cite{goldman2014periodically,bukov2015universal,eckardt2017colloquium}, and it is
+a direct test of the van Vleck expansion of \cref{sec:van-vleck}.
+
+\section{Accuracy of the van Vleck expansion}
+
+\Cref{fig:highfreq}(a) compares the eigenvalues of the van Vleck Hamiltonians of order
+$n=0$, $1$ and $2$ with exact Sambe quasienergies for a single-lead model driven
+simultaneously through its phase and level energy, with a phase offset between the two
+drives. The error decreases as $\Omega^{-(n+1)}$, as the expansion
+predicts~\cite{eckardt2015high,mikami2016brillouin}. With a relative phase the drive is not
+even in time, $H_{-k}\ne H_k$, and the first-order term $[H_1,H_{-1}]/\Omega$ is finite. For a
+single-parameter cosine drive it vanishes and the zeroth-order result is already accurate to
+$O(\Omega^{-2})$.
+
+\section{Renormalized coupling and coherent destruction of tunnelling}
+
+For a phase drive with $\Omega$ larger than the many-body spectral width, the zeroth-order
+Hamiltonian is $H_0$ of \cref{eq:phase-h0}: the junction with
+\begin{equation}\label{eq:gamma-renorm}
+  \Gamma\to\Gamma_{\mathrm{eff}}=\Gamma J_0\!\left(\frac A4\right)^2.
+\end{equation}
+Each tunnelling amplitude carries the phase factor $\ee^{\mp\ii\phi(t)/4}$. Its time average is
+$J_0(A/4)\,\ee^{\mp\ii\phi_0/4}$, so the hybridization, quadratic in the tunnelling amplitude,
+is reduced by $J_0(A/4)^2$. As $A$ increases, the dot decouples progressively from the leads; at
+the first zero of $J_0$, $A=4\times2.405\approx9.62$, it is isolated to leading order in
+$1/\Omega$. This is the junction version of dynamical
+localization~\cite{dunlap1986dynamic,holthaus1992collapse,lignier2007dynamical} and of
+coherent destruction of tunnelling~\cite{grossmann1991coherent,kayanuma1994role}.
+
+\Cref{fig:highfreq}(b) follows the quasienergies of the lowest singlets and of the doublet
+for $U=\q{highfreq.u}$, $\Gamma=\q{highfreq.gamma}$, $\eps=\q{highfreq.detuning}$ and
+$\Omega=\q{highfreq.omega}$, together with the static energies of the junction with the
+renormalized coupling \eqref{eq:gamma-renorm}. The undriven ground state is a singlet. As
+$\Gamma_{\mathrm{eff}}$ decreases, the doublet becomes the lowest dressed state near
+$A\approx\q{highfreq.crossing}$: the drive induces a level crossing between the dressed
+singlet and doublet, a dynamical analogue of the 0--$\pi$ transition. At the zero of $J_0$
+the time-averaged coupling vanishes and the atomic energies are recovered to leading order,
+$\qe_{S,S^*}=U/2$ and $\qe_D=0$. The remaining small deviations, which also split $S$ and $S^*$,
+are the $O(\Omega^{-2})$ corrections of the higher harmonics $J_k(A/4)$, $k\ge1$; the
+second-order van Vleck Hamiltonian reproduces them.
+
+\begin{figure}[htb]
+\centering
+\manualfigure{highfreq}
+\caption{High-frequency limit. (a) Maximum deviation between the eigenvalues of the van
+Vleck Hamiltonian of order $n$ and exact Sambe quasienergies, for a single-lead model with
+combined phase and level drive; dotted lines are $\Omega^{-(n+1)}$. (b) Quasienergies of the
+phase-driven junction ($U=\q{highfreq.u}$, $\Gamma=\q{highfreq.gamma}$,
+$\eps=\q{highfreq.detuning}$, $\phi_0=\q{highfreq.phi}$, $\q{highfreq.pairs}$ bath level pair
+per lead with $D=\q{highfreq.bandwidth}$, $\Omega=\q{highfreq.omega}$) versus drive amplitude.
+Markers are Floquet results, lines the static energies with $\Gamma\to\Gamma J_0(A/4)^2$.}
+\label{fig:highfreq}
+\end{figure}
+
+\begin{caution}
+The renormalization \eqref{eq:gamma-renorm} describes the formal limit with $\Omega$
+above the full reservoir bandwidth. Microwave experiments on superconducting
+junctions typically operate below that bandwidth. For
+$\Gamma,\abs\eps\ll\Omega\ll\Delta$ the leads follow the drive adiabatically, and the
+relevant time average is that of the induced pairing $\Gamma_\phi(t)$,
+$\Gamma\cos(\phi_0/2)\to\Gamma J_0(A/2)\cos(\phi_0/2)$ (\cref{sec:driven-largegap}). The
+order of limits matters, and the van Vleck expansion of the full model is a reliable
+approximation only in the first regime.
+\end{caution}
+
+\begin{incode}
+\begin{lstlisting}[frame=none,backgroundcolor={},aboveskip=0pt,belowskip=0pt]
+fast = dict(bath=cosh_grid(pairs=1, bandwidth=2.), u=1., gamma=.8, phi=.8, detuning=0.,
+            symmetry=False, compress=False)
+periodic = PeriodicHamiltonian.from_parameters(reference_model, fast,
+                                               ParameterDrive.cosine("phi", 6.), omega=40.)
+effective = periodic.van_vleck(2)                     # a static Hamiltonian
+energies = solve(effective, 2, Sector(1, 1)).energies    # dressed doublet, panel (b) of the figure
+\end{lstlisting}
+The effective Hamiltonian keeps the coordinates of the model, so it can be compared with
+static calculations and solved by DMRG.
+\par\smallskip\usermanual{docs/floquet.md}.
+\end{incode}
+
+\tutorial{04_high_frequency}

@@ -25,7 +25,7 @@ state = solve(h, cutoff=None, sector=Sector(0, 0), backend="qp")
 | `wide_band` | Boolean selecting analytic wide-band ChE coefficients | `False` |
 
 The returned normal levels and weights have exact mirror symmetry. An odd
-`levels` count includes a zero normal-energy level. The quantum-impurity
+value of `levels` includes a normal-state level at zero energy. The quantum-impurity
 couplings, interaction and phase are supplied to the model, not to the bath
 generator. Increasing `levels` changes coefficients throughout the chain.
 It is distinct from increasing the QP cutoff or the MPS bond dimension.
@@ -77,7 +77,7 @@ ill-conditioned Padé coefficient system.
 The coefficients are evaluated using positive Gauss–Legendre integration in $\theta$ with
 `max(64, 4*levels)` nodes and a two-pass reorthogonalized Jacobi recurrence.
 The transformed variable is scaled for narrow bands. Thus coefficient matching
-is numerical, to floating-point/integration precision. Tests check analytic
+is numerical, with accuracy limited by floating-point arithmetic and numerical integration. Tests check analytic
 moments, the paper's explicit $L=1,2,3$ coefficients, and direct chain/star
 resolvents; the application also compares full many-body chain/star spectra.
 
@@ -89,30 +89,30 @@ With `wide_band=True`, the coefficients are the paper's analytic Eq. (17):
 h_0=L,\qquad h_\ell=\frac{L^2-\ell^2}{4\ell^2-1},\quad 1\leq\ell\lt L.
 ```
 
-The normal-state chain has zero onsite energies and nearest-neighbor hoppings
+The normal-state chain has zero on-site energies and nearest-neighbour hoppings
 $\Delta\sqrt{h_\ell}$. Its coupling to an impurity is
 $\sqrt{\Gamma\Delta h_0}$. Diagonalizing the chain gives the star levels and
 contact residues. Orthogonality preserves the uniform singlet pairing.
 
 In this mode, **`bandwidth` sets only the density normalization convention**
-$\rho=1/(2D)$ used by `DiscreteBath` and the tunneling matrices. It is not a
-physical band cutoff in the target function. The weights scale with $\rho$,
+$\rho=1/(2D)$ used by `DiscreteBath` and the tunnelling matrices. The target function
+describes an infinite band. The weights scale with $\rho$,
 so physical combinations such as $w_i/(\pi\rho)$ are independent of this
 normalization parameter. `metadata['target']` explicitly says `wide-band`.
 Use the default `wide_band=False` for a calculation at a specified finite $D$.
 In wide-band mode, the recorded `measure_error=sum(weights)-1` also depends on
-the density convention and is not a physical continuum error estimate.
+the density convention. Assess continuum accuracy through observable convergence.
 
-**Do not normalize the weights to sum to one.** ChE matches the low-frequency
-kernel. A short chain need not reproduce the normal-state zeroth moment or the
-high-frequency tail. Such normalization would change the prescribed model.
+**Preserve the weights returned by ChE.** They are chosen to match the low-frequency
+kernel. Assess normal-state moments and high-frequency behaviour separately for
+the chosen band limit; rescaling the weights would change the prescribed model.
 
 ## Numerical interpretation
 
 - ChE is a bath approximation; star–chain transformations are coordinate
   changes; QP/MPS truncations approximate the resulting finite many-body problem.
-- Bath-size refinement need not be variational or monotonic because the
-  Hamiltonian changes with $L$. Compare both odd and even sequences when relevant.
+- Bath-size refinement changes the Hamiltonian with $L$, allowing nonmonotonic
+  convergence. Compare both odd and even sequences when relevant.
 - Ground-state currents, near-edge excitations and small singlet–triplet
   splittings require separate convergence evidence.
 - Wide-band ChE and finite-band NRG describe different reservoir limits even
@@ -122,4 +122,4 @@ The [worked comparison](../applications/bobok_2025_chain_expansion/README.md)
 reproduces selected Fig. 8 current curves and Fig. 17 common-lead spin physics,
 including comparisons with GAL, fitted surrogate baths and independent NRG
 figure data. The [bath representation guide](bath_representations.md) covers
-the other bath families and their measured tradeoffs.
+the other bath families and their measured accuracy and computational cost.

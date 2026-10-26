@@ -24,7 +24,7 @@ quantum dots*, Physical Review B **112**, 205418 (2025).
 
 We use the version-2 arXiv source and its original `fig_08.pdf` and `fig_17.pdf`,
 released under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
-The optional `extract_reference.py` reads marker centers and curve coordinates
+The optional `extract_reference.py` reads marker centres and curve coordinates
 from the original figures using PyMuPDF. The stored CSV tables retain these
 coordinates; `reference/provenance.json` records source-file checksums and
 axis calibrations.
@@ -55,7 +55,7 @@ h_0=L,\qquad h_\ell=\frac{L^2-\ell^2}{4\ell^2-1},
 \qquad \gamma_j=\sqrt{\Gamma_j\Delta h_0}.
 ```
 
-The generator returns exact mirrored **star coordinates**. The whole impurity
+The generator returns exactly mirrored **star coordinates**. The complete finite-system
 Hamiltonian is then solved by QP diagonalization. We separately build
 the physical-electron **chain** and compare it with star calculations using
 both full ED and DMRG. A coordinate transformation by itself does not improve
@@ -97,7 +97,7 @@ phases with bond dimension 64 and two initial-state trials.
 | Current unit | $e\Delta/\hbar$ |
 
 The phase convention is $\phi=\phi_R-\phi_L$ with phases $[-\phi/2,+\phi/2]$.
-Relabeling the identical leads aligns it with the paper's positive-current
+Relabelling the identical leads aligns it with the paper's positive-current
 orientation. The reported current is **twice** the solver's `phase_derivative`.
 Both even and odd sector energies are computed at every point; branch currents
 are retained along with the ground-state current.
@@ -175,7 +175,7 @@ are interpolated from the archived smooth sector currents.
 Here $\nu$ denotes the paper's pairing expectation, rather than the GAL
 renormalization factor used in the preceding section.
 
-The tunneling matrix couples **both dots to the same bath modes**, preserving
+The tunnelling matrix couples **both dots to the same bath modes**, preserving
 the off-diagonal hybridization. Replacing that matrix by independent reservoirs
 changes the problem. Both impurity orbitals remain interacting and dynamical.
 
@@ -226,7 +226,7 @@ The one-to-one spectral comparison gives maximum energy discrepancies of
 W8 respectively. For SM8 the corresponding error is **$0.07573\Delta$**. At
 12 interaction values, one displayed reference level lacks a distinct
 computed partner inside the plotted window.
-Thus the fitted bath's excellent ground-state observables do not certify its
+Thus close agreement of the fitted bath's ground-state observables with NRG does not establish the accuracy of its
 near-edge excitations.
 
 For the 39 NRG points where W8 has the same ground-state spin, its pairing and
@@ -260,8 +260,8 @@ For those five points, total QP diagonalization times were **74.4 s** for
 unrestricted W8, **11.9 s** for W8 at cutoff six, and **93.8 s** for unrestricted
 SM8. The two ten-level refinement calculations took **531 s** for W10 and **594 s** for SM10
 with exact exchange-symmetry reduction. All counts, settings and timings are
-archived; the latter pair uses fewer parameter points and more symmetry-sector
-solves, so it is not a like-for-like speed ratio with the five-point rows.
+archived; the latter pair uses fewer parameter points and more symmetry-resolved
+calculations, so its runtime cannot be compared directly with the five-point results.
 
 ### Exact symmetry reduction for larger baths
 

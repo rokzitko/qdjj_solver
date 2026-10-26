@@ -15,16 +15,21 @@ from scipy.special import roots_legendre
 class DiscreteBath:
     """Spin-degenerate normal levels and contact weights for one BCS reservoir.
 
-    ``weights`` represents rho d xi, not the quasiparticle density of states.
+    ``weights`` represents the normal-state measure rho d xi.
     Each normal level is a spinful orbital. All QP excitation energies are
-    positive. Surrogate contact weights need not sum to one at finite size.
+    positive. At finite size the sum of surrogate contact weights may differ from one.
     """
 
     xi: np.ndarray
+    """Nonempty one-dimensional finite signed normal energies, in Hamiltonian energy units."""
     weights: np.ndarray
+    """Strictly positive normal-state measure weights, same shape as ``xi``; their supplied values are preserved."""
     delta: float = 1.
+    """Positive finite superconducting gap in energy units."""
     bandwidth: float = 100.
+    """Positive finite normal-state half-bandwidth; sets the density per spin to 1/(2D)."""
     metadata: dict = field(default_factory=dict)
+    """Construction parameters, fit diagnostics and optional user provenance."""
 
     def __post_init__(self):
         xi, weights = np.array(self.xi, dtype=float, copy=True), np.array(self.weights, dtype=float, copy=True)
@@ -42,14 +47,17 @@ class DiscreteBath:
 
     @property
     def levels(self):
+        """Number of signed spinful normal levels in this reservoir; each level has two QP spin modes."""
         return self.xi.size
 
     @property
     def rho(self):
+        """Normal-state density per spin, 1/(2 bandwidth), in inverse energy units."""
         return 1 / (2*self.bandwidth)
 
     @property
     def energies(self):
+        """Positive Bogoliubov energies sqrt(xi**2 + delta**2), one per spinful level."""
         return np.hypot(self.xi, self.delta)
 
     @property
@@ -59,11 +67,13 @@ class DiscreteBath:
                 and np.array_equal(self.weights, self.weights[::-1]))
 
     def record(self):
+        """JSON-ready coefficients and metadata; retains the actual unnormalized weights."""
         return dict(xi=self.xi.tolist(), weights=self.weights.tolist(), delta=self.delta,
                     bandwidth=self.bandwidth, metadata=self.metadata)
 
     @classmethod
     def from_record(cls, record):
+        """Reconstruct and validate the coefficient record returned by ``record``."""
         return cls(**record)
 
 
@@ -71,8 +81,8 @@ def cosh_grid(pairs: int, delta=1., bandwidth=100.) -> DiscreteBath:
     """Gauss--Legendre quadrature in xi=±Delta sinh(t), E=Delta cosh(t).
 
     There are ``2*pairs`` signed normal levels *per reservoir*. Coarse rules
-    retain their actual quadrature weights; silently normalizing their sum
-    would change the discretization. The zeroth-moment error is recorded.
+    retain their actual quadrature weights to preserve the contact measure.
+    The zeroth-moment error is recorded.
     """
     if not isinstance(pairs, (int, np.integer)) or pairs < 1:
         raise ValueError("pairs must be a positive integer")
@@ -89,12 +99,22 @@ def cosh_grid(pairs: int, delta=1., bandwidth=100.) -> DiscreteBath:
 
 
 def hybridization_g(frequency, delta=1., bandwidth=100.):
+    """Flat finite-band imaginary-frequency kernel, with inverse-energy units.
+
+    ``frequency`` may be a scalar or array of real Matsubara-frequency arguments;
+    the result has the same shape. The gap and half-bandwidth use the same units.
+    """
     frequency = np.asarray(frequency, dtype=float)
     a = np.hypot(frequency, delta)
     return 2/np.pi*np.arctan(bandwidth/a)/a
 
 
 def discrete_g(bath, frequency):
+    """Imaginary-frequency kernel of a DiscreteBath, with the shape of ``frequency``.
+
+    Uses its actual contact weights and density convention; compare with
+    ``hybridization_g`` at the same physical gap and half-bandwidth.
+    """
     frequency = np.asarray(frequency, dtype=float)
     return np.sum((bath.weights/(np.pi*bath.rho)) /
                   (frequency[..., None]**2 + bath.energies**2), axis=-1)
@@ -127,14 +147,14 @@ def _measure_jacobi(nodes, weights, size):
 def chain_expansion(levels: int, delta=1., bandwidth=100., *, wide_band=False) -> DiscreteBath:
     """Bobok--Frk--Pokorny--Zonda ChE(L), returned in exact mirrored star coordinates.
 
-    ``levels`` is the number of spinful sites in one reservoir, not a QP cutoff.
+    ``levels`` sets the number of spinful sites in one reservoir; choose the QP cutoff separately.
     The default targets a finite flat band. ``wide_band=True`` uses Eq. (17)'s
     analytic infinite-band coefficients; then ``bandwidth`` only specifies the
     density convention rho=1/(2D), and cancels from physical hybridizations.
 
     Finite-band Padé coefficients are obtained from equivalent positive Gauss
     (even L) or endpoint-Radau (odd L) quadrature, avoiding a Hankel moment solve.
-    Coarse contact weights are NOT normalized to unit normal-state measure.
+    Coarse contact weights retain the measure obtained from that construction.
     """
     if (not isinstance(levels, (int, np.integer)) or isinstance(levels, (bool, np.bool_))
             or levels < 1):
@@ -202,7 +222,7 @@ def fit_surrogate(levels: int, delta=1., bandwidth=100., frequency_cutoff=100.,
     on a logarithmic frequency mesh used by Baran, Frost and Paaske (2023).
     A nonzero exponent changes the criterion and is therefore recorded.
     ``frequency_min`` and ``frequency_cutoff`` are in the Hamiltonian's units.
-    ``max_nfev`` bounds function evaluations per start, not the fitting accuracy.
+    ``max_nfev`` bounds function evaluations per start; assess accuracy using the resulting fit diagnostics.
     """
     if not isinstance(levels, (int, np.integer)) or levels < 1:
         raise ValueError("levels must be a positive integer")

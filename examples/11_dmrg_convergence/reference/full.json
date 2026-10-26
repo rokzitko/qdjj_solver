@@ -1,0 +1,10 @@
+{
+ "tutorial": "11_dmrg_convergence", "profile": "full",
+ "values": {
+  "energy": {"value": -0.296312491144, "atol": 1e-9, "format": ".12f", "description": "Final odd-sector energy, checked against ED for the same bath"},
+  "ed_error": {"max": 1e-9, "description": "Final energy discrepancy from unrestricted ED"},
+  "residual": {"max": 1e-7, "description": "Final full finite-Hamiltonian residual"},
+  "continuation_error": {"max": 1e-9, "description": "Energy change after save/load and continuation"},
+  "empirical_convergence": {"value": 1, "description": "Empirical bond-dimension convergence criteria satisfied"}
+ }
+}

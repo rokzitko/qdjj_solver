@@ -1,0 +1,148 @@
+{
+ "tutorial": "06_phase_drive",
+ "profile": "full",
+ "values": {
+  "omega0": {
+   "value": 0.7159930829051,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Pair transition energy $E_{S^*}-E_S$"
+  },
+  "element": {
+   "value": 0.027151909134660934,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Current matrix element $\\lvert\\langle S\\vert\\partial_\\phi H\\vert S^*\\rangle\\rvert$"
+  },
+  "rwa_splitting": {
+   "value": 0.01084719335476647,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "RWA splitting $2\\lvert(H_1)_{SS^*}\\rvert$ at $A=0.4$"
+  },
+  "linear_splitting": {
+   "value": 0.010860763653864375,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Linear law $A\\lvert\\langle S\\vert\\partial_\\phi H\\vert S^*\\rangle\\rvert$ at $A=0.4$"
+  },
+  "rwa_resonance": {
+   "value": 0.7141638936786362,
+   "atol": 1e-08,
+   "format": ".6f",
+   "description": "RWA resonance frequency at $A=0.4$"
+  },
+  "resonance_omega": {
+   "value": 0.7102662707389739,
+   "atol": 1e-06,
+   "format": ".6f",
+   "description": "Sambe resonance frequency $\\Omega_r$ at $A=0.4$"
+  },
+  "resonance_shift": {
+   "value": -0.005726812166126138,
+   "atol": 1e-06,
+   "format": ".6f",
+   "description": "Resonance shift $\\Omega_r-\\omega_{SS^*}$ at $A=0.4$"
+  },
+  "splitting": {
+   "value": 0.010737490646383446,
+   "atol": 1e-07,
+   "format": ".6f",
+   "description": "Sambe splitting $\\delta$ at the resonance, $A=0.4$"
+  },
+  "strong_linear_ratio": {
+   "value": 0.9327505390995259,
+   "atol": 1e-05,
+   "format": ".4f",
+   "description": "Sambe splitting at $A=1$ over the linear law"
+  },
+  "strong_rwa_ratio": {
+   "value": 0.9922078185818164,
+   "atol": 1e-08,
+   "format": ".4f",
+   "description": "RWA splitting at $A=1$ over the linear law, $8J_1(1/4)$"
+  },
+  "strong_resonance_shift": {
+   "value": -0.029862946759496745,
+   "atol": 1e-05,
+   "format": ".4f",
+   "description": "Resonance shift $\\Omega_r-\\omega_{SS^*}$ at $A=1$"
+  },
+  "symmetric_omega0": {
+   "value": 0.6726010054771713,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Pair transition energy at $\\epsilon=0$"
+  },
+  "symmetric_element": {
+   "max": 1e-12,
+   "description": "Current matrix element at $\\epsilon=0$ (eta selection rule)"
+  },
+  "symmetric_charge_element": {
+   "value": 0.6515759061448405,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Charge matrix element $\\lvert\\langle S\\vert n_d\\vert S^*\\rangle\\rvert$ at $\\epsilon=0$"
+  },
+  "symmetric_rwa_coupling": {
+   "max": 1e-12,
+   "description": "RWA coupling at $\\epsilon=0$, $A=0.4$"
+  },
+  "symmetric_mixing": {
+   "max": 1e-12,
+   "description": "Largest weight of $S^*$ in the dressed $S$, or of $S$ in the dressed $S^*$, at $\\epsilon=0$"
+  },
+  "symmetric_crossing": {
+   "value": 0.6678530779617908,
+   "atol": 1e-07,
+   "format": ".6f",
+   "description": "Frequency at which the replicas cross at $\\epsilon=0$, $A=0.4$"
+  },
+  "fan_omega0": {
+   "value": 0.7309911602806428,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Pair transition energy with two bath level pairs per lead"
+  },
+  "hybridization_factor": {
+   "value": 0.969114098888589,
+   "atol": 1e-12,
+   "format": ".4f",
+   "description": "Hybridization factor $J_0(A/4)^2$ of $H_0$ at $A=1$"
+  },
+  "dressed_shift": {
+   "value": 0.012185587769322215,
+   "atol": 1e-08,
+   "format": ".5f",
+   "description": "Dressed-singlet shift $\\varepsilon_S-E_S$ at $A=1$, $\\Omega=0.6$ (two bath level pairs)"
+  },
+  "averaged_shift": {
+   "value": 0.030332095683144877,
+   "atol": 1e-09,
+   "format": ".5f",
+   "description": "Shift of $E_S$ in the time-averaged $H_0$ at $A=1$"
+  },
+  "averaged_check": {
+   "max": 1e-12,
+   "description": "Difference of $E_S$ between $H_0$ and the junction with $\\Gamma J_0(A/4)^2$"
+  },
+  "ac_stark_shift": {
+   "value": -0.018146507913822663,
+   "atol": 1e-08,
+   "format": ".5f",
+   "description": "AC Stark part of the dressed-singlet shift at $A=1$"
+  },
+  "adiabatic_shift": {
+   "value": 0.014889463424704874,
+   "atol": 1e-09,
+   "format": ".5f",
+   "description": "Adiabatic estimate $\\overline{E_S(\\phi(t))}-E_S$ at $A=1$"
+  },
+  "fan_crossing": {
+   "value": 1.4000000000000001,
+   "atol": 1e-09,
+   "format": ".2f",
+   "description": "Amplitude of the first avoided crossing of the dressed singlet at $\\Omega=0.6$"
+  }
+ }
+}

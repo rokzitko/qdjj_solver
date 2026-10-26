@@ -42,12 +42,12 @@ in the manifest is context; file hashes identify the exact working-tree
 contents imported. The QP importer verifies model parameters, sectors,
 residuals, and agreement among the original timing repetitions, retains the
 first repetition's expectations, and records the maximum repetition spread.
-The current package's reproduction settings live in `input.json`; each row's
+The current package's reproduction settings are stored in `input.json`; each row's
 `options` preserves the settings actually used for that measurement.
 
 Four distinct bath records are retained. Differences between the two versions
 at each bath size are quadrature-library roundoff, checked at relative tolerance
-$2\times10^{-14}$ and absolute tolerance $10^{-14}$. Fresh cutoff ladders share
+$2\times10^{-14}$ and absolute tolerance $10^{-14}$. New cutoff-refinement calculations share
 exactly the same bath object. The normal-state weights are never renormalized.
 
 The legacy DMRG references have converged sweep flags, sweep energies, discarded

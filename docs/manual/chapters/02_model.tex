@@ -1,0 +1,389 @@
+\chapter{The model}\label{ch:model}
+
+\section{The impurity}
+
+The impurity is a spin-degenerate orbital with annihilation operators $d_\sigma$,
+$\sigma\in\{\up,\dn\}$, occupation $n_d=n_\up+n_\dn$ and spin $\Sz_d=(n_\up-n_\dn)/2$.
+Its Hamiltonian is written relative to half filling,
+\begin{equation}\label{eq:Hd}
+  \Hd=\frac U2\,(n_d-1)^2+\eps\,(n_d-1)+B\,\Sz_d ,
+\end{equation}
+where $U$ is the charging energy, $\eps=\eps_d+U/2$ is the detuning from the
+particle--hole-symmetric point and $B$ is a Zeeman energy that acts on the dot only. In
+terms of the conventional Anderson parameters,
+$\Hd=\eps_d n_d+Un_\up n_\dn+B\Sz_d+\mathrm{const}$. The four atomic states have the
+energies
+\begin{equation}\label{eq:atomic}
+  E_{\ket0}=\frac U2-\eps,\qquad E_{\ket2}=\frac U2+\eps,\qquad E_{\ket{\sigma}}=\pm\frac B2 ,
+\end{equation}
+so at $B=0$ the singly occupied doublet is the atomic ground state when
+$\abs\eps<U/2$. Multi-orbital impurities with arbitrary one- and two-body terms are
+supported as well (\cref{sec:general-impurity}).
+
+\subsection{Charging, gates and the four dot configurations}
+
+The four states in \cref{eq:atomic} are labelled by physical \emph{dot-electron occupations}.
+The Andreev-quasiparticle occupations of \cref{sec:abs-occupations} refer to a different basis.
+The states $\ket0$ and $\ket2=d_\up\dg d_\dn\dg\ket0$ are spin singlets;
+$\ket\up$ and $\ket\dn$ form a doublet. In the conventional Anderson
+notation, the first electron-addition energy is $\epsilon_d$ and the second is
+$\epsilon_d+U$. A gate that moves these addition energies through the lead
+chemical potential changes the preferred charge. The interval
+$-U<\epsilon_d<0$, equivalently $|\eps|<U/2$, favours one electron on an
+isolated dot. This is the simplest Coulomb-blockade valley.
+
+\begin{figure}[htb]
+\centering\manualfigure{primer_dot}
+\caption{Physical electron configurations of a single-orbital dot. Tunnelling
+visits the singly occupied states by exchanging one electron with a lead.
+An induced pair amplitude instead couples the two even configurations directly.
+The energy labels use the shifted convention of \cref{eq:Hd}; arrows indicate
+couplings between configurations.}
+\label{fig:primer-dot}
+\end{figure}
+
+Hybridization broadens the charge transitions and mixes dot and lead states.
+Near a charge degeneracy, empty or doubly occupied configurations have appreciable
+weight: this is a charge-fluctuating or mixed-valence regime. Well inside a
+singly occupied valley, with $U$ large relative to the hybridization, charge
+fluctuations are mainly virtual and the low-energy variable is a spin. Replacing
+the normal leads by superconductors adds coherent pair exchange and removes
+their gapless single-particle continuum. These two changes are responsible for
+much of the physics that follows.
+
+\begin{physics}[A useful hierarchy of questions]
+First ask whether the dot would be empty, singly occupied or doubly occupied in
+isolation. Next compare its charge-excitation energies with the coupling to the
+leads. Finally ask whether the superconducting gap freezes out lead excitations
+before strong spin correlations develop. Identify the regime from the gate
+setting together with $U$, $\Gamma$ and $\Delta$.
+\end{physics}
+
+\section{Superconducting reservoirs}
+
+Each reservoir $l$ is an $s$-wave BCS superconductor,
+\begin{equation}\label{eq:bcs}
+  H_l=\sum_{i\sigma}\xi_{li}\,c_{li\sigma}\dg c_{li\sigma}
+      -\Delta_l\sum_i\left(c_{li\up}\dg c_{li\dn}\dg+c_{li\dn}c_{li\up}\right),
+\end{equation}
+with a real gap $\Delta_l>0$; the superconducting phase is moved into the tunnelling terms
+(\cref{sec:tunnelling}). The Bogoliubov transformation
+\begin{equation}\label{eq:bogoliubov}
+  c_{i\up}=u_i\gamma_{i\up}+v_i\gamma_{i\dn}\dg,\qquad
+  c_{i\dn}=u_i\gamma_{i\dn}-v_i\gamma_{i\up}\dg,\qquad
+  u_i,v_i=\sqrt{\tfrac12\bigl(1\pm\xi_i/E_i\bigr)},
+\end{equation}
+diagonalizes $H_l$ in terms of quasiparticles with energies $E_i=\sqrt{\xi_i^2+\Delta_l^2}\ge\Delta_l$:
+$H_l=\sum_{i\sigma}E_i\gamma_{i\sigma}\dg\gamma_{i\sigma}+\sum_i(\xi_i-E_i)$. The last
+term, the energy of the isolated BCS vacuum, is subtracted from all energies reported by
+\pkg{}.
+
+\paragraph{The continuum and its discretization.}
+A real reservoir has a continuum of levels with a flat normal-state density of states
+$\rho=1/(2D)$ per spin on $[-D,D]$; $D$ is the \emph{half}-bandwidth. The impurity
+couples to one combination of reservoir states, the contact orbital
+\begin{equation}\label{eq:contact}
+  C_{l\sigma}=\sum_i\sqrt{w_{li}}\,c_{li\sigma},
+\end{equation}
+and the impurity couples to the reservoir through the corresponding hybridization function. A finite bath
+replaces the continuum by levels $\xi_{li}$ with weights $w_{li}$ that approximate this
+function as a quadrature rule. \pkg{} provides logarithmic (\code{cosh_grid}), fitted
+surrogate~\cite{baran2023surrogate} and Pad\'e chain-expansion~\cite{bobok2025scalable}
+representations. The bath and its weights are part of the model and are stored with every
+result. The continuum is recovered only in the limit of many levels; this limit must be
+checked separately from all other approximations (\cref{sec:bath,ch:ex-numerics}).
+
+\section{Tunnelling, phases and the reference junction}\label{sec:tunnelling}
+
+The impurity couples to the contact orbitals,
+\begin{equation}\label{eq:tunnelling}
+  H_T=\sum_{l\sigma}\left(\ee^{\ii\phi_l/2}\,t_l\,C_{l\sigma}\dg d_\sigma+\mathrm{h.c.}\right),
+  \qquad \Gamma_l=\pi\rho\,t_l^2,\qquad \Gamma=\sum_l\Gamma_l .
+\end{equation}
+The phase factor $\ee^{\ii\phi_l/2}$ carries the superconducting phase $\phi_l$ of lead $l$.
+In the physical gauge the tunnelling amplitudes are real and the pairing term of lead $l$
+is $-\Delta_l\sum_i(\ee^{-\ii\phi_l}c_{li\up}\dg c_{li\dn}\dg+\mathrm{h.c.})$, so that the
+pair amplitude $\langle c_{li\up}\dg c_{li\dn}\dg\rangle$ is proportional to
+$\ee^{\ii\phi_l}$. The substitution $c_{li\sigma}\to\ee^{-\ii\phi_l/2}c_{li\sigma}$, generated
+by the unitary $W=\exp(-\ii\sum_l\phi_lN_l/2)$ with $N_l$ the electron number of lead $l$,
+makes the pair potential real, as in \eqref{eq:bcs}, and moves the phase into the
+tunnelling. Only phase differences are physical. $\Gamma$ denotes the \emph{total} hybridization. Papers
+often quote the coupling $\Gamma_l$ per lead instead, which for two identical leads is
+$\Gamma/2$. A direct interlead hopping $W_{LR}$ between the contact orbitals, with the phase
+factor $\ee^{\ii(\phi_L-\phi_R)/2}$, models a parallel conduction channel.
+
+The \emph{reference junction} used throughout this manual consists of a single-orbital
+impurity, two identical leads with $\Gamma_L=\Gamma_R=\Gamma/2$, phases
+$\phi_{L,R}=\mp\phi/2$ and no direct hopping. Its parameters, unless stated otherwise,
+are
+\begin{equation}\label{eq:reference}
+  U=\q{static.u},\quad \Gamma=\q{static.gamma},\quad \eps=\q{static.detuning},\quad
+  \phi=\q{static.phi},\quad D=\q{static.bandwidth},\quad \Delta=\q{static.delta},
+\end{equation}
+with a \code{cosh_grid} bath of $\q{static.pairs}$ level pairs per lead.
+
+\section{Observables and the energy zero}
+
+The supercurrent follows from the phase dependence of the energy,
+\begin{equation}\label{eq:current}
+  I=\frac{2e}{\hbar}\frac{\partial E}{\partial\phi}=\frac{2e}{\hbar}\left\langle\frac{\partial H}{\partial\phi}\right\rangle ,
+\end{equation}
+by the Hellmann--Feynman theorem. With $\phi=\phi_R-\phi_L$ and the electron charge $-e$
+($e>0$), $I$ is the electric current from the left to the right lead: the tunnelling
+changes the electron number of lead $l$ at the rate
+$\dot N_l=-(2/\hbar)\langle\partial H/\partial\phi_l\rangle$. The operator $\partial H/\partial\phi$ is available as
+the observable \code{phase_derivative}. It is reported in units of $\Delta$, so the
+current is in units of $2e\Delta/\hbar$. Further built-in observables are the impurity charge
+$n_d$, the impurity spin $\Sz_d$ and the double occupancy $n_\up n_\dn$. Because the BCS
+vacuum energies are subtracted, energies at $\Gamma=0$ are the atomic energies
+\eqref{eq:atomic}.
+
+The local orbital density matrix resolves occupations and pairing coherences.
+In the ordered basis $\ket0,\ket\up,\ket\dn,\ket2$, with
+$\ket2=d_\up\dg d_\dn\dg\ket0$, its entries are
+$\rho_{ab}=\langle\ket b\!\bra a\rangle$.
+Fixed total parity removes local odd--even coherences, while
+$\rho_{30}=\langle d_\dn d_\up\rangle=F$ can remain finite.
+Writing $P_a=\rho_{aa}$ gives $\langle n_d\rangle=P_\up+P_\dn+2P_2$
+and probabilities $(P_0+P_2)/2\pm\operatorname{Re}F$ for the normalized
+local states $(\ket0\pm\ket2)/\sqrt2$. Their sum is the local even weight.
+Thus unit mean occupation can describe either a local spin or coherent pair mixing.
+\code{orbital_density_matrix} evaluates these operators in physical electron
+coordinates for QP or DMRG states; \code{orbital_density_properties} also returns
+the purity $\operatorname{Tr}\rho^2$. Equal incoherent weighting of a complete
+degenerate eigenspace gives a basis-independent density matrix.
+\usermanual{docs/interfaces.md} gives the measurement and mixture arguments.
+
+\section{Symmetries and sectors}\label{sec:symmetries}
+
+The Hamiltonian conserves the fermion parity $P=(-1)^N$: pairing changes the electron
+number by two. Without transverse fields or spin--orbit coupling it also conserves the
+total spin projection $S_z$, and at $B=0$ it is SU(2) symmetric. Calculations are performed in a
+\emph{sector} of fixed parity and, optionally, fixed $2S_z$ (\code{Sector(parity, twice_sz)}).
+For the symmetric junction at the particle--hole-symmetric point ($\eps=0$, no normal
+interlead hopping) there is an additional $\mathbb Z_2$ symmetry of particle--hole type.
+It is diagonal in the eta representation (\code{reference_model(symmetry=True)} at $\eps=0$),
+and its eigenvalue, the \emph{eta parity} $\eta=\pm1$, can be used as a further
+quantum number. Tunnelling, pairing, $U$ and
+the phase dependence are eta-even, whereas $n_d-1$ is eta-odd, so a detuning breaks the
+symmetry. In \cref{sec:selection} this distinction becomes a selection rule for driven
+transitions.
+
+\begin{caution}
+At exact degeneracies the eigenvectors can be rotated within their common eigenspace. Expectation values of
+non-conserved operators then depend on the basis chosen within the degenerate subspace;
+compare complete multiplets, or resolve them by additional quantum numbers.
+\end{caution}
+
+\section{Subgap states: singlet and doublet}\label{sec:subgap}
+
+\paragraph{Atomic limit.}
+For $\Gamma\to0$ the dot decouples. The spectrum consists of the atomic energies
+\eqref{eq:atomic} plus quasiparticle excitations of the leads, each costing at least $\Delta$. Even parity
+contains $\ket0$ and $\ket2$, odd parity the doublet $\ket\sigma$.
+
+\paragraph{Large-gap (proximitized-dot) limit.}
+In the wide-band limit, when $\Delta$ exceeds the dot and hybridization scales,
+virtual Cooper-pair tunnelling induces a local
+pairing on the dot. Eliminating the leads gives the effective
+Hamiltonian $H_\infty$ of the infinite-gap limit~\cite{meng2009selfconsistent,karrasch2008josephson,zonda2023generalized}
+\begin{equation}\label{eq:largegap}
+  H_\infty=\Hd-\left(\Gamma_\phi\,d_\up\dg d_\dn\dg+\Gamma_\phi^*\,d_\dn d_\up\right),
+  \qquad \Gamma_\phi=\sum_l\Gamma_l\ee^{-\ii\phi_l}=\Gamma\cos\frac\phi2 ,
+\end{equation}
+the last equality for the symmetric junction. The doublet is unaffected, $E_D=\pm B/2$,
+while $\ket0$ and $\ket2$ hybridize into two singlets,
+\begin{equation}\label{eq:singlets}
+  E_{S,S^*}=\frac U2\mp\sqrt{\eps^2+\abs{\Gamma_\phi}^2}.
+\end{equation}
+The even subspace is therefore a two-level system with the pseudospin Hamiltonian
+$\tfrac U2+\eps\tau_z-\abs{\Gamma_\phi}\tau_x$, where $\tau_z=\pm1$ for $\ket2$ and
+$\ket0$. At $B=0$ the ground state is a singlet when $\sqrt{\eps^2+\abs{\Gamma_\phi}^2}>U/2$ and
+a doublet otherwise; the phase dependence of $\Gamma_\phi$ drives the transition. This two-level
+system reappears in \cref{ch:ex-tls} as the simplest driven model.
+
+\subsection{Diagonalizing the even sector by hand}
+
+In the ordered electron basis $(\ket0,\ket2)$, the even block is
+\begin{equation}\label{eq:atomic-even-block}
+ H_{\mathrm{even}}=
+ \begin{pmatrix}U/2-\eps&-\Gamma_\phi^*\\-\Gamma_\phi&U/2+\eps\end{pmatrix}.
+\end{equation}
+Its diagonal entries cross when $\eps=0$, but pair mixing turns that crossing
+into an avoided crossing of size $2|\Gamma_\phi|$. The lower eigenstate is a
+coherent superposition of empty and doubly occupied dot configurations.
+For $R=\sqrt{\eps^2+|\Gamma_\phi|^2}>0$, its charge follows either
+from its wavefunction or from the Hellmann--Feynman theorem:
+\begin{equation}
+ \expval{n_d}_S-1=\frac{\partial E_S}{\partial\eps}=-\frac{\eps}{R}.
+\end{equation}
+At half filling it has mean dot charge one despite containing only empty and
+doubly occupied configurations in this limit. This is a direct example of
+even parity with odd mean charge.
+
+\begin{figure}[htb]
+\centering\manualfigure{primer_atomic}
+\caption{Large-gap dot with $U=\q{primer.atomic_u}$ and
+$|\Gamma_\phi|=\q{primer.atomic_pairing}$ in a common illustrative energy unit.
+(a) The even singlets avoid crossing each other; the lower singlet crosses the
+uncoupled odd doublet. (b) Its mean charge and the global ground-state charge.
+These curves describe the infinite-gap effective dot. The finite-gap reference
+junction is defined separately in \cref{eq:reference}.}
+\label{fig:primer-atomic}
+\end{figure}
+
+At zero field, a parity transition occurs at $R=U/2$. At fixed
+$|\Gamma_\phi|<U/2$, a gate sweep crosses this boundary twice, leaving a
+doublet region around half filling. Increasing $|\Gamma_\phi|$ eventually
+removes that region. For two leads,
+\begin{equation}
+ |\Gamma_\phi|^2=\Gamma_L^2+\Gamma_R^2+
+                     2\Gamma_L\Gamma_R\cos\phi.
+\end{equation}
+Pair exchange is strongest when the condensate contributions add, and weakest
+when they oppose each other. Exact cancellation at $\phi=\pi$ requires equal
+couplings. The even states repel because pairing couples them; a singlet and
+doublet cross because their parities differ.
+
+The wide-band qualification is important when using a finite-band solver.
+For a flat band of half-width $D$, a lead's zero-energy anomalous contribution
+has magnitude
+\begin{equation}\label{eq:finite-band-pairing}
+ \Gamma_{l,\mathrm{ind}}=
+ \frac{2\Gamma_l}{\pi}\arctan\frac{D}{\Delta}.
+\end{equation}
+This follows by integrating
+$\Gamma_l\Delta/[\pi(\xi^2+\Delta^2)]$ over $[-D,D]$.
+Taking $D\gg\Delta$ first recovers $\Gamma_l$. Sending $\Delta$ to infinity
+at fixed $D$ instead suppresses this contribution. Obtaining the conventional atomic
+pairing model therefore requires the wide-band limit first. Replacing each lead
+by one paired site defines a separate finite-reservoir approximation.
+
+\subsection{Finite gap and Kondo correlations}
+For $\Delta$ comparable to $U$ and $\Gamma$, quasiparticle states of the leads contribute
+to the bound states. In the strongly interacting regime, Kondo screening, characterized by
+the normal-state Kondo temperature $T_K$, competes with the gap. In the
+local-moment regime, $k_BT_K\gg\Delta$ favours a screened singlet and
+$k_BT_K\ll\Delta$ a doublet; the boundary depends on conventions, phase and
+other parameters~\cite{choi2004kondo,siano2004josephson,bauer2007spectral,meng2009selfconsistent}.
+\Cref{ch:correlations} develops this competition and distinguishes it from local pairing.
+Besides $S$ and $D$, an excited singlet $S^*$ can lie inside the gap. The continuum starts
+one quasiparticle above the ground state, at $E_{\mathrm{ground}}+\Delta$, when
+all parity sectors are considered in the continuum limit. In a fixed sector,
+the lowest allowed threshold can be higher: a singlet plus one quasiparticle
+has odd parity, whereas a doublet plus one quasiparticle can have even parity.
+For example, the even breakup threshold on the singlet side can be
+$E_D+\Delta$, corresponding to a doublet plus one lead quasiparticle. A finite bath replaces continua by discrete
+levels; the shading below indicates the continuum-limit lower envelope.
+
+\begin{figure}[htb]
+\centering
+\manualfigure{static}
+\caption{Subgap spectrum of the reference junction \eqref{eq:reference}, measured from the
+ground state: (a) versus the phase at $\eps=\q{static.detuning}$, (b) versus the detuning at
+$\phi=\q{static.phi}$. The doublet becomes the ground state near $\phi=\pi$, where
+$\abs{\Gamma_\phi}$ is smallest. The shaded region marks the lowest continuum
+threshold across parity sectors, $\Delta$ above the ground state. Each probe's
+threshold follows from its allowed final sector. QP cutoff $\q{static.cutoff}$,
+$\q{static.pairs}$ bath level pairs per lead.}
+\label{fig:static}
+\end{figure}
+
+\begin{table}[htb]
+\centering\small
+\caption{Subgap states of the reference junction and their quantum numbers.}\label{tab:states}
+\begin{tabularx}{\textwidth}{llllX}
+\toprule
+State & Parity & Spin & $S_z$ sectors & Character \\
+\midrule
+$S$ & even & 0 & 0 & bonding combination of $\ket0$, $\ket2$ and lead quasiparticles; ground state at $\phi=\q{static.phi}$ \\
+$S^*$ & even & 0 & 0 & antibonding partner of $S$; reached from $S$ by the pair transition \\
+$D_{\up,\dn}$ & odd & $\tfrac12$ & $\pm\tfrac12$ & local moment, partially screened; split by $B$ \\
+continuum & both & & & ground state plus at least one quasiparticle, energy $\ge E_{\mathrm{ground}}+\Delta$ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\Cref{fig:static} shows the subgap spectrum of the reference junction. At
+$\phi=\q{static.phi}$ and $\eps=\q{static.detuning}$ the singlet $S$ is the ground state, the
+doublet lies $E_D-E_S=\q{static.doublet_energy}$ above it, and the excited singlet lies at
+$E_{S^*}-E_S=\q{static.excited_energy}$, well below the
+continuum. The $S$--$S^*$ pair transition and the doublet are the main subjects of the
+driven examples.
+
+\begin{physics}
+The singlet ground state is a coherent superposition of the empty and doubly occupied dot
+(and, at finite $\Delta$, of states with quasiparticles in the leads), held together by
+the induced pairing $\Gamma_\phi$. The excited singlet $S^*$ is the antibonding partner of
+the same pair. The transition $S\to S^*$ changes the charge distribution while preserving
+parity, so a gate or a phase drive can excite it when the matrix element is nonzero.
+The doublet carries total spin
+$1/2$ and is reached only by changing the parity, that is, by adding or removing a
+quasiparticle.
+\end{physics}
+
+\section{From a parity crossing to Josephson behaviour}\label{sec:zero-pi-picture}
+
+At zero temperature, the global ground-state energy is the lowest energy across
+all relevant sectors. A 0 junction has its equilibrium energy minimum at phase
+zero; a $\pi$ junction has its minimum at $\pi$. For an approximately sinusoidal
+current, these correspond to positive and negative coefficients of $\sin\phi$.
+These definitions classify the full phase dependence of the energy.
+
+In the usual single-level superconducting Anderson model, the singlet branch
+tends to favour 0 behaviour and the doublet branch $\pi$ behaviour. Virtual
+finite-gap tunnelling processes through a local moment can reverse the pair
+transfer amplitude~\cite{glazman1989resonant,spivak1991negative}. The strict
+large-gap model instead has a phase-independent doublet energy and therefore
+zero doublet current. It demonstrates the parity crossing; reproducing the
+finite-gap $\pi$ current requires the virtual processes described above.
+
+\begin{figure}[htb]
+\centering\manualfigure{primer_current}
+\caption{State-resolved and global ground-state currents of the finite-bath
+reference junction, rendered from the same calculation as \cref{fig:static}.
+Current is in units of $2e\Delta/\hbar$. The global ground state follows the
+singlet or doublet branch with lower energy; disconnected segments indicate
+parity changes, where a unique zero-temperature derivative need not exist.
+The finite-gap doublet current is distinct from its zero value in the strict
+large-gap model. Bath and QP truncations are those of \cref{fig:static}.}
+\label{fig:primer-current}
+\end{figure}
+
+If the ground-state parity changes as the phase is varied, the ground-state current is
+piecewise defined. Both zero and $\pi$ can be local energy minima in intermediate
+regimes, conventionally called $0'$ or $\pi'$ according to the global minimum.
+Multilevel structure, spin--orbit coupling and magnetic fields admit further
+possibilities. Thus ``even means 0'' and ``odd means $\pi$'' are useful
+associations for that single-level model. Classify a general weak link by the
+phase dependence of its ground-state energy.
+
+At finite temperature and with equilibrium exchange between sectors, use the
+free energy $F=-k_BT\ln\sum_m\exp[-E_m/(k_BT)]$ and
+$I=(2e/\hbar)\partial_\phi F$. If parity remains trapped during the experiment,
+restrict the state sum accordingly. A state-resolved current, a zero-temperature
+ground-state current and a thermally averaged current are three different
+observables even for the same Hamiltonian.
+
+\begin{physics}[Read the atomic-dot plot]
+At half filling, the lower even state in \cref{fig:primer-atomic} has mean charge
+one. Which electron configurations produce this mean charge? The state is an
+even superposition of zero and two dot electrons. Why can it cross the doublet?
+The two states have different parity. What produces a doublet supercurrent at
+finite gap? Virtual tunnelling processes generate the phase dependence retained
+in \cref{fig:primer-current}.
+\end{physics}
+
+\Cref{ch:practical} turns this model into a complete calculation, including
+sector comparison, observables, transitions, numerical checks and saved results.
+
+\section{General impurities and models}\label{sec:general-impurity}
+
+\code{make_model} builds models with several reservoirs, arbitrary tunnelling matrices
+$T_l$ (including spin mixing), interlead hopping and multi-orbital impurities, specified
+either by one- and two-body integrals or directly as fermionic operators. The reference
+junction is the special case built by \code{reference_model}. Any Hermitian,
+parity-conserving fermionic operator (\code{FermionOperator}) can be turned into a
+\code{Hamiltonian} and solved; the examples in \cref{ch:ex-tls,ch:ex-esr} use this freedom.
+
+\tutorial{01_subgap_states}

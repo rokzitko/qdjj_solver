@@ -1,0 +1,44 @@
+{
+ "tutorial": "00_first_calculation",
+ "profile": "full",
+ "values": {
+  "qp_energy": {
+   "value": -0.2950595967187083,
+   "atol": 1e-10,
+   "format": ".12f",
+   "description": "Lowest odd-parity energy at QP cutoff two"
+  },
+  "qp_residual": {
+   "max": 1e-09,
+   "description": "Eigensolver residual at QP cutoff two"
+  },
+  "qp_weight_0": {
+   "value": 0.8927056108389222,
+   "atol": 1e-08,
+   "format": ".8f",
+   "description": "Probability of no bath quasiparticle"
+  },
+  "exact_energy_0": {
+   "value": -0.2963124911440152,
+   "atol": 1e-09,
+   "format": ".12f",
+   "description": "Exact finite-bath energy of the lowest state"
+  },
+  "exact_energy_1": {
+   "value": 1.7276463713640626,
+   "atol": 1e-09,
+   "format": ".12f",
+   "description": "Exact finite-bath energy of the second state"
+  },
+  "dmrg_minus_exact": {
+   "max": 1e-09,
+   "description": "Largest difference between the DMRG and exact energies"
+  },
+  "qp_minus_exact": {
+   "value": 0.0012528944253069052,
+   "atol": 1e-09,
+   "format": ".12f",
+   "description": "Cutoff-two energy above the exact value"
+  }
+ }
+}

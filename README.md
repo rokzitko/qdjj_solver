@@ -18,7 +18,7 @@ Both numerical methods solve the same finite-bath Hamiltonian:
 | Method | Approximation and convergence parameter |
 |---|---|
 | Quasiparticle expansion | Retains all impurity configurations and limits the number of bath QPs. Increase the QP cutoff to check convergence; removing it gives exact diagonalization (ED) of the finite-bath model in the selected symmetry sector. |
-| DMRG | Represents the state as a matrix product state (MPS). Increase the MPS bond dimension and check the optimization to establish convergence for the finite bath. |
+| DMRG | Represents the state as a matrix-product state (MPS). Increase the MPS bond dimension and check the optimization to establish convergence for the finite bath. |
 
 Bath discretization is a separate approximation. Small finite models allow
 direct comparisons between the two methods and unrestricted ED.
@@ -42,10 +42,10 @@ installation required.
 
 ## Install
 
-Currently, install from [source](https://github.com/rokzitko/qdjj_solver).
+Install the current version from [source](https://github.com/rokzitko/qdjj_solver).
 Building the native extension requires **Python 3.11+**, a **C++17-capable
 compiler**, and **Python development headers** for the interpreter being used.
-Install the platform toolchain before running pip:
+Install them before running pip:
 
 - **Linux:** GCC or Clang; on Debian/Ubuntu, for example, install
   `build-essential` and `python3-dev` (or the development package matching your
@@ -63,7 +63,7 @@ cd qdjj_solver
 
 Choose **one** of these installation alternatives. The **`[dmrg]` extra is
 required for every DMRG example below**, including continuation and
-`first_calculation/run.py --all`; it installs TeNPy and HDF5 support for saved
+`examples/00_first_calculation/run.py --profile full`; it installs TeNPy and HDF5 support for saved
 MPS states. The base installation supports models and the QP solver without TeNPy.
 
 ```sh
@@ -101,14 +101,14 @@ The bath and many-body settings are:
   $-\xi$, per lead. Increasing `pairs` refines the bath discretization; it does
   not count leads or spin directions.
 - `compress=False`: retain all bath modes. In this symmetric model, some linear
-  combinations of degenerate bath QP modes have tunneling amplitudes to the
+  combinations of degenerate bath QP modes have tunnelling amplitudes to the
   impurity that cancel exactly. These "dark" combinations decouple from the
   impurity, although occupying them still costs excitation energy.
   `compress=True` retains the coupled ("bright") combinations and freezes the
   discarded dark modes in their vacuum, omitting states with dark-mode
   excitations. Use `False` when the full finite-bath spectrum is needed.
 - `parity=1`: select odd total fermion parity; `0` selects even parity. This
-  includes the impurity and both reservoirs, not just the impurity.
+  includes the impurity and both reservoirs, not only the impurity.
 - `twice_sz=1`: select total spin projection $S_z=+1/2$, in units where
   $\hbar=1$. This also includes both impurity and reservoir spins.
 - `cutoff=2`: allow at most two bath QPs in total across both leads and spins.
@@ -132,7 +132,7 @@ because the impurity also contributes to parity.
 
 The assertions check the reference energy, the eigenvalue-equation residual
 `qp.residuals`, and normalization of the QP weights. The residual measures
-eigensolver accuracy within the truncated space; neither a tiny residual nor
+eigensolver accuracy within the truncated space; neither a small residual nor
 normalized weights establishes convergence with QP cutoff or bath size.
 
 To continue with DMRG, the `[dmrg]` extra must be installed. If you chose the base
@@ -154,8 +154,7 @@ Both methods use the same finite Hamiltonian and energy zero. The first
 QP calculation, `qp`, uses cutoff two; `exact` includes every configuration
 allowed by the selected symmetry sector. DMRG includes the same modes and
 approximates the state through its MPS bond dimension. Eigensolver accuracy,
-QP/MPS convergence, and bath
-convergence must be assessed separately.
+QP/MPS convergence, and bath convergence must be assessed separately.
 
 To save a result and its wavefunctions, then load them for further analysis:
 
@@ -174,11 +173,11 @@ model in Python. See the
 and [convergence guidance](https://github.com/rokzitko/qdjj_solver/blob/main/docs/numerics.md)
 before increasing problem sizes.
 
-The [`first_calculation/`](https://github.com/rokzitko/qdjj_solver/blob/main/first_calculation/README.md)
-directory provides JSON inputs and reference outputs for these calculations.
-Run `python -B first_calculation/run.py` for QP with the base installation.
-With the `[dmrg]` extra installed, add `--all` for all three
-calculations (QP-expansion, DMRG, exact diagonalisation).
+[Tutorial 00](https://github.com/rokzitko/qdjj_solver/blob/main/examples/00_first_calculation/README.md)
+provides JSON inputs and reference outputs for these calculations.
+Run `python -B examples/00_first_calculation/run.py` for QP with the base installation.
+With the `[dmrg]` extra installed, add `--profile full` for all three
+calculations (QP expansion, DMRG and exact diagonalization).
 
 ## Command line
 
@@ -221,7 +220,7 @@ qdjj-solver solve examples/dmrg_refined.json --resume results/dmrg.json --output
 
 `dmrg_refined.json` raises `chi_max` from 32 to 64, permits more sweeps, and tightens
 energy and residual tolerances. `--resume` starts a new optimization from the
-saved, completed MPS states using the new settings. This tiny example normally
+saved, completed MPS states using the new settings. This small example normally
 already converges at bond dimension 32; the same procedure is useful for larger models.
 
 `qdjj-solver` saves both methods' results in a common JSON format. Wavefunctions
@@ -231,36 +230,67 @@ calculation.
 
 ## Documentation
 
-### Getting Started
+The documentation has three parts, each with its own purpose. The release workflow
+also publishes the user/reference handbook and physics manual as **versioned PDFs**;
+see [PDF editions and local builds](https://github.com/rokzitko/qdjj_solver/blob/main/docs/user_manual.md).
 
-- [First calculation: inputs and reference outputs](https://github.com/rokzitko/qdjj_solver/blob/main/first_calculation/README.md)
-- [Runnable examples](https://github.com/rokzitko/qdjj_solver/blob/main/examples/README.md)
-- [Worked parity, excitation, and current calculation](https://github.com/rokzitko/qdjj_solver/blob/main/docs/numerics.md#worked-parity-and-current-example)
+- **User and developer manual**: how to run, check, save and extend calculations. Its pages are
+  the Markdown files listed below; they can be read on GitHub or built into a website with
+  `python -m pip install '.[dmrg,docs]'` and `python -m sphinx -c docs -b html . build/docs`.
+  The separate PDF uses the same canonical guide and reference sources, with
+  complete calculation workflows and selected convergence evidence.
+- **[Physics manual](https://github.com/rokzitko/qdjj_solver/blob/main/docs/manual/README.md)** (LaTeX, PDF): the models, equations, methods and
+  physical interpretation, with worked examples.
+- **[Tutorials](https://github.com/rokzitko/qdjj_solver/blob/main/examples/README.md)**: runnable, checked calculations that accompany the
+  physics manual.
+
+### User guide
+
+- [Installation and a first checked calculation](https://github.com/rokzitko/qdjj_solver/blob/main/docs/getting_started.md)
+- [Static states, observables and transitions](https://github.com/rokzitko/qdjj_solver/blob/main/docs/static_calculations.md)
+- [Parameter scans and reproducible saved results](https://github.com/rokzitko/qdjj_solver/blob/main/docs/workflows.md)
+- [DMRG refinement](https://github.com/rokzitko/qdjj_solver/blob/main/docs/dmrg.md) and [custom models](https://github.com/rokzitko/qdjj_solver/blob/main/docs/custom_models.md)
+- [Tutorial 00: the first calculation with inputs and reference outputs](https://github.com/rokzitko/qdjj_solver/blob/main/examples/00_first_calculation/README.md)
+- [Models, units, sectors, and observables](https://github.com/rokzitko/qdjj_solver/blob/main/docs/models.md)
+- [Python functions, input files, and saved results](https://github.com/rokzitko/qdjj_solver/blob/main/docs/interfaces.md)
+- [Floquet calculations, matrix elements, and spectra](https://github.com/rokzitko/qdjj_solver/blob/main/docs/floquet.md)
+- [Bath representations: parameters, convergence, and precision/time benchmarks](https://github.com/rokzitko/qdjj_solver/blob/main/docs/bath_representations.md)
+- [Padé chain-expansion reservoirs](https://github.com/rokzitko/qdjj_solver/blob/main/docs/chain_expansion.md)
+- [Numerical methods and convergence](https://github.com/rokzitko/qdjj_solver/blob/main/docs/numerics.md), including a
+  [worked parity, excitation, and current calculation](https://github.com/rokzitko/qdjj_solver/blob/main/docs/numerics.md#worked-parity-and-current-example)
+- [QP-cutoff convergence: energy, local moment, charge probabilities, and dot–lead spin correlation](https://github.com/rokzitko/qdjj_solver/blob/main/docs/qp_convergence.md)
+- [Troubleshooting](https://github.com/rokzitko/qdjj_solver/blob/main/docs/troubleshooting.md)
 
 ### Reference
 
-- [Models, units, sectors, and observables](https://github.com/rokzitko/qdjj_solver/blob/main/docs/models.md)
-- [Python functions, input files, saved results, and troubleshooting](https://github.com/rokzitko/qdjj_solver/blob/main/docs/interfaces.md)
-- [Validation and development](https://github.com/rokzitko/qdjj_solver/blob/main/docs/validation.md)
-- [Release guide for maintainers and developers](https://github.com/rokzitko/qdjj_solver/blob/main/docs/releases.md)
+- [Model/drive constructors](https://github.com/rokzitko/qdjj_solver/blob/main/docs/reference/models.md),
+  [JSON configuration](https://github.com/rokzitko/qdjj_solver/blob/main/docs/reference/configuration.md) and
+  [saved records and artifacts](https://github.com/rokzitko/qdjj_solver/blob/main/docs/reference/records.md)
+- [API](https://github.com/rokzitko/qdjj_solver/blob/main/docs/reference/api.md), [options](https://github.com/rokzitko/qdjj_solver/blob/main/docs/reference/options.md),
+  [results](https://github.com/rokzitko/qdjj_solver/blob/main/docs/reference/results.md), [command line](https://github.com/rokzitko/qdjj_solver/blob/main/docs/reference/cli.md),
+  [observables and probes](https://github.com/rokzitko/qdjj_solver/blob/main/docs/reference/observables.md),
+  [conventions](https://github.com/rokzitko/qdjj_solver/blob/main/docs/reference/conventions.md) and
+  [from the equations to the code](https://github.com/rokzitko/qdjj_solver/blob/main/docs/reference/concordance.md)
 - [Citation and method references](https://github.com/rokzitko/qdjj_solver/blob/main/docs/references.md)
 
-### Convergence
+### Research results
 
-- [Bath representations: parameters, convergence, and precision/time benchmarks](https://github.com/rokzitko/qdjj_solver/blob/main/docs/bath_representations.md)
-- [Numerical methods and convergence](https://github.com/rokzitko/qdjj_solver/blob/main/docs/numerics.md)
-- [QP-cutoff convergence: energy, local moment, charge probabilities, and dot–lead spin correlation](https://github.com/rokzitko/qdjj_solver/blob/main/docs/qp_convergence.md)
-
-### Research Results
-
-- [Large-hybridization study: 2QP, 4QP, 6QP and DMRG through Gamma/Delta = 10](https://github.com/rokzitko/qdjj_solver/blob/main/large_Gamma/README.md)
 - [Research applications and literature reproductions](https://github.com/rokzitko/qdjj_solver/blob/main/applications/README.md)
+- [Large-hybridization study: 2QP, 4QP, 6QP and DMRG through Gamma/Delta = 10](https://github.com/rokzitko/qdjj_solver/blob/main/large_Gamma/README.md)
 - [NRG comparison results](https://github.com/rokzitko/qdjj_solver/blob/main/NRG_comparisons/README.md) and [test1 results](https://github.com/rokzitko/qdjj_solver/blob/main/NRG_comparisons/test1/README.md)
+
+### Development
+
+- [Contributing](https://github.com/rokzitko/qdjj_solver/blob/main/CONTRIBUTING.md), [architecture and extension guide](https://github.com/rokzitko/qdjj_solver/blob/main/docs/developer.md) and
+  [documentation policy](https://github.com/rokzitko/qdjj_solver/blob/main/docs/documentation.md)
+- [Validation and development](https://github.com/rokzitko/qdjj_solver/blob/main/docs/validation.md)
+- [Release guide for maintainers and developers](https://github.com/rokzitko/qdjj_solver/blob/main/docs/releases.md)
 
 ## Support and contributing
 
 Before opening a [GitHub issue](https://github.com/rokzitko/qdjj_solver/issues),
-consult the [troubleshooting and issue-report checklist](https://github.com/rokzitko/qdjj_solver/blob/main/docs/interfaces.md#troubleshooting-and-exit-status).
+consult the [troubleshooting and issue-report checklist](https://github.com/rokzitko/qdjj_solver/blob/main/docs/troubleshooting.md).
 See [CONTRIBUTING.md](https://github.com/rokzitko/qdjj_solver/blob/main/CONTRIBUTING.md)
-for development setup and the test, lint, and packaging commands used by CI.
+for development setup and the test, style-check (`ruff`), and packaging commands used by
+the continuous-integration (CI) checks on GitHub.
 Reinstall after changing the native C++ implementation or build configuration.

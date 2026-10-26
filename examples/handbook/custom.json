@@ -1,0 +1,23 @@
+{
+  "format_version": 1,
+  "backend": "qp",
+  "cutoff": 2,
+  "sector": {"parity": 0, "twice_sz": 0},
+  "solver": {"eigenpairs": 2},
+  "model": {
+    "kind": "multi-orbital",
+    "impurity": {
+      "orbitals": 2,
+      "terms": [
+        {"operators": [1, -1], "real": -0.3, "imag": 0.0},
+        {"operators": [2, -2], "real": -0.3, "imag": 0.0},
+        {"operators": [3, -3], "real": 0.2, "imag": 0.0},
+        {"operators": [4, -4], "real": 0.2, "imag": 0.0},
+        {"operators": [1, -1, 2, -2], "real": 1.0, "imag": 0.0}
+      ]
+    },
+    "reservoirs": [{"kind": "cosh-grid", "pairs": 1, "delta": 1.0, "bandwidth": 5.0}],
+    "tunneling": [[[0.3, 0.0, 0.1, 0.0], [0.0, 0.3, 0.0, 0.1]]],
+    "phases": [0.0]
+  }
+}

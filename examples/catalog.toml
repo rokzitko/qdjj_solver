@@ -1,0 +1,280 @@
+# Tutorials, one entry per examples/NN_topic directory, in reading order.
+#
+# Read by tools/gen_docs.py (the index in examples/README.md, the generated regions of each
+# tutorial README and the physics manual's \tutorial pointers), tools/check_tutorials.py
+# (runs the profiles and compares results.json with reference/<profile>.json) and
+# tools/check_docs.py (structure, labels, pointers and shared quantities).
+#
+# physics:  physics-manual labels; the first one is the chapter that points to the tutorial.
+# user:     user-manual pages used by the tutorial.
+# extras:   optional dependencies of the full profile.
+# shared:   numbers that the tutorial and the physics manual compute independently;
+#           reference = key in reference/full.json, manual = \q key in docs/manual/generated/quoted.json.
+
+[[tutorial]]
+dir = "00_first_calculation"
+title = "A first calculation"
+summary = "Lowest odd-parity state of a small junction with the QP expansion, DMRG and exact diagonalization."
+physics = ["sec:first-calculation", "sec:qp"]
+user = ["README.md", "docs/interfaces.md"]
+quick_seconds = 1
+extras = ["dmrg"]
+
+[[tutorial]]
+dir = "01_subgap_states"
+title = "Subgap states, singlet and doublet"
+summary = "Singlet, excited singlet and doublet of the reference junction versus phase and detuning, the singlet–doublet transition and the supercurrents."
+physics = ["sec:subgap", "ch:model", "ch:static"]
+user = ["docs/models.md", "docs/interfaces.md", "docs/numerics.md"]
+quick_seconds = 4
+extras = ["plots"]
+
+[[tutorial.shared]]
+reference = "doublet_energy"
+manual = "static.doublet_energy"
+rtol = 1e-8
+
+[[tutorial.shared]]
+reference = "excited_energy"
+manual = "static.excited_energy"
+rtol = 1e-8
+
+[[tutorial]]
+dir = "02_driven_dot"
+title = "The gate-driven isolated dot"
+summary = "Quasienergies, Bessel-function harmonic weights in two gauges, replicas and Floquet zones, and Tien–Gordon sidebands of a gate-driven dot, checked against the exact solution."
+physics = ["ch:ex-dot", "sec:gauge", "ch:probes"]
+user = ["docs/floquet.md"]
+quick_seconds = 2
+extras = ["plots"]
+
+[[tutorial]]
+dir = "03_two_level_system"
+title = "The proximitized dot as a driven two-level system"
+summary = "The Autler–Townes avoided crossing compared with the rotating-wave model, the Bloch–Siegert shift and Bessel-modulated multiphoton resonances of the gate-driven proximitized dot."
+physics = ["ch:ex-tls", "sec:driven-largegap", "sec:rwa"]
+user = ["docs/floquet.md"]
+quick_seconds = 6
+extras = ["plots"]
+
+[[tutorial.shared]]
+reference = "omega0"
+manual = "tls.weak_omega0"
+rtol = 1e-9
+
+[[tutorial]]
+dir = "04_high_frequency"
+title = "The high-frequency limit"
+summary = "Coherent destruction of tunnelling, a drive-induced singlet–doublet crossing and the accuracy of van Vleck effective Hamiltonians for a fast phase drive."
+physics = ["ch:ex-highfreq", "sec:van-vleck", "sec:jacobi-anger"]
+user = ["docs/floquet.md", "docs/models.md"]
+quick_seconds = 13
+extras = ["plots"]
+
+[[tutorial.shared]]
+reference = "crossing_amplitude"
+manual = "highfreq.crossing"
+rtol = 1e-3
+
+[[tutorial]]
+dir = "05_convergence"
+title = "Numerical convergence of a driven calculation"
+summary = "The Floquet cutoff and its residual bound, a cross-check with the one-period propagator, the static basis against the full Fock space, and bath-size effects at the one-photon threshold of the continuum."
+physics = ["ch:ex-numerics", "sec:sambe-method", "sec:propagator", "sec:continuum"]
+user = ["docs/floquet.md", "docs/numerics.md"]
+quick_seconds = 7
+extras = ["plots"]
+
+[[tutorial.shared]]
+reference = "fock_dimension"
+manual = "numerics.fock_dimension"
+rtol = 0
+
+[[tutorial.shared]]
+reference = "basis_states"
+manual = "numerics.cutoff_basis_states"
+rtol = 0
+
+[[tutorial.shared]]
+reference = "threshold"
+manual = "numerics.threshold"
+rtol = 1e-9
+
+[[tutorial]]
+dir = "06_phase_drive"
+title = "The phase-driven junction"
+summary = "Rabi splitting of the pair transition under a phase drive compared with the rotating-wave model, the AC Stark shift of the resonance, the eta selection rule and the Floquet spectrum versus drive amplitude."
+physics = ["ch:ex-phase", "sec:jacobi-anger", "sec:selection", "sec:rwa", "sec:regimes"]
+user = ["docs/floquet.md", "docs/models.md"]
+quick_seconds = 14
+extras = ["plots"]
+
+[[tutorial.shared]]
+reference = "omega0"
+manual = "phase.omega_star"
+rtol = 1e-8
+
+[[tutorial.shared]]
+reference = "element"
+manual = "phase.element"
+rtol = 1e-8
+
+[[tutorial.shared]]
+reference = "fan_omega0"
+manual = "spectrum.omega_star"
+rtol = 1e-8
+
+[[tutorial.shared]]
+reference = "hybridization_factor"
+manual = "spectrum.hybridization_factor"
+rtol = 1e-12
+
+[[tutorial.shared]]
+reference = "fan_crossing"
+manual = "spectrum.crossing"
+rtol = 0.02
+
+[[tutorial]]
+dir = "07_gate_drive"
+title = "The gate-driven junction"
+summary = "Rabi splitting of the gate-driven pair transition compared with a phase drive, the complementary eta selection rules versus the operating point, the AC Stark shift and one- and two-photon resonances."
+physics = ["ch:ex-gate", "sec:selection", "sec:regimes", "sec:rwa"]
+user = ["docs/floquet.md", "docs/models.md"]
+quick_seconds = 15
+extras = ["plots"]
+
+[[tutorial.shared]]
+reference = "omega0"
+manual = "static.excited_energy"
+rtol = 1e-8
+
+[[tutorial.shared]]
+reference = "current_element"
+manual = "phase.element"
+rtol = 1e-8
+
+[[tutorial]]
+dir = "08_two_tone"
+title = "Two-tone spectroscopy of the pair transition"
+summary = "Probe lines of the dressed pair transition versus pump detuning, the Mollow pattern and the Autler–Townes doublet of a gate-pumped junction."
+physics = ["ch:ex-twotone", "ch:probes", "sec:mollow"]
+user = ["docs/floquet.md"]
+quick_seconds = 3
+extras = ["plots"]
+
+[[tutorial.shared]]
+reference = "omega0"
+manual = "twotone.omega0"
+rtol = 1e-8
+
+[[tutorial.shared]]
+reference = "rabi"
+manual = "twotone.rabi"
+rtol = 1e-8
+
+[[tutorial]]
+dir = "09_photon_assisted_tunnelling"
+title = "Photon-assisted tunnelling into a driven junction"
+summary = "Photon sidebands of the tunnelling line of a gate-driven junction compared with the simple Tien–Gordon formula and its adiabatic generalization, including the asymmetry of the sidebands $q=\\pm1$."
+physics = ["ch:ex-pat", "ch:probes", "ch:ex-dot"]
+user = ["docs/floquet.md"]
+quick_seconds = 3
+extras = ["plots"]
+
+[[tutorial.shared]]
+reference = "n_S"
+manual = "pat.n_S"
+rtol = 1e-8
+
+[[tutorial.shared]]
+reference = "n_D"
+manual = "pat.n_D"
+rtol = 1e-8
+
+[[tutorial.shared]]
+reference = "dn"
+manual = "pat.dn"
+rtol = 1e-8
+
+[[tutorial.shared]]
+reference = "gap_singlets"
+manual = "pat.gap_singlets"
+rtol = 1e-8
+
+[[tutorial.shared]]
+reference = "gap_doublet"
+manual = "pat.gap_doublet"
+rtol = 1e-8
+
+[[tutorial.shared]]
+reference = "gap_min"
+manual = "pat.gap_min"
+rtol = 1e-6
+
+[[tutorial.shared]]
+reference = "gap_max"
+manual = "pat.gap_max"
+rtol = 1e-6
+
+[[tutorial.shared]]
+reference = "element_min"
+manual = "pat.element_min"
+rtol = 1e-6
+
+[[tutorial.shared]]
+reference = "element_max"
+manual = "pat.element_max"
+rtol = 1e-6
+
+[[tutorial]]
+dir = "10_spin_resonance"
+title = "Electron spin resonance of the doublet"
+summary = "Effective g-factor, Rabi splitting and Bloch–Siegert shift of the Zeeman-split doublet under a transverse drive, and the Mollow and Rabi lines of weak spin probes."
+physics = ["ch:ex-esr", "sec:esr-probe", "sec:mollow"]
+user = ["docs/floquet.md", "docs/models.md"]
+quick_seconds = 8
+extras = ["plots"]
+
+[[tutorial.shared]]
+reference = "geff"
+manual = "esr.geff"
+rtol = 1e-8
+
+[[tutorial.shared]]
+reference = "geff_last"
+manual = "esr.geff_last"
+rtol = 1e-8
+
+[[tutorial.shared]]
+reference = "zeeman"
+manual = "esr_probe.zeeman"
+rtol = 1e-8
+
+[[tutorial.shared]]
+reference = "sx_lower"
+manual = "esr_probe.sx_lower"
+rtol = 1e-6
+
+[[tutorial.shared]]
+reference = "sx_elastic"
+manual = "esr_probe.sx_elastic"
+rtol = 1e-6
+
+[[tutorial.shared]]
+reference = "sx_upper"
+manual = "esr_probe.sx_upper"
+rtol = 1e-6
+
+[[tutorial.shared]]
+reference = "sz_line"
+manual = "esr_probe.sz_line"
+rtol = 1e-6
+
+[[tutorial]]
+dir = "11_dmrg_convergence"
+title = "DMRG bond-dimension convergence"
+summary = "Refinement of an initially unconverged MPS by increasing the bond dimension, with convergence diagnostics, ED comparisons for the same bath and continuation from saved states."
+physics = ["ch:practical", "sec:dmrg"]
+user = ["docs/dmrg.md", "docs/workflows.md", "docs/numerics.md"]
+quick_seconds = 8
+extras = ["dmrg", "plots"]

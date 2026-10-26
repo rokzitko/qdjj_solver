@@ -2,7 +2,7 @@
 
 These instructions apply throughout this repository. Consult
 [CONTRIBUTING.md](CONTRIBUTING.md) and the relevant files in `docs/` before
-changing numerical behavior or public interfaces.
+changing numerical behaviour or public interfaces.
 
 ## Project and layout
 
@@ -19,10 +19,12 @@ Both backends consume the same physical Hamiltonian and conventions.
 | `src/qdjj_solver/api.py`, `src/qdjj_solver/cli.py` | Public backend dispatch and unified command line |
 | `src/qpsolver/` | Compatibility imports and legacy CLI; preserve this facade |
 | `tests/` | Numerical, interface, persistence and packaging regressions |
-| `examples/` | Small interface and workflow examples |
-| `first_calculation/` | README calculation inputs, runner and reference outputs |
+| `examples/` | Tutorials (`examples/NN_topic/`, catalogued in `examples/catalog.toml`) and small interface examples |
 | `applications/` | Literature studies with inputs, references, outputs and reports |
-| `docs/`, `tools/`, `.github/workflows/` | Documentation, validation utilities and CI |
+| `large_Gamma/`, `NRG_comparisons/` | Research studies: large-hybridization scan and NRG comparison |
+| `docs/` | User and developer manual (Sphinx + MyST over the repository's Markdown; `docs/conf.py`) |
+| `docs/manual/` | Physics manual (LaTeX, PDF) with figure scripts and tracked data |
+| `tools/`, `.github/workflows/` | Documentation generators and checks, validation utilities and CI |
 
 Keep shared physics and serialization in `common`, rather than duplicating them
 in the backends. Preserve lazy imports: the base/common API and QP functionality
@@ -37,7 +39,8 @@ Run commands from the repository root:
 python -m pip install -e '.[dmrg,dev]'
 ```
 
-Install the `plots` extra when generating figures. Reference-extraction tools may
+Install the `docs` extra for the documentation checks and the `plots` extra when
+generating figures. Reference-extraction tools may
 have additional optional dependencies documented in their case README. Reinstall
 the package after editing C++ or build configuration so Python uses the rebuilt
 native extension. Runtime dependency lower bounds are in `pyproject.toml` and
@@ -51,11 +54,12 @@ run the regular suite and the coverage gate:
 ```sh
 python -B -m pytest --cov --cov-report=term-missing --cov-report=json
 python tools/check_coverage.py reports/python-coverage.json
-python -m ruff check src tests tools examples applications first_calculation
+python -m ruff check src tests tools examples applications large_Gamma NRG_comparisons docs/conf.py docs/_ext docs/manual/scripts
 ```
 
-- Regular pytest runs exclude `slow`. Run applicable extended checks explicitly
-  with `python -B -m pytest -m slow`; DMRG tests require the optional backend.
+- Regular pytest runs exclude the `slow`, `docs` and `tutorial` markers. Run
+  applicable extended checks explicitly with `python -B -m pytest -m slow`; DMRG
+  tests require the optional backend.
 - CI requires **95% Python line coverage**. Branch/native coverage is diagnostic.
 - For reproducible numerical runs, set `OPENBLAS_NUM_THREADS=1`,
   `OMP_NUM_THREADS=1`, `MKL_NUM_THREADS=1` and, on macOS,
@@ -63,8 +67,9 @@ python -m ruff check src tests tools examples applications first_calculation
 - Use fixed seeds, explicit tolerances and independent physical checks: electron-
   space ED, analytic limits, symmetry identities, finite differences, or another
   backend. Explain numerical tolerances and convergence evidence.
-- Documentation-only changes need relevant formatting/link and packaging checks;
-  avoid rerunning large physics scans for prose edits.
+- Documentation-only changes need the documentation checks listed below and, when
+  shipped files change, the packaging checks; avoid rerunning large physics scans
+  for prose edits.
 
 For distribution/build changes, or changes to shipped assets:
 
@@ -79,6 +84,43 @@ new top-level files and required application assets. Applications ship with the
 source distribution; wheels contain the installed solver packages. See
 [docs/validation.md](docs/validation.md) for minimum-dependency and platform checks.
 
+## Documentation: three documents kept in sync
+
+| Document | Answers | Owns |
+|---|---|---|
+| Physics manual (`docs/manual`) | What is computed and what does it mean? | Models, equations, methods, interpretation, worked physics with figures |
+| User and developer manual (`docs/`, `README.md`, `CONTRIBUTING.md`) | How do I run, check, save and extend it? | Workflows, API, CLI and input files, results, convergence practice, troubleshooting, reference, developer guide |
+| Tutorials (`examples/NN_topic/`) | Show me; let me run it. | Runnable, checked calculations; README points back to the physics manual |
+
+- **Definition of done:** a change of features or behaviour updates all three, or states why
+  one is unaffected. See [docs/documentation.md](docs/documentation.md).
+- **Never edit generated files.** `python tools/gen_docs.py` writes the pages in
+  `docs/reference/` (options, results, CLI, observables and probes, conventions, concordance,
+  API), `docs/troubleshooting.md`, the regions between `<!-- BEGIN generated: ... -->` and
+  `<!-- END generated: ... -->` (tutorial tables and the tutorial list of `docs/index.md`) and
+  the physics manual's `generated/` files; `quoted.tex` there comes from `make quoted`. Edit
+  the sources: field docstrings, `build_parser()`, `OBSERVABLE_DOCS`/`PROBE_DOCS`,
+  `docs/conventions.toml`, `docs/concordance.toml`, `__all__`, `docs/troubleshooting.toml`
+  and `examples/catalog.toml`. Field docstrings are plain text with double-backtick literals
+  (no `|`, no reST roles).
+- **Checks:** `python tools/gen_docs.py --check`, `python tools/check_docs.py`,
+  `python -B -m pytest -m "docs or tutorial"` and
+  `python -m sphinx -W --keep-going -c docs -b html . build/docs`; weekly, the PDF
+  (`make -C docs/manual pdf` and `tools/check_manual.py`), `tools/run_manual_listings.py`,
+  `tools/check_tutorials.py --profile full` and recomputed manual data.
+- **Physics manual:** numbers from calculations are `\q{figure.key}` values returned by the
+  figure script's `quoted(record)` (`make quoted`); pointers are `\usermanual{...}` and
+  `\tutorial{...}`; cross-references use `\cref`, never hard-coded numbers.
+- **Tutorials:** `examples/NN_topic/` with the README template, `run.py --profile quick|full`,
+  `reference/{quick,full}.json` and `expected.png`; catalogue them in `examples/catalog.toml`.
+- Refer to the physics manual from Markdown as “Title” (`label`); the checker verifies the
+  label and the title.
+- The Python blocks of the user-manual pages run in the `docs` tests; hidden
+  `<!-- docs-test: ... -->` comments steer them
+  ([docs/documentation.md](docs/documentation.md#code-blocks-in-markdown)).
+- Write Oxford spelling (behaviour, centre, modelling, tunnelling; normalize,
+  diagonalization) and en dashes in two-name effects (Tien–Gordon, Hellmann–Feynman).
+
 ## Numerical conventions and pitfalls
 
 - Preserve the definitions in [docs/models.md](docs/models.md). `bandwidth` is
@@ -86,19 +128,23 @@ source distribution; wheels contain the installed solver packages. See
   measure. Do not silently normalize coarse quadrature or surrogate weights.
 - `reference_model(gamma=...)` uses **total** hybridization. Papers may instead
   quote per-lead couplings. `detuning=epsilon_d+u/2`; half filling is detuning zero.
-- Phases are in radians. The reference junction uses `[-phi/2,+phi/2]` and
-  `phi=phi_R-phi_L`. Positive local `field` raises the spin-up level.
+- Phases are in radians. The reference junction uses the phases $[-\phi/2,+\phi/2]$ with
+  $\phi=\phi_R-\phi_L$. Positive local `field` raises the spin-up level.
 - Python `solve(..., cutoff=None)` retains the full declared finite bath; the
   unified QP CLI defaults to cutoff two. Specify numerical settings explicitly
   in examples and research inputs.
 - `compress=True` freezes discarded dark modes in their vacuum. Use
   `compress=False` for a full finite-bath spectrum and arbitrary electron-operator
   transformations. DMRG cannot recover modes removed by the model constructor.
+  Floquet drives need `symmetry=False, compress=False`, so that the canonical
+  coordinates stay fixed during the period.
 - Find the global ground state by comparing relevant sectors. At finite field,
   consider both doublet spin projections. Transform physical electron operators
   into the Hamiltonian's canonical coordinates before evaluating transitions.
-- The current is `(2e/hbar) * dE/dphi`. State its normalization explicitly;
-  `e*Delta/hbar` and `2e*Delta/hbar` differ by two. Preserve energy-zero conventions.
+- The current is $`(2e/\hbar)\,\partial E/\partial\phi`$, positive from the left to
+  the right lead. State its normalization explicitly; $e\Delta/\hbar$ and
+  $2e\Delta/\hbar$ differ by a factor of two. The bias voltage is $V=V_L-V_R$, so
+  $\dot\phi=2eV/\hbar$. Preserve energy-zero conventions.
 - Distinguish eigensolver residual, QP cutoff/MPS bond convergence, and bath
   convergence. A small residual does not establish continuum accuracy.
 - At exact degeneracy, verify the complete relevant subspace using dense or
@@ -145,7 +191,7 @@ READMEs, application reports and other documentation.
   with blank lines.
 - Avoid `\(...\)` and `\[...\]` delimiters in Markdown: they do not reliably
   render as mathematics on GitHub. Convert these in documentation sections you edit.
-- Ordinary code spans and `tex`, `latex` or unlabeled code fences display literal
+- Ordinary code spans and `tex`, `latex` or unlabelled code fences display literal
   source. Use them only when showing syntax or code, not for rendered equations.
 - Use standard MathJax-compatible LaTeX, without document preambles, package
   imports or undeclared macros. Use `\mathrm{}` or `\text{}` for words in math.
@@ -154,6 +200,10 @@ READMEs, application reports and other documentation.
 - Put multiline equations outside Markdown tables. In table cells, use inline
   math and `\vert`/`\lvert`/`\rvert` rather than literal pipe characters that
   interfere with table separators.
+- Shared pages use GitHub Markdown only; MyST directives belong in the site-only pages
+  `docs/index.md`, `docs/handbook/index.md` and `docs/reference/api.md`. A multi-line display equation uses an
+  explicit environment (for example `aligned`) and contains no blank lines. Keep mathematics
+  out of headings and link files, not directories.
 - Check delimiters, escaping, surrounding whitespace and links; preview on GitHub
   when available rather than assuming a local Markdown renderer is equivalent.
   Check that the intended symbols and spacing survive Markdown processing, as

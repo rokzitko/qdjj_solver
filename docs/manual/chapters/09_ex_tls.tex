@@ -1,0 +1,122 @@
+\chapter{Example: the proximitized dot as a driven two-level system}\label{ch:ex-tls}
+
+The even sector of the proximitized dot, \cref{eq:pseudospin}, is a two-level system: the
+empty and doubly occupied dot, coupled by the induced pairing $\Gamma_\phi$. It is the
+superconducting analogue of the driven atom and of the charge
+qubit~\cite{nakamura1999coherent,nakamura2001rabi,zazunov2003andreev,janvier2015coherent},
+and exhibits characteristic resonance phenomena of driven systems: Rabi splitting,
+Autler--Townes doublets, the Bloch--Siegert shift and multiphoton resonances. The model is
+built directly as a \code{Hamiltonian},
+
+\begin{lstlisting}
+from qdjj_solver import Hamiltonian, Impurity, PeriodicHamiltonian, Sector, create, hermitian_pair
+from qdjj_solver.qp_solver import rwa_model, solve_floquet
+
+def proximitized(detuning, pairing, u=1.):
+    impurity = Impurity.anderson(u, detuning)
+    operator = impurity.operator + hermitian_pair(-pairing*create(0)*create(1))
+    return Hamiltonian(operator, 2, (1, -1), observables=impurity.observables)
+
+def driven(eps0, pairing, A, omega):
+    return PeriodicHamiltonian.from_callable(lambda t: proximitized(eps0 + A*np.cos(omega*t), pairing),
+                                             omega, assume_fixed_coordinates=True)
+\end{lstlisting}
+
+\section{Rabi splitting and the rotating-wave approximation}
+
+At $\eps_0=0$ the eigenstates are the bonding and antibonding singlets
+$(\ket0\pm\ket2)/\sqrt2$, split by $\omega_0=2\Gamma_\phi$, and the gate drive
+$A\cos(\Omega t)\,\tau_z$ is purely transverse: it has no diagonal matrix elements in the
+eigenbasis. In the Sambe space, the state $\ket{S,0}$ (no photon exchanged) is resonant with
+$\ket{S^*,-1}$ (one photon absorbed) when $\Omega=\omega_0$. Keeping only these two blocks
+gives the rotating-wave Hamiltonian
+\begin{equation}
+  Q^{\mathrm{RWA}}=\begin{pmatrix} E_S & A/2\\ A/2 & E_{S^*}-\Omega\end{pmatrix},
+  \qquad \qe_\pm=\frac{E_S+E_{S^*}-\Omega}2\pm\frac12\sqrt{(\omega_0-\Omega)^2+A^2}.
+\end{equation}
+At resonance the dressed states are equal mixtures of $S$ and $S^*$, split by the Rabi
+frequency $A$; away from resonance the splitting increases and the dressed states approach the bare
+ones. \Cref{fig:tls-weak}(a) compares this with the full Sambe calculation in the rotating
+frame, where the replica $\qe_{S^*}-\Omega$ is plotted together with $\qe_S$: the familiar
+Autler--Townes avoided crossing~\cite{autler1955stark,cohentannoudji1977dressed}.
+
+\paragraph{The Bloch--Siegert shift.}
+The RWA neglects the counter-rotating coupling of $\ket{S,0}$ to $\ket{S^*,+1}$ and of
+$\ket{S^*,-1}$ to $\ket{S,-2}$, which are detuned by about $2\omega_0$. To second order they
+shift the two resonant levels by $\mp(A/2)^2/2\omega_0$, which moves the resonance to
+\begin{equation}\label{eq:bloch-siegert}
+  \Omega_{\mathrm{res}}=\omega_0+\frac{A^2}{4\omega_0}+O(A^4),
+\end{equation}
+the Bloch--Siegert shift~\cite{bloch1940magnetic,shirley1965solution}.
+\Cref{fig:tls-weak}(b,c) identifies the resonance with the minimum splitting of the dressed
+pair and shows that this splitting remains close to $A$ while the resonance shifts as predicted;
+deviations appear when $A$ becomes comparable to $\omega_0$. Other definitions of the
+resonance, such as equal mixing of $S$ and $S^*$, agree to order $A^2$ and differ at order $A^4$.
+
+\begin{figure}[htb]
+\centering
+\manualfigure{tls_weak}
+\caption{Proximitized dot at $\eps_0=\q{tls.weak_epsilon}$, $\Gamma_\phi=\q{tls.weak_pairing}$
+($\omega_0=\q{tls.weak_omega0}$), driven by the gate. (a) Quasienergies $\qe_S$ and
+$\qe_{S^*}-\Omega$ in the rotating frame near the one-photon resonance for
+$A=\q{tls.weak_amplitude}$: Sambe (solid) and RWA $\qe_\pm$ (dashed); dotted lines are the
+undriven levels $E_S$ and $E_{S^*}-\Omega$. (b) Splitting at the
+resonance versus amplitude. (c) Shift of the resonance; the line is the Bloch--Siegert
+result \eqref{eq:bloch-siegert}.}
+\label{fig:tls-weak}
+\end{figure}
+
+\section{Strong driving and multiphoton resonances}
+
+Now let the detuning be large, $\eps_0\gg\Gamma_\phi$, and the drive strong, $A\gtrsim\Omega$.
+The diabatic states $\ket0$ and $\ket2$ are then nearly eigenstates, separated by $2\eps(t)$,
+and the weak pairing induces transitions. In the interaction picture with respect to the
+diagonal part, the pairing term acquires the phase factor
+\begin{equation}
+  \exp\Bigl[2\ii\int_0^t\eps(t')\,\dd t'\Bigr]=\ee^{2\ii\eps_0t}\sum_kJ_k\!\left(\frac{2A}\Omega\right)\ee^{\ii k\Omega t}.
+\end{equation}
+At the $k$-photon resonance $2\eps_0=k\Omega$ one term is static and the others oscillate.
+Averaging over the fast oscillations leaves an effective coupling $\Gamma_\phi
+J_k(2A/\Omega)$, hence the splitting
+\begin{equation}\label{eq:multiphoton}
+  \delta_k=2\Gamma_\phi\abs{J_k\!\left(\frac{2A}\Omega\right)}\qquad(\Gamma_\phi\ll\Omega).
+\end{equation}
+The resonances are modulated by Bessel functions of the modulation index; at the zeros of
+$J_k$ the $k$-photon resonance disappears and the two levels cross: \emph{coherent
+destruction of tunnelling}~\cite{grossmann1991coherent,grossmann1992localization}. Scanning
+$\eps_0$ and $A$ maps out the Landau--Zener--St\"uckelberg interference pattern measured in
+superconducting qubits and quantum
+dots~\cite{shevchenko2010landau,oliver2005mach,sillanpaa2006continuous,stehlik2012landau}.
+
+\Cref{fig:tls-strong}(a) compares the Sambe splittings with \eqref{eq:multiphoton} for
+$k=1,2,3$; the small offsets at $A\to0$ are the $O(\Gamma_\phi^2/\Omega)$ level shifts that
+detune the resonance. Panel (b) shows the quasienergy splitting as a function of the detuning at
+the first zero of $J_2(2A/\Omega)$: the $k=1,3,4$ resonances show avoided crossings of the
+predicted size, while the $k=2$ one has collapsed.
+
+\begin{figure}[htb]
+\centering
+\manualfigure{tls_strong}
+\caption{Strongly driven proximitized dot, $\Gamma_\phi=\q{tls.strong_pairing}$,
+$\Omega=\q{tls.strong_omega}$. (a) Splitting at the $k$-photon resonance $2\eps_0=k\Omega$
+versus amplitude; circles are Sambe results, lines \eqref{eq:multiphoton}. (b) Folded
+quasienergy splitting versus detuning at $A=j_{2,1}\Omega/2$, where $j_{2,1}\approx5.136$ is
+the first zero of $J_2$; dots mark $2\Gamma_\phi\abs{J_k(2A/\Omega)}$ at $\eps_0=k\Omega/2$,
+and the triangle the vanishing value for $k=2$.}
+\label{fig:tls-strong}
+\end{figure}
+
+\begin{incode}
+\begin{lstlisting}[frame=none,backgroundcolor={},aboveskip=0pt,belowskip=0pt]
+periodic = driven(0., .5, .1, 1.)                          # eps0, Gamma_phi, A, omega
+exact = solve_floquet(periodic, 0, Sector(0, 0), dict(floquet_cutoff=12, states=2))
+rwa = rwa_model(periodic, states=[0, 1], photons=[0, -1],
+                cutoff=0, sector=Sector(0, 0))
+\end{lstlisting}
+Strong-drive calculations require a Floquet cutoff well above the modulation index
+$A/\Omega$ of the dot states; the residual bound \eqref{eq:residual-bound} signals an
+insufficient cutoff.
+\par\smallskip\usermanual{docs/floquet.md}.
+\end{incode}
+
+\tutorial{03_two_level_system}

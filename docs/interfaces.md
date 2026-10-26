@@ -1,5 +1,34 @@
 # Using the solver and saving results
 
+This chapter uses the small installation-test Hamiltonian. Its Python examples
+form one session. Begin with the complete setup below; the larger reference
+junction is developed in [static calculations](static_calculations.md).
+
+<!-- BEGIN generated: interface-setup (tools/gen_docs.py) -->
+```python
+from qdjj_solver import Sector, cosh_grid, reference_model, solve
+
+
+bath = cosh_grid(pairs=1, delta=1.0, bandwidth=5.0)
+h = reference_model(bath, u=1.6, gamma=0.3, phi=0.8, compress=False)
+sector = Sector(parity=1, twice_sz=1)
+qp = solve(h, cutoff=2, sector=sector, backend="qp")
+print(qp.energies, qp.qp_weights)
+
+assert abs(qp.energies[0] - (-0.2950595967187083)) < 1e-10
+assert max(qp.residuals) < 1e-9
+assert abs(qp.qp_weights[0].sum() - 1) < 1e-12
+```
+<!-- END generated: interface-setup -->
+
+For the DMRG examples, install the `dmrg` extra and add:
+
+<!-- docs-test: requires dmrg -->
+```python
+mps = solve(h, sector=sector, backend="dmrg",
+            options={"eigenpairs": 2, "chi_max": 32, "require_convergence": True})
+```
+
 ## Calculations in Python
 
 Import model constructors and the functions `solve`, `save_result`, and
@@ -41,63 +70,21 @@ Compression applies only to eligible symmetric reference models. Use
 `compress=False` explicitly in Python when the full finite-bath spectrum is
 intended. DMRG always requires `cutoff=None`, and its default
 `require_convergence=False` returns diagnostics even for coarse, unconverged calculations.
-Set `require_convergence=True` for calculations that must meet all finite-problem
-checks. QP results must always pass the projected-residual and orthonormality checks.
+Set `require_convergence=True` for calculations that must meet all convergence
+checks for the finite Hamiltonian. QP results must always pass the projected-residual and orthonormality checks.
 
 ### QP solver options
 
-Use `qdjj_solver.qp_solver.SolverOptions`. Energy units below are those of the
-input Hamiltonian; iteration counts and probabilities are dimensionless.
+Use `qdjj_solver.qp_solver.SolverOptions` or a dictionary of its fields. All fields, defaults and
+units are listed in the [option reference](reference/options.md#qp-solver).
 
-| Option | Default | Meaning and units |
-|---|---|---|
-| `method` | `"auto"` | `"dense"`, `"sparse"`, `"matrix-free"`, or `"schur"`; see [numerics](numerics.md#qp-diagonalization) |
-| `eigenpairs` | `1` | Number of lowest eigenstates in the selected sector |
-| `tolerance` | `1e-11` | Relative ARPACK eigenvalue tolerance; Schur root-search tolerance in energy units, tightened internally near its pole; unused by dense diagonalization |
-| `residual_tolerance` | `2e-9` | Maximum projected residual norm, in energy units |
-| `maxiter` | `10000` | Maximum ARPACK iterations |
-| `ncv` | `40` | Requested Krylov-space size; increased as needed for the number of eigenstates and limited by the sector dimension |
-| `max_dimension` | `5_000_000` | Maximum number of Fock basis states, checked before enumeration |
-| `max_nnz` | `100_000_000` | Entry limit for sparse matrix construction, used by dense, sparse, and Schur methods; the remaining `max_memory_gib` budget can lower this limit |
-| `max_memory_gib` | `24.0` | Limit on estimated basis/matrix storage in GiB; actual total memory use can be larger |
-| `threads` | `1` | Maximum number of computational threads used by the numerical libraries during diagonalization/refinement |
-| `seed` | `1729` | Random-number seed for an automatically generated iterative starting vector |
-
-`auto` selects dense for dimension at most 128, sparse up to 400,000, and
-matrix-free above that. Requesting nearly the whole spectrum can force dense
-diagonalization even with an iterative method. Every returned QP result passes
-the projected residual and orthonormality checks.
+Requesting nearly the whole spectrum can force dense
+diagonalization even with an iterative method.
 
 ### DMRG solver options
 
-Use `qdjj_solver.dmrg_solver.SolverOptions`; this requires installation with `[dmrg]`.
-
-| Option | Default | Meaning and units |
-|---|---|---|
-| `eigenpairs` | `1` | Number of eigenstates sought sequentially |
-| `chi_max` | `128` | Maximum MPS bond dimension |
-| `max_sweeps` | `60` | Maximum sweeps per initial-state trial for each eigenstate |
-| `min_sweeps` | `10` | Minimum sweeps per initial-state trial for each eigenstate |
-| `energy_tolerance` | `1e-11` | Absolute sweep-energy stability scale, in energy units; also controls local Lanczos `E_tol` |
-| `entropy_tolerance` | `1e-8` | Dimensionless entropy-change threshold in TeNPy's stopping test |
-| `residual_tolerance` | `1e-7` | Maximum physical residual norm for finite-problem convergence, in energy units |
-| `orthogonality_tolerance` | `1e-8` | Dimensionless tolerance on deviations of the overlap matrix from the identity and overlap with earlier eigenstates |
-| `svd_min` | `1e-14` | Minimum retained singular value in optimization; dimensionless, may be zero |
-| `lanczos_maxiter` | `100` | Maximum local Lanczos iterations |
-| `lanczos_probability_tolerance` | `1e-14` | Positive, finite, dimensionless local Lanczos probability-error threshold; passed to TeNPy as `P_tol` |
-| `seed_trials` | `4` | Number of initial-state trials per eigenstate, including independently randomized states |
-| `seed` | `1729` | Random-number seed for local transformations preserving the chosen quantum numbers |
-| `seed_randomization_steps` | `4` | Number of layers of local random unitary transformations for additional initial states; zero disables randomization |
-| `excitation_operator` | `None` | Name of a model observable that preserves the chosen quantum numbers and generates an initial excited state |
-| `mixer` | `True` | Enable TeNPy's optimization mixer |
-| `mixer_amplitude` | `1e-5` | Initial mixer strength |
-| `mixer_sweeps` | `6` | Sweep at which the mixer is disabled |
-| `group_size` | `2` | One or two canonical fermionic modes per MPS site |
-| `mode_order` | `None` | Permutation of all zero-based canonical mode indices; `None` uses their order in the model |
-| `observables` | `None` | Measure all named observables; a tuple selects names, and `()` selects none |
-| `calculate_residuals` | `True` | Evaluate the uncompressed physical residual after optimization |
-| `require_convergence` | `False` | Stop with an error if the finite-problem convergence checks fail |
-| `threads` | `1` | Numerical-library thread limit during optimization and measurements |
+Use `qdjj_solver.dmrg_solver.SolverOptions`; this requires installation with `[dmrg]`. All fields,
+defaults and units are listed in the [option reference](reference/options.md#dmrg-solver).
 
 Require `min_sweeps <= max_sweeps` and, with the mixer enabled,
 `mixer_sweeps < min_sweeps`. `require_convergence=True` requires residual
@@ -105,37 +92,26 @@ evaluation. Disabling residuals leaves `finite_problem_converged=False`.
 Residual evaluation has its own temporary memory cost, described in
 [numerics](numerics.md#residuals-and-convergence-checks).
 
-The probability tolerance is independent of `energy_tolerance` and the global
-`residual_tolerance`; there is no automatic mapping that guarantees a global residual.
-The `1e-14` default is unchanged; no upstream TeNPy defaults are modified.
-Saved `metadata["options"]` records the actual `lanczos_probability_tolerance`.
+The local Lanczos threshold `lanczos_probability_tolerance` (TeNPy's `P_tol`, default
+`1e-14`) is independent of `energy_tolerance` and of the residual tolerance
+`residual_tolerance`. Check the full-state residual explicitly to assess the combined accuracy. The
+solver passes the local threshold to TeNPy for each calculation, preserving TeNPy's defaults. Saved results
+record the value used in `metadata["options"]`.
 
 ### Results and transitions
 
-Let $k$ be the number of calculated eigenstates, $D$ the QP basis dimension, and $q$ the
-effective QP cutoff (`h.bath_modes` when `cutoff=None`). State indices are zero-based.
+The fields of both result types are listed in the [result reference](reference/results.md):
+`energies`, `residuals`, `observables`, `hamiltonian`, `metadata` and `timings` for both
+methods; `vectors`, `basis` and `qp_weights` for QP; `states` and `prepared` for DMRG. State indices
+are zero-based.
 
-| Field | Method | Array dimensions or content; interpretation |
-|---|---|---|
-| `backend` | Both | `"qp"` or `"dmrg"` |
-| `energies` | Both | `(k,)`; eigenenergies in Hamiltonian units |
-| `residuals` | Both | `(k,)`; projected norms for QP, physical norms for DMRG; `None` if DMRG residuals were disabled |
-| `observables` | Both | Dictionary of `(k,)` expectation arrays; values may be complex for non-Hermitian operators |
-| `hamiltonian` | Both | The shared `Hamiltonian` used in the calculation |
-| `metadata` | Both | Numerical settings, symmetry sector, Hilbert-space restrictions, and convergence diagnostics |
-| `timings` | Both | Dictionary of elapsed times in seconds |
-| `vectors` | QP | `(D, k)`; eigenvector `i` is column `vectors[:, i]` |
-| `basis` | QP | `FockBasis`; defines vector-row ordering and canonical occupations |
-| `qp_weights` | QP | `(k, q+1)`; `qp_weights[i, n]` is the probability of `n` bath QPs in state `i` |
-| `states` | DMRG | List of $k$ TeNPy MPS objects |
-| `prepared` | DMRG | Canonical basis, conserved quantum numbers, and MPS mode ordering and grouping |
-
-Named observable definitions and units are in [models](models.md#built-in-observables).
-For QP, all named observables are measured. DMRG's `observables` option can select
-a subset. Residuals measure how well the state satisfies the eigenvalue equation
+Named observable definitions and units are in the [observable reference](reference/observables.md).
+For QP, all named observables are measured by default; the backend's `solve` and
+`QPWorkspace.solve` accept `observables` to select a subset. DMRG's `observables`
+option can also select a subset. Residuals measure how well the state satisfies the eigenvalue equation
 for the finite Hamiltonian; QP residuals refer to the chosen projected space.
 
-The snippets below continue the README's `h`, `sector`, `qp`, and (with the
+The snippets below continue this chapter's `h`, `sector`, `qp`, and (with the
 optional DMRG installation) `mps` calculation. **Functions on DMRG results** return
 overlaps or transition matrices with bra eigenstates as rows and ket eigenstates as columns:
 
@@ -148,9 +124,22 @@ matrix = mps.matrix_elements(h.observables["impurity_spin_z"])
 $\langle\mathrm{bra}_i\vert\mathrm{operator}\vert\mathrm{ket}_j\rangle$.
 DMRG transition results require identical canonical coordinates, mode ordering,
 grouping, and types of conserved quantum numbers. Their values may differ. For example,
-parity-only tensors cannot directly contract with parity-plus-spin tensors.
+both results must use parity-only tensors or both must use parity-plus-spin tensors.
 
-For **QP results**, use `ProjectedOperator`:
+**QP results** offer the same functions. The operator may be a `FermionOperator`
+in canonical coordinates or a probe name (`h.probe(name)`; see the
+[probe list](reference/observables.md#probes)); any other name selects a model
+observable. The ket result may belong to another sector or QP cutoff.
+
+```python
+odd = solve(h, cutoff=2, sector=Sector(1, 1))
+even = solve(h, cutoff=2, sector=Sector(0, 0), options={"eigenpairs": 2})
+addition = odd.matrix_elements("d_up_dagger", even)   # <D|d_up^dagger|S>, <D|d_up^dagger|S*>
+pair = even.matrix_elements("current")                 # includes <S|dH/dphi|S*>
+```
+
+Requesting matrix elements between sectors that no term of the operator connects raises an error. For
+single vectors, `ProjectedOperator` gives direct access:
 
 ```python
 from qdjj_solver.qp_solver import ProjectedOperator
@@ -161,9 +150,9 @@ mean_spin = spin.expectation(qp.vectors[:, 0])
 
 `ProjectedOperator(operator, ket_result.basis).transition(bra, bra_basis, ket)`
 acts between compatible Fock bases, allowing different sectors and cutoffs.
-The caller supplies operators and vectors in the same canonical coordinates;
-dimension and spin-label checks do not identify an arbitrary change of physical
-basis. Use `h.physical_operator(electron_operator)` to transform physical electron
+The caller is responsible for supplying operators and vectors in the same canonical
+coordinates, in addition to satisfying the dimension and spin-label checks.
+Use `h.physical_operator(electron_operator)` to transform physical electron
 operators through an uncompressed model's electron-to-canonical transformation.
 
 ### Local orbital density matrices
@@ -203,6 +192,29 @@ projectors are built before QP truncation, preserving vacuum contractions.
 See [density-matrix conventions](models.md#local-orbital-density-matrix) for
 the signs, coherences, and paired-state probabilities.
 
+### Floquet calculations
+
+Periodic drives of model parameters are described by `PeriodicHamiltonian`,
+which samples a model builder over one period:
+
+```python
+from qdjj_solver import ParameterDrive, PeriodicHamiltonian, reference_model
+from qdjj_solver.qp_solver import floquet_propagator, rwa_model, solve_floquet
+
+periodic = PeriodicHamiltonian.from_parameters(
+    reference_model, dict(bath=bath, phi=.8, symmetry=False, compress=False),
+    ParameterDrive.cosine("phi", .05), omega=.57)
+floquet = solve_floquet(periodic, cutoff=2, sector=sector, options=dict(floquet_cutoff=4, states=2))
+```
+
+`solve_floquet`, `floquet_propagator` and `rwa_model` return `FloquetStates`
+with quasienergies, harmonic weights, static-state weights and Floquet modes.
+`periodic.van_vleck(order)` returns a static high-frequency `Hamiltonian` for
+either backend. Options are collected in `FloquetOptions`
+([option reference](reference/options.md#floquet-calculations)). Persistence through
+`save_result` currently supports static QP and DMRG eigenstates. Conventions, methods, result fields and
+convergence checks are described in [Floquet calculations](floquet.md).
+
 ### Starting states and continuation
 
 QP iterative solvers accept a finite, nonzero vector of shape `(D,)` in the
@@ -214,9 +226,12 @@ continued_qp = solve(h, cutoff=2, sector=sector,
                      initial=qp.vectors[:, 0])
 ```
 
-The vector is used by sparse/matrix-free iterations. Dense and Schur methods
-compute their states directly. QP continuation across cutoffs requires an
-explicit embedding into the new Fock basis.
+The vector is used by sparse/matrix-free iterations. The block eigensolver also
+accepts a starting array of shape `(D, n)` and supplements it with random columns
+up to the requested number of states. Dense and Schur methods compute their
+states directly. QP continuation across cutoffs requires an explicit embedding
+into the new Fock basis. A [QP workspace](qp_workflow.md#reuse-preparation-and-check-spectrum-coverage)
+reuses compatible preparation and starting states across repeated calculations.
 
 DMRG takes a prior DMRG `Eigenstates` object:
 
@@ -251,19 +266,19 @@ Unknown setting names are reported with their location, such as
 `model.impurity.terms[0]`, to help identify errors in the input. Use JSON
 `true`/`false` for yes/no settings and integers for the cutoff and sector labels.
 Where a bath or model specification accepts `metadata`, that dictionary can
-contain your own notes; `metadata` is not a top-level calculation setting.
+contain your own notes. Place such notes inside the supported bath or model entry.
 See the [examples](../examples/README.md).
-`--backend` selects the method in preference to the input file. DMRG requires omitted or null `cutoff`.
-Cutoff and solver options must be valid for the selected method, including when
-using this override.
+The command-line option `--backend` overrides the `backend` of the input file. DMRG requires
+an omitted or null `cutoff`. Cutoff and solver options must be valid for the selected method,
+also when `--backend` overrides it.
 The `qdjj-solver` command defaults to QP with cutoff two; Python `solve` defaults instead
 to full finite space (`cutoff=None`). DMRG `--resume` names a result JSON with
 a companion saved MPS file.
 
 `--resume` initializes a new optimization from the previously saved states;
 settings such as `chi_max` and tolerances come from the new configuration. The
-saved file contains completed MPS states; it cannot restart an interrupted sweep
-at its stopping point. The canonical basis, MPS mode ordering and grouping,
+saved file supplies completed MPS states as the initial wavefunctions for this
+new optimization. The canonical basis, MPS mode ordering and grouping,
 sector, and types of conserved quantum numbers must be compatible.
 See [`examples/dmrg_refined.json`](../examples/dmrg_refined.json) for a refinement
 of [`examples/dmrg.json`](../examples/dmrg.json).
@@ -283,15 +298,16 @@ Model kinds:
   `compress_pairs`, and `coefficient_tolerance`, also belong inside `model`.
 - `hamiltonian`: the fields of `Hamiltonian.record()`, plus `kind`.
 
-Bath kinds are `cosh-grid`, `surrogate` (fit settings), `chain-expansion`
-(`levels`, `delta`, `bandwidth`, optional boolean `wide_band`), and `discrete`
-(explicit xi, weights, gap, bandwidth, optional metadata). Complex arrays use
-`{"real": [...], "imag": [...]}`. Impurity observables may also be given as
-lists of fermion-operator terms in a multiorbital input file.
+Bath kinds are `cosh-grid` (the default; the arguments of `cosh_grid`), `surrogate`
+(the arguments of `fit_surrogate`), `chain-expansion` (`levels`, `delta`, `bandwidth` and
+the optional boolean `wide_band`), and `discrete` (`xi`, `weights`, `delta`, `bandwidth` and
+optional `metadata`). Complex arrays use `{"real": [...], "imag": [...]}`. Impurity
+observables may also be given as lists of fermion-operator terms in a multiorbital input
+file.
 
 For example, this complete QP input describes two interacting orbitals and two
-reservoirs. Its literal impurity terms specify the energy zero; they do not add
-the constant used by `Impurity.anderson`. Operator indices in `terms` are signed
+reservoirs. Its literal impurity terms specify the energy zero; include the
+constant explicitly to reproduce the convention of `Impurity.anderson`. Operator indices in `terms` are signed
 and one-based, while reservoir indices in `leads` are zero-based:
 
 ```json
@@ -341,6 +357,10 @@ and the density-normalization meaning of `bandwidth` when `wide_band=true`.
 
 ## Saved results and reproducibility
 
+For a complete scan, scalar-only analysis and saved-wavefunction workflow, see
+[Parameter scans, saved results and reproducible analysis](workflows.md).
+The [record reference](reference/records.md) specifies nested fields and companion files.
+
 The JSON format `qdjj-eigenstates`, version 1, contains the numerical method,
 energies, residuals, observables, elapsed times, solver settings, symmetry
 sectors, Hilbert-space restrictions, and convergence diagnostics. It also saves
@@ -351,7 +371,7 @@ sweep differences are stored as `null`.
 The Python result's `metadata` is stored under `calculation` in JSON, and
 `timings` under `timings_seconds`.
 
-`common.io.source_provenance()` calculates checksums of the Python modules and
+`qdjj_solver.common.io.source_provenance()` calculates checksums of the Python modules and
 C++ library actually used by the calculation. It stores their package-relative
 names, so the result can be compared between computers with different
 installation directories.
@@ -366,7 +386,7 @@ restored = load_result("results/state.json")
 identifies the method from the saved file and requires the companion
 wavefunctions. Results saved without wavefunctions can still be read with
 Python's standard `json` module. `restored.backend` is `"qp"` or `"dmrg"`.
-Loading QP states does not require TeNPy.
+The base installation suffices for loading QP states.
 To move a calculation, copy its JSON and the companion file named in
 `record["state_artifact"]["file"]` together into the destination directory.
 
@@ -397,31 +417,5 @@ installed TeNPy version.
 
 ## Troubleshooting and exit status
 
-The `qdjj-solver solve` command returns exit status **0** after saving a result
-and **2** for recognized errors in input, required libraries, numerical calculations,
-or file access. Invalid command arguments also return 2. With DMRG's default
-`require_convergence=False`, exit 0 can
-accompany `Finite-problem checks passed: False`; use `require_convergence=true`
-in JSON when a calculation must meet those checks. Bath convergence is assessed
-separately even when finite-problem checks pass.
-
-| Message or symptom | What to check |
-|---|---|
-| DMRG/TeNPy or HDF5 dependency missing | From the source directory, run `python -m pip install '.[dmrg]'` with the interpreter used to run the calculation. |
-| `configuration` / `model` / `solver` must be an object | Use `{...}` for these objects; use JSON booleans and integer sector values. Check the reported nested field path for typos. |
-| Hamiltonian does not conserve `S_z` | For spin-mixing terms choose `Sector(parity=..., twice_sz=None)`, or JSON `"twice_sz": null`. |
-| Fermion parity and `twice_sz` are incompatible | Even parity requires an even integer `twice_sz`; odd parity requires an odd integer. |
-| Empty symmetry sector / more eigenpairs than states | Check quantum numbers, bath cutoff, included modes, and number of requested eigenstates. |
-| Invalid QP cutoff | Use `0 <= cutoff <= h.bath_modes` after model compression, or `None`/JSON `null` for full space. Impurity-only QP CLI inputs need explicit `cutoff: 0` or `null`, not the default `2`. |
-| Sector dimension or memory estimate exceeds a limit | Estimate the basis size before increasing `max_dimension` or `max_memory_gib`. Consider a converged QP cutoff or a DMRG calculation. |
-| Sparse matrix exceeds `max_nnz` | Dense, sparse, and Schur methods build this matrix. Check both `max_nnz` and the memory-derived cap from `max_memory_gib`; increasing only `max_nnz` may not help. Consider `method="matrix-free"`; its basis and Krylov-space limits still apply. |
-| DMRG requires `cutoff=null` | Omit the JSON cutoff or set it to `null`. MPS bond dimension is controlled by `chi_max`. |
-| Finite-problem convergence failed | Inspect residuals, orthonormality, energy ordering, and sweep histories. Increase bond dimension, sweeps, or the number of initial-state trials as appropriate. |
-| Initial states have incompatible coordinates/layout | Reusing MPS states requires the same canonical basis, mode ordering, and site grouping. Start a new calculation if these change. |
-| No supported state artifact / checkpoint missing | Save with `save_states=True` or `--save-states`, then retain both the JSON and its named wavefunction file. |
-| Checksum or scalar-record mismatch | Recover the matching JSON and wavefunction files from the same save. Editing the JSON also invalidates the checksum linking it to a new-format wavefunction file. |
-
-Consult [numerics](numerics.md) for convergence choices. To report a reproducible
-issue, include a small configuration, the error, the software version, and the
-result's saved software-version information when available. Report problems on
-the [project's issue page](https://github.com/rokzitko/qdjj_solver/issues).
+Exit codes, common error messages and their remedies are collected in
+[troubleshooting](troubleshooting.md).

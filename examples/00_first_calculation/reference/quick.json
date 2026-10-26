@@ -1,0 +1,22 @@
+{
+ "tutorial": "00_first_calculation",
+ "profile": "quick",
+ "values": {
+  "qp_energy": {
+   "value": -0.2950595967187083,
+   "atol": 1e-10,
+   "format": ".12f",
+   "description": "Lowest odd-parity energy at QP cutoff two"
+  },
+  "qp_residual": {
+   "max": 1e-09,
+   "description": "Eigensolver residual at QP cutoff two"
+  },
+  "qp_weight_0": {
+   "value": 0.8927056108389222,
+   "atol": 1e-08,
+   "format": ".8f",
+   "description": "Probability of no bath quasiparticle"
+  }
+ }
+}

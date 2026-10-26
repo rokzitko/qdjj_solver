@@ -1,5 +1,19 @@
 # Physical models and conventions
 
+## From objects to a calculation
+
+The usual sequence is `DiscreteBath` → `Hamiltonian` → `solve` → `Eigenstates`.
+`reference_model` constructs a symmetric dot junction; `make_model` combines an
+explicit `Impurity`, reservoir list and tunnelling matrices. `Sector` selects
+conserved total quantum numbers. Solver options control the numerical method
+applied to that fixed Hamiltonian.
+
+The [static workflow](static_calculations.md) maps a complete physical example
+onto these objects. The [constructor reference](reference/models.md) lists
+parameter names and defaults extracted from the implementation; this chapter explains
+their physical conventions. The [custom-model chapter](custom_models.md) develops the
+general construction with matched Python and JSON examples.
+
 ## Units and energy reference
 
 Energies, gaps, hybridizations, and energy/residual tolerances use the units
@@ -14,8 +28,8 @@ H_d=\frac U2(n_d-1)^2+\epsilon(n_d-1)+B S_d^z,
 Here $n_d=n_\uparrow+n_\downarrow$. The empty, spin-up, spin-down, and doubly
 occupied states have energies $U/2-\epsilon$, $B/2$, $-B/2$, and $U/2+\epsilon$,
 respectively, with `detuning` $=\epsilon$ and `field` $=B$.
-$B$ is a Zeeman **energy**, supplied as `field`, rather than a magnetic
-field in tesla. Positive `field` raises spin-up. For the conventional Anderson
+$B$ is a Zeeman **energy**, supplied as `field`. Convert a magnetic field in tesla
+to this energy using the relevant $g$-factor. Positive `field` raises the spin-up level. For the conventional Anderson
 impurity $H_A=\epsilon_d n+U n_\uparrow n_\downarrow+B S_z$, the conversion is
 
 ```math
@@ -62,14 +76,13 @@ states **per spin** is $\rho=1/(2D)$, and
 C_{l\sigma}=\sum_i\sqrt{w_{li}}c_{li\sigma},\qquad w_{li}\simeq\rho_l\,d\xi.
 ```
 
-Weights represent the normal-state measure, not the BCS density of states.
-The contact operator need not be normalized:
-$`\{C_{l\sigma},C_{l\sigma}^\dagger\}=\sum_i w_{li}`$. Rescaling the weights to
-make this sum one changes the physical tunneling amplitudes and is not done
-automatically.
+Weights represent the normal-state measure. The contact operator has normalization
+$`\{C_{l\sigma},C_{l\sigma}^\dagger\}=\sum_i w_{li}`$, which may differ from one.
+The constructor preserves the supplied weights, since rescaling them to unit sum
+would change the physical tunnelling amplitudes.
 Each signed level contributes two positive-energy Bogoliubov modes. Weights
 must be positive. The bath keeps a fixed copy of the supplied energies and
-weights; nearly mirrored grids do not qualify for exact symmetry reductions.
+weights; exact symmetry reductions require exactly mirrored grids.
 
 `cosh_grid(pairs, delta, bandwidth)` uses Gauss–Legendre quadrature in
 
@@ -79,7 +92,7 @@ weights; nearly mirrored grids do not qualify for exact symmetry reductions.
 ```
 
 It yields `2*pairs` signed levels **per reservoir** and includes the
-$\Delta\cosh t$ Jacobian. Coarse weights are not renormalized; the zeroth-moment
+$\Delta\cosh t$ Jacobian. The weights retain their quadrature values; the zeroth-moment
 error is `bath.metadata['measure_error']`.
 
 `fit_surrogate(levels, ...)` fits positive residues to the finite-band function
@@ -91,7 +104,7 @@ g(i\omega)=\frac{2}{\pi}
 
 Its default logarithmic mesh and absolute least-squares criterion follow the
 published construction in [references](references.md). Settings and fit errors
-are recorded. A small hybridization-fit error does not certify every excitation.
+are recorded. Check excitation energies themselves under bath refinement to assess their accuracy.
 
 `chain_expansion(levels, ...)` constructs the Padé ChE bath of Bobok et al.
 (2025), with a finite-band target by default and analytic wide-band coefficients
@@ -114,6 +127,11 @@ H_l=\sum_{i,\sigma}\xi_{li}c_{li\sigma}^\dagger c_{li\sigma}
 
 This fixes the pairing sign and operator order used for anomalous expectation
 values. Its vacuum contribution is included in the subtraction described above.
+In the physical gauge, with real tunnelling amplitudes, the pairing term of lead
+$l$ is instead $`-\Delta_l\sum_i(e^{-i\phi_l}c_{li\uparrow}^\dagger c_{li\downarrow}^\dagger+\mathrm{h.c.})`$,
+so the pair amplitude $`\langle c_{li\uparrow}^\dagger c_{li\downarrow}^\dagger\rangle`$ is
+proportional to $e^{i\phi_l}$. The substitution $c_{li\sigma}\to e^{-i\phi_l/2}c_{li\sigma}$
+makes the pair potential real and moves the phase into the tunnelling terms.
 
 In `make_model`, `tunneling[l]` is a matrix with two reservoir-spin rows and
 `2*impurity.orbitals` impurity-spin-orbital columns. It enters as
@@ -121,7 +139,7 @@ $e^{i\phi_l/2}C_l^\dagger T_l d+\mathrm{h.c.}$ Here $C_l$ and $d$ are columns
 of reservoir-contact and impurity annihilation operators. `direct[(l,m)]`
 specifies $W_{lm}$, for $l<m$, and contributes
 $e^{i(\phi_l-\phi_m)/2}C_l^\dagger W_{lm}C_m+\mathrm{h.c.}$ Both matrices may be
-complex and spin mixing. Use `twice_sz=None` if spin projection is not conserved.
+complex and may mix spin projections. Use `twice_sz=None` if spin projection is not conserved.
 
 `bath_reference='coupled'` first diagonalizes the quadratic reservoir Hamiltonian;
 that transformation currently requires spin-conserving direct hopping and an
@@ -130,7 +148,7 @@ isolated-vacuum construction supports general spin-mixing contacts.
 
 `reference_model` constructs a single dot with symmetric lead couplings.
 `gamma` is **total** hybridization:
-$\Gamma_l=\pi\rho\lvert V_l\rvert^2$, $\Gamma=\sum_l\Gamma_l$.
+$\Gamma_l=\pi\rho\,t_l^2$ for the tunnelling amplitude $t_l$ of lead $l$, $\Gamma=\sum_l\Gamma_l$.
 A symmetric junction uses $\Gamma/2$ per lead and phases $[-\phi/2,+\phi/2]$.
 Phases are in radians, with $\phi=\phi_R-\phi_L$. In the `(up, down)` spin order,
 the reference model's direct contact matrix is
@@ -149,10 +167,10 @@ conserves $S_z$; more general spin-mixing contacts can be supplied to `make_mode
 ## Model constructors
 
 Import `reference_model` and `make_model` from `qdjj_solver`. Both return a
-`Hamiltonian`, not eigenstates: choose the backend and QP cutoff separately in
+`Hamiltonian`; calculate its eigenstates by choosing the backend and QP cutoff in
 `solve`. The name `reference_model` denotes the convenience constructor used for
-the reference junction in the authors' [ASQ variational manuscript](references.md#qp-variational-method),
-not a separate numerical method. The earlier single-reservoir and QD-junction
+the reference junction in the authors' [ASQ variational manuscript](references.md#qp-variational-method).
+The earlier single-reservoir and QD-junction
 variational papers are listed there as well.
 
 ### `reference_model`
@@ -196,11 +214,11 @@ Let `L` be the number of reservoirs and `M=impurity.orbitals`.
 | `compress_pairs` | `False` | Freeze dark modes; requires eligible eta coordinates and zero direct hopping |
 | `bath_reference` | `"isolated"` | `"isolated"` or `"coupled"`; coupled coordinates require spin-conserving direct hopping and a gapped, unpolarized reservoir vacuum |
 | `coefficient_tolerance` | `1e-14` | Finite nonnegative Hamiltonian-coefficient cleanup tolerance, in energy units |
-| `direct_derivatives` | `None` | Mapping of observable names to contact mappings in the same form as `direct`; names must not collide with impurity observables or `phase_derivative` |
+| `direct_derivatives` | `None` | Mapping of observable names to contact mappings in the same form as `direct`; choose names distinct from impurity observables and `phase_derivative` |
 
 Eta coordinates require two identical mirrored baths, a half-filled Anderson
 impurity, equal real spin-independent tunnel contacts, and only the pure $W_S$
-direct contact defined above. They are unavailable with `bath_reference="coupled"`.
+direct contact defined above, together with `bath_reference="isolated"`.
 See [coordinates and compression](bath_representations.md#coordinates-compression-and-chains)
 for representation choices and [input files](interfaces.md#input-files-and-terminal-commands)
 for the JSON equivalents.
@@ -248,8 +266,9 @@ $(PcP)(Pc^\dagger P)=0$. This matters for composite observables at cutoff bounda
 `Hamiltonian` checks mode ranges, parity, Hermiticity, and requested symmetries.
 These symmetry checks also apply to small coefficients. If small coefficients
 are discarded when constructing a model, their summed magnitudes are recorded
-as an upper bound on the operator-norm change. Conversion to a matrix product
-operator (MPO) introduces no further coefficient cutoff.
+in `metadata["coefficient_cleanup_bound"]` as an upper bound on the operator-norm
+change. Conversion to a matrix product operator (MPO) preserves all remaining
+coefficients.
 
 ## Sectors and canonical coordinates
 
@@ -257,8 +276,8 @@ Both solvers use `Sector(parity=1, twice_sz=1, eta=None, particle_number=None)`.
 Parity is zero for even, one for odd. `twice_sz=None` retains all spin projections.
 `eta` is the product of occupied modes' assigned eta labels and is available only
 in compatible representations. `particle_number` fixes total occupation of the
-**chosen canonical modes**, when conserved; it is not implicitly physical
-electron number in a Bogoliubov basis.
+**chosen canonical modes**, when conserved. In a Bogoliubov basis this is the
+occupation of the transformed modes; physical electron number is a distinct operator.
 
 Model constructors save the electron-to-canonical transformation in
 `metadata['coordinates']`.
@@ -269,10 +288,10 @@ If none is specified, compatibility checks require an identical Hamiltonian
 before reusing states in another calculation.
 
 Eta/paired-mode reduction is restricted to verified symmetric single-dot models.
-**`compress=True` fixes discarded dark modes in their vacuum.** It may omit
-continuum excitations. DMRG retains all modes present in the model, but cannot
-restore modes removed by a model constructor. Use `compress=False` for a full finite-bath
-spectrum; the `qdjj-solver` terminal command uses this setting for both methods.
+**`compress=True` fixes discarded dark modes in their vacuum.** The resulting
+spectrum is restricted to that subspace. Both QP and DMRG act on the modes retained
+by the constructor. For a full finite-bath spectrum, retain all modes with
+`compress=False`; the `qdjj-solver` terminal command uses this setting for both methods.
 
 Transforming an arbitrary electron operator with `h.physical_operator` requires
 an uncompressed model: multiplying separately projected electron operators
@@ -287,13 +306,8 @@ Solvers report their expectation values as `result.observables[name][i]` for
 eigenstate `i`. `Impurity` supplies the default impurity observables; specify
 its `observables` dictionary to add operators or replace these definitions.
 
-| Name | Definition | Availability | Units |
-|---|---|---|---|
-| `impurity_charge` | Total physical impurity electron occupation | Default for every `Impurity` | Electron count; multiply by $-e$ for electric charge |
-| `impurity_spin_z` | Sum of $(n_\uparrow-n_\downarrow)/2$ over impurity orbitals | Default for every `Impurity` | $\hbar$ units |
-| `double_occupancy_0` | $n_{0\uparrow}n_{0\downarrow}$ | First impurity orbital; subsequent orbitals use `_1`, `_2`, ... | Dimensionless probability |
-| `phase_derivative` | $\partial H/\partial\phi$ in a reference junction; $O_x$ defined below for supplied phase velocities in `make_model` | Reference junctions, or nonzero `phase_velocities` | Energy for dimensionless phase; energy per unit $x$ in general |
-| `rho_ws_derivative` | $\partial H/\partial(\rho W_S)$ | Reference junctions, including at `rho_ws=0` | Energy |
+The names, definitions, availability and units are listed in the
+[observable reference](reference/observables.md).
 
 The `geometry="single"` reference model has the three impurity observables and
 no interlead/phase derivative. General models can supply additional impurity
@@ -359,8 +373,8 @@ O_x=\sum_l\frac{\mathrm{d}\phi_l}{\mathrm{d}x}
 \frac{\partial H}{\partial\phi_l}.
 ```
 
-This specifies the derivative due to the changing phases; it does not also
-differentiate tunneling amplitudes, gaps, or other model parameters.
+This is the derivative along the specified phase variation, at fixed tunnelling
+amplitudes, gaps and other model parameters.
 `direct_derivatives[name][(l,m)]` specifies a physical contact observable even
 when the corresponding Hamiltonian coupling is zero. Operators are constructed
 in the physical gauge and then transformed. Differentiating a parameter-dependent
@@ -386,8 +400,9 @@ approximate energy.
 If the numerical Hamiltonian is expressed in an energy unit $E_0$ (`E0`), the current is
 `I = (2*e*E0/hbar) * result.observables["phase_derivative"][i]`, with $e>0$.
 Convert `E0` to joules to obtain amperes. With gap `delta=1`, the numerical
-expectation is a current in units of $2e\Delta/\hbar$. This defines the current
-sign through the stated phase-bias convention.
+expectation is a current in units of $2e\Delta/\hbar$. With $\phi=\phi_R-\phi_L$, a
+positive $I$ is an electric current from the left to the right lead; the
+[conventions](reference/conventions.md) also define the sign of the bias voltage.
 
 Transition matrix elements require states and operators in the same canonical
 basis. DMRG also checks the MPS mode ordering, site grouping, and conserved

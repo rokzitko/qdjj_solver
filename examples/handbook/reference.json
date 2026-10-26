@@ -1,0 +1,11 @@
+{
+  "source": "examples/handbook/static.py with examples/01_subgap_states/input/reference.json; finite bath, QP cutoff two",
+  "values": {
+    "signed_gap": {"value": 0.09578810633, "atol": 1e-9, "description": "Signed doublet-minus-singlet energy, in gap units"},
+    "pair_gap": {"value": 0.7159930829, "atol": 1e-9, "description": "Even pair excitation, in gap units"},
+    "current": {"value": 0.05034773273, "atol": 1e-9, "description": "Singlet current in units of 2e Delta/hbar"},
+    "ground_parity": {"value": 0, "atol": 0, "description": "Global ground-state parity (zero is even)"},
+    "addition_weight": {"value": 0.4821031006, "atol": 1e-9, "description": "Squared dot spin-up electron-addition matrix element"},
+    "pair_weight": {"value": 0.0007372261697, "atol": 1e-11, "description": "Squared phase-derivative pair matrix element, in squared gap units"}
+  }
+}

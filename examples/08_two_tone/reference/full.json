@@ -1,0 +1,76 @@
+{
+ "tutorial": "08_two_tone",
+ "profile": "full",
+ "values": {
+  "omega0": {
+   "value": 0.7159930829051,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Pair transition energy $E_{S^*}-E_S$"
+  },
+  "element": {
+   "value": 0.6108971194777839,
+   "atol": 1e-08,
+   "format": ".6f",
+   "description": "Charge matrix element $\\lvert\\langle S\\vert n_d\\vert S^*\\rangle\\rvert$"
+  },
+  "rabi": {
+   "value": 0.018326913584333516,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "RWA splitting $\\delta=A_\\epsilon\\lvert\\langle S\\vert n_d\\vert S^*\\rangle\\rvert$"
+  },
+  "basis_states": {
+   "value": 43,
+   "atol": 0,
+   "format": "d",
+   "description": "Static basis size $K$"
+  },
+  "removal_energy": {
+   "value": 0.09578810633459456,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Undriven removal line $E_D-E_S$"
+  },
+  "rwa_deviation": {
+   "max": 0.0005,
+   "description": "Largest distance of the dominant dressed line from the RWA lines $\\Omega\\pm w$"
+  },
+  "mollow_splitting": {
+   "value": 0.01831948487809687,
+   "atol": 1e-06,
+   "format": ".6f",
+   "description": "Half separation of the Mollow sidebands"
+  },
+  "mollow_lower": {
+   "value": 1.0151654225885975,
+   "atol": 0.0001,
+   "format": ".4f",
+   "description": "Emission sideband at $\\Omega-\\delta$, in units of the RWA value"
+  },
+  "mollow_central": {
+   "value": 1.008278553093796,
+   "atol": 0.0001,
+   "format": ".4f",
+   "description": "Elastic line at $\\Omega$, in units of the RWA value"
+  },
+  "mollow_upper": {
+   "value": 0.9860498320143496,
+   "atol": 0.0001,
+   "format": ".4f",
+   "description": "Absorption sideband at $\\Omega+\\delta$, in units of the RWA value"
+  },
+  "autler_townes_splitting": {
+   "value": 0.01831948487809687,
+   "atol": 1e-06,
+   "format": ".6f",
+   "description": "Autler\u2013Townes splitting of the removal line"
+  },
+  "autler_townes_weight": {
+   "value": 0.9998848771646035,
+   "atol": 0.0001,
+   "format": ".4f",
+   "description": "Total Autler\u2013Townes weight, in units of the static line"
+  }
+ }
+}

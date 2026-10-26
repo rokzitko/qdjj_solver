@@ -38,7 +38,7 @@ from revision `1ef00d1018a61be5a2b892ce3b9d2082288e81ec` of
 [their surrogate repository](https://github.com/virgilb91/surrogate_models).
 For their residues $\gamma_l$ and normal energies $\xi_l$, the package bath weights
 are **$w_l=\pi\rho\gamma_l$**, with $\rho=1/(2D)$. This produces the published
-tunneling amplitude $\sqrt{\Gamma\gamma_l}$. We do not normalize these weights to
+tunnelling amplitude $\sqrt{\Gamma\gamma_l}$. We do not normalize these weights to
 sum to one.
 
 ## Coupled and spectator doublets
@@ -89,12 +89,12 @@ Two characteristic features are visible:
   excitation. At $\Gamma=0$ the independent check is
   $E_S-E_D=\min(U/2,\min_l\sqrt{\xi_l^2+\Delta^2})$.
 - **Strong coupling:** the one-level model retains a poorly screened dot spin
-  and greatly overestimates $D_g$. Enlarging the bath allows the residual spin to
+  and greatly overestimates the excitation energy of $D_g$. Enlarging the bath allows the residual spin to
   move away from the impurity. For example, at $\Gamma=20\Delta$ the local spin is
   0.01644 for six levels and 0.01337 for ten levels.
 
 The 409-point main calculation has maximum eigensolver residual
-**$1.10\times10^{-11}\Delta$**. Agreement with the original colored surrogate curves to
+**$1.10\times10^{-11}\Delta$**. Agreement with the original coloured surrogate curves to
 $5.29\times10^{-4}\Delta$ is a comparison of independent implementations at the published
 bath parameters. Agreement with the black NRG curve is less precise because it
 additionally tests the surrogate's approximation to the continuum.

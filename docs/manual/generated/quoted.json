@@ -1,0 +1,697 @@
+{
+ "dot.epsilon": {
+  "value": 0.2,
+  "text": "0.2",
+  "format": "g"
+ },
+ "dot.fan_amplitude": {
+  "value": 0.6,
+  "text": "0.6",
+  "format": "g"
+ },
+ "dot.u": {
+  "value": 1.0,
+  "text": "1",
+  "format": "g"
+ },
+ "esr.agreement": {
+  "value": null,
+  "text": "2\\times10^{-3}",
+  "format": null
+ },
+ "esr.amplitude": {
+  "value": 0.004,
+  "text": "0.004",
+  "format": ".3f"
+ },
+ "esr.epsilon": {
+  "value": 0.0,
+  "text": "0",
+  "format": ".0f"
+ },
+ "esr.field": {
+  "value": 0.02,
+  "text": "0.02",
+  "format": ".2f"
+ },
+ "esr.gamma": {
+  "value": 0.3,
+  "text": "0.3",
+  "format": ".1f"
+ },
+ "esr.gamma_first": {
+  "value": 0.0,
+  "text": "0",
+  "format": "g"
+ },
+ "esr.gamma_last": {
+  "value": 1.2,
+  "text": "1.2",
+  "format": ".1f"
+ },
+ "esr.geff": {
+  "value": 0.8661222825312138,
+  "text": "0.866",
+  "format": ".3f"
+ },
+ "esr.geff_first": {
+  "value": 1.0,
+  "text": "1",
+  "format": ".2g"
+ },
+ "esr.geff_last": {
+  "value": 0.6494925174643805,
+  "text": "0.65",
+  "format": ".2f"
+ },
+ "esr.phi": {
+  "value": 0.8,
+  "text": "0.8",
+  "format": ".1f"
+ },
+ "esr.u": {
+  "value": 1.0,
+  "text": "1",
+  "format": ".0f"
+ },
+ "esr_probe.amplitude": {
+  "value": 0.004,
+  "text": "0.004",
+  "format": ".3f"
+ },
+ "esr_probe.basis": {
+  "value": 24,
+  "text": "24",
+  "format": "d"
+ },
+ "esr_probe.gamma": {
+  "value": 0.3,
+  "text": "0.3",
+  "format": ".1f"
+ },
+ "esr_probe.harmonics": {
+  "value": 8,
+  "text": "8",
+  "format": "d"
+ },
+ "esr_probe.rabi": {
+  "value": 0.0017302918082857954,
+  "text": "0.00173",
+  "format": ".5f"
+ },
+ "esr_probe.ratio": {
+  "value": 0.09999955739197319,
+  "text": "0.1",
+  "format": ".1f"
+ },
+ "esr_probe.sx_elastic": {
+  "value": 0.04670069535988694,
+  "text": "0.047",
+  "format": ".3f"
+ },
+ "esr_probe.sx_lower": {
+  "value": 0.04921189637289775,
+  "text": "0.049",
+  "format": ".3f"
+ },
+ "esr_probe.sx_rwa": {
+  "value": 0.046779839715951996,
+  "text": "0.0468",
+  "format": ".4f"
+ },
+ "esr_probe.sx_upper": {
+  "value": 0.04452363818215567,
+  "text": "0.045",
+  "format": ".3f"
+ },
+ "esr_probe.sz_line": {
+  "value": 0.18653432473201914,
+  "text": "0.1865",
+  "format": ".4f"
+ },
+ "esr_probe.sz_rwa": {
+  "value": 0.18711930531114365,
+  "text": "0.1871",
+  "format": ".4f"
+ },
+ "esr_probe.width": {
+  "value": 0.006,
+  "text": "0.006",
+  "format": ".3f"
+ },
+ "esr_probe.zeeman": {
+  "value": 0.01730299466730123,
+  "text": "0.0173",
+  "format": ".4f"
+ },
+ "gate.gate_amplitude": {
+  "value": 0.01,
+  "text": "0.01",
+  "format": "g"
+ },
+ "gate.gate_deviation": {
+  "value": null,
+  "text": "8\\times10^{-5}",
+  "format": null
+ },
+ "gate.outlier_deviation": {
+  "value": null,
+  "text": "5\\times10^{-3}",
+  "format": null
+ },
+ "gate.outlier_position": {
+  "value": 0.5,
+  "text": "0.5",
+  "format": "g"
+ },
+ "gate.phase_amplitude": {
+  "value": 0.1,
+  "text": "0.1",
+  "format": "g"
+ },
+ "gate.phase_deviation": {
+  "value": null,
+  "text": "9\\times10^{-4}",
+  "format": null
+ },
+ "gate.phase_scale": {
+  "value": 10,
+  "text": "10",
+  "format": "d"
+ },
+ "highfreq.bandwidth": {
+  "value": 2.0,
+  "text": "2",
+  "format": "g"
+ },
+ "highfreq.crossing": {
+  "value": 3.766174187085057,
+  "text": "3.8",
+  "format": ".1f"
+ },
+ "highfreq.detuning": {
+  "value": 0.0,
+  "text": "0",
+  "format": "g"
+ },
+ "highfreq.gamma": {
+  "value": 0.8,
+  "text": "0.8",
+  "format": "g"
+ },
+ "highfreq.omega": {
+  "value": 40.0,
+  "text": "40",
+  "format": "g"
+ },
+ "highfreq.pairs": {
+  "value": null,
+  "text": "\\text{one}",
+  "format": null
+ },
+ "highfreq.phi": {
+  "value": 0.8,
+  "text": "0.8",
+  "format": "g"
+ },
+ "highfreq.u": {
+  "value": 1.0,
+  "text": "1",
+  "format": "g"
+ },
+ "numerics.bandwidth": {
+  "value": 10.0,
+  "text": "10",
+  "format": "g"
+ },
+ "numerics.bath_count": {
+  "value": null,
+  "text": "\\text{three}",
+  "format": null
+ },
+ "numerics.bath_pairs": {
+  "value": null,
+  "text": "\\text{two, four and eight}",
+  "format": null
+ },
+ "numerics.below_spread": {
+  "value": 1.9921575100650317,
+  "text": "2",
+  "format": ".0f"
+ },
+ "numerics.cutoff": {
+  "value": 2,
+  "text": "2",
+  "format": "d"
+ },
+ "numerics.cutoff_basis_states": {
+  "value": 68,
+  "text": "68",
+  "format": "d"
+ },
+ "numerics.fock_dimension": {
+  "value": 546,
+  "text": "546",
+  "format": "d"
+ },
+ "numerics.large_basis_error": {
+  "value": null,
+  "text": "10^{-4}",
+  "format": null
+ },
+ "numerics.omega": {
+  "value": 0.45,
+  "text": "0.45",
+  "format": "g"
+ },
+ "numerics.small_basis_error": {
+  "value": null,
+  "text": "10^{-3}",
+  "format": null
+ },
+ "numerics.strong_amplitude": {
+  "value": 1.5,
+  "text": "1.5",
+  "format": "g"
+ },
+ "numerics.threshold": {
+  "value": 1.0957881063345956,
+  "text": "1.10",
+  "format": ".2f"
+ },
+ "numerics.weak_amplitude": {
+  "value": 0.3,
+  "text": "0.3",
+  "format": "g"
+ },
+ "pat.dn": {
+  "value": 0.2306410204232212,
+  "text": "0.23",
+  "format": ".2f"
+ },
+ "pat.element_max": {
+  "value": 0.781987231330954,
+  "text": "0.78",
+  "format": ".2f"
+ },
+ "pat.element_min": {
+  "value": 0.4808695300956011,
+  "text": "0.48",
+  "format": ".2f"
+ },
+ "pat.epsilon": {
+  "value": 0.2,
+  "text": "0.2",
+  "format": ".1f"
+ },
+ "pat.gamma": {
+  "value": 0.5,
+  "text": "0.5",
+  "format": ".1f"
+ },
+ "pat.gap_doublet": {
+  "value": 1.3125874012504328,
+  "text": "1.31",
+  "format": ".2f"
+ },
+ "pat.gap_max": {
+  "value": 0.2603514991361845,
+  "text": "0.26",
+  "format": ".2f"
+ },
+ "pat.gap_min": {
+  "value": 0.08255482223965427,
+  "text": "0.08",
+  "format": ".2f"
+ },
+ "pat.gap_singlets": {
+  "value": 0.7309911602806428,
+  "text": "0.73",
+  "format": ".2f"
+ },
+ "pat.n_D": {
+  "value": 0.9703845662037855,
+  "text": "0.970",
+  "format": ".3f"
+ },
+ "pat.n_S": {
+  "value": 0.7397435457805643,
+  "text": "0.740",
+  "format": ".3f"
+ },
+ "pat.omega": {
+  "value": 0.05,
+  "text": "0.05",
+  "format": ".2f"
+ },
+ "pat.pairs": {
+  "value": null,
+  "text": "\\text{two}",
+  "format": null
+ },
+ "pat.phi": {
+  "value": 0.8,
+  "text": "0.8",
+  "format": ".1f"
+ },
+ "pat.range_amplitude": {
+  "value": 0.4,
+  "text": "0.4",
+  "format": "g"
+ },
+ "pat.u": {
+  "value": 1.0,
+  "text": "1",
+  "format": ".0f"
+ },
+ "pat.width": {
+  "value": 0.004,
+  "text": "0.004",
+  "format": ".3f"
+ },
+ "phase.adiabatic_pairs": {
+  "value": null,
+  "text": "\\text{two}",
+  "format": null
+ },
+ "phase.cutoff": {
+  "value": 2,
+  "text": "2",
+  "format": "d"
+ },
+ "phase.detuning": {
+  "value": 0.2,
+  "text": "0.2",
+  "format": "g"
+ },
+ "phase.element": {
+  "value": 0.027151909134660986,
+  "text": "0.0272",
+  "format": ".3g"
+ },
+ "phase.fast_omega": {
+  "value": 0.3,
+  "text": "0.3",
+  "format": "g"
+ },
+ "phase.hybridization_amplitude": {
+  "value": 0.7999999999999999,
+  "text": "0.8",
+  "format": "g"
+ },
+ "phase.mixing_amplitude": {
+  "value": 1.625,
+  "text": "1.6",
+  "format": ".1f"
+ },
+ "phase.omega_star": {
+  "value": 0.7159930829051,
+  "text": "0.716",
+  "format": ".3f"
+ },
+ "phase.ratio_amplitude": {
+  "value": 0.75,
+  "text": "0.75",
+  "format": "g"
+ },
+ "phase.resonance_shift": {
+  "value": 0.018355427902314925,
+  "text": "0.018",
+  "format": ".3f"
+ },
+ "phase.rwa_ratio": {
+  "value": 0.9956119013388858,
+  "text": "0.996",
+  "format": ".3f"
+ },
+ "phase.sambe_ratio": {
+  "value": 0.9624031468266431,
+  "text": "0.962",
+  "format": ".3f"
+ },
+ "phase.slow_omega": {
+  "value": 0.1,
+  "text": "0.1",
+  "format": "g"
+ },
+ "phase.sweep_amplitude": {
+  "value": 0.4,
+  "text": "0.4",
+  "format": "g"
+ },
+ "primer.atomic_pairing": {
+  "value": 0.6,
+  "text": "0.6",
+  "format": "g"
+ },
+ "primer.atomic_u": {
+  "value": 2.0,
+  "text": "2",
+  "format": "g"
+ },
+ "spectrum.adiabatic_shift": {
+  "value": 14.889463424704319,
+  "text": "15",
+  "format": ".0f"
+ },
+ "spectrum.crossing": {
+  "value": 1.40625,
+  "text": "1.4",
+  "format": ".1f"
+ },
+ "spectrum.cutoff": {
+  "value": 2,
+  "text": "2",
+  "format": "d"
+ },
+ "spectrum.decomposition_omega": {
+  "value": 0.6,
+  "text": "0.6",
+  "format": "g"
+ },
+ "spectrum.dimension": {
+  "value": 146,
+  "text": "146",
+  "format": "d"
+ },
+ "spectrum.dressed_shift": {
+  "value": 12.185587769318662,
+  "text": "12",
+  "format": ".0f"
+ },
+ "spectrum.gate_amplitude": {
+  "value": 0.05,
+  "text": "0.05",
+  "format": "g"
+ },
+ "spectrum.gate_omega": {
+  "value": 0.6,
+  "text": "0.6",
+  "format": "g"
+ },
+ "spectrum.h0_shift": {
+  "value": 30.332095683143546,
+  "text": "30",
+  "format": ".0f"
+ },
+ "spectrum.harmonics": {
+  "value": 4,
+  "text": "4",
+  "format": "d"
+ },
+ "spectrum.hybridization_factor": {
+  "value": 0.9691140988885892,
+  "text": "0.969",
+  "format": ".3f"
+ },
+ "spectrum.offset": {
+  "value": 14.021450000000002,
+  "text": "14",
+  "format": ".0f"
+ },
+ "spectrum.omega_star": {
+  "value": 0.7309911602806428,
+  "text": "0.731",
+  "format": ".3f"
+ },
+ "spectrum.one_photon": {
+  "value": 0.7309911602806428,
+  "text": "0.73",
+  "format": ".2f"
+ },
+ "spectrum.pairs": {
+  "value": null,
+  "text": "\\text{two}",
+  "format": null
+ },
+ "spectrum.phase_amplitude": {
+  "value": 1.0,
+  "text": "1",
+  "format": "g"
+ },
+ "spectrum.phase_omega": {
+  "value": 0.6,
+  "text": "0.6",
+  "format": "g"
+ },
+ "spectrum.stark_shift": {
+  "value": 18.146507913824884,
+  "text": "18",
+  "format": ".0f"
+ },
+ "spectrum.threshold": {
+  "value": 1.1063186577861681,
+  "text": "1.1",
+  "format": ".1f"
+ },
+ "spectrum.two_photon": {
+  "value": 0.3654955801403214,
+  "text": "0.37",
+  "format": ".2f"
+ },
+ "spectrum.window": {
+  "value": 0.22,
+  "text": "0.22",
+  "format": ".2f"
+ },
+ "static.bandwidth": {
+  "value": 10.0,
+  "text": "10",
+  "format": "g"
+ },
+ "static.cutoff": {
+  "value": 2,
+  "text": "2",
+  "format": "d"
+ },
+ "static.delta": {
+  "value": 1.0,
+  "text": "1",
+  "format": "g"
+ },
+ "static.detuning": {
+  "value": 0.2,
+  "text": "0.2",
+  "format": "g"
+ },
+ "static.doublet_energy": {
+  "value": 0.09578810633459489,
+  "text": "0.096",
+  "format": ".3f"
+ },
+ "static.excited_energy": {
+  "value": 0.7159930829050978,
+  "text": "0.716",
+  "format": ".3f"
+ },
+ "static.gamma": {
+  "value": 0.5,
+  "text": "0.5",
+  "format": "g"
+ },
+ "static.pairs": {
+  "value": null,
+  "text": "\\text{four}",
+  "format": null
+ },
+ "static.phi": {
+  "value": 0.8,
+  "text": "0.8",
+  "format": "g"
+ },
+ "static.u": {
+  "value": 1.0,
+  "text": "1",
+  "format": "g"
+ },
+ "tls.strong_omega": {
+  "value": 1.0,
+  "text": "1",
+  "format": "g"
+ },
+ "tls.strong_pairing": {
+  "value": 0.05,
+  "text": "0.05",
+  "format": "g"
+ },
+ "tls.weak_amplitude": {
+  "value": 0.1,
+  "text": "0.1",
+  "format": "g"
+ },
+ "tls.weak_epsilon": {
+  "value": 0.0,
+  "text": "0",
+  "format": "g"
+ },
+ "tls.weak_omega0": {
+  "value": 1.0,
+  "text": "1",
+  "format": "g"
+ },
+ "tls.weak_pairing": {
+  "value": 0.5,
+  "text": "0.5",
+  "format": "g"
+ },
+ "twotone.basis": {
+  "value": 43,
+  "text": "43",
+  "format": "d"
+ },
+ "twotone.current_element": {
+  "value": 0.02707380053013283,
+  "text": "0.027",
+  "format": ".3f"
+ },
+ "twotone.current_rabi": {
+  "value": 0.005915130943127851,
+  "text": "0.0059",
+  "format": ".4f"
+ },
+ "twotone.epsilon": {
+  "value": 0.2,
+  "text": "0.2",
+  "format": ".1f"
+ },
+ "twotone.harmonics": {
+  "value": 6,
+  "text": "6",
+  "format": "d"
+ },
+ "twotone.mollow_elastic": {
+  "value": 0.09407120190343152,
+  "text": "0.094",
+  "format": ".3f"
+ },
+ "twotone.mollow_lower": {
+  "value": 0.09471373871900288,
+  "text": "0.095",
+  "format": ".3f"
+ },
+ "twotone.mollow_rwa": {
+  "value": 0.09329882264656345,
+  "text": "0.093",
+  "format": ".3f"
+ },
+ "twotone.mollow_upper": {
+  "value": 0.09199728839779368,
+  "text": "0.092",
+  "format": ".3f"
+ },
+ "twotone.omega0": {
+  "value": 0.7159930829051,
+  "text": "0.716",
+  "format": ".3f"
+ },
+ "twotone.pump": {
+  "value": 0.03,
+  "text": "0.03",
+  "format": ".2f"
+ },
+ "twotone.rabi": {
+  "value": 0.018326913584333516,
+  "text": "0.0183",
+  "format": ".4f"
+ }
+}

@@ -1,0 +1,174 @@
+{
+ "tutorial": "09_photon_assisted_tunnelling",
+ "profile": "full",
+ "values": {
+  "n_S": {
+   "value": 0.7397435457805643,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Singlet charge $n_S=\\langle S\\vert n_d\\vert S\\rangle$"
+  },
+  "n_D": {
+   "value": 0.9703845662037855,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Doublet charge $n_D=\\langle D\\vert n_d\\vert D\\rangle$"
+  },
+  "dn": {
+   "value": 0.2306410204232212,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Charge difference $\\Delta n=n_D-n_S$"
+  },
+  "excitation": {
+   "value": 0.10631865778616822,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Undriven tunnelling line $E_D-E_S$"
+  },
+  "static_strength": {
+   "value": 0.4750758319060759,
+   "atol": 1e-09,
+   "format": ".6f",
+   "description": "Static strength $\\lvert\\langle D\\vert d^\\dagger_\\uparrow\\vert S\\rangle\\rvert^2$"
+  },
+  "gap_singlets": {
+   "value": 0.7309911602806428,
+   "atol": 1e-09,
+   "format": ".4f",
+   "description": "Excitation gap of the singlets $E_{S^*}-E_S$"
+  },
+  "gap_doublet": {
+   "value": 1.3125874012504328,
+   "atol": 1e-09,
+   "format": ".4f",
+   "description": "Excitation gap above the doublet"
+  },
+  "hellmann_feynman": {
+   "max": 1e-08,
+   "description": "Slope $d\\Delta E/d\\epsilon$ minus $\\Delta n$ (Hellmann\u2013Feynman)"
+  },
+  "interpolation": {
+   "max": 1e-08,
+   "description": "Error of the Chebyshev interpolants at $\\epsilon_0$"
+  },
+  "element_phase": {
+   "max": 1e-08,
+   "description": "Phase change of $\\mathcal M(\\epsilon)$ in the parallel-transport gauge"
+  },
+  "gap_min": {
+   "value": 0.08255482223965498,
+   "atol": 1e-08,
+   "format": ".4f",
+   "description": "Smallest $\\Delta E$ over the drive at $A/\\Omega=8$"
+  },
+  "gap_max": {
+   "value": 0.26035149864338314,
+   "atol": 1e-08,
+   "format": ".4f",
+   "description": "Largest $\\Delta E$ over the drive at $A/\\Omega=8$"
+  },
+  "element_min": {
+   "value": 0.4808695306431673,
+   "atol": 1e-08,
+   "format": ".4f",
+   "description": "Smallest $\\lvert\\mathcal M\\rvert$ over the drive at $A/\\Omega=8$"
+  },
+  "element_max": {
+   "value": 0.7819872312354155,
+   "atol": 1e-08,
+   "format": ".4f",
+   "description": "Largest $\\lvert\\mathcal M\\rvert$ over the drive at $A/\\Omega=8$"
+  },
+  "weight_minus": {
+   "value": 0.3318880021785846,
+   "atol": 1e-06,
+   "format": ".4f",
+   "description": "Floquet weight $w_{-1}$ at $A/\\Omega=8$, in units of the static strength"
+  },
+  "weight_zero": {
+   "value": 0.15091526417963072,
+   "atol": 1e-06,
+   "format": ".4f",
+   "description": "Floquet weight $w_0$ at $A/\\Omega=8$, in units of the static strength"
+  },
+  "weight_plus": {
+   "value": 0.2511037987014615,
+   "atol": 1e-06,
+   "format": ".4f",
+   "description": "Floquet weight $w_{+1}$ at $A/\\Omega=8$, in units of the static strength"
+  },
+  "asymmetry": {
+   "value": -0.08078420347712312,
+   "atol": 1e-06,
+   "format": ".4f",
+   "description": "Floquet asymmetry $w_{+1}-w_{-1}$ at $A/\\Omega=8$"
+  },
+  "asymmetry_adiabatic": {
+   "value": -0.08091772508463252,
+   "atol": 1e-08,
+   "format": ".4f",
+   "description": "Adiabatic asymmetry at $A/\\Omega=8$"
+  },
+  "asymmetry_constant_element": {
+   "value": -0.2620492952035022,
+   "atol": 1e-08,
+   "format": ".4f",
+   "description": "Adiabatic asymmetry with constant $\\mathcal M$ at $A/\\Omega=8$"
+  },
+  "asymmetry_linear_gap": {
+   "value": 0.1571675859180083,
+   "atol": 1e-08,
+   "format": ".4f",
+   "description": "Adiabatic asymmetry with linearized $\\Delta E$ at $A/\\Omega=8$"
+  },
+  "tien_gordon_zero": {
+   "value": 0.0984281983613989,
+   "atol": 1e-10,
+   "format": ".4f",
+   "description": "Simple Tien\u2013Gordon weight $J_0^2(\\Delta n A/\\Omega)$ at $A/\\Omega=8$"
+  },
+  "tien_gordon_one": {
+   "value": 0.3385634260445699,
+   "atol": 1e-10,
+   "format": ".4f",
+   "description": "Simple Tien\u2013Gordon weight $J_1^2(\\Delta n A/\\Omega)$ of $q=\\pm1$ at $A/\\Omega=8$"
+  },
+  "tien_gordon_check": {
+   "max": 1e-10,
+   "description": "Adiabatic formula with linear $\\Delta E$ and constant $\\mathcal M$ minus $J_q^2(\\Delta n A/\\Omega)$"
+  },
+  "line_center": {
+   "value": 0.14558467170300404,
+   "atol": 1e-08,
+   "format": ".5f",
+   "description": "Floquet $q=0$ line $\\varepsilon_D-\\varepsilon_S$ at $A/\\Omega=8$"
+  },
+  "line_center_adiabatic": {
+   "value": 0.14541449726240496,
+   "atol": 1e-08,
+   "format": ".5f",
+   "description": "Period average $\\overline{\\Delta E}$ at $A/\\Omega=8$"
+  },
+  "total_weight": {
+   "value": 0.9382552666196592,
+   "atol": 1e-06,
+   "format": ".4f",
+   "description": "Floquet weight summed over $q$ at $A/\\Omega=8$, in units of the static strength"
+  },
+  "total_weight_adiabatic": {
+   "value": 0.9385156514321135,
+   "atol": 1e-08,
+   "format": ".4f",
+   "description": "Period average of $\\lvert\\mathcal M\\rvert^2$ at $A/\\Omega=8$, in units of the static strength"
+  },
+  "max_deviation_adiabatic": {
+   "max": 0.01,
+   "description": "Largest difference of Floquet and adiabatic weights, $\\lvert q\\rvert\\le3$"
+  },
+  "residual": {
+   "max": 1e-05,
+   "description": "Largest Floquet residual bound"
+  }
+ }
+}

@@ -36,7 +36,7 @@ calculation conserves current independently of that approximation.
 The paper's continuum formulas take a wide band; Fig. 8 does not specify a
 finite NRG bandwidth. The bandwidth test therefore measures an explicit model
 limit rather than assuming identical band conventions. Both leads are kept as
-independent, uncompressed reservoirs, with tunneling
+independent, uncompressed reservoirs, with tunnelling amplitudes
 
 ```math
 t_j=\sqrt{\frac{\Gamma_j}{\pi\rho_j}},\qquad \rho_j=\frac{1}{2D}.
@@ -46,7 +46,7 @@ Each bath is fitted at **its own gap**, using the positive surrogate constructio
 of [Baran, Frost and Paaske](https://doi.org/10.1103/PhysRevB.108.L220506).
 Its weights retain their normal-state measure without renormalization. The
 main (`paper`) calculation uses four signed spinful levels per lead, a frequency-fit interval
-from $0.001\Delta_L$ to $100\Delta_L$, and unrestricted finite-space QP solves.
+from $0.001\Delta_L$ to $100\Delta_L$, and unrestricted finite-space QP diagonalization.
 
 Our phase convention is $\phi=\phi_R-\phi_L$, with phases $[-\phi/2,+\phi/2]$.
 The paper uses the opposite lead orientation. Its plotted positive-current
@@ -58,7 +58,7 @@ J_j=\frac{2e}{\hbar}\frac{\partial E_g}{\partial\phi_j},
 ```
 
 The figure sets $e=\hbar=1$: multiply the solver's phase derivative by **two**
-to obtain its $J/\Delta_L$ ordinate. `detuning` is the centered gate
+to obtain its $J/\Delta_L$ ordinate. `detuning` is the gate coordinate centred at half filling,
 $\epsilon_d+U/2$, not the unshifted electron level.
 
 ## Results and independent checks
@@ -74,7 +74,7 @@ all these parameter points have a singlet ground state. At half filling:
 - Maximum difference from the Fig. 8 NRG curve: **0.00040362**.
 - Maximum difference from the published FDC/DC left-current curves: **0.00062032**.
 - Largest paper-profile eigensolver residual: **$2.55\times10^{-12}\Delta_L$**.
-- Centered phase finite differences reproduce the current within **$7.4\times10^{-10}$**.
+- Centred finite differences in phase reproduce the current within **$7.4\times10^{-10}$**.
 - Particle-hole-related gates have equal current and charges adding to two.
 - An independent tensor-product physical-electron ED calculation checks both sector
   energies for unequal gaps, without the solver's Bogoliubov construction.
@@ -105,7 +105,7 @@ continuum excitation energy. Full tables are in
 `extract_reference.py` reads `J_LR.eps` from the original arXiv source archive
 and extracts its drawing coordinates. It retains FDC
 left-current and DC left/right-current polylines for all three gap ratios. The
-NRG circle centers trace the curve with gap ratio $1/2$. The caption and curve positions
+NRG circle centres trace the curve with gap ratio $1/2$. The caption and curve positions
 identify the assignments; no calculated solver values calibrate the axes.
 
 The EPS's integer-coordinate precision implies about **0.00073** in gate and

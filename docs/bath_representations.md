@@ -38,7 +38,7 @@ representation introduce additional choices described below.
 | Full finite-bath spectrum or arbitrary electron-operator transitions | Any bath, with `compress=False` | Include relevant sectors and check the actual continuum threshold separately. |
 | Improve QP convergence in the presence of direct lead–lead hopping | Consider `bath_reference="coupled"` | Compare cutoff sequences for both vacua; equal cutoffs need not have equal errors. |
 
-**Main finding from benchmarking/convergence studies:** the preferred bath depends on the observable and accuracy
+**Main conclusion of the benchmark and convergence studies:** the preferred bath depends on the observable and accuracy
 target. In our convergence studies, the surrogate was about 25 times faster at one interacting
 $10^{-4}$ spin-response target, including fitting. At equal size the cosh grid
 has smaller worst-case near-edge excitation errors, while the surrogate has
@@ -49,8 +49,8 @@ reports an additional Padé-bath comparison using Josephson currents and
 common-lead spin transitions, with its own parameters and convergence evidence.
 
 For repeated calculations at fixed gap and bandwidth, **construct and save the
-bath once**. Changing impurity interaction, tunneling, or phase does not require
-refitting that same reservoir kernel. The fitting time is then incurred only
+bath once**. Reuse that reservoir kernel when changing impurity interaction,
+tunnelling or phase. The fitting time is then incurred only
 once for the entire parameter scan. Changing the reservoir gap, bandwidth, or target
 hybridization function does require a new bath assessment.
 
@@ -70,8 +70,8 @@ w_i\simeq\rho\,d\xi,\qquad
 E_i=\sqrt{\xi_i^2+\Delta^2}.
 ```
 
-The weights represent the **normal-state measure**, not the superconducting
-density of states. Each `xi` entry is a spinful orbital and supplies **two**
+The weights represent the **normal-state measure**. Each `xi` entry is a
+spinful orbital and supplies **two**
 positive-energy quasiparticle modes before any compression. A mirrored pair
 $-\xi,+\xi$ therefore supplies four QP modes per reservoir.
 
@@ -107,9 +107,9 @@ g_L(i\omega)=\sum_{i=1}^{L}
 
 `qdjj_solver.common.baths.hybridization_g` evaluates the continuum expression;
 `discrete_g` evaluates the finite sum. Supply the real number $\omega$ when
-evaluating $g(i\omega)$; these functions do not take a complex retarded frequency.
-For asymmetric explicit baths, this scalar kernel alone does not specify all
-components of the Nambu hybridization.
+evaluating $g(i\omega)$. For retarded frequencies, use the analytic continuation
+described below. Asymmetric explicit baths require the additional components
+of the full Nambu hybridization.
 
 The high-frequency limit reveals the meaning of the zeroth-moment error:
 
@@ -123,8 +123,8 @@ low-frequency accuracy and accurate high-frequency moments are distinct goals.
 
 ### Physical scales and supported limits
 
-- All energies use the supplied Hamiltonian's units. The software does not
-  automatically set $\Delta=1$ or rescale the fitting window.
+- All energies use the supplied Hamiltonian's units. Express the gap and fitting
+  window explicitly in those units.
 - `delta` and `bandwidth` must be positive and finite. The bath constructors do
   not accept a zero-gap normal metal, zero bandwidth, or infinite bandwidth.
   `chain_expansion(..., wide_band=True)` explicitly targets the wide-band kernel
@@ -132,12 +132,12 @@ low-frequency accuracy and accurate high-frequency moments are distinct goals.
   [ChE conventions](chain_expansion.md#wide-band-construction-and-normalization).
   General finite Hamiltonians can also be supplied directly.
 - Increasing $D$ changes the physical model. Increasing bath resolution at fixed
-  $D$ converges toward a **finite-band** continuum, not automatically a wide-band limit.
-- There is no temperature parameter in these generators. `frequency_min` is not
-  a temperature and the fitting mesh is not a thermal Matsubara grid.
+  $D$ converges toward a **finite-band** continuum. The wide-band limit also requires increasing $D$.
+- The fitting mesh is a numerical sampling grid on the imaginary-frequency axis.
+  `frequency_min` sets its lower bound independently of the physical temperature.
 - The atomic/GAL effective models used in some applications are separate
-  approximations. Sending $\Delta$ to infinity at fixed $D$ is not equivalent to
-  the usual wide-band superconducting atomic limit.
+  approximations. The usual superconducting atomic limit takes the wide-band
+  limit before sending $\Delta$ to infinity.
 
 See [models and conventions](models.md) for energy zeros, phases, fields, and
 observable normalization.
@@ -153,8 +153,7 @@ bath = cosh_grid(pairs=8, delta=1.0, bandwidth=100.0)
 assert bath.levels == 16
 ```
 
-The implementation uses Gauss–Legendre quadrature in a hyperbolic coordinate,
-**not directly in normal energy**:
+The implementation uses Gauss–Legendre quadrature in the **hyperbolic coordinate** $t$:
 
 ```math
 T=\mathrm{asinh}(D/\Delta),\qquad
@@ -185,14 +184,14 @@ An omitted bath section in a `qdjj-solver` reference-model input selects a
 cosh grid with `pairs=8`. For reproducible work, write the bath section explicitly.
 The bath's JSON `kind` must be **`"cosh-grid"`**.
 
-`bath.metadata["measure_error"]` records $\sum_iw_i-1$. Coarse quadratures are
-not normalized by hand; this error converges as the quadrature is refined.
+`bath.metadata["measure_error"]` records $\sum_iw_i-1$. Preserve the computed
+quadrature weights and reduce this error by refining the quadrature.
 
 ### Convergence properties
 
 - A $P$-point Gaussian rule is exact for polynomials through degree $2P-1$ in
-  **the transformed coordinate**. This is not a polynomial-exactness statement
-  about arbitrary functions of $\xi$.
+  **the transformed coordinate**. Its accuracy for functions of $\xi$ follows
+  from their dependence on that coordinate.
 - For a fixed positive gap and finite bandwidth, the imaginary-axis integrands
   are smooth. Their analyticity permits rapid high-order quadrature convergence.
   The useful rate depends on the observable and on $D/\Delta$.
@@ -201,10 +200,10 @@ not normalized by hand; this error converges as the quadrature is refined.
   imaginary-axis kernel can coexist with slower gap-edge spectral convergence.
   At fixed $D/\Delta$, the closest transformed Gaussian node has
   $t_{\min}=O(P^{-2})$, so $E_{\min}-\Delta=O(P^{-4})$ asymptotically.
-  This estimates the grid's edge resolution, not every observable's error.
-- Refinement moves the nodes and weights. These finite Hamiltonians are not
-  nested variational subspaces, so their energies and currents need not change
-  monotonically with `pairs`.
+  This estimates the grid's edge resolution; check each observable's error by refinement.
+- Refinement moves the nodes and weights, producing a different finite Hamiltonian
+  at each size. Energies and currents can therefore converge nonmonotonically
+  with `pairs`.
 - Construction is deterministic and inexpensive, with no nonlinear optimization
   or fit-window choice. At very high order, double-precision roundoff limits
   further improvement.
@@ -247,8 +246,8 @@ g_{\max}=\max_k g_D(i\omega_k).
 
 Consequently, `relative_weight=0` is **absolute least squares**, apart from a
 constant scale; `relative_weight=1` is **relative least squares**. Equal logarithmic
-sampling also gives roughly equal sample counts per frequency decade. A reported
-maximum relative error is not the default optimization objective.
+sampling also gives roughly equal sample counts per frequency decade. The reported
+maximum relative error is an additional diagnostic alongside the least-squares objective.
 
 ### Parameters
 
@@ -259,13 +258,13 @@ maximum relative error is not the default optimization objective.
 | `bandwidth` | `100.0` | Positive finite target half-bandwidth. It is a physical parameter, not an optimization bound on fitted poles. |
 | `frequency_min` | `1e-3` | Positive lower fitting frequency, strictly below `frequency_cutoff`. Decreasing it adds low-frequency decades to the objective; zero itself is not sampled. |
 | `frequency_cutoff` | `100.0` | Finite upper fitting frequency in the same energy units. Extending it tests sensitivity to high-frequency information. It need not equal $D$. |
-| `frequency_points` | `1000` | Integer mesh size, at least 10. More points test mesh convergence; they do not add poles or fix an insufficient bath size. |
+| `frequency_points` | `1000` | Integer mesh size, at least 10. Increase it to test mesh convergence at fixed pole count; refine bath size separately through `levels`. |
 | `starts` | `4` | Positive integer number of optimization starts. One deterministic initialization is followed by randomized starts. More starts can improve robustness and increase fitting cost. |
 | `seed` | `1729` | Random-number seed for initial guesses. A fixed seed aids reproducibility; save the final coefficients to reuse the identical bath with other library versions. |
 | `relative_weight` | `0.0` | Any finite exponent is accepted. Values between zero and one interpolate between the absolute and relative objectives. Weighting the high-frequency relative error more strongly can change low-energy accuracy at fixed $L$. |
-| `max_nfev` | `5000` | Keyword-only positive integer (not a boolean): maximum function evaluations **per start**, not an accuracy control or a shared budget across starts. |
+| `max_nfev` | `5000` | Keyword-only positive integer: maximum function evaluations **per start**. Each start receives its own budget; fit accuracy is assessed separately. Booleans are rejected. |
 
-Changing `delta` or `bandwidth` **does not rescale the frequency defaults**.
+The frequency defaults **remain fixed when `delta` or `bandwidth` changes**.
 For example, expressing a model in units where $\Delta=0.01$ while leaving the
 mesh at `1e-3` to `100` changes the dimensionless fitting window dramatically.
 Specify it in the intended units.
@@ -274,20 +273,20 @@ The implementation uses SciPy `least_squares`, an analytic Jacobian, Jacobian
 scaling, and fixed stopping tolerances
 $\mathrm{ftol}=\mathrm{xtol}=\mathrm{gtol}=2\times10^{-13}$.
 The default budget remains 5,000 function evaluations per start; the public
-`fit_surrogate(..., max_nfev=...)` argument changes only that budget. It does not
-loosen tolerances or change parameter bounds, the absolute/relative objective,
-or the weight convention. Fitted weights are not renormalized.
+`fit_surrogate(..., max_nfev=...)` argument changes only that budget, preserving
+the tolerances, parameter bounds, absolute/relative objective and weight convention.
+Fitted weights retain their optimized values.
 
 Selection still requires optimizer success and finite parameters and residuals;
-among eligible starts, the smallest residual norm wins. If no start qualifies,
+among successful starts, the fit with the smallest residual norm is selected. If no start qualifies,
 `RuntimeError` reports `max_nfev` and each start's index, status, evaluation count
-(`nfev`), and termination message. There is no fallback that accepts a failed
-start, even if its residual is small.
+(`nfev`), and termination message. Every accepted fit must satisfy the optimizer's
+success criterion as well as having finite parameters and residuals.
 
 There are $L$ optimized logarithmic parameters for either parity of $L$.
-Use substantially more frequency points than fit parameters; the accepted
-minimum mesh size of ten is the smallest accepted input, not a sufficient
-resolution criterion for every bath size.
+Use substantially more frequency points than fit parameters. The minimum
+accepted mesh size is ten; establish sufficient resolution for the chosen
+bath size through mesh refinement.
 
 ### Reading fit diagnostics
 
@@ -312,20 +311,20 @@ sum-of-squares convention as the selected cost; non-finite trial optimality or
 cost is recorded as `None` (`null` in JSON). Sum the trial `evaluations` to obtain
 the function-evaluation count across all starts.
 
-Optimizer success does not imply that the fit meets a requested physical error
-target. Validate it on an independent frequency grid, including zero and frequencies
+To assess the accuracy of a successful fit, validate it on an independent
+frequency grid, including zero and frequencies
 outside the fit window, and then check the observable of interest.
 
 ### Evaluation budgets for high-accuracy studies
 
 When starts exhaust their evaluation budget, increasing `max_nfev` is a
-case-specific, controlled retry, not a new accuracy setting. Hold the physical
+controlled way to extend the optimization. Hold the physical
 parameters, level count, mesh, objective, seed, and number of starts fixed so the
-comparison isolates the budget. Keep the stopping tolerances and bounds unchanged;
-do not accept failed starts or renormalize weights to hide a moment error.
+comparison isolates the budget. Retain the stopping tolerances, bounds and acceptance
+criteria, and preserve the fitted weights together with their moment error.
 
-Optimizer success and a small held-out kernel error do not establish continuum
-accuracy. Check the high-frequency moment and physical observables independently;
+Assess continuum accuracy by checking the high-frequency moment and refining
+the bath for each physical observable;
 evaluation counts can vary with numerical-library versions and platform.
 
 ### Convergence properties and odd/even effects
@@ -333,27 +332,27 @@ evaluation counts can vary with numerical-library versions and platform.
 1. **Compactness:** optimized poles can reproduce the important hybridization
    structure with far fewer levels than a generic energy grid. This can save
    much more solver time than the fit itself costs.
-2. **Window dependence:** a fit optimized over one interval has no uniform
-   accuracy guarantee elsewhere. Vary the window while holding $L$ fixed, then
+2. **Window dependence:** evaluate accuracy over the frequency range relevant
+   to the calculation. Vary the window while holding $L$ fixed, then
    vary $L$ while holding the objective fixed.
-3. **No monotonicity guarantee:** nonlinear optimization can find different
-   local minima. Neither the practical fit-error sequence nor the many-body
-   observable sequence is guaranteed to be monotone.
+3. **Nonmonotonic convergence:** nonlinear optimization can find different
+   local minima, and both fit errors and many-body observables can converge
+   nonmonotonically.
 4. **Odd sizes:** the fixed $\xi=0$ level gives an exact bath QP mode at $\Delta$.
    Even sizes have a lowest QP level above $\Delta$. Follow odd and even size sequences
    separately when studying excitations close to the edge.
 5. **Effective poles:** fitted $|\xi_i|$ can exceed $D$. These are rational
    approximation parameters, not necessarily physical samples of the target band.
-6. **Real-frequency limitations:** a small imaginary-axis residual is not a
-   uniform real-frequency error bound. Individual bath poles, continuum line
-   shapes, weak binding energies, and crossing locations require direct checks.
+6. **Real-frequency accuracy:** check individual bath poles, continuum line shapes,
+   weak binding energies and crossing locations directly. These checks assess
+   the analytic continuation in addition to the imaginary-axis fit.
 7. **Optimization limits:** adding more poles can make residues and energies
    poorly determined or make all starts fail. Inspect convergence status and
    consider a different mesh/objective or deterministic quadrature as a check.
 
-Save the explicit bath whenever it defines a reported result. `seed=1729` alone
-does not guarantee identical optimized coefficients on every SciPy
-version or platform.
+Save the explicit bath whenever it defines a reported result. Reusing its coefficients
+preserves the finite Hamiltonian across SciPy versions and platforms, while the seed
+records the initial guesses used in the fit.
 
 ### Why a tiny fit residual can miss a shallow bound state
 
@@ -377,7 +376,7 @@ $\omega$; the real-energy continuation above is a separate formula.
 ## Padé chain-expansion reservoirs
 
 `chain_expansion(levels, delta=1.0, bandwidth=100.0, wide_band=False)` constructs
-the chain exansion (ChE) approximation of Bobok et al. by matching the low-frequency expansion
+the chain-expansion (ChE) approximation of Bobok et al. by matching the low-frequency expansion
 of the reservoir kernel. It returns `levels` signed spinful levels per reservoir
 in star coordinates, together with the equivalent chain coefficients. The
 default describes a finite band; `wide_band=True` selects the analytic wide-band
@@ -406,10 +405,10 @@ bath = DiscreteBath(
 | `bandwidth` | `100.0` | Positive finite half-bandwidth, used in the density/coupling convention even for externally supplied poles. |
 | `metadata` | Empty dictionary | Optional notes on the bath's source and numerical diagnostics, saved with its coefficients. |
 
-The bath keeps a fixed copy of the supplied arrays. It does not require
-sorted or distinct energies, particle–hole symmetry, a weight sum of one, or
-nodes within $[-D,D]$. A one-level bath at zero is allowed, although `bandwidth=0`
-is not.
+The bath keeps a fixed copy of the supplied arrays. It accepts unsorted or repeated
+energies, particle–hole asymmetry, general positive weight sums and
+nodes outside $[-D,D]$. A one-level bath at zero is allowed; its `bandwidth`
+must remain positive.
 
 The paired-mode symmetry reduction requires more: `bath.paired` checks exact equality
 of `xi` with `-xi[::-1]`, and of `weights` with `weights[::-1]`. Sort mirrored
@@ -429,7 +428,7 @@ The residues $R_i$ have energy units; the contact weights are dimensionless.
 For coefficients quoted in gap units, restore both $\xi_i=\Delta\tilde\xi_i$
 and $R_i=\Delta\tilde R_i$. If a table lists only positive poles and uses an
 explicit factor of two, mirror each pole with the same individual weight;
-do not double both mirrored weights. Count a zero pole once. These residues
+the two nodes together supply that factor. Count a zero pole once. These residues
 are distinct from the impurity's total hybridization $\Gamma$.
 
 ### Direct normal-energy Gauss–Legendre control
@@ -453,8 +452,8 @@ The rule integrates normal-energy polynomials through degree $2L-1$ exactly in
 exact arithmetic. For a smooth fixed-scale integrand it has rapid asymptotic
 convergence. At large $D/\Delta$, however, the low-energy structure occupies a
 very small fraction of the normal band. Many nodes may be needed before that
-asymptotic regime is useful. Exact low-order normal moments do not establish
-accurate superconducting observables.
+asymptotic regime is useful. Converge superconducting observables by resolving
+this low-energy structure in addition to matching normal-state moments.
 
 For even $L$ the nearest normal energy is asymptotically $O(D/L)$. Once it is
 small compared with $\Delta$, the bath-edge displacement is
@@ -463,9 +462,9 @@ scaling. Odd direct Gaussian rules have a zero node; the matched direct-Gaussian
 benchmark uses even sizes, like the cosh grid.
 
 Other positive linear, logarithmic, adaptive, or externally fitted meshes can be
-supplied through the same class. Their convergence belongs to the chosen rule:
-`DiscreteBath` supplies neither a generator nor an extrapolation for them.
-There is no built-in Wilson/NRG logarithmic-discretization switch.
+supplied through the same class. Construct their nodes and weights externally
+and assess convergence using the chosen rule. A Wilson/NRG logarithmic
+discretization likewise requires externally supplied coefficients.
 
 ## Switching in Python and configuration files
 
@@ -488,7 +487,7 @@ for label, bath in baths.items():
     print(label, "Eodd-Eeven =", odd.energies[0] - even.energies[0])
 ```
 
-This is a small finite-bath comparison, not a claim of continuum convergence.
+This comparison checks two small finite baths; extend it by bath refinement to assess continuum convergence.
 At zero field in this spin-symmetric example the two doublet projections are
 equivalent. At finite field, compare both projections; for general models check
 all relevant sectors.
@@ -496,6 +495,8 @@ all relevant sectors.
 After installing `[dmrg]`, use the same `h` with `backend="dmrg"`, `cutoff=None`,
 and explicit MPS settings. DMRG requires an unrestricted QP occupation space for
 the modes present in `h`; modes removed during model construction are already absent.
+
+<!-- docs-test: weekly -->
 
 ```python
 mps = solve(
@@ -505,8 +506,8 @@ mps = solve(
 )
 ```
 
-Increase the bond dimension and compare observables to establish MPS convergence;
-the selected `chi_max` is a starting point, not an accuracy guarantee.
+Use the selected `chi_max` as a starting point. Increase the bond dimension and
+compare observables to establish MPS convergence.
 
 ### JSON input files
 
@@ -547,7 +548,7 @@ qdjj-solver solve model.json --output results/state.json
 For `model.kind="multi-orbital"`, place bath specifications in
 `model.reservoirs`, one per reservoir. Different reservoirs can have different
 positive gaps, bandwidths, sizes, or discretization families. The Python equivalent
-is passing the bath list to `make_model`; supply tunneling matrices using each
+is to pass the bath list to `make_model`; supply tunnelling matrices using each
 reservoir's own density convention.
 
 Specify settings explicitly: Python `solve` defaults to full finite space,
@@ -569,14 +570,13 @@ replayed = DiscreteBath.from_record(record)
 config_bath = {"kind": "discrete", **record}
 ```
 
-Use Python or a surrogate configuration to control the fit. The `qdjj-solver`
-command has no `fit` subcommand.
+Control the fit through Python or a surrogate configuration supplied to `qdjj-solver solve`.
 
 The saved bath contains `xi`, `weights`, energy scales, and `metadata`. To use
 those coefficients in a model input file, add `"kind": "discrete"` alongside
 them. An entry such as `metadata.kind="surrogate"` records how the coefficients
-were obtained; it does not request a new fit. Read the bath file in Python or
-copy its contents into the model input; the `bath` entry does not accept a filename.
+were obtained, while the explicit arrays determine the loaded bath. Read the bath
+file in Python or copy its contents into the model input's `bath` object.
 
 When switching a JSON input between QP and DMRG, also choose the appropriate
 numerical settings. For example, replace QP `tolerance` with DMRG
@@ -594,7 +594,7 @@ These choices act **after specifying the finite reservoir measure**.
 |---|---|---|
 | `bath_reference="isolated"` | Default QPs of each disconnected BCS reservoir; supports general spin-mixing contacts. | Interlead hopping can create QPs relative to this vacuum. Its importance must be captured by the QP cutoff or MPS. |
 | `bath_reference="coupled"` | Diagonalizes the entire quadratic finite environment, including direct lead contacts. Requires spin-conserving direct hopping and an unpolarized, gapped QP vacuum. | Dense environment diagonalization adds setup cost but can reduce QP-vacuum mismatch. The isolated-BCS energy reference is retained. |
-| Eta coordinates | Verified matched, mirrored, half-filled single-dot junction with compatible tunneling/direct hopping. | A QP-number-preserving symmetry transformation can expose useful sectors. Not available with the coupled-bath reference. |
+| Eta coordinates | Verified matched, mirrored, half-filled single-dot junction with compatible tunnelling and direct hopping. | A QP-number-preserving symmetry transformation can expose useful sectors. Not available with the coupled-bath reference. |
 | `compress=True` | Freezes discarded dark modes in their vacuum; eligible eta construction and vanishing direct spin-orbit contact are required. | Often greatly reduces the finite problem for bound impurity states. It can omit spectator/continuum excitations. |
 | Physical-electron chain | Lanczos tridiagonalization starting from the normalized contact orbital, available in the earlier DMRG routines described below. | Preserves the contact spectral measure; changes MPS entanglement and MPO structure. It is not a new continuum discretization. |
 | DMRG `mode_order`, `group_size` | Orders/groups the existing canonical modes along the MPS. | Can change computational cost and bond convergence without performing a star-to-chain transformation. |
@@ -617,15 +617,15 @@ For example, an explicit uncompressed coupled reference is constructed with
 The exact transformation is already accounted for in built-in observables.
 
 Isolated and coupled coordinates describe the same unrestricted finite physical
-problem. A finite QP cutoff selects different trial spaces in these two vacua;
-equal cutoffs do not imply equal accuracy. Compare them against an unrestricted
+problem. A finite QP cutoff selects different trial spaces in these two vacua,
+with potentially different accuracies. Compare them against an unrestricted
 same-bath result before comparing their cost at a target error.
 
-Compression is a physical subspace restriction. DMRG cannot recover removed
-modes. `h.physical_operator(...)` cannot transform arbitrary electron operators
-into a compressed model, because products of separately projected
-operators would miss dark-vacuum contractions. Built-in compressed observables
-include the required contractions. Use `compress=False` for general transitions.
+Compression restricts both solvers to the physical subspace retained by the model
+constructor. For arbitrary electron-operator transformations with
+`h.physical_operator(...)`, use `compress=False`: complete operator products
+require the vacuum contractions of all modes. Built-in compressed observables
+already include the required dark-vacuum contractions.
 
 The earlier DMRG module
 `qdjj_solver.dmrg_solver.legacy` provides `chain_coefficients`,
@@ -634,7 +634,7 @@ half-filled single-dot geometries and `twice_sz` in `(-1, 0, 1)`; they are not
 general replacements for `make_model` and `qdjj_solver.solve`. Their
 `chi`, `max_sweeps`, and `energy_tolerance` control the MPS calculation, not bath
 resolution. The chain coefficients include a contact norm
-$\sqrt{\sum_iw_i}$, which must multiply tunneling. Repeated normal energies can
+$\sqrt{\sum_iw_i}$, which must multiply the tunnelling amplitude. Repeated normal energies can
 shorten the contact-cyclic chain and leave spectator modes outside it.
 
 The legacy star routine automatically freezes dark modes for eligible mirrored
@@ -684,8 +684,8 @@ Fock-space dimensions before selecting symmetry sectors are
 ```
 
 Symmetry sectors and justified compression reduce these counts. This steep
-dependence explains why saving two bath levels can matter more than milliseconds
-or seconds of fitting. DMRG avoids enumerating the full Fock basis, but its cost
+dependence explains why using two fewer bath levels can outweigh the cost of milliseconds
+or seconds spent fitting the bath. DMRG avoids enumerating the full Fock basis, but its cost
 depends on the required bond dimensions, MPO structure, mode ordering, initial
 states, and sweeps. There is no bath-independent runtime scaling at fixed
 physical accuracy.
@@ -708,11 +708,12 @@ physical accuracy.
 7. **Report the evidence separately:** eigensolver residual, cutoff/bond changes,
    bath-size changes, window changes, and reference discrepancies.
 
-A small QP residual is a residual of $P_qHP_q$, not a bound on omitted QPs.
+The QP residual measures eigensolver accuracy for $P_qHP_q$; cutoff refinement assesses omitted QPs.
 Increasing the cutoff at fixed Hamiltonian gives nested variational spaces and
 nonincreasing ordered Ritz energies, but differences and expectations need not
-be monotone. The reported MPS convergence concerns the finite Hamiltonian and does
-not certify bath convergence or prove that no lower state was missed.
+be monotone. The reported MPS convergence concerns the finite Hamiltonian.
+Assess bath convergence through refinement and the completeness of the low-energy
+spectrum through additional state searches or an independent reference.
 
 Near a parity crossing, compare smooth sector branches before taking their
 minimum. Use absolute errors for currents or gaps close to zero. At exact
@@ -762,23 +763,23 @@ identifies the source revision, solver files, and numerical-library versions;
   to disk are excluded.
 - Reused-bath time includes model construction, the requested sector solves,
   observables, and residual checks. Fresh-fit time adds the independently measured
-  median bath-construction time. It is a sum of measured medians, not a separate
-  process-startup measurement.
+  median bath-construction time. This sum estimates the cost of fitting and solving
+  within an initialized process.
 - Peak memory is the largest measured resident memory of the running program,
   including loaded libraries and warm-up, rather than an estimate of eigensolver storage.
 
 The separately archived [reference refinements](benchmarks/baths/refinement-input.json)
-use a centered mode ordering, larger MPS bonds, energy tolerance `1e-12`, and a
+use a centred mode ordering, larger MPS bond dimensions, energy tolerance `1e-12`, and a
 residual tolerance of `1e-5`. Their purpose is to resolve the reference for
 observable errors around $10^{-4}$, with actual residuals and bath/bond changes
 reported. These expensive reference calculations use one measured repetition
-after warm-up and are not the timings ranked in the finite-ED comparison.
+after warm-up; the finite-ED runtime rankings use the repeated timings of the original study.
 The [electron-chain spectrum refinements](benchmarks/baths/chain-input.json)
 use a bond-dimension sequence with two initial-state trials, energy tolerance
 `1e-11`, and residual tolerance `1e-4`, aimed at resolving energy differences around
 $10^{-3}\Delta$.
 The actual residual and bath/bond changes still determine which finer targets
-are marked resolved; changing representation does not remove these checks.
+are marked resolved for each representation.
 The weak-coupling spectrum also has a matching
 [QP-star bond-dimension study](benchmarks/baths/edge-refinement-input.json), since an
 electron-chain representation need not be the more efficient MPS reference.
@@ -846,8 +847,8 @@ clearly: at $D=100$, $\Gamma=10$, $\phi=0.2$, and zero detuning,
 the continuum excitation is $0.9722095762\Delta$. The eight-level cosh and
 surrogate values are $0.9676977005\Delta$ and $0.9561715327\Delta$, respectively.
 Yet the surrogate current error at that same point is only
-$6.22\times10^{-8}$ in the stated current units. Excellent current accuracy does
-not certify the shallow-bound-state energy.
+$6.22\times10^{-8}$ in the stated current units. Assess shallow-bound-state energies
+and currents through separate convergence checks.
 
 ![Kernel, excitation, and current convergence at three bandwidths](benchmarks/baths/accuracy.svg)
 
@@ -856,9 +857,9 @@ absolute kernel error from $7.33\times10^{-3}$ to $6.09\times10^{-7}$;
 48 levels give approximately $7.10\times10^{-13}$. GL directly in $\xi$ needs
 1,024 levels to reach $2.53\times10^{-9}$ in this metric. At $D=2000$, even
 2,048 direct Gaussian levels still have a maximum absolute error of about 0.228.
-Their accurate normal-state moments do not resolve the narrow low-energy region.
-The high-level-count rows here are inexpensive **bath-only** calculations;
-they are not claims that full Fock diagonalization at those sizes is feasible.
+Resolving the narrow low-energy region requires further refinement despite the
+accurate normal-state moments. The high-level-count rows here are inexpensive
+**bath-only** calculations; a many-body calculation requires a separate resource assessment.
 
 ![Construction cost and in/out-of-window hybridization errors](benchmarks/baths/construction_and_window.svg)
 
@@ -886,9 +887,9 @@ It has inverse-energy units; the other physical errors have the normalizations
 specified above. Increasing relative weighting improves this slope while
 degrading these current and near-edge excitation comparisons.
 
-In this particular fit, one, four, and eight starts select identical coefficients;
-the two additional tested seeds do too. Extra starts therefore only add cost
-here. That finding is not a general guarantee: the default 16-level fit at
+In this particular fit, one, four, and eight starts select identical coefficients,
+as do the two additional seeds tested. Extra starts therefore only increase the computational cost
+here. The outcome depends on the fit: the default 16-level fit at
 $D=10$ failed to converge at all, so calculations requiring that bath could not be performed.
 The failure is retained in [the failure record](benchmarks/baths/failures.json).
 
@@ -909,17 +910,18 @@ miss this observable-dependent tradeoff.
 | Coordinates | $U=2$, $D=10$, total $\Gamma=0.4$, $\phi=0.8$, $\rho W_N=0.08$. Same uncompressed finite bath in isolated and coupled QP coordinates. |
 | Earlier star/chain routines | $U=10$, $D=10$, total $\Gamma=1$, one reservoir, spin-up doublet. Compare star/chain DMRG and two bond limits. |
 
-For interacting observables the largest converged calculation is labelled an
-**empirical reference**, not an exact continuum answer. Its bath, bond, and
+For interacting observables the largest converged calculation serves as an
+**empirical reference**. Its bath, bond, and
 cross-family changes are reported separately. Time-to-accuracy targets finer
 than the demonstrated reference stability are marked unresolved.
 Specifically, a resolved target $\tau$ requires both final bath and bond changes
 below $\tau/5$ and a reference residual below $\tau/10$. This is an empirical
-reporting criterion, not a rigorous residual-to-observable error bound.
+reporting criterion based on the observed refinement changes and residual.
 
 In the single-active-reservoir spectrum study the decoupled spectator channel
 of the original zero-phase two-lead junction is absent. A branch above $\Delta$
-must not be relabelled a physical subgap state of the full two-lead system.
+describes an excitation of that active channel; a subgap state of the full
+two-lead system must lie below its physical continuum threshold.
 The earlier star/chain DMRG routines use different initial states and minimum
 sweep counts; these also contribute to their measured calculation times.
 
@@ -928,9 +930,9 @@ $U=10$, $D=100$, $\Gamma=1$, $\phi=\pi/2$, the ten-level cosh and surrogate
 baths give odd-sector energies $-1.96027616\Delta$ and $-1.93914255\Delta$ in
 the same isolated-BCS-subtracted convention: a difference of about
 $0.0211\Delta$. Their spin responses, however, are 0.14335647 and 0.14328566,
-differing by only $7.08\times10^{-5}$. Accuracy in a spin expectation, an energy
-difference, or a phase derivative does not establish accuracy in the absolute
-excess energy. The raw tables retain all of these quantities.
+differing by only $7.08\times10^{-5}$. Assess absolute excess energies, energy
+differences, spin expectations and phase derivatives using separate convergence
+checks. The raw tables retain all of these quantities.
 
 ### Interacting calculations: time needed for a given accuracy
 
@@ -941,7 +943,7 @@ $3.57\times10^{-7}$; increasing the bond from 128 to 256 changes $\kappa$ by
 $1.90\times10^{-10}$. The selected reference has physical residual
 $7.28\times10^{-6}\Delta$ and passes its declared `1e-5` residual budget.
 The independent 16-level surrogate with bond 256 differs from it by
-$1.25\times10^{-7}$. These are separate checks, rather than a summed error bar.
+$1.25\times10^{-7}$. Report these as separate empirical convergence checks.
 
 The table selects the fastest **tested** even bath size meeting each target
 under unrestricted retained-space QP diagonalization. Targets through $10^{-4}$
@@ -964,7 +966,7 @@ The Gaussian control directly in $\xi$ does not reach even the $10^{-2}$ target 
 the tested interacting sizes up to ten levels.
 
 For a sweep of $N$ comparable-cost points, the relevant total is
-$t_{\mathrm{bath}}+N t_{\mathrm{reused}}$, not $N$ independent fits. Compare both
+$t_{\mathrm{bath}}+N t_{\mathrm{reused}}$, with one fit shared by all points. Compare both
 columns for one-off work; use the reused column with the one-time setup cost for
 a sweep. The full [time-to-accuracy table](benchmarks/baths/time_to_accuracy.csv)
 also records unachieved targets and unresolved references.
@@ -972,9 +974,8 @@ also records unachieved targets and unresolved references.
 ![Observable differences versus bath size, reused cost, and fresh-fit cost](benchmarks/baths/interacting_cost.svg)
 
 The spectrum panels use signed parity-energy differences and their own
-references, not the Knight-shift reference. All plotted ordinates are differences
-from the labelled empirical reference; digits below its demonstrated resolution
-do not establish correspondingly precise continuum predictions.
+references. All plotted ordinates are differences from the labelled empirical
+reference; interpret them at the physical resolution demonstrated for that reference.
 
 For the weak-coupling spectrum point $U=15$, $D=10$, $\Gamma=0.5$, the
 24-level QP-star/MPS reference gives
@@ -1002,9 +1003,9 @@ The 12-level chain calculation passes its declared finite-solver checks, but
 the 16- and 24-level chain calculations at bond 256 do not. For example, the
 24-level maximum residual is $2.55\times10^{-3}\Delta$, above its `1e-4` budget.
 Consequently, its continuum time-to-accuracy entries are explicitly unresolved;
-the spectrum panel shows finite-reference differences, not a certified precision
-ranking. This is retained as a convergence limitation rather than assigning
-the largest attempted bath the status of an exact reference.
+the spectrum panel reports differences from the finite reference at the achieved
+resolution. Establishing a continuum-accuracy ranking requires further solver
+and bath refinement.
 
 ![Separate odd and even surrogate sequences near the physical gap edge](benchmarks/baths/odd_even.svg)
 
@@ -1012,7 +1013,7 @@ For example, at $U=15$, $D=10$, and $\Gamma=20$, odd surrogate sizes seven and
 nine give signed parity gaps $1.03740\Delta$ and $1.01435\Delta$, while the
 even ten-level bath gives $0.97535\Delta$. Treating adjacent sizes as a single
 monotone sequence, or treating the zero bath pole as a guarantee of the correct
-physical threshold, would obscure this behavior.
+physical threshold, would obscure this behaviour.
 
 ### Coordinate choices: a same-bath accuracy/time comparison
 
@@ -1032,14 +1033,14 @@ independent reference for each truncated calculation:
 The full coordinate choices agree, while at cutoff four the coupled vacuum
 reduces the energy error by about **440-fold at essentially the same runtime**.
 It absorbs the quadratic environment's correlations before QP truncation.
-This improves the finite-solver approximation; it does not change the quadrature.
+This improves the finite-solver approximation at fixed quadrature.
 
 At the same parameter point, the general DMRG solver with `chi_max=64` takes 63.9 s in isolated
 coordinates and 7.97 s in coupled coordinates. Its measured energy errors against
 ED are $9.58\times10^{-6}\Delta$ and $4.48\times10^{-12}\Delta$, respectively.
 Both runs still fail the stricter declared full-state residual threshold of
-$10^{-7}\Delta$. The independently checked energy accuracy is real, but does
-not certify every expectation value or establish convergence of the full state.
+$10^{-7}\Delta$. The independent comparison establishes the energy accuracy;
+each expectation value and the full state require their own convergence assessment.
 The [complete coordinate table](benchmarks/baths/coordinate_comparison.csv)
 also includes the surrogate baths and lower bond/cutoff values.
 
@@ -1088,8 +1089,8 @@ end-to-end medians are archived separately.
 The [Knight-shift study](../applications/zitko_2023_knight_shift/README.md) already
 found agreement within approximately $1.17\times10^{-4}$ in $\kappa$ between a
 12-level cosh bath with cutoff six and a 10-level unrestricted surrogate.
-That is an independent consistency check, not an equal-size or equal-accuracy
-speed comparison. The new matched convergence sequences address that distinction.
+That provides an independent consistency check. The matched convergence sequences
+in the present study additionally compare runtime at equal size or achieved accuracy.
 
 The [double-dot](../applications/zonda_2023_double_dot/README.md),
 [surrogate-spectrum](../applications/paaske_2023_surrogate_spectrum/README.md), and

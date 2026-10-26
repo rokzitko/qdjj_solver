@@ -12,7 +12,7 @@ def dimension(nimp, spins, cutoff, sector, eta_labels=None):
     """Exact integer dimension by counting occupations, without forming kets."""
     if (not isinstance(nimp, (int, np.integer)) or not 0 <= nimp <= len(spins)
             or any(s not in (-1, 1) for s in spins)):
-        raise ValueError("invalid impurity size or spin labels")
+        raise ValueError("invalid impurity dimension or mode spin labels")
     if not isinstance(cutoff, (int, np.integer)) or not 0 <= cutoff <= len(spins) - nimp:
         raise ValueError("QP cutoff must lie between zero and the bath mode count")
     if eta_labels is not None and (len(eta_labels) != len(spins) or any(e not in (-1, 1) for e in eta_labels)):
@@ -40,6 +40,12 @@ def dimension(nimp, spins, cutoff, sector, eta_labels=None):
 
 
 class FockBasis:
+    """Fock basis of one symmetry sector with at most ``cutoff`` bath quasiparticles.
+
+    The impurity modes are unrestricted; ``dimension`` is the number of basis states, checked
+    against ``max_dimension`` before the basis is enumerated.
+    """
+
     def __init__(self, nimp, spins, cutoff, sector=DEFAULT_SECTOR, eta_labels=None,
                  max_dimension=5_000_000):
         self.nimp, self.spins, self.cutoff = nimp, tuple(spins), cutoff
@@ -60,6 +66,7 @@ class FockBasis:
 
     @property
     def bytes(self):
+        """Native basis storage in bytes; excludes Hamiltonian matrices and solver workspaces."""
         return self.core.bytes
 
     def occupations(self):
@@ -67,6 +74,7 @@ class FockBasis:
         return self.core.occupations()
 
     def qp_counts(self):
+        """Bath-QP count of each basis ket, in exactly the same row order as ``occupations``."""
         return self.core.qp_counts()
 
 

@@ -1,0 +1,87 @@
+\chapter{Example: the gate-driven junction}\label{ch:ex-gate}
+
+A microwave voltage on the gate electrode modulates the dot level, $\eps(t)=\eps_0+A_\eps\cos\Omega
+t$. Gate driving is the standard way to probe charge transitions in quantum dots and is used
+for dispersive gate readout of Andreev and quantum-dot
+states~\cite{platero2004photon,petta2004manipulation,wesdorp2023dynamical,sahu2024groundstate}.
+In the junction, gate and phase driving are complementary because their coupling
+operators obey different selection rules.
+
+\section{Complementary selection rules}
+
+To first order in the amplitude, the resonant splitting of the $S$--$S^*$ transition is
+$A_\eps\abs{\matel S{n_d}{S^*}}$ for the gate drive and $A_\phi\abs{\matel S{\partial_\phi
+H}{S^*}}$ for the phase drive. \Cref{fig:gate}(a) shows both, computed by the Sambe solver
+at the undriven resonance frequency $\Omega=\omega_{SS^*}$, together with the static matrix
+elements, as functions of the detuning $\eps_0$. Divided by $A_\eps$, the gate-drive splitting
+agrees with $\abs{\matel S{n_d}{S^*}}$ within $\q{gate.gate_deviation}$. Divided by $A_\phi$,
+the phase-drive splitting agrees with $\abs{\matel S{\partial_\phi H}{S^*}}$ within $\q{gate.phase_deviation}$, except at
+$\eps_0=0$ and at $\eps_0=\pm\q{gate.outlier_position}$. At the latter detunings, levels of the
+discretized continuum lie close to the two-photon energy $E_S+2\Omega$ and are coupled to $S^*$
+by the phase drive; this shifts the dressed states and changes the splitting per unit amplitude
+by $\q{gate.outlier_deviation}$.
+The phase-drive matrix element vanishes exactly at the particle--hole-symmetric point
+and grows linearly away from it; the gate-drive matrix element is largest there. This is the
+eta-parity selection rule of \cref{sec:selection}: $S$ and $S^*$ have opposite eta parity,
+which only an eta-odd perturbation such as $n_d-1$ can connect. The large-gap expressions
+\eqref{eq:largegap-rabi}, $\propto\sin\vartheta$ and $\propto\cos\vartheta$, reproduce the
+trend qualitatively. The small residual phase-drive splitting at $\eps_0=0$ arises from
+AC Stark detuning of the resonance while the coupling remains zero.
+
+\begin{physics}
+At particle--hole symmetry the singlets $S$ and $S^*$ are, to a good approximation, the
+bonding and antibonding combinations of the empty and doubly occupied dot. A phase drive
+modulates the strength of the pairing that binds them, shifting their energies while
+preserving their distinct eta parities. A gate drive tilts the balance between $\ket0$ and
+$\ket2$ and converts $S$ into $S^*$ directly.
+\end{physics}
+
+\section{The Floquet spectrum}
+
+\Cref{fig:spectrum}(c,d) is the gate-drive counterpart of the phase-drive fan diagram. Because
+the gate drive is linear in $\eps$, it leaves the time-averaged Hamiltonian unchanged
+($H_0=H(\eps_0)$). Away from resonances the dressed singlet therefore stays close to $E_S$. The
+one-photon $S$--$S^*$ avoided crossing is wide, reflecting the large charge matrix element. The
+two-photon crossing is invisible at this amplitude, and the couplings to the continuum
+replicas are weak. At fixed $\Omega=\q{spectrum.gate_omega}<\omega_{SS^*}$, panel (d), the
+dressed singlet is pushed down by the $S^*$ replica above it. To second order,
+$\delta\qe_S\simeq-\tfrac{A_\eps^2}4\abs{\matel S{n_d}{S^*}}^2\bigl[(\omega_{SS^*}-\Omega)^{-1}+(\omega_{SS^*}+\Omega)^{-1}\bigr]$,
+the rotating and counter-rotating terms of \cref{eq:ac-stark}.
+
+\section{Two-photon transitions}
+
+At $\Omega\approx\omega_{SS^*}/2$ the pair transition is driven by two photons.
+\Cref{fig:gate}(b) compares the one- and two-photon splittings at their respective
+resonances. The one-photon splitting grows linearly with $A_\eps$, the two-photon splitting
+quadratically, as a second-order process must. Two mechanisms contribute to the two-photon
+coupling: virtual transitions through other states, and the difference of the average
+charges of $S$ and $S^*$, which modulates their splitting and acts like the Bessel-function
+mechanism of \cref{ch:ex-tls}. Both resonances move with the drive amplitude, by AC Stark and
+Bloch--Siegert shifts; each resonance is located at the minimum of the quasienergy splitting
+as a function of $\Omega$. At the largest amplitudes the one-photon splitting falls below the
+linear dependence as counter-rotating terms and coupling to other states become important.
+
+\begin{figure}[htb]
+\centering
+\manualfigure{gate}
+\caption{Gate-driven reference junction. (a) Resonant $S$--$S^*$ splitting per unit amplitude
+for a gate drive ($A_\eps=\q{gate.gate_amplitude}$, circles) and a phase drive
+($A_\phi=\q{gate.phase_amplitude}$, squares, scaled by $\q{gate.phase_scale}$), versus the
+detuning $\eps_0$, compared with the static matrix elements (lines). (b) One- and two-photon
+splittings at their resonances versus the gate amplitude; dotted lines are $\propto A_\eps$
+and $\propto A_\eps^2$.}
+\label{fig:gate}
+\end{figure}
+
+\begin{incode}
+\begin{lstlisting}[frame=none,backgroundcolor={},aboveskip=0pt,belowskip=0pt]
+gate = PeriodicHamiltonian.from_parameters(reference_model, model,
+                                           ParameterDrive.cosine("detuning", .01), omega=.716)
+states = solve_floquet(gate, 2, Sector(0, 0), dict(floquet_cutoff=2, states=2))
+\end{lstlisting}
+Since a linear gate drive has only $H_{\pm1}$, a few samples reproduce $H(t)$ exactly; the
+two-photon calculation needs $M\ge2$ to contain the intermediate replica.
+\par\smallskip\usermanual{docs/floquet.md}.
+\end{incode}
+
+\tutorial{07_gate_drive}

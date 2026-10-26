@@ -52,7 +52,7 @@ $\Delta$, $D$. Its dot hybridization function equals the original one up to a gl
 gauge rotation. For this single spin-degenerate Anderson level, the mapping
 holds at any interaction strength and detuning. It requires equal gaps and
 lead hybridization functions with the same energy dependence, spin-independent
-tunneling, and no direct interlead hopping. The local impurity Hamiltonian
+tunnelling, and no direct interlead hopping. The local impurity Hamiltonian
 conserves charge, so the overall phase of $z$ can be removed by a gauge rotation;
 an independently fixed local pairing phase would introduce another physical
 phase difference. The effective phase lies in $0\leq\phi_{\mathrm{eff}}\leq\pi$.
@@ -101,7 +101,7 @@ g_j=\partial_{\phi_j}\chi
 ```
 
 The direct calculation constructs each **partial** phase derivative separately.
-Its sum must vanish. A derivative along a path that varies two terminal phases
+Their sum must vanish. A derivative along a path that varies two terminal phases
 would measure a sum of terminal currents instead of either current individually.
 The singular parameterizations $\chi=0$ and $1$ are excluded from this chain-rule
 test; they are not replaced by an arbitrary division cutoff.
@@ -139,7 +139,7 @@ Over eight direct/mapped comparisons (four geometries, two parity sectors):
 | Terminal current, in $J_0$ | 6.11e-16 |
 | Sum of terminal currents, in $J_0$ | 5.97e-16 |
 
-These tight identities test the implementation at a fixed bath; they are
+These numerical agreements test the implementation at a fixed bath; they are
 independent of the continuum accuracy of $\chi_c$.
 
 ### Finite-energy singlet crossing
@@ -159,8 +159,8 @@ operator over the complete degenerate subspace in the mode-reduction check.
 
 ## Source details worth checking when extending this example
 
-The paper's geometric relations are stronger references than an unqualified
-transcription of every label. In its separate Fig. 3 example with couplings
+The paper's geometric relations provide independent checks of its state
+labels. In its separate Fig. 3 example with couplings
 $(0.45,0.40,0.15)$, setting $\phi_3=\pi$ gives $\chi\in[0.1,0.7]$, hence a **doublet**
 throughout according to its own $\chi_c=0.721$ criterion; the published text calls
 this state a singlet. Its main Eq. (5) also disagrees with the supplementary

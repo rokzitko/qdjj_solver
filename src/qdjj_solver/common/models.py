@@ -10,15 +10,36 @@ from .algebra import FermionOperator, annihilate, create, hermitian_pair, number
 from .baths import DiscreteBath
 from .problem import Hamiltonian
 
+# Built-in observables: name -> (definition, availability, units). GitHub Markdown with
+# $...$ mathematics; tools/gen_docs.py renders it in docs/reference/observables.md.
+OBSERVABLE_DOCS = {
+    "impurity_charge": ("Total physical impurity electron occupation", "Every `Impurity`",
+                        "Electron count; multiply by $-e$ for the electric charge"),
+    "impurity_spin_z": ("Sum of $(n_\\uparrow-n_\\downarrow)/2$ over the impurity orbitals", "Every `Impurity`",
+                        "Units of $\\hbar$"),
+    "double_occupancy_0": ("$n_{0\\uparrow}n_{0\\downarrow}$; further orbitals use `_1`, `_2`, ...",
+                           "Every `Impurity`, one per orbital", "Dimensionless probability"),
+    "phase_derivative": ("$\\partial H/\\partial\\phi$ of a reference junction; in general the derivative "
+                         "along the supplied `phase_velocities` of `make_model`",
+                         "Reference junctions, or nonzero `phase_velocities`",
+                         "Energy per radian; the current is $2e/\\hbar$ times its expectation value"),
+    "rho_ws_derivative": ("$\\partial H/\\partial(\\rho W_S)$", "Reference junctions, including `rho_ws=0`",
+                          "Energy"),
+}
+
 
 @dataclass
 class Impurity:
     """Untruncated spinful impurity; modes are (orbital 0 up, down, 1 up, ...)."""
 
     orbitals: int
+    """Positive number of physical impurity orbitals; each contributes up/down spin modes."""
     operator: FermionOperator
+    """Hermitian, parity-conserving impurity operator in physical electron coordinates."""
     observables: dict[str, FermionOperator] = field(default_factory=dict)
+    """Additional impurity operators; charge, spin-z and orbital double occupancies are added automatically."""
     metadata: dict = field(default_factory=dict)
+    """Physical construction parameters and optional user information."""
 
     def __post_init__(self):
         if not isinstance(self.orbitals, int) or self.orbitals < 1:
@@ -117,8 +138,10 @@ def make_model(impurity: Impurity, baths, tunneling, phases=None, direct=None,
 
     ``tunneling[l]`` is a (2, 2*n_orbitals) matrix T_l in C_l† T_l d + h.c.,
     with C_l=sum_i sqrt(w_li)c_li. ``direct[(l,m)]`` multiplies C_l† W_lm C_m
-    for l<m. Pair potentials are real; phase factors exp(i phi_l/2) are inserted
-    in T_l and exp(i(phi_l-phi_m)/2) in W_lm.
+    for l<m. Pair potentials are real, -Delta_l (c†_up c†_dn + h.c.); the phases
+    enter as exp(i phi_l/2) T_l and exp(i(phi_l-phi_m)/2) W_lm. This is the gauge
+    c_l -> exp(-i phi_l/2) c_l of leads with the physical pair potential
+    Delta_l exp(-i phi_l) and real tunnelling amplitudes.
 
     The optional eta/paired-mode reduction is restricted to the symmetric,
     particle-hole-symmetric single-dot junction. It preserves bath QP number.

@@ -11,17 +11,27 @@ from .common.io import configured, model_from_config, validate_config
 from .common.problem import Sector
 
 
-def main(argv=None):
+def build_parser():
+    """The ``qdjj-solver`` argument parser (also used to generate the CLI reference)."""
     parser = argparse.ArgumentParser(description="QP and DMRG solvers for superconducting quantum impurities")
-    parser.add_argument("--version", action="version", version=__version__)
+    parser.add_argument("--version", action="version", version=__version__, help="print the version and exit")
     commands = parser.add_subparsers(dest="command", required=True)
     command = commands.add_parser("solve", help="solve a finite Hamiltonian")
-    command.add_argument("configuration", type=Path)
-    command.add_argument("--backend", choices=("qp", "dmrg"))
-    command.add_argument("--output", type=Path, required=True)
-    command.add_argument("--save-states", action="store_true")
-    command.add_argument("--resume", type=Path, help="DMRG result JSON with an MPS checkpoint")
-    args = parser.parse_args(argv)
+    command.add_argument("configuration", type=Path,
+                         help="JSON calculation file: model, bath, sector, cutoff, backend and solver options")
+    command.add_argument("--backend", choices=("qp", "dmrg"),
+                         help="solver backend; overrides the configuration's backend, which defaults to qp")
+    command.add_argument("--output", type=Path, required=True, help="path of the output JSON result file")
+    command.add_argument("--save-states", action="store_true",
+                         help="also save the states (QP eigenvectors or DMRG matrix-product states) in a "
+                              "companion file next to the result")
+    command.add_argument("--resume", type=Path,
+                         help="DMRG result JSON whose saved MPS checkpoint provides the initial states")
+    return parser
+
+
+def main(argv=None):
+    args = build_parser().parse_args(argv)
     try:
         config = validate_config(json.loads(args.configuration.read_text(encoding="utf-8")))
         backend = args.backend or config.get("backend", "qp")

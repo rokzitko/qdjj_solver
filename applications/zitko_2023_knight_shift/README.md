@@ -20,8 +20,8 @@ strong-coupling regime; that full range is outside this example's reported scan.
 The impurity's spin is partially carried by superconducting quasiparticles.
 Consequently its effective Zeeman splitting is reduced from the bare local
 splitting. Writing that reduction as the Knight shift $\kappa$, the leading term is
-linear in $\Gamma$ (second order in tunneling), while the leading phase-dependent
-part is quadratic in $\Gamma$ (fourth order in tunneling).
+linear in $\Gamma$ (second order in tunnelling), while the leading phase-dependent
+part is quadratic in $\Gamma$ (fourth order in tunnelling).
 
 ![Reproduction and independent NRG comparison](output/paper/comparison.svg)
 
@@ -162,7 +162,7 @@ python -B -m applications.zitko_2023_knight_shift.plot --output applications/zit
 ```
 
 New results are saved in `runs/`. The archived calculations took about
-**0.3 s / 30 s / 191 s** for quick/paper/convergence on the recorded arm64
+**0.3 s / 30 s / 191 s** for quick/paper/convergence in the recorded arm64
 environment with single-thread numerical libraries. Ten-level refinement calculations
 explicitly select the sparse-matrix solver; the automatically selected matrix-free method is
 substantially slower for this problem.

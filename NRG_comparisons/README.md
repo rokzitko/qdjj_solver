@@ -1,4 +1,4 @@
-# QP, DMRG, and NRG Results
+# QP, DMRG, and NRG results
 
 ## Model Progression
 
@@ -46,7 +46,7 @@ results on the identical smaller bath, but that bath differs noticeably from
 the larger-bath results.
 
 **NRG meets its conditional empirical accuracy targets. The stricter QP/DMRG
-continuum accuracy target remains unestablished.**
+continuum accuracy target has not been established.**
 
 Read the [final results, tables, and plots](test1/README.md).
 Machine-readable [values](test1/output/observables.csv),

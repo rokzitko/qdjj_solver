@@ -4,6 +4,14 @@ from .common.problem import DEFAULT_SECTOR
 
 
 def solve(hamiltonian, cutoff=None, sector=DEFAULT_SECTOR, options=None, initial=None, *, backend="qp"):
+    """Lowest eigenstates of a finite Hamiltonian in one symmetry sector with the chosen backend.
+
+    ``backend`` is ``"qp"`` (``cutoff`` limits the number of bath quasiparticles; ``None`` keeps
+    the full finite bath) or ``"dmrg"`` (``cutoff`` must be ``None``). ``options`` is the
+    backend's ``SolverOptions`` or a dictionary of its fields. ``initial`` is a QP
+    starting vector in the target Fock basis, or a compatible prior DMRG result.
+    Returns the backend's ``Eigenstates``.
+    """
     if backend == "qp":
         from .qp_solver import SolverOptions, solve as backend_solve
     elif backend == "dmrg":
@@ -20,7 +28,8 @@ def solve(hamiltonian, cutoff=None, sector=DEFAULT_SECTOR, options=None, initial
 
 
 def save_result(result, path, save_states=False):
-    """Write a common version-1 record and optionally a typed state artifact."""
+    """Write the common version-1 result record and, with ``save_states=True``, a companion file with
+    the states (QP eigenvectors or DMRG matrix-product states)."""
     backend = getattr(result, "backend", None)
     if backend == "qp":
         from .qp_solver.io import save_result as save
@@ -35,8 +44,8 @@ def save_result(result, path, save_states=False):
 def load_result(path):
     """Restore saved states, selecting the backend from the versioned record.
 
-    A companion state artifact is required. Legacy QP records are also readable.
-    Loading QP states does not import TeNPy.
+    The companion state file is required. Legacy QP records are also readable.
+    QP loading uses the base installation; DMRG loading additionally requires TeNPy.
     """
     import json
     from pathlib import Path

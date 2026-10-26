@@ -11,16 +11,24 @@ import numpy as np
 from scipy.linalg import eigh, qr
 from scipy.optimize import brentq
 from scipy.sparse import csc_matrix, diags
-from scipy.sparse.linalg import ArpackNoConvergence, LinearOperator, eigsh, lobpcg
+from scipy.sparse.linalg import ArpackNoConvergence, LinearOperator, aslinearoperator, eigsh, lobpcg
 from threadpoolctl import threadpool_limits
 
 from . import _core
-from ..common.problem import Hamiltonian
+from ..common.algebra import FermionOperator
+from ..common.problem import Hamiltonian, check_transition
 from .basis import DEFAULT_SECTOR, FockBasis, dimension
 from .execution import ExecutionContext
 
 
 class ProjectedOperator:
+    """A ``FermionOperator`` acting within a QP Fock basis, or from it into another compatible basis.
+
+    Components outside the retained basis are removed by the QP projection.
+    ``expectation`` and ``transition`` evaluate matrix elements; ``action_between``
+    and ``sparse_matrix`` provide the operator action and matrix representation.
+    """
+
     def __init__(self, operator, basis):
         self.basis = basis
         keys = list(operator.terms)
@@ -31,6 +39,7 @@ class ProjectedOperator:
         self.shape = (basis.dimension, basis.dimension)
 
     def action(self, vector):
+        """The projected operator applied to a vector of the basis."""
         vector = np.asarray(vector)
         if self.core.real and not np.iscomplexobj(vector):
             return self.core.matvec_real(vector)
@@ -38,27 +47,32 @@ class ProjectedOperator:
 
     @property
     def bytes(self):
+        """Storage owned by the native operator, in bytes, excluding its shared basis."""
         return self.core.bytes
 
     def linear_operator(self, dtype=None):
+        """The action as a SciPy ``LinearOperator``, without storing a matrix."""
         return LinearOperator(self.shape, matvec=lambda x: self.action(np.asarray(x).reshape(-1)),
                               dtype=self.dtype if dtype is None else dtype)
 
     def sparse_matrix(self, max_nnz=100_000_000):
+        """The operator as a sparse CSR matrix with at most ``max_nnz`` stored entries."""
         data, indices, indptr = self.core.sparse(int(max_nnz))
         if self.core.real:
             data = data.real.copy()
         return csc_matrix((data, indices, indptr), shape=self.shape).tocsr()
 
     def expectation(self, bra, ket=None):
+        """``<bra|O|ket>`` within the basis; ``ket`` defaults to ``bra``."""
         return np.vdot(bra, self.action(bra if ket is None else ket))
 
     def diagonal(self):
-        """Diagonal entries without forming a sparse matrix (not an eigensolve)."""
+        """Return diagonal matrix elements without constructing the sparse matrix or diagonalizing it."""
         return np.real_if_close(self.core.diagonal())
 
     def action_between(self, ket, destination_basis):
-        """Apply into another sector/cutoff in the same one-particle coordinates."""
+        """Apply the operator to ``ket`` and express the result in another basis (sector or QP cutoff)
+        with the same one-particle coordinates."""
         ket = np.asarray(ket)
         if (self.basis.spins != destination_basis.spins or
                 self.basis.nimp != destination_basis.nimp or ket.shape != (self.basis.dimension,)):
@@ -66,7 +80,7 @@ class ProjectedOperator:
         return self.core.between(ket, destination_basis.core)
 
     def transition(self, bra, bra_basis, ket):
-        """<bra|O|ket> between sectors in the *same* one-particle coordinates.
+        """``<bra|O|ket>`` between sectors in the *same* one-particle coordinates.
 
         The bra and ket may have different parity, S_z, eta and QP cutoff.
         The supplied operator must already be expressed in these coordinates.
@@ -79,17 +93,37 @@ class ProjectedOperator:
 
 @dataclass(frozen=True)
 class SolverOptions:
+    """Numerical settings of the QP solver; energies and tolerances share the Hamiltonian's units."""
+
     method: str = "auto"
+    """Eigensolver: ``"auto"``, ``"dense"``, ``"sparse"``, ``"matrix-free"``, ``"schur"`` or ``"block"``. ``"auto"``
+    diagonalizes densely up to dimension 128, uses sparse ARPACK up to 400,000 and matrix-free ARPACK
+    above. ``"block"`` uses LOBPCG for several eigenstates, including degenerate multiplets."""
     eigenpairs: int = 1
+    """Number of lowest eigenstates computed in the selected sector."""
     tolerance: float = 1e-11
+    """Relative ARPACK eigenvalue tolerance, for the internally shifted operator H - sigma with sigma
+    below the smallest diagonal element by an offset of order one; for ``"schur"`` the root-search
+    tolerance in energy units. For ``"block"``, the residual tolerance in energy units, capped at
+    ``residual_tolerance/10``. Unused by dense diagonalization."""
     residual_tolerance: float = 2e-9
+    """Largest accepted projected residual norm, in energy units."""
     maxiter: int = 10000
+    """Maximum number of ARPACK or block-LOBPCG iterations."""
     ncv: int = 40
+    """Requested Krylov-space dimension; increased as needed for the number of eigenstates and limited by the sector
+    dimension."""
     max_dimension: int = 5_000_000
+    """Largest allowed number of Fock basis states, checked before the basis is enumerated."""
     max_nnz: int = 100_000_000
+    """Largest number of stored sparse-matrix entries (dense, sparse and Schur methods); the remaining
+    ``max_memory_gib`` budget can lower it."""
     max_memory_gib: float = 24.
+    """Limit on the estimated basis and matrix storage, in GiB; the total memory use can be larger."""
     threads: int = 1
+    """Maximum number of threads used by the numerical libraries."""
     seed: int = 1729
+    """Seed of the random starting vector of the iterative eigensolvers."""
 
     def __post_init__(self):
         if self.method not in ("auto", "dense", "sparse", "matrix-free", "schur", "block"):
@@ -105,16 +139,71 @@ class SolverOptions:
 
 @dataclass
 class Eigenstates:
+    """Lowest eigenstates of a Hamiltonian in one sector, from the QP solver."""
+
     backend: ClassVar[str] = "qp"
     energies: np.ndarray
+    """Eigenenergies, shape (k,), in the units of the Hamiltonian."""
     vectors: np.ndarray
+    """Eigenvectors in the Fock basis, shape (D, k); state i is the column ``vectors[:, i]``."""
     residuals: np.ndarray
+    """Projected residual norms, shape (k,), in energy units."""
     basis: FockBasis
+    """The ``FockBasis`` that defines the row order of ``vectors`` and the canonical occupations."""
     qp_weights: np.ndarray
+    """Shape (k, q+1); ``qp_weights[i, n]`` is the probability of n bath quasiparticles in state i."""
     observables: dict[str, np.ndarray]
+    """Expectation values of the requested named model observables, each of shape (k,); all are measured by default."""
     timings: dict[str, float]
+    """Elapsed times of the calculation stages, in seconds."""
     metadata: dict
+    """Numerical settings, sector, Hilbert-space restrictions and convergence diagnostics."""
     hamiltonian: Hamiltonian | None = None
+    """The ``Hamiltonian`` that was solved."""
+
+    def matrix_elements(self, operator, ket=None, *, orbital=None):
+        """All ``<self_i|operator|ket_j>`` in common canonical coordinates.
+
+        ``operator`` is a FermionOperator in canonical coordinates or a probe name
+        (``hamiltonian.probe``). The ket may belong to another sector or QP cutoff.
+        Eigenvector phases are arbitrary: compare ``|elements|^2`` or complete multiplets.
+        """
+        ket = self if ket is None else ket
+        _check_coordinates(self, ket)
+        if isinstance(operator, str):
+            operator = self.hamiltonian.probe(operator, orbital)
+        h = self.hamiltonian
+        check_transition(operator, h.spins, h.eta_labels, ket.basis.sector, self.basis.sector)
+        projected = ProjectedOperator(operator, ket.basis)
+        vectors = np.asarray(ket.vectors)
+        if same_basis(self.basis, ket.basis):
+            images = projected.sparse_matrix() @ vectors
+        else:
+            images = np.column_stack([projected.action_between(v, self.basis) for v in vectors.T])
+        return np.asarray(self.vectors).conj().T @ images
+
+    def overlaps(self, other=None):
+        """All ``<self_i|other_j>``; the states may use different QP cutoffs of one sector."""
+        return self.matrix_elements(FermionOperator.scalar(1.), other)
+
+
+def same_basis(a, b):
+    """Whether two Fock bases enumerate the same states in the same order."""
+    return a is b or (a.nimp == b.nimp and a.spins == b.spins and a.cutoff == b.cutoff
+                      and a.sector == b.sector and a.dimension == b.dimension
+                      and np.array_equal(a.occupations(), b.occupations()))
+
+
+def _check_coordinates(bra, ket):
+    if not isinstance(ket, Eigenstates):
+        raise ValueError("matrix elements need QP Eigenstates on both sides")
+    if bra.hamiltonian is None or ket.hamiltonian is None:
+        raise ValueError("matrix elements need results that keep their Hamiltonian")
+    a, b = bra.hamiltonian, ket.hamiltonian
+    if (a.nimp, a.spins, a.eta_labels) != (b.nimp, b.spins, b.eta_labels):
+        raise ValueError("the states use different mode labels")
+    if a is not b and a.coordinate_fingerprint() != b.coordinate_fingerprint():
+        raise ValueError("the states use different canonical coordinates")
 
 
 DEFAULT_OPTIONS = SolverOptions()
@@ -138,6 +227,59 @@ def _refine_ritz_subspace(projected, vectors):
                                for v in orthogonal.T])
     energies, rotation = eigh((reduced + reduced.conj().T)/2)
     return energies, orthogonal @ rotation
+
+
+def _arpack(operator, k, initial, options, ncv):
+    """The k lowest Ritz pairs of a Hermitian operator, in ascending order."""
+    try:
+        energies, vectors = eigsh(operator, k=k, which="SA", v0=initial,
+                                  tol=options.tolerance, maxiter=options.maxiter, ncv=ncv)
+    except ArpackNoConvergence as error:
+        raise RuntimeError(f"Ritz iteration did not converge ({len(error.eigenvalues)}/{k} eigenpairs)") from error
+    order = np.argsort(energies)
+    return energies[order], vectors[:, order]
+
+
+def _within_diagonal_bound(energies, diagonal, tolerance):
+    """Ky Fan: the sum of the j lowest eigenvalues cannot exceed the sum of the j smallest diagonal elements.
+
+    A larger sum of Ritz values means that the iterative solver missed eigenvalues.
+    """
+    count = len(energies)
+    bound = np.cumsum(np.sort(diagonal)[:count])
+    slack = tolerance*np.arange(1, count + 1) + 1e-12*np.maximum(1., abs(bound))
+    return bool(np.all(np.cumsum(np.sort(energies)) <= bound + slack))
+
+
+# ARPACK accepts a Ritz value only when its residual bound is below tol*max(eps**(2/3), |value|).
+# An exactly zero eigenvalue then never converges, and ARPACK silently returns converged unwanted
+# ones instead (for example the decoupled doublet at Gamma=0, whose energy is exactly zero).
+# The ARPACK solvers therefore work with H - sigma, sigma = (smallest diagonal element) - offset.
+# Exactly structured eigenvalues are sums of model parameters; an irrational offset keeps them away
+# from zero. If a result still violates the diagonal bound, a second, incommensurate offset is tried.
+SHIFTS = (2**-.5, 3**-.5)
+
+
+def _shifted(matrix, sigma):
+    """H - sigma as a linear operator, without copying a sparse matrix."""
+    base = aslinearoperator(matrix)
+    return LinearOperator(base.shape, matvec=lambda x: base.matvec(x) - sigma*x, dtype=base.dtype)
+
+
+def _shifted_arpack(projected, matrix, diagonal, k, initial, options, ncv):
+    """Repeat the iterative eigensolution with the second shift; energies refer to H itself."""
+    for offset in SHIFTS[1:]:
+        sigma = float(diagonal.min()) - offset
+        _, vectors = _arpack(_shifted(matrix, sigma), k, initial, options, ncv)
+        if k > 1:
+            energies, vectors = _refine_ritz_subspace(projected, vectors)
+        else:
+            energies = np.array([np.vdot(vectors[:, 0], projected.action(vectors[:, 0])).real])
+        residuals = np.array([np.linalg.norm(projected.action(v) - e*v) for e, v in zip(energies, vectors.T, strict=True)])
+        if np.all(np.isfinite(residuals)) and np.max(residuals) <= options.residual_tolerance \
+                and _within_diagonal_bound(energies, diagonal, options.residual_tolerance):
+            return energies, vectors, residuals, sigma
+    raise RuntimeError("the iterative eigensolver missed eigenvalues below the diagonal bound; use method='dense'")
 
 
 def _two_qp_schur(matrix, basis, tolerance):
@@ -193,10 +335,10 @@ def preflight(hamiltonian, cutoff=None, sector=DEFAULT_SECTOR, options=DEFAULT_O
     if dim == 0:
         raise ValueError("empty symmetry sector")
     if dim > options.max_dimension:
-        raise MemoryError(f"sector dimension {dim:,}; permitted maximum {options.max_dimension:,}")
+        raise MemoryError(f"sector dimension {dim:,} exceeds max_dimension={options.max_dimension:,}")
     k = options.eigenpairs
     if k > dim:
-        raise ValueError("more eigenpairs requested than basis states")
+        raise ValueError("more eigenpairs requested than states in the sector")
     if options.method == "schur" and (cutoff != 2 or k != 1):
         raise ValueError("Schur elimination is implemented for the lowest state at QP cutoff 2")
     is_real = (all(v.imag == 0 for v in hamiltonian.operator.terms.values())
@@ -211,7 +353,8 @@ def preflight(hamiltonian, cutoff=None, sector=DEFAULT_SECTOR, options=DEFAULT_O
         # Reserve the dense low-QP block and elimination/eigensolver workspaces.
         estimate += 4 * low_dim * low_dim * itemsize
     if estimate > options.max_memory_gib * 1024**3:
-        raise MemoryError(f"estimated basis/eigensolver storage {estimate/1024**3:.2f} GiB exceeds limit")
+        raise MemoryError(f"the basis and eigensolver need {estimate/1024**3:.3g} GiB, "
+                          f"more than max_memory_gib={options.max_memory_gib:g}")
     method = options.method
     if method == "auto":
         method = "dense" if dim <= 128 else ("sparse" if dim <= 400_000 else "matrix-free")
@@ -221,7 +364,8 @@ def preflight(hamiltonian, cutoff=None, sector=DEFAULT_SECTOR, options=DEFAULT_O
         raise ValueError("block eigensolver requires dimension >= 5*eigenpairs; use dense explicitly")
     dense_bytes = dim*dim*itemsize*4 if method == "dense" else 0
     if dense_bytes > options.max_memory_gib*1024**3:
-        raise MemoryError("dense eigensolution exceeds the memory limit")
+        raise MemoryError(f"dense diagonalization needs {dense_bytes/1024**3:.3g} GiB, more than "
+                          f"max_memory_gib={options.max_memory_gib:g}; use method='sparse' or 'matrix-free'")
     return dict(dimension=dim, cutoff=cutoff, eigenpairs=k, ncv=ncv, real=is_real,
                 itemsize=itemsize, method=method, estimated_solver_bytes=estimate,
                 estimated_peak_bytes=estimate+dense_bytes)
@@ -230,10 +374,16 @@ def preflight(hamiltonian, cutoff=None, sector=DEFAULT_SECTOR, options=DEFAULT_O
 def solve(hamiltonian: Hamiltonian, cutoff: int | None = None, sector=DEFAULT_SECTOR,
           options=DEFAULT_OPTIONS, initial=None, *, context=None, observables=None,
           _prepared=None) -> Eigenstates:
-    """Lowest Ritz states; optional execution hooks do not change the Hamiltonian.
+    """Lowest Ritz states in one sector. ``cutoff=None`` retains the complete finite bath.
 
-    Use ``QPWorkspace.solve`` for prepared execution. Existing fresh calls retain
-    their numerical defaults. ``observables=None`` measures all named operators.
+    Tolerances and residuals use the same energy units as the Hamiltonian, and the
+    returned energies and residuals refer to H as given. The ARPACK eigensolvers
+    internally work with H - sigma (sigma is recorded as ``metadata["spectral_shift"]``)
+    and check their results against the diagonal (Ky Fan) bound.
+
+    Use ``QPWorkspace.solve`` for prepared execution and ``context`` for cooperative
+    progress and cancellation. ``observables=None`` measures all named operators;
+    an iterable of names selects a subset, and an empty iterable skips measurements.
     """
     total_start = perf_counter()
     context = context or ExecutionContext()
@@ -347,13 +497,13 @@ def solve(hamiltonian: Hamiltonian, cutoff: int | None = None, sector=DEFAULT_SE
             initial = np.asarray(initial, dtype=float if is_real else complex)
             if initial.shape != (dim,) or not np.all(np.isfinite(initial)) or np.linalg.norm(initial) == 0:
                 raise ValueError("invalid starting vector")
-            try:
-                energies, vectors = eigsh(matrix, k=k, which="SA", v0=initial,
-                                          tol=options.tolerance, maxiter=options.maxiter, ncv=ncv)
-            except ArpackNoConvergence as error:
-                raise RuntimeError(f"Ritz iteration did not converge ({len(error.eigenvalues)}/{k} eigenpairs)") from error
-            order = np.argsort(energies)
-            energies, vectors = energies[order], vectors[:, order]
+            diagonal = np.real(projected.diagonal())
+            sigma = float(diagonal.min()) - SHIFTS[0]
+            ritz, vectors = _arpack(_shifted(matrix, sigma), k, initial, options, ncv)
+            energies = ritz + sigma
+            if k == 1:
+                energies = np.array([np.vdot(vectors[:, 0], projected.action(vectors[:, 0])).real])
+            extra["spectral_shift"] = sigma
         if energies.shape != (k,) or vectors.shape != (dim, k):
             raise RuntimeError("eigensolution has invalid dimensions")
         if not np.all(np.isfinite(energies)) or not np.all(np.isfinite(vectors)):
@@ -366,9 +516,16 @@ def solve(hamiltonian: Hamiltonian, cutoff: int | None = None, sector=DEFAULT_SE
     context.checkpoint("residuals")
     residuals = np.array([np.linalg.norm(projected.action(v) - e*v) for e, v in zip(energies, vectors.T, strict=True)])
     if not np.all(np.isfinite(residuals)) or np.max(residuals) > options.residual_tolerance:
-        raise RuntimeError(f"Ritz residual {np.max(residuals):.3e} exceeds {options.residual_tolerance:.3e}")
+        raise RuntimeError(f"Ritz residual {np.max(residuals):.3e} exceeds "
+                           f"residual_tolerance={options.residual_tolerance:.3e}")
     if np.linalg.norm(vectors.conj().T @ vectors - np.eye(k)) > 1e-8:
         raise RuntimeError("eigenstates are not orthonormal")
+    if method in ("sparse", "matrix-free") and not _within_diagonal_bound(energies, diagonal,
+                                                                          options.residual_tolerance):
+        with threadpool_limits(limits=options.threads):
+            energies, vectors, residuals, sigma = _shifted_arpack(projected, matrix, diagonal, k, initial,
+                                                                  options, ncv)
+        extra["spectral_shift"] = sigma
     counts = basis.qp_counts() if _prepared is None else _prepared.counts
     qp_weights = np.array([np.bincount(counts, weights=abs(v)**2, minlength=cutoff+1) for v in vectors.T])
     measured = {}

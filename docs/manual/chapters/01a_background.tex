@@ -1,0 +1,245 @@
+\chapter{Andreev reflection and subgap states}\label{ch:background}
+
+\section{Three devices, one superconducting environment}
+
+A superconducting weak link is a small region through which two superconductors
+exchange electrons and Cooper pairs. Its microscopic structure matters. A clean
+constriction is described by transmission channels, a confined quantum dot by
+orbitals and charging energies, and a magnetic adatom by its exchange coupling to
+the host. All can bind excitations below the superconducting gap, but the mechanism
+and the appropriate approximations differ. \Cref{fig:primer-devices} compares these
+devices before we introduce their energy levels.
+
+In a \emph{quantum point contact} (QPC), transverse confinement leaves a few
+conducting channels. A channel has a normal-state transmission probability
+$0\le\tau_n\le1$ and is defined as an eigenmode of the scattering problem.
+An atomic contact is a particularly short constriction, and even a single
+atom can support several channels through its valence orbitals. A gate-defined
+semiconductor QPC allows the channels to be tuned electrostatically. A
+\emph{quantum dot} instead confines charge sufficiently strongly that the energy
+cost of adding a second electron must be included explicitly. Its contact
+transmissions generally depend on energy, occupation and correlations. The
+distinction is determined by the physical regime and applies across different
+device materials.
+
+\begin{figure}[htb]
+\centering\manualfigure{primer_devices}
+\caption{Three routes to localized superconducting excitations: a short
+constriction between superconductors, a gate-controlled dot with tunnel barriers,
+and a magnetic adatom on a superconducting surface. The arrows identify control
+or probe couplings; the device sizes and shapes are schematic.}
+\label{fig:primer-devices}
+\end{figure}
+
+The phase difference $\phi=\phi_R-\phi_L$ controls interference between pair
+amplitudes. A gate changes the dot energy and often also the tunnel barriers. A
+magnetic field can split a spin doublet and, in a real device, also affect the
+superconducting leads. The principal energies are the gap $\Delta$, charging
+energy $U$, total hybridization $\Gamma$, detuning $\eps$, Zeeman energy $B$ and
+thermal energy $k_BT$. Ratios of these scales determine which physical picture is
+useful. \Cref{ch:model} defines the model parameters precisely; the present
+chapter develops the non-interacting reference picture.
+
+\section{What is inside the gap?}\label{sec:gap-picture}
+
+Recall that a BCS condensate is a coherent paired state, whereas a Bogoliubov
+quasiparticle is an excitation above it. For a homogeneous $s$-wave superconductor,
+$E_k=\sqrt{\xi_k^2+\Delta^2}$, so propagating single-quasiparticle excitations
+begin at $\Delta$. For a constant normal-state density of states $\rho_0$
+per spin, the ideal bulk electron density of states is
+\begin{equation}\label{eq:primer-dos}
+ \rho_{\mathrm{BCS}}(E)=\rho_0\frac{|E|}{\sqrt{E^2-\Delta^2}}
+ \Theta(|E|-\Delta).
+\end{equation}
+Here $E$ is measured from the chemical potential and can be positive or negative
+because an electron probe can add or remove an electron. The positive
+quasiparticle excitation energy must be distinguished from this signed probe
+energy.
+
+A local defect or weak link changes the Hamiltonian and can produce discrete
+spectral poles inside this bulk gap. Their wavefunctions decay into the leads;
+they are \emph{bound states}. Thus an ideal hard bulk gap and local subgap peaks
+are compatible. A soft gap instead describes appreciable spectral background
+inside the nominal gap, which can have several microscopic origins. A population
+of nonequilibrium quasiparticles specifies the occupations of the available states.
+
+\begin{figure}[htb]
+\centering\manualfigure{primer_gap}
+\caption{(a) Ideal, unbroadened BCS density of states, with the gap edges marked.
+The plotting range truncates the divergences.
+(b) Schematic local spectral poles of a bound state, with unequal electron-addition
+and removal weights, represented by the pole heights.
+(c) Illustrative decay envelopes: a state nearer the gap edge
+extends farther into the superconductor.}
+\label{fig:primer-gap}
+\end{figure}
+
+For a clean lead in the Andreev approximation, an envelope has the characteristic
+length
+\begin{equation}
+ \xi_E=\frac{\hbar v_F}{\sqrt{\Delta^2-E^2}},\qquad |E|<\Delta,
+\end{equation}
+where $v_F$ is the Fermi velocity. Oscillations on the Fermi-wavelength scale and
+geometric prefactors are omitted in this envelope picture. A level approaching
+the gap edge spreads into the reservoir and eventually merges with its continuum.
+Thus a subgap wavefunction generally extends over both dot and leads. Its dot spectral
+weight can change substantially while its total
+normalization remains one.
+
+\begin{physics}[A gap is a statement about excitations]
+The condensate can carry a stationary supercurrent without creating a population
+of quasiparticles. A single bulk quasiparticle costs at least $\Delta$; creating
+two from an even-parity vacuum costs at least $2\Delta$. Localized states change
+the corresponding thresholds. Whenever a diagram shows a shaded continuum,
+ask which final states and which parity sector it represents.
+\end{physics}
+
+\section{Andreev reflection: exchanging a pair with the condensate}
+
+Consider an electron incident from a normal region on an ideal transparent
+normal--superconductor interface, with excitation energy below $\Delta$, the
+threshold for bulk quasiparticle propagation. It can be reflected as a
+hole while a Cooper pair is transferred into the condensate. For singlet pairing,
+the electron and the missing electron represented by the hole have opposite spin.
+The reflected hole approximately retraces the incident path when the Fermi energy
+is much larger than $\Delta$ and the excitation energy. This is
+\emph{Andreev reflection}. A barrier also permits ordinary electron reflection;
+the relative amplitudes are part of the scattering problem.
+
+\begin{figure}[htb]
+\centering\manualfigure{primer_reflection}
+\caption{Andreev conversion at one interface and an electron--hole round trip
+between two superconductors. Electron and hole arrows denote group-velocity
+directions of coherent amplitudes. Pair transfer accompanies conversion; the
+trajectory describes the phase quantization of coherent electron--hole amplitudes.
+The short-junction limit neglects the energy-dependent phase
+accumulated while traversing the normal region.}
+\label{fig:primer-reflection}
+\end{figure}
+
+Two interfaces can confine a coherent electron--hole orbit. Each conversion adds
+an energy-dependent phase involving $\arccos(E/\Delta)$ and the phase of the
+condensate. For an ideally transmitting short link, a round trip requires
+$2\arccos(E/\Delta)=\pm\phi+2\pi m$ for an integer $m$, with the sign distinguishing
+the two propagation directions. This produces a discrete phase-dependent level.
+Normal reflection mixes the trajectories. The resulting expression for one
+spin-degenerate channel is~\cite{beenakker1991josephson,beenakker1991universal}
+\begin{equation}\label{eq:contact-abs}
+ E_A(\phi)=\Delta\sqrt{1-\tau\sin^2(\phi/2)},\qquad E_A\ge0.
+\end{equation}
+The two leads have equal conventional gaps, the normal scattering matrix is
+effectively energy independent over that gap, and Coulomb interaction is omitted.
+The short-junction condition is a dwell-time condition,
+$\Delta t_{\mathrm{dwell}}/\hbar\ll1$. Assess it through the dwell time: even a
+geometrically small dot can have a narrow resonance and a long dwell time.
+
+At zero phase the level reaches the gap edge. Near $\phi=\pi$, increasing
+transmission lowers its energy; for $\tau<1$ a finite minimum remains. The
+zero-energy touching at perfect transmission is sensitive to reflection and
+occupation. Establishing topological protection or a protected
+$4\pi$-periodic equilibrium Josephson effect requires additional evidence.
+
+\section{One Andreev orbital, four many-body states}\label{sec:abs-occupations}
+
+The Bogoliubov--de Gennes (BdG) equation is a one-particle eigenvalue problem in an
+enlarged electron--hole space. Its $+E_A$ and $-E_A$ partners describe a
+particle--hole redundancy of the same physical excitation.
+After choosing the positive-energy modes, the many-body Hamiltonian of a
+spin-degenerate Andreev orbital can be written
+\begin{equation}\label{eq:andreev-occupations}
+ H_A=E_A\left(\gamma_\up\dg\gamma_\up+
+                    \gamma_\dn\dg\gamma_\dn-1\right).
+\end{equation}
+The four Fock states are
+\begin{align}
+ \ket g&=\ket{0_A}, & E_g&=-E_A, & P_g&=+1,\nonumber\\
+ \ket{o_\sigma}&=\gamma_\sigma\dg\ket{0_A}, & E_{o_\sigma}&=0, & P_{o_\sigma}&=-1,\nonumber\\
+ \ket e&=\gamma_\up\dg\gamma_\dn\dg\ket{0_A}, & E_e&=+E_A, & P_e&=+1.
+\end{align}
+The notation $0_A$ counts \emph{bound quasiparticles}, while $\ket0$ denotes the empty
+electron dot. The state $\ket{0_A}$ already includes superconducting
+pairing and all filled negative-energy electronic states of the reference vacuum.
+
+\begin{figure}[htb]
+\centering\manualfigure{primer_occupations}
+\caption{Four occupations of a spin-degenerate Andreev orbital. Single-electron
+addition or removal connects even and odd parity at excitation energy $E_A$.
+A pair transition connects the two even states at $2E_A$. The odd states are
+degenerate here; their splitting in a spin qubit requires additional physics.
+The arrows indicate transitions allowed by parity; their strengths depend on the
+matrix elements of the chosen drive.}
+\label{fig:primer-occupations}
+\end{figure}
+
+This elementary example resolves a common apparent discrepancy between
+experiments. A weak normal tunnel probe can produce resonances at biases
+$eV=\pm E_A$, whereas a parity-preserving microwave probe can absorb at
+$hf=2E_A$. The two probes access different transitions of the same system. The
+interaction in a quantum dot changes the level spacings and wavefunctions.
+Calculate each transition from the appropriate many-body energy difference
+and matrix element of the physical probe operator.
+
+Parity is conserved because pairing changes electron number by two. It remains
+well defined when particle number itself is not. A state of definite parity can
+have a non-integer \emph{mean local charge}; its parity follows from the occupied
+Fock configurations. For a coupled dot and leads, it is the parity of the combined
+system that labels an eigenstate. Tunnelling produces fluctuations of the dot charge within that state.
+
+\section{Why a bound state carries supercurrent}
+
+An energy level that depends on phase contributes a current. For a nondegenerate
+stationary state, $I=(2e/\hbar)\partial_\phi E$. Applying this relation to the
+even ground state of \cref{eq:andreev-occupations} gives
+\begin{equation}\label{eq:contact-current}
+ I_g(\phi)=\frac{e\Delta}{2\hbar}
+ \frac{\tau\sin\phi}{\sqrt{1-\tau\sin^2(\phi/2)}}.
+\end{equation}
+This uses the manual's phase and positive-current convention. The excited even
+state carries $-I_g$ and either odd state carries zero current in this ideal
+short-channel model. The two quasiparticles cancel the ground-state contribution
+one by one. For equal gaps and energy-independent short-junction scattering, the
+continuum contribution to the equilibrium energy is phase independent. For general
+dots, long junctions or unequal gaps, include the continuum contribution explicitly.
+
+\begin{figure}[htb]
+\centering\manualfigure{primer_contact}
+\caption{Analytic short-channel spectrum and ground-state current for the
+transmissions indicated. Energy is normalized by $\Delta$ and current by
+$e\Delta/\hbar$. Higher transmission produces a deeper bound state and a more
+skewed current--phase relation. These curves assume the even ground state at zero
+temperature and use \cref{eq:contact-abs,eq:contact-current}.}
+\label{fig:primer-contact}
+\end{figure}
+
+At small transmission the current is nearly sinusoidal. At high transmission
+the energy changes rapidly near $\pi$, giving a strongly nonsinusoidal current.
+An excitation changes the occupied many-body branch and hence the current; this
+provides one method of Andreev-state readout. The current depends on the full
+phase-dependent energy reference. Differentiating a plotted excitation
+$E_m-E_g$ gives the current difference $I_m-I_g$.
+
+If all four occupations equilibrate with a reservoir, their partition function is
+$Z=\ee^{\beta E_A}+2+\ee^{-\beta E_A}$, where $\beta=(k_BT)^{-1}$. The resulting
+equilibrium current is $I_g\tanh[E_A/(2k_BT)]$. A device trapped in one parity
+sector samples a restricted ensemble, whose current is obtained by averaging over
+that sector. Quasiparticle poisoning is the process that switches
+the bound subsystem between such occupation sectors.
+
+\begin{physics}[Read the figures]
+Suppose a microwave line follows twice the energy of a tunnel-spectroscopy peak.
+Which two occupations are connected in each experiment? The microwave line can
+connect $\ket g$ to $\ket e$; tunnelling connects $\ket g$ to $\ket{o_\sigma}$.
+If one quasiparticle is trapped, the pair transition from $\ket g$ loses its
+initial population, so the line disappears while the bound level can remain
+inside the gap. The same trapped odd state carries zero current in the ideal
+model; an interacting dot doublet can carry a finite current.
+\end{physics}
+
+\paragraph{Reading further.}
+The scattering picture and its connection to quantum dots are reviewed by
+Mart\'in-Rodero and Levy Yeyati~\cite{martinrodero2011josephson}. Aguado's
+perspective~\cite{aguado2020perspective} connects the occupation picture to
+semiconductor superconducting qubits. Glazman and Catelani's lecture
+notes~\cite{glazman2021bogoliubov} develop the distinction between the condensate,
+quasiparticles and circuit degrees of freedom. The following chapter introduces
+the charging energy that makes the dot a genuinely interacting artificial atom.

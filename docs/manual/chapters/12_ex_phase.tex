@@ -1,0 +1,151 @@
+\chapter{Example: the phase-driven junction}\label{ch:ex-phase}
+
+Microwave irradiation of a superconducting loop that contains the junction modulates the
+phase difference, $\phi(t)=\phi_0+A\cos\Omega t$. This is the configuration of Andreev
+spectroscopy experiments, in which absorption of microwave photons excites the junction from
+its ground state into the excited singlet, the \enquote{pair
+transition}~\cite{bretheau2013exciting,bretheau2013supercurrent,janvier2015coherent,vanwoerkom2017microwave,hays2018direct}.
+The theory of the microwave response of Andreev levels is developed in
+Refs.~\cite{desposito2001controlled,zazunov2003andreev,kos2013frequencydependent,olivares2014dynamics,park2020adiabatic,kurilovich2021microwave};
+for interacting dots, see
+Refs.~\cite{matutecanadas2022signatures,fatemi2022microwave,hermansen2022inductive}.
+Here we compute the dressed subgap states of the interacting reference junction
+\eqref{eq:reference}, where $\omega_{SS^*}=E_{S^*}-E_S=\q{phase.omega_star}$.
+
+\section{The pair transition}
+
+For a weak drive the phase couples through the current operator
+$\partial_\phi H\equiv\partial H/\partial\phi$ (\cref{sec:jacobi-anger}), and the Rabi
+splitting at the resonance $\Omega\approx\omega_{SS^*}$ is
+\begin{equation}\label{eq:phase-rabi}
+  \delta=A\,\abs{\matel S{\partial_\phi H}{S^*}} ,
+\end{equation}
+with $\abs{\matel S{\partial_\phi H}{S^*}}=\q{phase.element}$ for the reference junction. The
+matrix element is small: at $\eps=\q{phase.detuning}$ the junction is close to the
+particle--hole-symmetric point, where it vanishes by the eta selection rule
+(\cref{sec:selection,ch:ex-gate}). \Cref{fig:phase}(a) shows the rotating-frame quasienergies
+$\qe_S$ and $\qe_{S^*}-\Omega$ near the resonance for $A=\q{phase.sweep_amplitude}$. The Sambe
+solution in the full Fock space at QP cutoff $\q{phase.cutoff}$ and the two-level RWA give the
+same avoided-crossing structure. Their energies differ by the AC Stark shift due to other states, which the
+two-level RWA omits; the offset grows as $A^2$. Panel (b) compares the splitting at the
+resonance with \eqref{eq:phase-rabi}; at $A=\q{phase.ratio_amplitude}$ the AC Stark shift has
+lowered the resonance frequency by $\q{phase.resonance_shift}$. Both the RWA, whose coupling is
+$2\abs{(H_1)_{SS^*}}=8J_1(A/4)\abs{\matel S{\partial_\phi H}{S^*}}$, and the full result fall
+below the linear law as the amplitude grows: at $A=\q{phase.ratio_amplitude}$ they reach
+$\q{phase.rwa_ratio}$ (RWA) and $\q{phase.sambe_ratio}$ (full Sambe result) of the linear value.
+The Bessel saturation of the drive harmonic accounts for the reduction in the RWA; the
+counter-rotating terms, the higher harmonics and the other states, all omitted by the
+two-level RWA, reduce the effective coupling further. From
+$A\approx\q{phase.hybridization_amplitude}$ onwards, the pair hybridizes with replicas of other
+states and the splitting no longer follows a smooth curve.
+
+\section{The Floquet spectrum versus frequency and amplitude}
+
+\Cref{fig:spectrum}(a,b) shows the Floquet spectrum close to the ground state: every replica
+$\qe_\alpha+\ell\Omega$ within $\pm\q{spectrum.window}$ of $E_S$, coloured by its time-averaged
+weight on the undriven singlet. The calculation uses the complete Fock space of a bath with
+$\q{spectrum.pairs}$ level pairs per lead (dimension $\q{spectrum.dimension}$,
+$\omega_{SS^*}=\q{spectrum.omega_star}$), so that all AC Stark shifts are included. The dressed
+singlet is the dark line. The light lines descending with slope $-\ell$ are replicas
+$E_b-\ell\Omega$, $\ell>0$, of higher states $b$. Where a replica crosses the dressed singlet
+and the drive couples the two, the lines repel and exchange weight; otherwise they cross.
+
+As a function of the frequency, panel (a), the $S^*$ replica produces the one-photon avoided
+crossing at $\Omega\approx\q{spectrum.one_photon}$ and a much narrower two-photon crossing at
+$\Omega\approx\q{spectrum.two_photon}$. Above the continuum threshold,
+$\Omega\gtrsim\q{spectrum.threshold}$, replicas of doublet-plus-quasiparticle states cross
+densely, and the strongest of them visibly repel the dressed singlet. Away from resonances the
+dressed singlet lies about $\q{spectrum.offset}\times10^{-3}$ above $E_S$. Two contributions of
+comparable magnitude and opposite sign produce this shift. The time-averaged Hamiltonian $H_0$
+renormalizes the hybridization, $\Gamma\to\Gamma J_0(A/4)^2$ (\cref{eq:phase-h0}); for
+$A=\q{spectrum.phase_amplitude}$ the factor is $\q{spectrum.hybridization_factor}$, which weakens the
+binding of the singlet and, by itself, raises its energy by $\q{spectrum.h0_shift}\times10^{-3}$. The second-order
+AC Stark shifts \eqref{eq:ac-stark} lower the energy by $\q{spectrum.stark_shift}\times10^{-3}$ at
+$\Omega=\q{spectrum.decomposition_omega}$, which leaves $\q{spectrum.dressed_shift}\times10^{-3}$.
+At these low frequencies the result approaches the adiabatic average of the instantaneous
+energy, $\langle E_S(\phi(t))\rangle-E_S=\q{spectrum.adiabatic_shift}\times10^{-3}$. As a function of the amplitude
+at $\Omega=\q{spectrum.phase_omega}$, panel (b), the dressed singlet rises roughly as $A^2$.
+Near $A\approx\q{spectrum.crossing}$ it hybridizes with a replica that the growing shift has
+brought into resonance.
+
+\begin{figure}[htb]
+\centering
+\manualfigure{spectrum}
+\caption{Floquet fan diagrams of the junction ($\q{spectrum.pairs}$ level pairs per lead,
+complete Fock space at QP cutoff $\q{spectrum.cutoff}$, $M=\q{spectrum.harmonics}$). Shown are all
+replicas $\qe+\ell\Omega$ within $\pm\q{spectrum.window}$ of the undriven singlet energy,
+coloured by their time-averaged weight on $S$. (a) Phase drive with
+$A_\phi=\q{spectrum.phase_amplitude}$ versus $\Omega$; dotted lines mark the one- and
+two-photon $S$--$S^*$ resonances. (b) Phase drive at $\Omega=\q{spectrum.phase_omega}$ versus
+amplitude. (c, d) The same for a gate drive with $A_\eps=\q{spectrum.gate_amplitude}$ and
+versus $A_\eps$.}
+\label{fig:spectrum}
+\end{figure}
+
+\section{The adiabatic limit}
+
+At low frequency, $\Omega\ll\omega_{SS^*}$, the junction follows the drive adiabatically, and
+the quasienergy of the dressed ground state tends to the time average of the instantaneous
+energy, \cref{eq:adiabatic},
+\begin{equation}\label{eq:phase-adiabatic}
+  \qe_S\simeq\frac1{2\pi}\int_0^{2\pi}E_S\bigl(\phi_0+A\cos\vartheta\bigr)\,\dd\vartheta .
+\end{equation}
+The Berry phase vanishes for this one-dimensional back-and-forth motion. \Cref{fig:phase}(c)
+compares Floquet quasienergies at $\Omega=\q{phase.slow_omega}$ and $\q{phase.fast_omega}$ with
+\eqref{eq:phase-adiabatic}. At $\Omega=\q{phase.slow_omega}$ the dressed singlet follows the
+adiabatic average until the phase swing reaches $\phi=\pi$, at $A=\pi-\phi_0$, where the
+$S$--$S^*$ gap is smallest. Passages through this region are no longer adiabatic. The dressed
+state then acquires an admixture of $S^*$, its static weight on $S$ drops, and its quasienergy
+falls below the adiabatic average:
+Landau--Zener transitions at each passage interfere from cycle to cycle, the mechanism of
+\cref{ch:ex-tls}~\cite{shevchenko2010landau}. At $\Omega=\q{phase.fast_omega}$ the photon
+energy approaches the minimal gap; around $A\approx\q{phase.mixing_amplitude}$ a resonance with
+$S^*$ mixes the two singlets strongly (faded markers: less than half of the weight on $S$), and
+beyond it the dressed singlet lies above the adiabatic curve.
+
+Since $E_S(\phi)$ is a smooth function with a minimum near $\phi=0$, the average increases with
+$A$: a strong slow phase drive raises the time-averaged ground-state energy and reduces the
+time-averaged supercurrent. Expanding \eqref{eq:phase-adiabatic} to second order,
+$\qe_S-E_S\simeq\tfrac{A^2}4E_S''(\phi_0)$, and the curvature $E_S''$ contains the
+second-order coupling to \emph{all} excited states, including quasiparticle states up to the
+bandwidth. This calculation therefore uses the complete Fock space of a smaller bath; a
+truncated static basis misses these contributions (\cref{ch:ex-numerics}).
+
+\begin{figure}[htb]
+\centering
+\manualfigure{phase}
+\caption{Phase-driven reference junction. (a) Rotating-frame quasienergies near the $S$--$S^*$
+resonance for $A=\q{phase.sweep_amplitude}$, Sambe in the Fock space (solid) and RWA (dashed).
+(b) Splitting at the resonance versus amplitude, with \eqref{eq:phase-rabi} and the RWA
+$2\abs{(H_1)_{SS^*}}$. (c) Quasienergy of the dressed singlet at low frequencies compared with
+the adiabatic average \eqref{eq:phase-adiabatic}, in the complete Fock space of a bath with
+$\q{phase.adiabatic_pairs}$ level pairs per lead; faded markers denote states with less than half of their
+weight on $S$.}
+\label{fig:phase}
+\end{figure}
+
+\section{Continuum, multiphoton processes and experiments}
+
+At higher frequencies the replicas of the bound states enter the continuum
+(\cref{ch:ex-numerics}): for $\Omega>E_D+\Delta-E_S$ a photon can break the singlet into a
+doublet plus a quasiparticle, the process that limits Andreev spectroscopy and causes
+quasiparticle poisoning~\cite{zgirski2011evidence,olivares2014dynamics,riwar2015control,wesdorp2023dynamical}.
+Two-photon transitions $S\to S^*$ at $\Omega\approx\omega_{SS^*}/2$ are mediated directly by the
+second harmonic of the phase drive (\cref{sec:jacobi-anger}), which is proportional to the
+tunnelling operator rather than to the current, and in second order by the first harmonic
+through intermediate states. Floquet engineering of junctions by strong
+phase or voltage drives, including steady Floquet--Andreev states, is discussed in
+Refs.~\cite{peraltagavensky2018berry,venitucci2018nonadiabatic,melin2019engineering,keliri2023driven,park2022steady,ortegataberner2023anomalous}.
+
+\begin{incode}
+\begin{lstlisting}[frame=none,backgroundcolor={},aboveskip=0pt,belowskip=0pt]
+static = solve(reference_model(**model), 2, Sector(0, 0), SolverOptions(method="dense", eigenpairs=60))
+periodic = PeriodicHamiltonian.from_parameters(reference_model, model, ParameterDrive.cosine("phi", 1.), 0.716)
+pair = solve_floquet(periodic, 2, Sector(0, 0), dict(floquet_cutoff=2, states=2), static=static)
+rwa = rwa_model(periodic, [0, 1], [0, -1], 2, Sector(0, 0), static=static)
+\end{lstlisting}
+Passing \code{static} avoids recomputing the static eigenstates for every frequency of a scan.
+\par\smallskip\usermanual{docs/floquet.md}.
+\end{incode}
+
+\tutorial{06_phase_drive}

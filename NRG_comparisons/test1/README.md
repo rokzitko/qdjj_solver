@@ -1,8 +1,8 @@
-# Superconducting Impurity: Final Results
+# Superconducting impurity: final results
 
-## TL;DR
+## Summary
 
-- **Doublet ground state:** the signed singlet-doublet gap is approximately
+- **Doublet ground state:** the signed singlet–doublet gap is approximately
   $-0.174387\Delta$ in the larger-bath QP calculations.
 - **QP versus NRG:** the two larger-bath QP gaps differ by only
   $1.05\times10^{-8}\Delta$. All ten observables from both calculations lie
@@ -25,9 +25,9 @@ is lower. See [model conventions](../../docs/models.md) for definitions.
 Bath sizes count signed normal levels. Here $q$ is the QP cutoff, $\chi$ the DMRG
 bond dimension, and $W$ the surrogate fitting-window upper limit in units of
 $\Delta$; changing $W$ does **not** change physical $D$. Bath weights are not
-renormalized, and discarded dark modes are not removed.
+renormalized, and dark modes are retained.
 
-## Energies and Gap
+## Energies and gap
 
 | Method | Bath and numerical setting | $E_S/\Delta$ | $E_D/\Delta$ | $g$ |
 |---|---|---:|---:|---:|
@@ -50,7 +50,7 @@ The two cosh-12 results use the **same finite Hamiltonian**. Their common
 difference from NRG cannot be attributed to a DMRG ground-energy error: it is
 also present in QP. The larger-bath points use different finite Hamiltonians.
 
-## Probabilities and Moment
+## Probabilities and moment
 
 $P_0$, $P_1$, and $P_2$ are impurity empty, singly occupied, and doubly occupied
 probabilities. The moment $m_D=\langle S_d^z\rangle$ refers to the spin-up doublet
@@ -72,11 +72,11 @@ $3.0\times10^{-13}$, but their singlet probabilities differ from NRG by about
 significances. The singlet moment is a symmetry zero, excluded from the ten
 nonzero accuracy targets.
 
-## Achieved Accuracy
+## Achieved accuracy
 
 The requested observable tolerance is $10^{-9}+10^{-6}\lvert v\rvert$ for QP/DMRG
 and $10^{-6}+10^{-3}\lvert v\rvert$ for NRG. All ten NRG estimates satisfy the
-latter. NRG centers extrapolate linearly in $\log\Lambda$ from
+latter. NRG central estimates are obtained by extrapolating linearly in $\log\Lambda$ from
 $\Lambda=1.8,2,2.5,3,4$; uncertainties retain alternative fit forms/ranges and
 propagated numerical sensitivity. Agreement with NRG does not establish the
 stricter QP/DMRG target.
@@ -91,21 +91,21 @@ stricter QP/DMRG target.
 | Cosh 12, DMRG bond 384 to 512 | 7.28e-8 | Stable ground-branch values, but residual checks fail |
 
 These changes are diagnostics, **not total error bounds**. The final stable
-bath/window steps do not erase the preceding failures, and small-bath cutoff
-stability does not certify a larger bath.
+bath/window steps do not resolve all earlier convergence concerns, and small-bath cutoff
+stability does not establish cutoff convergence for a larger bath.
 
-![Refinement changes relative to requested tolerances and the four DMRG root residuals](output/convergence.svg)
+![Refinement changes relative to requested tolerances and the four DMRG eigenstate residuals](output/convergence.svg)
 
 At $\chi=512$, the DMRG residuals divided by $\Delta$ are:
 
-| Branch | Lowest root | Second root |
+| Branch | Lowest eigenstate | Second eigenstate |
 |---|---:|---:|
 | Singlet | 2.429e-7 | 4.001e-7 |
 | Doublet | 6.630e-8 | 1.826e-6 |
 
 Only the lowest doublet passes the prescribed $10^{-7}$ criterion. DMRG therefore
-does not meet the **all-root** qualification, despite excellent same-bath
-ground-branch agreement. QP residuals are below $3.75\times10^{-13}$ at the two
+does not meet the residual criterion for **all requested eigenstates**, despite close agreement with QP for the
+lowest state in each sector of the same bath. QP residuals are below $3.75\times10^{-13}$ at the two
 larger-bath endpoints, but apply to the projected cutoff Hamiltonians, not the
 omitted QP sectors. Neither solver has established the requested continuum accuracy.
 
@@ -128,7 +128,7 @@ is required to start. Fresh DMRG states can yield different excited-state
 residuals; examine the new diagnostics rather than assuming the published
 qualification flags or digits will be reproduced.
 
-### Inputs and Dependencies
+### Inputs and dependencies
 
 - [physical.json](input/physical.json): Hamiltonian, observable targets, and resource limits.
 - [qp-dmrg-focused.json](input/qp-dmrg-focused.json): the 12 published finite endpoints,
@@ -164,7 +164,7 @@ offline tests do not validate an external installation. The runner
 allows one Mathematica kernel at a time and does not change the NRG installation.
 QP/DMRG calculations and reading the results do not require NRG or Mathematica.
 
-### Finite Baths
+### Finite baths
 
 Planning only counts dimensions; it does not diagonalize or fit:
 
@@ -176,9 +176,9 @@ python -B NRG_comparisons/test1/focused_internal.py report --campaign finite-rep
 ```
 
 [focused_internal.py](focused_internal.py) reuses the original [run.py](run.py)
-solver routines, with `compress=False`, two roots per sector, the original
-residual tolerances and the 16-million-state QP dimension guard. It now starts
-both DMRG endpoints from fresh states rather than requiring deleted checkpoints.
+solver routines, with `compress=False`, two eigenstates per sector, the original
+residual tolerances and the 16-million-state QP dimension limit. Both DMRG endpoint
+calculations start from fresh states.
 Use `--group bath`, `--group window`, or `--group dmrg` to select part of the
 queue, and `--max-tasks 1` to run one calculation at a time. The task IDs in the
 input match `output/results.json`; results and finite differences are written to
@@ -221,7 +221,7 @@ than treating a stopped queue as convergence. Repeating `run` resumes completed
 work; a failed task requires review and `--retry-failed`. Do not mix these fresh
 commands with an old run directory whose shared budget is already spent.
 
-### Tables and Figures
+### Tables and figures
 
 The original presentation code is retained in [generate.py](generate.py), without
 the one-time historical archive importer. It reads the approved `results.json`

@@ -91,7 +91,7 @@ public:
                     if (e != target_eta) return;
                 }
                 if (qp_counts.size() >= max_dimension)
-                    throw std::length_error("basis exceeds max_dimension");
+                    throw std::length_error("sector dimension exceeds max_dimension");
                 states.insert(states.end(), state.begin(), state.end());
                 qp_counts.push_back(current_qp);
             } else choose(g, 0, counts[g]);

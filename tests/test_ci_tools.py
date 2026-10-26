@@ -322,6 +322,11 @@ def test_distribution_checker_rejects_incomplete_or_leaking_wheels(tmp_path, mem
     ("NRG_comparisons/test5/README.md", None, False),
     ("large_Gamma/output/observables.csv", None, True),
     ("large_Gamma/runs/checkpoint.json", None, False),
+    ("docs/manual/build/manual.pdf", None, False),
+    ("docs/manual/figures/primer_devices.pdf", None, False),
+    (None, "docs/handbook/index.md", False),
+    (None, "docs/formats.toml", False),
+    (None, "examples/01_subgap_states/input/reference.json", False),
 ])
 def test_research_source_distribution_boundary(tmp_path, extra, missing, valid):
     tool = load_tool("check_distribution")
@@ -521,8 +526,11 @@ def test_nrg_source_assets_exist():
     ("tests.yml", "minimum-dependencies", []),
     ("tests.yml", "sanitizers", []),
     ("tests.yml", "native-coverage", []),
+    ("tests.yml", "docs", []),
+    ("tests.yml", "docs-extended", []),
     ("release.yml", "sdist", ["dist/*.tar.gz"]),
     ("release.yml", "wheels", ["dist/*.tar.gz", "wheelhouse/*.whl"]),
+    ("release.yml", "documentation", ["dist/*.tar.gz"]),
 ])
 def test_publication_ci_gates_precede_execution_and_artifact_upload(workflow, job, archives):
     root = Path(__file__).resolve().parents[1]
@@ -532,7 +540,12 @@ def test_publication_ci_gates_precede_execution_and_artifact_upload(workflow, jo
     source = next(step for step in steps if "id: publication-source\n" in step)
     executing = [step for step in steps if re.search(r"^(?:run:|        run:)", step, re.MULTILINE)]
     assert executing[0] == source
-    assert "if:" not in source and "continue-on-error:" not in body
+    assert "if:" not in source
+    for step in steps:
+        if job == "docs-extended" and step.startswith("name: External links (report only)\n"):
+            assert "run: python -m sphinx -b linkcheck" in step
+        else:
+            assert "continue-on-error:" not in step
     command = "python -B tools/check_publication.py"
     assert f"run: {command}\n" in source
     assert body.index("uses: actions/setup-python@") < body.index(command)
@@ -543,14 +556,15 @@ def test_publication_ci_gates_precede_execution_and_artifact_upload(workflow, jo
         boundary = body.index(f"python tools/check_distribution.py {target}")
         privacy = body.index(f"{command} {target}")
         assert boundary < privacy < body.index("uses: actions/upload-artifact@")
-        if job == "wheels" and target == "dist/*.tar.gz":
-            assert privacy < body.index("tar -xzf") < body.index("uses: pypa/cibuildwheel@")
+        if job in ("wheels", "documentation") and target == "dist/*.tar.gz":
+            consume = "uses: pypa/cibuildwheel@" if job == "wheels" else "name: Install from the source archive"
+            assert privacy < body.index("tar -xzf") < body.index(consume)
         else:
             build = "uses: pypa/cibuildwheel@" if job == "wheels" else "python -m build"
             assert body.index(build) < boundary
     for step in steps:
         if "uses: actions/upload-artifact@" in step:
-            if "path: reports/" in step:
+            if "path: reports/" in step or "manual-logs/" in step:
                 assert "if: ${{ always() && steps.publication-source.outcome == 'success' }}" in step
             else:
                 assert "if:" not in step

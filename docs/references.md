@@ -52,6 +52,9 @@ the software project across releases.
   using `chain_expansion`. Report the chain length and finite-/wide-band target.
 - **DMRG:** cite the DMRG method references and TeNPy below when using this solver.
   Record the bond dimension, eigenstate-search settings, and convergence evidence.
+- **Floquet calculations:** cite the [Floquet methods](#floquet-methods) used.
+  Report the drive, frequency, Floquet cutoff, many-body basis and the
+  convergence evidence listed in [Floquet calculations](floquet.md#convergence-and-pitfalls).
 
 The references below describe those numerical components; the software version
 specifies the implementation used in a calculation.
@@ -93,6 +96,31 @@ specifies the implementation used in a calculation.
    superconducting nanostructures: Applications to double, triple, and quadruple
    quantum dots*, Physical Review B **112**, 205418 (2025).
    DOI: [10.1103/mxsl-fc96](https://doi.org/10.1103/mxsl-fc96).
+
+## Floquet methods
+
+1. J. H. Shirley, *Solution of the Schrödinger equation with a Hamiltonian
+   periodic in time*, Physical Review **138**, B979 (1965).
+   DOI: [10.1103/PhysRev.138.B979](https://doi.org/10.1103/PhysRev.138.B979).
+2. H. Sambe, *Steady states and quasienergies of a quantum-mechanical system in
+   an oscillating field*, Physical Review A **7**, 2203 (1973).
+   DOI: [10.1103/PhysRevA.7.2203](https://doi.org/10.1103/PhysRevA.7.2203).
+3. A. Eckardt and E. Anisimovas, *High-frequency approximation for periodically
+   driven quantum systems from a Floquet-space perspective*, New Journal of
+   Physics **17**, 093039 (2015).
+   DOI: [10.1088/1367-2630/17/9/093039](https://doi.org/10.1088/1367-2630/17/9/093039).
+4. M. Bukov, L. D'Alessio, and A. Polkovnikov, *Universal high-frequency behavior
+   of periodically driven systems: from dynamical stabilization to Floquet
+   engineering*, Advances in Physics **64**, 139 (2015).
+   DOI: [10.1080/00018732.2015.1055918](https://doi.org/10.1080/00018732.2015.1055918).
+5. S. Blanes and P. C. Moan, *Fourth- and sixth-order commutator-free Magnus
+   integrators for linear and non-linear dynamical systems*, Applied Numerical
+   Mathematics **56**, 1519 (2006).
+   DOI: [10.1016/j.apnum.2005.11.004](https://doi.org/10.1016/j.apnum.2005.11.004).
+6. A. Alvermann and H. Fehske, *High-order commutator-free exponential
+   time-propagation of driven quantum systems*, Journal of Computational Physics
+   **230**, 5930 (2011).
+   DOI: [10.1016/j.jcp.2011.04.006](https://doi.org/10.1016/j.jcp.2011.04.006).
 
 TeNPy supplies MPS contractions and the optional DMRG engine. Consult its
 [documentation](https://tenpy.readthedocs.io/) for current citation guidance.

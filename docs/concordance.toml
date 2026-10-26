@@ -1,0 +1,170 @@
+# From the equations to the code: one row per concept, rendered by tools/gen_docs.py as the
+# physics manual's concordance table (docs/manual/generated/concordance.tex) and as
+# docs/reference/concordance.md. `label` is a physics-manual label, `code` lists public names,
+# `user` a user-manual page and `tutorial` an examples/ directory (optional). The generator checks
+# that labels, pages, tutorials and code names exist.
+
+[[row]]
+concept = "Superconducting Anderson impurity and reference junction"
+label = "eq:reference"
+code = ["reference_model", "Impurity.anderson", "make_model"]
+user = "docs/models.md"
+tutorial = "01_subgap_states"
+
+[[row]]
+concept = "Discretized superconducting reservoirs"
+label = "sec:bath"
+code = ["cosh_grid", "fit_surrogate", "chain_expansion", "DiscreteBath"]
+user = "docs/reservoir_workflow.md"
+tutorial = "05_convergence"
+
+[[row]]
+concept = "Symmetry sectors"
+label = "sec:symmetries"
+code = ["Sector"]
+user = "docs/models.md"
+tutorial = "01_subgap_states"
+
+[[row]]
+concept = "Canonical coordinates"
+label = "sec:coordinates"
+code = ["Hamiltonian.physical_operator", "Hamiltonian.coordinate_fingerprint"]
+user = "docs/models.md"
+
+[[row]]
+concept = "Quasiparticle expansion"
+label = "eq:qp-projection"
+code = ["qp_solver.solve", "qp_solver.SolverOptions"]
+user = "docs/qp_workflow.md"
+tutorial = "00_first_calculation"
+
+[[row]]
+concept = "Density-matrix renormalization group"
+label = "sec:dmrg"
+code = ["dmrg_solver.solve", "dmrg_solver.SolverOptions"]
+user = "docs/dmrg.md"
+tutorial = "11_dmrg_convergence"
+
+[[row]]
+concept = "Checked calculations and saved results"
+label = "ch:practical"
+code = ["solve", "save_result", "load_result"]
+user = "docs/workflows.md"
+tutorial = "01_subgap_states"
+
+[[row]]
+concept = "Supercurrent"
+label = "eq:current"
+code = ["phase_derivative"]
+user = "docs/models.md"
+tutorial = "01_subgap_states"
+
+[[row]]
+concept = "Transition frequencies and static matrix elements"
+label = "eq:transitions"
+code = ["Eigenstates.matrix_elements", "Hamiltonian.probe"]
+user = "docs/interfaces.md"
+tutorial = "06_phase_drive"
+
+[[row]]
+concept = "Parameter drives and harmonics"
+label = "eq:drive"
+code = ["ParameterDrive", "Harmonic", "PeriodicHamiltonian.from_parameters"]
+user = "docs/floquet.md"
+tutorial = "06_phase_drive"
+
+[[row]]
+concept = "Floquet states and quasienergies"
+label = "eq:floquet-state"
+code = ["FloquetStates.quasienergies", "FloquetStates.modes"]
+user = "docs/floquet.md"
+tutorial = "02_driven_dot"
+
+[[row]]
+concept = "Mean energy"
+label = "eq:mean-energy"
+code = ["FloquetStates.mean_energies"]
+user = "docs/floquet.md"
+tutorial = "02_driven_dot"
+
+[[row]]
+concept = "Sambe matrix and Floquet cutoff"
+label = "eq:sambe-matrix"
+code = ["solve_floquet", "FloquetOptions.floquet_cutoff"]
+user = "docs/floquet.md"
+tutorial = "05_convergence"
+
+[[row]]
+concept = "Static basis of size K"
+label = "sec:sambe-method"
+code = ["FloquetOptions.basis", "FloquetOptions.basis_states"]
+user = "docs/floquet.md"
+tutorial = "05_convergence"
+
+[[row]]
+concept = "Replicas, branches and folded quasienergies"
+label = "sec:sambe-method"
+code = ["FloquetOptions.selection", "FloquetOptions.branch", "FloquetStates.folded"]
+user = "docs/floquet.md"
+
+[[row]]
+concept = "Residual bound"
+label = "eq:residual-bound"
+code = ["FloquetStates.residuals", "FloquetStates.fock_residuals"]
+user = "docs/floquet.md"
+tutorial = "05_convergence"
+
+[[row]]
+concept = "Gauge freedom and c-number terms"
+label = "sec:gauge"
+code = ["FloquetOptions.drop_scalar_harmonics"]
+user = "docs/floquet.md"
+tutorial = "02_driven_dot"
+
+[[row]]
+concept = "Fixed canonical coordinates"
+label = "sec:fixed-coordinates"
+code = ["PeriodicHamiltonian.coordinate_fingerprint"]
+user = "docs/floquet.md"
+
+[[row]]
+concept = "One-period propagator"
+label = "eq:cfm4"
+code = ["floquet_propagator", "FloquetOptions.steps"]
+user = "docs/floquet.md"
+tutorial = "05_convergence"
+
+[[row]]
+concept = "High-frequency expansion"
+label = "eq:van-vleck"
+code = ["PeriodicHamiltonian.van_vleck"]
+user = "docs/floquet.md"
+tutorial = "04_high_frequency"
+
+[[row]]
+concept = "Rotating-wave model"
+label = "eq:rwa"
+code = ["rwa_model"]
+user = "docs/floquet.md"
+tutorial = "03_two_level_system"
+
+[[row]]
+concept = "Floquet matrix elements"
+label = "eq:floquet-element"
+code = ["FloquetStates.matrix_elements", "FloquetTransitions"]
+user = "docs/floquet.md"
+tutorial = "08_two_tone"
+
+[[row]]
+concept = "Floquet golden rule and lines"
+label = "eq:floquet-golden"
+code = ["FloquetTransitions.lines", "SpectralLines.spectrum", "line_shape"]
+user = "docs/floquet.md"
+tutorial = "08_two_tone"
+
+[[row]]
+concept = "Sum rule"
+label = "eq:sum-rule"
+code = ["FloquetTransitions.completeness"]
+user = "docs/floquet.md"
+tutorial = "02_driven_dot"

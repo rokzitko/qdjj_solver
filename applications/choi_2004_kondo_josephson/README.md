@@ -20,7 +20,7 @@ intermediate regime whose ground-state parity depends on phase. The published
 curves were calculated with superconducting NRG. We solve the same stated
 single-level Anderson model with finite BCS reservoirs.
 
-![QP and original NRG curves on the same units and parameters](output/paper/comparison.svg)
+![QP and original NRG curves in the same units and at the same parameters](output/paper/comparison.svg)
 
 ## Bare parameters and Kondo-temperature convention
 
@@ -65,7 +65,7 @@ the lowest-energy branch, and roots of $E_D-E_S$ locate the transitions.
 
 The 280-point phase scan gives:
 
-| $\Delta/T_K$ | Computed $\phi_c/\pi$ | Behavior for $0<\phi<\pi$ |
+| $\Delta/T_K$ | Computed $\phi_c/\pi$ | Behaviour for $0<\phi<\pi$ |
 |---:|---:|---|
 | 0.1 | 0.94133777 | Positive current over most phases; narrow doublet region near $\pi$ |
 | 1.6 | 0.42632696 | Singlet-to-doublet transition and current-sign switch |
@@ -146,7 +146,7 @@ the superconducting bath is gapped.
 ## Source and precision of the reference data
 
 `reference/figure3.csv` is extracted from the original **Grace EPS** in the
-arXiv source archive. Circle centers supply panels (a,b); colored polyline
+arXiv source archive. Circle centres supply panels (a,b); coloured polyline
 vertices supply panel (c). The extraction script reads the drawing coordinates.
 Axis calibration, checksums identifying the archive and figure, and extraction uncertainties are
 in `reference/provenance.json`.

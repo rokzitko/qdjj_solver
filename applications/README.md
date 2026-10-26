@@ -66,7 +66,7 @@ code used.
 
 ## Reproducibility and interpretation
 
-Energies use **the specified gap as unit** ($\Delta=1$, or $\Delta_L=1$ for unequal
+Energies are expressed in **units of the specified gap** ($\Delta=1$, or $\Delta_L=1$ for unequal
 gaps), and `bandwidth` is the normal-state **half-bandwidth**.
 Lead weights represent the normal-state measure, not the divergent
 BCS quasiparticle density of states. Surrogate reservoirs use the method of
