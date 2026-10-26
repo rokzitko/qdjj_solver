@@ -301,6 +301,53 @@ observables and named `direct_derivatives`. Their units follow the supplied
 operator coefficients. Built-in operators already include the transformations
 and contractions associated with the constructor's representation.
 
+## Local orbital density matrix
+
+For one impurity orbital, use the ordered basis
+$|0\rangle,|\uparrow\rangle,|\downarrow\rangle,|2\rangle$, with
+$|2\rangle=d_\uparrow^\dagger d_\downarrow^\dagger|0\rangle$.
+In a state of fixed total fermion parity its local RDM is
+
+```math
+\rho=\begin{pmatrix}
+P_0&0&0&F^*\\
+0&P_\uparrow&C&0\\
+0&C^*&P_\downarrow&0\\
+F&0&0&P_2
+\end{pmatrix},\qquad
+F=\langle d_\downarrow d_\uparrow\rangle,\qquad
+C=\langle d_\downarrow^\dagger d_\uparrow\rangle.
+```
+
+Here $P_1=P_\uparrow+P_\downarrow$ and $\langle N\rangle=P_1+2P_2$.
+In particular, $\rho_{ab}=\langle |b\rangle\langle a|\rangle$:
+the matrix element $\rho_{0,2}=F^*$ is conjugate to the expectation of
+$|0\rangle\langle2|=d_\downarrow d_\uparrow$.
+
+For normalized local paired states,
+
+```math
+|\pm\rangle=\frac{|0\rangle\pm|2\rangle}{\sqrt2},\qquad
+P_\pm=\frac{P_0+P_2}{2}\pm\mathrm{Re}\,F.
+```
+
+These are unconditional probabilities and sum to the local even weight
+$P_0+P_2$, not necessarily one. Divide by that weight for probabilities
+conditioned on even local occupancy. For a variable relative phase,
+
+```math
+P_+(\theta)=\frac{P_0+P_2}{2}+\mathrm{Re}(e^{-i\theta}F),\qquad
+\max_\theta P_+(\theta)=\frac{P_0+P_2}{2}+|F|.
+```
+
+The fixed $P_\pm$ refer to the declared electron gauge. The optimized
+probability is different if $F$ is complex. Unit occupation alone does not
+distinguish a local spin from a coherent empty/double state or an incoherent
+mixture. `orbital_density_properties` reports all of these diagnostics and the
+purity, validating Hermiticity, trace, and positivity without renormalizing
+the matrix. [Usage examples](interfaces.md#local-orbital-density-matrices)
+cover eigenstates and degenerate mixtures.
+
 ## Physical derivatives and transitions
 
 To vary the lead phases along a parameter $x$, supply

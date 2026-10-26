@@ -166,6 +166,43 @@ dimension and spin-label checks do not identify an arbitrary change of physical
 basis. Use `h.physical_operator(electron_operator)` to transform physical electron
 operators through an uncompressed model's electron-to-canonical transformation.
 
+### Local orbital density matrices
+
+`orbital_density_matrix` works with both QP and DMRG eigenstates. Orbital and
+state indices are zero-based. Its basis is **empty, up, down, up-down**, with
+the doubly occupied state defined by creating up before down.
+
+```python
+from qdjj_solver import orbital_density_matrix, orbital_density_properties
+
+rho = orbital_density_matrix(qp, orbital=0, state=0)  # shape (4, 4)
+properties = orbital_density_properties(rho)
+print(properties["empty"], properties["single"], properties["double"])
+print(properties["pair_amplitude"], properties["plus"], properties["minus"])
+all_rho = orbital_density_matrix(qp, orbital=0, state=None)  # shape (k, 4, 4)
+# Equal mixture of a complete two-state multiplet, for a result with k=2:
+# mixed = orbital_density_matrix(qp, 0, state=None, weights=[1, 1])
+```
+
+`weights` must be real, finite, nonnegative, one per retained state, and have a
+positive sum. They are normalized to sum one and describe an **incoherent**
+mixture. A complete, equally weighted degenerate eigenspace has a
+basis-independent RDM; an individual degenerate eigenvector generally does not.
+
+The default `physical=True` transforms physical impurity-electron operators
+through the saved coordinate map. The impurity-only eta map also supports
+verified paired-mode compression. For a manually constructed canonical-mode
+Hamiltonian without an electron map, pass `physical=False` explicitly.
+This API concerns impurity orbitals, not arbitrary reservoir subsystems.
+
+`orbital_density_operators(orbital=0, hamiltonian=h)` supplies the canonical
+operators for independent measurement or matrix caching. It returns a mapping
+`(row,column) -> operator`, where the expectation equals `rho[row,column]`.
+Without `hamiltonian`, it returns physical-electron expressions. Composite
+projectors are built before QP truncation, preserving vacuum contractions.
+See [density-matrix conventions](models.md#local-orbital-density-matrix) for
+the signs, coherences, and paired-state probabilities.
+
 ### Starting states and continuation
 
 QP iterative solvers accept a finite, nonzero vector of shape `(D,)` in the
