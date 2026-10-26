@@ -6,25 +6,29 @@ Please identify the software version used. A ready-to-copy citation for the
 current version is:
 
 > Teodor Iličin and Rok Žitko (2026). *qdjj_solver: QP and DMRG solvers for
-> superconducting quantum impurities*, version 0.2.0. Zenodo.
-> https://doi.org/10.5281/zenodo.23104979.
+> superconducting quantum impurities*, version 0.3.0. Zenodo.
+> https://doi.org/10.5281/zenodo.23104978.
 
 For BibLaTeX:
 
 ```bibtex
-@software{qdjj_solver_020,
+@software{qdjj_solver_030,
   author    = {Iličin, Teodor and Žitko, Rok},
   title     = {{qdjj\_solver}: {QP} and {DMRG} solvers for superconducting quantum impurities},
-  version   = {0.2.0},
-  date      = {2026-10-02},
+  version   = {0.3.0},
+  date      = {2026-10-26},
   publisher = {Zenodo},
-  doi       = {10.5281/zenodo.23104979},
-  url       = {https://doi.org/10.5281/zenodo.23104979}
+  doi       = {10.5281/zenodo.23104978},
+  url       = {https://doi.org/10.5281/zenodo.23104978}
 }
 ```
 
-Zenodo's [BibTeX export](qdjj_solver.bib) is also available for import into a
-paper's bibliography. Its citation key is `ilicin_2026_23104979`.
+A [BibTeX citation](qdjj_solver.bib) is also available for import into a
+paper's bibliography. Its citation key is `qdjj_solver_030`.
+
+These citations currently use the all-versions DOI. Replace it with the
+version-specific DOI once the 0.3.0 Zenodo archive is available. The earlier
+[0.2.0 archive](https://doi.org/10.5281/zenodo.23104979) retains its own DOI.
 
 [CITATION.cff](../CITATION.cff) contains the citation information in a format
 readable by reference-management tools. For modified or unreleased source code,
