@@ -5,6 +5,7 @@ import dataclasses
 import numpy as np
 from numpy.testing import assert_allclose
 import pytest
+from scipy.integrate import trapezoid
 from scipy.special import jv
 
 from qdjj_solver import (FermionOperator, FloquetTransitions, Hamiltonian, Impurity, ParameterDrive,
@@ -31,6 +32,16 @@ def drive(amplitude_phi=.6, amplitude_eps=.2, theta=.3, omega=.9, **changes):
 def lines_as_set(lines, digits=9):
     return sorted((round(f, digits), round(s, digits)) for f, s in zip(lines.frequencies, lines.strengths,
                                                                        strict=True))
+
+
+def assert_tables_close(actual, expected, atol=1e-9):
+    """Compare sorted (frequency, strength) tables entry by entry.
+
+    pytest.approx rejects nested sequences since pytest 9.2, so compare the tables as arrays.
+    """
+    actual, expected = np.array(actual, dtype=float), np.array(expected, dtype=float)
+    assert actual.shape == expected.shape
+    assert_allclose(actual, expected, rtol=0, atol=atol)
 
 
 def test_static_matrix_elements_match_electron_oracle():
@@ -165,7 +176,7 @@ def test_sum_rule_hermiticity_and_replicas():
     def table(transitions):
         keep = transitions.strengths > 1e-14
         return sorted(zip(np.round(transitions.frequencies[keep], 9), np.round(transitions.strengths[keep], 9), strict=True))
-    assert table(moved) == pytest.approx(table(current), abs=1e-9)
+    assert_tables_close(table(moved), table(current))
     # Tracked subsets capture less than the complete set.
     tracked = solve_floquet(periodic, 2, sector, dict(floquet_cutoff=10, states=2))
     partial = tracked.matrix_elements("current")
@@ -275,7 +286,7 @@ def test_circular_two_level_lines():
         # The branch of each state is fixed by the solver; compare modulo omega and by strength.
         expected = sorted((round(np.mod(f, omega), 9), round(s, 9)) for f, s in expected)
         computed = sorted((round(np.mod(f, omega), 9), round(s, 9)) for f, s in computed)
-        assert computed == pytest.approx(expected, abs=1e-9)
+        assert_tables_close(computed, expected)
 
 
 def test_undriven_limit_and_degenerate_merging():
@@ -307,7 +318,7 @@ def test_undriven_limit_and_degenerate_merging():
     rotated = dataclasses.replace(states, modes=modes).matrix_elements("spin_x")
     first = table.lines(initial=states.dressed_state(0))
     second = rotated.lines(initial=states.dressed_state(0))
-    assert lines_as_set(first) == pytest.approx(lines_as_set(second), abs=1e-9)
+    assert_tables_close(lines_as_set(first), lines_as_set(second))
 
 
 def test_sambe_propagator_and_static_paths_agree():
@@ -328,8 +339,8 @@ def test_line_shapes_kinds_and_guards():
     x = np.linspace(-200, 200, 400001)
     for shape in ("lorentzian", "gaussian"):
         assert line_shape(0.5, .5, shape)/line_shape(0., .5, shape) == pytest.approx(.5)
-    assert np.trapezoid(line_shape(x, .5, "gaussian"), x) == pytest.approx(1., abs=1e-9)
-    assert np.trapezoid(line_shape(x, .5, "lorentzian"), x) == pytest.approx(1., abs=2e-3)
+    assert trapezoid(line_shape(x, .5, "gaussian"), x) == pytest.approx(1., abs=1e-9)
+    assert trapezoid(line_shape(x, .5, "lorentzian"), x) == pytest.approx(1., abs=2e-3)
     with pytest.raises(ValueError, match="width"):
         line_shape(x, 0.)
     with pytest.raises(ValueError, match="shape"):
