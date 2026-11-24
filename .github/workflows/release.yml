@@ -119,7 +119,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y --no-install-recommends texlive-xetex texlive-latex-extra \
-            texlive-bibtex-extra texlive-science texlive-fonts-recommended fonts-dejavu-core \
+            texlive-bibtex-extra texlive-science texlive-fonts-recommended tex-gyre fonts-texgyre fonts-dejavu-core \
             lmodern cm-super biber latexmk librsvg2-bin
       - name: Install from the source archive
         working-directory: release-source

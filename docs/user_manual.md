@@ -41,11 +41,14 @@ Use `--manual user` or `--manual physics` to build one document. Build logs are 
 
 System requirements are XeLaTeX, pdfLaTeX, latexmk, biber, the Sphinx/physics
 manual's TeX packages, TeX Gyre and DejaVu fonts, and `rsvg-convert` for vector
-SVG figures. On Debian/Ubuntu, the CI environment installs:
+SVG figures. On Debian/Ubuntu, the CI environment installs the following packages
+(on recent releases the TeX Live packages only recommend `tex-gyre`, which in turn only
+recommends its OpenType files in `fonts-texgyre`; name both when installing without
+recommendations):
 
 ```sh
 sudo apt-get install texlive-xetex texlive-latex-extra texlive-bibtex-extra \
-  texlive-science texlive-fonts-recommended fonts-dejavu-core \
+  texlive-science texlive-fonts-recommended tex-gyre fonts-texgyre fonts-dejavu-core \
   lmodern cm-super biber latexmk librsvg2-bin
 ```
 

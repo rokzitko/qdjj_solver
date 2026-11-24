@@ -7,7 +7,7 @@ import numpy as np
 from numpy.testing import assert_allclose
 import pytest
 from scipy.sparse import csc_matrix
-from scipy.sparse.linalg import ArpackNoConvergence, LinearOperator
+from scipy.sparse.linalg import ArpackNoConvergence, LinearOperator, eigsh
 
 from qdjj_solver.common.algebra import FermionOperator, annihilate, create, number
 from qdjj_solver.common.problem import Hamiltonian, Sector
@@ -596,12 +596,26 @@ def test_diagonal_bound_triggers_the_second_shift_or_an_error(monkeypatch):
     from qdjj_solver import cosh_grid, reference_model
     junction = reference_model(cosh_grid(pairs=2, bandwidth=10.), u=1., gamma=0., phi=.8, detuning=.2,
                                symmetry=False, compress=False)
-    # Offset 0 is the unshifted ARPACK call, which misses the exactly zero doublet energy and returns
-    # a state above the smallest diagonal element; the diagonal bound then requests the second shift.
-    monkeypatch.setattr(solver_module, "SHIFTS", (0., 3**-.5))
+    # Emulate ARPACK silently returning converged but unwanted Ritz pairs (here the highest one, an
+    # exact eigenpair above the smallest diagonal element). Whether real ARPACK misses the exactly
+    # zero doublet energy without a shift depends on the SciPy release, so the failure is injected.
+    # Only the diagonal bound can detect it, and it then requests the second shift.
+    arpack, calls = solver_module._arpack, []
+    def unwanted_first(failures):
+        def fake(operator, k, initial, options, ncv):
+            calls.append(k)
+            if len(calls) > failures:
+                return arpack(operator, k, initial, options, ncv)
+            energies, vectors = eigsh(operator, k=k, which="LA", v0=initial, tol=options.tolerance, ncv=ncv)
+            return energies, vectors
+        return fake
+    monkeypatch.setattr(solver_module, "_arpack", unwanted_first(1))
     result = solve(junction, 2, Sector(1, 1), SolverOptions(method="sparse", eigenpairs=1))
+    assert len(calls) == 2
     assert_allclose(result.energies, [0.], rtol=0, atol=1e-12)
     assert result.metadata["spectral_shift"] == pytest.approx(-3**-.5)
-    monkeypatch.setattr(solver_module, "SHIFTS", (0., 0.))
+    calls.clear()
+    monkeypatch.setattr(solver_module, "_arpack", unwanted_first(2))
     with pytest.raises(RuntimeError, match="missed eigenvalues below the diagonal bound"):
         solve(junction, 2, Sector(1, 1), SolverOptions(method="sparse", eigenpairs=1))
+    assert len(calls) == 2
