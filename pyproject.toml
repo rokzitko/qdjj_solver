@@ -22,7 +22,9 @@ dev = [
   "coverage[toml]>=7.10.6", "pytest-cov>=7", "ruff>=0.9", "build>=1.2", "markdown-it-py>=3",
 ]
 docs = [
-  "sphinx>=8,<10", "myst-parser>=5", "pydata-sphinx-theme>=0.16", "sphinx-copybutton>=0.5",
+  # Sphinx 9.1.1 and 9.2.0 roll LaTeX array back to v2.6 and longtable to v4.13 (sphinx-doc/sphinx#14484),
+  # which breaks the strict PDF build with TeX Live 2025 and 2026.
+  "sphinx>=8,<10,!=9.1.1,!=9.2.0", "myst-parser>=5", "pydata-sphinx-theme>=0.16", "sphinx-copybutton>=0.5",
   "markdown-it-py>=3",
 ]
 docs-pdf = ["sphinxcontrib-svg2pdfconverter>=2.0", "pypdf>=5"]

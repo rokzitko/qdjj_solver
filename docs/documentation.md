@@ -80,7 +80,9 @@ The continuous-integration (CI) workflow `.github/workflows/tests.yml`, which Gi
 every pull request, has a `docs` job. It runs the per-pull-request checks with fixed versions
 of Sphinx and its extensions (`tools/docs-constraints.txt`) and uploads HTML and the
 user/reference PDF. The weekly `docs-extended` job runs the remaining checks with
-the latest versions and builds both PDFs. Neither manual has an overall page limit; page estimates for individual
+the latest versions allowed by the `docs` extra and builds both PDFs. A release that breaks
+the strict PDF build is excluded in `pyproject.toml` with a comment naming the cause, as
+for Sphinx 9.1.1 and 9.2.0. Neither manual has an overall page limit; page estimates for individual
 additions are planning aids, not build constraints. The checker reports the page count
 for information.
 
